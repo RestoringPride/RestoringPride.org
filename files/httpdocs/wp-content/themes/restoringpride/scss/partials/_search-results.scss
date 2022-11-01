@@ -1,0 +1,48 @@
+/**
+    Search Results
+*/
+
+.search-results{
+
+}
+
+.search-results__item{
+    margin-bottom:$spacing_xs;
+}
+
+.search-results__title{
+    color:inherit;
+    margin-bottom:0;
+
+    @media #{$breakpoint_xs}{
+        margin-bottom:$spacing_xs;
+    }
+}
+
+.search-results__excerpt{
+    display:none;
+    @media #{$breakpoint_xs}{
+        display:block;
+    }
+    p{
+        margin-bottom:0;
+    }
+}
+
+.search-results__link{
+    display:block;
+    background-color:$ui-off-white;
+    padding:$spacing_xxs;
+    text-decoration:none;
+    transition:all 0.1s;
+    border:2px solid transparent;
+    
+    @media #{$breakpoint_xs}{
+        padding:$spacing_xs;
+    }
+
+    &:hover{
+        background-color:#ffffff;
+        border:2px solid $ui-off-white;
+	}
+}

@@ -1,0 +1,135 @@
+/**
+    Styles specific to this customer
+*/
+
+// Page headers with images
+.page-header{   
+    overflow:hidden;
+    position:relative;
+    background-color:#000000;
+
+    img{
+        position:absolute;
+        top:50%;
+        transform:translateY(-50%);
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        opacity:0.4;
+    }
+}
+
+.page-header__content{
+    margin:auto;
+    text-align:center;
+    padding:($spacing_xxl*2) 0;
+    h1{ color:#ffffff; }
+    .breadcrumb-wrapper{ color:#fff; a{ color:#fff; }}
+}
+
+// Dividing line with pride colours
+.pride-divider{
+    background-image:url('./images/pride-colours-horizontal.png');
+    height:5px;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    width:100%;
+}
+
+.page-header__title{
+    margin:0;
+}
+
+// Pride colours
+$pride_red:#e63121;
+$pride_orange:#f85f00;
+$pride_yellow:#f7ca00;
+$pride_green:#3f9a3d;
+$pride_blue:#0052a0;
+$pride_purple:#710096;
+
+// Homepage services
+.services-overview{
+    display:grid;
+    @media #{$breakpoint_xs}{
+        grid-template-columns:repeat(2, 1fr);
+    }
+    @media #{$breakpoint_sm}{
+        grid-template-columns:repeat(3, 1fr);
+    }
+    @media #{$breakpoint_lg}{
+        grid-template-columns:repeat(6, 1fr);
+    }
+}
+
+    .services-overview__icon{
+        font-size:38px;
+        display:block;
+        margin-bottom:$spacing_xs;
+    }
+    .services-overview__item{
+        text-align:center;
+        color:#ffffff;
+        padding:$spacing_md $spacing_xs;
+    }
+    .services-overview__red{
+        background-color:$pride_red;
+    }
+    .services-overview__orange{
+        background-color:$pride_orange;
+    }
+    .services-overview__yellow{
+        background-color:$pride_yellow;
+    }
+    .services-overview__green{
+        background-color:$pride_green;
+    }
+    .services-overview__blue{
+        background-color:$pride_blue;
+    }
+    .services-overview__purple{
+        background-color:$pride_purple;
+    }
+
+// Homepage text with image and pride colours
+
+.decorative-intro{
+    position:relative;
+    display:grid;
+    margin:$spacing_md 0;
+}
+
+.decorative-intro__flag{
+    background-image:url('./images/pride-colours-vertical.png');
+    background-size:auto 100%;
+    padding:15px;
+    @media #{$breakpoint_md}{
+        max-width:700px;
+        position:absolute;
+        z-index:1;
+    }
+}
+
+.decorative-intro__inner{
+    background-color:#ffffff;
+    padding:$spacing_sm;
+}
+
+.decorative-intro__image{
+    position:relative;
+    justify-self:end;
+    img{
+        display:block;
+        margin:0;
+        @media #{$breakpoint_md}{
+            margin-top:162px;
+        }
+    }
+}
+
+.decorative-intro__scuff{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ignore everything in the root except the "wp-content" directory.
 !wp-content/
 
@@ -21,3 +22,7 @@ node_modules/
 *.log
 *.sql
 *.sqlite
+=======
+
+.DS_Store
+>>>>>>> 88da077 (Initial commit)

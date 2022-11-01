@@ -1,0 +1,144 @@
+/**
+    Gutenberg Content
+
+    Provides overrides for classes added by the Gutenberg editor
+    Note: This is only applied to the blog post content in single.php
+*/
+
+.gutenberg-content{
+
+    // Target the image wrapper and caption
+    .wp-block-image,
+    .wp-block-embed{
+        figure{
+            @media #{$breakpoint_sm}{
+                display:table;
+            }
+        }
+        figcaption{
+            @extend small;
+            color:$ui-light-grey;
+            padding-bottom:$spacing_xxs;
+            // border-bottom:2px solid $ui-off-white;
+            @media #{$breakpoint_sm}{
+                display:table-caption;
+                caption-side: bottom;
+            }
+        }
+        img{
+            margin-left:auto;
+            margin-right:auto;
+            display:block;
+            margin-bottom:$spacing_xs;
+        }
+
+        @media #{$breakpoint_sm}{
+            .alignleft{
+                float:left;
+                margin:$spacing_lg $spacing_lg 0 0;
+            }
+
+            .alignright{
+                float:right;
+                margin:$spacing_lg 0 0 $spacing_lg;
+            }
+        }
+
+        .wp-block-embed__wrapper{
+            margin-bottom:$spacing_sm;
+            text-align:center;
+
+            iframe{
+                max-width:100%;
+            }
+        }
+    }
+
+    // For the rest of the UI list styling has been removed however,
+    // in this instance we want to bring it back. So apply this class
+    // to lists inside user-generated content
+    ul{
+        @extend .list-default;
+        list-style:disc;
+    }
+
+    ol{
+        @extend .list-default;
+        list-style:decimal;
+    }
+
+    // Target embedded media and add a small margin to it
+    .wp-block-embed{
+        margin-bottom:$spacing_md;
+    }
+}
+
+// When the content is in one single column, stylise it slightly by pulling out select pieces of content
+.layout--content-only .content{
+    // .gutenberg-content{
+        .wp-block-image,
+        blockquote,
+        hr{
+            @extend .content--pull;
+        }
+    // }
+}
+
+// Extend content split into Gutenberg column classes
+.wp-block-columns{
+    @extend .content--pull;
+    background-color:$ui-off-white;
+    padding:$spacing_md $spacing_md 0 $spacing_md;
+    margin-bottom:$spacing_md;
+    overflow:hidden;
+    
+    @media #{$breakpoint_md}{
+        display:grid;
+        grid-gap:$spacing_md;
+        // padding:$spacing_md $spacing_md 0 $spacing_md;
+    }
+
+    // Override pull to remove margin when in column
+    .wp-block-image,
+    blockquote{
+        margin:auto !important;
+    }    
+
+    blockquote{
+        padding-top:0;
+    }
+}
+
+// Extend content split into Gutenberg column classes
+.wp-block-columns.has-2-columns{
+    @media #{$breakpoint_md}{
+		grid-template-columns:repeat(2, 1fr);
+	}
+}
+
+// Extend content split into Gutenberg column classes
+.wp-block-columns.has-3-columns{
+	@media #{$breakpoint_md}{
+		grid-template-columns:repeat(3, 1fr);
+	}
+}
+
+// Extend content split into Gutenberg column classes
+.wp-block-columns.has-4-columns{
+    @media #{$breakpoint_sm}{
+        grid-template-columns:repeat(2, 1fr);
+    }
+	@media #{$breakpoint_md}{
+		grid-template-columns:repeat(4, 1fr);
+	}
+}
+
+// Extend the Gutenberg button style
+.wp-block-button{
+    @extend p;
+    .wp-block-button__link{
+        @extend .action;
+        @extend .action--primary;
+        @extend .action--alone;
+    }
+}

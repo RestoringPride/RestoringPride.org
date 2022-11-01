@@ -1,0 +1,38 @@
+/**
+	Event
+*/
+
+.event-wrapper{
+
+}
+
+.event{
+	
+}
+
+.event__item{
+	display:block;
+	text-decoration:none;
+	padding:$spacing_xs;
+	background-color:$ui-off-white;
+	margin-bottom:$spacing_xs;
+}
+
+.event__label{
+	display:block;
+	text-transform:uppercase;
+	margin-bottom:0;
+	color:$ui-light-grey;
+}
+.event__title{
+
+}
+
+.event__datetime{
+	display:block;
+	margin-bottom:$spacing_xs;
+}
+
+.event__address{
+
+}

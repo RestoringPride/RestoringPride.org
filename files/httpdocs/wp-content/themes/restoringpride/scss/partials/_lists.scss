@@ -1,0 +1,15 @@
+/**
+	Lists
+*/
+
+.list-default{
+	padding-left:$spacing_md;
+	li{
+		margin-bottom:$spacing_xs;
+	}
+}
+
+.remove-list{
+	padding-left:0 !important;
+	list-style:none !important;
+}

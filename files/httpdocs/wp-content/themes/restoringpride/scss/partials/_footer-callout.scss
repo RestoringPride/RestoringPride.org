@@ -1,0 +1,13 @@
+/**
+	Footer Callout
+*/
+
+.footer-callout{
+	background-color:$pride_blue;
+	padding:$spacing_sm;
+}
+
+.footer-callout__title,
+.footer-callout__body{
+	color:$brand-colour-primary-contrast;
+}

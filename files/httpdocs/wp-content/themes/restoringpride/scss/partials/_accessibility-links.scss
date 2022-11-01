@@ -1,0 +1,24 @@
+/**
+	Accessibility Links
+*/
+
+.accessibility-links-wrapper{
+	padding:$spacing_xs/2 0;
+	background-color:$brand-colour-primary;
+	border-bottom:1px solid darken($brand-colour-primary, 5%);
+}
+
+.accessibility-links{
+	text-align:right;
+
+	li{
+		display:inline-block;
+		margin-left:$spacing_xs/2;
+		font-size:13px;
+
+		a{
+			display:block;
+			color:$ui-off-white;
+		}
+	}
+}

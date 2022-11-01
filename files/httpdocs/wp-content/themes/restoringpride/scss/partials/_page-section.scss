@@ -1,0 +1,58 @@
+/**
+	Page Section
+*/
+
+.page-section{
+
+}
+
+.page-section--primary{
+	background-color:$brand-colour-primary;
+}
+
+.page-section--secondary{
+	background-color:$brand-colour-secondary;
+}
+
+.page-section--tertiary{
+	background-color:$brand-colour-tertiary;
+}
+
+.page-section--grey{
+	background-color:$ui-off-white;
+}
+
+.page-section--has-background{
+	position:relative;
+	background-color:rgba(0,0,0,0.85);
+}
+
+.page-section--has-background__content{
+	color:$ui-off-white;
+}
+
+.page-section__image{
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	object-fit:cover;
+	opacity:0.25;
+	position:absolute;
+}
+
+.page-section--padding{
+	padding:$spacing_md 0;
+
+	@media #{$breakpoint_sm}{
+		padding:$spacing_xxl 0;
+	}
+}
+
+.page-section--margin{
+	margin-bottom:$spacing_md;
+
+	@media #{$breakpoint_sm}{
+		margin-bottom:$spacing_xxl*2;
+	}
+}

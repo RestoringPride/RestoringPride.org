@@ -1,0 +1,17 @@
+{
+  "name": "charity_template",
+  "version": "1.0.0",
+  "description": "Template for charity websites",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o ./"
+  },
+  "author": "Matt Saunders",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.7.1",
+    "bulma-start": "0.0.2",
+    "node-sass": "^4.12.0"
+  }
+}

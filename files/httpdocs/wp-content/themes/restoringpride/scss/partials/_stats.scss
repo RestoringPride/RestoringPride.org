@@ -1,0 +1,32 @@
+/**
+    Stats
+*/
+
+.stats{
+    display:grid;
+    grid-gap:$spacing_sm;
+    margin-bottom:0;
+	@media #{$breakpoint_sm}{
+        // grid-auto-flow:column;
+        grid-template-columns:repeat(3, 1fr);
+	}
+}
+
+.stats__item{
+    text-align:center;
+}
+
+.stats__value{
+    color:$brand-colour-primary;
+    display:inline-block;
+    font-size:42px;
+    line-height:50px;
+    margin-bottom:$spacing_sm;
+    background-color:$brand-colour-secondary;
+    padding:3px 9px;
+}
+
+.stats__description{
+    @extend h4;
+    margin-bottom:0;
+}

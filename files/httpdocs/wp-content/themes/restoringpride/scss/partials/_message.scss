@@ -1,0 +1,64 @@
+/**
+    Message
+*/
+
+.message{
+    font-family:$font-secondary;
+	font-size:18px;
+    line-height:26px;
+    margin-bottom:$spacing_xs;
+    padding:$spacing_xxs;
+    display:block;
+    border:2px solid rgba(0,0,0,0.1);
+    @extend .box-shadow--sm;
+
+    p:last-child{
+        margin-bottom:0;
+    }
+}
+
+.message--error{
+    background-color:$ui-alert;
+    color:#ffffff;
+    * { color:#ffffff; }
+}
+
+.message--warning{
+    background-color:$ui-warning;
+}
+
+.message--neutral{
+    background-color:$ui-neutral;
+}
+
+.message--success{
+    background-color:$ui-positive;
+}
+
+// Contact Form 7 classes
+
+// Field for screen readers to follow
+.screen-reader-response{
+    position: absolute;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	width: 1px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+// In-line error message
+// Form message
+.wpcf7-not-valid-tip,
+.wpcf7-validation-errors{
+    @extend .message;
+    @extend .message--error;
+}
+
+// Mail sent successully
+.wpcf7-mail-sent-ok{
+    @extend .message;
+    @extend .message--success;
+}

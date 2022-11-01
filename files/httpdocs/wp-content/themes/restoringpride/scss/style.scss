@@ -1,0 +1,84 @@
+/**
+	Theme Name: Restoring Pride
+	Author: Charity Box
+	Description: Custom theme for Restoring Pride
+*/
+
+@import 'partials/reset';
+@import 'partials/widths';
+@import 'partials/spacing';
+@import 'partials/breakpoints';
+@import 'partials/container';
+@import 'partials/content';
+@import 'partials/colours';
+@import 'partials/gradient';
+@import 'partials/text';
+@import 'partials/site-logo';
+@import 'partials/site-header';
+@import 'partials/site-footer';
+@import 'partials/accessibility-links';
+@import 'partials/action';
+@import 'partials/grid';
+@import 'partials/breadcrumb';
+@import 'partials/card';
+@import 'partials/event';
+@import 'partials/form';
+@import 'partials/link';
+@import 'partials/image';
+@import 'partials/exit-site';
+@import 'partials/restoringpride';
+@import 'partials/footer-callout';
+@import 'partials/nav-primary';
+@import 'partials/nav-mobile';
+@import 'partials/hero';
+@import 'partials/hr';
+@import 'partials/layout';
+@import 'partials/nav-secondary';
+@import 'partials/nav-tertiary';
+@import 'partials/lede';
+@import 'partials/maxi';
+@import 'partials/newsletter';
+@import 'partials/social-icons';
+@import 'partials/related-links';
+@import 'partials/night';
+@import 'partials/box-shadow';
+@import 'partials/border-radius';
+@import 'partials/person';
+@import 'partials/authors';
+@import 'partials/blog-header';
+@import 'partials/blog-post-header';
+@import 'partials/blockquote';
+@import 'partials/categories';
+@import 'partials/shelves';
+@import 'partials/page-section';
+@import 'partials/margin';
+@import 'partials/text-align';
+@import 'partials/lists';
+@import 'partials/pagination';
+@import 'partials/testimonial';
+@import 'partials/message';
+@import 'partials/site-search';
+@import 'partials/search-results';
+@import 'partials/accordion';
+@import 'partials/landing-page';
+@import 'partials/location';
+@import 'partials/gutenberg-content';
+@import 'partials/tags';
+@import 'partials/stats';
+@import 'partials/image-block';
+@import 'partials/table';
+@import 'partials/media-object';
+
+// Plugins
+@import 'partials/plugins/give';
+@import 'partials/plugins/caldera';
+@import 'partials/plugins/cookie';
+
+html {
+	box-sizing:border-box;
+	scroll-behavior:smooth;
+}
+
+*, *:before, *:after {
+	box-sizing:inherit;
+}

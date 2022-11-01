@@ -1,0 +1,32 @@
+/**
+    Table
+*/
+
+table{
+    width:100%;
+    border:1px solid $ui-light-grey;
+    background-color:#ffffff;
+    @extend .box-shadow--sm;
+}
+
+tr{
+
+}
+
+td{
+    padding:$spacing_xxs;
+    border-bottom:1px solid $ui-light-grey;
+}
+
+th{
+    padding:$spacing_xxs;
+}
+
+thead{
+    font-weight:bold;
+}
+
+tbody{
+
+}
+

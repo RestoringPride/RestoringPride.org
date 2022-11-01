@@ -1,0 +1,57 @@
+/**
+    Accordion
+*/
+
+.accordion{
+
+}
+
+.accordion__item{
+    margin-bottom:$spacing_xs;
+}
+
+.accordion__check{
+    &:checked ~ .accordion__body{
+        max-height:100vh;
+        padding:15px;
+    }
+
+    &:focus ~ .accordion__title{
+        outline:3px solid $ui-focus-colour;
+    }
+
+    &:checked ~ .accordion__title{
+        &:after{
+            content:"-";
+        }
+    }
+}
+
+// Use of !important here to override styles set in _form.scss
+.accordion__title{
+    background-color:$brand-colour-tertiary !important;
+    color:$brand-colour-primary-contrast;
+    margin-bottom:0;
+    padding:15px 30px 15px 15px !important;
+    cursor:pointer;
+    position:relative;
+    border:none !important;
+
+    &:before{
+        content: "" !important;
+    }
+
+    &:after{
+        position:absolute;
+        content:"+";
+        right:$spacing_xs;
+        top:50%;
+        transform:translateY(-50%);
+    }
+}
+
+.accordion__body{
+    max-height:0;
+    overflow:hidden;
+    background-color:$ui-off-white;
+}

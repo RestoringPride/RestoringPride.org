@@ -1,0 +1,38 @@
+/**
+	Colours
+*/
+
+// Set the primary colour for all text
+$ui-primary-text-colour:#20333E;
+
+// Some UI colours for quick usage
+$ui-light-grey:#a0a0a0;
+$ui-off-white:#f3f3f3;
+$ui-alert:#F31431;
+$ui-warning:#ffb152;
+$ui-neutral:#ffff6a;
+$ui-positive:#c7fc5e;
+$ui-focus-colour:#ffbf47;
+
+// Define a primary brand colour
+$brand-colour-primary:#e63121;
+// Define a colour that can happily sit on top of the primary colour
+$brand-colour-primary-contrast:$ui-off-white;
+
+// Define a secondary brand colour
+$brand-colour-secondary:#00a6d1;
+// Define a colour that can happily sit on top of the secondary colour
+$brand-colour-secondary-contrast:$ui-off-white;
+
+// Define a tertiary brand colour
+$brand-colour-tertiary:#333333;
+// Define a colour that can happily sit on top of the tertiary colour
+$brand-colour-tertiary-contrast:$ui-off-white;
+
+// External brand colours
+$facebook:#3b5998;
+$twitter:#1da1f2;
+$pinterest:#bd081c;
+$google:#4285f4;
+$snapchat:#fffc00;
+$instagram:#405de6;

@@ -1,0 +1,38 @@
+/**
+	Location
+*/
+
+.location{
+    background-color:$ui-off-white;
+    margin-bottom:$spacing_sm;
+    padding:$spacing_xs;
+}
+
+.location--has-hours{
+    display:grid;
+    grid-gap:$spacing_xs;
+    @media #{$breakpoint_sm}{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+.location-opening-hours{
+    margin-bottom:0;
+}
+
+.location-opening-hours__item{
+    display:grid;
+    grid-auto-flow:column;
+    padding:$spacing_xxs/2 $spacing_xxs;
+    &:nth-child(odd){
+        background-color:lighten($ui-light-grey, 25%);
+    }
+}
+
+.location-opening-hours__day{
+    min-width:70px;
+
+    &.closed{
+        color:$ui-alert;
+    }
+}

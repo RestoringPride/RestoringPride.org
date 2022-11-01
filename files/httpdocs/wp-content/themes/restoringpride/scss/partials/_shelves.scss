@@ -1,0 +1,105 @@
+/**
+	Shelves
+*/
+
+$border-colour: darken($ui-off-white, 5%);
+
+@mixin shelves($units){
+	grid-template-columns:repeat($units, 1fr);
+}
+
+.shelves{
+	display:grid;
+	
+	&.two{
+		@media #{$breakpoint_sm}{
+			@include shelves(2);
+		}
+	}
+
+	&.three{
+		@media #{$breakpoint_sm}{
+			@include shelves(2);
+		}
+
+		@media #{$breakpoint_md}{
+			@include shelves(3);
+		}
+	}
+}
+
+.shelves__item{
+	@extend .box-shadow--lg;
+	padding:$spacing_sm;
+	outline:1px solid $border-colour;
+	text-align:center;
+	background-color:#ffffff;
+}
+
+.shelves__item--primary{
+	outline:0;
+	background-color:$brand-colour-primary;
+	.shelves__icon{
+		color:$brand-colour-primary-contrast;
+	}
+
+	.shelves__title, .shelves__title a{
+		color:$brand-colour-primary-contrast;
+	}
+
+	.shelves__body, .shelves__body a{
+		color:$brand-colour-primary-contrast;
+	}
+}
+
+.shelves__item--secondary{
+	outline:0;
+	background-color:$brand-colour-secondary;
+	.shelves__icon{
+		color:$brand-colour-secondary-contrast;
+	}
+
+	.shelves__title, .shelves__title a{
+		color:$brand-colour-secondary-contrast;
+	}
+
+	.shelves__body, .shelves__body a{
+		color:$brand-colour-secondary-contrast;
+	}
+}
+
+.shelves__item--tertiary{
+	outline:0;
+	background-color:$brand-colour-tertiary;
+	.shelves__icon{
+		color:$brand-colour-tertiary-contrast;
+	}
+
+	.shelves__title, .shelves__title a{
+		color:$brand-colour-tertiary-contrast;
+	}
+
+	.shelves__body, .shelves__body a{
+		color:$brand-colour-tertiary-contrast;
+	}
+}
+
+.shelves__icon{
+	font-size:34px;
+	line-height:42px;
+	display:block;
+	margin-bottom:$spacing_sm;
+	color:$brand-colour-primary;
+}
+
+.shelves__title{
+
+}
+
+.shelves__body{
+	margin-bottom:0;
+}
+
+.shelves__link{
+
+}

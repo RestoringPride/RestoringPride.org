@@ -1,0 +1,33 @@
+/**
+	Container
+*/
+
+.container{
+	margin:auto;
+	position:relative;
+	padding:0 $spacing_sm;
+}
+
+@media #{$breakpoint_sm}{
+	.container{
+		max-width:$width_sm;
+	}
+}
+
+@media #{$breakpoint_md}{
+	.container{
+		max-width:$width_md;
+	}
+}
+
+@media #{$breakpoint_lg}{
+	.container{
+		max-width:$width_lg;
+	}
+}
+
+// @media #{$breakpoint_xl}{
+// 	.container{
+// 		max-width:$width_xl;
+// 	}
+// }

@@ -1,0 +1,16 @@
+/**
+	Pagination
+*/
+
+.pagination{
+    display:grid;
+    grid-template-columns:repeat(2, auto);
+}
+
+.pagination__older{
+
+}
+
+.pagination__newer{
+    justify-self:end;
+}

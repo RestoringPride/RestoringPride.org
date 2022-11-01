@@ -1,0 +1,15 @@
+/**
+    Caldera
+*/
+
+.help-block{
+    @extend .message;
+    @extend .message--neutral;
+}
+
+.alert{ 
+    @extend .message;
+    &.alert-success{
+        @extend .message--success;
+    }
+}

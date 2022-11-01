@@ -1,0 +1,52 @@
+/**
+	Content
+*/
+
+.content{
+	margin:auto;
+	width:100%;
+}
+
+// To be used with layout__outer to provide complementary narrow content
+.content__inner{
+	max-width:$width_sm;
+	margin:auto;
+	padding-bottom:$spacing_sm;
+
+	@media #{$breakpoint_md}{
+		padding-bottom:$spacing_xxl;
+	}
+
+	&:last-child{
+		padding-bottom:0;
+	}
+}
+
+// To be used with layout__inner to provide complementary wide content
+.content__outer{
+	padding-bottom:$spacing_sm;
+
+	@media #{$breakpoint_md}{
+		padding-bottom:$spacing_xxl;
+	}
+
+	&:last-child{
+		padding-bottom:0;
+	}
+}
+
+.content__split{
+	display:grid;
+	grid-gap:$spacing_xs;
+	@media #{$breakpoint_md}{
+		grid-template-columns:5fr 5fr;
+	}
+}
+
+// Provides a class to pull content out from the main content block on larger screens
+.content--pull{
+	@media #{$breakpoint_md}{
+		margin-left:-$spacing_xxl;
+		margin-right:-$spacing_xxl;
+	}
+}

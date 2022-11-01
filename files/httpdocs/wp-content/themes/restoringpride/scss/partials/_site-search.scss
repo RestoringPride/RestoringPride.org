@@ -1,0 +1,37 @@
+/**
+    Site Search
+*/
+
+.site-search{
+    display:none;
+    background-color:$ui-off-white;
+    padding:$spacing_sm;
+    box-shadow:inset 0 4px 10px rgba(0,0,0,0.1);
+    
+    @media #{$breakpoint_sm}{
+        padding:$spacing_xxl;
+    }
+}
+
+.site-search__content{
+    position:relative;
+    max-width:$width_sm;
+    margin:auto;
+}
+
+.site-search__close-button{
+    @extend .reset-button;
+    font-size:22px;
+    cursor:pointer;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.site-search__inputs{
+    @media #{$breakpoint_sm}{
+        display:grid;
+        grid-template-columns:auto max-content;
+        grid-gap:$spacing_xxs;
+    }
+}

@@ -1,0 +1,54 @@
+/**
+	Nav Primary
+*/
+
+.nav-primary{
+	display:none;
+	justify-self:end;
+
+	@media #{$breakpoint_md}{
+		display:block;
+	}
+
+	ul{
+		display:grid;
+		grid-auto-flow:column;
+		margin-bottom:0;
+		align-items:center;
+
+		li{
+			a{
+				font-family:$font-secondary;
+				display:block;
+				text-decoration:none;
+				color:$brand-colour-tertiary;
+				padding:$spacing_xxs $spacing_xs;
+				// border-right:1px solid $ui-off-white;
+
+				&:hover{
+					color:$brand-colour-primary;
+					text-decoration:underline;
+				}
+			}
+			&.current_page_item a,
+			&.current_page_parent a,
+			&.current-page-ancestor a{
+				font-weight:700;
+
+				background-image:url('./images/menu-underline.png');
+				background-size:65px auto;
+				background-repeat:no-repeat;
+				background-position:bottom;
+			}
+		}
+	}
+
+	// If last item is a call to action, apply these styles
+	&.last-is-cta{
+		ul li:last-child a{
+			border:1px solid $brand-colour-primary;
+			color:$brand-colour-primary;
+			margin-left:$spacing_xs;
+		}
+	}
+}

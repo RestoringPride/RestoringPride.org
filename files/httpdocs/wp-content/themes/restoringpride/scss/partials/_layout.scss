@@ -1,0 +1,71 @@
+/**
+	Layout
+*/
+
+/**
+	Define a layout for all pages which sets some basic padding
+*/
+.layout{
+	padding-top:$spacing_sm;
+	padding-bottom:$spacing_sm;
+	display:grid;
+	grid-gap:$spacing_sm;
+
+	@media #{$breakpoint_md}{
+		grid-gap:$spacing_xl;
+		padding-top:$spacing_xl;
+		padding-bottom:$spacing_xl;
+	}
+}
+
+.layout--no-padding{
+	padding-top:0;
+	padding-bottom:0;
+}
+
+/**
+	Define a layout with a right sidebar
+*/
+.layout--sidebar-right{
+	@media #{$breakpoint_md}{
+		grid-template-columns:6fr 4fr;
+	}
+
+	@media #{$breakpoint_lg}{
+		grid-template-columns:65fr 35fr;
+	}
+}
+
+
+/**
+	Define a layout with a left sidebar
+*/
+.layout--sidebar-left{
+	@media #{$breakpoint_md}{
+		grid-template-columns:4fr 6fr;
+	}
+
+	@media #{$breakpoint_lg}{
+		grid-template-columns:35fr 65fr;
+	}
+}
+
+
+/**
+	Define a layout where the content is split in two halves
+*/
+.layout--split{
+	@media #{$breakpoint_md}{
+		grid-template-columns:5fr 5fr;
+	}
+}
+
+/**
+	Define a layout that has just a piece of content and a maximum width
+	to prevent long-running lines of text
+*/
+.layout--content-only .content{
+	@media #{$breakpoint_md}{
+		max-width:$width_sm;
+	}
+}

@@ -1,0 +1,24 @@
+/**
+	Newsletter
+*/
+
+.newsletter-wrapper{
+	padding:$spacing_lg 0;
+	border-top:1px solid $ui-off-white;
+}
+
+.newsletter{
+	max-width:$width_sm;
+}
+
+.newsletter__fields{
+	input{
+		margin-bottom:0;
+	}
+	display:grid;
+	grid-gap:$spacing_sm;
+	@media #{$breakpoint_sm}{
+		grid-template-columns:1fr 1fr 1fr max-content;
+		align-items:end;
+	}
+}

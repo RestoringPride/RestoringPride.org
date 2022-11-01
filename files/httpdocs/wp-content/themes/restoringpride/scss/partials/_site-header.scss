@@ -1,0 +1,25 @@
+/**
+	Site Header
+*/
+
+.site-header-wrapper{
+	background:#ffffff;
+	position:relative;
+}
+
+.site-header-wrapper--has-underline{
+	// border-bottom:1px solid $ui-off-white;
+}
+
+.site-header{
+	display:grid;
+	grid-template-columns:max-content auto;
+	align-items:center;
+}
+
+.site-header--is-fixed{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+}

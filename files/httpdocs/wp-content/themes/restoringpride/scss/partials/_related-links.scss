@@ -1,0 +1,34 @@
+/**
+	Related Links
+*/
+
+$border-colour: darken($ui-off-white, 8%);
+
+.related-links{
+	display:grid;
+	grid-gap:$spacing_sm;
+
+	@media #{$breakpoint_sm}{
+		grid-template-columns:repeat(2, 1fr);
+	}
+
+	@media #{$breakpoint_lg}{
+		grid-template-columns:repeat(3, 1fr);
+	}
+}
+
+.related-links__item{
+	padding:$spacing_sm;
+	border:1px solid $border-colour;
+	background-color:$ui-off-white;
+}
+
+.related-links__title,
+.related-links__link{
+	color:$brand-colour-primary;
+}
+
+.related-links__body{
+	margin-bottom:0;
+	color:$ui-primary-text-colour;
+}

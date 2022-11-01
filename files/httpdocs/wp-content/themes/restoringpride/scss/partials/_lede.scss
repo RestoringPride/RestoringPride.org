@@ -1,0 +1,15 @@
+/**
+	Lede
+*/
+
+.lede{
+	@media #{$breakpoint_md}{
+		max-width:50%;
+	}
+}
+
+.lede--push{
+	@media #{$breakpoint_md}{
+		padding-left:50%;
+	}	
+}

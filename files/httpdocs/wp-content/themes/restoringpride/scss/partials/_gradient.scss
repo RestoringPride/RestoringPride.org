@@ -1,0 +1,12 @@
+/**
+	Gradient
+*/
+
+// mixin for handling variable gradients
+@mixin gradient($args...){
+	background:linear-gradient($args);
+}
+
+.gradient--brand-colour-primary{
+	background:linear-gradient($brand-colour-primary, darken($brand-colour-primary,10%));
+}

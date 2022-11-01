@@ -1,0 +1,42 @@
+// Categories
+
+.categories{
+	margin-right:-6px;
+}
+
+.categories__item{
+	display:inline-block;
+}
+
+.categories__item--first{
+	display:block;
+	margin-bottom:$spacing_xxs;
+	color:$ui-light-grey;
+	margin-right:$spacing_xxs;
+
+	@media #{$breakpoint_sm}{
+		display:inline-block;
+		margin-bottom:0;
+	}
+}
+
+.categories__link{
+	display:block;
+	text-decoration:none;
+	padding:0 7px;
+	margin-right:6px;
+	margin-bottom:6px;
+	background-color:$brand-colour-secondary;
+	color:$brand-colour-secondary-contrast;
+	border:1px solid transparent;
+}
+
+.categories__link--active{
+	color:$brand-colour-secondary;
+	background-color:$brand-colour-secondary-contrast;
+	border:1px solid $brand-colour-secondary;
+}
+
+.categories__item--clear{
+	margin-left:6px;
+}

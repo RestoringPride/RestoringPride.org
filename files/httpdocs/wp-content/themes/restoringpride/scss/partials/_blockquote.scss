@@ -1,0 +1,31 @@
+// Blockquote
+
+$blockquote-border-colour: $ui-off-white;
+
+blockquote{
+	border-top:5px solid $blockquote-border-colour;
+	border-bottom:5px solid $blockquote-border-colour;
+	padding:$spacing_sm 0;
+	margin-bottom:$spacing_md;
+
+	p {
+		margin-bottom:0;
+		font-size:21px;
+		line-height:30px;
+		color:$brand-colour-primary;
+
+		@media #{$breakpoint_sm}{
+			font-size:28px;
+			line-height:40px;
+		}
+	}
+
+	cite{
+		color:$ui-light-grey;
+		font-family:$font-secondary;
+		font-size:17px;
+		line-height:26px;
+		padding-top:$spacing_xs;
+		display:block;
+	}
+}

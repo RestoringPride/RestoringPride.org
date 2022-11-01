@@ -1,0 +1,102 @@
+/**
+	Text
+*/
+
+$font-primary: 'Merriweather', serif;
+$font-secondary: 'Open Sans', sans-serif;
+
+h1, h2 {
+	@media #{$breakpoint_sm}{
+		text-rendering:optimizeLegibility;
+	}
+}
+
+h1{
+	font-weight:400;
+	color:#000000;
+	font-family:$font-primary;
+	font-size:26px;
+	line-height:34px;
+	margin-bottom:$spacing_sm;
+
+	@media #{$breakpoint_sm}{
+		font-size:44px;
+		line-height:60px;
+	}
+}
+
+h2{
+	font-weight:300;
+	color:$ui-light-grey;
+	font-family:$font-primary;
+	font-size:22px;
+	line-height:30px;
+	margin-bottom:$spacing_sm;
+
+	@media #{$breakpoint_sm}{
+		font-size:28px;
+		line-height:42px;
+	}
+}
+
+h3{
+	color:$ui-light-grey;
+	font-family:$font-secondary;
+	font-size:18px;
+	line-height:26px;
+	margin-bottom:$spacing_xs;
+
+	@media #{$breakpoint_lg}{
+		font-size:22px;
+		line-height:32px;
+	}
+}
+
+h4{
+	color:$ui-primary-text-colour;
+	font-family:$font-secondary;
+	font-size:18px;
+	line-height:26px;
+	margin-bottom:$spacing_xs;
+}
+
+p, ul, ol, dl, table {
+	color:$ui-primary-text-colour;
+	font-family:$font-secondary;
+	font-size:18px;
+	line-height:27px;
+	margin-bottom:$spacing_md;
+}
+
+// For dynamic/user generated text that would otherwise have specific classes
+.dynamic-text{
+	ul { @extend .list-default; }
+}
+
+strong{
+	font-weight:bold;
+}
+
+small{
+	color:$ui-primary-text-colour;
+	font-family:$font-secondary;
+	font-size:15px;
+	line-height:23px;
+	margin-bottom:$spacing_xs;
+	display:inline-block;
+}
+
+em{
+	font-style:italic;
+}
+
+// Helper classes
+.colour-facebook{ color: $facebook; }
+.colour-twitter{ color: $twitter; }
+.colour-pinterest{ color: $pinterest; }
+.colour-google{ color: $google; }
+.colour-snapchat{ color: $snapchat; }
+.colour-instagram{ color: $instagram; }
+.colour-light{ color: $ui-off-white; }
+.colour-dark{ color: $ui-primary-text-colour; }
+.color-grey{ color: $ui-light-grey; }

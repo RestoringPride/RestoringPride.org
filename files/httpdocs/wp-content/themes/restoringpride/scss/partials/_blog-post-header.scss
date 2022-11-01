@@ -1,0 +1,24 @@
+// Blog Post Header
+
+.blog-post-header{
+	display:grid;
+	@media #{$breakpoint_md}{
+		grid-template-columns:1fr 1fr;
+		grid-column-gap:$spacing_xxl;
+		align-items:center;
+	}
+}
+
+.blog-post-header__image{
+	margin-bottom:0;
+	display:block;
+	width:100%;
+	@media #{$breakpoint_md}{
+		object-fit:cover;
+		height:400px;
+	}
+}
+
+.blog-post-header__meta{
+	color:$ui-light-grey;
+}

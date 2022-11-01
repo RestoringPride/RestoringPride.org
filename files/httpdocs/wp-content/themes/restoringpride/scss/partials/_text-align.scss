@@ -1,0 +1,51 @@
+/**
+	Text Align	
+*/
+
+.text-align-center-xs{
+	text-align:center;
+}
+
+.text-align-left-xs{
+	text-align:left;
+}
+
+@media #{$breakpoint_sm}{
+	.text-align-center-sm{
+		text-align:center;
+	}
+	
+	.text-align-left-sm{
+		text-align:left;
+	}
+}
+
+@media #{$breakpoint_md}{
+	.text-align-center-md{
+		text-align:center;
+	}
+	
+	.text-align-left-md{
+		text-align:left;
+	}
+}
+
+@media #{$breakpoint_lg}{
+	.text-align-center-lg{
+		text-align:center;
+	}
+	
+	.text-align-left-lg{
+		text-align:left;
+	}
+}
+
+@media #{$breakpoint_xl}{
+	.text-align-center-xl{
+		text-align:center;
+	}
+	
+	.text-align-left-xl{
+		text-align:left;
+	}
+}

@@ -1,0 +1,26 @@
+// Authors
+
+.authors{
+
+}
+
+.authors__item{
+	display:inline-block;
+	color:$ui-light-grey;
+	margin-right:$spacing_sm;
+}
+
+.authors__name{
+
+}
+
+.authors__picture{
+	display:inline-block;
+	vertical-align:middle;
+	margin-bottom:0;
+	margin-right:$spacing_xxs;
+	object-fit:cover;
+	width:30px;
+	height:30px;
+	border-radius:100%;
+}

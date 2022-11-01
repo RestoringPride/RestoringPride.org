@@ -1,0 +1,23 @@
+/**
+	Social Icons
+*/
+
+.social-icons{
+	li{
+		display:inline-block;
+		margin-right:10px;
+		font-size:36px;
+	}
+}
+
+.social-icons__icon{
+	transition:transform 0.1s;
+	&:hover{
+		transform:scale(1.15);
+	}
+
+	span{
+		position:absolute;
+		top:-99999px;
+	}
+}

@@ -1,0 +1,18 @@
+/**
+	Blog Header
+*/
+
+.blog-header{
+	@media #{$breakpoint_md}{
+		display:grid;
+		grid-template-columns:max-content auto;
+	}
+}
+
+.blog-header__title{
+
+}
+
+.blog-header__categories{
+	justify-self:end;
+}
