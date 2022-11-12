@@ -1,0 +1,23 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#5D0F10",
+        "titleBar.activeBackground": "#821517",
+        "titleBar.activeForeground": "#FEFBFB"
+    },
+    "psi-header.config": {
+        "author": "David G. Moore, Jr.",
+        "authorEmail": "david@dgmjr.io"
+    },
+    "sshfs.configs": [
+        {
+            "name": "restoringpride",
+            "putty": true,
+            "host": "169.254.129.3",
+            "port": 2222,
+            "username": "root",
+            "password": true,
+            "label": "restoringpride",
+            "group": "restoringpride"
+        }
+    ]
+}
