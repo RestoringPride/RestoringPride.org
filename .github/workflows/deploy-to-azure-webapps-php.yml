@@ -31,6 +31,11 @@ env:
 
 permissions:
   contents: read
+  
+concurrency:
+  group: deploy-azure
+  cancel-in-progress: true
+  
 
 jobs:
   build:
