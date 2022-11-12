@@ -75,17 +75,17 @@ if (strtolower($mysql_sslconnect) != 'false' && !is_numeric(strpos($connectstr_d
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'foo bar baz quux ban' );
-define( 'SECURE_AUTH_KEY',  'foo bar baz quux foo bar baz' );
-define( 'LOGGED_IN_KEY',    'foo bar baz quux foo bar baz quux' );
-define( 'NONCE_KEY',        'Foo! Bar! Baz!' );
-define( 'AUTH_SALT',        'Foo! Bar! Baz! Quux!' );
-define( 'SECURE_AUTH_SALT', 'foo~bar~baz~quux' );
-define( 'LOGGED_IN_SALT',   'foo~bar~baz~quux' );
-define( 'NONCE_SALT',       'restoringpride.org-foo-bar-baz' );
 
-/**#@-*/
-
+$auth_key = getenv('AUTH_KEY');
+define( 'AUTH_KEY',         $auth_key );
+$secure_auth_key = getenv('SECURE_AUTH_KEY');
+define( 'SECURE_AUTH_KEY',  $secure_auth_key );
+$logger_in_key = getenv('LOGGED_IN_KEY');
+define( 'LOGGED_IN_KEY',  $logger_in_key   );
+$nonce_key = getenv('NONCE_KEY');
+define( 'NONCE_KEY',   $nonce_key      );
+$auth_salt = getenv('AUTH_SALT');
+define( 'AUTH_SALT',    $auth_salt     );
 /**
  * WordPress Database Table prefix.
  *
@@ -102,7 +102,6 @@ $table_prefix = 'rp_';
  * in their development environments.
  *
  * For information on other constants that can be used for debugging,
- * visit the documentation.
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
@@ -126,7 +125,7 @@ define('DOMAIN_CURRENT_SITE', $_SERVER['HTTP_HOST']);
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-        define( 'ABSPATH', __DIR__ . '/' );
+        define( 'ABSPATH', __FILE__ . '/' );
 }
 
 /** Sets up WordPress vars and included files. */

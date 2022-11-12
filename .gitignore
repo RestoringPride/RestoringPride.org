@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ignore everything in the root except the "wp-content" directory.
 !wp-content/
 
@@ -18,6 +17,8 @@ wp-content/themes/twenty*/
 # ignore node dependency directories
 node_modules/
 
+private/
+
 # ignore log files and databases
 *.log
 *.sql
@@ -25,4 +26,5 @@ node_modules/
 =======
 
 .DS_Store
->>>>>>> 88da077 (Initial commit)
+
+*.pfx
