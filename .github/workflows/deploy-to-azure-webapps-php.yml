@@ -53,7 +53,7 @@ jobs:
         uses: montudor/action-zip@v1
         
       - name: Zip output
-        run: zip -qq -r release.zip ./wp-content/ ./wp-includes/ ./wp-admin/ ./wp-activate.php ./wp-blog-header.php ./wp-comments-post.php ./wp-config-sample.php ./wp-cron.php ./wp-links-opml.php ./wp-load.php ./wp-login.php ./wp-mail.php ./wp-settings.php ./wp-signup.php ./wp-trackback.php ./xmlrpc.php
+        run: zip -qq -r release.zip ./wp-content/ ./wp-includes/ ./wp-admin/ ./wp-activate.php ./wp-blog-header.php ./wp-comments-post.php ./wp-config-sample.php ./wp-cron.php ./wp-links-opml.php ./wp-load.php ./wp-login.php ./wp-mail.php ./wp-settings.php ./wp-signup.php ./wp-trackback.php ./xmlrpc.php ./wp-config.php
         working-directory: ./files/httpdocs
         
       - name: Upload artifact for deployment job
