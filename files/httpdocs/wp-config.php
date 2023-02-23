@@ -1,25 +1,48 @@
 <?php
+/** Enable W3 Total Cache */
+define('WP_CACHE', true); // Added by W3 Total Cache
+
+
 /**
  * The base configuration for WordPress
  *
- * The wp-config.php creation script uses this file during the
- * installation. You don't have to use the web site, you can
- * copy this file to "wp-config.php" and fill in the values.
+ * The wp-config.php creation script uses this file during the installation.
+ * You don't have to use the web site, you can copy this file to "wp-config.php"
+ * and fill in the values.
  *
  * This file contains the following configurations:
  *
- * * MySQL settings
+ * * Database settings
  * * Secret keys
  * * Database table prefix
  * * ABSPATH
  *
- * @link https://codex.wordpress.org/Editing_wp-config.php
+ * @link https://wordpress.org/support/article/editing-wp-config-php/
  *
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
+//Using environment variables for memory limits
+$wp_memory_limit = (getenv('WP_MEMORY_LIMIT') && preg_match("/^[0-9]+M$/", getenv('WP_MEMORY_LIMIT'))) ? getenv('WP_MEMORY_LIMIT') : '128M';
+$wp_max_memory_limit = (getenv('WP_MAX_MEMORY_LIMIT') && preg_match("/^[0-9]+M$/", getenv('WP_MAX_MEMORY_LIMIT'))) ? getenv('WP_MAX_MEMORY_LIMIT') : '256M';
+
+/** General WordPress memory limit for PHP scripts*/
+define('WP_MEMORY_LIMIT', $wp_memory_limit );
+
+/** WordPress memory limit for Admin panel scripts */
+define('WP_MAX_MEMORY_LIMIT', $wp_max_memory_limit );
+
+
+//Using environment variables for DB connection information
+
+// ** Database settings - You can get this info from your web host ** //
+// connectstr_dbhost = getenv('DATABASE_HOST');
+// $connectstr_dbname = getenv('DATABASE_NAME');
+// $connectstr_dbusername = getenv('DATABASE_USERNAME');
+// $connectstr_dbpassword = getenv('DATABASE_PASSWORD');
+
 /** The name of the database for WordPress */
+
 define( 'DB_NAME', getenv('DB_NAME') );
 
 /** MySQL database username */
@@ -31,11 +54,19 @@ define( 'DB_PASSWORD', getenv('DB_PASSWORD') );
 /** MySQL hostname */
 define( 'DB_HOST', getenv('DB_HOST') );
 
+
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8mb4' );
+define( 'DB_CHARSET', 'utf8' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
+
+/** Enabling support for connecting external MYSQL over SSL*/
+$mysql_sslconnect = (getenv('DB_SSL_CONNECTION')) ? getenv('DB_SSL_CONNECTION') : 'true';
+if (strtolower($mysql_sslconnect) != 'false' && !is_numeric(strpos($connectstr_dbhost, "127.0.0.1")) && !is_numeric(strpos(strtolower($connectstr_dbhost), "localhost"))) {
+        define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
+}
+
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -46,6 +77,7 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
+
 define( 'AUTH_KEY',         getenv('AUTH_KEY') );
 define( 'SECURE_AUTH_KEY',  getenv('SECURE_AUTH_KEY') );
 define( 'LOGGED_IN_KEY',    getenv('LOGGED_IN_KEY') );
@@ -54,6 +86,7 @@ define( 'AUTH_SALT',        getenv('AUTH_SALT') );
 define( 'SECURE_AUTH_SALT', getenv('SECURE_AUTH_SALT') );
 define( 'LOGGED_IN_SALT',   getenv('LOGGED_IN_SALT') );
 define( 'NONCE_SALT',       getenv('NONCE_SALT') );
+
 
 /**#@-*/
 
@@ -73,18 +106,32 @@ $table_prefix = 'rp_';
  * in their development environments.
  *
  * For information on other constants that can be used for debugging,
- * visit the Codex.
+ * visit the documentation.
  *
- * @link https://codex.wordpress.org/Debugging_in_WordPress
+ * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
 
-/* That's all, stop editing! Happy publishing. */
+/* That's all, stop editing! Happy blogging. */
+/**https://developer.wordpress.org/reference/functions/is_ssl/ */
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
+        $_SERVER['HTTPS'] = 'on';
+
+$http_protocol='http://';
+if (!preg_match("/^localhost(:[0-9])*/", $_SERVER['HTTP_HOST']) && !preg_match("/^127\.0\.0\.1(:[0-9])*/", $_SERVER['HTTP_HOST'])) {
+        $http_protocol='https://';
+}
+
+//Relative URLs for swapping across app service deployment slots
+define('WP_HOME', $http_protocol . $_SERVER['HTTP_HOST']);
+define('WP_SITEURL', $http_protocol . $_SERVER['HTTP_HOST']);
+define('WP_CONTENT_URL', '/wp-content');
+define('DOMAIN_CURRENT_SITE', $_SERVER['HTTP_HOST']);
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+        define( 'ABSPATH', __DIR__ . '/' );
 }
 
 /** Sets up WordPress vars and included files. */
-require_once( ABSPATH . 'wp-settings.php' );
+require_once ABSPATH . 'wp-settings.php';
