@@ -42,17 +42,16 @@ define('WP_MAX_MEMORY_LIMIT', $wp_max_memory_limit );
 // $connectstr_dbpassword = getenv('DATABASE_PASSWORD');
 
 /** The name of the database for WordPress */
-
-define( 'DB_NAME', getenv('DB_NAME') );
+define( 'DB_NAME', getenv('AZURE_MYSQL_DBNAME') );
 
 /** MySQL database username */
-define( 'DB_USER', getenv('DB_USER') );
+define( 'DB_USER', getenv('AZURE_MYSQL_USERNAME') );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', getenv('DB_PASSWORD') );
+define( 'DB_PASSWORD', getenv('AZURE_MYSQL_PASSWORD') );
 
 /** MySQL hostname */
-define( 'DB_HOST', getenv('DB_HOST') );
+define( 'DB_HOST', getenv('AZURE_MYSQL_HOST') );
 
 
 /** Database Charset to use in creating database tables. */
