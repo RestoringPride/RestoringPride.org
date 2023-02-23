@@ -36,22 +36,22 @@ define('WP_MAX_MEMORY_LIMIT', $wp_max_memory_limit );
 //Using environment variables for DB connection information
 
 // ** Database settings - You can get this info from your web host ** //
-// connectstr_dbhost = getenv('DATABASE_HOST');
-// $connectstr_dbname = getenv('DATABASE_NAME');
-// $connectstr_dbusername = getenv('DATABASE_USERNAME');
-// $connectstr_dbpassword = getenv('DATABASE_PASSWORD');
+$connectstr_dbhost = getenv('AZURE_MYSQL_HOST');
+$connectstr_dbname = getenv('AZURE_MYSQL_DBNAME');
+$connectstr_dbusername = getenv('AZURE_MYSQL_USERNAME');
+$connectstr_dbpassword = getenv('AZURE_MYSQL_PASSWORD');
 
 /** The name of the database for WordPress */
-define( 'DB_NAME', getenv('AZURE_MYSQL_DBNAME') );
+define( 'DB_NAME', $connectstr_dbname );
 
 /** MySQL database username */
-define( 'DB_USER', getenv('AZURE_MYSQL_USERNAME') );
+define( 'DB_USER', $connectstr_dbusername );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', getenv('AZURE_MYSQL_PASSWORD') );
+define( 'DB_PASSWORD', $connectstr_dbpassword );
 
 /** MySQL hostname */
-define( 'DB_HOST', getenv('AZURE_MYSQL_HOST') );
+define( 'DB_HOST', $connectstr_dbhost );
 
 
 /** Database Charset to use in creating database tables. */
@@ -76,15 +76,22 @@ if (strtolower($mysql_sslconnect) != 'false' && !is_numeric(strpos($connectstr_d
  *
  * @since 2.6.0
  */
-
-define( 'AUTH_KEY',         getenv('AUTH_KEY') );
-define( 'SECURE_AUTH_KEY',  getenv('SECURE_AUTH_KEY') );
-define( 'LOGGED_IN_KEY',    getenv('LOGGED_IN_KEY') );
-define( 'NONCE_KEY',        getenv('NONCE_KEY') );
-define( 'AUTH_SALT',        getenv('AUTH_SALT') );
-define( 'SECURE_AUTH_SALT', getenv('SECURE_AUTH_SALT') );
-define( 'LOGGED_IN_SALT',   getenv('LOGGED_IN_SALT') );
-define( 'NONCE_SALT',       getenv('NONCE_SALT') );
+$auth_key = getenv('AUTH_KEY');
+define( 'AUTH_KEY',         $auth_key );
+$secure_auth_key = getenv('SECURE_AUTH_KEY');
+define( 'SECURE_AUTH_KEY',  $secure_auth_key );
+$logger_in_key = getenv('LOGGED_IN_KEY');
+define( 'LOGGED_IN_KEY',  $logger_in_key   );
+$nonce_key = getenv('NONCE_KEY');
+define( 'NONCE_KEY',   $nonce_key      );
+$auth_salt = getenv('AUTH_SALT');
+define( 'AUTH_SALT',    $auth_salt     );
+$secure_auth_salt = getenv('SECURE_AUTH_SALT');
+define( 'SECURE_AUTH_SALT', $secure_auth_salt );
+$logged_in_salt = getenv('LOGGED_IN_SALT');
+define( 'LOGGED_IN_SALT',  $logged_in_salt  );
+$nonce_salt = getenv('NONCE_SALT');
+define( 'NONCE_SALT',    $nonce_salt    );
 
 
 /**#@-*/
@@ -129,7 +136,7 @@ define('DOMAIN_CURRENT_SITE', $_SERVER['HTTP_HOST']);
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-        define( 'ABSPATH', __DIR__ . '/' );
+        define( 'ABSPATH', __FILE__ . '/' );
 }
 
 /** Sets up WordPress vars and included files. */
