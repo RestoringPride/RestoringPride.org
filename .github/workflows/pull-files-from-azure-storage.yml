@@ -1,0 +1,55 @@
+on:
+  - workflow_call
+  - workflow_dispatch
+  
+name: Pull updated Files from Azure Storage
+run-name: Pull updated Files from Azure Storage ${{ vars.GITHUB_RUN_ID }} - ${{ vars.GITHUB_SHA }}
+
+jobs:
+  push-files:
+    name: Pull files from Azure storage that have changed
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout the latest version of the repo
+      uses: actions/checkout@v3
+      
+#    - name: Azure Login
+#      uses: Azure/login@v1.4.6
+#      with:
+#        # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+#        creds: '{"clientId":"${{ secrets.AZURE_SERVICE_PRINCIPAL_GUID }}", "clientSecret":"${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}", "tenantId":"${{ secrets.AZURE_TENANT_ID }}", "subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}"}'
+
+#     - name: Download wp-content/themes
+#       # You may pin to the exact commit or the version.
+#       uses: rnakamine/azure-files-upload@v1.0.0
+#       with:
+#         # The connection string for the storage account.
+#         connection_string: ${{ secrets.AZURE_FILES_CONNECTION_STRING }}
+#         # The directory to upload files from.
+#         source: ./files/httpdocs/wp-content/themes
+#         # The destination of the upload operation.
+#         destination: wp-content-themes
+        
+#     - name: Upload wp-content/plugins
+#       # You may pin to the exact commit or the version.
+#       uses: rnakamine/azure-files-upload@v1.0.0
+#       with:
+#         # The connection string for the storage account.
+#         connection_string: ${{ secrets.AZURE_FILES_CONNECTION_STRING }}
+#         # The directory to upload files from.
+#         source: ./files/httpdocs/wp-content/plugins
+#         # The destination of the upload operation.
+#         destination: wp-content-plugins
+      
+#     - name: Upload wp-content/uploads
+#       # You may pin to the exact commit or the version.
+#       uses: rnakamine/azure-files-upload@v1.0.0
+#       with:
+#         # The connection string for the storage account.
+#         connection_string: ${{ secrets.AZURE_FILES_CONNECTION_STRING }}
+#         # The directory to upload files from.
+#         source: ./files/httpdocs/wp-content/uploads
+#         # The destination of the upload operation.
+#         destination: wp-content-uploads
+      # TODO

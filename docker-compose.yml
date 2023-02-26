@@ -1,0 +1,14 @@
+name: restoringpride
+
+services:
+  restoringpride:
+    container_name: restoringpride
+    image: restoringpride:latest
+    # build: /home/site/wwwroot/
+    restart: unless-stopped
+    working_dir: ${APACHE_DOCUMENT_ROOT}
+    ports:
+      - "80:8081"
+    volumes:
+      - ${APACHE_DOCUMENT_ROOT}
+    

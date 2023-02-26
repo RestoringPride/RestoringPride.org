@@ -1,0 +1,65 @@
+on:
+  - workflow_call
+  - workflow_dispatch
+
+name: Build & push image to ACR
+run-name: Build & Push Image to ACR ${{ github.head_ref }} - ${{ github.run_id }} - ${{ github.sha }}
+
+
+
+jobs:
+  build-within-azr:
+    name: Build and push the image to Azure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build the container directly in the registry
+        uses: Azure/acr-build@v1
+        with:
+          # Service Principal with Contributor role on the ACR
+          service_principal: ${{ secrets.AZURE_SERVICE_PRINCIPAL_GUID }}
+          # Service Principal password
+          service_principal_password: ${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}
+          # Azure Container Registry tenant
+          tenant: ${{ secrets.AZURE_TENANT_ID }}
+          # The name of the ACR, minus the .azurecr.io
+          registry: restoringpride
+          # Repository to use
+          repository: restoringpride
+          # Github access token for private repositories
+          git_access_token: ${{ secrets.GITHUB_TOKEN }}
+          # Docker image name
+          # image: restoringpride # optional
+          # Docker image tag, default to the commit SHA
+          tag: ${{ github.sha }} # optional
+          # Branch to build from, defaults to master
+          branch: deployment # optional
+          # The folder in the Github repo that holds the source
+          folder: .
+          # The location of the Dockerfile; defaults to ./Dockerfile
+          dockerfile: ./Dockerfile # optional
+      # JSON specifying key=value pairs as as Docker build arguments
+#        build_args: # optional    
+  
+#      - name: Checkout the latest version of the repo
+#        uses: actions/checkout@v3
+      
+    
+
+#      - name: Docker Login
+#        uses: docker/login-action@v2.1.0
+#        with:
+#          # Server address of Docker registry. If not set then will default to Docker Hub
+#          registry: restoringpride.azurecr.io
+#          # Username used to log against the Docker registry
+#          username: ${{ secrets.AZURE_DEPLOYMENT_GUID }} # optional
+#          # Password or personal access token used to log against the Docker registry
+#          password: ${{ secrets.AZURE_DEPLOYMENT_SECRET }} # optional
+
+#      - name: Build the Docker image
+#        run: docker build . -t restoringpride.azurecr.io/restoringpride:${{ github.sha }} -t restoringpride.azurecr.io/restoringpride:latest
+
+#      - name: Push the docker image to Azure
+#        run: |
+#          docker push restoringpride.azurecr.io/restoringpride:${{ github.sha }} 
+#          docker push restoringpride.azurecr.io/restoringpride:latest

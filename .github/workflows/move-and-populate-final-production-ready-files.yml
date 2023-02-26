@@ -1,0 +1,51 @@
+name: Move & Populate Final Production Files 
+run-name: Move & Populate Final Production Files (${{ github.run_id }})
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  actions: write
+  id-token: write
+  contents: read
+
+concurrency:
+  group: ${{ github.ref_name	}}
+  cancel-in-progress: true
+  
+jobs:
+
+  populate-the-final-production-files:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3.4.0
+
+    - name: Move and populate the final production files=
+      run: | 
+        echo GITHUB_REVISION=${{ github.revision }} >> .env;
+        echo GITHUB_REPO_URL=${{ github.repository_url }} >> .env;
+        echo GITHUB_SHA=${{ github.sha }} >> .env;
+        echo GITHUB_RUN_ID=${{ github.run_id }} >> .env;
+        echo GITHUB_RUN_NUMBER=${{ github.run_number }} >> .env;
+        echo GITHUB_RUN_ATTEMPT=${{ github.run_attempt }} >> .env;
+        echo "LABEL=${{ github.sha }}" >> .env;
+
+    - name: Push the changes to a "deployment" branch
+      uses: github-actions-x/commit@v2.9
+      with:
+        # Github Token with commit access
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        # Override branch to push to
+        push-branch: deployment
+        # Specify commit messafe
+        commit-message: For deployemnt only
+        # Force add files, useful for adding ignored files.
+        force-add: true
+        # Force push.
+        force-push: true
+        # Pull and rebase before commiting. Useful when using commit inside matrix.
+        email: committerbot@restoringpride.org 
+        name: Resroring Pride Commit Bot 

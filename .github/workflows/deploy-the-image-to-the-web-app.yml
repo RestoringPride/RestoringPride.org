@@ -1,0 +1,35 @@
+
+on:
+  - workflow_call
+  - workflow_dispatch
+
+name: Deploy the image to the Web app
+run-name: Deploy the image to the Web app (%{{ github.run_id }})
+
+jobs:
+  deploy-to-web-app:
+    runs-on: ubuntu-latest
+    name: Deploy the image to the Web app
+
+    steps:
+      - name: Azure Login
+        run: az login --service-principal \
+            --username "${{ secrets.AZURE_SERVICE_PRINCIPAL_URI }}" \
+            --password "${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}" \
+            --tenant "${{ secrets.AZURE_TENANT_DOMAIN }}"
+
+      - name: Setup Docker Compose
+        run: |
+          az webapp config container set \
+          --docker-custom-image-name  "restoringpride:${{ github.sha }}" \
+          --docker-registry-server-password ${{ secrets.AZURE_DEPLOYMENT_SECRET }} \
+          --docker-registry-server-url https://restoringpride.azurecr \
+          --docker-registry-server-user ${{ secrets.AZURE_DEPLOYMENT_USERNAME }} \
+          --enable-app-service-storage true \
+          --resource-group "RestoringPride" \
+          --multicontainer-config-file "/home/docker-compose.yml" \
+          --multicontainer-config-type COMPOSE \
+          --name ${{ secrets.AZURE_APP_NAME }} \
+          --resource-group ${{ secrets.AZURE_RESOURCE_GROUP_NAME }} \
+          --slot Production \
+          --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
