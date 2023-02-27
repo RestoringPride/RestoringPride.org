@@ -105,7 +105,7 @@ $table_prefix = 'rp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false );
 
 /* That's all, stop editing! Happy blogging. */
 /**https://developer.wordpress.org/reference/functions/is_ssl/ */
