@@ -1,0 +1,12 @@
+name: restoringpride
+
+services:
+  wordpress:
+    image: restoringpride:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./wp-content/themes:/home/site/wwwroot/wp-content/themes
+      - ./wp-content/plugins:/home/site/wwwroot/wp-content/plugins
+      - ./wp-content/uploads:/home/site/wwwroot/wp-content/uploads
+      - ./wp-config.php:/home/site/wwwroot/wp-config.php
