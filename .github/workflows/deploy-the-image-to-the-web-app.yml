@@ -14,7 +14,7 @@ jobs:
     - name: Deploy the image to the Web app
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'restoringpride-wp'
+        app-name: 'restoringpridedotorg'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         images: 'restoringpride.azurecr.io/restoringpride:latest'
         
