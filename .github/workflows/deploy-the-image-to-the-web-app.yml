@@ -17,3 +17,4 @@ jobs:
         app-name: 'restoringpride-wp'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         images: 'restoringpride.azurecr.io/restoringpride:latest'
+        
