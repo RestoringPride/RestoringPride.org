@@ -1,11 +1,13 @@
 on:
-  workflow_call:
+  - workflow_call
+  - workflow_dispatch
   
 name: Deploy the image to the Web app
+run-name: Deploy the image to the Web app ${{ env.GITHUB_RUN_ID }} - ${{ env.GITHUB_SHA }}
 
 jobs:
   deploy-to-web-app:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     name: Deploy the image to the Web app
     steps:
     
