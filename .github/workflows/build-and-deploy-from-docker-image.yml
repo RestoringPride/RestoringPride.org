@@ -58,7 +58,7 @@ jobs:
 
   push-files:
     name: Push extra files to Azure to override the defaults
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
     
     steps:
