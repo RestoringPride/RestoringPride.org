@@ -10,10 +10,10 @@ COPY ./wp-config.php /home/site/wwwroot/wp-config.php
 COPY ./startup.sh /home/startup.sh
 
 # Install the PHP extensions we need
-RUN apt-get update && apt-get install -y \
-	certbot \
-	python3-certbot-nginx \
-	openssh-server
+# RUN apt-get update && apt-get install -y \
+# 	certbot \
+# 	python3-certbot-nginx \
+# 	openssh-server
 
 # RUN rm -rf /home/site/wwwroot/
 # RUN cp -r /var/www/html/ /home/site/wwwroot/
