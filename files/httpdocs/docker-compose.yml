@@ -5,6 +5,8 @@ services:
     image: restoringpride.azurecr.io/restoringpride:latest
     ports:
       - "80:8081"
+     volumes:
+      wordpress:/home/site/wwwroot/
 
   openssh-server:
     image: lscr.io/linuxserver/openssh-server:latest
