@@ -2,12 +2,20 @@ on:
   - workflow_call
   - workflow_dispatch
   
- jobs:
+name: Send finished webhook to Azure
+run-name: Send finished webhook to Azure ${{ vars.GITHUB_RUN_ID }} - ${{ vars.GITHUB_SHA }}
+  
+jobs:
+  send-finished-webhook:
+    name: Send finished webhook to Azure
+    runs-on: ubuntu-latest
+
     steps:
+
       - name: Webhook Trigger
       # You may pin to the exact commit or the version.
         uses: zzzze/webhook-trigger@v1.0.0
-        with:
+          with:
           # Data to be posted
           data: '{vars}'
           # Endpoint URL
