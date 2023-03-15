@@ -2,8 +2,8 @@ on:
   - workflow_call
   - workflow_dispatch
     
-name: Build and push the Docker image to ACR
-run-name: Build & Push Docker Image ${{ vars.GITHUB_RUN_ID }} - ${{ vars.GITHUB_SHA }}
+name: Build & push image to ACR
+run-name: Build & Push Image to ACR ${{ vars.GITHUB_RUN_ID }} - ${{ vars.GITHUB_SHA }}
 
 jobs:
 
