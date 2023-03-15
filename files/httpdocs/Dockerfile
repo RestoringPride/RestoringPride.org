@@ -12,3 +12,5 @@ COPY ./wp-config.php /home/site/wwwroot/wp-config.php
 RUN apt-get update && apt-get install -y \
 	certbot \
 	python3-certbot-nginx
+
+RUN ln -s /var/www/html/ /home/site/wwwroot/
