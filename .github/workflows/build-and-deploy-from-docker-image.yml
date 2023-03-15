@@ -33,6 +33,12 @@ jobs:
       run: |
         docker push restoringpride.azurecr.io/restoringpride:${{ github.sha }} 
         docker push restoringpride.azurecr.io/restoringpride:latest
+        
+  deploy-to-web-app:
+    runs-on: ubuntu:latest
+    name: Deploy the image to the Web app
+    
+    steps:
     
     - name: Deploy the image to the Web app
       uses: azure/webapps-deploy@v2
