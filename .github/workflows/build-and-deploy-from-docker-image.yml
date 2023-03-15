@@ -6,6 +6,15 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions: 
+  actions: write
+  id-token: write
+  contents: read
+
+concurrency: 
+  group: Build and push the Docker image to Azure
+  cancel-in-progress: true
+
 jobs:
 
   build:
