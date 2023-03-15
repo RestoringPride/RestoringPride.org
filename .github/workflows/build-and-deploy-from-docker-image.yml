@@ -29,3 +29,14 @@ jobs:
   deploy-to-web-app:
     uses: Restoring-Pride/.github/workflows/deploy-the-image-to-the-web-app.yml@main
     needs: deploy-files
+    
+  done:
+    runs-on: ubuntu-latest
+    needs: deploy-to-web-app
+    
+    steps:
+      - name: Say I'm done!
+      - run: echo "I'm fucking DONE, BITCHES!!!"
+    
+    
+  
