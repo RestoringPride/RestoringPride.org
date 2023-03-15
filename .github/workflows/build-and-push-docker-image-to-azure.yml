@@ -3,7 +3,7 @@ on:
   - workflow_dispatch
     
 name: Build & push image to ACR
-run-name: Build & Push Image to ACR ${{ vars.GITHUB_RUN_ID }} - ${{ vars.GITHUB_SHA }}
+run-name: Build & Push Image to ACR ${{ github.head_ref }} - ${{ github.run_id }} - ${{ github.sha }} 
 
 jobs:
 
