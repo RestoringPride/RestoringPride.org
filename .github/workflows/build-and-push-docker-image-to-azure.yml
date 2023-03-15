@@ -1,8 +1,9 @@
 on:
-  workflow_call:
+  - workflow_call
+  - workflow_dispatch
     
 name: Build and push the Docker image to Azure
-run-name: Build & Push Docker Image ${{ env.GITHUB_RUN_ID }} - ${{ env.GITHUB_SHA }}
+run-name: Build & Push Docker Image ${{ vars.GITHUB_RUN_ID }} - ${{ vars.GITHUB_SHA }}
 
 jobs:
 
