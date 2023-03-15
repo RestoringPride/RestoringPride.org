@@ -27,7 +27,7 @@ jobs:
         password: ${{ secrets.AZURE_DEPLOYMENT_SECRET }} # optional
   
     - name: Build the Docker image
-      run: docker build ./files/httpdocs/Dockerfile -t restoringpride.azurecr.io/restoringpride:${{ github.sha }} -t restoringpride.azurecr.io/restoringpride:latest
+      run: docker build ./files/httpdocs/ -t restoringpride.azurecr.io/restoringpride:${{ github.sha }} -t restoringpride.azurecr.io/restoringpride:latest
       
     - name: Push the docker image to Azure
       run: |
