@@ -3,7 +3,7 @@ on:
   - workflow_dispatch
   
 name: Deploy the image to the Web app
-run-name: Deploy the image to the Web app ${{ env.GITHUB_RUN_ID }} - ${{ env.GITHUB_SHA }}
+run-name: Deploy the image to the Web app ${{ vars.GITHUB_RUN_ID }} - ${{ vars.GITHUB_SHA }}
 
 jobs:
   deploy-to-web-app:
