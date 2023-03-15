@@ -18,15 +18,16 @@ concurrency:
 jobs:
 
   call-build-docker-image:
-    uses: Restoring-Pride/RestoringPride.org/.github/workflows/build-and-push-docker-image-to-azure.yml@main
     name: Build & deploy the Docker image to ACR
+    uses: Restoring-Pride/RestoringPride.org/.github/workflows/build-and-push-docker-image-to-azure.yml@main
     
   deploy-files:
-    uses: Restoring-Pride/RestoringPride.org/.github/workflows/push_files_to_azure_storage.yml@main
     name: Push files to Azure storage
+    uses: Restoring-Pride/RestoringPride.org/.github/workflows/push_files_to_azure_storage.yml@main
     needs: call-build-docker-image
     
   deploy-to-web-app:
+    name: Deploy to the Web app
     uses: Restoring-Pride/RestoringPride.org/.github/workflows/deploy-the-image-to-the-web-app.yml@main
     needs: deploy-files
     
