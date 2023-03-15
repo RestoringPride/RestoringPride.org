@@ -3,7 +3,7 @@ on:
   - workflow_dispatch
   
 name: Push Files to Azure Storage
-run-name: Build & Push Docker Image ${{ env.GITHUB_RUN_ID }} - ${{ env.GITHUB_SHA }}
+run-name: Build & Push Docker Image ${{ vars.GITHUB_RUN_ID }} - ${{ vars.GITHUB_SHA }}
 
 jobs:
   push-files:
