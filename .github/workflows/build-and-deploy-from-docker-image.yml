@@ -42,20 +42,7 @@ jobs:
       run: |
         docker push restoringpride.azurecr.io/restoringpride:${{ github.sha }} 
         docker push restoringpride.azurecr.io/restoringpride:latest
-        
-  deploy-to-web-app:
-    runs-on: ubuntu:latest
-    name: Deploy the image to the Web app
-    needs: build
-    steps:
-    
-    - name: Deploy the image to the Web app
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'restoringpride-wp'
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        images: 'restoringpride.azurecr.io/restoringpride:latest'
-
+ 
   push-files:
     name: Push extra files to Azure to override the defaults
     runs-on: ubuntu-latest
@@ -93,6 +80,16 @@ jobs:
         source: ./files/httpdocs/wp-content/plugins
         # The destination of the upload operation.
         destination: restoringpride/wp-content/plugins
-        
-    #- name: Upload wp-config.php
-    #  run: azcopy copy ./files/httpdocs/ 'https://restoringpridestorage.file.core.windows.net/restoringpride' --include-path wp_config.php
+      
+  deploy-to-web-app:
+    runs-on: ubuntu:latest
+    name: Deploy the image to the Web app
+    needs: push-files
+    steps:
+    
+    - name: Deploy the image to the Web app
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'restoringpride-wp'
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        images: 'restoringpride.azurecr.io/restoringpride:latest'
