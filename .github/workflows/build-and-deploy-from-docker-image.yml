@@ -94,5 +94,5 @@ jobs:
         # The destination of the upload operation.
         destination: restoringpride/wp-content/plugins
         
-    - name: Upload wp-config.php
-      run: azcopy copy ./files/httpdocs/ 'https://restoringpridestorage.file.core.windows.net/restoringpride' --include-path wp_config.php
+    #- name: Upload wp-config.php
+    #  run: azcopy copy ./files/httpdocs/ 'https://restoringpridestorage.file.core.windows.net/restoringpride' --include-path wp_config.php
