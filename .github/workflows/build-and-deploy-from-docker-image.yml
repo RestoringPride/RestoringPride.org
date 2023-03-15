@@ -1,10 +1,13 @@
 name: Build & deploy the whole shebang
+run-name: Build & deploy the whole shebang ${{ github.head_ref }} - ${{ github.run_id }} - ${{ github.sha }} 
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  
 
 permissions: 
   actions: write
@@ -17,21 +20,15 @@ concurrency:
 
 jobs:
 
-  call-build-docker-image:
+  build-docker-image:
     name: Build & deploy the Docker image to ACR
     uses: Restoring-Pride/RestoringPride.org/.github/workflows/build-and-push-docker-image-to-azure.yml@main
-    secrets: inherit
-    
-  deploy-files:
-    name: Push files to Azure storage
-    uses: Restoring-Pride/RestoringPride.org/.github/workflows/push_files_to_azure_storage.yml@main
-    needs: call-build-docker-image
     secrets: inherit
     
   deploy-to-web-app:
     name: Deploy to the Web app
     uses: Restoring-Pride/RestoringPride.org/.github/workflows/deploy-the-image-to-the-web-app.yml@main
-    needs: deploy-files
+    needs: build-docker-image
     secrets: inherit
     
   done:
