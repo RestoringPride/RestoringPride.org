@@ -2,16 +2,27 @@ name: restoringpride
 
 services:
   wordpress:
+    container_name: wordpress
     image: restoringpride.azurecr.io/restoringpride:latest
+    build: /home/site/wwwroot/
+    restart: unless-stopped
+    runtime: PHP
+    working_dir: /home/site/wwwroot/
     ports:
       - "80:8081"
-     volumes:
-      wordpress:/home/site/wwwroot/
+    volumes:
+      - wordpress:/home/site/wwwroot/
+
+  wordpress-cli:
+    image: wordpress:cli
+    container_name: wordpress-cli
+    restart: unless-stopped
 
   openssh-server:
     image: lscr.io/linuxserver/openssh-server:latest
     container_name: openssh-server
-    hostname: openssh-server #optional
+    hostname: openssh #optional
+    # domainname: openssh #optional
     environment:
       - PUID=1000
       - PGID=1000
