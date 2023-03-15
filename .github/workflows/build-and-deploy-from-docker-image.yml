@@ -95,16 +95,4 @@ jobs:
         destination: restoringpride/wp-content/plugins
         
     - name: Upload wp-config.php
-      # You may pin to the exact commit or the version.
-      # uses: rnakamine/azure-files-upload@5c1081adbe0d65b9c0a8be234f0e17ae93c8b741
-      uses: rnakamine/azure-files-upload@v1.0.0
-      with:
-        # The connection string for the storage account.
-        connection_string: ${{ secrets.AZURE_FILES_CONNECTION_STRING }}
-        # The directory to upload files from.
-        source: ./files/httpdocs/wp-config.php
-        # The destination of the upload operation.
-        destination: restoringpride/wp-config.php
-  
-    
-      
+      run: azcopy copy ./files/httpdocs/ 'https://restoringpridestorage.file.core.windows.net/restoringpride' --include-path wp_config.php
