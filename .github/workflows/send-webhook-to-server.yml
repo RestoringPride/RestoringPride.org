@@ -3,7 +3,7 @@ on:
   - workflow_dispatch
   
 name: Send finished webhook to Azure
-run-name: Send finished webhook to Azure ${{ vars.GITHUB_RUN_ID }} - ${{ vars.GITHUB_SHA }}
+run-name: Send finished webhook to Azure {{ github.head_ref }} - ${{ github.run_id }} - ${{ github.sha }} 
   
 jobs:
   send-finished-webhook:
@@ -23,7 +23,7 @@ jobs:
           # Content Type
           contentType: application/json # optional
           # Request Body as JSON String
-          data: "{'GITHUB_ACTOR':'${{ vars.GITHUB_ACTOR }}', 'GITHUB_BASE_REF': '${{ vars.GITHUB_BASE_REF }}', 'GITHUB_ENV': '${{ vars.GITHUB_ENV }}', 'GITHUB_REF': '${{ vars.GITHUB_REF }}',  'GITHUB_RUN_ID': '${{ vars.GITHUB_RUN_ID }}', 'GITHUB_SHA': '${{ vars.GITHUB_SHA }}'}" # optional, default is {}
+          data: "{'GITHUB_ACTOR':'${{ github.actor }}', 'GITHUB_HEAD_REF': '${{ github.head_ref }}', 'GITHUB_ENV': '${{ github.env }}', 'GITHUB_REF': '${{ github.sha }}'}" # optional, default is {}
           # Map of absolute file paths as JSON String
           #files: # optional, default is {}
           # A single absolute file path
