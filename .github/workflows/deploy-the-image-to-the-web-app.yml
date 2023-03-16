@@ -26,7 +26,7 @@ jobs:
           --docker-registry-server-url https://restoringpride.azurecr \
           --docker-registry-server-user ${{ secrets.AZURE_DEPLOYMENT_USERNAME }} \
           --enable-app-service-storage true \
-          # [--ids]
+          --resource-group "RestoringPride" \
           --multicontainer-config-file "/home/docker-compose.yml" \
           --multicontainer-config-type COMPOSE \
           --name ${{ secrets.AZURE_APP_NAME }} \
