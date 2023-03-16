@@ -14,8 +14,8 @@ jobs:
       - name: Azure Login
         run: az login --service-principal \
             --username "${{ secrets.AZURE_SERVICE_PRINCIPAL_URI }}" \
-            --password '${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}" \
-            --tenant '${{ secrets.AZURE_TENANT_DOMAIN }}"
+            --password "${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}" \
+            --tenant "${{ secrets.AZURE_TENANT_DOMAIN }}"
 #        with:
 #          # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
 #          creds: '{"clientId":"${{ secrets.AZURE_DEPLOYMENT_GUID }}","clientSecret":"${{ secrets.AZURE_DEPLOYMENT_SECRET }}","subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.AZURE_TENANT_ID }}"}'
