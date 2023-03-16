@@ -6,7 +6,6 @@ services:
     image: restoringpride.azurecr.io/restoringpride:${LABEL}
     build: ${APACHE_DOCUMENT_ROOT}
     restart: unless-stopped
-    runtime: PHP
     working_dir: ${APACHE_DOCUMENT_ROOT}
     ports:
       - "80:8081"
