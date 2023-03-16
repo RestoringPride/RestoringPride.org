@@ -23,7 +23,9 @@ jobs:
 
       - name: Setup Docker /home/docker-compose.yml
         run: az webapp config container set \
+            --docker-custom-image-name "restoringpride"
+            --docker-registry-server-url https://restoringpride.azurecr.io
+            --docker-registry-server-user ${{ secrets.AZURE_DEPLOYMENT_GUID }}
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP_NAME }} \
             --name ${{ secrets.AZURE_APP_NAME }} \
-            --multicontainer-config-type compose \
-            --multicontainer-config-file /home/docker-compose.yml
+            --multicontainer-config-type compose
