@@ -1,23 +1,22 @@
 FROM wordpress:latest as base
 
-WORKDIR = "./files/httpdocs"
+ENV APACHE_DOCUMENT_ROOT /home/site/wwwroot/
 
 # copy different files into the image
-RUN mkdir -p /home/site/wwwroot/wp-content/themes/
-RUN mkdir -p /home/site/wwwroot/wp-content/plugins/
-RUN mkdir -p /home/site/wwwroot/wp-content/uploads/
-COPY ./wp-content/themes/** /home/site/wwwroot/wp-content/themes/
-COPY ./wp-content/plugins/** /home/site/wwwroot/wp-content/plugins/
-COPY ./wp-content/uploads/** /home/site/wwwroot/wp-content/uploads/
+RUN mkdir -p ${APACHE_DOCUMENT_ROOT}wp-content/themes/
+RUN mkdir -p ${APACHE_DOCUMENT_ROOT}wp-content/plugins/
+RUN mkdir -p ${APACHE_DOCUMENT_ROOT}wp-content/uploads/
+COPY ./files/httpdocs/wp-content/themes/** ${APACHE_DOCUMENT_ROOT}wp-content/themes/
+COPY ./files/httpdocs/wp-content/plugins/** ${APACHE_DOCUMENT_ROOT}wp-content/plugins/
+COPY ./files/httpdocs/wp-content/uploads/** ${APACHE_DOCUMENT_ROOT}wp-content/uploads/
 
-WORKDIR "."
-COPY ./docker-compose.yml /home/docker-compose.yml
+COPY docker-compose.yml /home/docker-compose.yml
 
 # nnstall the wordpresss CLI
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar; \
 	php wp-cli.phar --info; \
 	chmod +x wp-cli.phar; \
 	sudo mv wp-cli.phar /usr/local/bin/wp; \
-	mkdir -p /home/wp-cli/; \
+	mkdir -p ${APACHE_DOCUMENT_ROOT}../../wp-cli/; \
 	curl https://raw.githubusercontent.com/wp-cli/wp-cli/main/utils/wp-completion.bash -o /usr/local/bin/wp/wp-completion.bash; \
 	echo "source /usr/local/bin/wp/wp-completion.bash" >> ~/.bash_profile;
