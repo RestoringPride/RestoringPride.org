@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Azure Login
         run: az login --service-principal \
-            -u ${{ secrets.AZURE_SERVICE_PRINCIPAL_URI }} \
-            -p ${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }} \
+            --username ${{ secrets.AZURE_SERVICE_PRINCIPAL_URI }} \
+            --password ${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }} \
             --tenant ${{ secrets.AZURE_TENANT_DOMAIN }}
 #        with:
 #          # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
