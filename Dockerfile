@@ -13,10 +13,11 @@ COPY ./files/httpdocs/wp-content/uploads/** ${APACHE_DOCUMENT_ROOT}wp-content/up
 COPY docker-compose.yml /home/docker-compose.yml
 
 # nnstall the wordpresss CLI
-RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar; \
-	php wp-cli.phar --info; \
-	chmod +x wp-cli.phar; \
-	sudo mv wp-cli.phar /usr/local/bin/wp; \
-	mkdir -p ${APACHE_DOCUMENT_ROOT}../../wp-cli/; \
-	curl https://raw.githubusercontent.com/wp-cli/wp-cli/main/utils/wp-completion.bash -o /usr/local/bin/wp/wp-completion.bash; \
-	echo "source /usr/local/bin/wp/wp-completion.bash" >> ~/.bash_profile;
+RUN mkdir -p ${APACHE_DOCUMENT_ROOT}../../wp-cli/; \
+	curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar > ${APACHE_DOCUMENT_ROOT}../../wp-cli/wp-cli.phar; \
+	php ${APACHE_DOCUMENT_ROOT}../../wp-cli/wp-cli.phar --info; \
+	chmod +x ${APACHE_DOCUMENT_ROOT}../../wp-cli/wp-cli.phar; \
+	mkdir -p /usr/local/etc/wp-cli/; \
+	mv ${APACHE_DOCUMENT_ROOT}../../wp-cli/wp-cli.phar /usr/local/etc/wp-cli/; \
+	curl https://raw.githubusercontent.com/wp-cli/wp-cli/main/utils/wp-completion.bash -o /usr/local/etc/wp-cli/wp-completion.bash; \
+	echo "source /usr/local/etc/wp-cli/wp-completion.bash" >> ~/.bash_profile;
