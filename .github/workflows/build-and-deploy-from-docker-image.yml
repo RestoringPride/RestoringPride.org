@@ -18,6 +18,13 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  runs-on: ubuntu-latest
+    name: Move the .environement files to their proper places
+    runs: mv docker-compose-production.yml docker-compose-production.yml \
+       mv Dockerfile.produdcrion Dockerfile \ 
+      echo "LABEL=${{ github.sha }}" >> .env
+
+jobs:
   build-docker-image:
     name: Build & deploy the Docker image to ACR
     uses: Restoring-Pride/RestoringPride.org/.github/workflows/build-and-push-docker-image-to-azure.yml@main
