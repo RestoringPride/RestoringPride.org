@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set the label in the environment varialble
+      run: echo "LABEL=${{{ github.sha }}}" >> .env
     - name: Build the container directly in the registry
       uses: Azure/acr-build@v1
       with:
