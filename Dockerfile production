@@ -4,5 +4,6 @@ FROM wordpress:latest as wittdotenv
 
 RUN cat ${APP_ROOT}/.env > ${APACHE_DOCUMENT_ROOT}.env;
 RUN cat ${APP_ROOT}/production.env >> ${APACHE_DOCUMENT_ROOT}.env;
+RUN mb Dockerfile.production Dockerfile
 
 INCLUDE+ Dockerfule.base
