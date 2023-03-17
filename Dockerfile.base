@@ -1,6 +1,4 @@
-FROM wordpress:latest as witholdcontents
-
-RUN source .env
+FROM withdotenv as witholdcontents
 
 ADD ./files/httpdocs/wp-content/themes/ /usr/src/themes/
 ADD ./files/httpdocs/wp-content/plugins/ /usr/src/plugins/
@@ -29,8 +27,3 @@ RUN mkdir -p ${APP_ROOT}wp-cli/; \
 	mv ${APP_ROOT}wp-cli/wp-cli.phar /usr/local/etc/wp-cli/; \
 	curl https://raw.githubusercontent.com/wp-cli/wp-cli/main/utils/wp-completion.bash -o /usr/local/etc/wp-cli/wp-completion.bash; \
 	echo "source /usr/local/etc/wp-cli/wp-completion.bash" >> ~/.bash_profile;
-
-FROM withwpcli as withdotenv
-
-RUN cat ${APP_ROOT}/.env > ${APACHE_DOCUMENT_ROOT}.env;
-RUN cat ${APP_ROOT}/production.env >> ${APACHE_DOCUMENT_ROOT}.env;
