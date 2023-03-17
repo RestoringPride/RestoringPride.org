@@ -45,12 +45,12 @@ jobs:
   build-docker-image:
     needs: nove-files-to-their-proper-places
     name: Build & deploy the Docker image to ACR
-    uses: Restoring-Pride/RestoringPride.org/.github/workflows/build-and-push-docker-image-to-azure.yml@main
+    uses: Restoring-Pride/RestoringPride.org/.github/workflows/pull-the-repo-and-deploy-directly-within-ACR.yml@main
     secrets: inherit
 
   deploy-to-web-app:
     name: Deploy to the Web app
-    uses: Restoring-Pride/RestoringPride.org/.github/workflows/pull-the-repo-and-deploy-directly-within-ACR.yml@main
+    uses: Restoring-Pride/RestoringPride.org/.github/workflows/deploy-to-azure-webapps-php.yml@main
     needs: build-docker-image
     secrets: inherit
 
