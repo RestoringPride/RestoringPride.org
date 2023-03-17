@@ -24,16 +24,23 @@ jobs:
       - run: mv docker-compose-production.yml docker-compose-production.yml \
          mv Dockerfile.produdcrion Dockerfile \ 
          echo "LABEL=${{ github.sha }}" >> .env
-      - name: Cache the modifid output
-        uses: actions/cache@v2.1.8
+         
+      - name: Push the changes to a "deployment" branch
+        uses: github-actions-x/commit@v2.9
         with:
-          # A list of files, directories, and wildcard patterns to cache and restore
-          path: . 
-          # An explicit key for restoring and saving the cache
-          key: resroringpride
-          # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
-          restore-keys: restoringpride
-     
+          # Github Token with commit access
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Override branch to push to
+          push-branch: deployment
+          # Specify commit messafe
+          commit-message: For deplotyemnt only
+          # Force add files, useful for adding ignored files.
+          force-add: true
+          # Force push.
+          force-push: true
+          # Pull and rebase before commiting. Useful when using commit inside matrix.
+          email: committerbot@restoringpride.org 
+          name: Resroring Pride Commit Bot 
 
   build-docker-image:
     needs: nove-files-to-their-proper-places
