@@ -50,7 +50,7 @@ jobs:
 
   deploy-to-web-app:
     name: Deploy to the Web app
-    uses: Restoring-Pride/RestoringPride.org/.github/pull-the-repo-and-deploy-directly-within-ACR.yml@main
+    uses: Restoring-Pride/RestoringPride.org/.github/workflows/pull-the-repo-and-deploy-directly-within-ACR.yml@main
     needs: build-docker-image
     secrets: inherit
 
