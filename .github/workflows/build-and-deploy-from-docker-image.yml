@@ -18,14 +18,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  runs-on: ubuntu-latest
-    name: Move the .environement files to their proper places
-    runs: mv docker-compose-production.yml docker-compose-production.yml \
-       mv Dockerfile.produdcrion Dockerfile \ 
-      echo "LABEL=${{ github.sha }}" >> .env
+  nove-files-to-their-proper-places:
+    runs-on: ubuntu-latest
+    steps:
+      - run: mv docker-compose-production.yml docker-compose-production.yml \
+         mv Dockerfile.produdcrion Dockerfile \ 
+         echo "LABEL=${{ github.sha }}" >> .env
+      - name: Cache the modifid output
+        uses: actions/cache@v2.1.8
+        with:
+          # A list of files, directories, and wildcard patterns to cache and restore
+          path: . 
+          # An explicit key for restoring and saving the cache
+          key: resroringpride
+          # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
+          restore-keys: restoringpride
+     
 
-jobs:
   build-docker-image:
+    needs: nove-files-to-their-proper-places
     name: Build & deploy the Docker image to ACR
     uses: Restoring-Pride/RestoringPride.org/.github/workflows/build-and-push-docker-image-to-azure.yml@main
     secrets: inherit
