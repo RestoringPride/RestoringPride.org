@@ -1,4 +1,9 @@
+
+# syntax = edrevo/dockerfile-plus
 FROM wordpress:latest as witholdcontents
+
+ENV APACHE_DOCUMENT_ROOT /home/site/wwwroot/
+ENV APP_ROOT /home/
 
 RUN source .env
 

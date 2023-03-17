@@ -1,6 +1,11 @@
 FROM wordpress:latest as witholdcontents
 
-RUN source .env
+ENV APACHE_DOCUMENT_ROOT /home/site/wwwroot/
+ENV APP_ROOT /home/
+
+# ADD ./files/httpdocs/wp-content/themes/ ${APACHE_DOCUMENT_ROOT}wp-content/themes/
+# ADD ./files/httpdocs/wp-content/plugins/ ${APACHE_DOCUMENT_ROOT}wp-content/plugins/
+# ADD ./files/httpdocs/wp-content/uploads/ ${APACHE_DOCUMENT_ROOT}wp-content/uploads/
 
 ADD ./files/httpdocs/wp-content/themes/ /usr/src/themes/
 ADD ./files/httpdocs/wp-content/plugins/ /usr/src/plugins/
