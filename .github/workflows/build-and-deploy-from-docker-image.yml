@@ -1,5 +1,5 @@
 name: Build & deploy the whole shebang
-run-name: Build & deploy the whole shebang ${{ github.head_ref }} - ${{ github.run_id }} - ${{ github.sha }}
+run-name: Build & deploy the whole shebang ${{ github.head_ref }}
 
 on:
   workflow_dispatch:
