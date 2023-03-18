@@ -18,43 +18,24 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  nove-files-to-their-proper-places:
-    runs-on: ubuntu-latest
-    steps:
-      - run: mv docker-compose-production.yml docker-compose-production.yml \
-         mv Dockerfile.produdcrion Dockerfile \ 
-         echo "LABEL=${{ github.sha }}" >> .env
-         
-      - name: Push the changes to a "deployment" branch
-        uses: github-actions-x/commit@v2.9
-        with:
-          # Github Token with commit access
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          # Override branch to push to
-          push-branch: deployment
-          # Specify commit messafe
-          commit-message: For deployemnt only
-          # Force add files, useful for adding ignored files.
-          force-add: true
-          # Force push.
-          force-push: true
-          # Pull and rebase before commiting. Useful when using commit inside matrix.
-          email: committerbot@restoringpride.org 
-          name: Resroring Pride Commit Bot 
+   nove-and-populate-files-to-their-proper-places:
+    name: Move & populate the file to their proper places
+    uses: Restoring-Pride/RestoringPride.org/.github/workflows/pull-the-repo-and-deploy-directly-within-ACR.yml@main
+    secrets: inherit
 
-  build-docker-image:
-    needs: nove-files-to-their-proper-places
+   build-docker-image:
+    needs: nove-and-populate-files-to-their-proper-places
     name: Build & deploy the Docker image to ACR
     uses: Restoring-Pride/RestoringPride.org/.github/workflows/pull-the-repo-and-deploy-directly-within-ACR.yml@main
     secrets: inherit
 
-  deploy-to-web-app:
+   deploy-to-web-app:
     name: Deploy to the Web app
     uses: Restoring-Pride/RestoringPride.org/.github/workflows/deploy-the-image-to-the-web-app.yml.yml@main
     needs: build-docker-image
     secrets: inherit
 
-  done:
+   done:
     runs-on: ubuntu-latest
     needs: deploy-to-web-app
 
