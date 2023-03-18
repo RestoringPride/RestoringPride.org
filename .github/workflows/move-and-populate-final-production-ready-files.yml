@@ -24,8 +24,8 @@ jobs:
       uses: actions/checkout@v3.4.0
 
     - run: | 
-        mv docker-compose-production.yml docker-compose.yml; \
-        mv Dockerfile.produdcTion Dockerfile; \
+        mv docker-compose.production.yml docker-compose.yml; \
+        mv Dockerfile.produdction Dockerfile; \
         cat production.env >> .env;
         echo "LABEL=${{ github.sha }}" >> .env;
          
