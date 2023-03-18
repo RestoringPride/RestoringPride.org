@@ -5,7 +5,10 @@ on:
 name: Build & push image to ACR
 run-name: Build & Push Image to ACR ${{ github.head_ref }} - ${{ github.run_id }} - ${{ github.sha }}
 
-
+permissions:
+  actions: write
+  id-token: write
+  contents: read
 
 jobs:
   build-within-azr:
