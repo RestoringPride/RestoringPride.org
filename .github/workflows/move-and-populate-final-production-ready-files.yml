@@ -25,9 +25,9 @@ jobs:
 
     - name: Move and populate the final production files=
       run: | 
-        mv docker-compose.production.yml docker-compose.yml; \
-        mv Dockerfile.production Dockerfile; \
-        cat production.env >> .env;
+        mv ./docker-compose.production.yml ../docker-compose.yml; \
+        mv ./Dockerfile production Dockerfile; \
+        cat ./production.env >> ./.env;
         echo GITHUB_REVISION=${{ github.revision }} >> .env;
         echo GITHUB_REPO_URL=${{ github.repository_url }} >> .env;
         echo GITHUB_SHA=${{ github.sha }} >> .env;
