@@ -23,10 +23,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3.4.0
 
-    - run: mv docker-compose-production.yml docker-compose.yml; \
-       mv Dockerfile.produdcTion Dockerfile; \
-       cat production.env >> .env;
-       echo "LABEL=${{ github.sha }}" >> .env;
+    - run: | 
+        mv docker-compose-production.yml docker-compose.yml; \
+        mv Dockerfile.produdcTion Dockerfile; \
+        cat production.env >> .env;
+        echo "LABEL=${{ github.sha }}" >> .env;
          
     - name: Push the changes to a "deployment" branch
       uses: github-actions-x/commit@v2.9
