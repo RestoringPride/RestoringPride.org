@@ -28,3 +28,5 @@ private/
 .DS_Store
 
 *.pfx
+frontmatter/*
+frontmatter.json
