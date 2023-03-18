@@ -3,7 +3,7 @@ on:
   - workflow_dispatch
 
 name: Build & push image to ACR
-run-name: Build & Push Image to ACR ${{ github.head_ref }} - ${{ github.run_id }} - ${{ github.sha }}
+run-name: Build & Push Image to ACR (${{ github.run_id }})
 
 permissions:
   actions: write
@@ -16,20 +16,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Build the Docker image
-      run: |
-          docker build --pull --rm  \
-          -f "./Dockerfile"  \
-          -t restoringpride:${{ github.sha }} \
-          -t restoringpride:latest \
-          "." 
+      - name: Checkout the deployment branch
+        uses: actions/checkout@3.4.0
+        with:
+          ref: deployment
+    
+      - name: Build the Docker image
+        run: |
+            docker build --pull --rm  \
+            -f "./Dockerfile"  \
+            -t restoringpride:${{ github.sha }} \
+            -t restoringpride:latest \
+            "." 
           
-    - name: Azure Login
-      run: az login --service-principal \
-            --username "${{ secrets.AZURE_SERVICE_PRINCIPAL_URI }}" \
-            --password "${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}" \
-            --tenant "${{ secrets.AZURE_TENANT_DOMAIN }}"
-
-    - name: Build the container directly in the registry
-      run: docker login restoringpride.azurecr.io -u  "${{ secrets.AZURE_SERVICE_PRINCIPAL_URI }}"  -p "${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}"
-      
+      - name: Azure Login
+        run: az login --service-principal \
+              --username "${{ secrets.AZURE_SERVICE_PRINCIPAL_URI }}" \
+              --password "${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}" \
+              --tenant "${{ secrets.AZURE_TENANT_DOMAIN }}"
