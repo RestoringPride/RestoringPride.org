@@ -1,5 +1,4 @@
 name: ${CONTAINER_NAME}
-
 services:
   wordpress:
     ports:

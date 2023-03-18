@@ -23,7 +23,6 @@
     "yaml.schemas": {
         "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml",
         "file:///Users/david/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml",
-        "file:///Users/david/.vscode/extensions/docsmsft.docs-yaml-0.2.9/out/yaml-support/toc.schema.json": "/toc\\.yml/i",
         "https://json.schemastore.org/github-workflow.json": "file:///Users/david/GitHub/RestoringPride.org/.github/workflows/deploy-to-azure-webapps-php.yml",
         "https://json.schemastore.org/github-action.json": "file:///Users/david/GitHub/RestoringPride.org/.github/workflows/build-and-push-docker-image-to-azure.yml"
     }
