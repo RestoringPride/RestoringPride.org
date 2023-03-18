@@ -16,28 +16,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Build the container directly in the registry
-        uses: Azure/acr-build@v1
-        with:
-          # Service Principal with Contributor role on the ACR
-          service_principal: ${{ secrets.AZURE_SERVICE_PRINCIPAL_URI }}
-          # Service Principal password
-          service_principal_password: ${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}
-          # Azure Container Registry tenant
-          tenant: ${{ secrets.AZURE_TENANT_ID }}
-          # The name of the ACR, minus the .azurecr.io
-          registry: restoringpride
-          # Repository to use
-          repository: restoringpride
-          # Github access token for private repositories
-          git_access_token: ${{ secrets.GITHUB_TOKEN }}
-          # Docker image name
-          # image: restoringpride # optional
-          # Docker image tag, default to the commit SHA
-          tag: ${{ github.sha }} # optional
-          # Branch to build from, defaults to master
-          branch: deployment # optional
-          # The folder in the Github repo that holds the source
-          folder: .
-          # The location of the Dockerfile; defaults to ./Dockerfile
-          dockerfile: ./Dockerfile # optional
+    - name: Build the Docker image
+      run: |
+          docker build --pull --rm  \
+          -f "./Dockerfile"  \
+          -t restoringpride:${{ github.sha }} \
+          -t restoringpride:latest \
+          "." 
+          
+    - name: Azure Login
+      run: az login --service-principal \
+            --username "${{ secrets.AZURE_SERVICE_PRINCIPAL_URI }}" \
+            --password "${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}" \
+            --tenant "${{ secrets.AZURE_TENANT_DOMAIN }}"
+
+    - name: Build the container directly in the registry
+      run: docker login restoringpride.azurecr.io -u  "${{ secrets.AZURE_SERVICE_PRINCIPAL_URI }}"  -p "${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}"
+      
