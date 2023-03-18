@@ -31,7 +31,7 @@ jobs:
 
    deploy-to-web-app:
     name: Deploy to the Web app
-    uses: Restoring-Pride/RestoringPride.org/.github/workflows/deploy-the-image-to-the-web-app.yml.yml@main
+    uses: Restoring-Pride/RestoringPride.org/.github/workflows/deploy-the-image-to-the-web-app.yml@main
     needs: build-docker-image
     secrets: inherit
 
