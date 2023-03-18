@@ -1,0 +1,30 @@
+name: Move & Populate Final Production Files - ${{ github.run_id }}
+
+on:
+  workflow_dispatch
+
+jobs:
+    steps:
+    
+    
+    
+      - run: mv docker-compose-production.yml docker-compose-production.yml \
+         mv Dockerfile.produdcrion Dockerfile \ 
+         echo "LABEL=${{ github.sha }}" >> .env
+         
+      - name: Push the changes to a "deployment" branch
+        uses: github-actions-x/commit@v2.9
+        with:
+          # Github Token with commit access
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Override branch to push to
+          push-branch: deployment
+          # Specify commit messafe
+          commit-message: For deployemnt only
+          # Force add files, useful for adding ignored files.
+          force-add: true
+          # Force push.
+          force-push: true
+          # Pull and rebase before commiting. Useful when using commit inside matrix.
+          email: committerbot@restoringpride.org 
+          name: Resroring Pride Commit Bot 
