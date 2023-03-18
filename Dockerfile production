@@ -1,5 +1,4 @@
 # syntax = edrevo/dockerfile-plus
-# syntax = edrevo/dockerfile-plus
 FROM wordpress:latest as wittdotenv
 
 RUN cat ${APP_ROOT}/.env > ${APACHE_DOCUMENT_ROOT}.env;

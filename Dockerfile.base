@@ -1,3 +1,4 @@
+# syntax = edrevo/dockerfile-plus
 FROM withdotenv as witholdcontents
 
 ADD ./files/httpdocs/wp-content/themes/ /usr/src/themes/
