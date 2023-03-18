@@ -14,7 +14,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: ${{ github.action_repository }}
+  group: ${{ github.repository }}
   cancel-in-progress: true
 
 jobs:
