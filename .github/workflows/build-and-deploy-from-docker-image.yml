@@ -14,7 +14,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: Build and push the Docker image to Azure
+  group: ${{ github.action_repository }}
   cancel-in-progress: true
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
           # Override branch to push to
           push-branch: deployment
           # Specify commit messafe
-          commit-message: For deplotyemnt only
+          commit-message: For deployemnt only
           # Force add files, useful for adding ignored files.
           force-add: true
           # Force push.
