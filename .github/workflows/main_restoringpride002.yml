@@ -22,15 +22,15 @@ jobs:
     - name: Log in to registry
       uses: docker/login-action@v1
       with:
-        registry: https://restoringpride.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_f1baf3f017dd48c38881b96a6c4a4103 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_f5223467a3a14dd7b3a68f69b75a822d }}
+        registry: https://restoringpride0.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_cde8e690e40d480daf6deb231934f982 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_4759018579c640d9879e8b5e2010405a }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: restoringpride.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_f1baf3f017dd48c38881b96a6c4a4103 }}/restoringpride:${{ github.sha }}
+        tags: restoringpride0.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_cde8e690e40d480daf6deb231934f982 }}/restoringpride:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'restoringpride002'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e45e3c6e7b364e7387a0f56f33bb027d }}
-        images: 'restoringpride.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_f1baf3f017dd48c38881b96a6c4a4103 }}/restoringpride:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9283d4049c084e4ca04cf291425fbfdb }}
+        images: 'restoringpride0.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_cde8e690e40d480daf6deb231934f982 }}/restoringpride:${{ github.sha }}'
