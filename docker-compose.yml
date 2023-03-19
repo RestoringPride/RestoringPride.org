@@ -3,7 +3,7 @@ name: restoringpride
 services:
   restoringpride:
     container_name: restoringpride
-    image: https://restoringpride.azureacr.io/restoringpride:${GITHUB_SHA}
+    image: restoringpride:latest
     # build: /home/site/wwwroot/
     restart: unless-stopped
     working_dir: ${APACHE_DOCUMENT_ROOT}
