@@ -13,6 +13,12 @@ jobs:
     steps:
     - name: Checkout the latest version of the repo
       uses: actions/checkout@v3
+      
+    - name: Azure Login
+      uses: Azure/login@v1.4.6
+      with:
+        # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+        creds: '{"clientId":"${{ secrets.AZURE_SERVICE_PRINCIPAL_GUID }}", "clientSecret":"${{ secrets.AZURE_SERVICE_PRINCIPAL_SECRET }}", "tenantId":"${{ secrets.AZURE_TENANT_ID }}", "subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}"}'
 
     - name: Upload wp-content/themes
       # You may pin to the exact commit or the version.
