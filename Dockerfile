@@ -1,7 +1,4 @@
-FROM wordpress:latest as withlabels
-
-ENV APACHE_DOCUMENT_ROOT=/home/site/wwwroot/
-ENV APP_ROOT=/home/
+FROM mcr.microsoft.com/appsvc/wordpress-alpine-php:latest as withlabels
 
 LABEL org.opencontainers.inage="https://avatars.githubusercontent.com/u/117142615?s=200&v=4"
 LABEL org.opencontainers.title="Restoring Pride"
@@ -12,16 +9,11 @@ LABEL org.opencontainers.url="https://restoringpride.org"
 LABEL org.opencontainers.authors="Restoring Pride"
 LABEL org.opencontainers.licenses="MIT"
 LABEL org.opencontainers.version="2.0.0"
-LABEL org.restoringpride.project.git.url=${GITHUB_REPO_URL}
-LABEL org.restoringpride.project.git.commit=${GITHUB_COMMIT}
-LABEL org.opencontainers.image.created=${BUILD_DATE}
-LABEL org.opencontainers.image.revision=${GITHUB_COMMIT}
+
+ENV APACHE_DOCUMENT_ROOT=/home/site/wwwroot/
+ENV APP_ROOT=/home/
 
 FROM withlabels as witholdcontents
-
-VOLUME /usr/src/
-VOLUME ${APACHE_DOCUMENT_ROOT}
-VOLUME ${APP_ROOT}
 
 ADD ./files/httpdocs/wp-content/themes/ /usr/src/themes/
 ADD ./files/httpdocs/wp-content/plugins/ /usr/src/plugins/
@@ -35,21 +27,15 @@ RUN cp -RL /usr/src/themes/ ${APACHE_DOCUMENT_ROOT}wp-content/
 RUN cp -RL /usr/src/plugins/ ${APACHE_DOCUMENT_ROOT}wp-content/
 RUN cp -RL /usr/src/uploads/ ${APACHE_DOCUMENT_ROOT}wp-content/
 
-FROM witholdcontents as withdockercompose
+# FROM witholdcontents as witwpcli
 
-COPY docker-compose.yml ${APP_ROOT}docker-compose.yml
-
-FROM withdockercompose as withwpcli
-
-# nnstall the wordpresss CLI
-RUN mkdir -p ${APP_ROOT}wp-cli/; \
-    curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar > ${APP_ROOT}wp-cli/wp-cli.phar; \
-    php ${APP_ROOT}wp-cli/wp-cli.phar --info; \
-    chmod +x ${APP_ROOT}wp-cli/wp-cli.phar; \
-    mkdir -p /usr/local/etc/wp-cli/; \
-    mv ${APP_ROOT}wp-cli/wp-cli.phar /usr/local/etc/wp-cli/; \
-    curl https://raw.githubusercontent.com/wp-cli/wp-cli/main/utils/wp-completion.bash -o /usr/local/etc/wp-cli/wp-completion.bash; \
-    echo "source /usr/local/etc/wp-cli/wp-completion.bash" >> ~/.bash_profile; \
-    ln -s /usr/local/etc/wp-cli/wp-cli.phar /usr/local/bin/wp; 
-
-SHELL ["/bin/bash", "-c"]
+# # nnstall the wordpresss CLI
+# RUN mkdir -p ${APP_ROOT}wp-cli/; \
+#     curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar > ${APP_ROOT}wp-cli/wp-cli.phar; \
+#     php ${APP_ROOT}wp-cli/wp-cli.phar --info; \
+#     chmod +x ${APP_ROOT}wp-cli/wp-cli.phar; \
+#     mkdir -p /usr/local/etc/wp-cli/; \
+#     mv ${APP_ROOT}wp-cli/wp-cli.phar /usr/local/etc/wp-cli/; \
+#     curl https://raw.githubusercontent.com/wp-cli/wp-cli/main/utils/wp-completion.bash -o /usr/local/etc/wp-cli/wp-completion.bash; \
+#     echo "source /usr/local/etc/wp-cli/wp-completion.bash" >> ~/.bash_profile; \
+#     ln -s /usr/local/etc/wp-cli/wp-cli.phar /usr/local/bin/wp; 
