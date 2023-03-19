@@ -10,18 +10,6 @@ permissions:
   id-token: write
   contents: read
 
-jon:
-  - workflow_call
-  - workflow_dispatch
-
-name: Build & push image to ACR
-run-name: Build & Push Image to ACR ${{ github.head_ref }} - ${{ github.run_id }} - ${{ github.sha }}
-
-permissions:
-  actions: write
-  id-token: write
-  contents: read
-
 jobs:
   build-within-acr:
     name: Build and push the image to Azure
