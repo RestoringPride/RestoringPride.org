@@ -1,7 +1,14 @@
-name: ${CONTAINER_NAME}
+name: restoringpride
+
 services:
-  wordpress:
+  restoringpride:
+    container_name: restoringpride
+    image: https://restoringpride.azureacr.io/restoringpride:${GITHUB_SHA}
+    # build: /home/site/wwwroot/
+    restart: unless-stopped
+    working_dir: ${APACHE_DOCUMENT_ROOT}
     ports:
       - "80:8081"
     volumes:
       - ${APACHE_DOCUMENT_ROOT}
+    

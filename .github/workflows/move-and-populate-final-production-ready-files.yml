@@ -16,7 +16,7 @@ concurrency:
   
 jobs:
 
-  move-and-populate-the-final-produvtion-files:
+  populate-the-final-production-files:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,9 +25,6 @@ jobs:
 
     - name: Move and populate the final production files=
       run: | 
-        mv ./docker-compose.production.yml ../docker-compose.yml; \
-        mv ./Dockerfile production Dockerfile; \
-        cat ./production.env >> ./.env;
         echo GITHUB_REVISION=${{ github.revision }} >> .env;
         echo GITHUB_REPO_URL=${{ github.repository_url }} >> .env;
         echo GITHUB_SHA=${{ github.sha }} >> .env;
@@ -35,7 +32,7 @@ jobs:
         echo GITHUB_RUN_NUMBER=${{ github.run_number }} >> .env;
         echo GITHUB_RUN_ATTEMPT=${{ github.run_attempt }} >> .env;
         echo "LABEL=${{ github.sha }}" >> .env;
-         
+
     - name: Push the changes to a "deployment" branch
       uses: github-actions-x/commit@v2.9
       with:

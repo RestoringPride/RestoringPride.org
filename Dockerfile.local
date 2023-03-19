@@ -1,8 +1,0 @@
-# syntax = edrevo/dockerfile-plus
-FROM wordpress:latest as wittdotenv
-
-RUN cat ${APP_ROOT}/.env > ${APACHE_DOCUMENT_ROOT}.env;
-RUN cat ${APP_ROOT}/local.env >> ${APACHE_DOCUMENT_ROOT}.env;
-RUN mv Dockerfile.local Dockerfile
-
-INCLUDE+ Dockerfule.base
