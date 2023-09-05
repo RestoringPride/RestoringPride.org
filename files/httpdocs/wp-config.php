@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 /** Enable W3 Total Cache */
 define('WP_CACHE', true); // Added by W3 Total Cache
 
@@ -14,32 +13,15 @@ define('WP_CACHE', true); // Added by W3 Total Cache
  * This file contains the following configurations:
  *
  * * Database settings
-=======
-/**
- * The base configuration for WordPress
- *
- * The wp-config.php creation script uses this file during the
- * installation. You don't have to use the web site, you can
- * copy this file to "wp-config.php" and fill in the values.
- *
- * This file contains the following configurations:
- *
- * * MySQL settings
->>>>>>> fb785cbb (Initial commit)
  * * Secret keys
  * * Database table prefix
  * * ABSPATH
  *
-<<<<<<< HEAD
  * @link https://wordpress.org/support/article/editing-wp-config-php/
-=======
- * @link https://codex.wordpress.org/Editing_wp-config.php
->>>>>>> fb785cbb (Initial commit)
  *
  * @package WordPress
  */
 
-<<<<<<< HEAD
 //Using environment variables for memory limits
 $wp_memory_limit = (getenv('WP_MEMORY_LIMIT') && preg_match("/^[0-9]+M$/", getenv('WP_MEMORY_LIMIT'))) ? getenv('WP_MEMORY_LIMIT') : '128M';
 $wp_max_memory_limit = (getenv('WP_MAX_MEMORY_LIMIT') && preg_match("/^[0-9]+M$/", getenv('WP_MAX_MEMORY_LIMIT'))) ? getenv('WP_MAX_MEMORY_LIMIT') : '256M';
@@ -73,28 +55,10 @@ define('DB_HOST', $connectstr_dbhost);
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
-=======
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define( 'DB_NAME', 'restoringpride' );
-
-/** MySQL database username */
-define( 'DB_USER', 'rp_admin' );
-
-/** MySQL database password */
-define( 'DB_PASSWORD', 'gh9,Gh)z-G+c8?YL' );
-
-/** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
-
-/** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8mb4' );
->>>>>>> fb785cbb (Initial commit)
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
-<<<<<<< HEAD
 /** Enabling support for connecting external MYSQL over SSL*/
 $mysql_sslconnect = (getenv('DB_SSL_CONNECTION')) ? getenv('DB_SSL_CONNECTION') : 'true';
 if (strtolower($mysql_sslconnect) != 'false' && !is_numeric(strpos($connectstr_dbhost, "127.0.0.1")) && !is_numeric(strpos(strtolower($connectstr_dbhost), "localhost"))) {
@@ -102,8 +66,6 @@ if (strtolower($mysql_sslconnect) != 'false' && !is_numeric(strpos($connectstr_d
 }
 
 
-=======
->>>>>>> fb785cbb (Initial commit)
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -113,6 +75,7 @@ if (strtolower($mysql_sslconnect) != 'false' && !is_numeric(strpos($connectstr_d
  *
  * @since 2.6.0
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 $auth_key = getenv('AUTH_KEY');
@@ -138,6 +101,19 @@ define( 'NONCE_SALT',       '_Nau*kR>eO}huqziMT/#>Yek*F-Wb;BmkxIdSIJ-SdG_EPL%!l/
 /**#@-*/
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+$auth_key = getenv('AUTH_KEY');
+define( 'AUTH_KEY',         $auth_key );
+$secure_auth_key = getenv('SECURE_AUTH_KEY');
+define( 'SECURE_AUTH_KEY',  $secure_auth_key );
+$logger_in_key = getenv('LOGGED_IN_KEY');
+define( 'LOGGED_IN_KEY',  $logger_in_key   );
+$nonce_key = getenv('NONCE_KEY');
+define( 'NONCE_KEY',   $nonce_key      );
+$auth_salt = getenv('AUTH_SALT');
+define( 'AUTH_SALT',    $auth_salt     );
+>>>>>>> c1b0d8a5 (Update class-subscriptions-list-table.php)
 /**
  * WordPress Database Table prefix.
  *
@@ -155,6 +131,9 @@ $table_prefix = 'rp_';
  *
  * For information on other constants that can be used for debugging,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c1b0d8a5 (Update class-subscriptions-list-table.php)
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */

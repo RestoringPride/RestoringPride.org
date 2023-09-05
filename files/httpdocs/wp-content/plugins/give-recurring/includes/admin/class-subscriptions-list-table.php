@@ -140,7 +140,7 @@ class Give_Subscription_Reports_Table extends WP_List_Table {
 						'status' => $key,
 						'paged'  => false,
 					) ) ),
-					( ( 'all' === $key && empty( $current ) ) ) ? 'class="current"' : ( $current == $key ) ? 'class="current"' : '',
+					(( ( 'all' === $key && empty( $current ) ) ) ? 'class="current"' : ( $current == $key )) ? 'class="current"' : '',
 					$name,
 					$count
 				);
