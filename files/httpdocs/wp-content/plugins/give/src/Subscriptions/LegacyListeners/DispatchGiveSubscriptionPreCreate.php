@@ -8,7 +8,10 @@ use Give\Subscriptions\Models\Subscription;
 class DispatchGiveSubscriptionPreCreate
 {
     /**
+<<<<<<< HEAD
      * @since 2.24.0 add support for payment_mode
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.19.6
      *
      * @param  Subscription  $subscription
@@ -26,9 +29,14 @@ class DispatchGiveSubscriptionPreCreate
             'bill_times' => $subscription->installments,
             'parent_payment_id' => 0,
             'form_id' => $subscription->donationFormId,
+<<<<<<< HEAD
             'payment_mode' => $subscription->mode->getValue(),
             'created' => null,
             'expiration' => $subscription->renewsAt->format('Y-m-d H:i:s'),
+=======
+            'created' => null,
+            'expiration' => $subscription->expiration(),
+>>>>>>> fb785cbb (Initial commit)
             'status' => $subscription->status->getValue(),
             'profile_id' => $subscription->gatewaySubscriptionId,
         ];

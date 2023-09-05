@@ -4,10 +4,13 @@ namespace Give\Form\LegacyConsumer;
 
 class FilterCallbackCollection
 {
+<<<<<<< HEAD
     /**
      * @var array
      */
     protected $callbacks;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
     /**
      * @param array $callbacks

@@ -255,10 +255,17 @@ class Give_Donor {
 					"
 				SELECT meta_key, meta_value FROM {$wpdb->donormeta}
 				WHERE meta_key
+<<<<<<< HEAD
 				LIKE '%s'
 				AND {$meta_type}_id=%d
 				",
 					'%give_donor_address%',
+=======
+				LIKE '%%%s%%'
+				AND {$meta_type}_id=%d
+				",
+					'give_donor_address',
+>>>>>>> fb785cbb (Initial commit)
 					$this->id
 				),
 				ARRAY_N
@@ -1086,7 +1093,11 @@ class Give_Donor {
 	 *
 	 * @return bool               False for failure. True for success.
 	 */
+<<<<<<< HEAD
 	public function add_meta( $meta_key, $meta_value, $unique = false ) {
+=======
+	public function add_meta( $meta_key = '', $meta_value, $unique = false ) {
+>>>>>>> fb785cbb (Initial commit)
 		return Give()->donor_meta->add_meta( $this->id, $meta_key, $meta_value, $unique );
 	}
 
@@ -1102,7 +1113,11 @@ class Give_Donor {
 	 *
 	 * @return bool               False on failure, true if success.
 	 */
+<<<<<<< HEAD
 	public function update_meta( $meta_key, $meta_value, $prev_value = '' ) {
+=======
+	public function update_meta( $meta_key = '', $meta_value, $prev_value = '' ) {
+>>>>>>> fb785cbb (Initial commit)
 		return Give()->donor_meta->update_meta( $this->id, $meta_key, $meta_value, $prev_value );
 	}
 
@@ -1395,12 +1410,20 @@ class Give_Donor {
 						"
 						SELECT meta_key FROM {$wpdb->donormeta}
 						WHERE meta_key
+<<<<<<< HEAD
 						LIKE '%s'
+=======
+						LIKE '%%%s%%'
+>>>>>>> fb785cbb (Initial commit)
 						AND {$meta_type}_id=%d
 						ORDER BY meta_id DESC
 						LIMIT 1
 						",
+<<<<<<< HEAD
 						"%_give_donor_address_{$address_type}_line1%",
+=======
+						"_give_donor_address_{$address_type}_line1",
+>>>>>>> fb785cbb (Initial commit)
 						$this->id
 					)
 				);

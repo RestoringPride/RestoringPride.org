@@ -309,12 +309,16 @@ class Indexable_Link_Builder {
 
 				$model->width  = $width;
 				$model->height = $height;
+<<<<<<< HEAD
 				if ( \file_exists( $file ) ) {
 					$model->size = \filesize( $file );
 				}
 				else {
 					$model->size = null;
 				}
+=======
+				$model->size   = \filesize( $file );
+>>>>>>> fb785cbb (Initial commit)
 			}
 			else {
 				$model->width  = 0;

@@ -153,7 +153,12 @@ abstract class WP_Privacy_Requests_Table extends WP_List_Table {
 		// Normalized admin URL.
 		$admin_url = $this->get_admin_url();
 
+<<<<<<< HEAD
 		$status_label = sprintf(
+=======
+		$current_link_attributes = empty( $current_status ) ? ' class="current" aria-current="page"' : '';
+		$status_label            = sprintf(
+>>>>>>> fb785cbb (Initial commit)
 			/* translators: %s: Number of requests. */
 			_nx(
 				'All <span class="count">(%s)</span>',
@@ -164,10 +169,18 @@ abstract class WP_Privacy_Requests_Table extends WP_List_Table {
 			number_format_i18n( $total_requests )
 		);
 
+<<<<<<< HEAD
 		$views['all'] = array(
 			'url'     => esc_url( $admin_url ),
 			'label'   => $status_label,
 			'current' => empty( $current_status ),
+=======
+		$views['all'] = sprintf(
+			'<a href="%s"%s>%s</a>',
+			esc_url( $admin_url ),
+			$current_link_attributes,
+			$status_label
+>>>>>>> fb785cbb (Initial commit)
 		);
 
 		foreach ( $statuses as $status => $label ) {
@@ -176,7 +189,12 @@ abstract class WP_Privacy_Requests_Table extends WP_List_Table {
 				continue;
 			}
 
+<<<<<<< HEAD
 			$total_status_requests = absint( $counts->{$status} );
+=======
+			$current_link_attributes = $status === $current_status ? ' class="current" aria-current="page"' : '';
+			$total_status_requests   = absint( $counts->{$status} );
+>>>>>>> fb785cbb (Initial commit)
 
 			if ( ! $total_status_requests ) {
 				continue;
@@ -189,6 +207,7 @@ abstract class WP_Privacy_Requests_Table extends WP_List_Table {
 
 			$status_link = add_query_arg( 'filter-status', $status, $admin_url );
 
+<<<<<<< HEAD
 			$views[ $status ] = array(
 				'url'     => esc_url( $status_link ),
 				'label'   => $status_label,
@@ -197,6 +216,17 @@ abstract class WP_Privacy_Requests_Table extends WP_List_Table {
 		}
 
 		return $this->get_views_links( $views );
+=======
+			$views[ $status ] = sprintf(
+				'<a href="%s"%s>%s</a>',
+				esc_url( $status_link ),
+				$current_link_attributes,
+				$status_label
+			);
+		}
+
+		return $views;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**

@@ -5,7 +5,11 @@
 /***/ (function(module) {
 
 /*!
+<<<<<<< HEAD
  * clipboard.js v2.0.11
+=======
+ * clipboard.js v2.0.10
+>>>>>>> fb785cbb (Initial commit)
  * https://clipboardjs.com/
  *
  * Licensed MIT © Zeno Rocha
@@ -96,6 +100,7 @@ function createFakeElement(value) {
 
 
 /**
+<<<<<<< HEAD
  * Create fake copy action wrapper using a fake element.
  * @param {String} target
  * @param {Object} options
@@ -111,13 +116,18 @@ var fakeCopyAction = function fakeCopyAction(value, options) {
   return selectedText;
 };
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Copy action wrapper.
  * @param {String|HTMLElement} target
  * @param {Object} options
  * @return {String}
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 var ClipboardActionCopy = function ClipboardActionCopy(target) {
   var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
     container: document.body
@@ -125,10 +135,18 @@ var ClipboardActionCopy = function ClipboardActionCopy(target) {
   var selectedText = '';
 
   if (typeof target === 'string') {
+<<<<<<< HEAD
     selectedText = fakeCopyAction(target, options);
   } else if (target instanceof HTMLInputElement && !['text', 'search', 'url', 'tel', 'password'].includes(target === null || target === void 0 ? void 0 : target.type)) {
     // If input type doesn't support `setSelectionRange`. Simulate it. https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
     selectedText = fakeCopyAction(target.value, options);
+=======
+    var fakeElement = createFakeElement(target);
+    options.container.appendChild(fakeElement);
+    selectedText = select_default()(fakeElement);
+    command('copy');
+    fakeElement.remove();
+>>>>>>> fb785cbb (Initial commit)
   } else {
     selectedText = select_default()(target);
     command('copy');
@@ -320,6 +338,10 @@ var Clipboard = /*#__PURE__*/function (_Emitter) {
             trigger.focus();
           }
 
+<<<<<<< HEAD
+=======
+          document.activeElement.blur();
+>>>>>>> fb785cbb (Initial commit)
           window.getSelection().removeAllRanges();
         }
       });
@@ -460,9 +482,15 @@ module.exports = closest;
 /***/ }),
 
 /***/ 438:
+<<<<<<< HEAD
 /***/ (function(module, __unused_webpack_exports, __nested_webpack_require_15749__) {
 
 var closest = __nested_webpack_require_15749__(828);
+=======
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_15133__) {
+
+var closest = __nested_webpack_require_15133__(828);
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Delegates event to a selector.
@@ -601,10 +629,17 @@ exports.fn = function(value) {
 /***/ }),
 
 /***/ 370:
+<<<<<<< HEAD
 /***/ (function(module, __unused_webpack_exports, __nested_webpack_require_19113__) {
 
 var is = __nested_webpack_require_19113__(879);
 var delegate = __nested_webpack_require_19113__(438);
+=======
+/***/ (function(module, __unused_webpack_exports, __nested_webpack_require_18497__) {
+
+var is = __nested_webpack_require_18497__(879);
+var delegate = __nested_webpack_require_18497__(438);
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Validates all params and calls the right
@@ -832,7 +867,11 @@ module.exports.TinyEmitter = E;
 /******/ 	var __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
+<<<<<<< HEAD
 /******/ 	function __nested_webpack_require_24495__(moduleId) {
+=======
+/******/ 	function __nested_webpack_require_23879__(moduleId) {
+>>>>>>> fb785cbb (Initial commit)
 /******/ 		// Check if module is in cache
 /******/ 		if(__webpack_module_cache__[moduleId]) {
 /******/ 			return __webpack_module_cache__[moduleId].exports;
@@ -845,7 +884,11 @@ module.exports.TinyEmitter = E;
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+<<<<<<< HEAD
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_24495__);
+=======
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_23879__);
+>>>>>>> fb785cbb (Initial commit)
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -855,11 +898,19 @@ module.exports.TinyEmitter = E;
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	!function() {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
+<<<<<<< HEAD
 /******/ 		__nested_webpack_require_24495__.n = function(module) {
 /******/ 			var getter = module && module.__esModule ?
 /******/ 				function() { return module['default']; } :
 /******/ 				function() { return module; };
 /******/ 			__nested_webpack_require_24495__.d(getter, { a: getter });
+=======
+/******/ 		__nested_webpack_require_23879__.n = function(module) {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module; };
+/******/ 			__nested_webpack_require_23879__.d(getter, { a: getter });
+>>>>>>> fb785cbb (Initial commit)
 /******/ 			return getter;
 /******/ 		};
 /******/ 	}();
@@ -867,9 +918,15 @@ module.exports.TinyEmitter = E;
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
+<<<<<<< HEAD
 /******/ 		__nested_webpack_require_24495__.d = function(exports, definition) {
 /******/ 			for(var key in definition) {
 /******/ 				if(__nested_webpack_require_24495__.o(definition, key) && !__nested_webpack_require_24495__.o(exports, key)) {
+=======
+/******/ 		__nested_webpack_require_23879__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__nested_webpack_require_23879__.o(definition, key) && !__nested_webpack_require_23879__.o(exports, key)) {
+>>>>>>> fb785cbb (Initial commit)
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
@@ -878,14 +935,22 @@ module.exports.TinyEmitter = E;
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	!function() {
+<<<<<<< HEAD
 /******/ 		__nested_webpack_require_24495__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+=======
+/******/ 		__nested_webpack_require_23879__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+>>>>>>> fb785cbb (Initial commit)
 /******/ 	}();
 /******/ 	
 /************************************************************************/
 /******/ 	// module exports must be returned from runtime so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __nested_webpack_require_24495__(686);
+=======
+/******/ 	return __nested_webpack_require_23879__(686);
+>>>>>>> fb785cbb (Initial commit)
 /******/ })()
 .default;
 });
@@ -2009,6 +2074,25 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*global define:false */
 }) (typeof Mousetrap !== "undefined" ? Mousetrap : undefined);
 
 
+<<<<<<< HEAD
+=======
+/***/ }),
+
+/***/ 235:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var e=__webpack_require__(9196),n={display:"block",opacity:0,position:"absolute",top:0,left:0,height:"100%",width:"100%",overflow:"hidden",pointerEvents:"none",zIndex:-1},t=function(t){var r=t.onResize,u=e.useRef();return function(n,t){var r=function(){return n.current&&n.current.contentDocument&&n.current.contentDocument.defaultView};function u(){t();var e=r();e&&e.addEventListener("resize",t)}e.useEffect((function(){return r()?u():n.current&&n.current.addEventListener&&n.current.addEventListener("load",u),function(){var e=r();e&&"function"==typeof e.removeEventListener&&e.removeEventListener("resize",t)}}),[])}(u,(function(){return r(u)})),e.createElement("iframe",{style:n,src:"about:blank",ref:u,"aria-hidden":!0,tabIndex:-1,frameBorder:0})},r=function(e){return{width:null!=e?e.offsetWidth:null,height:null!=e?e.offsetHeight:null}};module.exports=function(n){void 0===n&&(n=r);var u=e.useState(n(null)),o=u[0],i=u[1],c=e.useCallback((function(e){return i(n(e.current))}),[n]);return[e.useMemo((function(){return e.createElement(t,{onResize:c})}),[c]),o]};
+
+
+/***/ }),
+
+/***/ 9196:
+/***/ (function(module) {
+
+"use strict";
+module.exports = window["React"];
+
+>>>>>>> fb785cbb (Initial commit)
 /***/ })
 
 /******/ 	});
@@ -2089,10 +2173,15 @@ __webpack_require__.r(__webpack_exports__);
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
   "__experimentalUseDialog": function() { return /* reexport */ use_dialog; },
+<<<<<<< HEAD
+=======
+  "__experimentalUseDisabled": function() { return /* reexport */ useDisabled; },
+>>>>>>> fb785cbb (Initial commit)
   "__experimentalUseDragging": function() { return /* reexport */ useDragging; },
   "__experimentalUseDropZone": function() { return /* reexport */ useDropZone; },
   "__experimentalUseFixedWindowList": function() { return /* reexport */ useFixedWindowList; },
   "__experimentalUseFocusOutside": function() { return /* reexport */ useFocusOutside; },
+<<<<<<< HEAD
   "compose": function() { return /* reexport */ higher_order_compose; },
   "createHigherOrderComponent": function() { return /* reexport */ createHigherOrderComponent; },
   "debounce": function() { return /* reexport */ debounce; },
@@ -2100,16 +2189,29 @@ __webpack_require__.d(__webpack_exports__, {
   "pipe": function() { return /* reexport */ higher_order_pipe; },
   "pure": function() { return /* reexport */ higher_order_pure; },
   "throttle": function() { return /* reexport */ throttle; },
+=======
+  "compose": function() { return /* reexport */ compose; },
+  "createHigherOrderComponent": function() { return /* reexport */ create_higher_order_component; },
+  "ifCondition": function() { return /* reexport */ if_condition; },
+  "pure": function() { return /* reexport */ higher_order_pure; },
+>>>>>>> fb785cbb (Initial commit)
   "useAsyncList": function() { return /* reexport */ use_async_list; },
   "useConstrainedTabbing": function() { return /* reexport */ use_constrained_tabbing; },
   "useCopyOnClick": function() { return /* reexport */ useCopyOnClick; },
   "useCopyToClipboard": function() { return /* reexport */ useCopyToClipboard; },
   "useDebounce": function() { return /* reexport */ useDebounce; },
+<<<<<<< HEAD
   "useDisabled": function() { return /* reexport */ useDisabled; },
   "useFocusOnMount": function() { return /* reexport */ useFocusOnMount; },
   "useFocusReturn": function() { return /* reexport */ use_focus_return; },
   "useFocusableIframe": function() { return /* reexport */ useFocusableIframe; },
   "useInstanceId": function() { return /* reexport */ use_instance_id; },
+=======
+  "useFocusOnMount": function() { return /* reexport */ useFocusOnMount; },
+  "useFocusReturn": function() { return /* reexport */ use_focus_return; },
+  "useFocusableIframe": function() { return /* reexport */ useFocusableIframe; },
+  "useInstanceId": function() { return /* reexport */ useInstanceId; },
+>>>>>>> fb785cbb (Initial commit)
   "useIsomorphicLayoutEffect": function() { return /* reexport */ use_isomorphic_layout_effect; },
   "useKeyboardShortcut": function() { return /* reexport */ use_keyboard_shortcut; },
   "useMediaQuery": function() { return /* reexport */ useMediaQuery; },
@@ -2117,7 +2219,11 @@ __webpack_require__.d(__webpack_exports__, {
   "usePrevious": function() { return /* reexport */ usePrevious; },
   "useReducedMotion": function() { return /* reexport */ use_reduced_motion; },
   "useRefEffect": function() { return /* reexport */ useRefEffect; },
+<<<<<<< HEAD
   "useResizeObserver": function() { return /* reexport */ useResizeAware; },
+=======
+  "useResizeObserver": function() { return /* reexport */ use_resize_observer; },
+>>>>>>> fb785cbb (Initial commit)
   "useThrottle": function() { return /* reexport */ useThrottle; },
   "useViewportMatch": function() { return /* reexport */ use_viewport_match; },
   "useWarnOnChange": function() { return /* reexport */ use_warn_on_change; },
@@ -2127,6 +2233,7 @@ __webpack_require__.d(__webpack_exports__, {
   "withState": function() { return /* reexport */ withState; }
 });
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -2468,6 +2575,10 @@ function pascalCase(input, options) {
     return noCase(input, __assign({ delimiter: "", transform: pascalCaseTransform }, options));
 }
 
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/utils/create-higher-order-component/index.js
 /**
  * External dependencies
@@ -2486,6 +2597,7 @@ function pascalCase(input, options) {
 function createHigherOrderComponent(mapComponent, modifierName) {
   return Inner => {
     const Outer = mapComponent(Inner);
+<<<<<<< HEAD
     Outer.displayName = hocName(modifierName, Inner);
     return Outer;
   };
@@ -2908,19 +3020,40 @@ const pipe = basePipe();
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/compose.js
 /**
  * Internal dependencies
+=======
+    const displayName = Inner.displayName || Inner.name || 'Component';
+    Outer.displayName = `${(0,external_lodash_namespaceObject.upperFirst)((0,external_lodash_namespaceObject.camelCase)(modifierName))}(${displayName})`;
+    return Outer;
+  };
+}
+
+/* harmony default export */ var create_higher_order_component = (createHigherOrderComponent);
+
+;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/compose.js
+/**
+ * External dependencies
+>>>>>>> fb785cbb (Initial commit)
  */
 
 /**
  * Composes multiple higher-order components into a single higher-order component. Performs right-to-left function
  * composition, where each successive invocation is supplied the return value of the previous.
  *
+<<<<<<< HEAD
  * This is inspired by `lodash`'s `flowRight` function.
+=======
+ * This is just a re-export of `lodash`'s `flowRight` function.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @see https://docs-lodash.com/v4/flow-right/
  */
 
+<<<<<<< HEAD
 const compose = basePipe(true);
 /* harmony default export */ var higher_order_compose = (compose);
+=======
+/* harmony default export */ var compose = (external_lodash_namespaceObject.flowRight);
+>>>>>>> fb785cbb (Initial commit)
 
 ;// CONCATENATED MODULE: external ["wp","element"]
 var external_wp_element_namespaceObject = window["wp"]["element"];
@@ -2928,10 +3061,13 @@ var external_wp_element_namespaceObject = window["wp"]["element"];
 
 
 /**
+<<<<<<< HEAD
  * External dependencies
  */
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Internal dependencies
  */
 
@@ -2953,6 +3089,7 @@ var external_wp_element_namespaceObject = window["wp"]["element"];
  * @return Higher-order component.
  */
 
+<<<<<<< HEAD
 function ifCondition(predicate) {
   return createHigherOrderComponent(WrappedComponent => props => {
     if (!predicate(props)) {
@@ -2962,6 +3099,15 @@ function ifCondition(predicate) {
     return (0,external_wp_element_namespaceObject.createElement)(WrappedComponent, props);
   }, 'ifCondition');
 }
+=======
+const ifCondition = predicate => create_higher_order_component(WrappedComponent => props => {
+  if (!predicate(props)) {
+    return null;
+  }
+
+  return (0,external_wp_element_namespaceObject.createElement)(WrappedComponent, props);
+}, 'ifCondition');
+>>>>>>> fb785cbb (Initial commit)
 
 /* harmony default export */ var if_condition = (ifCondition);
 
@@ -2972,10 +3118,13 @@ var external_wp_isShallowEqual_default = /*#__PURE__*/__webpack_require__.n(exte
 
 
 /**
+<<<<<<< HEAD
  * External dependencies
  */
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -2986,6 +3135,7 @@ var external_wp_isShallowEqual_default = /*#__PURE__*/__webpack_require__.n(exte
 
 
 /**
+<<<<<<< HEAD
  * Given a component returns the enhanced component augmented with a component
  * only re-rendering when its props/state change
  */
@@ -2993,6 +3143,18 @@ var external_wp_isShallowEqual_default = /*#__PURE__*/__webpack_require__.n(exte
 const pure = createHigherOrderComponent(function (WrappedComponent) {
   if (WrappedComponent.prototype instanceof external_wp_element_namespaceObject.Component) {
     return class extends WrappedComponent {
+=======
+ * External dependencies
+ */
+
+/**
+ * Given a component returns the enhanced component augmented with a component
+ * only re-rendering when its props/state change
+ */
+const pure = create_higher_order_component(Wrapped => {
+  if (Wrapped.prototype instanceof external_wp_element_namespaceObject.Component) {
+    return class extends Wrapped {
+>>>>>>> fb785cbb (Initial commit)
       shouldComponentUpdate(nextProps, nextState) {
         return !external_wp_isShallowEqual_default()(nextProps, this.props) || !external_wp_isShallowEqual_default()(nextState, this.state);
       }
@@ -3006,7 +3168,11 @@ const pure = createHigherOrderComponent(function (WrappedComponent) {
     }
 
     render() {
+<<<<<<< HEAD
       return (0,external_wp_element_namespaceObject.createElement)(WrappedComponent, this.props);
+=======
+      return (0,external_wp_element_namespaceObject.createElement)(Wrapped, this.props);
+>>>>>>> fb785cbb (Initial commit)
     }
 
   };
@@ -3018,12 +3184,20 @@ function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
       for (var key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
           target[key] = source[key];
         }
       }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
     return target;
   };
   return _extends.apply(this, arguments);
@@ -3033,10 +3207,21 @@ var external_wp_deprecated_namespaceObject = window["wp"]["deprecated"];
 var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external_wp_deprecated_namespaceObject);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/with-global-events/listener.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Class responsible for orchestrating event handling on the global window,
  * binding a single event to be shared across all handling instances, and
  * removing the handler when no instances are listening for the event.
  */
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 class Listener {
   constructor() {
     /** @type {any} */
@@ -3063,6 +3248,7 @@ class Listener {
   eventType,
   /** @type {any} */
   instance) {
+<<<<<<< HEAD
     if (!this.listeners[eventType]) {
       return;
     }
@@ -3070,6 +3256,9 @@ class Listener {
     this.listeners[eventType] = this.listeners[eventType].filter((
     /** @type {any} */
     listener) => listener !== instance);
+=======
+    this.listeners[eventType] = (0,external_lodash_namespaceObject.without)(this.listeners[eventType], instance);
+>>>>>>> fb785cbb (Initial commit)
 
     if (!this.listeners[eventType].length) {
       // Removing last listener for this type, so unbind event.
@@ -3081,11 +3270,15 @@ class Listener {
   handleEvent(
   /** @type {any} */
   event) {
+<<<<<<< HEAD
     var _this$listeners$event;
 
     (_this$listeners$event = this.listeners[event.type]) === null || _this$listeners$event === void 0 ? void 0 : _this$listeners$event.forEach((
     /** @type {any} */
     instance) => {
+=======
+    (0,external_lodash_namespaceObject.forEach)(this.listeners[event.type], instance => {
+>>>>>>> fb785cbb (Initial commit)
       instance.handleEvent(event);
     });
   }
@@ -3099,10 +3292,21 @@ class Listener {
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -3142,7 +3346,11 @@ function withGlobalEvents(eventTypesToHandlers) {
     alternative: 'useEffect'
   }); // @ts-ignore We don't need to fix the type-related issues because this is deprecated.
 
+<<<<<<< HEAD
   return createHigherOrderComponent(WrappedComponent => {
+=======
+  return create_higher_order_component(WrappedComponent => {
+>>>>>>> fb785cbb (Initial commit)
     class Wrapper extends external_wp_element_namespaceObject.Component {
       constructor(
       /** @type {any} */
@@ -3153,13 +3361,21 @@ function withGlobalEvents(eventTypesToHandlers) {
       }
 
       componentDidMount() {
+<<<<<<< HEAD
         Object.keys(eventTypesToHandlers).forEach(eventType => {
+=======
+        (0,external_lodash_namespaceObject.forEach)(eventTypesToHandlers, (_, eventType) => {
+>>>>>>> fb785cbb (Initial commit)
           with_global_events_listener.add(eventType, this);
         });
       }
 
       componentWillUnmount() {
+<<<<<<< HEAD
         Object.keys(eventTypesToHandlers).forEach(eventType => {
+=======
+        (0,external_lodash_namespaceObject.forEach)(eventTypesToHandlers, (_, eventType) => {
+>>>>>>> fb785cbb (Initial commit)
           with_global_events_listener.remove(eventType, this);
         });
       }
@@ -3208,16 +3424,36 @@ function withGlobalEvents(eventTypesToHandlers) {
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-instance-id/index.js
+<<<<<<< HEAD
+=======
+// Disable reason: Object and object are distinctly different types in TypeScript and we mean the lowercase object in thise case
+// but eslint wants to force us to use `Object`. See https://stackoverflow.com/questions/49464634/difference-between-object-and-object-in-typescript
+
+/* eslint-disable jsdoc/check-types */
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
 
+<<<<<<< HEAD
+=======
+/**
+ * @type {WeakMap<object, number>}
+ */
+
+>>>>>>> fb785cbb (Initial commit)
 const instanceMap = new WeakMap();
 /**
  * Creates a new id for a given object.
  *
+<<<<<<< HEAD
  * @param  object Object reference to create an id for.
  * @return The instance id (index).
+=======
+ * @param {object} object Object reference to create an id for.
+ * @return {number} The instance id (index).
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function createId(object) {
@@ -3226,6 +3462,7 @@ function createId(object) {
   return instances;
 }
 /**
+<<<<<<< HEAD
  * Specify the useInstanceId *function* signatures.
  *
  * More accurately, useInstanceId distinguishes between three different
@@ -3248,14 +3485,31 @@ function createId(object) {
  * @return The unique instance id.
  */
 function useInstanceId(object, prefix, preferredId) {
+=======
+ * Provides a unique instance ID.
+ *
+ * @param {object}          object           Object reference to create an id for.
+ * @param {string}          [prefix]         Prefix for the unique id.
+ * @param {string | number} [preferredId=''] Default ID to use.
+ * @return {string | number} The unique instance id.
+ */
+
+
+function useInstanceId(object, prefix) {
+  let preferredId = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_wp_element_namespaceObject.useMemo)(() => {
     if (preferredId) return preferredId;
     const id = createId(object);
     return prefix ? `${prefix}-${id}` : id;
   }, [object]);
 }
+<<<<<<< HEAD
 
 /* harmony default export */ var use_instance_id = (useInstanceId);
+=======
+/* eslint-enable jsdoc/check-types */
+>>>>>>> fb785cbb (Initial commit)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/with-instance-id/index.js
 
@@ -3266,25 +3520,46 @@ function useInstanceId(object, prefix, preferredId) {
  */
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * A Higher Order Component used to be provide a unique instance ID by
  * component.
  */
+<<<<<<< HEAD
 const withInstanceId = createHigherOrderComponent(WrappedComponent => {
   return props => {
     const instanceId = use_instance_id(WrappedComponent); // @ts-ignore
+=======
+
+const withInstanceId = create_higher_order_component(WrappedComponent => {
+  return props => {
+    const instanceId = useInstanceId(WrappedComponent); // @ts-ignore
+>>>>>>> fb785cbb (Initial commit)
 
     return (0,external_wp_element_namespaceObject.createElement)(WrappedComponent, _extends({}, props, {
       instanceId: instanceId
     }));
   };
+<<<<<<< HEAD
 }, 'instanceId');
+=======
+}, 'withInstanceId');
+>>>>>>> fb785cbb (Initial commit)
 /* harmony default export */ var with_instance_id = (withInstanceId);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/with-safe-timeout/index.js
 
 
+<<<<<<< HEAD
+=======
+/**
+ * External dependencies
+ */
+
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * WordPress dependencies
@@ -3308,7 +3583,11 @@ const withInstanceId = createHigherOrderComponent(WrappedComponent => {
  * A higher-order component used to provide and manage delayed function calls
  * that ought to be bound to a component's lifecycle.
  */
+<<<<<<< HEAD
 const withSafeTimeout = createHigherOrderComponent(OriginalComponent => {
+=======
+const withSafeTimeout = create_higher_order_component(OriginalComponent => {
+>>>>>>> fb785cbb (Initial commit)
   return class WrappedComponent extends external_wp_element_namespaceObject.Component {
     constructor(props) {
       super(props);
@@ -3332,6 +3611,7 @@ const withSafeTimeout = createHigherOrderComponent(OriginalComponent => {
 
     clearTimeout(id) {
       clearTimeout(id);
+<<<<<<< HEAD
       this.timeouts = this.timeouts.filter(timeoutId => timeoutId !== id);
     }
 
@@ -3342,6 +3622,17 @@ const withSafeTimeout = createHigherOrderComponent(OriginalComponent => {
           clearTimeout: this.clearTimeout
         }))
       );
+=======
+      this.timeouts = (0,external_lodash_namespaceObject.without)(this.timeouts, id);
+    }
+
+    render() {
+      const props = { ...this.props,
+        setTimeout: this.setTimeout,
+        clearTimeout: this.clearTimeout
+      };
+      return (0,external_wp_element_namespaceObject.createElement)(OriginalComponent, props);
+>>>>>>> fb785cbb (Initial commit)
     }
 
   };
@@ -3379,7 +3670,11 @@ function withState() {
     since: '5.8',
     alternative: 'wp.element.useState'
   });
+<<<<<<< HEAD
   return createHigherOrderComponent(OriginalComponent => {
+=======
+  return create_higher_order_component(OriginalComponent => {
+>>>>>>> fb785cbb (Initial commit)
     return class WrappedComponent extends external_wp_element_namespaceObject.Component {
       constructor(
       /** @type {any} */
@@ -3480,6 +3775,12 @@ function useConstrainedTabbing() {
   return useRefEffect((
   /** @type {HTMLElement} */
   node) => {
+<<<<<<< HEAD
+=======
+    /** @type {number|undefined} */
+    let timeoutId;
+
+>>>>>>> fb785cbb (Initial commit)
     function onKeyDown(
     /** @type {KeyboardEvent} */
     event) {
@@ -3511,15 +3812,26 @@ function useConstrainedTabbing() {
       } = node;
       const trap = ownerDocument.createElement('div');
       trap.tabIndex = -1;
+<<<<<<< HEAD
       node[domAction](trap); // Remove itself when the trap loses focus.
 
       trap.addEventListener('blur', () => node.removeChild(trap));
       trap.focus();
+=======
+      node[domAction](trap);
+      trap.focus(); // Remove after the browser moves focus to the next element.
+
+      timeoutId = setTimeout(() => node.removeChild(trap));
+>>>>>>> fb785cbb (Initial commit)
     }
 
     node.addEventListener('keydown', onKeyDown);
     return () => {
       node.removeEventListener('keydown', onKeyDown);
+<<<<<<< HEAD
+=======
+      clearTimeout(timeoutId);
+>>>>>>> fb785cbb (Initial commit)
     };
   }, []);
 }
@@ -3651,7 +3963,11 @@ function useUpdatedRef(value) {
 
 
 function useCopyToClipboard(text, onSuccess) {
+<<<<<<< HEAD
   // Store the dependencies as refs and continuously update them so they're
+=======
+  // Store the dependencies as refs and continuesly update them so they're
+>>>>>>> fb785cbb (Initial commit)
   // fresh when the callback is called.
   const textRef = useUpdatedRef(text);
   const onSuccessRef = useUpdatedRef(onSuccess);
@@ -3742,12 +4058,16 @@ function useFocusOnMount() {
       }
     }
 
+<<<<<<< HEAD
     target.focus({
       // When focusing newly mounted dialogs,
       // the position of the popover is often not right on the first render
       // This prevents the layout shifts when focusing the dialogs.
       preventScroll: true
     });
+=======
+    target.focus();
+>>>>>>> fb785cbb (Initial commit)
   }, []);
 }
 
@@ -3837,17 +4157,34 @@ function useFocusReturn(onFocusReturn) {
  * WordPress dependencies
  */
 
+<<<<<<< HEAD
 /**
  * Input types which are classified as button types, for use in considering
  * whether element is a (focus-normalized) button.
+=======
+
+/**
+ * Input types which are classified as button types, for use in considering
+ * whether element is a (focus-normalized) button.
+ *
+ * @type {string[]}
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const INPUT_BUTTON_TYPES = ['button', 'submit'];
 /**
+<<<<<<< HEAD
  * List of HTML button elements subject to focus normalization
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Clicking_and_focus
  */
+=======
+ * @typedef {HTMLButtonElement | HTMLLinkElement | HTMLInputElement} FocusNormalizedButton
+ */
+// Disable reason: Rule doesn't support predicate return types.
+
+/* eslint-disable jsdoc/valid-types */
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Returns true if the given element is a button element subject to focus
@@ -3855,10 +4192,18 @@ const INPUT_BUTTON_TYPES = ['button', 'submit'];
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Clicking_and_focus
  *
+<<<<<<< HEAD
  * @param  eventTarget The target from a mouse or touch event.
  *
  * @return Whether the element is a button element subject to focus normalization.
  */
+=======
+ * @param {EventTarget} eventTarget The target from a mouse or touch event.
+ *
+ * @return {eventTarget is FocusNormalizedButton} Whether element is a button.
+ */
+
+>>>>>>> fb785cbb (Initial commit)
 function isFocusNormalizedButton(eventTarget) {
   if (!(eventTarget instanceof window.HTMLElement)) {
     return false;
@@ -3870,28 +4215,85 @@ function isFocusNormalizedButton(eventTarget) {
       return true;
 
     case 'INPUT':
+<<<<<<< HEAD
       return INPUT_BUTTON_TYPES.includes(eventTarget.type);
+=======
+      return (0,external_lodash_namespaceObject.includes)(INPUT_BUTTON_TYPES,
+      /** @type {HTMLInputElement} */
+      eventTarget.type);
+>>>>>>> fb785cbb (Initial commit)
   }
 
   return false;
 }
+<<<<<<< HEAD
+=======
+/* eslint-enable jsdoc/valid-types */
+
+/**
+ * @typedef {import('react').SyntheticEvent} SyntheticEvent
+ */
+
+/**
+ * @callback EventCallback
+ * @param {SyntheticEvent} event input related event.
+ */
+
+/**
+ * @typedef FocusOutsideReactElement
+ * @property {EventCallback} handleFocusOutside callback for a focus outside event.
+ */
+
+/**
+ * @typedef {import('react').MutableRefObject<FocusOutsideReactElement | undefined>} FocusOutsideRef
+ */
+
+/**
+ * @typedef {Object} FocusOutsideReturnValue
+ * @property {EventCallback} onFocus      An event handler for focus events.
+ * @property {EventCallback} onBlur       An event handler for blur events.
+ * @property {EventCallback} onMouseDown  An event handler for mouse down events.
+ * @property {EventCallback} onMouseUp    An event handler for mouse up events.
+ * @property {EventCallback} onTouchStart An event handler for touch start events.
+ * @property {EventCallback} onTouchEnd   An event handler for touch end events.
+ */
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * A react hook that can be used to check whether focus has moved outside the
  * element the event handlers are bound to.
  *
+<<<<<<< HEAD
  * @param  onFocusOutside A callback triggered when focus moves outside
  *                        the element the event handlers are bound to.
  *
  * @return An object containing event handlers. Bind the event handlers to a
  * wrapping element element to capture when focus moves outside that element.
  */
+=======
+ * @param {EventCallback} onFocusOutside A callback triggered when focus moves outside
+ *                                       the element the event handlers are bound to.
+ *
+ * @return {FocusOutsideReturnValue} An object containing event handlers. Bind the event handlers
+ *                                   to a wrapping element element to capture when focus moves
+ *                                   outside that element.
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 function useFocusOutside(onFocusOutside) {
   const currentOnFocusOutside = (0,external_wp_element_namespaceObject.useRef)(onFocusOutside);
   (0,external_wp_element_namespaceObject.useEffect)(() => {
     currentOnFocusOutside.current = onFocusOutside;
   }, [onFocusOutside]);
   const preventBlurCheck = (0,external_wp_element_namespaceObject.useRef)(false);
+<<<<<<< HEAD
+=======
+  /**
+   * @type {import('react').MutableRefObject<number | undefined>}
+   */
+
+>>>>>>> fb785cbb (Initial commit)
   const blurCheckTimeoutId = (0,external_wp_element_namespaceObject.useRef)();
   /**
    * Cancel a blur check timeout.
@@ -3917,8 +4319,14 @@ function useFocusOutside(onFocusOutside) {
    * button elements when clicked, while others do. The logic here
    * intends to normalize this as treating click on buttons as focus.
    *
+<<<<<<< HEAD
    * @param  event
    * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Clicking_and_focus
+=======
+   * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Clicking_and_focus
+   *
+   * @param {SyntheticEvent} event Event for mousedown or mouseup.
+>>>>>>> fb785cbb (Initial commit)
    */
 
   const normalizeButtonFocus = (0,external_wp_element_namespaceObject.useCallback)(event => {
@@ -3926,7 +4334,11 @@ function useFocusOutside(onFocusOutside) {
       type,
       target
     } = event;
+<<<<<<< HEAD
     const isInteractionEnd = ['mouseup', 'touchend'].includes(type);
+=======
+    const isInteractionEnd = (0,external_lodash_namespaceObject.includes)(['mouseup', 'touchend'], type);
+>>>>>>> fb785cbb (Initial commit)
 
     if (isInteractionEnd) {
       preventBlurCheck.current = false;
@@ -3940,17 +4352,26 @@ function useFocusOutside(onFocusOutside) {
    *
    * Calls the `onFocusOutside` callback in an immediate timeout if focus has
    * move outside the bound element and is still within the document.
+<<<<<<< HEAD
    */
 
   const queueBlurCheck = (0,external_wp_element_namespaceObject.useCallback)(event => {
     var _event$relatedTarget;
 
+=======
+   *
+   * @param {SyntheticEvent} event Blur event.
+   */
+
+  const queueBlurCheck = (0,external_wp_element_namespaceObject.useCallback)(event => {
+>>>>>>> fb785cbb (Initial commit)
     // React does not allow using an event reference asynchronously
     // due to recycling behavior, except when explicitly persisted.
     event.persist(); // Skip blur check if clicking button. See `normalizeButtonFocus`.
 
     if (preventBlurCheck.current) {
       return;
+<<<<<<< HEAD
     } // The usage of this attribute should be avoided. The only use case
     // would be when we load modals that are not React components and
     // therefore don't exist in the React tree. An example is opening
@@ -3964,6 +4385,8 @@ function useFocusOutside(onFocusOutside) {
 
     if (ignoreForRelatedTarget && (_event$relatedTarget = event.relatedTarget) !== null && _event$relatedTarget !== void 0 && _event$relatedTarget.closest(ignoreForRelatedTarget)) {
       return;
+=======
+>>>>>>> fb785cbb (Initial commit)
     }
 
     blurCheckTimeoutId.current = setTimeout(() => {
@@ -4069,7 +4492,10 @@ function assignRef(ref, value) {
 
 function useMergeRefs(refs) {
   const element = (0,external_wp_element_namespaceObject.useRef)();
+<<<<<<< HEAD
   const isAttached = (0,external_wp_element_namespaceObject.useRef)(false);
+=======
+>>>>>>> fb785cbb (Initial commit)
   const didElementChange = (0,external_wp_element_namespaceObject.useRef)(false);
   /* eslint-disable jsdoc/no-undefined-types */
 
@@ -4086,7 +4512,11 @@ function useMergeRefs(refs) {
   // which case the ref callbacks will already have been called.
 
   (0,external_wp_element_namespaceObject.useLayoutEffect)(() => {
+<<<<<<< HEAD
     if (didElementChange.current === false && isAttached.current === true) {
+=======
+    if (didElementChange.current === false) {
+>>>>>>> fb785cbb (Initial commit)
       refs.forEach((ref, index) => {
         const previousRef = previousRefs.current[index];
 
@@ -4110,8 +4540,12 @@ function useMergeRefs(refs) {
     // Update the element so it can be used when calling ref callbacks on a
     // dependency change.
     assignRef(element, value);
+<<<<<<< HEAD
     didElementChange.current = true;
     isAttached.current = value !== null; // When an element changes, the current ref callback should be called
+=======
+    didElementChange.current = true; // When an element changes, the current ref callback should be called
+>>>>>>> fb785cbb (Initial commit)
     // with the new element and the previous one with `null`.
 
     const refsToAssign = value ? currentRefs.current : previousRefs.current; // Update the latest refs.
@@ -4124,10 +4558,13 @@ function useMergeRefs(refs) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-dialog/index.js
 /**
+<<<<<<< HEAD
  * External dependencies
  */
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -4141,6 +4578,18 @@ function useMergeRefs(refs) {
 
 
 
+<<<<<<< HEAD
+=======
+/* eslint-disable jsdoc/valid-types */
+
+/**
+ * @typedef DialogOptions
+ * @property {Parameters<useFocusOnMount>[0]} focusOnMount Focus on mount arguments.
+ * @property {() => void}                     onClose      Function to call when the dialog is closed.
+ */
+
+/* eslint-enable jsdoc/valid-types */
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Returns a ref and props to apply to a dialog wrapper to enable the following behaviors:
@@ -4149,9 +4598,19 @@ function useMergeRefs(refs) {
  *  - return focus on unmount.
  *  - focus outside.
  *
+<<<<<<< HEAD
  * @param  options Dialog Options.
  */
 function useDialog(options) {
+=======
+ * @param {DialogOptions} options Dialog Options.
+ */
+
+function useDialog(options) {
+  /**
+   * @type {import('react').MutableRefObject<DialogOptions | undefined>}
+   */
+>>>>>>> fb785cbb (Initial commit)
   const currentOptions = (0,external_wp_element_namespaceObject.useRef)();
   (0,external_wp_element_namespaceObject.useEffect)(() => {
     currentOptions.current = options;
@@ -4164,7 +4623,13 @@ function useDialog(options) {
 
     // This unstable prop  is here only to manage backward compatibility
     // for the Popover component otherwise, the onClose should be enough.
+<<<<<<< HEAD
     if ((_currentOptions$curre = currentOptions.current) !== null && _currentOptions$curre !== void 0 && _currentOptions$curre.__unstableOnClose) {
+=======
+    // @ts-ignore unstable property
+    if ((_currentOptions$curre = currentOptions.current) !== null && _currentOptions$curre !== void 0 && _currentOptions$curre.__unstableOnClose) {
+      // @ts-ignore unstable property
+>>>>>>> fb785cbb (Initial commit)
       currentOptions.current.__unstableOnClose('focus-outside', event);
     } else if ((_currentOptions$curre2 = currentOptions.current) !== null && _currentOptions$curre2 !== void 0 && _currentOptions$curre2.onClose) {
       currentOptions.current.onClose();
@@ -4175,7 +4640,13 @@ function useDialog(options) {
       return;
     }
 
+<<<<<<< HEAD
     node.addEventListener('keydown', event => {
+=======
+    node.addEventListener('keydown', (
+    /** @type {KeyboardEvent} */
+    event) => {
+>>>>>>> fb785cbb (Initial commit)
       var _currentOptions$curre3;
 
       // Close on escape.
@@ -4186,7 +4657,11 @@ function useDialog(options) {
     });
   }, []);
   return [useMergeRefs([options.focusOnMount !== false ? constrainedTabbingRef : null, options.focusOnMount !== false ? focusReturnRef : null, options.focusOnMount !== false ? focusOnMountRef : null, closeOnEscapeRef]), { ...focusOutsideProps,
+<<<<<<< HEAD
     tabIndex: -1
+=======
+    tabIndex: '-1'
+>>>>>>> fb785cbb (Initial commit)
   }];
 }
 
@@ -4194,15 +4669,39 @@ function useDialog(options) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-disabled/index.js
 /**
+<<<<<<< HEAD
  * Internal dependencies
  */
 
 
+=======
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+
+/**
+ * Names of control nodes which qualify for disabled behavior.
+ *
+ * See WHATWG HTML Standard: 4.10.18.5: "Enabling and disabling form controls: the disabled attribute".
+ *
+ * @see https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#enabling-and-disabling-form-controls:-the-disabled-attribute
+ *
+ * @type {string[]}
+ */
+
+const DISABLED_ELIGIBLE_NODE_NAMES = ['BUTTON', 'FIELDSET', 'INPUT', 'OPTGROUP', 'OPTION', 'SELECT', 'TEXTAREA'];
+>>>>>>> fb785cbb (Initial commit)
 /**
  * In some circumstances, such as block previews, all focusable DOM elements
  * (input fields, links, buttons, etc.) need to be disabled. This hook adds the
  * behavior to disable nested DOM elements to the returned ref.
  *
+<<<<<<< HEAD
  * If you can, prefer the use of the inert HTML attribute.
  *
  * @param {Object}   config            Configuration object.
@@ -4213,6 +4712,13 @@ function useDialog(options) {
  * ```js
  * import { useDisabled } from '@wordpress/compose';
  *
+=======
+ * @return {import('react').RefObject<HTMLElement>} Element Ref.
+ *
+ * @example
+ * ```js
+ * import { __experimentalUseDisabled as useDisabled } from '@wordpress/compose';
+>>>>>>> fb785cbb (Initial commit)
  * const DisabledExample = () => {
  * 	const disabledRef = useDisabled();
  *	return (
@@ -4226,6 +4732,7 @@ function useDialog(options) {
  */
 
 function useDisabled() {
+<<<<<<< HEAD
   let {
     isDisabled: isDisabledProp = false
   } = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -4273,15 +4780,72 @@ function useDisabled() {
     observer.observe(node, {
       childList: true
     });
+=======
+  /** @type {import('react').RefObject<HTMLElement>} */
+  const node = (0,external_wp_element_namespaceObject.useRef)(null);
+
+  const disable = () => {
+    if (!node.current) {
+      return;
+    }
+
+    external_wp_dom_namespaceObject.focus.focusable.find(node.current).forEach(focusable => {
+      if ((0,external_lodash_namespaceObject.includes)(DISABLED_ELIGIBLE_NODE_NAMES, focusable.nodeName)) {
+        focusable.setAttribute('disabled', '');
+      }
+
+      if (focusable.nodeName === 'A') {
+        focusable.setAttribute('tabindex', '-1');
+      }
+
+      const tabIndex = focusable.getAttribute('tabindex');
+
+      if (tabIndex !== null && tabIndex !== '-1') {
+        focusable.removeAttribute('tabindex');
+      }
+
+      if (focusable.hasAttribute('contenteditable')) {
+        focusable.setAttribute('contenteditable', 'false');
+      }
+    });
+  }; // Debounce re-disable since disabling process itself will incur
+  // additional mutations which should be ignored.
+
+
+  const debouncedDisable = (0,external_wp_element_namespaceObject.useCallback)((0,external_lodash_namespaceObject.debounce)(disable, undefined, {
+    leading: true
+  }), []);
+  (0,external_wp_element_namespaceObject.useLayoutEffect)(() => {
+    disable();
+    /** @type {MutationObserver | undefined} */
+
+    let observer;
+
+    if (node.current) {
+      observer = new window.MutationObserver(debouncedDisable);
+      observer.observe(node.current, {
+        childList: true,
+        attributes: true,
+        subtree: true
+      });
+    }
+
+>>>>>>> fb785cbb (Initial commit)
     return () => {
       if (observer) {
         observer.disconnect();
       }
 
       debouncedDisable.cancel();
+<<<<<<< HEAD
       updates.forEach(update => update());
     };
   }, [isDisabledProp]);
+=======
+    };
+  }, []);
+  return node;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-isomorphic-layout-effect/index.js
@@ -4307,6 +4871,7 @@ const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? external_wp_el
  * Internal dependencies
  */
 
+<<<<<<< HEAD
  // Event handlers that are triggered from `document` listeners accept a MouseEvent,
 // while those triggered from React listeners accept a React.MouseEvent.
 
@@ -4315,6 +4880,14 @@ const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? external_wp_el
  * @param {(e: import('react').MouseEvent) => void} props.onDragStart
  * @param {(e: MouseEvent) => void}                 props.onDragMove
  * @param {(e?: MouseEvent) => void}                props.onDragEnd
+=======
+
+/**
+ * @param {Object}                  props
+ * @param {(e: MouseEvent) => void} props.onDragStart
+ * @param {(e: MouseEvent) => void} props.onDragMove
+ * @param {(e: MouseEvent) => void} props.onDragEnd
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function useDragging(_ref) {
@@ -4334,12 +4907,21 @@ function useDragging(_ref) {
     eventsRef.current.onDragMove = onDragMove;
     eventsRef.current.onDragEnd = onDragEnd;
   }, [onDragStart, onDragMove, onDragEnd]);
+<<<<<<< HEAD
   /** @type {(e: MouseEvent) => void} */
 
   const onMouseMove = (0,external_wp_element_namespaceObject.useCallback)(event => eventsRef.current.onDragMove && eventsRef.current.onDragMove(event), []);
   /** @type {(e?: MouseEvent) => void} */
 
   const endDrag = (0,external_wp_element_namespaceObject.useCallback)(event => {
+=======
+  const onMouseMove = (0,external_wp_element_namespaceObject.useCallback)((
+  /** @type {MouseEvent} */
+  event) => eventsRef.current.onDragMove && eventsRef.current.onDragMove(event), []);
+  const endDrag = (0,external_wp_element_namespaceObject.useCallback)((
+  /** @type {MouseEvent} */
+  event) => {
+>>>>>>> fb785cbb (Initial commit)
     if (eventsRef.current.onDragEnd) {
       eventsRef.current.onDragEnd(event);
     }
@@ -4348,9 +4930,15 @@ function useDragging(_ref) {
     document.removeEventListener('mouseup', endDrag);
     setIsDragging(false);
   }, []);
+<<<<<<< HEAD
   /** @type {(e: import('react').MouseEvent) => void} */
 
   const startDrag = (0,external_wp_element_namespaceObject.useCallback)(event => {
+=======
+  const startDrag = (0,external_wp_element_namespaceObject.useCallback)((
+  /** @type {MouseEvent} */
+  event) => {
+>>>>>>> fb785cbb (Initial commit)
     if (eventsRef.current.onDragStart) {
       eventsRef.current.onDragStart(event);
     }
@@ -4386,12 +4974,19 @@ var mousetrap_global_bind = __webpack_require__(5538);
  */
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * A block selection object.
  *
@@ -4403,6 +4998,25 @@ var mousetrap_global_bind = __webpack_require__(5538);
  * @property {import('react').RefObject<HTMLElement>} [target]     React reference to the DOM element used to catch the keyboard event.
  */
 
+<<<<<<< HEAD
+=======
+/**
+ * Return true if platform is MacOS.
+ *
+ * @param {Window} [_window] window object by default; used for DI testing.
+ *
+ * @return {boolean} True if MacOS; false otherwise.
+ */
+
+function isAppleOS() {
+  let _window = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : window;
+
+  const {
+    platform
+  } = _window.navigator;
+  return platform.indexOf('Mac') !== -1 || (0,external_lodash_namespaceObject.includes)(['iPad', 'iPhone'], platform);
+}
+>>>>>>> fb785cbb (Initial commit)
 /* eslint-disable jsdoc/valid-types */
 
 /**
@@ -4415,6 +5029,10 @@ var mousetrap_global_bind = __webpack_require__(5538);
  * @param {WPKeyboardShortcutConfig}                                              options   Shortcut options.
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 function useKeyboardShortcut(
 /* eslint-enable jsdoc/valid-types */
 shortcuts, callback) {
@@ -4442,8 +5060,12 @@ shortcuts, callback) {
 
     /** @type {unknown} */
     document);
+<<<<<<< HEAD
     const shortcutsArray = Array.isArray(shortcuts) ? shortcuts : [shortcuts];
     shortcutsArray.forEach(shortcut => {
+=======
+    (0,external_lodash_namespaceObject.castArray)(shortcuts).forEach(shortcut => {
+>>>>>>> fb785cbb (Initial commit)
       const keys = shortcut.split('+'); // Determines whether a key is a modifier by the length of the string.
       // E.g. if I add a pass a shortcut Shift+Cmd+M, it'll determine that
       // the modifiers are Shift and Cmd because they're not a single character.
@@ -4452,7 +5074,11 @@ shortcuts, callback) {
       const hasAlt = modifiers.has('alt');
       const hasShift = modifiers.has('shift'); // This should be better moved to the shortcut registration instead.
 
+<<<<<<< HEAD
       if ((0,external_wp_keycodes_namespaceObject.isAppleOS)() && (modifiers.size === 1 && hasAlt || modifiers.size === 2 && hasAlt && hasShift)) {
+=======
+      if (isAppleOS() && (modifiers.size === 1 && hasAlt || modifiers.size === 2 && hasAlt && hasShift)) {
+>>>>>>> fb785cbb (Initial commit)
         throw new Error(`Cannot bind ${shortcut}. Alt and Shift+Alt modifiers are reserved for character input.`);
       }
 
@@ -4633,14 +5259,22 @@ const useViewportMatch = function (breakpoint) {
 useViewportMatch.__experimentalWidthProvider = ViewportMatchWidthContext.Provider;
 /* harmony default export */ var use_viewport_match = (useViewportMatch);
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-resize-observer/index.js
 
 
+=======
+// EXTERNAL MODULE: ./node_modules/react-resize-aware/dist/index.js
+var dist = __webpack_require__(235);
+var dist_default = /*#__PURE__*/__webpack_require__.n(dist);
+;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-resize-observer/index.js
+>>>>>>> fb785cbb (Initial commit)
 /**
  * External dependencies
  */
 
 /**
+<<<<<<< HEAD
  * WordPress dependencies
  */
 
@@ -4835,6 +5469,15 @@ function useResizeObserver() {
 /**
  * Hook which allows to listen the resize event of any target element when it changes sizes.
  * _Note: `useResizeObserver` will report `null` until after first render.
+=======
+ * Hook which allows to listen the resize event of any target element when it changes sizes.
+ * _Note: `useResizeObserver` will report `null` until after first render_
+ *
+ * Simply a re-export of `react-resize-aware` so refer to its documentation <https://github.com/FezVrasta/react-resize-aware>
+ * for more details.
+ *
+ * @see https://github.com/FezVrasta/react-resize-aware
+>>>>>>> fb785cbb (Initial commit)
  *
  * @example
  *
@@ -4850,6 +5493,7 @@ function useResizeObserver() {
  * 	);
  * };
  * ```
+<<<<<<< HEAD
  */
 
 
@@ -4882,6 +5526,12 @@ function useResizeAware() {
   });
   return [resizeListener, sizes];
 }
+=======
+ *
+ */
+
+/* harmony default export */ var use_resize_observer = ((dist_default()));
+>>>>>>> fb785cbb (Initial commit)
 
 ;// CONCATENATED MODULE: external ["wp","priorityQueue"]
 var external_wp_priorityQueue_namespaceObject = window["wp"]["priorityQueue"];
@@ -4942,6 +5592,7 @@ function useAsyncList(list) {
     }
 
     setCurrent(firstItems);
+<<<<<<< HEAD
     const asyncQueue = (0,external_wp_priorityQueue_namespaceObject.createQueue)();
 
     for (let i = firstItems.length; i < list.length; i += step) {
@@ -4952,6 +5603,22 @@ function useAsyncList(list) {
       });
     }
 
+=======
+    let nextIndex = firstItems.length;
+    const asyncQueue = (0,external_wp_priorityQueue_namespaceObject.createQueue)();
+
+    const append = () => {
+      if (list.length <= nextIndex) {
+        return;
+      }
+
+      setCurrent(state => [...state, ...list.slice(nextIndex, nextIndex + step)]);
+      nextIndex += step;
+      asyncQueue.add({}, append);
+    };
+
+    asyncQueue.add({}, append);
+>>>>>>> fb785cbb (Initial commit)
     return () => asyncQueue.reset();
   }, [list]);
   return current;
@@ -5008,8 +5675,13 @@ function useWarnOnChange(object) {
 
 /* harmony default export */ var use_warn_on_change = (useWarnOnChange);
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: external "React"
 var external_React_namespaceObject = window["React"];
+=======
+// EXTERNAL MODULE: external "React"
+var external_React_ = __webpack_require__(9196);
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/use-memo-one/dist/use-memo-one.esm.js
 
 
@@ -5028,20 +5700,33 @@ function areInputsEqual(newInputs, lastInputs) {
 }
 
 function useMemoOne(getResult, inputs) {
+<<<<<<< HEAD
   var initial = (0,external_React_namespaceObject.useState)(function () {
+=======
+  var initial = (0,external_React_.useState)(function () {
+>>>>>>> fb785cbb (Initial commit)
     return {
       inputs: inputs,
       result: getResult()
     };
   })[0];
+<<<<<<< HEAD
   var isFirstRun = (0,external_React_namespaceObject.useRef)(true);
   var committed = (0,external_React_namespaceObject.useRef)(initial);
+=======
+  var isFirstRun = (0,external_React_.useRef)(true);
+  var committed = (0,external_React_.useRef)(initial);
+>>>>>>> fb785cbb (Initial commit)
   var useCache = isFirstRun.current || Boolean(inputs && committed.current.inputs && areInputsEqual(inputs, committed.current.inputs));
   var cache = useCache ? committed.current : {
     inputs: inputs,
     result: getResult()
   };
+<<<<<<< HEAD
   (0,external_React_namespaceObject.useEffect)(function () {
+=======
+  (0,external_React_.useEffect)(function () {
+>>>>>>> fb785cbb (Initial commit)
     isFirstRun.current = false;
     committed.current = cache;
   }, [cache]);
@@ -5062,11 +5747,16 @@ var useCallback = (/* unused pure expression or super */ null && (useCallbackOne
  * External dependencies
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
 
 
+<<<<<<< HEAD
 /**
  * Internal dependencies
  */
@@ -5074,6 +5764,12 @@ var useCallback = (/* unused pure expression or super */ null && (useCallbackOne
 
 /**
  * Debounces a function similar to Lodash's `debounce`. A new debounced function will
+=======
+/* eslint-disable jsdoc/valid-types */
+
+/**
+ * Debounces a function with Lodash's `debounce`. A new debounced function will
+>>>>>>> fb785cbb (Initial commit)
  * be returned and any scheduled calls cancelled if any of the arguments change,
  * including the function to debounce, so please wrap functions created on
  * render in components in `useCallback`.
@@ -5082,6 +5778,7 @@ var useCallback = (/* unused pure expression or super */ null && (useCallbackOne
  *
  * @template {(...args: any[]) => void} TFunc
  *
+<<<<<<< HEAD
  * @param {TFunc}                                          fn        The function to debounce.
  * @param {number}                                         [wait]    The number of milliseconds to delay.
  * @param {import('../../utils/debounce').DebounceOptions} [options] The options object.
@@ -5090,6 +5787,17 @@ var useCallback = (/* unused pure expression or super */ null && (useCallbackOne
 
 function useDebounce(fn, wait, options) {
   const debounced = useMemoOne(() => debounce(fn, wait !== null && wait !== void 0 ? wait : 0, options), [fn, wait, options]);
+=======
+ * @param {TFunc}                             fn        The function to debounce.
+ * @param {number}                            [wait]    The number of milliseconds to delay.
+ * @param {import('lodash').DebounceSettings} [options] The options object.
+ * @return {import('lodash').DebouncedFunc<TFunc>} Debounced function.
+ */
+
+function useDebounce(fn, wait, options) {
+  /* eslint-enable jsdoc/valid-types */
+  const debounced = useMemoOne(() => (0,external_lodash_namespaceObject.debounce)(fn, wait, options), [fn, wait, options]);
+>>>>>>> fb785cbb (Initial commit)
   (0,external_wp_element_namespaceObject.useEffect)(() => () => debounced.cancel(), [debounced]);
   return debounced;
 }
@@ -5099,18 +5807,26 @@ function useDebounce(fn, wait, options) {
  * External dependencies
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
 
 
 /**
+<<<<<<< HEAD
  * Internal dependencies
  */
 
 
 /**
  * Throttles a function similar to Lodash's `throttle`. A new throttled function will
+=======
+ * Throttles a function with Lodash's `throttle`. A new throttled function will
+>>>>>>> fb785cbb (Initial commit)
  * be returned and any scheduled calls cancelled if any of the arguments change,
  * including the function to throttle, so please wrap functions created on
  * render in components in `useCallback`.
@@ -5119,6 +5835,7 @@ function useDebounce(fn, wait, options) {
  *
  * @template {(...args: any[]) => void} TFunc
  *
+<<<<<<< HEAD
  * @param {TFunc}                                          fn        The function to throttle.
  * @param {number}                                         [wait]    The number of milliseconds to throttle invocations to.
  * @param {import('../../utils/throttle').ThrottleOptions} [options] The options object. See linked documentation for details.
@@ -5127,6 +5844,16 @@ function useDebounce(fn, wait, options) {
 
 function useThrottle(fn, wait, options) {
   const throttled = useMemoOne(() => throttle(fn, wait !== null && wait !== void 0 ? wait : 0, options), [fn, wait, options]);
+=======
+ * @param {TFunc}                             fn        The function to throttle.
+ * @param {number}                            [wait]    The number of milliseconds to throttle invocations to.
+ * @param {import('lodash').ThrottleSettings} [options] The options object. See linked documentation for details.
+ * @return {import('lodash').DebouncedFunc<TFunc>} Throttled function.
+ */
+
+function useThrottle(fn, wait, options) {
+  const throttled = useMemoOne(() => (0,external_lodash_namespaceObject.throttle)(fn, wait, options), [fn, wait, options]);
+>>>>>>> fb785cbb (Initial commit)
   (0,external_wp_element_namespaceObject.useEffect)(() => () => throttled.cancel(), [throttled]);
   return throttled;
 }
@@ -5170,6 +5897,7 @@ function useFreshRef(value) {
 /**
  * A hook to facilitate drag and drop handling.
  *
+<<<<<<< HEAD
  * @param {Object}                  props               Named parameters.
  * @param {boolean}                 [props.isDisabled]  Whether or not to disable the drop zone.
  * @param {(e: DragEvent) => void}  [props.onDragStart] Called when dragging has started.
@@ -5178,6 +5906,16 @@ function useFreshRef(value) {
  * @param {(e: DragEvent) => void}  [props.onDragLeave] Called when the zone is left.
  * @param {(e: MouseEvent) => void} [props.onDragEnd]   Called when dragging has ended.
  * @param {(e: DragEvent) => void}  [props.onDrop]      Called when dropping in the zone.
+=======
+ * @param {Object}                  props             Named parameters.
+ * @param {boolean}                 props.isDisabled  Whether or not to disable the drop zone.
+ * @param {(e: DragEvent) => void}  props.onDragStart Called when dragging has started.
+ * @param {(e: DragEvent) => void}  props.onDragEnter Called when the zone is entered.
+ * @param {(e: DragEvent) => void}  props.onDragOver  Called when the zone is moved within.
+ * @param {(e: DragEvent) => void}  props.onDragLeave Called when the zone is left.
+ * @param {(e: MouseEvent) => void} props.onDragEnd   Called when dragging has ended.
+ * @param {(e: DragEvent) => void}  props.onDrop      Called when dropping in the zone.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return {import('react').RefCallback<HTMLElement>} Ref callback to be passed to the drop zone element.
  */
@@ -5245,7 +5983,12 @@ function useDropZone(_ref) {
         return;
       }
 
+<<<<<<< HEAD
       isDragging = true; // Note that `dragend` doesn't fire consistently for file and
+=======
+      isDragging = true;
+      ownerDocument.removeEventListener('dragenter', maybeDragStart); // Note that `dragend` doesn't fire consistently for file and
+>>>>>>> fb785cbb (Initial commit)
       // HTML drag events where the drag origin is outside the browser
       // window. In Firefox it may also not fire if the originating
       // node is removed.
@@ -5298,8 +6041,11 @@ function useDropZone(_ref) {
       // leaving the drop zone, which means the `relatedTarget`
       // (element that has been entered) should be outside the drop
       // zone.
+<<<<<<< HEAD
       // Note: This is not entirely reliable in Safari due to this bug
       // https://bugs.webkit.org/show_bug.cgi?id=66547
+=======
+>>>>>>> fb785cbb (Initial commit)
       if (isElementInZone(event.relatedTarget)) {
         return;
       }
@@ -5341,6 +6087,10 @@ function useDropZone(_ref) {
       }
 
       isDragging = false;
+<<<<<<< HEAD
+=======
+      ownerDocument.addEventListener('dragenter', maybeDragStart);
+>>>>>>> fb785cbb (Initial commit)
       ownerDocument.removeEventListener('dragend', maybeDragEnd);
       ownerDocument.removeEventListener('mousemove', maybeDragEnd);
 
@@ -5358,6 +6108,15 @@ function useDropZone(_ref) {
 
     ownerDocument.addEventListener('dragenter', maybeDragStart);
     return () => {
+<<<<<<< HEAD
+=======
+      onDropRef.current = null;
+      onDragStartRef.current = null;
+      onDragEnterRef.current = null;
+      onDragLeaveRef.current = null;
+      onDragEndRef.current = null;
+      onDragOverRef.current = null;
+>>>>>>> fb785cbb (Initial commit)
       delete element.dataset.isDropZone;
       element.removeEventListener('drop', onDrop);
       element.removeEventListener('dragenter', onDragEnter);
@@ -5365,17 +6124,24 @@ function useDropZone(_ref) {
       element.removeEventListener('dragleave', onDragLeave);
       ownerDocument.removeEventListener('dragend', maybeDragEnd);
       ownerDocument.removeEventListener('mousemove', maybeDragEnd);
+<<<<<<< HEAD
       ownerDocument.removeEventListener('dragenter', maybeDragStart);
+=======
+      ownerDocument.addEventListener('dragenter', maybeDragStart);
+>>>>>>> fb785cbb (Initial commit)
     };
   }, [isDisabled]);
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-focusable-iframe/index.js
 /**
+<<<<<<< HEAD
  * External dependencies
  */
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Internal dependencies
  */
 
@@ -5383,7 +6149,11 @@ function useDropZone(_ref) {
  * Dispatches a bubbling focus event when the iframe receives focus. Use
  * `onFocus` as usual on the iframe or a parent element.
  *
+<<<<<<< HEAD
  * @return Ref to pass to the iframe.
+=======
+ * @return {Object} Ref to pass to the iframe.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function useFocusableIframe() {
@@ -5403,6 +6173,10 @@ function useFocusableIframe() {
 
     function checkFocus() {
       if (ownerDocument && ownerDocument.activeElement === element) {
+<<<<<<< HEAD
+=======
+        /** @type {HTMLElement} */
+>>>>>>> fb785cbb (Initial commit)
         element.focus();
       }
     }
@@ -5416,15 +6190,25 @@ function useFocusableIframe() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-fixed-window-list/index.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
 
 
+<<<<<<< HEAD
 /**
  * Internal dependencies
  */
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 const DEFAULT_INIT_WINDOW_SIZE = 30;
 /**
@@ -5513,7 +6297,11 @@ function useFixedWindowList(elementRef, itemHeight, totalItems, options) {
     };
 
     measureWindow(true);
+<<<<<<< HEAD
     const debounceMeasureList = debounce(() => {
+=======
+    const debounceMeasureList = (0,external_lodash_namespaceObject.debounce)(() => {
+>>>>>>> fb785cbb (Initial commit)
       measureWindow();
     }, 16);
     scrollContainer === null || scrollContainer === void 0 ? void 0 : scrollContainer.addEventListener('scroll', debounceMeasureList);
@@ -5580,6 +6368,7 @@ function useFixedWindowList(elementRef, itemHeight, totalItems, options) {
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/index.js
+<<<<<<< HEAD
 // The `createHigherOrderComponent` helper and helper types.
  // The `debounce` helper and its types.
 
@@ -5587,6 +6376,10 @@ function useFixedWindowList(elementRef, itemHeight, totalItems, options) {
 
  // The `compose` and `pipe` helpers (inspired by `flowRight` and `flow` from Lodash).
 
+=======
+// Utils.
+ // Compose helper (aliased flowRight from Lodash)
+>>>>>>> fb785cbb (Initial commit)
 
  // Higher-order components.
 

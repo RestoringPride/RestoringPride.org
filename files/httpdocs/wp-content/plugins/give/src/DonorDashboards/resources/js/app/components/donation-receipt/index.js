@@ -1,6 +1,9 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Fragment} from 'react';
+<<<<<<< HEAD
 import {Interweave} from 'interweave';
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 import './style.scss';
 
@@ -23,7 +26,11 @@ const DonationReceipt = ({donation}) => {
                         {item.value.label}
                     </Fragment>
                 ) : (
+<<<<<<< HEAD
                     <Interweave content={item.value} allowAttributes={['download']} />
+=======
+                    item.value
+>>>>>>> fb785cbb (Initial commit)
                 );
 
             return (

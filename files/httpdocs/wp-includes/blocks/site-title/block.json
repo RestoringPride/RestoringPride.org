@@ -27,7 +27,10 @@
 		"viewportWidth": 500
 	},
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"align": [ "wide", "full" ],
 		"html": false,
 		"color": {
@@ -48,7 +51,10 @@
 			"lineHeight": true,
 			"__experimentalFontFamily": true,
 			"__experimentalTextTransform": true,
+<<<<<<< HEAD
 			"__experimentalTextDecoration": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalFontStyle": true,
 			"__experimentalFontWeight": true,
 			"__experimentalLetterSpacing": true,
@@ -61,6 +67,10 @@
 			}
 		}
 	},
+<<<<<<< HEAD
 	"editorStyle": "wp-block-site-title-editor",
 	"style": "wp-block-site-title"
+=======
+	"editorStyle": "wp-block-site-title-editor"
+>>>>>>> fb785cbb (Initial commit)
 }

@@ -245,7 +245,11 @@ if ( 'update' === $action ) { // We are saving settings sent from a settings pag
 		wp_die(
 			sprintf(
 				/* translators: %s: The options page name. */
+<<<<<<< HEAD
 				__( '<strong>Error:</strong> The %s options page is not in the allowed options list.' ),
+=======
+				__( '<strong>Error</strong>: Options page %s not found in the allowed options list.' ),
+>>>>>>> fb785cbb (Initial commit)
 				'<code>' . esc_html( $option_page ) . '</code>'
 			)
 		);
@@ -344,8 +348,12 @@ if ( 'update' === $action ) { // We are saving settings sent from a settings pag
 	if ( ! count( get_settings_errors() ) ) {
 		add_settings_error( 'general', 'settings_updated', __( 'Settings saved.' ), 'success' );
 	}
+<<<<<<< HEAD
 
 	set_transient( 'settings_errors', get_settings_errors(), 30 ); // 30 seconds.
+=======
+	set_transient( 'settings_errors', get_settings_errors(), 30 );
+>>>>>>> fb785cbb (Initial commit)
 
 	// Redirect back to the settings page that was submitted.
 	$goback = add_query_arg( 'settings-updated', 'true', wp_get_referer() );

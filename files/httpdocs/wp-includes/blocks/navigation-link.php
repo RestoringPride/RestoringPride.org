@@ -98,6 +98,7 @@ function block_core_navigation_link_build_css_font_sizes( $context ) {
 		$font_sizes['css_classes'][] = sprintf( 'has-%s-font-size', $context['fontSize'] );
 	} elseif ( $has_custom_font_size ) {
 		// Add the custom font size inline style.
+<<<<<<< HEAD
 		$font_sizes['inline_styles'] = sprintf(
 			'font-size: %s;',
 			wp_get_typography_font_size_value(
@@ -106,6 +107,9 @@ function block_core_navigation_link_build_css_font_sizes( $context ) {
 				)
 			)
 		);
+=======
+		$font_sizes['inline_styles'] = sprintf( 'font-size: %s;', $context['style']['typography']['fontSize'] );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	return $font_sizes;
@@ -121,6 +125,7 @@ function block_core_navigation_link_render_submenu_icon() {
 }
 
 /**
+<<<<<<< HEAD
  * Decodes a url if it's encoded, returning the same url if not.
  *
  * @param string $url The url to decode.
@@ -148,6 +153,8 @@ function block_core_navigation_link_maybe_urldecode( $url ) {
 
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Renders the `core/navigation-link` block.
  *
  * @param array    $attributes The block attributes.
@@ -184,7 +191,11 @@ function render_block_core_navigation_link( $attributes, $content, $block ) {
 
 	$css_classes = trim( implode( ' ', $classes ) );
 	$has_submenu = count( $block->inner_blocks ) > 0;
+<<<<<<< HEAD
 	$is_active   = ! empty( $attributes['id'] ) && ( get_queried_object_id() === (int) $attributes['id'] );
+=======
+	$is_active   = ! empty( $attributes['id'] ) && ( get_the_ID() === $attributes['id'] );
+>>>>>>> fb785cbb (Initial commit)
 
 	$wrapper_attributes = get_block_wrapper_attributes(
 		array(
@@ -198,7 +209,11 @@ function render_block_core_navigation_link( $attributes, $content, $block ) {
 
 	// Start appending HTML attributes to anchor tag.
 	if ( isset( $attributes['url'] ) ) {
+<<<<<<< HEAD
 		$html .= ' href="' . esc_url( block_core_navigation_link_maybe_urldecode( $attributes['url'] ) ) . '"';
+=======
+		$html .= ' href="' . esc_url( $attributes['url'] ) . '"';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	if ( $is_active ) {

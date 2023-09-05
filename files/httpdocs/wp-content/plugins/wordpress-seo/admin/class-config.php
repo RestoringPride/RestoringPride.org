@@ -6,7 +6,10 @@
  */
 
 use Yoast\WP\SEO\Config\Schema_Types;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Integrations\Settings_Integration;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Class WPSEO_Admin_Pages.
@@ -41,12 +44,15 @@ class WPSEO_Admin_Pages {
 	 * Make sure the needed scripts are loaded for admin pages.
 	 */
 	public function init() {
+<<<<<<< HEAD
 		$page = filter_input( INPUT_GET, 'page' );
 		if ( $page === Settings_Integration::PAGE ) {
 			// Bail, this is managed in the Settings_Integration.
 			return;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( filter_input( INPUT_GET, 'wpseo_reset_defaults' ) && wp_verify_nonce( filter_input( INPUT_GET, 'nonce' ), 'wpseo_reset_defaults' ) && current_user_can( 'manage_options' ) ) {
 			WPSEO_Options::reset();
 		}
@@ -63,6 +69,10 @@ class WPSEO_Admin_Pages {
 		wp_enqueue_style( 'thickbox' );
 		wp_enqueue_style( 'global' );
 		wp_enqueue_style( 'wp-admin' );
+<<<<<<< HEAD
+=======
+		$this->asset_manager->enqueue_style( 'select2' );
+>>>>>>> fb785cbb (Initial commit)
 		$this->asset_manager->enqueue_style( 'admin-css' );
 		$this->asset_manager->enqueue_style( 'monorepo' );
 
@@ -88,12 +98,20 @@ class WPSEO_Admin_Pages {
 		$dismissed_alerts       = $alert_dismissal_action->all_dismissed();
 
 		$script_data = [
+<<<<<<< HEAD
 			'userLanguageCode'               => WPSEO_Language_Utils::get_language( \get_user_locale() ),
 			'dismissedAlerts'                => $dismissed_alerts,
 			'isRtl'                          => is_rtl(),
 			'isPremium'                      => YoastSEO()->helpers->product->is_premium(),
 			'webinarIntroSettingsUrl'        => WPSEO_Shortlinker::get( 'https://yoa.st/webinar-intro-settings' ),
 			'webinarIntroFirstTimeConfigUrl' => WPSEO_Shortlinker::get( 'https://yoa.st/webinar-intro-first-time-config' ),
+=======
+			'userLanguageCode'        => WPSEO_Language_Utils::get_language( \get_user_locale() ),
+			'dismissedAlerts'         => $dismissed_alerts,
+			'isRtl'                   => is_rtl(),
+			'isPremium'               => YoastSEO()->helpers->product->is_premium(),
+			'webinarIntroSettingsUrl' => WPSEO_Shortlinker::get( 'https://yoa.st/webinar-intro-settings' ),
+>>>>>>> fb785cbb (Initial commit)
 		];
 
 		$page = filter_input( INPUT_GET, 'page' );
@@ -154,14 +172,21 @@ class WPSEO_Admin_Pages {
 			$script_data['social'] = [
 				'facebook_url'      => WPSEO_Options::get( 'facebook_site', '' ),
 				'twitter_username'  => WPSEO_Options::get( 'twitter_site', '' ),
+<<<<<<< HEAD
 				'mastodon_url'      => WPSEO_Options::get( 'mastodon_url', '' ),
+=======
+>>>>>>> fb785cbb (Initial commit)
 				'other_social_urls' => WPSEO_Options::get( 'other_social_urls', [] ),
 				'company_or_person' => WPSEO_Options::get( 'company_or_person', '' ),
 				'user_id'           => $user_id,
 				'user_name'         => $user_name,
 			];
 
+<<<<<<< HEAD
 			$script_data['search_appearance_link'] = admin_url( 'admin.php?page=wpseo_page_settings#/site-representation' );
+=======
+			$script_data['search_appearance_link'] = admin_url( 'admin.php?page=wpseo_titles' );
+>>>>>>> fb785cbb (Initial commit)
 
 			$script_data['force_organization'] = ( defined( 'WPSEO_LOCAL_FILE' ) );
 		}

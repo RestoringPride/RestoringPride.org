@@ -2,6 +2,7 @@
 
 namespace Give\Revenue\Repositories;
 
+<<<<<<< HEAD
 use Give\Donations\Models\Donation;
 use Give\Framework\Database\DB;
 use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
@@ -15,6 +16,18 @@ use Give\Framework\Support\ValueObjects\Money;
  *
  * @since      2.9.0
  * @since 2.22.1 Added the `updateRevenueAmount()` method
+=======
+use Give\Framework\Database\DB;
+use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
+
+/**
+ * Class Revenue
+ * @package Give\Revenue\Repositories
+ *
+ * Use this class to get data from "give_revenue" table.
+ *
+ * @since 2.9.0
+>>>>>>> fb785cbb (Initial commit)
  */
 class Revenue
 {
@@ -67,6 +80,7 @@ class Revenue
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.22.1
      *
      * @param Donation $donation
@@ -87,6 +101,8 @@ class Revenue
     }
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * Validate new revenue data.
      *
      * @since 2.9.0
@@ -106,7 +122,11 @@ class Revenue
             unset($array['form_id']);
         }
 
+<<<<<<< HEAD
         if (!is_numeric($array['amount']) || (int)$array['amount'] < 0) {
+=======
+        if ( ! is_numeric($array['amount']) || (int)$array['amount'] < 0) {
+>>>>>>> fb785cbb (Initial commit)
             unset($array['amount']);
         }
 

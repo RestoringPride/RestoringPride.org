@@ -17,7 +17,11 @@ use WP_Error;
  * @method static int|bool query(string $query)
  * @method static int|false insert(string $table, array $data, array|string $format)
  * @method static int|false delete(string $table, array $where, array|string $where_format)
+<<<<<<< HEAD
  * @method static int|false update(string $table, array $data, array $where, array|string $format = null, array|string $where_format = null)
+=======
+ * @method static int|false update(string $table, array $data, array $where, array|string $format, array|string $where_format)
+>>>>>>> fb785cbb (Initial commit)
  * @method static int|false replace(string $table, array $data, array|string $format)
  * @method static null|string get_var(string $query = null, int $x = 0, int $y = 0)
  * @method static array|object|null|void get_row(string $query = null, string $output = OBJECT, int $y = 0)
@@ -32,14 +36,22 @@ class DB
     /**
      * Runs the dbDelta function and returns a WP_Error with any errors that occurred during the process
      *
+<<<<<<< HEAD
+=======
+     * @see dbDelta() for parameter and return details
+     *
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.9.2
      *
      * @param $delta
      *
      * @return array
      * @throws DatabaseQueryException
+<<<<<<< HEAD
      * @see   dbDelta() for parameter and return details
      *
+=======
+>>>>>>> fb785cbb (Initial commit)
      */
     public static function delta($delta)
     {
@@ -53,6 +65,7 @@ class DB
     /**
      * A convenience method for the $wpdb->prepare method
      *
+<<<<<<< HEAD
      * @since 2.9.6
      *
      * @param string $query
@@ -61,6 +74,16 @@ class DB
      * @return false|mixed
      * @see   WPDB::prepare() for usage details
      *
+=======
+     * @see WPDB::prepare() for usage details
+     *
+     * @since 2.9.6
+     *
+     * @param string $query
+     * @param mixed ...$args
+     *
+     * @return false|mixed
+>>>>>>> fb785cbb (Initial commit)
      */
     public static function prepare($query, ...$args)
     {
@@ -72,7 +95,10 @@ class DB
     /**
      * Magic method which calls the static method on the $wpdb while performing error checking
      *
+<<<<<<< HEAD
      * @since 2.22.0 add givewp_db_pre_query action
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.9.6
      *
      * @param $name
@@ -84,6 +110,7 @@ class DB
     public static function __callStatic($name, $arguments)
     {
         return self::runQueryWithErrorChecking(
+<<<<<<< HEAD
             static function () use ($name, $arguments) {
                 global $wpdb;
 
@@ -91,6 +118,11 @@ class DB
                     do_action('givewp_db_pre_query', current($arguments));
                 }
 
+=======
+            function () use ($name, $arguments) {
+                global $wpdb;
+
+>>>>>>> fb785cbb (Initial commit)
                 return call_user_func_array([$wpdb, $name], $arguments);
             }
         );
@@ -126,7 +158,11 @@ class DB
     /**
      * Create QueryBuilder instance
      *
+<<<<<<< HEAD
      * @param string      $table
+=======
+     * @param string $table
+>>>>>>> fb785cbb (Initial commit)
      * @param null|string $alias
      *
      * @return QueryBuilder
@@ -208,7 +244,11 @@ class DB
      * If $args are provided, we will assume that dev wants to use DB::prepare method with raw SQL
      *
      * @param string $sql
+<<<<<<< HEAD
      * @param array  ...$args
+=======
+     * @param array ...$args
+>>>>>>> fb785cbb (Initial commit)
      *
      * @return RawSQL
      */
@@ -243,7 +283,11 @@ class DB
 
         $wpError = self::getQueryErrors($errorCount);
 
+<<<<<<< HEAD
         if ( ! empty($wpError->errors)) {
+=======
+        if (!empty($wpError->errors)) {
+>>>>>>> fb785cbb (Initial commit)
             throw new DatabaseQueryException($wpdb->last_query, $wpError->errors);
         }
 

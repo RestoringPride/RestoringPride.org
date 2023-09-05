@@ -16,9 +16,12 @@ class WebPage extends Abstract_Schema_Piece {
 	 * @return bool
 	 */
 	public function is_needed() {
+<<<<<<< HEAD
 		if ( $this->context->indexable->object_type === 'unknown' ) {
 			return false;
 		}
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return ! ( $this->context->indexable->object_type === 'system-page' && $this->context->indexable->object_sub_type === '404' );
 	}
 
@@ -48,9 +51,15 @@ class WebPage extends Abstract_Schema_Piece {
 			}
 		}
 
+<<<<<<< HEAD
 		$this->add_image( $data );
 
 		if ( $this->context->indexable->object_type === 'post' ) {
+=======
+		if ( $this->context->indexable->object_type === 'post' ) {
+			$this->add_image( $data );
+
+>>>>>>> fb785cbb (Initial commit)
 			$data['datePublished'] = $this->helpers->date->format( $this->context->post->post_date_gmt );
 			$data['dateModified']  = $this->helpers->date->format( $this->context->post->post_modified_gmt );
 
@@ -103,8 +112,11 @@ class WebPage extends Abstract_Schema_Piece {
 	public function add_image( &$data ) {
 		if ( $this->context->has_image ) {
 			$data['primaryImageOfPage'] = [ '@id' => $this->context->canonical . Schema_IDs::PRIMARY_IMAGE_HASH ];
+<<<<<<< HEAD
 			$data['image']              = [ '@id' => $this->context->canonical . Schema_IDs::PRIMARY_IMAGE_HASH ];
 			$data['thumbnailUrl']       = $this->context->main_image_url;
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 
@@ -130,8 +142,13 @@ class WebPage extends Abstract_Schema_Piece {
 	 */
 	private function add_potential_action( $data ) {
 		$url = $this->context->canonical;
+<<<<<<< HEAD
 		if ( $data['@type'] === 'CollectionPage' || ( \is_array( $data['@type'] ) && \in_array( 'CollectionPage', $data['@type'], true ) ) ) {
 			return $data;
+=======
+		if ( empty( $url ) && \is_search() ) {
+			$url = $this->build_search_url();
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		/**

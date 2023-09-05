@@ -15,7 +15,10 @@
  *
  * @since 5.5.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Sitemaps_Index {
 	/**
 	 * The main registry of supported sitemaps.

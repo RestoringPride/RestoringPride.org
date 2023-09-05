@@ -20,6 +20,7 @@
 function wp_dashboard_setup() {
 	global $wp_registered_widgets, $wp_registered_widget_controls, $wp_dashboard_control_callbacks;
 
+<<<<<<< HEAD
 	$screen = get_current_screen();
 
 	/* Register Widgets and Controls */
@@ -32,6 +33,19 @@ function wp_dashboard_setup() {
 		add_filter( 'postbox_classes_dashboard_dashboard_browser_nag', 'dashboard_browser_nag_class' );
 
 		if ( $check_browser['insecure'] ) {
+=======
+	$wp_dashboard_control_callbacks = array();
+	$screen                         = get_current_screen();
+
+	/* Register Widgets and Controls */
+
+	$response = wp_check_browser_version();
+
+	if ( $response && $response['upgrade'] ) {
+		add_filter( 'postbox_classes_dashboard_dashboard_browser_nag', 'dashboard_browser_nag_class' );
+
+		if ( $response['insecure'] ) {
+>>>>>>> fb785cbb (Initial commit)
 			wp_add_dashboard_widget( 'dashboard_browser_nag', __( 'You are using an insecure browser!' ), 'wp_dashboard_browser_nag' );
 		} else {
 			wp_add_dashboard_widget( 'dashboard_browser_nag', __( 'Your browser is out of date!' ), 'wp_dashboard_browser_nag' );
@@ -39,6 +53,7 @@ function wp_dashboard_setup() {
 	}
 
 	// PHP Version.
+<<<<<<< HEAD
 	$check_php = wp_check_php_version();
 
 	if ( $check_php && current_user_can( 'update_php' ) ) {
@@ -52,6 +67,16 @@ function wp_dashboard_setup() {
 				wp_add_dashboard_widget( 'dashboard_php_nag', __( 'PHP Update Recommended' ), 'wp_dashboard_php_nag' );
 			}
 		}
+=======
+	$response = wp_check_php_version();
+
+	if ( $response && isset( $response['is_acceptable'] ) && ! $response['is_acceptable']
+		&& current_user_can( 'update_php' )
+	) {
+		add_filter( 'postbox_classes_dashboard_dashboard_php_nag', 'dashboard_php_nag_class' );
+
+		wp_add_dashboard_widget( 'dashboard_php_nag', __( 'PHP Update Recommended' ), 'wp_dashboard_php_nag' );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	// Site Health.
@@ -492,12 +517,16 @@ function wp_network_dashboard_right_now() {
 
 	<form action="<?php echo esc_url( network_admin_url( 'users.php' ) ); ?>" method="get">
 		<p>
+<<<<<<< HEAD
 			<label class="screen-reader-text" for="search-users">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( 'Search Users' );
 				?>
 			</label>
+=======
+			<label class="screen-reader-text" for="search-users"><?php _e( 'Search Users' ); ?></label>
+>>>>>>> fb785cbb (Initial commit)
 			<input type="search" name="s" value="" size="30" autocomplete="off" id="search-users" />
 			<?php submit_button( __( 'Search Users' ), '', false, false, array( 'id' => 'submit_users' ) ); ?>
 		</p>
@@ -505,12 +534,16 @@ function wp_network_dashboard_right_now() {
 
 	<form action="<?php echo esc_url( network_admin_url( 'sites.php' ) ); ?>" method="get">
 		<p>
+<<<<<<< HEAD
 			<label class="screen-reader-text" for="search-sites">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( 'Search Sites' );
 				?>
 			</label>
+=======
+			<label class="screen-reader-text" for="search-sites"><?php _e( 'Search Sites' ); ?></label>
+>>>>>>> fb785cbb (Initial commit)
 			<input type="search" name="s" value="" size="30" autocomplete="off" id="search-sites" />
 			<?php submit_button( __( 'Search Sites' ), '', false, false, array( 'id' => 'submit_sites' ) ); ?>
 		</p>
@@ -815,9 +848,15 @@ function _wp_dashboard_recent_comments_row( &$comment, $show_date = true ) {
 			if ( ( ( 'approve' === $action || 'unapprove' === $action ) && 2 === $i )
 				|| 1 === $i
 			) {
+<<<<<<< HEAD
 				$separator = '';
 			} else {
 				$separator = ' | ';
+=======
+				$sep = '';
+			} else {
+				$sep = ' | ';
+>>>>>>> fb785cbb (Initial commit)
 			}
 
 			// Reply and quickedit need a hide-if-no-js span.
@@ -829,7 +868,11 @@ function _wp_dashboard_recent_comments_row( &$comment, $show_date = true ) {
 				$action .= ' hidden';
 			}
 
+<<<<<<< HEAD
 			$actions_string .= "<span class='$action'>{$separator}{$link}</span>";
+=======
+			$actions_string .= "<span class='$action'>$sep$link</span>";
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 	?>
@@ -1106,10 +1149,14 @@ function wp_dashboard_recent_comments( $total_items = 5 ) {
 		echo '</ul>';
 
 		if ( current_user_can( 'edit_posts' ) ) {
+<<<<<<< HEAD
 			echo '<h3 class="screen-reader-text">' .
 				/* translators: Hidden accessibility text. */
 				__( 'View more comments' ) .
 			'</h3>';
+=======
+			echo '<h3 class="screen-reader-text">' . __( 'View more comments' ) . '</h3>';
+>>>>>>> fb785cbb (Initial commit)
 			_get_list_table( 'WP_Comments_List_Table' )->views();
 		}
 
@@ -1300,7 +1347,11 @@ function wp_dashboard_events_news() {
 				'<a href="%1$s" target="_blank">%2$s <span class="screen-reader-text">%3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>',
 				'https://make.wordpress.org/community/meetups-landing-page',
 				__( 'Meetups' ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+				/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 				__( '(opens in a new tab)' )
 			);
 		?>
@@ -1312,7 +1363,11 @@ function wp_dashboard_events_news() {
 				'<a href="%1$s" target="_blank">%2$s <span class="screen-reader-text">%3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>',
 				'https://central.wordcamp.org/schedule/',
 				__( 'WordCamps' ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+				/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 				__( '(opens in a new tab)' )
 			);
 		?>
@@ -1325,7 +1380,11 @@ function wp_dashboard_events_news() {
 				/* translators: If a Rosetta site exists (e.g. https://es.wordpress.org/news/), then use that. Otherwise, leave untranslated. */
 				esc_url( _x( 'https://wordpress.org/news/', 'Events and News dashboard widget' ) ),
 				__( 'News' ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+				/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 				__( '(opens in a new tab)' )
 			);
 		?>
@@ -1650,7 +1709,10 @@ function wp_dashboard_quota() {
 				'<a href="%1$s">%2$s <span class="screen-reader-text">(%3$s)</span></a>',
 				esc_url( admin_url( 'upload.php' ) ),
 				$text,
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+>>>>>>> fb785cbb (Initial commit)
 				__( 'Manage Uploads' )
 			);
 			?>
@@ -1666,7 +1728,10 @@ function wp_dashboard_quota() {
 				'<a href="%1$s" class="musublink">%2$s <span class="screen-reader-text">(%3$s)</span></a>',
 				esc_url( admin_url( 'upload.php' ) ),
 				$text,
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+>>>>>>> fb785cbb (Initial commit)
 				__( 'Manage Uploads' )
 			);
 			?>
@@ -1750,7 +1815,11 @@ function wp_dashboard_browser_nag() {
 	 *
 	 * @param string      $notice   The notice content.
 	 * @param array|false $response An array containing web browser information, or
+<<<<<<< HEAD
 	 *                              false on failure. See wp_check_browser_version().
+=======
+	 *                              false on failure. See `wp_check_browser_version()`.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	echo apply_filters( 'browse-happy-notice', $notice, $response ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 }
@@ -1846,6 +1915,7 @@ function wp_dashboard_php_nag() {
 	}
 
 	if ( isset( $response['is_secure'] ) && ! $response['is_secure'] ) {
+<<<<<<< HEAD
 		// The `is_secure` array key name doesn't actually imply this is a secure version of PHP. It only means it receives security updates.
 
 		if ( $response['is_lower_than_future_minimum'] ) {
@@ -1871,10 +1941,22 @@ function wp_dashboard_php_nag() {
 		$message = sprintf(
 			/* translators: %s: The server PHP version. */
 			__( 'Your site is running on an outdated version of PHP (%s), which should be updated.' ),
+=======
+		$msg = sprintf(
+			/* translators: %s: The server PHP version. */
+			__( 'Your site is running an insecure version of PHP (%s), which should be updated.' ),
+			PHP_VERSION
+		);
+	} else {
+		$msg = sprintf(
+			/* translators: %s: The server PHP version. */
+			__( 'Your site is running an outdated version of PHP (%s), which should be updated.' ),
+>>>>>>> fb785cbb (Initial commit)
 			PHP_VERSION
 		);
 	}
 	?>
+<<<<<<< HEAD
 	<p class="bigger-bolder-text"><?php echo $message; ?></p>
 
 	<p><?php _e( 'What is PHP and how does it affect my site?' ); ?></p>
@@ -1888,6 +1970,18 @@ function wp_dashboard_php_nag() {
 				$response['recommended_version']
 			);
 		}
+=======
+	<p><?php echo $msg; ?></p>
+
+	<h3><?php _e( 'What is PHP and how does it affect my site?' ); ?></h3>
+	<p>
+		<?php
+		printf(
+			/* translators: %s: The minimum recommended PHP version. */
+			__( 'PHP is the programming language used to build and maintain WordPress. Newer versions of PHP are created with increased performance in mind, so you may see a positive effect on your site&#8217;s performance. The minimum recommended version of PHP is %s.' ),
+			$response ? $response['recommended_version'] : ''
+		);
+>>>>>>> fb785cbb (Initial commit)
 		?>
 	</p>
 
@@ -1897,7 +1991,11 @@ function wp_dashboard_php_nag() {
 			'<a class="button button-primary" href="%1$s" target="_blank" rel="noopener">%2$s <span class="screen-reader-text">%3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>',
 			esc_url( wp_get_update_php_url() ),
 			__( 'Learn more about updating PHP' ),
+<<<<<<< HEAD
 			/* translators: Hidden accessibility text. */
+=======
+			/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 			__( '(opens in a new tab)' )
 		);
 		?>
@@ -1919,6 +2017,7 @@ function wp_dashboard_php_nag() {
 function dashboard_php_nag_class( $classes ) {
 	$response = wp_check_php_version();
 
+<<<<<<< HEAD
 	if ( ! $response ) {
 		return $classes;
 	}
@@ -1927,6 +2026,10 @@ function dashboard_php_nag_class( $classes ) {
 		$classes[] = 'php-no-security-updates';
 	} elseif ( $response['is_lower_than_future_minimum'] ) {
 		$classes[] = 'php-version-lower-than-future-minimum';
+=======
+	if ( $response && isset( $response['is_secure'] ) && ! $response['is_secure'] ) {
+		$classes[] = 'php-insecure';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	return $classes;
@@ -1959,7 +2062,11 @@ function wp_dashboard_site_health() {
 	<div class="health-check-widget">
 		<div class="health-check-widget-title-section site-health-progress-wrapper loading hide-if-no-js">
 			<div class="site-health-progress">
+<<<<<<< HEAD
 				<svg aria-hidden="true" focusable="false" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+=======
+				<svg role="img" aria-hidden="true" focusable="false" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+>>>>>>> fb785cbb (Initial commit)
 					<circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
 					<circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
 				</svg>
@@ -2057,10 +2164,14 @@ function wp_welcome_panel() {
 	</div>
 	<div class="welcome-panel-column-container">
 		<div class="welcome-panel-column">
+<<<<<<< HEAD
 			<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
 				<rect width="48" height="48" rx="4" fill="#1E1E1E"/>
 				<path fill-rule="evenodd" clip-rule="evenodd" d="M32.0668 17.0854L28.8221 13.9454L18.2008 24.671L16.8983 29.0827L21.4257 27.8309L32.0668 17.0854ZM16 32.75H24V31.25H16V32.75Z" fill="white"/>
 			</svg>
+=======
+			<div class="welcome-panel-icon-pages"></div>
+>>>>>>> fb785cbb (Initial commit)
 			<div class="welcome-panel-column-content">
 				<h3><?php _e( 'Author rich content with blocks and patterns' ); ?></h3>
 				<p><?php _e( 'Block patterns are pre-configured block layouts. Use them to get inspired or create new pages in a flash.' ); ?></p>
@@ -2068,10 +2179,14 @@ function wp_welcome_panel() {
 			</div>
 		</div>
 		<div class="welcome-panel-column">
+<<<<<<< HEAD
 			<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
 				<rect width="48" height="48" rx="4" fill="#1E1E1E"/>
 				<path fill-rule="evenodd" clip-rule="evenodd" d="M18 16h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V18a2 2 0 0 1 2-2zm12 1.5H18a.5.5 0 0 0-.5.5v3h13v-3a.5.5 0 0 0-.5-.5zm.5 5H22v8h8a.5.5 0 0 0 .5-.5v-7.5zm-10 0h-3V30a.5.5 0 0 0 .5.5h2.5v-8z" fill="#fff"/>
 			</svg>
+=======
+			<div class="welcome-panel-icon-layout"></div>
+>>>>>>> fb785cbb (Initial commit)
 			<div class="welcome-panel-column-content">
 			<?php if ( $is_block_theme ) : ?>
 				<h3><?php _e( 'Customize your entire site with block themes' ); ?></h3>
@@ -2087,10 +2202,14 @@ function wp_welcome_panel() {
 			</div>
 		</div>
 		<div class="welcome-panel-column">
+<<<<<<< HEAD
 			<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
 				<rect width="48" height="48" rx="4" fill="#1E1E1E"/>
 				<path fill-rule="evenodd" clip-rule="evenodd" d="M31 24a7 7 0 0 1-7 7V17a7 7 0 0 1 7 7zm-7-8a8 8 0 1 1 0 16 8 8 0 0 1 0-16z" fill="#fff"/>
 			</svg>
+=======
+			<div class="welcome-panel-icon-styles"></div>
+>>>>>>> fb785cbb (Initial commit)
 			<div class="welcome-panel-column-content">
 			<?php if ( $is_block_theme ) : ?>
 				<h3><?php _e( 'Switch up your site&#8217;s look & feel with Styles' ); ?></h3>
@@ -2099,7 +2218,11 @@ function wp_welcome_panel() {
 			<?php else : ?>
 				<h3><?php _e( 'Discover a new way to build your site.' ); ?></h3>
 				<p><?php _e( 'There is a new kind of WordPress theme, called a block theme, that lets you build the site you&#8217;ve always wanted &#8212; with blocks and styles.' ); ?></p>
+<<<<<<< HEAD
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/documentation/article/block-themes/' ) ); ?>"><?php _e( 'Learn about block themes' ); ?></a>
+=======
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/article/block-themes/' ) ); ?>"><?php _e( 'Learn about block themes' ); ?></a>
+>>>>>>> fb785cbb (Initial commit)
 			<?php endif; ?>
 			</div>
 		</div>

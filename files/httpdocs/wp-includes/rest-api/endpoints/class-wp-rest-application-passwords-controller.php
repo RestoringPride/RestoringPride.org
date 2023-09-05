@@ -610,8 +610,11 @@ class WP_REST_Application_Passwords_Controller extends WP_REST_Controller {
 			return $user;
 		}
 
+<<<<<<< HEAD
 		$fields = $this->get_fields_for_response( $request );
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$prepared = array(
 			'uuid'      => $item['uuid'],
 			'app_id'    => empty( $item['app_id'] ) ? '' : $item['app_id'],
@@ -629,10 +632,14 @@ class WP_REST_Application_Passwords_Controller extends WP_REST_Controller {
 		$prepared = $this->filter_response_by_context( $prepared, $request['context'] );
 
 		$response = new WP_REST_Response( $prepared );
+<<<<<<< HEAD
 
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $user, $item ) );
 		}
+=======
+		$response->add_links( $this->prepare_links( $user, $item ) );
+>>>>>>> fb785cbb (Initial commit)
 
 		/**
 		 * Filters the REST API response for an application password.
@@ -658,6 +665,7 @@ class WP_REST_Application_Passwords_Controller extends WP_REST_Controller {
 	protected function prepare_links( WP_User $user, $item ) {
 		return array(
 			'self' => array(
+<<<<<<< HEAD
 				'href' => rest_url(
 					sprintf(
 						'%s/users/%d/application-passwords/%s',
@@ -666,6 +674,9 @@ class WP_REST_Application_Passwords_Controller extends WP_REST_Controller {
 						$item['uuid']
 					)
 				),
+=======
+				'href' => rest_url( sprintf( '%s/users/%d/application-passwords/%s', $this->namespace, $user->ID, $item['uuid'] ) ),
+>>>>>>> fb785cbb (Initial commit)
 			),
 		);
 	}
@@ -719,7 +730,11 @@ class WP_REST_Application_Passwords_Controller extends WP_REST_Controller {
 			return $error;
 		}
 
+<<<<<<< HEAD
 		if ( is_multisite() && ! user_can( $user->ID, 'manage_sites' ) && ! is_user_member_of_blog( $user->ID ) ) {
+=======
+		if ( is_multisite() && ! is_user_member_of_blog( $user->ID ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			return $error;
 		}
 

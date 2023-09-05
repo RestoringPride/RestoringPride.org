@@ -73,7 +73,11 @@ class Post_Link_Indexing_Action extends Abstract_Link_Indexing_Action {
 	 * @return string The prepared query string.
 	 */
 	protected function get_count_query() {
+<<<<<<< HEAD
 		$public_post_types = $this->post_type_helper->get_indexable_post_types();
+=======
+		$public_post_types = $this->post_type_helper->get_accessible_post_types();
+>>>>>>> fb785cbb (Initial commit)
 		$indexable_table   = Model::get_table_name( 'Indexable' );
 		$links_table       = Model::get_table_name( 'SEO_Links' );
 
@@ -106,7 +110,11 @@ class Post_Link_Indexing_Action extends Abstract_Link_Indexing_Action {
 	 * @return string The prepared query string.
 	 */
 	protected function get_select_query( $limit = false ) {
+<<<<<<< HEAD
 		$public_post_types = $this->post_type_helper->get_indexable_post_types();
+=======
+		$public_post_types = $this->post_type_helper->get_accessible_post_types();
+>>>>>>> fb785cbb (Initial commit)
 		$indexable_table   = Model::get_table_name( 'Indexable' );
 		$links_table       = Model::get_table_name( 'SEO_Links' );
 		$replacements      = $public_post_types;

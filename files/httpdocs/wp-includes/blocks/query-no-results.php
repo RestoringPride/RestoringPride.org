@@ -40,11 +40,17 @@ function render_block_core_query_no_results( $attributes, $content, $block ) {
 		wp_reset_postdata();
 	}
 
+<<<<<<< HEAD
 	$classes            = ( isset( $attributes['style']['elements']['link']['color']['text'] ) ) ? 'has-link-color' : '';
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 	return sprintf(
 		'<div %1$s>%2$s</div>',
 		$wrapper_attributes,
+=======
+	return sprintf(
+		'<div %1$s>%2$s</div>',
+		get_block_wrapper_attributes(),
+>>>>>>> fb785cbb (Initial commit)
 		$content
 	);
 }

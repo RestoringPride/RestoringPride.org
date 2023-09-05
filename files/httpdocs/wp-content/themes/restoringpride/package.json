@@ -12,6 +12,10 @@
   "dependencies": {
     "bulma": "^0.7.1",
     "bulma-start": "0.0.2",
+<<<<<<< HEAD
     "node-sass": "^7.0.3"
+=======
+    "node-sass": "^4.12.0"
+>>>>>>> fb785cbb (Initial commit)
   }
 }

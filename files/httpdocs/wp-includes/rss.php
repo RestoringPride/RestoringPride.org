@@ -195,7 +195,11 @@ class MagpieRSS {
 			array_unshift( $this->stack, $el );
 		}
 
+<<<<<<< HEAD
 		// Atom support many links per containing element.
+=======
+		// Atom support many links per containging element.
+>>>>>>> fb785cbb (Initial commit)
 		// Magpie treats link elements of type rel='alternate'
 		// as being equivalent to RSS's simple link element.
 		//
@@ -338,7 +342,11 @@ class MagpieRSS {
 	function normalize () {
 		// if atom populate rss fields
 		if ( $this->is_atom() ) {
+<<<<<<< HEAD
 			$this->channel['description'] = $this->channel['tagline'];
+=======
+			$this->channel['descripton'] = $this->channel['tagline'];
+>>>>>>> fb785cbb (Initial commit)
 			for ( $i = 0; $i < count($this->items); $i++) {
 				$item = $this->items[$i];
 				if ( isset($item['summary']) )
@@ -500,7 +508,11 @@ function fetch_rss ($url) {
 			else {
 				$errormsg = "Failed to fetch $url. ";
 				if ( $resp->error ) {
+<<<<<<< HEAD
 					# compensate for Snoopy's annoying habit to tacking
+=======
+					# compensate for Snoopy's annoying habbit to tacking
+>>>>>>> fb785cbb (Initial commit)
 					# on '\n'
 					$http_error = substr($resp->error, 0, -2);
 					$errormsg .= "(HTTP Error: $http_error)";
@@ -541,7 +553,11 @@ endif;
  * @subpackage MagpieRSS
  *
  * @param string $url URL to retrieve
+<<<<<<< HEAD
  * @param array $headers Optional. Headers to send to the URL. Default empty string.
+=======
+ * @param array $headers Optional. Headers to send to the URL.
+>>>>>>> fb785cbb (Initial commit)
  * @return Snoopy style response
  */
 function _fetch_remote_file($url, $headers = "" ) {

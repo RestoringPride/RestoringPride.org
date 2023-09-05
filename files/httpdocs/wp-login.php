@@ -261,7 +261,11 @@ function login_header( $title = 'Log In', $message = '', $wp_error = null ) {
 			 *
 			 * @param string $messages Login messages.
 			 */
+<<<<<<< HEAD
 			echo '<p class="message" id="login-message">' . apply_filters( 'login_messages', $messages ) . "</p>\n";
+=======
+			echo '<p class="message">' . apply_filters( 'login_messages', $messages ) . "</p>\n";
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 } // End of login_header().
@@ -332,12 +336,16 @@ function login_footer( $input_id = '' ) {
 
 					<label for="language-switcher-locales">
 						<span class="dashicons dashicons-translation" aria-hidden="true"></span>
+<<<<<<< HEAD
 						<span class="screen-reader-text">
 							<?php
 							/* translators: Hidden accessibility text. */
 							_e( 'Language' );
 							?>
 						</span>
+=======
+						<span class="screen-reader-text"><?php _e( 'Language' ); ?></span>
+>>>>>>> fb785cbb (Initial commit)
 					</label>
 
 					<?php
@@ -353,8 +361,11 @@ function login_footer( $input_id = '' ) {
 					/**
 					 * Filters default arguments for the Languages select input on the login screen.
 					 *
+<<<<<<< HEAD
 					 * The arguments get passed to the wp_dropdown_languages() function.
 					 *
+=======
+>>>>>>> fb785cbb (Initial commit)
 					 * @since 5.9.0
 					 *
 					 * @param array $args Arguments for the Languages select input on the login screen.
@@ -367,7 +378,11 @@ function login_footer( $input_id = '' ) {
 					<?php } ?>
 
 					<?php if ( isset( $_GET['redirect_to'] ) && '' !== $_GET['redirect_to'] ) { ?>
+<<<<<<< HEAD
 						<input type="hidden" name="redirect_to" value="<?php echo sanitize_url( $_GET['redirect_to'] ); ?>" />
+=======
+						<input type="hidden" name="redirect_to" value="<?php echo esc_url_raw( $_GET['redirect_to'] ); ?>" />
+>>>>>>> fb785cbb (Initial commit)
 					<?php } ?>
 
 					<?php if ( isset( $_GET['action'] ) && '' !== $_GET['action'] ) { ?>
@@ -430,9 +445,13 @@ function wp_login_viewport_meta() {
 }
 
 /*
+<<<<<<< HEAD
  * Main part.
  *
  * Check the request and redirect or display a form based on the current action.
+=======
+ * Main part: check the request and redirect or display a form based on the current action.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 $action = isset( $_REQUEST['action'] ) ? $_REQUEST['action'] : 'login';
@@ -651,6 +670,7 @@ switch ( $action ) {
 				<?php
 
 				/* translators: URL to the WordPress help section about admin email. */
+<<<<<<< HEAD
 				$admin_email_help_url = __( 'https://wordpress.org/documentation/article/settings-general-screen/#email-address' );
 
 				$accessibility_text = sprintf(
@@ -658,6 +678,12 @@ switch ( $action ) {
 					/* translators: Hidden accessibility text. */
 					__( '(opens in a new tab)' )
 				);
+=======
+				$admin_email_help_url = __( 'https://wordpress.org/support/article/settings-general-screen/#email-address' );
+
+				/* translators: Accessibility text. */
+				$accessibility_text = sprintf( '<span class="screen-reader-text"> %s</span>', __( '(opens in a new tab)' ) );
+>>>>>>> fb785cbb (Initial commit)
 
 				printf(
 					'<a href="%s" rel="noopener" target="_blank">%s%s</a>',
@@ -802,9 +828,15 @@ switch ( $action ) {
 
 		if ( isset( $_GET['error'] ) ) {
 			if ( 'invalidkey' === $_GET['error'] ) {
+<<<<<<< HEAD
 				$errors->add( 'invalidkey', __( '<strong>Error:</strong> Your password reset link appears to be invalid. Please request a new link below.' ) );
 			} elseif ( 'expiredkey' === $_GET['error'] ) {
 				$errors->add( 'expiredkey', __( '<strong>Error:</strong> Your password reset link has expired. Please request a new link below.' ) );
+=======
+				$errors->add( 'invalidkey', __( '<strong>Error</strong>: Your password reset link appears to be invalid. Please request a new link below.' ) );
+			} elseif ( 'expiredkey' === $_GET['error'] ) {
+				$errors->add( 'expiredkey', __( '<strong>Error</strong>: Your password reset link has expired. Please request a new link below.' ) );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
@@ -930,7 +962,11 @@ switch ( $action ) {
 
 		// Check if password fields do not match.
 		if ( ! empty( $_POST['pass1'] ) && trim( $_POST['pass2'] ) !== $_POST['pass1'] ) {
+<<<<<<< HEAD
 			$errors->add( 'password_reset_mismatch', __( '<strong>Error:</strong> The passwords do not match.' ) );
+=======
+			$errors->add( 'password_reset_mismatch', __( '<strong>Error</strong>: The passwords do not match.' ) );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		/**
@@ -966,7 +1002,11 @@ switch ( $action ) {
 				</p>
 
 				<div class="wp-pwd">
+<<<<<<< HEAD
 					<input type="password" name="pass1" id="pass1" class="input password-input" size="24" value="" autocomplete="new-password" spellcheck="false" data-reveal="1" data-pw="<?php echo esc_attr( wp_generate_password( 16 ) ); ?>" aria-describedby="pass-strength-result" />
+=======
+					<input type="password" data-reveal="1" data-pw="<?php echo esc_attr( wp_generate_password( 16 ) ); ?>" name="pass1" id="pass1" class="input password-input" size="24" value="" autocomplete="new-password" aria-describedby="pass-strength-result" />
+>>>>>>> fb785cbb (Initial commit)
 
 					<button type="button" class="button button-secondary wp-hide-pw hide-if-no-js" data-toggle="0" aria-label="<?php esc_attr_e( 'Hide password' ); ?>">
 						<span class="dashicons dashicons-hidden" aria-hidden="true"></span>
@@ -981,7 +1021,11 @@ switch ( $action ) {
 
 			<p class="user-pass2-wrap">
 				<label for="pass2"><?php _e( 'Confirm new password' ); ?></label>
+<<<<<<< HEAD
 				<input type="password" name="pass2" id="pass2" class="input" size="20" value="" autocomplete="new-password" spellcheck="false" />
+=======
+				<input type="password" name="pass2" id="pass2" class="input" size="20" value="" autocomplete="new-password" />
+>>>>>>> fb785cbb (Initial commit)
 			</p>
 
 			<p class="description indicator-hint"><?php echo wp_get_password_hint(); ?></p>
@@ -1113,6 +1157,7 @@ switch ( $action ) {
 
 		<p id="nav">
 			<a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e( 'Log in' ); ?></a>
+<<<<<<< HEAD
 			<?php
 
 			echo esc_html( $login_link_separator );
@@ -1123,6 +1168,10 @@ switch ( $action ) {
 			echo apply_filters( 'lost_password_html_link', $html_link );
 
 			?>
+=======
+				<?php echo esc_html( $login_link_separator ); ?>
+			<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?' ); ?></a>
+>>>>>>> fb785cbb (Initial commit)
 		</p>
 		<?php
 
@@ -1246,19 +1295,33 @@ switch ( $action ) {
 					'test_cookie',
 					sprintf(
 						/* translators: 1: Browser cookie documentation URL, 2: Support forums URL. */
+<<<<<<< HEAD
 						__( '<strong>Error:</strong> Cookies are blocked due to unexpected output. For help, please see <a href="%1$s">this documentation</a> or try the <a href="%2$s">support forums</a>.' ),
 						__( 'https://wordpress.org/documentation/article/cookies/' ),
+=======
+						__( '<strong>Error</strong>: Cookies are blocked due to unexpected output. For help, please see <a href="%1$s">this documentation</a> or try the <a href="%2$s">support forums</a>.' ),
+						__( 'https://wordpress.org/support/article/cookies/' ),
+>>>>>>> fb785cbb (Initial commit)
 						__( 'https://wordpress.org/support/forums/' )
 					)
 				);
 			} elseif ( isset( $_POST['testcookie'] ) && empty( $_COOKIE[ TEST_COOKIE ] ) ) {
+<<<<<<< HEAD
 				// If cookies are disabled, the user can't log in even with a valid username and password.
+=======
+				// If cookies are disabled, we can't log in even with a valid user and password.
+>>>>>>> fb785cbb (Initial commit)
 				$user = new WP_Error(
 					'test_cookie',
 					sprintf(
 						/* translators: %s: Browser cookie documentation URL. */
+<<<<<<< HEAD
 						__( '<strong>Error:</strong> Cookies are blocked or not supported by your browser. You must <a href="%s">enable cookies</a> to use WordPress.' ),
 						__( 'https://wordpress.org/documentation/article/cookies/#enable-cookies-in-your-browser' )
+=======
+						__( '<strong>Error</strong>: Cookies are blocked or not supported by your browser. You must <a href="%s">enable cookies</a> to use WordPress.' ),
+						__( 'https://wordpress.org/support/article/cookies/#enable-cookies-in-your-browser' )
+>>>>>>> fb785cbb (Initial commit)
 					)
 				);
 			}
@@ -1361,7 +1424,11 @@ switch ( $action ) {
 			if ( isset( $_GET['loggedout'] ) && $_GET['loggedout'] ) {
 				$errors->add( 'loggedout', __( 'You are now logged out.' ), 'message' );
 			} elseif ( isset( $_GET['registration'] ) && 'disabled' === $_GET['registration'] ) {
+<<<<<<< HEAD
 				$errors->add( 'registerdisabled', __( '<strong>Error:</strong> User registration is currently not allowed.' ) );
+=======
+				$errors->add( 'registerdisabled', __( '<strong>Error</strong>: User registration is currently not allowed.' ) );
+>>>>>>> fb785cbb (Initial commit)
 			} elseif ( strpos( $redirect_to, 'about.php?updated' ) ) {
 				$errors->add( 'updated', __( '<strong>You have successfully updated WordPress!</strong> Please log back in to see what&#8217;s new.' ), 'message' );
 			} elseif ( WP_Recovery_Mode_Link_Service::LOGIN_ACTION_ENTERED === $action ) {
@@ -1408,6 +1475,7 @@ switch ( $action ) {
 
 		$rememberme = ! empty( $_POST['rememberme'] );
 
+<<<<<<< HEAD
 		$aria_describedby = '';
 		$has_errors       = $errors->has_errors();
 
@@ -1417,6 +1485,12 @@ switch ( $action ) {
 
 		if ( $has_errors && 'message' === $errors->get_error_data() ) {
 			$aria_describedby = ' aria-describedby="login-message"';
+=======
+		if ( $errors->has_errors() ) {
+			$aria_describedby_error = ' aria-describedby="login_error"';
+		} else {
+			$aria_describedby_error = '';
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		wp_enqueue_script( 'user-profile' );
@@ -1425,13 +1499,21 @@ switch ( $action ) {
 		<form name="loginform" id="loginform" action="<?php echo esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>" method="post">
 			<p>
 				<label for="user_login"><?php _e( 'Username or Email Address' ); ?></label>
+<<<<<<< HEAD
 				<input type="text" name="log" id="user_login"<?php echo $aria_describedby; ?> class="input" value="<?php echo esc_attr( $user_login ); ?>" size="20" autocapitalize="off" autocomplete="username" />
+=======
+				<input type="text" name="log" id="user_login"<?php echo $aria_describedby_error; ?> class="input" value="<?php echo esc_attr( $user_login ); ?>" size="20" autocapitalize="off" autocomplete="username" />
+>>>>>>> fb785cbb (Initial commit)
 			</p>
 
 			<div class="user-pass-wrap">
 				<label for="user_pass"><?php _e( 'Password' ); ?></label>
 				<div class="wp-pwd">
+<<<<<<< HEAD
 					<input type="password" name="pwd" id="user_pass"<?php echo $aria_describedby; ?> class="input password-input" value="" size="20" autocomplete="current-password" spellcheck="false" />
+=======
+					<input type="password" name="pwd" id="user_pass"<?php echo $aria_describedby_error; ?> class="input password-input" value="" size="20" autocomplete="current-password" />
+>>>>>>> fb785cbb (Initial commit)
 					<button type="button" class="button button-secondary wp-hide-pw hide-if-no-js" data-toggle="0" aria-label="<?php esc_attr_e( 'Show password' ); ?>">
 						<span class="dashicons dashicons-visibility" aria-hidden="true"></span>
 					</button>
@@ -1489,6 +1571,7 @@ switch ( $action ) {
 					echo esc_html( $login_link_separator );
 				}
 
+<<<<<<< HEAD
 				$html_link = sprintf( '<a href="%s">%s</a>', esc_url( wp_lostpassword_url() ), __( 'Lost your password?' ) );
 
 				/**
@@ -1501,6 +1584,10 @@ switch ( $action ) {
 				echo apply_filters( 'lost_password_html_link', $html_link );
 
 				?>
+=======
+				?>
+				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?' ); ?></a>
+>>>>>>> fb785cbb (Initial commit)
 			</p>
 			<?php
 		}

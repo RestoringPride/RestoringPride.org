@@ -119,7 +119,11 @@ class Yoast_Notification {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Retrieve the id of the user to show the notification for.
+=======
+	 * Retrieve the is of the user to show the notification for.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Returns the id of the current user if not user has been sent.
 	 *

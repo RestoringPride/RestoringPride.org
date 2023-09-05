@@ -32,6 +32,7 @@ class Yoast_Feature_Toggle {
 	protected $premium = false;
 
 	/**
+<<<<<<< HEAD
 	 * Whether the feature is in beta or not.
 	 *
 	 * @var bool
@@ -56,6 +57,8 @@ class Yoast_Feature_Toggle {
 	protected $supported_languages = [];
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Feature toggle label.
 	 *
 	 * @var string
@@ -77,6 +80,7 @@ class Yoast_Feature_Toggle {
 	protected $premium_url = '';
 
 	/**
+<<<<<<< HEAD
 	 * URL to buy premium.
 	 *
 	 * @var string
@@ -84,6 +88,8 @@ class Yoast_Feature_Toggle {
 	protected $premium_upsell_url = '';
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Label for the learn more link.
 	 *
 	 * @var string
@@ -133,6 +139,7 @@ class Yoast_Feature_Toggle {
 	 * @param array $args {
 	 *     Feature toggle arguments.
 	 *
+<<<<<<< HEAD
 	 *     @type string $name                Required. Feature toggle identifier.
 	 *     @type string $setting             Required. Name of the setting the feature toggle is associated with.
 	 *     @type string $disabled            Whether the feature is premium or not.
@@ -148,6 +155,19 @@ class Yoast_Feature_Toggle {
 	 *     @type bool   $in_beta             Whether the feature is in beta or not.
 	 *     @type array  $supported_languages The languages that this feature supports.
 	 *     @type string $premium_version     The Premium version in which this feature was added.
+=======
+	 *     @type string $name            Required. Feature toggle identifier.
+	 *     @type string $setting         Required. Name of the setting the feature toggle is associated with.
+	 *     @type string $disabled        Whether the feature is premium or not.
+	 *     @type string $label           Feature toggle label.
+	 *     @type string $read_more_url   URL to learn more about the feature. Default empty string.
+	 *     @type string $read_more_label Label for the learn more link. Default empty string.
+	 *     @type string $extra           Additional help content for the feature. Default empty string.
+	 *     @type int    $order           Value to specify the feature toggle order. A lower value indicates
+	 *                                   a higher priority. Default 100.
+	 *     @type bool   $disabled        Disable the integration toggle. Default false.
+	 *     @type string $new             Whether the feature is new or not.
+>>>>>>> fb785cbb (Initial commit)
 	 * }
 	 *
 	 * @throws InvalidArgumentException Thrown when a required argument is missing.

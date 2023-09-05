@@ -26,6 +26,7 @@ class Enhanced_Data_Presenter extends Abstract_Indexable_Presenter {
 		$enhanced_data = $this->get();
 		$twitter_tags  = '';
 		$i             = 1;
+<<<<<<< HEAD
 		$class         = \is_admin_bar_showing() ? ' class="yoast-seo-meta-tag"' : '';
 		foreach ( $enhanced_data as $label => $value ) {
 			$twitter_tags .= \sprintf( "\t" . '<meta name="twitter:label%1$d" content="%2$s"' . $class . ' />' . "\n", $i, $label );
@@ -33,6 +34,13 @@ class Enhanced_Data_Presenter extends Abstract_Indexable_Presenter {
 			++$i;
 		}
 
+=======
+		foreach ( $enhanced_data as $label => $value ) {
+			$twitter_tags .= \sprintf( "\t" . '<meta name="twitter:label%1$d" content="%2$s" />' . "\n", $i, $label );
+			$twitter_tags .= \sprintf( "\t" . '<meta name="twitter:data%1$d" content="%2$s" />' . "\n", $i, $value );
+			++$i;
+		}
+>>>>>>> fb785cbb (Initial commit)
 		return \trim( $twitter_tags );
 	}
 

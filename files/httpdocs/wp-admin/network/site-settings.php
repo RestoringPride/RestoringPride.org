@@ -105,7 +105,11 @@ network_edit_site_nav(
 
 if ( ! empty( $messages ) ) {
 	foreach ( $messages as $msg ) {
+<<<<<<< HEAD
 		echo '<div id="message" class="notice notice-success is-dismissible"><p>' . $msg . '</p></div>';
+=======
+		echo '<div id="message" class="updated notice is-dismissible"><p>' . $msg . '</p></div>';
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 ?>
@@ -146,14 +150,22 @@ if ( ! empty( $messages ) ) {
 			if ( strpos( $option->option_value, "\n" ) !== false ) {
 				?>
 				<tr class="form-field">
+<<<<<<< HEAD
 					<th scope="row"><label for="<?php echo esc_attr( $option->option_name ); ?>" class="code"><?php echo esc_html( $option->option_name ); ?></label></th>
+=======
+					<th scope="row"><label for="<?php echo esc_attr( $option->option_name ); ?>"><?php echo ucwords( str_replace( '_', ' ', $option->option_name ) ); ?></label></th>
+>>>>>>> fb785cbb (Initial commit)
 					<td><textarea class="<?php echo $class; ?>" rows="5" cols="40" name="option[<?php echo esc_attr( $option->option_name ); ?>]" id="<?php echo esc_attr( $option->option_name ); ?>"<?php disabled( $disabled ); ?>><?php echo esc_textarea( $option->option_value ); ?></textarea></td>
 				</tr>
 				<?php
 			} else {
 				?>
 				<tr class="form-field">
+<<<<<<< HEAD
 					<th scope="row"><label for="<?php echo esc_attr( $option->option_name ); ?>" class="code"><?php echo esc_html( $option->option_name ); ?></label></th>
+=======
+					<th scope="row"><label for="<?php echo esc_attr( $option->option_name ); ?>"><?php echo esc_html( ucwords( str_replace( '_', ' ', $option->option_name ) ) ); ?></label></th>
+>>>>>>> fb785cbb (Initial commit)
 					<?php if ( $is_main_site && in_array( $option->option_name, array( 'siteurl', 'home' ), true ) ) { ?>
 					<td><code><?php echo esc_html( $option->option_value ); ?></code></td>
 					<?php } else { ?>

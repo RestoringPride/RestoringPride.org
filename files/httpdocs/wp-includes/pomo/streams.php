@@ -9,12 +9,19 @@
  */
 
 if ( ! class_exists( 'POMO_Reader', false ) ) :
+<<<<<<< HEAD
 	#[AllowDynamicProperties]
 	class POMO_Reader {
 
 		public $endian = 'little';
 		public $_pos;
 		public $is_overloaded;
+=======
+	class POMO_Reader {
+
+		public $endian = 'little';
+		public $_post  = '';
+>>>>>>> fb785cbb (Initial commit)
 
 		/**
 		 * PHP5 constructor.
@@ -85,20 +92,33 @@ if ( ! class_exists( 'POMO_Reader', false ) ) :
 		}
 
 		/**
+<<<<<<< HEAD
 		 * @param string $input_string
+=======
+		 * @param string $string
+>>>>>>> fb785cbb (Initial commit)
 		 * @param int    $start
 		 * @param int    $length
 		 * @return string
 		 */
+<<<<<<< HEAD
 		public function substr( $input_string, $start, $length ) {
 			if ( $this->is_overloaded ) {
 				return mb_substr( $input_string, $start, $length, 'ascii' );
 			} else {
 				return substr( $input_string, $start, $length );
+=======
+		public function substr( $string, $start, $length ) {
+			if ( $this->is_overloaded ) {
+				return mb_substr( $string, $start, $length, 'ascii' );
+			} else {
+				return substr( $string, $start, $length );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
 		/**
+<<<<<<< HEAD
 		 * @param string $input_string
 		 * @return int
 		 */
@@ -107,10 +127,21 @@ if ( ! class_exists( 'POMO_Reader', false ) ) :
 				return mb_strlen( $input_string, 'ascii' );
 			} else {
 				return strlen( $input_string );
+=======
+		 * @param string $string
+		 * @return int
+		 */
+		public function strlen( $string ) {
+			if ( $this->is_overloaded ) {
+				return mb_strlen( $string, 'ascii' );
+			} else {
+				return strlen( $string );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
 		/**
+<<<<<<< HEAD
 		 * @param string $input_string
 		 * @param int    $chunk_size
 		 * @return array
@@ -125,6 +156,22 @@ if ( ! class_exists( 'POMO_Reader', false ) ) :
 				return $out;
 			} else {
 				return str_split( $input_string, $chunk_size );
+=======
+		 * @param string $string
+		 * @param int    $chunk_size
+		 * @return array
+		 */
+		public function str_split( $string, $chunk_size ) {
+			if ( ! function_exists( 'str_split' ) ) {
+				$length = $this->strlen( $string );
+				$out    = array();
+				for ( $i = 0; $i < $length; $i += $chunk_size ) {
+					$out[] = $this->substr( $string, $i, $chunk_size );
+				}
+				return $out;
+			} else {
+				return str_split( $string, $chunk_size );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
@@ -155,6 +202,7 @@ if ( ! class_exists( 'POMO_FileReader', false ) ) :
 	class POMO_FileReader extends POMO_Reader {
 
 		/**
+<<<<<<< HEAD
 		 * File pointer resource.
 		 *
 		 * @var resource|false
@@ -162,6 +210,8 @@ if ( ! class_exists( 'POMO_FileReader', false ) ) :
 		public $_f;
 
 		/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 		 * @param string $filename
 		 */
 		public function __construct( $filename ) {

@@ -11,7 +11,10 @@
  *
  * @since 5.8.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 final class WP_Block_Editor_Context {
 	/**
 	 * String that identifies the block editor being rendered. Can be one of:

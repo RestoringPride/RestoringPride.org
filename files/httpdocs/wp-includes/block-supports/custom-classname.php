@@ -31,7 +31,11 @@ function wp_register_custom_classname_support( $block_type ) {
 }
 
 /**
+<<<<<<< HEAD
  * Adds the custom classnames to the output.
+=======
+ * Add the custom classnames to the output.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.6.0
  * @access private

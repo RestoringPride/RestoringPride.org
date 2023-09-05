@@ -9,11 +9,14 @@
 /** WordPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
+<<<<<<< HEAD
 /**
  * @global string $typenow The post type of the current screen.
  */
 global $typenow;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 if ( ! $typenow ) {
 	wp_die( __( 'Invalid post type.' ) );
 }
@@ -92,11 +95,14 @@ if ( $doaction ) {
 		$post_status = preg_replace( '/[^a-z0-9_-]+/i', '', $_REQUEST['post_status'] );
 		// Validate the post status exists.
 		if ( get_post_status_object( $post_status ) ) {
+<<<<<<< HEAD
 			/**
 			 * @global wpdb $wpdb WordPress database abstraction object.
 			 */
 			global $wpdb;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			$post_ids = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type=%s AND post_status = %s", $post_type, $post_status ) );
 		}
 		$doaction = 'delete';
@@ -294,8 +300,13 @@ if ( 'post' === $post_type ) {
 
 	get_current_screen()->set_help_sidebar(
 		'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+<<<<<<< HEAD
 		'<p>' . __( '<a href="https://wordpress.org/documentation/article/posts-screen/">Documentation on Managing Posts</a>' ) . '</p>' .
 		'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+=======
+		'<p>' . __( '<a href="https://wordpress.org/support/article/posts-screen/">Documentation on Managing Posts</a>' ) . '</p>' .
+		'<p>' . __( '<a href="https://wordpress.org/support/">Support</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 	);
 
 } elseif ( 'page' === $post_type ) {
@@ -319,8 +330,13 @@ if ( 'post' === $post_type ) {
 
 	get_current_screen()->set_help_sidebar(
 		'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+<<<<<<< HEAD
 		'<p>' . __( '<a href="https://wordpress.org/documentation/article/pages-screen/">Documentation on Managing Pages</a>' ) . '</p>' .
 		'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+=======
+		'<p>' . __( '<a href="https://wordpress.org/support/article/pages-screen/">Documentation on Managing Pages</a>' ) . '</p>' .
+		'<p>' . __( '<a href="https://wordpress.org/support/">Support</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 	);
 
 }

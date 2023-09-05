@@ -2,7 +2,10 @@
 /**
  * WP_Importer base class
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Importer {
 	/**
 	 * Class Constructor

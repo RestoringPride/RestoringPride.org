@@ -16,7 +16,10 @@
  *
  * @see WP_Customize_Manager
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 final class WP_Customize_Nav_Menus {
 
 	/**
@@ -1076,7 +1079,11 @@ final class WP_Customize_Nav_Menus {
 						<button type="button" class="button-link item-add">
 							<span class="screen-reader-text">
 							<?php
+<<<<<<< HEAD
 								/* translators: Hidden accessibility text. 1: Title of a menu item, 2: Type of a menu item. */
+=======
+								/* translators: 1: Title of a menu item, 2: Type of a menu item. */
+>>>>>>> fb785cbb (Initial commit)
 								printf( __( 'Add to menu: %1$s (%2$s)' ), '{{ data.title || wp.customize.Menus.data.l10n.untitled }}', '{{ data.type_label }}' );
 							?>
 							</span>
@@ -1144,12 +1151,16 @@ final class WP_Customize_Nav_Menus {
 		<div id="available-menu-items" class="accordion-container">
 			<div class="customize-section-title">
 				<button type="button" class="customize-section-back" tabindex="-1">
+<<<<<<< HEAD
 					<span class="screen-reader-text">
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'Back' );
 						?>
 					</span>
+=======
+					<span class="screen-reader-text"><?php _e( 'Back' ); ?></span>
+>>>>>>> fb785cbb (Initial commit)
 				</button>
 				<h3>
 					<span class="customize-action">
@@ -1163,6 +1174,7 @@ final class WP_Customize_Nav_Menus {
 			</div>
 			<div id="available-menu-items-search" class="accordion-section cannot-expand">
 				<div class="accordion-section-title">
+<<<<<<< HEAD
 					<label class="screen-reader-text" for="menu-items-search">
 						<?php
 						/* translators: Hidden accessibility text. */
@@ -1185,6 +1197,15 @@ final class WP_Customize_Nav_Menus {
 					_e( 'Clear Results' );
 					?>
 				</span></button>
+=======
+					<label class="screen-reader-text" for="menu-items-search"><?php _e( 'Search Menu Items' ); ?></label>
+					<input type="text" id="menu-items-search" placeholder="<?php esc_attr_e( 'Search menu items&hellip;' ); ?>" aria-describedby="menu-items-search-desc" />
+					<p class="screen-reader-text" id="menu-items-search-desc"><?php _e( 'The search results will be updated as you type.' ); ?></p>
+					<span class="spinner"></span>
+				</div>
+				<div class="search-icon" aria-hidden="true"></div>
+				<button type="button" class="clear-results"><span class="screen-reader-text"><?php _e( 'Clear Results' ); ?></span></button>
+>>>>>>> fb785cbb (Initial commit)
 				<ul class="accordion-section-content available-menu-items-list" data-type="search"></ul>
 			</div>
 			<?php
@@ -1267,12 +1288,16 @@ final class WP_Customize_Nav_Menus {
 			<h4 class="accordion-section-title" role="presentation">
 				<?php _e( 'Custom Links' ); ?>
 				<button type="button" class="button-link" aria-expanded="false">
+<<<<<<< HEAD
 					<span class="screen-reader-text">
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'Toggle section: Custom Links' );
 						?>
 					</span>
+=======
+					<span class="screen-reader-text"><?php _e( 'Toggle section: Custom Links' ); ?></span>
+>>>>>>> fb785cbb (Initial commit)
 					<span class="toggle-indicator" aria-hidden="true"></span>
 				</button>
 			</h4>
@@ -1348,7 +1373,11 @@ final class WP_Customize_Nav_Menus {
 		add_action( 'wp_enqueue_scripts', array( $this, 'customize_preview_enqueue_deps' ) );
 		add_filter( 'wp_nav_menu_args', array( $this, 'filter_wp_nav_menu_args' ), 1000 );
 		add_filter( 'wp_nav_menu', array( $this, 'filter_wp_nav_menu' ), 10, 2 );
+<<<<<<< HEAD
 		add_action( 'wp_footer', array( $this, 'export_preview_data' ), 1 );
+=======
+		add_filter( 'wp_footer', array( $this, 'export_preview_data' ), 1 );
+>>>>>>> fb785cbb (Initial commit)
 		add_filter( 'customize_render_partials_response', array( $this, 'export_partial_rendered_nav_menu_instances' ) );
 	}
 

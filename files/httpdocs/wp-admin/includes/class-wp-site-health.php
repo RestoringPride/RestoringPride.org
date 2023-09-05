@@ -7,6 +7,7 @@
  * @since 5.2.0
  */
 
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 class WP_Site_Health {
 	private static $instance = null;
@@ -19,6 +20,18 @@ class WP_Site_Health {
 	private $mysql_required_version      = '5.5';
 	private $mysql_recommended_version   = '5.7';
 	private $mariadb_recommended_version = '10.3';
+=======
+class WP_Site_Health {
+	private static $instance = null;
+
+	private $mysql_min_version_check;
+	private $mysql_rec_version_check;
+
+	public $is_mariadb                           = false;
+	private $mysql_server_version                = '';
+	private $health_check_mysql_required_version = '5.5';
+	private $health_check_mysql_rec_version      = '';
+>>>>>>> fb785cbb (Initial commit)
 
 	public $php_memory_limit;
 
@@ -57,7 +70,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Outputs the content of a tab in the Site Health screen.
+=======
+	 * Output the content of a tab in the Site Health screen.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.8.0
 	 *
@@ -65,12 +82,20 @@ class WP_Site_Health {
 	 */
 	public function show_site_health_tab( $tab ) {
 		if ( 'debug' === $tab ) {
+<<<<<<< HEAD
 			require_once ABSPATH . 'wp-admin/site-health-info.php';
+=======
+			require_once ABSPATH . '/wp-admin/site-health-info.php';
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns an instance of the WP_Site_Health class, or create one if none exist yet.
+=======
+	 * Return an instance of the WP_Site_Health class, or create one if none exist yet.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.4.0
 	 *
@@ -162,7 +187,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Runs a Site Health test directly.
+=======
+	 * Run a Site Health test directly.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.4.0
 	 *
@@ -195,7 +224,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Runs the SQL version checks.
+=======
+	 * Run the SQL version checks.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * These values are used in later tests, but the part of preparing them is more easily managed
 	 * early in the class for ease of access and discovery.
@@ -207,6 +240,7 @@ class WP_Site_Health {
 	private function prepare_sql_data() {
 		global $wpdb;
 
+<<<<<<< HEAD
 		$mysql_server_type = $wpdb->db_server_info();
 
 		$this->mysql_server_version = $wpdb->get_var( 'SELECT VERSION()' );
@@ -222,6 +256,31 @@ class WP_Site_Health {
 
 	/**
 	 * Tests whether `wp_version_check` is blocked.
+=======
+		if ( $wpdb->use_mysqli ) {
+			// phpcs:ignore WordPress.DB.RestrictedFunctions.mysql_mysqli_get_server_info
+			$mysql_server_type = mysqli_get_server_info( $wpdb->dbh );
+		} else {
+			// phpcs:ignore WordPress.DB.RestrictedFunctions.mysql_mysql_get_server_info,PHPCompatibility.Extensions.RemovedExtensions.mysql_DeprecatedRemoved
+			$mysql_server_type = mysql_get_server_info( $wpdb->dbh );
+		}
+
+		$this->mysql_server_version = $wpdb->get_var( 'SELECT VERSION()' );
+
+		$this->health_check_mysql_rec_version = '5.6';
+
+		if ( stristr( $mysql_server_type, 'mariadb' ) ) {
+			$this->is_mariadb                     = true;
+			$this->health_check_mysql_rec_version = '10.0';
+		}
+
+		$this->mysql_min_version_check = version_compare( '5.5', $this->mysql_server_version, '<=' );
+		$this->mysql_rec_version_check = version_compare( $this->health_check_mysql_rec_version, $this->mysql_server_version, '<=' );
+	}
+
+	/**
+	 * Test if `wp_version_check` is blocked.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * It's possible to block updates with the `wp_version_check` filter, but this can't be checked
 	 * during an Ajax call, as the filter is never introduced then.
@@ -343,9 +402,15 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if plugins are outdated, or unnecessary.
 	 *
 	 * The test checks if your plugins are up to date, and encourages you to remove any
+=======
+	 * Test if plugins are outdated, or unnecessary.
+	 *
+	 * The tests checks if your plugins are up to date, and encourages you to remove any
+>>>>>>> fb785cbb (Initial commit)
 	 * that are not in use.
 	 *
 	 * @since 5.2.0
@@ -375,9 +440,16 @@ class WP_Site_Health {
 		$plugins        = get_plugins();
 		$plugin_updates = get_plugin_updates();
 
+<<<<<<< HEAD
 		$plugins_active      = 0;
 		$plugins_total       = 0;
 		$plugins_need_update = 0;
+=======
+		$plugins_have_updates = false;
+		$plugins_active       = 0;
+		$plugins_total        = 0;
+		$plugins_need_update  = 0;
+>>>>>>> fb785cbb (Initial commit)
 
 		// Loop over the available plugins and check their versions and active state.
 		foreach ( $plugins as $plugin_path => $plugin ) {
@@ -387,8 +459,16 @@ class WP_Site_Health {
 				$plugins_active++;
 			}
 
+<<<<<<< HEAD
 			if ( array_key_exists( $plugin_path, $plugin_updates ) ) {
 				$plugins_need_update++;
+=======
+			$plugin_version = $plugin['Version'];
+
+			if ( array_key_exists( $plugin_path, $plugin_updates ) ) {
+				$plugins_need_update++;
+				$plugins_have_updates = true;
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
@@ -422,7 +502,11 @@ class WP_Site_Health {
 					'<p>%s</p>',
 					__( 'Your site has 1 active plugin, and it is up to date.' )
 				);
+<<<<<<< HEAD
 			} elseif ( $plugins_active > 0 ) {
+=======
+			} else {
+>>>>>>> fb785cbb (Initial commit)
 				$result['description'] .= sprintf(
 					'<p>%s</p>',
 					sprintf(
@@ -435,11 +519,14 @@ class WP_Site_Health {
 						$plugins_active
 					)
 				);
+<<<<<<< HEAD
 			} else {
 				$result['description'] .= sprintf(
 					'<p>%s</p>',
 					__( 'Your site does not have any active plugins.' )
 				);
+=======
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
@@ -476,9 +563,15 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if themes are outdated, or unnecessary.
 	 *
 	 * Checks if your site has a default theme (to fall back on if there is a need),
+=======
+	 * Test if themes are outdated, or unnecessary.
+	 *
+	 * Сhecks if your site has a default theme (to fall back on if there is a need),
+>>>>>>> fb785cbb (Initial commit)
 	 * if your themes are up to date and, finally, encourages you to remove any themes
 	 * that are not needed.
 	 *
@@ -590,7 +683,11 @@ class WP_Site_Health {
 					'<p>%s</p>',
 					__( 'Your site has 1 installed theme, and it is up to date.' )
 				);
+<<<<<<< HEAD
 			} elseif ( $themes_total > 0 ) {
+=======
+			} else {
+>>>>>>> fb785cbb (Initial commit)
 				$result['description'] .= sprintf(
 					'<p>%s</p>',
 					sprintf(
@@ -603,11 +700,14 @@ class WP_Site_Health {
 						$themes_total
 					)
 				);
+<<<<<<< HEAD
 			} else {
 				$result['description'] .= sprintf(
 					'<p>%s</p>',
 					__( 'Your site does not have any installed themes.' )
 				);
+=======
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
@@ -717,7 +817,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if the supplied PHP version is supported.
+=======
+	 * Test if the supplied PHP version is supported.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.2.0
 	 *
@@ -741,7 +845,11 @@ class WP_Site_Health {
 				'<p>%s</p>',
 				sprintf(
 					/* translators: %s: The minimum recommended PHP version. */
+<<<<<<< HEAD
 					__( 'PHP is one of the programming languages used to build WordPress. Newer versions of PHP receive regular security updates and may increase your site&#8217;s performance. The minimum recommended version of PHP is %s.' ),
+=======
+					__( 'PHP is the programming language used to build and maintain WordPress. Newer versions of PHP are created with increased performance in mind, so you may see a positive effect on your site&#8217;s performance. The minimum recommended version of PHP is %s.' ),
+>>>>>>> fb785cbb (Initial commit)
 					$response ? $response['recommended_version'] : ''
 				)
 			),
@@ -749,7 +857,11 @@ class WP_Site_Health {
 				'<p><a href="%s" target="_blank" rel="noopener">%s <span class="screen-reader-text">%s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></p>',
 				esc_url( wp_get_update_php_url() ),
 				__( 'Learn more about updating PHP' ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+				/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 				__( '(opens in a new tab)' )
 			),
 			'test'        => 'php_version',
@@ -764,7 +876,11 @@ class WP_Site_Health {
 		if ( $response['is_supported'] ) {
 			$result['label'] = sprintf(
 				/* translators: %s: The server PHP version. */
+<<<<<<< HEAD
 				__( 'Your site is running on an older version of PHP (%s)' ),
+=======
+				__( 'Your site is running an older version of PHP (%s)' ),
+>>>>>>> fb785cbb (Initial commit)
 				PHP_VERSION
 			);
 			$result['status'] = 'recommended';
@@ -772,6 +888,7 @@ class WP_Site_Health {
 			return $result;
 		}
 
+<<<<<<< HEAD
 		// The PHP version is still receiving security fixes, but is lower than
 		// the expected minimum version that will be required by WordPress in the near future.
 		if ( $response['is_secure'] && $response['is_lower_than_future_minimum'] ) {
@@ -789,11 +906,17 @@ class WP_Site_Health {
 			return $result;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		// The PHP version is only receiving security fixes.
 		if ( $response['is_secure'] ) {
 			$result['label'] = sprintf(
 				/* translators: %s: The server PHP version. */
+<<<<<<< HEAD
 				__( 'Your site is running on an older version of PHP (%s), which should be updated' ),
+=======
+				__( 'Your site is running an older version of PHP (%s), which should be updated' ),
+>>>>>>> fb785cbb (Initial commit)
 				PHP_VERSION
 			);
 			$result['status'] = 'recommended';
@@ -801,6 +924,7 @@ class WP_Site_Health {
 			return $result;
 		}
 
+<<<<<<< HEAD
 		// No more security updates for the PHP version, and lower than the expected minimum version required by WordPress.
 		if ( $response['is_lower_than_future_minimum'] ) {
 			$message = sprintf(
@@ -820,13 +944,26 @@ class WP_Site_Health {
 		$result['label']  = $message;
 		$result['status'] = 'critical';
 
+=======
+		// Anything no longer secure must be updated.
+		$result['label'] = sprintf(
+			/* translators: %s: The server PHP version. */
+			__( 'Your site is running an outdated version of PHP (%s), which requires an update' ),
+			PHP_VERSION
+		);
+		$result['status']         = 'critical';
+>>>>>>> fb785cbb (Initial commit)
 		$result['badge']['label'] = __( 'Security' );
 
 		return $result;
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks if the passed extension or function are available.
+=======
+	 * Check if the passed extension or function are available.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Make the check for available PHP modules into a simple boolean operator for a cleaner test runner.
 	 *
@@ -865,7 +1002,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if required PHP modules are installed on the host.
+=======
+	 * Test if required PHP modules are installed on the host.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * This test builds on the recommendations made by the WordPress Hosting Team
 	 * as seen at https://make.wordpress.org/hosting/handbook/handbook/server-environment/#php-extensions
@@ -893,7 +1034,11 @@ class WP_Site_Health {
 					'target="_blank" rel="noopener"',
 					sprintf(
 						' <span class="screen-reader-text">%s</span><span aria-hidden="true" class="dashicons dashicons-external"></span>',
+<<<<<<< HEAD
 						/* translators: Hidden accessibility text. */
+=======
+						/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 						__( '(opens in a new tab)' )
 					)
 				)
@@ -1000,7 +1145,11 @@ class WP_Site_Health {
 		);
 
 		/**
+<<<<<<< HEAD
 		 * Filters the array representing all the modules we wish to test for.
+=======
+		 * An array representing all the modules we wish to test for.
+>>>>>>> fb785cbb (Initial commit)
 		 *
 		 * @since 5.2.0
 		 * @since 5.3.0 The `$constant` and `$class` parameters were added.
@@ -1051,8 +1200,12 @@ class WP_Site_Health {
 				if ( $module['required'] ) {
 					$result['status'] = 'critical';
 
+<<<<<<< HEAD
 					$class = 'error';
 					/* translators: Hidden accessibility text. */
+=======
+					$class         = 'error';
+>>>>>>> fb785cbb (Initial commit)
 					$screen_reader = __( 'Error' );
 					$message       = sprintf(
 						/* translators: %s: The module name. */
@@ -1060,8 +1213,12 @@ class WP_Site_Health {
 						$library
 					);
 				} else {
+<<<<<<< HEAD
 					$class = 'warning';
 					/* translators: Hidden accessibility text. */
+=======
+					$class         = 'warning';
+>>>>>>> fb785cbb (Initial commit)
 					$screen_reader = __( 'Warning' );
 					$message       = sprintf(
 						/* translators: %s: The module name. */
@@ -1106,7 +1263,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if the PHP default timezone is set to UTC.
+=======
+	 * Test if the PHP default timezone is set to UTC.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.3.1
 	 *
@@ -1147,7 +1308,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if there's an active PHP session that can affect loopback requests.
+=======
+	 * Test if there's an active PHP session that can affect loopback requests.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.5.0
 	 *
@@ -1193,7 +1358,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if the SQL server is up to date.
+=======
+	 * Test if the SQL server is up to date.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.2.0
 	 *
@@ -1220,7 +1389,11 @@ class WP_Site_Health {
 				/* translators: Localized version of WordPress requirements if one exists. */
 				esc_url( __( 'https://wordpress.org/about/requirements/' ) ),
 				__( 'Learn more about what WordPress requires to run.' ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+				/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 				__( '(opens in a new tab)' )
 			),
 			'test'        => 'sql_server',
@@ -1228,7 +1401,11 @@ class WP_Site_Health {
 
 		$db_dropin = file_exists( WP_CONTENT_DIR . '/db.php' );
 
+<<<<<<< HEAD
 		if ( ! $this->is_recommended_mysql_version ) {
+=======
+		if ( ! $this->mysql_rec_version_check ) {
+>>>>>>> fb785cbb (Initial commit)
 			$result['status'] = 'recommended';
 
 			$result['label'] = __( 'Outdated SQL server' );
@@ -1239,12 +1416,20 @@ class WP_Site_Health {
 					/* translators: 1: The database engine in use (MySQL or MariaDB). 2: Database server recommended version number. */
 					__( 'For optimal performance and security reasons, you should consider running %1$s version %2$s or higher. Contact your web hosting company to correct this.' ),
 					( $this->is_mariadb ? 'MariaDB' : 'MySQL' ),
+<<<<<<< HEAD
 					$this->mysql_recommended_version
+=======
+					$this->health_check_mysql_rec_version
+>>>>>>> fb785cbb (Initial commit)
 				)
 			);
 		}
 
+<<<<<<< HEAD
 		if ( ! $this->is_acceptable_mysql_version ) {
+=======
+		if ( ! $this->mysql_min_version_check ) {
+>>>>>>> fb785cbb (Initial commit)
 			$result['status'] = 'critical';
 
 			$result['label']          = __( 'Severely outdated SQL server' );
@@ -1256,7 +1441,11 @@ class WP_Site_Health {
 					/* translators: 1: The database engine in use (MySQL or MariaDB). 2: Database server minimum version number. */
 					__( 'WordPress requires %1$s version %2$s or higher. Contact your web hosting company to correct this.' ),
 					( $this->is_mariadb ? 'MariaDB' : 'MySQL' ),
+<<<<<<< HEAD
 					$this->mysql_required_version
+=======
+					$this->health_check_mysql_required_version
+>>>>>>> fb785cbb (Initial commit)
 				)
 			);
 		}
@@ -1282,12 +1471,19 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if the database server is capable of using utf8mb4.
 	 *
 	 * @since 5.2.0
 	 *
 	 * @global wpdb $wpdb WordPress database abstraction object.
 	 *
+=======
+	 * Test if the database server is capable of using utf8mb4.
+	 *
+	 * @since 5.2.0
+	 *
+>>>>>>> fb785cbb (Initial commit)
 	 * @return array The test results.
 	 */
 	public function get_test_utf8mb4_support() {
@@ -1405,7 +1601,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if the site can communicate with WordPress.org.
+=======
+	 * Test if the site can communicate with WordPress.org.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.2.0
 	 *
@@ -1444,7 +1644,10 @@ class WP_Site_Health {
 				'<p>%s</p>',
 				sprintf(
 					'<span class="error"><span class="screen-reader-text">%s</span></span> %s',
+<<<<<<< HEAD
 					/* translators: Hidden accessibility text. */
+=======
+>>>>>>> fb785cbb (Initial commit)
 					__( 'Error' ),
 					sprintf(
 						/* translators: 1: The IP address WordPress.org resolves to. 2: The error returned by the lookup. */
@@ -1460,7 +1663,11 @@ class WP_Site_Health {
 				/* translators: Localized Support reference. */
 				esc_url( __( 'https://wordpress.org/support' ) ),
 				__( 'Get help resolving this issue.' ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+				/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 				__( '(opens in a new tab)' )
 			);
 		}
@@ -1469,7 +1676,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if debug information is enabled.
+=======
+	 * Test if debug information is enabled.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * When WP_DEBUG is enabled, errors and information may be disclosed to site visitors,
 	 * or logged to a publicly accessible file.
@@ -1496,9 +1707,15 @@ class WP_Site_Health {
 			'actions'     => sprintf(
 				'<p><a href="%s" target="_blank" rel="noopener">%s <span class="screen-reader-text">%s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></p>',
 				/* translators: Documentation explaining debugging in WordPress. */
+<<<<<<< HEAD
 				esc_url( __( 'https://wordpress.org/documentation/article/debugging-in-wordpress/' ) ),
 				__( 'Learn more about debugging in WordPress.' ),
 				/* translators: Hidden accessibility text. */
+=======
+				esc_url( __( 'https://wordpress.org/support/article/debugging-in-wordpress/' ) ),
+				__( 'Learn more about debugging in WordPress.' ),
+				/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 				__( '(opens in a new tab)' )
 			),
 			'test'        => 'is_in_debug_mode',
@@ -1546,7 +1763,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if the site is serving content over HTTPS.
+=======
+	 * Test if your site is serving content over HTTPS.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Many sites have varying degrees of HTTPS support, the most common of which is sites that have it
 	 * enabled, but only if you visit the right site address.
@@ -1578,7 +1799,11 @@ class WP_Site_Health {
 				'<p><a href="%s" target="_blank" rel="noopener">%s<span class="screen-reader-text"> %s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></p>',
 				esc_url( $default_update_url ),
 				__( 'Learn more about why you should use HTTPS' ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+				/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 				__( '(opens in a new tab)' )
 			),
 			'test'        => 'https_status',
@@ -1660,7 +1885,11 @@ class WP_Site_Health {
 							'<p class="button-container"><a class="button button-primary" href="%1$s" target="_blank" rel="noopener">%2$s<span class="screen-reader-text"> %3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></p>',
 							esc_url( $direct_update_url ),
 							__( 'Update your site to use HTTPS' ),
+<<<<<<< HEAD
 							/* translators: Hidden accessibility text. */
+=======
+							/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 							__( '(opens in a new tab)' )
 						);
 					} else {
@@ -1679,7 +1908,11 @@ class WP_Site_Health {
 						'<p><a href="%s" target="_blank" rel="noopener">%s<span class="screen-reader-text"> %s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></p>',
 						esc_url( $update_url ),
 						__( 'Talk to your web host about supporting HTTPS for your website.' ),
+<<<<<<< HEAD
 						/* translators: Hidden accessibility text. */
+=======
+						/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 						__( '(opens in a new tab)' )
 					);
 				} else {
@@ -1695,11 +1928,19 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks if the HTTP API can handle SSL/TLS requests.
 	 *
 	 * @since 5.2.0
 	 *
 	 * @return array The test result.
+=======
+	 * Check if the HTTP API can handle SSL/TLS requests.
+	 *
+	 * @since 5.2.0
+	 *
+	 * @return array The test results.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function get_test_ssl_support() {
 		$result = array(
@@ -1738,7 +1979,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if scheduled events run as intended.
+=======
+	 * Test if scheduled events run as intended.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * If scheduled events are not running, this may indicate something with WP_Cron is not working
 	 * as intended, or that there are orphaned events hanging around from older code.
@@ -1810,7 +2055,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if WordPress can run automated background updates.
+=======
+	 * Test if WordPress can run automated background updates.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Background updates in WordPress are primarily used for minor releases and security updates.
 	 * It's important to either have these working, or be aware that they are intentionally disabled
@@ -1848,7 +2097,10 @@ class WP_Site_Health {
 		$output = '<ul>';
 
 		foreach ( $tests as $test ) {
+<<<<<<< HEAD
 			/* translators: Hidden accessibility text. */
+=======
+>>>>>>> fb785cbb (Initial commit)
 			$severity_string = __( 'Passed' );
 
 			if ( 'fail' === $test->severity ) {
@@ -1856,7 +2108,10 @@ class WP_Site_Health {
 
 				$result['status'] = 'critical';
 
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+>>>>>>> fb785cbb (Initial commit)
 				$severity_string = __( 'Error' );
 			}
 
@@ -1865,7 +2120,10 @@ class WP_Site_Health {
 
 				$result['status'] = 'recommended';
 
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+>>>>>>> fb785cbb (Initial commit)
 				$severity_string = __( 'Warning' );
 			}
 
@@ -1887,7 +2145,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if plugin and theme auto-updates appear to be configured correctly.
+=======
+	 * Test if plugin and theme auto-updates appear to be configured correctly.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.5.0
 	 *
@@ -1926,7 +2188,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if loopbacks work as expected.
+=======
+	 * Test if loopbacks work as expected.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * A loopback is when WordPress queries itself, for example to start a new WP_Cron instance,
 	 * or when editing a plugin or theme. This has shown itself to be a recurring issue,
@@ -1969,7 +2235,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if HTTP requests are blocked.
+=======
+	 * Test if HTTP requests are blocked.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * It's possible to block all outgoing communication (with the possibility of allowing certain
 	 * hosts) via the HTTP API. This may create problems for users as many features are running as
@@ -2041,7 +2311,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if the REST API is accessible.
+=======
+	 * Test if the REST API is accessible.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Various security measures may block the REST API from working, or it may have been disabled in general.
 	 * This is required for the new block editor to work, so we explicitly test for this.
@@ -2060,14 +2334,22 @@ class WP_Site_Health {
 			),
 			'description' => sprintf(
 				'<p>%s</p>',
+<<<<<<< HEAD
 				__( 'The REST API is one way that WordPress and other applications communicate with the server. For example, the block editor screen relies on the REST API to display and save your posts and pages.' )
+=======
+				__( 'The REST API is one way WordPress, and other applications, communicate with the server. One example is the block editor screen, which relies on this to display, and save, your posts and pages.' )
+>>>>>>> fb785cbb (Initial commit)
 			),
 			'actions'     => '',
 			'test'        => 'rest_availability',
 		);
 
 		$cookies = wp_unslash( $_COOKIE );
+<<<<<<< HEAD
 		$timeout = 10; // 10 seconds.
+=======
+		$timeout = 10;
+>>>>>>> fb785cbb (Initial commit)
 		$headers = array(
 			'Cache-Control' => 'no-cache',
 			'X-WP-Nonce'    => wp_create_nonce( 'wp_rest' ),
@@ -2098,6 +2380,7 @@ class WP_Site_Health {
 			$result['label'] = __( 'The REST API encountered an error' );
 
 			$result['description'] .= sprintf(
+<<<<<<< HEAD
 				'<p>%s</p><p>%s<br>%s</p>',
 				__( 'When testing the REST API, an error was encountered:' ),
 				sprintf(
@@ -2110,6 +2393,18 @@ class WP_Site_Health {
 					__( 'REST API Response: (%1$s) %2$s' ),
 					$r->get_error_code(),
 					$r->get_error_message()
+=======
+				'<p>%s</p>',
+				sprintf(
+					'%s<br>%s',
+					__( 'The REST API request failed due to an error.' ),
+					sprintf(
+						/* translators: 1: The WordPress error message. 2: The WordPress error code. */
+						__( 'Error: %1$s (%2$s)' ),
+						$r->get_error_message(),
+						$r->get_error_code()
+					)
+>>>>>>> fb785cbb (Initial commit)
 				)
 			);
 		} elseif ( 200 !== wp_remote_retrieve_response_code( $r ) ) {
@@ -2118,6 +2413,7 @@ class WP_Site_Health {
 			$result['label'] = __( 'The REST API encountered an unexpected result' );
 
 			$result['description'] .= sprintf(
+<<<<<<< HEAD
 				'<p>%s</p><p>%s<br>%s</p>',
 				__( 'When testing the REST API, an unexpected result was returned:' ),
 				sprintf(
@@ -2130,6 +2426,14 @@ class WP_Site_Health {
 					__( 'REST API Response: (%1$s) %2$s' ),
 					wp_remote_retrieve_response_code( $r ),
 					wp_remote_retrieve_response_message( $r )
+=======
+				'<p>%s</p>',
+				sprintf(
+					/* translators: 1: The HTTP error code. 2: The HTTP error message. */
+					__( 'The REST API call gave the following unexpected result: (%1$d) %2$s.' ),
+					wp_remote_retrieve_response_code( $r ),
+					esc_html( wp_remote_retrieve_body( $r ) )
+>>>>>>> fb785cbb (Initial commit)
 				)
 			);
 		} else {
@@ -2155,7 +2459,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if 'file_uploads' directive in PHP.ini is turned off.
+=======
+	 * Test if 'file_uploads' directive in PHP.ini is turned off.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.5.0
 	 *
@@ -2263,7 +2571,11 @@ class WP_Site_Health {
 			),
 			'description' => sprintf(
 				'<p>%s</p>',
+<<<<<<< HEAD
 				__( 'The Authorization header is used by third-party applications you have approved for this site. Without this header, those apps cannot connect to your site.' )
+=======
+				__( 'The Authorization header comes from the third-party applications you approve. Without it, those apps cannot connect to your site.' )
+>>>>>>> fb785cbb (Initial commit)
 			),
 			'actions'     => '',
 			'test'        => 'authorization_header',
@@ -2277,11 +2589,15 @@ class WP_Site_Health {
 			return $result;
 		}
 
+<<<<<<< HEAD
 		$result['status']       = 'recommended';
 		$result['description'] .= sprintf(
 			'<p>%s</p>',
 			__( 'If you are still seeing this warning after having tried the actions below, you may need to contact your hosting provider for further assistance.' )
 		);
+=======
+		$result['status'] = 'recommended';
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( ! function_exists( 'got_mod_rewrite' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/misc.php';
@@ -2298,7 +2614,11 @@ class WP_Site_Health {
 				'<p><a href="%s" target="_blank" rel="noopener">%s <span class="screen-reader-text">%s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></p>',
 				__( 'https://developer.wordpress.org/rest-api/frequently-asked-questions/#why-is-authentication-not-working' ),
 				__( 'Learn how to configure the Authorization header.' ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+				/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 				__( '(opens in a new tab)' )
 			);
 		}
@@ -2307,6 +2627,7 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Tests if a full page cache is available.
 	 *
 	 * @since 6.1.0
@@ -2519,6 +2840,9 @@ class WP_Site_Health {
 
 	/**
 	 * Returns a set of tests that belong to the site status page.
+=======
+	 * Return a set of tests that belong to the site status page.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Each site status test is defined here, they may be `direct` tests, that run on page load, or `async` tests
 	 * which will run later down the line via JavaScript calls to improve page performance and hopefully also user
@@ -2637,6 +2961,7 @@ class WP_Site_Health {
 			);
 		}
 
+<<<<<<< HEAD
 		// Only check for caches in production environments.
 		if ( 'production' === wp_get_environment_type() ) {
 			$tests['async']['page_cache'] = array(
@@ -2654,6 +2979,10 @@ class WP_Site_Health {
 
 		/**
 		 * Filters which site status tests are run on a site.
+=======
+		/**
+		 * Add or modify which site status tests are run on a site.
+>>>>>>> fb785cbb (Initial commit)
 		 *
 		 * The site health is determined by a set of tests based on best practices from
 		 * both the WordPress Hosting Team and web standards in general.
@@ -2719,7 +3048,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Adds a class to the body HTML tag.
+=======
+	 * Add a class to the body HTML tag.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Filters the body class string for admin pages and adds our own class for easier styling.
 	 *
@@ -2740,7 +3073,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Initiates the WP_Cron schedule test cases.
+=======
+	 * Initiate the WP_Cron schedule test cases.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.2.0
 	 */
@@ -2750,7 +3087,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Populates the list of cron events and store them to a class-wide variable.
+=======
+	 * Populate our list of cron events and store them to a class-wide variable.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.2.0
 	 */
@@ -2783,7 +3124,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks if any scheduled tasks have been missed.
+=======
+	 * Check if any scheduled tasks have been missed.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Returns a boolean value of `true` if a scheduled task has been missed and ends processing.
 	 *
@@ -2809,7 +3154,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks if any scheduled tasks are late.
+=======
+	 * Check if any scheduled tasks are late.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Returns a boolean value of `true` if a scheduled task is late and ends processing.
 	 *
@@ -2839,7 +3188,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks for potential issues with plugin and theme auto-updates.
+=======
+	 * Check for potential issues with plugin and theme auto-updates.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Though there is no way to 100% determine if plugin and theme auto-updates are configured
 	 * correctly, a few educated guesses could be made to flag any conditions that would
@@ -2923,7 +3276,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Runs a loopback test on the site.
+=======
+	 * Run a loopback test on our site.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Loopbacks are what WordPress uses to communicate with itself to start up WP_Cron, scheduled posts,
 	 * make sure plugin or theme edits don't cause site failures and similar.
@@ -2935,7 +3292,11 @@ class WP_Site_Health {
 	public function can_perform_loopback() {
 		$body    = array( 'site-health' => 'loopback-test' );
 		$cookies = wp_unslash( $_COOKIE );
+<<<<<<< HEAD
 		$timeout = 10; // 10 seconds.
+=======
+		$timeout = 10;
+>>>>>>> fb785cbb (Initial commit)
 		$headers = array(
 			'Cache-Control' => 'no-cache',
 		);
@@ -2995,7 +3356,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Creates a weekly cron event, if one does not already exist.
+=======
+	 * Create a weekly cron event, if one does not already exist.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.4.0
 	 */
@@ -3006,7 +3371,11 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Runs the scheduled event to check and update the latest site health status for the website.
+=======
+	 * Run our scheduled event to check and update the latest site health status for the website.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.4.0
 	 */
@@ -3127,6 +3496,7 @@ class WP_Site_Health {
 		return in_array( wp_get_environment_type(), array( 'development', 'local' ), true );
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Returns a list of headers and its verification callback to verify if page cache is enabled or not.
 	 *
@@ -3444,4 +3814,6 @@ class WP_Site_Health {
 		return apply_filters( 'site_status_available_object_cache_services', $services );
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

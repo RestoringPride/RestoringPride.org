@@ -192,17 +192,25 @@ const code_code = {
       onFocus();
     }
 
+<<<<<<< HEAD
     return (0,external_wp_element_namespaceObject.createElement)(external_wp_element_namespaceObject.Fragment, null, (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextShortcut, {
       type: "access",
       character: "x",
       onUse: onClick
     }), (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextToolbarButton, {
+=======
+    return (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextToolbarButton, {
+>>>>>>> fb785cbb (Initial commit)
       icon: library_code,
       title: code_title,
       onClick: onClick,
       isActive: isActive,
       role: "menuitemcheckbox"
+<<<<<<< HEAD
     }));
+=======
+    });
+>>>>>>> fb785cbb (Initial commit)
   }
 
 };
@@ -268,15 +276,26 @@ function InlineUI(_ref) {
     style
   } = activeObjectAttributes;
   const [width, setWidth] = (0,external_wp_element_namespaceObject.useState)(style === null || style === void 0 ? void 0 : style.replace(/\D/g, ''));
+<<<<<<< HEAD
   const popoverAnchor = (0,external_wp_richText_namespaceObject.useAnchor)({
     editableContentElement: contentRef.current,
+=======
+  const anchorRef = (0,external_wp_richText_namespaceObject.useAnchorRef)({
+    ref: contentRef,
+>>>>>>> fb785cbb (Initial commit)
     value,
     settings: image_image
   });
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Popover, {
+<<<<<<< HEAD
     placement: "bottom",
     focusOnMount: false,
     anchor: popoverAnchor,
+=======
+    position: "bottom center",
+    focusOnMount: false,
+    anchorRef: anchorRef,
+>>>>>>> fb785cbb (Initial commit)
     className: "block-editor-format-toolbar__image-popover"
   }, (0,external_wp_element_namespaceObject.createElement)("form", {
     className: "block-editor-format-toolbar__image-container-content",
@@ -488,11 +507,26 @@ const link_link = (0,external_wp_element_namespaceObject.createElement)(external
 var external_wp_a11y_namespaceObject = window["wp"]["a11y"];
 ;// CONCATENATED MODULE: external ["wp","data"]
 var external_wp_data_namespaceObject = window["wp"]["data"];
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/format-library/build-module/link/utils.js
 /**
  * WordPress dependencies
  */
 
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+;// CONCATENATED MODULE: ./node_modules/@wordpress/format-library/build-module/link/utils.js
+/**
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Check for issues with the provided href.
  *
@@ -522,7 +556,11 @@ function isValidHref(href) {
     // This ensures URIs with an http protocol have exactly two forward slashes following the protocol.
 
 
+<<<<<<< HEAD
     if (protocol.startsWith('http') && !/^https?:\/\/[^\/\s]/i.test(trimmedHref)) {
+=======
+    if ((0,external_lodash_namespaceObject.startsWith)(protocol, 'http') && !/^https?:\/\/[^\/\s]/i.test(trimmedHref)) {
+>>>>>>> fb785cbb (Initial commit)
       return false;
     }
 
@@ -552,7 +590,11 @@ function isValidHref(href) {
   } // Validate anchor links.
 
 
+<<<<<<< HEAD
   if (trimmedHref.startsWith('#') && !(0,external_wp_url_namespaceObject.isValidFragment)(trimmedHref)) {
+=======
+  if ((0,external_lodash_namespaceObject.startsWith)(trimmedHref, '#') && !(0,external_wp_url_namespaceObject.isValidFragment)(trimmedHref)) {
+>>>>>>> fb785cbb (Initial commit)
     return false;
   }
 
@@ -609,8 +651,11 @@ function createLinkFormat(_ref) {
 /* eslint-enable jsdoc/no-undefined-types */
 
 function getFormatBoundary(value, format) {
+<<<<<<< HEAD
   var _newFormats$startInde, _newFormats$endIndex, _newFormats;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
   let startIndex = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : value.start;
   let endIndex = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : value.end;
   const EMPTY_BOUNDARIES = {
@@ -629,6 +674,7 @@ function getFormatBoundary(value, format) {
 
 
   const newFormats = formats.slice();
+<<<<<<< HEAD
   const formatAtStart = (_newFormats$startInde = newFormats[startIndex]) === null || _newFormats$startInde === void 0 ? void 0 : _newFormats$startInde.find(_ref2 => {
     let {
       type
@@ -646,6 +692,16 @@ function getFormatBoundary(value, format) {
       type
     } = _ref4;
     return type === format.type;
+=======
+  const formatAtStart = (0,external_lodash_namespaceObject.find)(newFormats[startIndex], {
+    type: format.type
+  });
+  const formatAtEnd = (0,external_lodash_namespaceObject.find)(newFormats[endIndex], {
+    type: format.type
+  });
+  const formatAtEndMinusOne = (0,external_lodash_namespaceObject.find)(newFormats[endIndex - 1], {
+    type: format.type
+>>>>>>> fb785cbb (Initial commit)
   });
 
   if (!!formatAtStart) {
@@ -713,6 +769,7 @@ function walkToBoundary(formats, initialIndex, targetFormatRef, formatIndex, dir
   return index;
 }
 
+<<<<<<< HEAD
 const partialRight = function (fn) {
   for (var _len = arguments.length, partialArgs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     partialArgs[_key - 1] = arguments[_key];
@@ -729,6 +786,10 @@ const partialRight = function (fn) {
 
 const walkToStart = partialRight(walkToBoundary, 'backwards');
 const walkToEnd = partialRight(walkToBoundary, 'forwards');
+=======
+const walkToStart = (0,external_lodash_namespaceObject.partialRight)(walkToBoundary, 'backwards');
+const walkToEnd = (0,external_lodash_namespaceObject.partialRight)(walkToBoundary, 'forwards');
+>>>>>>> fb785cbb (Initial commit)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/format-library/build-module/link/use-link-instance-key.js
 // Weakly referenced map allows unused ids to be garbage collected.
@@ -744,7 +805,11 @@ function getKey(_id) {
  * Builds a unique link control key for the given object reference.
  *
  * @param {Object} instance an unique object reference specific to this link control instance.
+<<<<<<< HEAD
  * @return {string | undefined} the unique key to use for this link control.
+=======
+ * @return {string} the unique key to use for this link control.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 
@@ -890,6 +955,7 @@ function InlineLinkUI(_ref) {
           text: newText
         }); // Apply the new Link format to this new text value.
 
+<<<<<<< HEAD
         newValue = (0,external_wp_richText_namespaceObject.applyFormat)(newValue, linkFormat, 0, newText.length); // Get the boundaries of the active link format.
 
         const boundary = getFormatBoundary(value, {
@@ -909,12 +975,22 @@ function InlineLinkUI(_ref) {
         // split at the active format's boundary. This avoids a bug
         // with incorrectly targetted replacements.
         // See: https://github.com/WordPress/gutenberg/issues/41771.
+=======
+        newValue = (0,external_wp_richText_namespaceObject.applyFormat)(newValue, linkFormat, 0, newText.length); // Update the original (full) RichTextValue replacing the
+        // target text with the *new* RichTextValue containing:
+        // 1. The new text content.
+        // 2. The new link format.
+>>>>>>> fb785cbb (Initial commit)
         // Note original formats will be lost when applying this change.
         // That is expected behaviour.
         // See: https://github.com/WordPress/gutenberg/pull/33849#issuecomment-936134179.
 
+<<<<<<< HEAD
         const newValAfter = (0,external_wp_richText_namespaceObject.replace)(valAfter, richTextText, newValue);
         newValue = (0,external_wp_richText_namespaceObject.concat)(valBefore, newValAfter);
+=======
+        newValue = (0,external_wp_richText_namespaceObject.replace)(value, richTextText, newValue);
+>>>>>>> fb785cbb (Initial commit)
       }
 
       newValue.start = newValue.end;
@@ -937,8 +1013,13 @@ function InlineLinkUI(_ref) {
     }
   }
 
+<<<<<<< HEAD
   const popoverAnchor = (0,external_wp_richText_namespaceObject.useAnchor)({
     editableContentElement: contentRef.current,
+=======
+  const anchorRef = (0,external_wp_richText_namespaceObject.useAnchorRef)({
+    ref: contentRef,
+>>>>>>> fb785cbb (Initial commit)
     value,
     settings: build_module_link_link
   }); // Generate a string based key that is unique to this anchor reference.
@@ -946,7 +1027,11 @@ function InlineLinkUI(_ref) {
   // potential stale state bugs caused by the component not being remounted
   // See https://github.com/WordPress/gutenberg/pull/34742.
 
+<<<<<<< HEAD
   const forceRemountKey = use_link_instance_key(popoverAnchor); // The focusOnMount prop shouldn't evolve during render of a Popover
+=======
+  const forceRemountKey = use_link_instance_key(anchorRef); // The focusOnMount prop shouldn't evolve during render of a Popover
+>>>>>>> fb785cbb (Initial commit)
   // otherwise it causes a render of the content.
 
   const focusOnMount = (0,external_wp_element_namespaceObject.useRef)(addingLink ? 'firstElement' : false);
@@ -974,11 +1059,18 @@ function InlineLinkUI(_ref) {
   }
 
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Popover, {
+<<<<<<< HEAD
     anchor: popoverAnchor,
     focusOnMount: focusOnMount.current,
     onClose: stopAddingLink,
     placement: "bottom",
     shift: true
+=======
+    anchorRef: anchorRef,
+    focusOnMount: focusOnMount.current,
+    onClose: stopAddingLink,
+    position: "bottom center"
+>>>>>>> fb785cbb (Initial commit)
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.__experimentalLinkControl, {
     key: forceRemountKey,
     value: linkValue,
@@ -1210,17 +1302,25 @@ const strikethrough = {
       onFocus();
     }
 
+<<<<<<< HEAD
     return (0,external_wp_element_namespaceObject.createElement)(external_wp_element_namespaceObject.Fragment, null, (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextShortcut, {
       type: "access",
       character: "d",
       onUse: onClick
     }), (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextToolbarButton, {
+=======
+    return (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.RichTextToolbarButton, {
+>>>>>>> fb785cbb (Initial commit)
       icon: format_strikethrough,
       title: strikethrough_title,
       onClick: onClick,
       isActive: isActive,
       role: "menuitemcheckbox"
+<<<<<<< HEAD
     }));
+=======
+    });
+>>>>>>> fb785cbb (Initial commit)
   }
 
 };
@@ -1322,6 +1422,7 @@ const textColor = (0,external_wp_element_namespaceObject.createElement)(external
 }));
 /* harmony default export */ var text_color = (textColor);
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/color.js
 
 
@@ -1337,10 +1438,19 @@ const color = (0,external_wp_element_namespaceObject.createElement)(external_wp_
 }));
 /* harmony default export */ var library_color = (color);
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/format-library/build-module/text-color/inline.js
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -1349,6 +1459,10 @@ const color = (0,external_wp_element_namespaceObject.createElement)(external_wp_
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -1443,12 +1557,19 @@ function ColorPicker(_ref) {
     onChange
   } = _ref;
   const colors = (0,external_wp_data_namespaceObject.useSelect)(select => {
+<<<<<<< HEAD
     var _getSettings$colors;
 
     const {
       getSettings
     } = select(external_wp_blockEditor_namespaceObject.store);
     return (_getSettings$colors = getSettings().colors) !== null && _getSettings$colors !== void 0 ? _getSettings$colors : [];
+=======
+    const {
+      getSettings
+    } = select(external_wp_blockEditor_namespaceObject.store);
+    return (0,external_lodash_namespaceObject.get)(getSettings(), ['colors'], []);
+>>>>>>> fb785cbb (Initial commit)
   }, []);
   const onColorChange = (0,external_wp_element_namespaceObject.useCallback)(color => {
     onChange(setColors(value, name, colors, {
@@ -1471,6 +1592,7 @@ function InlineColorUI(_ref2) {
     contentRef
   } = _ref2;
 
+<<<<<<< HEAD
   /*
    As you change the text color by typing a HEX value into a field,
    the return value of document.getSelection jumps to the field you're editing,
@@ -1480,13 +1602,28 @@ function InlineColorUI(_ref2) {
    */
   const popoverAnchor = (0,external_wp_blockEditor_namespaceObject.useCachedTruthy)((0,external_wp_richText_namespaceObject.useAnchor)({
     editableContentElement: contentRef.current,
+=======
+  /* 
+   As you change the text color by typing a HEX value into a field,
+   the return value of document.getSelection jumps to the field you're editing,
+   not the highlighted text. Given that useAnchorRef uses document.getSelection,
+   it will return null, since it can't find the <mark> element within the HEX input.
+   This caches the last truthy value of the selection anchor reference.
+   */
+  const anchorRef = (0,external_wp_blockEditor_namespaceObject.useCachedTruthy)((0,external_wp_richText_namespaceObject.useAnchorRef)({
+    ref: contentRef,
+>>>>>>> fb785cbb (Initial commit)
     value,
     settings: text_color_textColor
   }));
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Popover, {
     onClose: onClose,
     className: "components-inline-color-popover",
+<<<<<<< HEAD
     anchor: popoverAnchor
+=======
+    anchorRef: anchorRef
+>>>>>>> fb785cbb (Initial commit)
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.TabPanel, {
     tabs: [{
       name: 'color',
@@ -1507,6 +1644,13 @@ function InlineColorUI(_ref2) {
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -1514,6 +1658,10 @@ function InlineColorUI(_ref2) {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -1573,7 +1721,11 @@ function TextColorEdit(_ref2) {
   const enableIsAddingColor = (0,external_wp_element_namespaceObject.useCallback)(() => setIsAddingColor(true), [setIsAddingColor]);
   const disableIsAddingColor = (0,external_wp_element_namespaceObject.useCallback)(() => setIsAddingColor(false), [setIsAddingColor]);
   const colorIndicatorStyle = (0,external_wp_element_namespaceObject.useMemo)(() => fillComputedColors(contentRef.current, getActiveColors(value, text_color_name, colors)), [value, colors]);
+<<<<<<< HEAD
   const hasColorsToChoose = colors.length || !allowCustomControl;
+=======
+  const hasColorsToChoose = !(0,external_lodash_namespaceObject.isEmpty)(colors) || !allowCustomControl;
+>>>>>>> fb785cbb (Initial commit)
 
   if (!hasColorsToChoose && !isActive) {
     return null;
@@ -1583,7 +1735,11 @@ function TextColorEdit(_ref2) {
     className: "format-library-text-color-button",
     isActive: isActive,
     icon: (0,external_wp_element_namespaceObject.createElement)(icon, {
+<<<<<<< HEAD
       icon: Object.keys(activeAttributes).length ? text_color : library_color,
+=======
+      icon: text_color,
+>>>>>>> fb785cbb (Initial commit)
       style: colorIndicatorStyle
     }),
     title: text_color_title // If has no colors to choose but a color is active remove the color onClick.
@@ -1830,6 +1986,7 @@ const keyboard = {
 
 };
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/help.js
 
 
@@ -1898,6 +2055,8 @@ const unknown = {
 
 };
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/format-library/build-module/default-formats.js
 /**
  * Internal dependencies
@@ -1913,8 +2072,12 @@ const unknown = {
 
 
 
+<<<<<<< HEAD
 
 /* harmony default export */ var default_formats = ([bold, code_code, image_image, italic, build_module_link_link, strikethrough, underline, text_color_textColor, subscript_subscript, superscript_superscript, keyboard, unknown]);
+=======
+/* harmony default export */ var default_formats = ([bold, code_code, image_image, italic, build_module_link_link, strikethrough, underline, text_color_textColor, subscript_subscript, superscript_superscript, keyboard]);
+>>>>>>> fb785cbb (Initial commit)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/format-library/build-module/index.js
 /**

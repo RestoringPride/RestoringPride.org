@@ -17,23 +17,35 @@
 			"source": "attribute",
 			"selector": "figure img",
 			"attribute": "alt",
+<<<<<<< HEAD
 			"default": "",
 			"__experimentalRole": "content"
+=======
+			"default": ""
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"mediaPosition": {
 			"type": "string",
 			"default": "left"
 		},
 		"mediaId": {
+<<<<<<< HEAD
 			"type": "number",
 			"__experimentalRole": "content"
+=======
+			"type": "number"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"mediaUrl": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "figure video,figure img",
+<<<<<<< HEAD
 			"attribute": "src",
 			"__experimentalRole": "content"
+=======
+			"attribute": "src"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"mediaLink": {
 			"type": "string"
@@ -51,8 +63,12 @@
 			"type": "string",
 			"source": "attribute",
 			"selector": "figure a",
+<<<<<<< HEAD
 			"attribute": "href",
 			"__experimentalRole": "content"
+=======
+			"attribute": "href"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"rel": {
 			"type": "string",
@@ -67,8 +83,12 @@
 			"attribute": "class"
 		},
 		"mediaType": {
+<<<<<<< HEAD
 			"type": "string",
 			"__experimentalRole": "content"
+=======
+			"type": "string"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"mediaWidth": {
 			"type": "number",
@@ -102,6 +122,7 @@
 				"background": true,
 				"text": true
 			}
+<<<<<<< HEAD
 		},
 		"spacing": {
 			"margin": true,
@@ -119,6 +140,8 @@
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"editorStyle": "wp-block-media-text-editor",

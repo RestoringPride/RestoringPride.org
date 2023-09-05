@@ -14,7 +14,11 @@
  */
 function render_block_core_categories( $attributes ) {
 	static $block_id = 0;
+<<<<<<< HEAD
 	++$block_id;
+=======
+	$block_id++;
+>>>>>>> fb785cbb (Initial commit)
 
 	$args = array(
 		'echo'         => false,
@@ -22,7 +26,10 @@ function render_block_core_categories( $attributes ) {
 		'orderby'      => 'name',
 		'show_count'   => ! empty( $attributes['showPostCounts'] ),
 		'title_li'     => '',
+<<<<<<< HEAD
 		'hide_empty'   => empty( $attributes['showEmpty'] ),
+=======
+>>>>>>> fb785cbb (Initial commit)
 	);
 	if ( ! empty( $attributes['showOnlyTopLevel'] ) && $attributes['showOnlyTopLevel'] ) {
 		$args['parent'] = 0;
@@ -76,7 +83,11 @@ function build_dropdown_script_block_core_categories( $dropdown_id ) {
 		var dropdown = document.getElementById( '<?php echo esc_js( $dropdown_id ); ?>' );
 		function onCatChange() {
 			if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+<<<<<<< HEAD
 				location.href = "<?php echo esc_url( home_url() ); ?>/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+=======
+				location.href = "<?php echo home_url(); ?>/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 		dropdown.onchange = onCatChange;

@@ -43,7 +43,10 @@
 	},
 	"supports": {
 		"align": true,
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"html": false
 	},
 	"editorStyle": "wp-block-rss-editor",

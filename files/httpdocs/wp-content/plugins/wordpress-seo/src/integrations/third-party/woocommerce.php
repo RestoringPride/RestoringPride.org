@@ -7,7 +7,10 @@ use Yoast\WP\SEO\Conditionals\Front_End_Conditional;
 use Yoast\WP\SEO\Conditionals\WooCommerce_Conditional;
 use Yoast\WP\SEO\Helpers\Options_Helper;
 use Yoast\WP\SEO\Helpers\Pagination_Helper;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Helpers\Woocommerce_Helper;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Integrations\Integration_Interface;
 use Yoast\WP\SEO\Memoizers\Meta_Tags_Context_Memoizer;
 use Yoast\WP\SEO\Models\Indexable;
@@ -55,6 +58,7 @@ class WooCommerce implements Integration_Interface {
 	protected $pagination_helper;
 
 	/**
+<<<<<<< HEAD
 	 * The WooCommerce helper.
 	 *
 	 * @var Woocommerce_Helper
@@ -62,6 +66,8 @@ class WooCommerce implements Integration_Interface {
 	private $woocommerce_helper;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Returns the conditionals based in which this loadable should be active.
 	 *
 	 * @return array
@@ -73,18 +79,27 @@ class WooCommerce implements Integration_Interface {
 	/**
 	 * WooCommerce constructor.
 	 *
+<<<<<<< HEAD
 	 * @param Options_Helper             $options            The options helper.
 	 * @param WPSEO_Replace_Vars         $replace_vars       The replace vars helper.
 	 * @param Meta_Tags_Context_Memoizer $context_memoizer   The meta tags context memoizer.
 	 * @param Indexable_Repository       $repository         The indexable repository.
 	 * @param Pagination_Helper          $pagination_helper  The paginataion helper.
 	 * @param Woocommerce_Helper         $woocommerce_helper The WooCommerce helper.
+=======
+	 * @param Options_Helper             $options           The options helper.
+	 * @param WPSEO_Replace_Vars         $replace_vars      The replace vars helper.
+	 * @param Meta_Tags_Context_Memoizer $context_memoizer  The meta tags context memoizer.
+	 * @param Indexable_Repository       $repository        The indexable repository.
+	 * @param Pagination_Helper          $pagination_helper The paginataion helper.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function __construct(
 		Options_Helper $options,
 		WPSEO_Replace_Vars $replace_vars,
 		Meta_Tags_Context_Memoizer $context_memoizer,
 		Indexable_Repository $repository,
+<<<<<<< HEAD
 		Pagination_Helper $pagination_helper,
 		Woocommerce_Helper $woocommerce_helper
 	) {
@@ -94,6 +109,15 @@ class WooCommerce implements Integration_Interface {
 		$this->repository         = $repository;
 		$this->pagination_helper  = $pagination_helper;
 		$this->woocommerce_helper = $woocommerce_helper;
+=======
+		Pagination_Helper $pagination_helper
+	) {
+		$this->options           = $options;
+		$this->replace_vars      = $replace_vars;
+		$this->context_memoizer  = $context_memoizer;
+		$this->repository        = $repository;
+		$this->pagination_helper = $pagination_helper;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -122,7 +146,11 @@ class WooCommerce implements Integration_Interface {
 	 * @return string The correct canonical.
 	 */
 	public function canonical( $canonical, $presentation = null ) {
+<<<<<<< HEAD
 		if ( ! $this->woocommerce_helper->is_shop_page() ) {
+=======
+		if ( ! $this->is_shop_page() ) {
+>>>>>>> fb785cbb (Initial commit)
 			return $canonical;
 		}
 
@@ -145,7 +173,11 @@ class WooCommerce implements Integration_Interface {
 	 * @return string The correct link.
 	 */
 	public function adjacent_rel_url( $link, $rel, $presentation = null ) {
+<<<<<<< HEAD
 		if ( ! $this->woocommerce_helper->is_shop_page() ) {
+=======
+		if ( ! $this->is_shop_page() ) {
+>>>>>>> fb785cbb (Initial commit)
 			return $link;
 		}
 
@@ -170,18 +202,28 @@ class WooCommerce implements Integration_Interface {
 	 * @return Indexable[] The indexables to be shown in the breadcrumbs, with the shop page added.
 	 */
 	public function add_shop_to_breadcrumbs( $indexables ) {
+<<<<<<< HEAD
 		$shop_page_id = $this->woocommerce_helper->get_shop_page_id();
 
 		if ( ! \is_int( $shop_page_id ) || $shop_page_id < 1 ) {
+=======
+		$shop_page_id = $this->get_shop_page_id();
+
+		if ( $shop_page_id < 1 ) {
+>>>>>>> fb785cbb (Initial commit)
 			return $indexables;
 		}
 
 		foreach ( $indexables as $index => $indexable ) {
 			if ( $indexable->object_type === 'post-type-archive' && $indexable->object_sub_type === 'product' ) {
+<<<<<<< HEAD
 				$shop_page_indexable = $this->repository->find_by_id_and_type( $shop_page_id, 'post' );
 				if ( \is_a( $shop_page_indexable, Indexable::class ) ) {
 					$indexables[ $index ] = $shop_page_indexable;
 				}
+=======
+				$indexables[ $index ] = $this->repository->find_by_id_and_type( $shop_page_id, 'post' );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
@@ -196,11 +238,19 @@ class WooCommerce implements Integration_Interface {
 	 * @return int The Page ID of the shop.
 	 */
 	public function get_page_id( $page_id ) {
+<<<<<<< HEAD
 		if ( ! $this->woocommerce_helper->is_shop_page() ) {
 			return $page_id;
 		}
 
 		return $this->woocommerce_helper->get_shop_page_id();
+=======
+		if ( ! $this->is_shop_page() ) {
+			return $page_id;
+		}
+
+		return $this->get_shop_page_id();
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -218,7 +268,11 @@ class WooCommerce implements Integration_Interface {
 			return $title;
 		}
 
+<<<<<<< HEAD
 		if ( ! $this->woocommerce_helper->is_shop_page() ) {
+=======
+		if ( ! $this->is_shop_page() ) {
+>>>>>>> fb785cbb (Initial commit)
 			return $title;
 		}
 
@@ -226,7 +280,11 @@ class WooCommerce implements Integration_Interface {
 			return $title;
 		}
 
+<<<<<<< HEAD
 		$shop_page_id = $this->woocommerce_helper->get_shop_page_id();
+=======
+		$shop_page_id = $this->get_shop_page_id();
+>>>>>>> fb785cbb (Initial commit)
 		if ( $shop_page_id < 1 ) {
 			return $title;
 		}
@@ -254,7 +312,11 @@ class WooCommerce implements Integration_Interface {
 			return $description;
 		}
 
+<<<<<<< HEAD
 		if ( ! $this->woocommerce_helper->is_shop_page() ) {
+=======
+		if ( ! $this->is_shop_page() ) {
+>>>>>>> fb785cbb (Initial commit)
 			return $description;
 		}
 
@@ -262,7 +324,11 @@ class WooCommerce implements Integration_Interface {
 			return $description;
 		}
 
+<<<<<<< HEAD
 		$shop_page_id = $this->woocommerce_helper->get_shop_page_id();
+=======
+		$shop_page_id = $this->get_shop_page_id();
+>>>>>>> fb785cbb (Initial commit)
 		if ( $shop_page_id < 1 ) {
 			return $description;
 		}
@@ -276,6 +342,26 @@ class WooCommerce implements Integration_Interface {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Checks if the current page is a WooCommerce shop page.
+	 *
+	 * @return bool True when the page is a shop page.
+	 */
+	protected function is_shop_page() {
+		if ( ! \is_shop() ) {
+			return false;
+		}
+
+		if ( \is_search() ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+>>>>>>> fb785cbb (Initial commit)
 	 * Uses template for the given option name and replace the replacement variables on it.
 	 *
 	 * @param string $option_name  The option name to get the template for.
@@ -291,6 +377,22 @@ class WooCommerce implements Integration_Interface {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Returns the id of the set WooCommerce shop page.
+	 *
+	 * @return int The ID of the set page.
+	 */
+	protected function get_shop_page_id() {
+		if ( ! \function_exists( 'wc_get_page_id' ) ) {
+			return -1;
+		}
+
+		return \wc_get_page_id( 'shop' );
+	}
+
+	/**
+>>>>>>> fb785cbb (Initial commit)
 	 * Get paginated link for shop page.
 	 *
 	 * @param string                      $rel          Link relationship, prev or next or curr.

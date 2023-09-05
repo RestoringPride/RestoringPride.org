@@ -10,7 +10,11 @@ use Give\FormAPI\Section;
  * @package Give\Form\Template
  * @since   2.7.0
  */
+<<<<<<< HEAD
 final class Options
+=======
+class Options
+>>>>>>> fb785cbb (Initial commit)
 {
     /**
      * Theme Options

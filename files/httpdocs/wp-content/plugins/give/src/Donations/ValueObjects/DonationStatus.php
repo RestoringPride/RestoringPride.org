@@ -11,22 +11,38 @@ use Give\Framework\Support\ValueObjects\Enum;
  * @method static DonationStatus COMPLETE()
  * @method static DonationStatus REFUNDED()
  * @method static DonationStatus FAILED()
+<<<<<<< HEAD
  * @method static DonationStatus CANCELLED()
+=======
+ * @method static DonationStatus CANCELED()
+>>>>>>> fb785cbb (Initial commit)
  * @method static DonationStatus ABANDONED()
  * @method static DonationStatus PREAPPROVAL()
  * @method static DonationStatus PROCESSING()
  * @method static DonationStatus REVOKED()
+<<<<<<< HEAD
  * @method static DonationStatus RENEWAL() @deprecated
+=======
+ * @method static DonationStatus RENEWAL()
+>>>>>>> fb785cbb (Initial commit)
  * @method bool isPending()
  * @method bool isComplete()
  * @method bool isRefunded()
  * @method bool isFailed()
+<<<<<<< HEAD
  * @method bool isCancelled()
+=======
+ * @method bool isCanceled()
+>>>>>>> fb785cbb (Initial commit)
  * @method bool isAbandoned()
  * @method bool isPreapproval()
  * @method bool isProcessing()
  * @method bool isRevoked()
+<<<<<<< HEAD
  * @method bool isRenewal() @deprecated Do not use this. Instead, set the donation type to "renewal" and use COMPLETE status.
+=======
+ * @method bool isRenewal()
+>>>>>>> fb785cbb (Initial commit)
  */
 class DonationStatus extends Enum
 {
@@ -35,6 +51,7 @@ class DonationStatus extends Enum
     const COMPLETE = 'publish';
     const REFUNDED = 'refunded';
     const FAILED = 'failed';
+<<<<<<< HEAD
     const CANCELLED = 'cancelled';
     const ABANDONED = 'abandoned';
     const PREAPPROVAL = 'preapproval';
@@ -75,4 +92,11 @@ class DonationStatus extends Enum
     {
         return self::labels()[ $this->getValue() ];
     }
+=======
+    const CANCELED = 'cancelled';
+    const ABANDONED = 'abandoned';
+    const PREAPPROVAL = 'preapproval';
+    const REVOKED = 'revoked';
+    const RENEWAL = 'give_subscription';
+>>>>>>> fb785cbb (Initial commit)
 }

@@ -5,12 +5,15 @@
  * @package WPSEO
  */
 
+<<<<<<< HEAD
 use Yoast\WP\SEO\Helpers\Product_Helper;
 use Yoast\WP\SEO\Helpers\Score_Icon_Helper;
 use Yoast\WP\SEO\Models\Indexable;
 use Yoast\WP\SEO\Presenters\Admin\Premium_Badge_Presenter;
 use Yoast\WP\SEO\Repositories\Indexable_Repository;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Class for the Yoast SEO admin bar menu.
  */
@@ -59,6 +62,7 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 	protected $asset_manager;
 
 	/**
+<<<<<<< HEAD
 	 * Holds the Score_Icon_Helper instance.
 	 *
 	 * @var Score_Icon_Helper
@@ -180,6 +184,20 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 			$this->current_indexable = $this->indexable_repository->for_current_page();
 		}
 		return $this->current_indexable;
+=======
+	 * Constructor.
+	 *
+	 * Sets the asset manager to use.
+	 *
+	 * @param WPSEO_Admin_Asset_Manager|null $asset_manager Optional. Asset manager to use.
+	 */
+	public function __construct( WPSEO_Admin_Asset_Manager $asset_manager = null ) {
+		if ( ! $asset_manager ) {
+			$asset_manager = new WPSEO_Admin_Asset_Manager();
+		}
+
+		$this->asset_manager = $asset_manager;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -190,6 +208,10 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 	 * @return void
 	 */
 	public function add_menu( WP_Admin_Bar $wp_admin_bar ) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 		// On block editor pages, the admin bar only shows on mobile, where having this menu icon is not very helpful.
 		if ( is_admin() ) {
 			$screen = get_current_screen();
@@ -204,6 +226,7 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 		}
 
 		$this->add_root_menu( $wp_admin_bar );
+<<<<<<< HEAD
 
 		/**
 		 * Adds a submenu item in the top of the adminbar.
@@ -272,6 +295,12 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 			$this->add_seo_tools_submenu( $wp_admin_bar );
 			$this->add_how_to_submenu( $wp_admin_bar );
 			$this->add_get_help_submenu( $wp_admin_bar );
+=======
+		$this->add_keyword_research_submenu( $wp_admin_bar );
+
+		if ( ! is_admin() ) {
+			$this->add_analysis_submenu( $wp_admin_bar );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		if ( ! is_admin() || is_blog_admin() ) {
@@ -280,10 +309,13 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 		elseif ( is_network_admin() ) {
 			$this->add_network_settings_submenu( $wp_admin_bar );
 		}
+<<<<<<< HEAD
 
 		if ( ! $this->product_helper->is_premium() ) {
 			$this->add_premium_link( $wp_admin_bar );
 		}
+=======
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -395,6 +427,67 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Adds the admin bar keyword research submenu.
+	 *
+	 * @param WP_Admin_Bar $wp_admin_bar Admin bar instance to add the menu to.
+	 *
+	 * @return void
+	 */
+	protected function add_keyword_research_submenu( WP_Admin_Bar $wp_admin_bar ) {
+		$adwords_url = 'https://yoa.st/keywordplanner';
+		$trends_url  = 'https://yoa.st/google-trends';
+
+		$post = $this->get_singular_post();
+		if ( $post ) {
+			$focus_keyword = $this->get_post_focus_keyword( $post );
+
+			if ( ! empty( $focus_keyword ) ) {
+				$trends_url .= '#q=' . urlencode( $focus_keyword );
+			}
+		}
+
+		$menu_args = [
+			'parent' => self::MENU_IDENTIFIER,
+			'id'     => self::KEYWORD_RESEARCH_SUBMENU_IDENTIFIER,
+			'title'  => __( 'Keyword Research', 'wordpress-seo' ),
+			'meta'   => [ 'tabindex' => '0' ],
+		];
+		$wp_admin_bar->add_menu( $menu_args );
+
+		$submenu_items = [
+			[
+				'id'     => 'wpseo-kwresearchtraining',
+				'title'  => __( 'Keyword research training', 'wordpress-seo' ),
+				'href'   => WPSEO_Shortlinker::get( 'https://yoa.st/wp-admin-bar' ),
+			],
+			[
+				'id'     => 'wpseo-adwordsexternal',
+				'title'  => __( 'Google Ads', 'wordpress-seo' ),
+				'href'   => $adwords_url,
+			],
+			[
+				'id'     => 'wpseo-googleinsights',
+				'title'  => __( 'Google Trends', 'wordpress-seo' ),
+				'href'   => $trends_url,
+			],
+		];
+
+		foreach ( $submenu_items as $menu_item ) {
+			$menu_args = [
+				'parent' => self::KEYWORD_RESEARCH_SUBMENU_IDENTIFIER,
+				'id'     => $menu_item['id'],
+				'title'  => $menu_item['title'],
+				'href'   => $menu_item['href'],
+				'meta'   => [ 'target' => '_blank' ],
+			];
+			$wp_admin_bar->add_menu( $menu_args );
+		}
+	}
+
+	/**
+>>>>>>> fb785cbb (Initial commit)
 	 * Adds the admin bar analysis submenu.
 	 *
 	 * @param WP_Admin_Bar $wp_admin_bar Admin bar instance to add the menu to.
@@ -409,10 +502,23 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 			return;
 		}
 
+<<<<<<< HEAD
+=======
+		$focus_keyword = '';
+
+>>>>>>> fb785cbb (Initial commit)
 		if ( ! $url ) {
 			return;
 		}
 
+<<<<<<< HEAD
+=======
+		$post = $this->get_singular_post();
+		if ( $post ) {
+			$focus_keyword = $this->get_post_focus_keyword( $post );
+		}
+
+>>>>>>> fb785cbb (Initial commit)
 		$menu_args = [
 			'parent' => self::MENU_IDENTIFIER,
 			'id'     => self::ANALYSIS_SUBMENU_IDENTIFIER,
@@ -421,6 +527,7 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 		];
 		$wp_admin_bar->add_menu( $menu_args );
 
+<<<<<<< HEAD
 		$encoded_url   = rawurlencode( $url );
 		$submenu_items = [
 			[
@@ -592,6 +699,73 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 				],
 			]
 		);
+=======
+		$encoded_url   = urlencode( $url );
+		$submenu_items = [
+			[
+				'id'     => 'wpseo-inlinks',
+				'title'  => __( 'Check links to this URL', 'wordpress-seo' ),
+				'href'   => 'https://search.google.com/search-console/links/drilldown?resource_id=' . urlencode( get_option( 'home' ) ) . '&type=EXTERNAL&target=' . $encoded_url . '&domain=',
+			],
+			[
+				'id'     => 'wpseo-kwdensity',
+				'title'  => __( 'Check Keyphrase Density', 'wordpress-seo' ),
+				// HTTPS not available.
+				'href'   => 'http://www.zippy.co.uk/keyworddensity/index.php?url=' . $encoded_url . '&keyword=' . urlencode( $focus_keyword ),
+			],
+			[
+				'id'     => 'wpseo-cache',
+				'title'  => __( 'Check Google Cache', 'wordpress-seo' ),
+				'href'   => '//webcache.googleusercontent.com/search?strip=1&q=cache:' . $encoded_url,
+			],
+			[
+				'id'     => 'wpseo-structureddata',
+				'title'  => __( 'Google Rich Results Test', 'wordpress-seo' ),
+				'href'   => 'https://search.google.com/test/rich-results?url=' . $encoded_url,
+			],
+			[
+				'id'     => 'wpseo-facebookdebug',
+				'title'  => __( 'Facebook Debugger', 'wordpress-seo' ),
+				'href'   => '//developers.facebook.com/tools/debug/?q=' . $encoded_url,
+			],
+			[
+				'id'     => 'wpseo-pinterestvalidator',
+				'title'  => __( 'Pinterest Rich Pins Validator', 'wordpress-seo' ),
+				'href'   => 'https://developers.pinterest.com/tools/url-debugger/?link=' . $encoded_url,
+			],
+			[
+				'id'     => 'wpseo-htmlvalidation',
+				'title'  => __( 'HTML Validator', 'wordpress-seo' ),
+				'href'   => '//validator.w3.org/check?uri=' . $encoded_url,
+			],
+			[
+				'id'     => 'wpseo-cssvalidation',
+				'title'  => __( 'CSS Validator', 'wordpress-seo' ),
+				'href'   => '//jigsaw.w3.org/css-validator/validator?uri=' . $encoded_url,
+			],
+			[
+				'id'     => 'wpseo-pagespeed',
+				'title'  => __( 'Google Page Speed Test', 'wordpress-seo' ),
+				'href'   => '//developers.google.com/speed/pagespeed/insights/?url=' . $encoded_url,
+			],
+			[
+				'id'     => 'wpseo-google-mobile-friendly',
+				'title'  => __( 'Mobile-Friendly Test', 'wordpress-seo' ),
+				'href'   => 'https://www.google.com/webmasters/tools/mobile-friendly/?url=' . $encoded_url,
+			],
+		];
+
+		foreach ( $submenu_items as $menu_item ) {
+			$menu_args = [
+				'parent' => self::ANALYSIS_SUBMENU_IDENTIFIER,
+				'id'     => $menu_item['id'],
+				'title'  => $menu_item['title'],
+				'href'   => $menu_item['href'],
+				'meta'   => [ 'target' => '_blank' ],
+			];
+			$wp_admin_bar->add_menu( $menu_args );
+		}
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -636,7 +810,11 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 				'parent' => self::SETTINGS_SUBMENU_IDENTIFIER,
 				'id'     => $id,
 				'title'  => $submenu_page[2],
+<<<<<<< HEAD
 				'href'   => admin_url( 'admin.php?page=' . rawurlencode( $submenu_page[4] ) ),
+=======
+				'href'   => admin_url( 'admin.php?page=' . urlencode( $submenu_page[4] ) ),
+>>>>>>> fb785cbb (Initial commit)
 			];
 			$wp_admin_bar->add_menu( $menu_args );
 		}
@@ -679,7 +857,11 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 				'parent' => self::NETWORK_SETTINGS_SUBMENU_IDENTIFIER,
 				'id'     => $id,
 				'title'  => $submenu_page[2],
+<<<<<<< HEAD
 				'href'   => network_admin_url( 'admin.php?page=' . rawurlencode( $submenu_page[4] ) ),
+=======
+				'href'   => network_admin_url( 'admin.php?page=' . urlencode( $submenu_page[4] ) ),
+>>>>>>> fb785cbb (Initial commit)
 			];
 			$wp_admin_bar->add_menu( $menu_args );
 		}
@@ -756,7 +938,22 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 			return '';
 		}
 
+<<<<<<< HEAD
 		return $this->get_score_icon();
+=======
+		$analysis_seo         = new WPSEO_Metabox_Analysis_SEO();
+		$analysis_readability = new WPSEO_Metabox_Analysis_Readability();
+
+		if ( $analysis_seo->is_enabled() ) {
+			return $this->get_score( WPSEO_Meta::get_value( 'linkdex', $post->ID ) );
+		}
+
+		if ( $analysis_readability->is_enabled() ) {
+			return $this->get_score( WPSEO_Meta::get_value( 'content_score', $post->ID ) );
+		}
+
+		return '';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -794,6 +991,7 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 			return '';
 		}
 
+<<<<<<< HEAD
 		return $this->get_score_icon();
 	}
 
@@ -815,12 +1013,44 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 		if ( $is_readability_enabled ) {
 			return $this->score_icon_helper->for_readability( $indexable->readability_score, 'adminbar-seo-score' )
 				->present();
+=======
+		$analysis_seo         = new WPSEO_Metabox_Analysis_SEO();
+		$analysis_readability = new WPSEO_Metabox_Analysis_Readability();
+
+		if ( $analysis_seo->is_enabled() ) {
+			return $this->get_score( WPSEO_Taxonomy_Meta::get_term_meta( $term->term_id, $term->taxonomy, 'linkdex' ) );
+		}
+
+		if ( $analysis_readability->is_enabled() ) {
+			return $this->get_score( WPSEO_Taxonomy_Meta::get_term_meta( $term->term_id, $term->taxonomy, 'content_score' ) );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return '';
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Takes the SEO score and makes the score icon for the admin bar for it.
+	 *
+	 * @param int $score The 0-100 rating of the score. Can be either SEO score or content score.
+	 *
+	 * @return string Score markup.
+	 */
+	protected function get_score( $score ) {
+		$score_class      = WPSEO_Utils::translate_score( $score );
+		$translated_score = WPSEO_Utils::translate_score( $score, false );
+		/* translators: %s expands to the SEO score. */
+		$screen_reader_text = sprintf( __( 'SEO score: %s', 'wordpress-seo' ), $translated_score );
+
+		$score_adminbar_element = '<div class="wpseo-score-icon adminbar-seo-score ' . $score_class . '"><span class="adminbar-seo-score-text screen-reader-text">' . $screen_reader_text . '</span></div>';
+
+		return $score_adminbar_element;
+	}
+
+	/**
+>>>>>>> fb785cbb (Initial commit)
 	 * Gets the URL to the main admin settings page.
 	 *
 	 * @return string Admin settings page URL.
@@ -845,7 +1075,11 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 		/* translators: %s: number of notifications */
 		$counter_screen_reader_text = sprintf( _n( '%s notification', '%s notifications', $notification_count, 'wordpress-seo' ), number_format_i18n( $notification_count ) );
 
+<<<<<<< HEAD
 		return sprintf( ' <div class="wp-core-ui wp-ui-notification yoast-issue-counter"><span class="yoast-issues-count" aria-hidden="true">%d</span><span class="screen-reader-text">%s</span></div>', $notification_count, $counter_screen_reader_text );
+=======
+		return sprintf( ' <div class="wp-core-ui wp-ui-notification yoast-issue-counter"><span aria-hidden="true">%d</span><span class="screen-reader-text">%s</span></div>', $notification_count, $counter_screen_reader_text );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -883,6 +1117,7 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 	protected function can_manage_options() {
 		return is_network_admin() && current_user_can( 'wpseo_manage_network_options' ) || ! is_network_admin() && WPSEO_Capability_Utils::current_user_can( 'wpseo_manage_options' );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Add submenu items to a menu item.
@@ -905,4 +1140,6 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 			$wp_admin_bar->add_menu( $menu_args );
 		}
 	}
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

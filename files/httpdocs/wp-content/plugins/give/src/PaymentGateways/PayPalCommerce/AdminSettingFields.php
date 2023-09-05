@@ -181,9 +181,15 @@ class AdminSettingFields
                             ?>
 						</span>
                                 <span class="actions">
+<<<<<<< HEAD
 							<button
                                id="js-give-paypal-disconnect-paypal-account"><?php
                                     esc_html_e('Disconnect', 'give'); ?></button>
+=======
+							<a href="#"
+                               id="js-give-paypal-disconnect-paypal-account"><?php
+                                esc_html_e('Disconnect', 'give'); ?></a>
+>>>>>>> fb785cbb (Initial commit)
 						</span>
                             </div>
                             <div class="api-access-feature-list-wrap">
@@ -316,7 +322,11 @@ class AdminSettingFields
         if ($this->isCountryInNorthAmerica()) {
             $telephone = sprintf(
                 '<a href="tel:%1$s">%1$s</a>',
+<<<<<<< HEAD
                 '1-888-221-1161'
+=======
+                '1-855-456-1330'
+>>>>>>> fb785cbb (Initial commit)
             );
 
             $message = sprintf(

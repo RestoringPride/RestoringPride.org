@@ -47,7 +47,16 @@ class AddonsAdminPage
             ->registerLocalizeData('GiveAddons', $data)
             ->enqueue();
 
+<<<<<<< HEAD
         wp_enqueue_style('givewp-admin-fonts');
+=======
+        wp_enqueue_style(
+            'give-in-plugin-upsells-addons-font',
+            'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap',
+            [],
+            null
+        );
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**

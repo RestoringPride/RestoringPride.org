@@ -138,6 +138,7 @@ if ( ! function_exists( 'wp_cache_flush_runtime' ) ) :
 	 * @return bool True on success, false on failure.
 	 */
 	function wp_cache_flush_runtime() {
+<<<<<<< HEAD
 		if ( ! wp_cache_supports( 'flush_runtime' ) ) {
 			_doing_it_wrong(
 				__FUNCTION__,
@@ -197,5 +198,8 @@ if ( ! function_exists( 'wp_cache_supports' ) ) :
 	 */
 	function wp_cache_supports( $feature ) {
 		return false;
+=======
+		return wp_using_ext_object_cache() ? false : wp_cache_flush();
+>>>>>>> fb785cbb (Initial commit)
 	}
 endif;

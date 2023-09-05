@@ -147,6 +147,7 @@ function wpcf7_exclude_blank( $input ) {
  * Creates a comma-separated list from a multi-dimensional array.
  *
  * @param mixed $input Array or item of array.
+<<<<<<< HEAD
  * @param string|array $args Optional. Output options.
  * @return string Comma-separated list.
  */
@@ -155,6 +156,11 @@ function wpcf7_flat_join( $input, $args = '' ) {
 		'separator' => ', ',
 	) );
 
+=======
+ * @return string Comma-separated list.
+ */
+function wpcf7_flat_join( $input ) {
+>>>>>>> fb785cbb (Initial commit)
 	$input = wpcf7_array_flatten( $input );
 	$output = array();
 
@@ -164,7 +170,11 @@ function wpcf7_flat_join( $input, $args = '' ) {
 		}
 	}
 
+<<<<<<< HEAD
 	return implode( $args['separator'], $output );
+=======
+	return implode( ', ', $output );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 
@@ -234,6 +244,48 @@ function wpcf7_load_css() {
 
 
 /**
+<<<<<<< HEAD
+=======
+ * Returns a formatted string of HTML attributes.
+ *
+ * @param array $atts Associative array of attribute name and value pairs.
+ * @return string Formatted HTML attributes.
+ */
+function wpcf7_format_atts( $atts ) {
+	$html = '';
+
+	$prioritized_atts = array( 'type', 'name', 'value' );
+
+	foreach ( $prioritized_atts as $att ) {
+		if ( isset( $atts[$att] ) ) {
+			$value = trim( $atts[$att] );
+			$html .= sprintf( ' %s="%s"', $att, esc_attr( $value ) );
+			unset( $atts[$att] );
+		}
+	}
+
+	foreach ( $atts as $key => $value ) {
+		$key = strtolower( trim( $key ) );
+
+		if ( ! preg_match( '/^[a-z_:][a-z_:.0-9-]*$/', $key ) ) {
+			continue;
+		}
+
+		$value = trim( $value );
+
+		if ( '' !== $value ) {
+			$html .= sprintf( ' %s="%s"', $key, esc_attr( $value ) );
+		}
+	}
+
+	$html = trim( $html );
+
+	return $html;
+}
+
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Builds an HTML anchor element.
  *
  * @param string $url Link URL.
@@ -242,6 +294,7 @@ function wpcf7_load_css() {
  * @return string Formatted anchor element.
  */
 function wpcf7_link( $url, $anchor_text, $args = '' ) {
+<<<<<<< HEAD
 	$args = wp_parse_args( $args, array(
 		'id' => null,
 		'class' => null,
@@ -256,6 +309,24 @@ function wpcf7_link( $url, $anchor_text, $args = '' ) {
 		wpcf7_format_atts( $atts ),
 		esc_html( $anchor_text )
 	);
+=======
+	$defaults = array(
+		'id' => '',
+		'class' => '',
+	);
+
+	$args = wp_parse_args( $args, $defaults );
+	$args = array_intersect_key( $args, $defaults );
+	$atts = wpcf7_format_atts( $args );
+
+	$link = sprintf( '<a href="%1$s"%3$s>%2$s</a>',
+		esc_url( $url ),
+		esc_html( $anchor_text ),
+		$atts ? ( ' ' . $atts ) : ''
+	);
+
+	return $link;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 
@@ -269,7 +340,11 @@ function wpcf7_get_request_uri() {
 		$request_uri = add_query_arg( array() );
 	}
 
+<<<<<<< HEAD
 	return sanitize_url( $request_uri );
+=======
+	return esc_url_raw( $request_uri );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 
@@ -426,7 +501,11 @@ function wpcf7_rmdir_p( $dir ) {
 /**
  * Builds a URL-encoded query string.
  *
+<<<<<<< HEAD
  * @link https://developer.wordpress.org/reference/functions/_http_build_query/
+=======
+ * @see https://developer.wordpress.org/reference/functions/_http_build_query/
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param array $args URL query parameters.
  * @param string $key Optional. If specified, used to prefix key name.
@@ -463,7 +542,11 @@ function wpcf7_build_query( $args, $key = '' ) {
 /**
  * Returns the number of code units in a string.
  *
+<<<<<<< HEAD
  * @link http://www.w3.org/TR/html5/infrastructure.html#code-unit-length
+=======
+ * @see http://www.w3.org/TR/html5/infrastructure.html#code-unit-length
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param string $text Input string.
  * @return int|bool The number of code units, or false if

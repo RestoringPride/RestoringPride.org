@@ -12,7 +12,10 @@
  *
  * @since 4.7.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 abstract class WP_REST_Meta_Fields {
 
 	/**

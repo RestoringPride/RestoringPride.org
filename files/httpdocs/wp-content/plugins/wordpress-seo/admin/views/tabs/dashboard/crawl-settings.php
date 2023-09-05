@@ -33,6 +33,7 @@ if ( ! defined( 'WPSEO_VERSION' ) ) {
 	echo '</p>';
 
 	/**
+<<<<<<< HEAD
 	 * WARNING: This hook is intended for internal use only.
 	 * Don't use it in your code as it will be removed shortly.
 	 */
@@ -53,6 +54,14 @@ if ( ! defined( 'WPSEO_VERSION' ) ) {
 		'',
 		'This action is going away with no replacement. If you want to add settings that interact with Yoast SEO, please create your own settings page.'
 	);
+=======
+	 * Fires when displaying the crawl cleanup tab.
+	 *
+	 * @param Yoast_Form $yform The yoast form object.
+	 */
+	do_action( 'wpseo_settings_tab_crawl_cleanup', $yform );
+
+>>>>>>> fb785cbb (Initial commit)
 	?>
 </div>
 <?php

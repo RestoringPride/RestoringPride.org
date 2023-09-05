@@ -1,9 +1,15 @@
 <?php return array(
     'root' => array(
         'name' => 'impress-org/give',
+<<<<<<< HEAD
         'pretty_version' => '2.25.0',
         'version' => '2.25.0.0',
         'reference' => 'f8e198e058f9e9eb26e6ae9d78ba3a74758d9c60',
+=======
+        'pretty_version' => '2.21.4',
+        'version' => '2.21.4.0',
+        'reference' => 'cb466824c86a489b3a10086e3d1bfdff419294bc',
+>>>>>>> fb785cbb (Initial commit)
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -41,9 +47,15 @@
             ),
         ),
         'impress-org/give' => array(
+<<<<<<< HEAD
             'pretty_version' => '2.25.0',
             'version' => '2.25.0.0',
             'reference' => 'f8e198e058f9e9eb26e6ae9d78ba3a74758d9c60',
+=======
+            'pretty_version' => '2.21.4',
+            'version' => '2.21.4.0',
+            'reference' => 'cb466824c86a489b3a10086e3d1bfdff419294bc',
+>>>>>>> fb785cbb (Initial commit)
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -115,6 +127,7 @@
                 0 => '*',
             ),
         ),
+<<<<<<< HEAD
         'stellarwp/container-contract' => array(
             'pretty_version' => '1.0.4',
             'version' => '1.0.4.0',
@@ -133,6 +146,8 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+=======
+>>>>>>> fb785cbb (Initial commit)
         'stripe/stripe-php' => array(
             'pretty_version' => 'v7.103.0',
             'version' => '7.103.0.0',

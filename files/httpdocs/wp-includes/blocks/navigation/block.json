@@ -41,10 +41,13 @@
 			"type": "string",
 			"default": "mobile"
 		},
+<<<<<<< HEAD
 		"icon": {
 			"type": "string",
 			"default": "handle"
 		},
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"hasIcon": {
 			"type": "boolean",
 			"default": true
@@ -67,10 +70,13 @@
 		"maxNestingLevel": {
 			"type": "number",
 			"default": 5
+<<<<<<< HEAD
 		},
 		"templateLock": {
 			"type": [ "string", "boolean" ],
 			"enum": [ "all", "insert", "contentOnly", false ]
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"providesContext": {
@@ -102,7 +108,10 @@
 			"__experimentalFontWeight": true,
 			"__experimentalTextTransform": true,
 			"__experimentalFontFamily": true,
+<<<<<<< HEAD
 			"__experimentalLetterSpacing": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalTextDecoration": true,
 			"__experimentalSkipSerialization": [ "textDecoration" ],
 			"__experimentalDefaultControls": {
@@ -120,6 +129,7 @@
 			"allowSwitching": false,
 			"allowInheriting": false,
 			"allowVerticalAlignment": false,
+<<<<<<< HEAD
 			"allowSizingOnChildren": true,
 			"default": {
 				"type": "flex"
@@ -136,6 +146,14 @@
 		}
 	},
 	"viewScript": [ "file:./view.min.js", "file:./view-modal.min.js" ],
+=======
+			"default": {
+				"type": "flex"
+			}
+		}
+	},
+	"viewScript": "file:./view.min.js",
+>>>>>>> fb785cbb (Initial commit)
 	"editorStyle": "wp-block-navigation-editor",
 	"style": "wp-block-navigation"
 }

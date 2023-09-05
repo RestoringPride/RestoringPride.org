@@ -11,7 +11,11 @@ export {default as Button} from './Button';
 export {default as Input} from './Input';
 export {default as PeriodSelector} from './PeriodSelector';
 export {default as Modal} from './Modal';
+<<<<<<< HEAD
 export {default as ListTablePage} from './ListTable/ListTablePage';
+=======
+export {default as ListTablePage} from './ListTable';
+>>>>>>> fb785cbb (Initial commit)
 export * from './ListTable/ListTable';
 export {default as ListTableApi} from './ListTable/api';
 export {default as GiveIcon} from './GiveIcon';

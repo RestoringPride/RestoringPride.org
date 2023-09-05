@@ -57,12 +57,15 @@ function wp_register_typography_support( $block_type ) {
 			'type' => 'string',
 		);
 	}
+<<<<<<< HEAD
 
 	if ( $has_font_family_support && ! array_key_exists( 'fontFamily', $block_type->attributes ) ) {
 		$block_type->attributes['fontFamily'] = array(
 			'type' => 'string',
 		);
 	}
+=======
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -71,7 +74,10 @@ function wp_register_typography_support( $block_type ) {
  * the front-end.
  *
  * @since 5.6.0
+<<<<<<< HEAD
  * @since 6.1.0 Used the style engine to generate CSS and classnames.
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @access private
  *
  * @param WP_Block_Type $block_type       Block type.
@@ -92,6 +98,13 @@ function wp_apply_typography_support( $block_type, $block_attributes ) {
 		return array();
 	}
 
+<<<<<<< HEAD
+=======
+	$attributes = array();
+	$classes    = array();
+	$styles     = array();
+
+>>>>>>> fb785cbb (Initial commit)
 	$has_font_family_support     = _wp_array_get( $typography_supports, array( '__experimentalFontFamily' ), false );
 	$has_font_size_support       = _wp_array_get( $typography_supports, array( 'fontSize' ), false );
 	$has_font_style_support      = _wp_array_get( $typography_supports, array( '__experimentalFontStyle' ), false );
@@ -101,6 +114,7 @@ function wp_apply_typography_support( $block_type, $block_attributes ) {
 	$has_text_decoration_support = _wp_array_get( $typography_supports, array( '__experimentalTextDecoration' ), false );
 	$has_text_transform_support  = _wp_array_get( $typography_supports, array( '__experimentalTextTransform' ), false );
 
+<<<<<<< HEAD
 	// Whether to skip individual block support features.
 	$should_skip_font_size       = wp_should_skip_block_supports_serialization( $block_type, 'typography', 'fontSize' );
 	$should_skip_font_family     = wp_should_skip_block_supports_serialization( $block_type, 'typography', 'fontFamily' );
@@ -207,12 +221,92 @@ function wp_apply_typography_support( $block_type, $block_attributes ) {
 
 	if ( ! empty( $styles['css'] ) ) {
 		$attributes['style'] = $styles['css'];
+=======
+	if ( $has_font_size_support && ! wp_should_skip_block_supports_serialization( $block_type, 'typography', 'fontSize' ) ) {
+		$has_named_font_size  = array_key_exists( 'fontSize', $block_attributes );
+		$has_custom_font_size = isset( $block_attributes['style']['typography']['fontSize'] );
+
+		if ( $has_named_font_size ) {
+			$classes[] = sprintf( 'has-%s-font-size', _wp_to_kebab_case( $block_attributes['fontSize'] ) );
+		} elseif ( $has_custom_font_size ) {
+			$styles[] = sprintf( 'font-size: %s;', $block_attributes['style']['typography']['fontSize'] );
+		}
+	}
+
+	if ( $has_font_family_support && ! wp_should_skip_block_supports_serialization( $block_type, 'typography', 'fontFamily' ) ) {
+		$has_named_font_family  = array_key_exists( 'fontFamily', $block_attributes );
+		$has_custom_font_family = isset( $block_attributes['style']['typography']['fontFamily'] );
+
+		if ( $has_named_font_family ) {
+			$classes[] = sprintf( 'has-%s-font-family', _wp_to_kebab_case( $block_attributes['fontFamily'] ) );
+		} elseif ( $has_custom_font_family ) {
+			// Before using classes, the value was serialized as a CSS Custom Property.
+			// We don't need this code path when it lands in core.
+			$font_family_custom = $block_attributes['style']['typography']['fontFamily'];
+			if ( strpos( $font_family_custom, 'var:preset|font-family' ) !== false ) {
+				$index_to_splice    = strrpos( $font_family_custom, '|' ) + 1;
+				$font_family_slug   = _wp_to_kebab_case( substr( $font_family_custom, $index_to_splice ) );
+				$font_family_custom = sprintf( 'var(--wp--preset--font-family--%s)', $font_family_slug );
+			}
+			$styles[] = sprintf( 'font-family: %s;', $font_family_custom );
+		}
+	}
+
+	if ( $has_font_style_support && ! wp_should_skip_block_supports_serialization( $block_type, 'typography', 'fontStyle' ) ) {
+		$font_style = wp_typography_get_css_variable_inline_style( $block_attributes, 'fontStyle', 'font-style' );
+		if ( $font_style ) {
+			$styles[] = $font_style;
+		}
+	}
+
+	if ( $has_font_weight_support && ! wp_should_skip_block_supports_serialization( $block_type, 'typography', 'fontWeight' ) ) {
+		$font_weight = wp_typography_get_css_variable_inline_style( $block_attributes, 'fontWeight', 'font-weight' );
+		if ( $font_weight ) {
+			$styles[] = $font_weight;
+		}
+	}
+
+	if ( $has_line_height_support && ! wp_should_skip_block_supports_serialization( $block_type, 'typography', 'lineHeight' ) ) {
+		$has_line_height = isset( $block_attributes['style']['typography']['lineHeight'] );
+		if ( $has_line_height ) {
+			$styles[] = sprintf( 'line-height: %s;', $block_attributes['style']['typography']['lineHeight'] );
+		}
+	}
+
+	if ( $has_text_decoration_support && ! wp_should_skip_block_supports_serialization( $block_type, 'typography', 'textDecoration' ) ) {
+		$text_decoration_style = wp_typography_get_css_variable_inline_style( $block_attributes, 'textDecoration', 'text-decoration' );
+		if ( $text_decoration_style ) {
+			$styles[] = $text_decoration_style;
+		}
+	}
+
+	if ( $has_text_transform_support && ! wp_should_skip_block_supports_serialization( $block_type, 'typography', 'textTransform' ) ) {
+		$text_transform_style = wp_typography_get_css_variable_inline_style( $block_attributes, 'textTransform', 'text-transform' );
+		if ( $text_transform_style ) {
+			$styles[] = $text_transform_style;
+		}
+	}
+
+	if ( $has_letter_spacing_support && ! wp_should_skip_block_supports_serialization( $block_type, 'typography', 'letterSpacing' ) ) {
+		$letter_spacing_style = wp_typography_get_css_variable_inline_style( $block_attributes, 'letterSpacing', 'letter-spacing' );
+		if ( $letter_spacing_style ) {
+			$styles[] = $letter_spacing_style;
+		}
+	}
+
+	if ( ! empty( $classes ) ) {
+		$attributes['class'] = implode( ' ', $classes );
+	}
+	if ( ! empty( $styles ) ) {
+		$attributes['style'] = implode( ' ', $styles );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	return $attributes;
 }
 
 /**
+<<<<<<< HEAD
  * Generates an inline style value for a typography feature e.g. text decoration,
  * text transform, and font style.
  *
@@ -585,6 +679,38 @@ function wp_get_typography_font_size_value( $preset, $should_use_fluid_typograph
 	}
 
 	return $preset['size'];
+=======
+ * Generates an inline style for a typography feature e.g. text decoration,
+ * text transform, and font style.
+ *
+ * @since 5.8.0
+ * @access private
+ *
+ * @param array  $attributes   Block's attributes.
+ * @param string $feature      Key for the feature within the typography styles.
+ * @param string $css_property Slug for the CSS property the inline style sets.
+ * @return string CSS inline style.
+ */
+function wp_typography_get_css_variable_inline_style( $attributes, $feature, $css_property ) {
+	// Retrieve current attribute value or skip if not found.
+	$style_value = _wp_array_get( $attributes, array( 'style', 'typography', $feature ), false );
+	if ( ! $style_value ) {
+		return;
+	}
+
+	// If we don't have a preset CSS variable, we'll assume it's a regular CSS value.
+	if ( strpos( $style_value, "var:preset|{$css_property}|" ) === false ) {
+		return sprintf( '%s:%s;', $css_property, $style_value );
+	}
+
+	// We have a preset CSS variable as the style.
+	// Get the style value from the string and return CSS style.
+	$index_to_splice = strrpos( $style_value, '|' ) + 1;
+	$slug            = substr( $style_value, $index_to_splice );
+
+	// Return the actual CSS inline style e.g. `text-decoration:var(--wp--preset--text-decoration--underline);`.
+	return sprintf( '%s:var(--wp--preset--%s--%s);', $css_property, $css_property, $slug );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 // Register the block support.

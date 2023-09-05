@@ -1,4 +1,5 @@
 /******/ (function() { // webpackBootstrap
+<<<<<<< HEAD
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 4793:
@@ -473,6 +474,13 @@ module.exports.remove = removeAccents;
 /******/ 		};
 /******/ 	}();
 /******/ 	
+=======
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+>>>>>>> fb785cbb (Initial commit)
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -503,9 +511,12 @@ module.exports.remove = removeAccents;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+<<<<<<< HEAD
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 !function() {
 "use strict";
+=======
+>>>>>>> fb785cbb (Initial commit)
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
@@ -896,6 +907,7 @@ function isValidFragment(fragment) {
   return /^#[^\s#?\/]*$/.test(fragment);
 }
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/url/build-module/safe-decode-uri-component.js
 /**
  * Safely decodes a URI component with `decodeURIComponent`. Returns the URI component unmodified if
@@ -913,12 +925,17 @@ function safeDecodeURIComponent(uriComponent) {
   }
 }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/url/build-module/get-query-args.js
 /**
  * Internal dependencies
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /** @typedef {import('./get-query-arg').QueryArgParsed} QueryArgParsed */
 
 /**
@@ -991,7 +1008,11 @@ function getQueryArgs(url) {
   ).replace(/\+/g, '%20').split('&').reduce((accumulator, keyValue) => {
     const [key, value = ''] = keyValue.split('=') // Filtering avoids decoding as `undefined` for value, where
     // default is restored in destructuring assignment.
+<<<<<<< HEAD
     .filter(Boolean).map(safeDecodeURIComponent);
+=======
+    .filter(Boolean).map(decodeURIComponent);
+>>>>>>> fb785cbb (Initial commit)
 
     if (key) {
       const segments = key.replace(/\]/g, '').split('[');
@@ -1196,6 +1217,26 @@ function safeDecodeURI(uri) {
   }
 }
 
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: ./node_modules/@wordpress/url/build-module/safe-decode-uri-component.js
+/**
+ * Safely decodes a URI component with `decodeURIComponent`. Returns the URI component unmodified if
+ * `decodeURIComponent` throws an error.
+ *
+ * @param {string} uriComponent URI component to decode.
+ *
+ * @return {string} Decoded URI component if possible.
+ */
+function safeDecodeURIComponent(uriComponent) {
+  try {
+    return decodeURIComponent(uriComponent);
+  } catch (uriComponentError) {
+    return uriComponent;
+  }
+}
+
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/url/build-module/filter-url-for-display.js
 /**
  * Returns a URL for display.
@@ -1242,9 +1283,14 @@ function filterURLForDisplay(url) {
   return file.slice(0, maxLength - truncatedFile.length - 1) + '…' + truncatedFile;
 }
 
+<<<<<<< HEAD
 // EXTERNAL MODULE: ./node_modules/remove-accents/index.js
 var remove_accents = __webpack_require__(4793);
 var remove_accents_default = /*#__PURE__*/__webpack_require__.n(remove_accents);
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/url/build-module/clean-for-slug.js
 /**
  * External dependencies
@@ -1272,12 +1318,16 @@ function cleanForSlug(string) {
     return '';
   }
 
+<<<<<<< HEAD
   return remove_accents_default()(string) // Convert each group of whitespace, periods, and forward slashes to a hyphen.
   .replace(/[\s\./]+/g, '-') // Remove anything that's not a letter, number, underscore or hyphen.
   .replace(/[^\p{L}\p{N}_-]+/gu, '') // Convert to lowercase
   .toLowerCase() // Replace multiple hyphens with a single one.
   .replace(/-+/g, '-') // Remove any remaining leading or trailing hyphens.
   .replace(/(^-+)|(-+$)/g, '');
+=======
+  return (0,external_lodash_namespaceObject.trim)((0,external_lodash_namespaceObject.deburr)(string).replace(/[\s\./]+/g, '-').replace(/[^\p{L}\p{N}_-]+/gu, '').toLowerCase(), '-');
+>>>>>>> fb785cbb (Initial commit)
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/url/build-module/get-filename.js
@@ -1364,7 +1414,10 @@ function normalizePath(path) {
 
 
 
+<<<<<<< HEAD
 }();
+=======
+>>>>>>> fb785cbb (Initial commit)
 (window.wp = window.wp || {}).url = __webpack_exports__;
 /******/ })()
 ;

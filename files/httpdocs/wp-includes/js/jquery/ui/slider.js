@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Slider 1.13.2
+=======
+ * jQuery UI Slider 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -36,7 +40,11 @@
 "use strict";
 
 return $.widget( "ui.slider", $.ui.mouse, {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	widgetEventPrefix: "slide",
 
 	options: {
@@ -642,8 +650,13 @@ return $.widget( "ui.slider", $.ui.mouse, {
 			valueMin = this._valueMin();
 			valueMax = this._valueMax();
 			valPercent = ( valueMax !== valueMin ) ?
+<<<<<<< HEAD
 					( value - valueMin ) / ( valueMax - valueMin ) * 100 :
 					0;
+=======
+				( value - valueMin ) / ( valueMax - valueMin ) * 100 :
+				0;
+>>>>>>> fb785cbb (Initial commit)
 			_set[ this.orientation === "horizontal" ? "left" : "bottom" ] = valPercent + "%";
 			this.handle.stop( 1, 1 )[ animate ? "animate" : "css" ]( _set, o.animate );
 

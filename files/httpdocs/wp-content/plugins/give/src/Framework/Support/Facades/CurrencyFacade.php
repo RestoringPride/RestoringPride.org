@@ -2,7 +2,10 @@
 
 namespace Give\Framework\Support\Facades;
 
+<<<<<<< HEAD
 use Give\Log\Log;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Money\Converter;
 use Money\Currencies\ISOCurrencies;
 use Money\Currency;
@@ -22,8 +25,15 @@ class CurrencyFacade
      *
      * @param Money $amount
      * @param int|float $exchangeRate
+<<<<<<< HEAD
      */
     public function convertToBaseCurrency(Money $amount, $exchangeRate = 1): Money
+=======
+     *
+     * @return Money
+     */
+    public function convertToBaseCurrency(Money $amount, $exchangeRate = 1)
+>>>>>>> fb785cbb (Initial commit)
     {
         $baseCurrency = $this->getBaseCurrency();
 
@@ -48,8 +58,16 @@ class CurrencyFacade
      * @since 2.20.0
      *
      * @param string|float|int $amount
+<<<<<<< HEAD
      */
     public function parseFromDecimal($amount, string $currency): Money
+=======
+     * @param string $currency
+     *
+     * @return Money
+     */
+    public function parseFromDecimal($amount, $currency)
+>>>>>>> fb785cbb (Initial commit)
     {
         return (new DecimalMoneyParser(new ISOCurrencies()))->parse((string)$amount, new Currency($currency));
     }
@@ -59,8 +77,17 @@ class CurrencyFacade
      * - $1,500.25 -> 1500.25
      *
      * @since 2.20.0
+<<<<<<< HEAD
      */
     public function formatToDecimal(Money $amount): string
+=======
+     *
+     * @param Money $amount
+     *
+     * @return string
+     */
+    public function formatToDecimal(Money $amount)
+>>>>>>> fb785cbb (Initial commit)
     {
         return (new DecimalMoneyFormatter(new ISOCurrencies()))->format($amount);
     }
@@ -68,7 +95,10 @@ class CurrencyFacade
     /**
      * Formats the amount to a currency format, including currency symbols, in the given locale.
      *
+<<<<<<< HEAD
      * @since 2.24.2 fallback on give formatting system if intl extension is not available
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.20.0
      *
      * @param Money $amount
@@ -76,6 +106,7 @@ class CurrencyFacade
      *
      * @return string
      */
+<<<<<<< HEAD
     public function formatToLocale(Money $amount, $locale = null): string
     {
         $useAutoFormatting = give_get_option('auto_format_currency');
@@ -92,6 +123,10 @@ class CurrencyFacade
             );
         }
 
+=======
+    public function formatToLocale(Money $amount, $locale = null)
+    {
+>>>>>>> fb785cbb (Initial commit)
         if ($locale === null) {
             $locale = get_locale();
         }
@@ -109,7 +144,11 @@ class CurrencyFacade
      *
      * @return Currency
      */
+<<<<<<< HEAD
     public function getBaseCurrency(): Currency
+=======
+    public function getBaseCurrency()
+>>>>>>> fb785cbb (Initial commit)
     {
         return new Currency(give_get_option('currency', 'USD'));
     }

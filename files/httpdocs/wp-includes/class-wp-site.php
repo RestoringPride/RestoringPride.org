@@ -22,7 +22,10 @@
  * @property int    $post_count
  * @property string $home
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 final class WP_Site {
 
 	/**

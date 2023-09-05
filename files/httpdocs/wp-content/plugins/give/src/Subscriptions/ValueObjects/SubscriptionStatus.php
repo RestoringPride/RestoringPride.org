@@ -23,7 +23,11 @@ use Give\Framework\Support\ValueObjects\Enum;
  * @method bool isRefunded()
  * @method bool isAbandoned()
  * @method bool isFailing()
+<<<<<<< HEAD
  * @method bool isCancelled()
+=======
+ * @method bool isCanceled()
+>>>>>>> fb785cbb (Initial commit)
  * @method bool isSuspended()
  */
 class SubscriptionStatus extends Enum {
@@ -36,6 +40,7 @@ class SubscriptionStatus extends Enum {
     const CANCELLED = 'cancelled';
     const ABANDONED = 'abandoned';
     const SUSPENDED = 'suspended';
+<<<<<<< HEAD
 
     /**
      * @since 2.24.0
@@ -66,4 +71,6 @@ class SubscriptionStatus extends Enum {
     {
         return self::labels()[ $this->getValue() ];
     }
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

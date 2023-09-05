@@ -2,6 +2,10 @@
 
 namespace Yoast\WP\SEO\Helpers\Schema;
 
+<<<<<<< HEAD
+=======
+use Yoast\WP\SEO\Config\Schema_IDs;
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Helpers\Image_Helper as Main_Image_Helper;
 
 /**

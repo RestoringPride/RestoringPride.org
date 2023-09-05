@@ -66,8 +66,12 @@ function get_bloginfo() {}
  * @ignore
  */
 function is_admin() {
+<<<<<<< HEAD
 	return true;
 }
+=======
+	return true;}
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * @ignore

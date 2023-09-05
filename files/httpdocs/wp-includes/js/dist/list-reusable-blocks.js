@@ -53,6 +53,7 @@ __webpack_require__.r(__webpack_exports__);
 var external_wp_element_namespaceObject = window["wp"]["element"];
 ;// CONCATENATED MODULE: external ["wp","i18n"]
 var external_wp_i18n_namespaceObject = window["wp"]["i18n"];
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -391,6 +392,10 @@ function paramCase(input, options) {
     return dotCase(input, __assign({ delimiter: "-" }, options));
 }
 
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","apiFetch"]
 var external_wp_apiFetch_namespaceObject = window["wp"]["apiFetch"];
 var external_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_wp_apiFetch_namespaceObject);
@@ -473,12 +478,17 @@ async function exportReusableBlock(id) {
     title,
     content
   }, null, 2);
+<<<<<<< HEAD
   const fileName = paramCase(title) + '.json';
+=======
+  const fileName = (0,external_lodash_namespaceObject.kebabCase)(title) + '.json';
+>>>>>>> fb785cbb (Initial commit)
   download(fileName, fileContent, 'application/json');
 }
 
 /* harmony default export */ var utils_export = (exportReusableBlock);
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: external ["wp","compose"]
 var external_wp_compose_namespaceObject = window["wp"]["compose"];
 ;// CONCATENATED MODULE: external ["wp","components"]
@@ -488,6 +498,22 @@ var external_wp_components_namespaceObject = window["wp"]["components"];
  * WordPress dependencies
  */
 
+=======
+;// CONCATENATED MODULE: external ["wp","components"]
+var external_wp_components_namespaceObject = window["wp"]["components"];
+;// CONCATENATED MODULE: external ["wp","compose"]
+var external_wp_compose_namespaceObject = window["wp"]["compose"];
+;// CONCATENATED MODULE: ./node_modules/@wordpress/list-reusable-blocks/build-module/utils/import.js
+/**
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -510,7 +536,11 @@ async function importReusableBlock(file) {
     throw new Error('Invalid JSON file');
   }
 
+<<<<<<< HEAD
   if (parsedContent.__file !== 'wp_block' || !parsedContent.title || !parsedContent.content || typeof parsedContent.title !== 'string' || typeof parsedContent.content !== 'string') {
+=======
+  if (parsedContent.__file !== 'wp_block' || !parsedContent.title || !parsedContent.content || !(0,external_lodash_namespaceObject.isString)(parsedContent.title) || !(0,external_lodash_namespaceObject.isString)(parsedContent.content)) {
+>>>>>>> fb785cbb (Initial commit)
     throw new Error('Invalid Reusable block JSON file');
   }
 
@@ -638,6 +668,13 @@ function ImportForm(_ref) {
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -654,9 +691,13 @@ function ImportDropdown(_ref) {
     onUpload
   } = _ref;
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Dropdown, {
+<<<<<<< HEAD
     popoverProps: {
       placement: 'bottom-start'
     },
+=======
+    position: "bottom right",
+>>>>>>> fb785cbb (Initial commit)
     contentClassName: "list-reusable-blocks-import-dropdown__content",
     renderToggle: _ref2 => {
       let {
@@ -674,7 +715,11 @@ function ImportDropdown(_ref) {
         onClose
       } = _ref3;
       return (0,external_wp_element_namespaceObject.createElement)(import_form, {
+<<<<<<< HEAD
         onUpload: (0,external_wp_compose_namespaceObject.pipe)(onClose, onUpload)
+=======
+        onUpload: (0,external_lodash_namespaceObject.flow)(onClose, onUpload)
+>>>>>>> fb785cbb (Initial commit)
       });
     }
   });
@@ -729,9 +774,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.createElement('div');
   container.className = 'list-reusable-blocks__container';
   button.parentNode.insertBefore(container, button);
+<<<<<<< HEAD
   (0,external_wp_element_namespaceObject.createRoot)(container).render((0,external_wp_element_namespaceObject.createElement)(import_dropdown, {
     onUpload: showNotice
   }));
+=======
+  (0,external_wp_element_namespaceObject.render)((0,external_wp_element_namespaceObject.createElement)(import_dropdown, {
+    onUpload: showNotice
+  }), container);
+>>>>>>> fb785cbb (Initial commit)
 });
 
 (window.wp = window.wp || {}).listReusableBlocks = __webpack_exports__;

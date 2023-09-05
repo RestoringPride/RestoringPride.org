@@ -17,7 +17,11 @@ class Wordproof_Integration_Toggle implements Integration_Interface {
 	/**
 	 * The WordProof helper instance.
 	 *
+<<<<<<< HEAD
 	 * @var Wordproof_Helper
+=======
+	 * @var Wordproof_Helper $wordproof The helper instance.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	protected $wordproof;
 

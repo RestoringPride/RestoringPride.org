@@ -12,6 +12,10 @@ import {
 import {
     IS_CURRENCY_SWITCHING_ACTIVE,
     IS_DONATION_SUMMARY_ACTIVE,
+<<<<<<< HEAD
+=======
+    IS_FEE_RECOVERY_ACTIVE,
+>>>>>>> fb785cbb (Initial commit)
     IS_RECURRING_ACTIVE,
     IS_STRIPE_ACTIVE,
 } from './is-feature-active.js';
@@ -37,6 +41,10 @@ domIsReady(() => {
     setupDonationLevels();
     moveDefaultGatewayDataIntoActiveGatewaySection();
     IS_DONATION_SUMMARY_ACTIVE && moveDonationSummaryAfterDonationAmountSection();
+<<<<<<< HEAD
+=======
+    IS_FEE_RECOVERY_ACTIVE && attachFeeEvents() && updateFeesAmount();
+>>>>>>> fb785cbb (Initial commit)
     IS_RECURRING_ACTIVE && attachRecurringDonationEvents();
     splitGatewayResponse();
     IS_CURRENCY_SWITCHING_ACTIVE && setupCurrencySwitcherSelector();
@@ -45,6 +53,10 @@ domIsReady(() => {
     moveTestModeMessage();
     IS_CURRENCY_SWITCHING_ACTIVE && moveCurrencySwitcherMessageOutsideOfWrapper();
     addFancyBorderWhenChecked();
+<<<<<<< HEAD
+=======
+    IS_DONATION_SUMMARY_ACTIVE && updateDonationSummaryAmountOnChange();
+>>>>>>> fb785cbb (Initial commit)
 });
 
 /**
@@ -92,6 +104,11 @@ function moveDonationSummaryAfterDonationAmountSection() {
         // Move to before gateway section inside give-personal-info-section
         paymentDetails.parentNode.insertBefore(donationSummary, paymentDetails);
     }
+<<<<<<< HEAD
+=======
+
+    updateDonationSummaryAmount();
+>>>>>>> fb785cbb (Initial commit)
 }
 
 function setPersonalInfoTitle() {
@@ -225,10 +242,14 @@ function addTooltipToLevel(node) {
     const parent = node.parentNode;
     if (!node.getAttribute('has-tooltip')) {
         const tooltip = nodeFromString(
+<<<<<<< HEAD
             h('span', {
                 className: 'give-tooltip hint--top hint--bounce',
                 'aria-label': parent.getAttribute('aria-label'),
             })
+=======
+            h('span', {className: 'give-tooltip hint--top hint--bounce', 'aria-label': node.innerHTML})
+>>>>>>> fb785cbb (Initial commit)
         );
         if (node.innerHTML.length < 50) {
             tooltip.classList.add('narrow');
@@ -246,11 +267,19 @@ function moveDefaultGatewayDataIntoActiveGatewaySection() {
 
     addSelectedGatewayDetails(createGatewayDetails());
 
+<<<<<<< HEAD
     const purchaseFormWrap = document.querySelector('#give_purchase_form_wrap');
     purchaseFormWrap.removeChild(purchaseFormWrap.querySelector('.give-donation-submit'));
     document.querySelector('.give-gateway-details').append(...purchaseFormWrap.children);
 
     removeNode(purchaseFormWrap);
+=======
+    document
+        .querySelector('.give-gateway-details')
+        .append(...document.querySelectorAll('#give_purchase_form_wrap fieldset:not(.give-donation-submit)'));
+
+    removeNode(document.querySelector('#give_purchase_form_wrap'));
+>>>>>>> fb785cbb (Initial commit)
 }
 
 function attachRecurringDonationEvents() {
@@ -286,6 +315,37 @@ function updateRecurringDonationFrequency() {
     }
 }
 
+<<<<<<< HEAD
+=======
+function updateDonationSummaryAmount() {
+    document.querySelector('[data-tag="amount"]').innerHTML = document.querySelector('#give-amount').value;
+}
+
+function updateDonationSummaryAmountOnChange() {
+    document.querySelector('#give-amount').addEventListener('change', function(e){
+        document.querySelector('[data-tag="amount"]').innerHTML = GiveDonationSummary.format_amount(e.target.value, jQuery('.give-form'));
+    } );
+}
+
+
+function attachFeeEvents() {
+    const coverFeesCheckbox = document.querySelector('.give_fee_mode_checkbox');
+
+    if (coverFeesCheckbox) {
+        coverFeesCheckbox.addEventListener('change', updateFeesAmount);
+        new MutationObserver(updateFeesAmount).observe(document.querySelector('.give-fee-message-label-text'), {
+            childList: true,
+        });
+    } else {
+        jQuery('.js-give-donation-summary-fees').hide();
+    }
+}
+
+function updateFeesAmount() {
+    window.GiveDonationSummary.handleFees(document.querySelector('.give_fee_mode_checkbox'), jQuery('.give-form'));
+}
+
+>>>>>>> fb785cbb (Initial commit)
 function splitGatewayResponse() {
     jQuery.ajaxPrefilter(function (options, originalOptions) {
         if (options.url.includes('?payment-mode=')) {
@@ -349,6 +409,11 @@ function splitGatewayResponse() {
                         );
 
                     window.GiveDonationSummary.initTotal();
+<<<<<<< HEAD
+=======
+                    updateDonationSummaryAmount();
+                    IS_FEE_RECOVERY_ACTIVE && updateFeesAmount();
+>>>>>>> fb785cbb (Initial commit)
                 }
 
                 // Remove previous gateway data (just in case it was added again by multiple clicks)
@@ -371,7 +436,11 @@ function splitGatewayResponse() {
 const createGatewayDetails = () => nodeFromString(`<div class="give-gateway-details"></div>`);
 
 const addSelectedGatewayDetails = (gatewayDetailsNode) =>
+<<<<<<< HEAD
     jQuery('.give-gateway-option-selected > .give-gateway-option').after(gatewayDetailsNode);
+=======
+    document.querySelector('.give-gateway-option-selected > .give-gateway-option').after(gatewayDetailsNode);
+>>>>>>> fb785cbb (Initial commit)
 
 window.GiveClassicTemplate = {
     share: (element) => {

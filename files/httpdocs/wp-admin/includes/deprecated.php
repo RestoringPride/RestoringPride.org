@@ -524,8 +524,11 @@ class WP_User_Search {
 	 *
 	 * @since 2.1.0
 	 * @access public
+<<<<<<< HEAD
 	 *
 	 * @global wpdb $wpdb WordPress database abstraction object.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function prepare_query() {
 		global $wpdb;
@@ -564,8 +567,11 @@ class WP_User_Search {
 	 *
 	 * @since 2.1.0
 	 * @access public
+<<<<<<< HEAD
 	 *
 	 * @global wpdb $wpdb WordPress database abstraction object.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function query() {
 		global $wpdb;

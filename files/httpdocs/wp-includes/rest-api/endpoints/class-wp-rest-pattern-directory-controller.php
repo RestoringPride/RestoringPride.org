@@ -81,7 +81,10 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 	 *
 	 * @since 5.8.0
 	 * @since 6.0.0 Added 'slug' to request.
+<<<<<<< HEAD
 	 * @since 6.2.0 Added 'per_page', 'page', 'offset', 'order', and 'orderby' to request.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
 	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
@@ -94,6 +97,7 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 		 */
 		require ABSPATH . WPINC . '/version.php';
 
+<<<<<<< HEAD
 		$valid_query_args = array(
 			'offset'   => true,
 			'order'    => true,
@@ -111,6 +115,33 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 		$query_args['pattern-keywords']   = isset( $request['keyword'] ) ? $request['keyword'] : false;
 
 		$query_args = array_filter( $query_args );
+=======
+		$query_args = array(
+			'locale'     => get_user_locale(),
+			'wp-version' => $wp_version,
+		);
+
+		$category_id = $request['category'];
+		$keyword_id  = $request['keyword'];
+		$search_term = $request['search'];
+		$slug        = $request['slug'];
+
+		if ( $category_id ) {
+			$query_args['pattern-categories'] = $category_id;
+		}
+
+		if ( $keyword_id ) {
+			$query_args['pattern-keywords'] = $keyword_id;
+		}
+
+		if ( $search_term ) {
+			$query_args['search'] = $search_term;
+		}
+
+		if ( $slug ) {
+			$query_args['slug'] = $slug;
+		}
+>>>>>>> fb785cbb (Initial commit)
 
 		$transient_key = $this->get_transient_key( $query_args );
 
@@ -202,7 +233,10 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 			'keywords'       => array_map( 'sanitize_text_field', explode( ',', $raw_pattern->meta->wpop_keywords ) ),
 			'description'    => sanitize_text_field( $raw_pattern->meta->wpop_description ),
 			'viewport_width' => absint( $raw_pattern->meta->wpop_viewport_width ),
+<<<<<<< HEAD
 			'block_types'    => array_map( 'sanitize_text_field', $raw_pattern->meta->wpop_block_types ),
+=======
+>>>>>>> fb785cbb (Initial commit)
 		);
 
 		$prepared_pattern = $this->add_additional_fields_to_object( $prepared_pattern, $request );
@@ -225,7 +259,10 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 	 * Retrieves the block pattern's schema, conforming to JSON Schema.
 	 *
 	 * @since 5.8.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Added `'block_types'` to schema.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @return array Item schema data.
 	 */
@@ -288,6 +325,7 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 					'type'        => 'integer',
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
+<<<<<<< HEAD
 
 				'block_types'    => array(
 					'description' => __( 'The block types which can use this pattern.' ),
@@ -296,6 +334,8 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 					'items'       => array( 'type' => 'string' ),
 					'context'     => array( 'view', 'embed' ),
 				),
+=======
+>>>>>>> fb785cbb (Initial commit)
 			),
 		);
 
@@ -306,14 +346,24 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 	 * Retrieves the search parameters for the block pattern's collection.
 	 *
 	 * @since 5.8.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Added 'per_page', 'page', 'offset', 'order', and 'orderby' to request.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @return array Collection parameters.
 	 */
 	public function get_collection_params() {
 		$query_params = parent::get_collection_params();
 
+<<<<<<< HEAD
 		$query_params['per_page']['default'] = 100;
+=======
+		// Pagination is not supported.
+		unset( $query_params['page'] );
+		unset( $query_params['per_page'] );
+
+>>>>>>> fb785cbb (Initial commit)
 		$query_params['search']['minLength'] = 1;
 		$query_params['context']['default']  = 'view';
 
@@ -334,6 +384,7 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 			'type'        => 'array',
 		);
 
+<<<<<<< HEAD
 		$query_params['offset'] = array(
 			'description' => __( 'Offset the result set by a specific number of items.' ),
 			'type'        => 'integer',
@@ -365,6 +416,8 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 			),
 		);
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		/**
 		 * Filter collection parameters for the block pattern directory controller.
 		 *

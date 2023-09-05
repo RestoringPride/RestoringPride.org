@@ -12,7 +12,10 @@
  *
  * @since 4.7.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 abstract class WP_REST_Controller {
 
 	/**
@@ -289,6 +292,7 @@ abstract class WP_REST_Controller {
 	 *
 	 * @since 4.7.0
 	 *
+<<<<<<< HEAD
 	 * @param array  $response_data Response data to filter.
 	 * @param string $context       Context defined in the schema.
 	 * @return array Filtered response.
@@ -298,6 +302,17 @@ abstract class WP_REST_Controller {
 		$schema = $this->get_item_schema();
 
 		return rest_filter_response_by_context( $response_data, $schema, $context );
+=======
+	 * @param array  $data    Response data to filter.
+	 * @param string $context Context defined in the schema.
+	 * @return array Filtered response.
+	 */
+	public function filter_response_by_context( $data, $context ) {
+
+		$schema = $this->get_item_schema();
+
+		return rest_filter_response_by_context( $data, $schema, $context );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -412,11 +427,19 @@ abstract class WP_REST_Controller {
 	 *
 	 * @since 4.7.0
 	 *
+<<<<<<< HEAD
 	 * @param array           $response_data Prepared response array.
 	 * @param WP_REST_Request $request       Full details about the request.
 	 * @return array Modified data object with additional fields.
 	 */
 	protected function add_additional_fields_to_object( $response_data, $request ) {
+=======
+	 * @param array           $prepared Prepared response array.
+	 * @param WP_REST_Request $request  Full details about the request.
+	 * @return array Modified data object with additional fields.
+	 */
+	protected function add_additional_fields_to_object( $prepared, $request ) {
+>>>>>>> fb785cbb (Initial commit)
 
 		$additional_fields = $this->get_additional_fields();
 
@@ -431,6 +454,7 @@ abstract class WP_REST_Controller {
 				continue;
 			}
 
+<<<<<<< HEAD
 			$response_data[ $field_name ] = call_user_func(
 				$field_options['get_callback'],
 				$response_data,
@@ -441,6 +465,12 @@ abstract class WP_REST_Controller {
 		}
 
 		return $response_data;
+=======
+			$prepared[ $field_name ] = call_user_func( $field_options['get_callback'], $prepared, $field_name, $request, $this->get_object_type() );
+		}
+
+		return $prepared;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -448,11 +478,19 @@ abstract class WP_REST_Controller {
 	 *
 	 * @since 4.7.0
 	 *
+<<<<<<< HEAD
 	 * @param object          $data_object Data model like WP_Term or WP_Post.
 	 * @param WP_REST_Request $request     Full details about the request.
 	 * @return true|WP_Error True on success, WP_Error object if a field cannot be updated.
 	 */
 	protected function update_additional_fields_for_object( $data_object, $request ) {
+=======
+	 * @param object          $object  Data model like WP_Term or WP_Post.
+	 * @param WP_REST_Request $request Full details about the request.
+	 * @return true|WP_Error True on success, WP_Error object if a field cannot be updated.
+	 */
+	protected function update_additional_fields_for_object( $object, $request ) {
+>>>>>>> fb785cbb (Initial commit)
 		$additional_fields = $this->get_additional_fields();
 
 		foreach ( $additional_fields as $field_name => $field_options ) {
@@ -465,6 +503,7 @@ abstract class WP_REST_Controller {
 				continue;
 			}
 
+<<<<<<< HEAD
 			$result = call_user_func(
 				$field_options['update_callback'],
 				$request[ $field_name ],
@@ -473,6 +512,9 @@ abstract class WP_REST_Controller {
 				$request,
 				$this->get_object_type()
 			);
+=======
+			$result = call_user_func( $field_options['update_callback'], $request[ $field_name ], $object, $field_name, $request, $this->get_object_type() );
+>>>>>>> fb785cbb (Initial commit)
 
 			if ( is_wp_error( $result ) ) {
 				return $result;
@@ -595,6 +637,7 @@ abstract class WP_REST_Controller {
 
 		$fields = array_keys( $properties );
 
+<<<<<<< HEAD
 		/*
 		 * '_links' and '_embedded' are not typically part of the item schema,
 		 * but they can be specified in '_fields', so they are added here as a
@@ -607,6 +650,8 @@ abstract class WP_REST_Controller {
 
 		$fields = array_unique( $fields );
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( ! isset( $request['_fields'] ) ) {
 			return $fields;
 		}

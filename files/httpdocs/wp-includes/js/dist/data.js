@@ -455,7 +455,11 @@ __webpack_require__.d(__webpack_exports__, {
   "AsyncModeProvider": function() { return /* reexport */ async_mode_provider_context; },
   "RegistryConsumer": function() { return /* reexport */ RegistryConsumer; },
   "RegistryProvider": function() { return /* reexport */ context; },
+<<<<<<< HEAD
   "combineReducers": function() { return /* binding */ build_module_combineReducers; },
+=======
+  "combineReducers": function() { return /* reexport */ (turbo_combine_reducers_default()); },
+>>>>>>> fb785cbb (Initial commit)
   "controls": function() { return /* reexport */ controls; },
   "createReduxStore": function() { return /* reexport */ createReduxStore; },
   "createRegistry": function() { return /* reexport */ createRegistry; },
@@ -469,12 +473,18 @@ __webpack_require__.d(__webpack_exports__, {
   "resolveSelect": function() { return /* binding */ build_module_resolveSelect; },
   "select": function() { return /* binding */ build_module_select; },
   "subscribe": function() { return /* binding */ subscribe; },
+<<<<<<< HEAD
   "suspendSelect": function() { return /* binding */ suspendSelect; },
+=======
+>>>>>>> fb785cbb (Initial commit)
   "use": function() { return /* binding */ use; },
   "useDispatch": function() { return /* reexport */ use_dispatch; },
   "useRegistry": function() { return /* reexport */ useRegistry; },
   "useSelect": function() { return /* reexport */ useSelect; },
+<<<<<<< HEAD
   "useSuspenseSelect": function() { return /* reexport */ useSuspenseSelect; },
+=======
+>>>>>>> fb785cbb (Initial commit)
   "withDispatch": function() { return /* reexport */ with_dispatch; },
   "withRegistry": function() { return /* reexport */ with_registry; },
   "withSelect": function() { return /* reexport */ with_select; }
@@ -524,6 +534,7 @@ var external_lodash_namespaceObject = window["lodash"];
 ;// CONCATENATED MODULE: external ["wp","deprecated"]
 var external_wp_deprecated_namespaceObject = window["wp"]["deprecated"];
 var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external_wp_deprecated_namespaceObject);
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
 function _typeof(obj) {
   "@babel/helpers - typeof";
@@ -557,6 +568,10 @@ function _toPropertyKey(arg) {
 
 function _defineProperty(obj, key, value) {
   key = _toPropertyKey(key);
+=======
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
+function _defineProperty(obj, key, value) {
+>>>>>>> fb785cbb (Initial commit)
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -567,20 +582,38 @@ function _defineProperty(obj, key, value) {
   } else {
     obj[key] = value;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
   return obj;
 }
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js
 
+<<<<<<< HEAD
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
+=======
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+>>>>>>> fb785cbb (Initial commit)
   if (Object.getOwnPropertySymbols) {
     var symbols = Object.getOwnPropertySymbols(object);
     enumerableOnly && (symbols = symbols.filter(function (sym) {
       return Object.getOwnPropertyDescriptor(object, sym).enumerable;
     })), keys.push.apply(keys, symbols);
   }
+<<<<<<< HEAD
   return keys;
 }
+=======
+
+  return keys;
+}
+
+>>>>>>> fb785cbb (Initial commit)
 function _objectSpread2(target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = null != arguments[i] ? arguments[i] : {};
@@ -590,6 +623,10 @@ function _objectSpread2(target) {
       Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
     });
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
   return target;
 }
 ;// CONCATENATED MODULE: ./node_modules/redux/es/redux.js
@@ -1283,6 +1320,18 @@ function applyMiddleware() {
   };
 }
 
+<<<<<<< HEAD
+=======
+/*
+ * This is a dummy function to check if the function name has been altered by minification.
+ * If the function has been minified and NODE_ENV !== 'production', warn the user.
+ */
+
+function isCrushed() {}
+
+if (false) {}
+
+>>>>>>> fb785cbb (Initial commit)
 
 
 // EXTERNAL MODULE: ./node_modules/equivalent-key-map/equivalent-key-map.js
@@ -1291,8 +1340,11 @@ var equivalent_key_map_default = /*#__PURE__*/__webpack_require__.n(equivalent_k
 ;// CONCATENATED MODULE: external ["wp","reduxRoutine"]
 var external_wp_reduxRoutine_namespaceObject = window["wp"]["reduxRoutine"];
 var external_wp_reduxRoutine_default = /*#__PURE__*/__webpack_require__.n(external_wp_reduxRoutine_namespaceObject);
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: external ["wp","compose"]
 var external_wp_compose_namespaceObject = window["wp"]["compose"];
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/factory.js
 /**
  * Creates a selector function that takes additional curried argument with the
@@ -1309,18 +1361,27 @@ var external_wp_compose_namespaceObject = window["wp"]["compose"];
  *
  * @example
  * ```js
+<<<<<<< HEAD
  * import { store as coreStore } from '@wordpress/core-data';
  * import { store as editorStore } from '@wordpress/editor';
  *
  * const getCurrentPostId = createRegistrySelector( ( select ) => ( state ) => {
  *   return select( editorStore ).getCurrentPostId();
+=======
+ * const getCurrentPostId = createRegistrySelector( ( select ) => ( state ) => {
+ *   return select( 'core/editor' ).getCurrentPostId();
+>>>>>>> fb785cbb (Initial commit)
  * } );
  *
  * const getPostEdits = createRegistrySelector( ( select ) => ( state ) => {
  *   // calling another registry selector just like any other function
  *   const postType = getCurrentPostType( state );
  *   const postId = getCurrentPostId( state );
+<<<<<<< HEAD
  *	 return select( coreStore ).getEntityRecordEdits( 'postType', postType, postId );
+=======
+ *	 return select( 'core' ).getEntityRecordEdits( 'postType', postType, postId );
+>>>>>>> fb785cbb (Initial commit)
  * } );
  * ```
  *
@@ -1381,18 +1442,32 @@ function createRegistryControl(registryControl) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/controls.js
 /**
+<<<<<<< HEAD
  * Internal dependencies
  */
 
+=======
+ * External dependencies
+ */
+
+/**
+ * Internal dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /** @typedef {import('./types').StoreDescriptor} StoreDescriptor */
 
 const SELECT = '@@data/SELECT';
 const RESOLVE_SELECT = '@@data/RESOLVE_SELECT';
 const DISPATCH = '@@data/DISPATCH';
+<<<<<<< HEAD
 
 function isObject(object) {
   return object !== null && typeof object === 'object';
 }
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Dispatches a control action for triggering a synchronous registry select.
  *
@@ -1417,7 +1492,10 @@ function isObject(object) {
  * @return {Object} The control descriptor.
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 function controls_select(storeNameOrDescriptor, selectorName) {
   for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
     args[_key - 2] = arguments[_key];
@@ -1425,7 +1503,11 @@ function controls_select(storeNameOrDescriptor, selectorName) {
 
   return {
     type: SELECT,
+<<<<<<< HEAD
     storeKey: isObject(storeNameOrDescriptor) ? storeNameOrDescriptor.name : storeNameOrDescriptor,
+=======
+    storeKey: (0,external_lodash_namespaceObject.isObject)(storeNameOrDescriptor) ? storeNameOrDescriptor.name : storeNameOrDescriptor,
+>>>>>>> fb785cbb (Initial commit)
     selectorName,
     args
   };
@@ -1463,7 +1545,11 @@ function resolveSelect(storeNameOrDescriptor, selectorName) {
 
   return {
     type: RESOLVE_SELECT,
+<<<<<<< HEAD
     storeKey: isObject(storeNameOrDescriptor) ? storeNameOrDescriptor.name : storeNameOrDescriptor,
+=======
+    storeKey: (0,external_lodash_namespaceObject.isObject)(storeNameOrDescriptor) ? storeNameOrDescriptor.name : storeNameOrDescriptor,
+>>>>>>> fb785cbb (Initial commit)
     selectorName,
     args
   };
@@ -1497,7 +1583,11 @@ function dispatch(storeNameOrDescriptor, actionName) {
 
   return {
     type: DISPATCH,
+<<<<<<< HEAD
     storeKey: isObject(storeNameOrDescriptor) ? storeNameOrDescriptor.name : storeNameOrDescriptor,
+=======
+    storeKey: (0,external_lodash_namespaceObject.isObject)(storeNameOrDescriptor) ? storeNameOrDescriptor.name : storeNameOrDescriptor,
+>>>>>>> fb785cbb (Initial commit)
     actionName,
     args
   };
@@ -1536,6 +1626,7 @@ const builtinControls = {
   })
 };
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: external ["wp","privateApis"]
 var external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/private-apis.js
@@ -1548,6 +1639,8 @@ const {
   unlock
 } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I know using unstable features means my plugin or theme will inevitably break on the next WordPress release.', '@wordpress/data');
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/is-promise/index.mjs
 function isPromise(obj) {
   return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
@@ -1747,6 +1840,10 @@ function selectorArgsToStateKey(args) {
  */
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -1866,6 +1963,7 @@ const isResolved = function () {
       return {};
 
     case 'INVALIDATE_RESOLUTION_FOR_STORE_SELECTOR':
+<<<<<<< HEAD
       {
         if (action.selectorName in state) {
           const {
@@ -1877,6 +1975,9 @@ const isResolved = function () {
 
         return state;
       }
+=======
+      return (0,external_lodash_namespaceObject.has)(state, [action.selectorName]) ? (0,external_lodash_namespaceObject.omit)(state, [action.selectorName]) : state;
+>>>>>>> fb785cbb (Initial commit)
 
     case 'START_RESOLUTION':
     case 'FINISH_RESOLUTION':
@@ -2206,7 +2307,10 @@ function invalidateResolutionForStoreSelector(selectorName) {
  */
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -2218,6 +2322,7 @@ function invalidateResolutionForStoreSelector(selectorName) {
 
 
 
+<<<<<<< HEAD
 
 /** @typedef {import('../types').DataRegistry} DataRegistry */
 
@@ -2230,6 +2335,13 @@ function invalidateResolutionForStoreSelector(selectorName) {
  * @typedef {import('../types').ReduxStoreConfig<State,Actions,Selectors>} ReduxStoreConfig
  * @template State,Actions,Selectors
  */
+=======
+/** @typedef {import('../types').DataRegistry} DataRegistry */
+
+/** @typedef {import('../types').StoreDescriptor} StoreDescriptor */
+
+/** @typedef {import('../types').ReduxStoreConfig} ReduxStoreConfig */
+>>>>>>> fb785cbb (Initial commit)
 
 const trimUndefinedValues = array => {
   const result = [...array];
@@ -2241,6 +2353,7 @@ const trimUndefinedValues = array => {
   }
 
   return result;
+<<<<<<< HEAD
 }; // Convert Map objects to plain objects
 
 
@@ -2250,6 +2363,8 @@ const mapToObject = (key, state) => {
   }
 
   return state;
+=======
+>>>>>>> fb785cbb (Initial commit)
 };
 /**
  * Create a cache to track whether resolvers started running or not.
@@ -2297,6 +2412,7 @@ function createResolversCache() {
  * } );
  * ```
  *
+<<<<<<< HEAD
  * @template State,Actions,Selectors
  * @param {string}                                    key     Unique namespace identifier.
  * @param {ReduxStoreConfig<State,Actions,Selectors>} options Registered store options, with properties
@@ -2304,10 +2420,19 @@ function createResolversCache() {
  *                                                            and resolvers.
  *
  * @return   {StoreDescriptor<ReduxStoreConfig<State,Actions,Selectors>>} Store Object.
+=======
+ * @param {string}           key     Unique namespace identifier.
+ * @param {ReduxStoreConfig} options Registered store options, with properties
+ *                                   describing reducer, actions, selectors,
+ *                                   and resolvers.
+ *
+ * @return {StoreDescriptor} Store Object.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 
 function createReduxStore(key, options) {
+<<<<<<< HEAD
   const privateActions = {};
   const privateSelectors = {};
   const privateRegistrationFunctions = {
@@ -2321,6 +2446,9 @@ function createReduxStore(key, options) {
     }
   };
   const storeDescriptor = {
+=======
+  return {
+>>>>>>> fb785cbb (Initial commit)
     name: key,
     instantiate: registry => {
       const reducer = options.reducer;
@@ -2340,20 +2468,27 @@ function createReduxStore(key, options) {
         }
 
       };
+<<<<<<< HEAD
       const store = instantiateReduxStore(key, options, registry, thunkArgs); // Expose the private registration functions on the store
       // so they can be copied to a sub registry in registry.js.
 
       lock(store, privateRegistrationFunctions);
+=======
+      const store = instantiateReduxStore(key, options, registry, thunkArgs);
+>>>>>>> fb785cbb (Initial commit)
       const resolversCache = createResolversCache();
       let resolvers;
       const actions = mapActions({ ...actions_namespaceObject,
         ...options.actions
       }, store);
+<<<<<<< HEAD
       lock(actions, new Proxy(privateActions, {
         get: (target, prop) => {
           return mapActions(privateActions, store)[prop] || actions[prop];
         }
       }));
+=======
+>>>>>>> fb785cbb (Initial commit)
       let selectors = mapSelectors({ ...(0,external_lodash_namespaceObject.mapValues)(selectors_namespaceObject, selector => function (state) {
           for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
             args[_key - 1] = arguments[_key];
@@ -2375,6 +2510,7 @@ function createReduxStore(key, options) {
           };
         })
       }, store);
+<<<<<<< HEAD
       lock(selectors, new Proxy(privateSelectors, {
         get: (target, prop) => {
           return mapSelectors((0,external_lodash_namespaceObject.mapValues)(privateSelectors, selector => function (state) {
@@ -2386,6 +2522,8 @@ function createReduxStore(key, options) {
           }), store)[prop] || selectors[prop];
         }
       }));
+=======
+>>>>>>> fb785cbb (Initial commit)
 
       if (options.resolvers) {
         const result = mapResolvers(options.resolvers, selectors, store, resolversCache);
@@ -2394,15 +2532,22 @@ function createReduxStore(key, options) {
       }
 
       const resolveSelectors = mapResolveSelectors(selectors, store);
+<<<<<<< HEAD
       const suspendSelectors = mapSuspendSelectors(selectors, store);
+=======
+>>>>>>> fb785cbb (Initial commit)
 
       const getSelectors = () => selectors;
 
       const getActions = () => actions;
 
+<<<<<<< HEAD
       const getResolveSelectors = () => resolveSelectors;
 
       const getSuspendSelectors = () => suspendSelectors; // We have some modules monkey-patching the store object
+=======
+      const getResolveSelectors = () => resolveSelectors; // We have some modules monkey-patching the store object
+>>>>>>> fb785cbb (Initial commit)
       // It's wrong to do so but until we refactor all of our effects to controls
       // We need to keep the same "store" instance here.
 
@@ -2438,17 +2583,24 @@ function createReduxStore(key, options) {
         resolvers,
         getSelectors,
         getResolveSelectors,
+<<<<<<< HEAD
         getSuspendSelectors,
+=======
+>>>>>>> fb785cbb (Initial commit)
         getActions,
         subscribe
       };
     }
+<<<<<<< HEAD
   }; // Expose the private registration functions on the store
   // descriptor. That's a natural choice since that's where the
   // public actions and selectors are stored .
 
   lock(storeDescriptor, privateRegistrationFunctions);
   return storeDescriptor;
+=======
+  };
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Creates a redux store for a namespace.
@@ -2473,10 +2625,14 @@ function instantiateReduxStore(key, options, registry, thunkArgs) {
   if (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__) {
     enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__({
       name: key,
+<<<<<<< HEAD
       instanceId: key,
       serialize: {
         replacer: mapToObject
       }
+=======
+      instanceId: key
+>>>>>>> fb785cbb (Initial commit)
     }));
   }
 
@@ -2490,7 +2646,11 @@ function instantiateReduxStore(key, options, registry, thunkArgs) {
   });
   return createStore(enhancedReducer, {
     root: initialState
+<<<<<<< HEAD
   }, (0,external_wp_compose_namespaceObject.compose)(enhancers));
+=======
+  }, (0,external_lodash_namespaceObject.flowRight)(enhancers));
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Maps selectors to a store.
@@ -2558,6 +2718,7 @@ function mapActions(actions, store) {
 
 
 function mapResolveSelectors(selectors, store) {
+<<<<<<< HEAD
   const {
     getIsResolving,
     hasStartedResolution,
@@ -2569,13 +2730,21 @@ function mapResolveSelectors(selectors, store) {
     getResolutionError,
     ...storeSelectors
   } = selectors;
+=======
+  const storeSelectors = (0,external_lodash_namespaceObject.omit)(selectors, ['getIsResolving', 'hasStartedResolution', 'hasFinishedResolution', 'hasResolutionFailed', 'isResolving', 'getCachedResolvers', 'getResolutionState', 'getResolutionError']);
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_lodash_namespaceObject.mapValues)(storeSelectors, (selector, selectorName) => {
     // If the selector doesn't have a resolver, just convert the return value
     // (including exceptions) to a Promise, no additional extra behavior is needed.
     if (!selector.hasResolver) {
       return async function () {
+<<<<<<< HEAD
         for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
           args[_key4] = arguments[_key4];
+=======
+        for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+          args[_key3] = arguments[_key3];
+>>>>>>> fb785cbb (Initial commit)
         }
 
         return selector.apply(null, args);
@@ -2583,8 +2752,13 @@ function mapResolveSelectors(selectors, store) {
     }
 
     return function () {
+<<<<<<< HEAD
       for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
         args[_key5] = arguments[_key5];
+=======
+      for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+        args[_key4] = arguments[_key4];
+>>>>>>> fb785cbb (Initial commit)
       }
 
       return new Promise((resolve, reject) => {
@@ -2621,6 +2795,7 @@ function mapResolveSelectors(selectors, store) {
   });
 }
 /**
+<<<<<<< HEAD
  * Maps selectors to functions that throw a suspense promise if not yet resolved.
  *
  * @param {Object} selectors Selectors to map.
@@ -2664,6 +2839,8 @@ function mapSuspendSelectors(selectors, store) {
   });
 }
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Returns resolvers with matched selectors for a given namespace.
  * Resolvers are side effects invoked once per argument set of a given selector call,
  * used in ensuring that the data needs for the selector are satisfied.
@@ -2700,8 +2877,13 @@ function mapResolvers(resolvers, selectors, store, resolversCache) {
     }
 
     const selectorResolver = function () {
+<<<<<<< HEAD
       for (var _len7 = arguments.length, args = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
         args[_key7] = arguments[_key7];
+=======
+      for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+        args[_key5] = arguments[_key5];
+>>>>>>> fb785cbb (Initial commit)
       }
 
       async function fulfillSelector() {
@@ -2763,8 +2945,13 @@ async function fulfillResolver(store, resolvers, selectorName) {
     return;
   }
 
+<<<<<<< HEAD
   for (var _len8 = arguments.length, args = new Array(_len8 > 3 ? _len8 - 3 : 0), _key8 = 3; _key8 < _len8; _key8++) {
     args[_key8 - 3] = arguments[_key8];
+=======
+  for (var _len6 = arguments.length, args = new Array(_len6 > 3 ? _len6 - 3 : 0), _key6 = 3; _key6 < _len6; _key6++) {
+    args[_key6 - 3] = arguments[_key6];
+>>>>>>> fb785cbb (Initial commit)
   }
 
   const action = resolver.fulfill(...args);
@@ -2842,7 +3029,10 @@ function createEmitter() {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /** @typedef {import('./types').StoreDescriptor} StoreDescriptor */
 
 /**
@@ -2871,9 +3061,12 @@ function createEmitter() {
  * @property {Function} registerStore registers store.
  */
 
+<<<<<<< HEAD
 function getStoreName(storeNameOrDescriptor) {
   return typeof storeNameOrDescriptor === 'string' ? storeNameOrDescriptor : storeNameOrDescriptor.name;
 }
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Creates a new store registry, given an optional object of initial store
  * configurations.
@@ -2884,13 +3077,20 @@ function getStoreName(storeNameOrDescriptor) {
  * @return {WPDataRegistry} Data registry.
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 function createRegistry() {
   let storeConfigs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   let parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
   const stores = {};
   const emitter = createEmitter();
+<<<<<<< HEAD
   let listeningStores = null;
+=======
+  const listeningStores = new Set();
+>>>>>>> fb785cbb (Initial commit)
   /**
    * Global listener called for each store's update.
    */
@@ -2899,16 +3099,23 @@ function createRegistry() {
     emitter.emit();
   }
   /**
+<<<<<<< HEAD
    * Subscribe to changes to any data, either in all stores in registry, or
    * in one specific store.
    *
    * @param {Function}                listener              Listener function.
    * @param {string|StoreDescriptor?} storeNameOrDescriptor Optional store name.
+=======
+   * Subscribe to changes to any data.
+   *
+   * @param {Function} listener Listener function.
+>>>>>>> fb785cbb (Initial commit)
    *
    * @return {Function} Unsubscribe function.
    */
 
 
+<<<<<<< HEAD
   const subscribe = (listener, storeNameOrDescriptor) => {
     // subscribe to all stores
     if (!storeNameOrDescriptor) {
@@ -2932,6 +3139,10 @@ function createRegistry() {
     }
 
     return parent.subscribe(listener, storeNameOrDescriptor);
+=======
+  const subscribe = listener => {
+    return emitter.subscribe(listener);
+>>>>>>> fb785cbb (Initial commit)
   };
   /**
    * Calls a selector given the current state and extra arguments.
@@ -2944,16 +3155,22 @@ function createRegistry() {
 
 
   function select(storeNameOrDescriptor) {
+<<<<<<< HEAD
     var _listeningStores;
 
     const storeName = getStoreName(storeNameOrDescriptor);
     (_listeningStores = listeningStores) === null || _listeningStores === void 0 ? void 0 : _listeningStores.add(storeName);
+=======
+    const storeName = (0,external_lodash_namespaceObject.isObject)(storeNameOrDescriptor) ? storeNameOrDescriptor.name : storeNameOrDescriptor;
+    listeningStores.add(storeName);
+>>>>>>> fb785cbb (Initial commit)
     const store = stores[storeName];
 
     if (store) {
       return store.getSelectors();
     }
 
+<<<<<<< HEAD
     return parent === null || parent === void 0 ? void 0 : parent.select(storeName);
   }
 
@@ -2975,16 +3192,40 @@ function createRegistry() {
    * @param {StoreDescriptor|string} storeNameOrDescriptor The store descriptor. The legacy calling
    *                                                       convention of passing the store name is
    *                                                       also supported.
+=======
+    return parent && parent.select(storeName);
+  }
+
+  function __unstableMarkListeningStores(callback, ref) {
+    listeningStores.clear();
+    const result = callback.call(this);
+    ref.current = Array.from(listeningStores);
+    return result;
+  }
+  /**
+   * Given the name of a registered store, returns an object containing the store's
+   * selectors pre-bound to state so that you only need to supply additional arguments,
+   * and modified so that they return promises that resolve to their eventual values,
+   * after any resolvers have ran.
+   *
+   * @param {string|StoreDescriptor} storeNameOrDescriptor Unique namespace identifier for the store
+   *                                                       or the store descriptor.
+>>>>>>> fb785cbb (Initial commit)
    *
    * @return {Object} Each key of the object matches the name of a selector.
    */
 
 
   function resolveSelect(storeNameOrDescriptor) {
+<<<<<<< HEAD
     var _listeningStores2;
 
     const storeName = getStoreName(storeNameOrDescriptor);
     (_listeningStores2 = listeningStores) === null || _listeningStores2 === void 0 ? void 0 : _listeningStores2.add(storeName);
+=======
+    const storeName = (0,external_lodash_namespaceObject.isObject)(storeNameOrDescriptor) ? storeNameOrDescriptor.name : storeNameOrDescriptor;
+    listeningStores.add(storeName);
+>>>>>>> fb785cbb (Initial commit)
     const store = stores[storeName];
 
     if (store) {
@@ -2994,6 +3235,7 @@ function createRegistry() {
     return parent && parent.resolveSelect(storeName);
   }
   /**
+<<<<<<< HEAD
    * Given a store descriptor, returns an object containing the store's selectors pre-bound to
    * state so that you only need to supply additional arguments, and modified so that they throw
    * promises in case the selector is not resolved yet.
@@ -3020,6 +3262,8 @@ function createRegistry() {
     return parent && parent.suspendSelect(storeName);
   }
   /**
+=======
+>>>>>>> fb785cbb (Initial commit)
    * Returns the available actions for a part of the state.
    *
    * @param {string|StoreDescriptor} storeNameOrDescriptor Unique namespace identifier for the store
@@ -3030,7 +3274,11 @@ function createRegistry() {
 
 
   function dispatch(storeNameOrDescriptor) {
+<<<<<<< HEAD
     const storeName = getStoreName(storeNameOrDescriptor);
+=======
+    const storeName = (0,external_lodash_namespaceObject.isObject)(storeNameOrDescriptor) ? storeNameOrDescriptor.name : storeNameOrDescriptor;
+>>>>>>> fb785cbb (Initial commit)
     const store = stores[storeName];
 
     if (store) {
@@ -3098,6 +3346,7 @@ function createRegistry() {
     };
 
     stores[name] = store;
+<<<<<<< HEAD
     store.subscribe(globalListener); // Copy private actions and selectors from the parent store.
 
     if (parent) {
@@ -3109,6 +3358,9 @@ function createRegistry() {
         // ignore it.
       }
     }
+=======
+    store.subscribe(globalListener);
+>>>>>>> fb785cbb (Initial commit)
   }
   /**
    * Registers a new store given a store descriptor.
@@ -3147,6 +3399,7 @@ function createRegistry() {
     registerStoreInstance(storeName, store);
     return store.store;
   }
+<<<<<<< HEAD
 
   function batch(callback) {
     emitter.pause();
@@ -3154,6 +3407,39 @@ function createRegistry() {
     callback();
     emitter.resume();
     Object.values(stores).forEach(store => store.emitter.resume());
+=======
+  /**
+   * Subscribe handler to a store.
+   *
+   * @param {string[]} storeName The store name.
+   * @param {Function} handler   The function subscribed to the store.
+   * @return {Function} A function to unsubscribe the handler.
+   */
+
+
+  function __unstableSubscribeStore(storeName, handler) {
+    if (storeName in stores) {
+      return stores[storeName].subscribe(handler);
+    } // Trying to access a store that hasn't been registered,
+    // this is a pattern rarely used but seen in some places.
+    // We fallback to regular `subscribe` here for backward-compatibility for now.
+    // See https://github.com/WordPress/gutenberg/pull/27466 for more info.
+
+
+    if (!parent) {
+      return subscribe(handler);
+    }
+
+    return parent.__unstableSubscribeStore(storeName, handler);
+  }
+
+  function batch(callback) {
+    emitter.pause();
+    (0,external_lodash_namespaceObject.forEach)(stores, store => store.emitter.pause());
+    callback();
+    emitter.resume();
+    (0,external_lodash_namespaceObject.forEach)(stores, store => store.emitter.resume());
+>>>>>>> fb785cbb (Initial commit)
   }
 
   let registry = {
@@ -3164,13 +3450,21 @@ function createRegistry() {
     subscribe,
     select,
     resolveSelect,
+<<<<<<< HEAD
     suspendSelect,
+=======
+>>>>>>> fb785cbb (Initial commit)
     dispatch,
     use,
     register,
     registerGenericStore,
     registerStore,
+<<<<<<< HEAD
     __unstableMarkListeningStores
+=======
+    __unstableMarkListeningStores,
+    __unstableSubscribeStore
+>>>>>>> fb785cbb (Initial commit)
   }; //
   // TODO:
   // This function will be deprecated as soon as it is no longer internally referenced.
@@ -3196,6 +3490,7 @@ function createRegistry() {
     parent.subscribe(globalListener);
   }
 
+<<<<<<< HEAD
   const registryWithPlugins = withPlugins(registry);
   lock(registryWithPlugins, {
     privateActionsOf: name => {
@@ -3216,6 +3511,9 @@ function createRegistry() {
     }
   });
   return registryWithPlugins;
+=======
+  return withPlugins(registry);
+>>>>>>> fb785cbb (Initial commit)
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/default-registry.js
@@ -3225,6 +3523,7 @@ function createRegistry() {
 
 /* harmony default export */ var default_registry = (createRegistry());
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/node_modules/is-plain-object/dist/is-plain-object.mjs
 /*!
  * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
@@ -3261,6 +3560,8 @@ function is_plain_object_isPlainObject(o) {
 
 
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/plugins/persistence/storage/object.js
 let objectStorage;
 const storage = {
@@ -3312,7 +3613,10 @@ try {
  * External dependencies
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -3460,7 +3764,11 @@ function persistencePlugin(registry, pluginOptions) {
       const reducers = keys.reduce((accumulator, key) => Object.assign(accumulator, {
         [key]: (state, action) => action.nextState[key]
       }), {});
+<<<<<<< HEAD
       getPersistedState = withLazySameState(build_module_combineReducers(reducers));
+=======
+      getPersistedState = withLazySameState(turbo_combine_reducers_default()(reducers));
+>>>>>>> fb785cbb (Initial commit)
     } else {
       getPersistedState = (state, action) => action.nextState;
     }
@@ -3494,7 +3802,11 @@ function persistencePlugin(registry, pluginOptions) {
           type: '@@WP/PERSISTENCE_RESTORE'
         });
 
+<<<<<<< HEAD
         if (is_plain_object_isPlainObject(initialState) && is_plain_object_isPlainObject(persistedState)) {
+=======
+        if ((0,external_lodash_namespaceObject.isPlainObject)(initialState) && (0,external_lodash_namespaceObject.isPlainObject)(persistedState)) {
+>>>>>>> fb785cbb (Initial commit)
           // If state is an object, ensure that:
           // - Other keys are left intact when persisting only a
           //   subset of keys.
@@ -3519,8 +3831,376 @@ function persistencePlugin(registry, pluginOptions) {
 
   };
 }
+<<<<<<< HEAD
 
 persistencePlugin.__unstableMigrate = () => {};
+=======
+/**
+ * Move the 'features' object in local storage from the sourceStoreName to the
+ * preferences store.
+ *
+ * @param {Object} persistence     The persistence interface.
+ * @param {string} sourceStoreName The name of the store that has persisted
+ *                                 preferences to migrate to the preferences
+ *                                 package.
+ */
+
+
+function migrateFeaturePreferencesToPreferencesStore(persistence, sourceStoreName) {
+  var _state$interfaceStore, _state$interfaceStore2, _state$interfaceStore3, _state$sourceStoreNam, _state$sourceStoreNam2;
+
+  const preferencesStoreName = 'core/preferences';
+  const interfaceStoreName = 'core/interface';
+  const state = persistence.get(); // Features most recently (and briefly) lived in the interface package.
+  // If data exists there, prioritize using that for the migration. If not
+  // also check the original package as the user may have updated from an
+  // older block editor version.
+
+  const interfaceFeatures = (_state$interfaceStore = state[interfaceStoreName]) === null || _state$interfaceStore === void 0 ? void 0 : (_state$interfaceStore2 = _state$interfaceStore.preferences) === null || _state$interfaceStore2 === void 0 ? void 0 : (_state$interfaceStore3 = _state$interfaceStore2.features) === null || _state$interfaceStore3 === void 0 ? void 0 : _state$interfaceStore3[sourceStoreName];
+  const sourceFeatures = (_state$sourceStoreNam = state[sourceStoreName]) === null || _state$sourceStoreNam === void 0 ? void 0 : (_state$sourceStoreNam2 = _state$sourceStoreNam.preferences) === null || _state$sourceStoreNam2 === void 0 ? void 0 : _state$sourceStoreNam2.features;
+  const featuresToMigrate = interfaceFeatures ? interfaceFeatures : sourceFeatures;
+
+  if (featuresToMigrate) {
+    var _state$preferencesSto;
+
+    const existingPreferences = (_state$preferencesSto = state[preferencesStoreName]) === null || _state$preferencesSto === void 0 ? void 0 : _state$preferencesSto.preferences; // Avoid migrating features again if they've previously been migrated.
+
+    if (!(existingPreferences !== null && existingPreferences !== void 0 && existingPreferences[sourceStoreName])) {
+      // Set the feature values in the interface store, the features
+      // object is keyed by 'scope', which matches the store name for
+      // the source.
+      persistence.set(preferencesStoreName, {
+        preferences: { ...existingPreferences,
+          [sourceStoreName]: featuresToMigrate
+        }
+      }); // Remove migrated feature preferences from `interface`.
+
+      if (interfaceFeatures) {
+        var _state$interfaceStore4, _state$interfaceStore5;
+
+        const otherInterfaceState = state[interfaceStoreName];
+        const otherInterfaceScopes = (_state$interfaceStore4 = state[interfaceStoreName]) === null || _state$interfaceStore4 === void 0 ? void 0 : (_state$interfaceStore5 = _state$interfaceStore4.preferences) === null || _state$interfaceStore5 === void 0 ? void 0 : _state$interfaceStore5.features;
+        persistence.set(interfaceStoreName, { ...otherInterfaceState,
+          preferences: {
+            features: { ...otherInterfaceScopes,
+              [sourceStoreName]: undefined
+            }
+          }
+        });
+      } // Remove migrated feature preferences from the source.
+
+
+      if (sourceFeatures) {
+        var _state$sourceStoreNam3;
+
+        const otherSourceState = state[sourceStoreName];
+        const sourcePreferences = (_state$sourceStoreNam3 = state[sourceStoreName]) === null || _state$sourceStoreNam3 === void 0 ? void 0 : _state$sourceStoreNam3.preferences;
+        persistence.set(sourceStoreName, { ...otherSourceState,
+          preferences: { ...sourcePreferences,
+            features: undefined
+          }
+        });
+      }
+    }
+  }
+}
+/**
+ * Migrates an individual item inside the `preferences` object for a store.
+ *
+ * @param {Object}    persistence   The persistence interface.
+ * @param {Object}    migrate       An options object that contains details of the migration.
+ * @param {string}    migrate.from  The name of the store to migrate from.
+ * @param {string}    migrate.scope The scope in the preferences store to migrate to.
+ * @param {string}    key           The key in the preferences object to migrate.
+ * @param {?Function} convert       A function that converts preferences from one format to another.
+ */
+
+function migrateIndividualPreferenceToPreferencesStore(persistence, _ref, key) {
+  var _state$sourceStoreNam4, _state$sourceStoreNam5, _state$preferencesSto2, _state$preferencesSto3, _state$preferencesSto4, _state$preferencesSto5, _state$preferencesSto6, _state$preferencesSto7, _state$sourceStoreNam6;
+
+  let {
+    from: sourceStoreName,
+    scope
+  } = _ref;
+  let convert = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : external_lodash_namespaceObject.identity;
+  const preferencesStoreName = 'core/preferences';
+  const state = persistence.get();
+  const sourcePreference = (_state$sourceStoreNam4 = state[sourceStoreName]) === null || _state$sourceStoreNam4 === void 0 ? void 0 : (_state$sourceStoreNam5 = _state$sourceStoreNam4.preferences) === null || _state$sourceStoreNam5 === void 0 ? void 0 : _state$sourceStoreNam5[key]; // There's nothing to migrate, exit early.
+
+  if (sourcePreference === undefined) {
+    return;
+  }
+
+  const targetPreference = (_state$preferencesSto2 = state[preferencesStoreName]) === null || _state$preferencesSto2 === void 0 ? void 0 : (_state$preferencesSto3 = _state$preferencesSto2.preferences) === null || _state$preferencesSto3 === void 0 ? void 0 : (_state$preferencesSto4 = _state$preferencesSto3[scope]) === null || _state$preferencesSto4 === void 0 ? void 0 : _state$preferencesSto4[key]; // There's existing data at the target, so don't overwrite it, exit early.
+
+  if (targetPreference) {
+    return;
+  }
+
+  const otherScopes = (_state$preferencesSto5 = state[preferencesStoreName]) === null || _state$preferencesSto5 === void 0 ? void 0 : _state$preferencesSto5.preferences;
+  const otherPreferences = (_state$preferencesSto6 = state[preferencesStoreName]) === null || _state$preferencesSto6 === void 0 ? void 0 : (_state$preferencesSto7 = _state$preferencesSto6.preferences) === null || _state$preferencesSto7 === void 0 ? void 0 : _state$preferencesSto7[scope]; // Pass an object with the key and value as this allows the convert
+  // function to convert to a data structure that has different keys.
+
+  const convertedPreferences = convert({
+    [key]: sourcePreference
+  });
+  persistence.set(preferencesStoreName, {
+    preferences: { ...otherScopes,
+      [scope]: { ...otherPreferences,
+        ...convertedPreferences
+      }
+    }
+  }); // Remove migrated feature preferences from the source.
+
+  const otherSourceState = state[sourceStoreName];
+  const allSourcePreferences = (_state$sourceStoreNam6 = state[sourceStoreName]) === null || _state$sourceStoreNam6 === void 0 ? void 0 : _state$sourceStoreNam6.preferences;
+  persistence.set(sourceStoreName, { ...otherSourceState,
+    preferences: { ...allSourcePreferences,
+      [key]: undefined
+    }
+  });
+}
+/**
+ * Convert from:
+ * ```
+ * {
+ *     panels: {
+ *         tags: {
+ *             enabled: true,
+ *             opened: true,
+ *         },
+ *         permalinks: {
+ *             enabled: false,
+ *             opened: false,
+ *         },
+ *     },
+ * }
+ * ```
+ *
+ * to:
+ * {
+ *     inactivePanels: [
+ *         'permalinks',
+ *     ],
+ *     openPanels: [
+ *         'tags',
+ *     ],
+ * }
+ *
+ * @param {Object} preferences A preferences object.
+ *
+ * @return {Object} The converted data.
+ */
+
+function convertEditPostPanels(preferences) {
+  var _preferences$panels;
+
+  const panels = (_preferences$panels = preferences === null || preferences === void 0 ? void 0 : preferences.panels) !== null && _preferences$panels !== void 0 ? _preferences$panels : {};
+  return Object.keys(panels).reduce((convertedData, panelName) => {
+    const panel = panels[panelName];
+
+    if ((panel === null || panel === void 0 ? void 0 : panel.enabled) === false) {
+      convertedData.inactivePanels.push(panelName);
+    }
+
+    if ((panel === null || panel === void 0 ? void 0 : panel.opened) === true) {
+      convertedData.openPanels.push(panelName);
+    }
+
+    return convertedData;
+  }, {
+    inactivePanels: [],
+    openPanels: []
+  });
+}
+function migrateThirdPartyFeaturePreferencesToPreferencesStore(persistence) {
+  var _state$interfaceStore6, _state$interfaceStore7;
+
+  const interfaceStoreName = 'core/interface';
+  const preferencesStoreName = 'core/preferences';
+  let state = persistence.get();
+  const interfaceScopes = (_state$interfaceStore6 = state[interfaceStoreName]) === null || _state$interfaceStore6 === void 0 ? void 0 : (_state$interfaceStore7 = _state$interfaceStore6.preferences) === null || _state$interfaceStore7 === void 0 ? void 0 : _state$interfaceStore7.features;
+
+  for (const scope in interfaceScopes) {
+    var _state$preferencesSto8, _state$interfaceStore8, _state$interfaceStore9;
+
+    // Don't migrate any core 'scopes'.
+    if (scope.startsWith('core')) {
+      continue;
+    } // Skip this scope if there are no features to migrate.
+
+
+    const featuresToMigrate = interfaceScopes[scope];
+
+    if (!featuresToMigrate) {
+      continue;
+    }
+
+    const existingPreferences = (_state$preferencesSto8 = state[preferencesStoreName]) === null || _state$preferencesSto8 === void 0 ? void 0 : _state$preferencesSto8.preferences; // Add the data to the preferences store structure.
+
+    persistence.set(preferencesStoreName, {
+      preferences: { ...existingPreferences,
+        [scope]: featuresToMigrate
+      }
+    }); // Remove the data from the interface store structure.
+    // Call `persistence.get` again to make sure `state` is up-to-date with
+    // any changes from the previous iteration of this loop.
+
+    state = persistence.get();
+    const otherInterfaceState = state[interfaceStoreName];
+    const otherInterfaceScopes = (_state$interfaceStore8 = state[interfaceStoreName]) === null || _state$interfaceStore8 === void 0 ? void 0 : (_state$interfaceStore9 = _state$interfaceStore8.preferences) === null || _state$interfaceStore9 === void 0 ? void 0 : _state$interfaceStore9.features;
+    persistence.set(interfaceStoreName, { ...otherInterfaceState,
+      preferences: {
+        features: { ...otherInterfaceScopes,
+          [scope]: undefined
+        }
+      }
+    });
+  }
+}
+/**
+ * Migrates interface 'enableItems' data to the preferences store.
+ *
+ * The interface package stores this data in this format:
+ * ```js
+ * {
+ *     enableItems: {
+ *         singleEnableItems: {
+ * 	           complementaryArea: {
+ *                 'core/edit-post': 'edit-post/document',
+ *                 'core/edit-site': 'edit-site/global-styles',
+ *             }
+ *         },
+ *         multipleEnableItems: {
+ *             pinnedItems: {
+ *                 'core/edit-post': {
+ *                     'plugin-1': true,
+ *                 },
+ *                 'core/edit-site': {
+ *                     'plugin-2': true,
+ *                 },
+ *             },
+ *         }
+ *     }
+ * }
+ * ```
+ * and it should be migrated it to:
+ * ```js
+ * {
+ *     'core/edit-post': {
+ *         complementaryArea: 'edit-post/document',
+ *         pinnedItems: {
+ *             'plugin-1': true,
+ *         },
+ *     },
+ *     'core/edit-site': {
+ *         complementaryArea: 'edit-site/global-styles',
+ *         pinnedItems: {
+ *             'plugin-2': true,
+ *         },
+ *     },
+ * }
+ * ```
+ *
+ * @param {Object} persistence The persistence interface.
+ */
+
+function migrateInterfaceEnableItemsToPreferencesStore(persistence) {
+  var _state$interfaceStore10, _state$preferencesSto9, _state$preferencesSto10, _sourceEnableItems$si, _sourceEnableItems$si2, _sourceEnableItems$mu, _sourceEnableItems$mu2;
+
+  const interfaceStoreName = 'core/interface';
+  const preferencesStoreName = 'core/preferences';
+  const state = persistence.get();
+  const sourceEnableItems = (_state$interfaceStore10 = state[interfaceStoreName]) === null || _state$interfaceStore10 === void 0 ? void 0 : _state$interfaceStore10.enableItems; // There's nothing to migrate, exit early.
+
+  if (!sourceEnableItems) {
+    return;
+  }
+
+  const allPreferences = (_state$preferencesSto9 = (_state$preferencesSto10 = state[preferencesStoreName]) === null || _state$preferencesSto10 === void 0 ? void 0 : _state$preferencesSto10.preferences) !== null && _state$preferencesSto9 !== void 0 ? _state$preferencesSto9 : {}; // First convert complementaryAreas into the right format.
+  // Use the existing preferences as the accumulator so that the data is
+  // merged.
+
+  const sourceComplementaryAreas = (_sourceEnableItems$si = sourceEnableItems === null || sourceEnableItems === void 0 ? void 0 : (_sourceEnableItems$si2 = sourceEnableItems.singleEnableItems) === null || _sourceEnableItems$si2 === void 0 ? void 0 : _sourceEnableItems$si2.complementaryArea) !== null && _sourceEnableItems$si !== void 0 ? _sourceEnableItems$si : {};
+  const convertedComplementaryAreas = Object.keys(sourceComplementaryAreas).reduce((accumulator, scope) => {
+    var _accumulator$scope;
+
+    const data = sourceComplementaryAreas[scope]; // Don't overwrite any existing data in the preferences store.
+
+    if ((_accumulator$scope = accumulator[scope]) !== null && _accumulator$scope !== void 0 && _accumulator$scope.complementaryArea) {
+      return accumulator;
+    }
+
+    return { ...accumulator,
+      [scope]: { ...accumulator[scope],
+        complementaryArea: data
+      }
+    };
+  }, allPreferences); // Next feed the converted complementary areas back into a reducer that
+  // converts the pinned items, resulting in the fully migrated data.
+
+  const sourcePinnedItems = (_sourceEnableItems$mu = sourceEnableItems === null || sourceEnableItems === void 0 ? void 0 : (_sourceEnableItems$mu2 = sourceEnableItems.multipleEnableItems) === null || _sourceEnableItems$mu2 === void 0 ? void 0 : _sourceEnableItems$mu2.pinnedItems) !== null && _sourceEnableItems$mu !== void 0 ? _sourceEnableItems$mu : {};
+  const allConvertedData = Object.keys(sourcePinnedItems).reduce((accumulator, scope) => {
+    var _accumulator$scope2;
+
+    const data = sourcePinnedItems[scope]; // Don't overwrite any existing data in the preferences store.
+
+    if ((_accumulator$scope2 = accumulator[scope]) !== null && _accumulator$scope2 !== void 0 && _accumulator$scope2.pinnedItems) {
+      return accumulator;
+    }
+
+    return { ...accumulator,
+      [scope]: { ...accumulator[scope],
+        pinnedItems: data
+      }
+    };
+  }, convertedComplementaryAreas);
+  persistence.set(preferencesStoreName, {
+    preferences: allConvertedData
+  }); // Remove migrated preferences.
+
+  const otherInterfaceItems = state[interfaceStoreName];
+  persistence.set(interfaceStoreName, { ...otherInterfaceItems,
+    enableItems: undefined
+  });
+}
+
+persistencePlugin.__unstableMigrate = pluginOptions => {
+  const persistence = createPersistenceInterface(pluginOptions); // Boolean feature preferences.
+
+  migrateFeaturePreferencesToPreferencesStore(persistence, 'core/edit-widgets');
+  migrateFeaturePreferencesToPreferencesStore(persistence, 'core/customize-widgets');
+  migrateFeaturePreferencesToPreferencesStore(persistence, 'core/edit-post');
+  migrateFeaturePreferencesToPreferencesStore(persistence, 'core/edit-site');
+  migrateThirdPartyFeaturePreferencesToPreferencesStore(persistence); // Other ad-hoc preferences.
+
+  migrateIndividualPreferenceToPreferencesStore(persistence, {
+    from: 'core/edit-post',
+    scope: 'core/edit-post'
+  }, 'hiddenBlockTypes');
+  migrateIndividualPreferenceToPreferencesStore(persistence, {
+    from: 'core/edit-post',
+    scope: 'core/edit-post'
+  }, 'editorMode');
+  migrateIndividualPreferenceToPreferencesStore(persistence, {
+    from: 'core/edit-post',
+    scope: 'core/edit-post'
+  }, 'preferredStyleVariations');
+  migrateIndividualPreferenceToPreferencesStore(persistence, {
+    from: 'core/edit-post',
+    scope: 'core/edit-post'
+  }, 'panels', convertEditPostPanels);
+  migrateIndividualPreferenceToPreferencesStore(persistence, {
+    from: 'core/editor',
+    scope: 'core/edit-post'
+  }, 'isPublishSidebarEnabled');
+  migrateIndividualPreferenceToPreferencesStore(persistence, {
+    from: 'core/edit-site',
+    scope: 'core/edit-site'
+  }, 'editorMode');
+  migrateInterfaceEnableItemsToPreferencesStore(persistence);
+};
+>>>>>>> fb785cbb (Initial commit)
 
 /* harmony default export */ var persistence = (persistencePlugin);
 
@@ -3532,18 +4212,80 @@ function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
       for (var key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
           target[key] = source[key];
         }
       }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
     return target;
   };
   return _extends.apply(this, arguments);
 }
 ;// CONCATENATED MODULE: external ["wp","element"]
 var external_wp_element_namespaceObject = window["wp"]["element"];
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: external ["wp","compose"]
+var external_wp_compose_namespaceObject = window["wp"]["compose"];
+;// CONCATENATED MODULE: external "React"
+var external_React_namespaceObject = window["React"];
+;// CONCATENATED MODULE: ./node_modules/use-memo-one/dist/use-memo-one.esm.js
+
+
+function areInputsEqual(newInputs, lastInputs) {
+  if (newInputs.length !== lastInputs.length) {
+    return false;
+  }
+
+  for (var i = 0; i < newInputs.length; i++) {
+    if (newInputs[i] !== lastInputs[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function useMemoOne(getResult, inputs) {
+  var initial = (0,external_React_namespaceObject.useState)(function () {
+    return {
+      inputs: inputs,
+      result: getResult()
+    };
+  })[0];
+  var isFirstRun = (0,external_React_namespaceObject.useRef)(true);
+  var committed = (0,external_React_namespaceObject.useRef)(initial);
+  var useCache = isFirstRun.current || Boolean(inputs && committed.current.inputs && areInputsEqual(inputs, committed.current.inputs));
+  var cache = useCache ? committed.current : {
+    inputs: inputs,
+    result: getResult()
+  };
+  (0,external_React_namespaceObject.useEffect)(function () {
+    isFirstRun.current = false;
+    committed.current = cache;
+  }, [cache]);
+  return cache.result;
+}
+function useCallbackOne(callback, inputs) {
+  return useMemoOne(function () {
+    return callback;
+  }, inputs);
+}
+var useMemo = (/* unused pure expression or super */ null && (useMemoOne));
+var useCallback = (/* unused pure expression or super */ null && (useCallbackOne));
+
+
+
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","priorityQueue"]
 var external_wp_priorityQueue_namespaceObject = window["wp"]["priorityQueue"];
 ;// CONCATENATED MODULE: external ["wp","isShallowEqual"]
@@ -3680,11 +4422,18 @@ const AsyncModeConsumer = (/* unused pure expression or super */ null && (contex
  *
  * ```js
  * import { useSelect, AsyncModeProvider } from '@wordpress/data';
+<<<<<<< HEAD
  * import { store as blockEditorStore } from '@wordpress/block-editor';
  *
  * function BlockCount() {
  *   const count = useSelect( ( select ) => {
  *     return select( blockEditorStore ).getBlockCount()
+=======
+ *
+ * function BlockCount() {
+ *   const count = useSelect( ( select ) => {
+ *     return select( 'core/block-editor' ).getBlockCount()
+>>>>>>> fb785cbb (Initial commit)
  *   }, [] );
  *
  *   return count;
@@ -3726,17 +4475,30 @@ function useAsyncMode() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/components/use-select/index.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
 
 
 
+<<<<<<< HEAD
 const renderQueue = (0,external_wp_priorityQueue_namespaceObject.createQueue)();
 /**
  * @typedef {import('../../types').StoreDescriptor<C>} StoreDescriptor
@@ -3879,11 +4641,21 @@ function useMappingSelect(suspense, mapSelect, deps) {
   return result;
 }
 /**
+=======
+
+const noop = () => {};
+
+const renderQueue = (0,external_wp_priorityQueue_namespaceObject.createQueue)();
+/** @typedef {import('../../types').StoreDescriptor} StoreDescriptor */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Custom react hook for retrieving props from registered selectors.
  *
  * In general, this custom React hook follows the
  * [rules of hooks](https://reactjs.org/docs/hooks-rules.html).
  *
+<<<<<<< HEAD
  * @template {MapSelect | StoreDescriptor<any>} T
  * @param {T}         mapSelect Function called on every state change. The returned value is
  *                              exposed to the component implementing this hook. The function
@@ -3894,15 +4666,38 @@ function useMappingSelect(suspense, mapSelect, deps) {
  *                              callbacks, not for data needed to create the element tree.
  * @param {unknown[]} deps      If provided, this memoizes the mapSelect so the same `mapSelect` is
  *                              invoked on every state change unless the dependencies change.
+=======
+ * @param {Function|StoreDescriptor|string} mapSelect Function called on every state change. The
+ *                                                    returned value is exposed to the component
+ *                                                    implementing this hook. The function receives
+ *                                                    the `registry.select` method on the first
+ *                                                    argument and the `registry` on the second
+ *                                                    argument.
+ *                                                    When a store key is passed, all selectors for
+ *                                                    the store will be returned. This is only meant
+ *                                                    for usage of these selectors in event
+ *                                                    callbacks, not for data needed to create the
+ *                                                    element tree.
+ * @param {Array}                           deps      If provided, this memoizes the mapSelect so the
+ *                                                    same `mapSelect` is invoked on every state
+ *                                                    change unless the dependencies change.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @example
  * ```js
  * import { useSelect } from '@wordpress/data';
+<<<<<<< HEAD
  * import { store as myCustomStore } from 'my-custom-store';
  *
  * function HammerPriceDisplay( { currency } ) {
  *   const price = useSelect( ( select ) => {
  *     return select( myCustomStore ).getPrice( 'hammer', currency );
+=======
+ *
+ * function HammerPriceDisplay( { currency } ) {
+ *   const price = useSelect( ( select ) => {
+ *     return select( 'my-shop' ).getPrice( 'hammer', currency )
+>>>>>>> fb785cbb (Initial commit)
  *   }, [ currency ] );
  *   return new Intl.NumberFormat( 'en-US', {
  *     style: 'currency',
@@ -3929,10 +4724,16 @@ function useMappingSelect(suspense, mapSelect, deps) {
  *
  * ```js
  * import { useSelect } from '@wordpress/data';
+<<<<<<< HEAD
  * import { store as myCustomStore } from 'my-custom-store';
  *
  * function Paste( { children } ) {
  *   const { getSettings } = useSelect( myCustomStore );
+=======
+ *
+ * function Paste( { children } ) {
+ *   const { getSettings } = useSelect( 'my-shop' );
+>>>>>>> fb785cbb (Initial commit)
  *   function onPaste() {
  *     // Do something with the settings.
  *     const settings = getSettings();
@@ -3940,6 +4741,7 @@ function useMappingSelect(suspense, mapSelect, deps) {
  *   return <div onPaste={ onPaste }>{ children }</div>;
  * }
  * ```
+<<<<<<< HEAD
  * @return {UseSelectReturn<T>} A custom react hook.
  */
 
@@ -3981,6 +4783,140 @@ function useSelect(mapSelect, deps) {
 
 function useSuspenseSelect(mapSelect, deps) {
   return useMappingSelect(true, mapSelect, deps);
+=======
+ *
+ * @return {Function}  A custom react hook.
+ */
+
+function useSelect(mapSelect, deps) {
+  const hasMappingFunction = 'function' === typeof mapSelect; // If we're recalling a store by its name or by
+  // its descriptor then we won't be caching the
+  // calls to `mapSelect` because we won't be calling it.
+
+  if (!hasMappingFunction) {
+    deps = [];
+  } // Because of the "rule of hooks" we have to call `useCallback`
+  // on every invocation whether or not we have a real function
+  // for `mapSelect`. we'll create this intermediate variable to
+  // fulfill that need and then reference it with our "real"
+  // `_mapSelect` if we can.
+
+
+  const callbackMapper = (0,external_wp_element_namespaceObject.useCallback)(hasMappingFunction ? mapSelect : noop, deps);
+
+  const _mapSelect = hasMappingFunction ? callbackMapper : null;
+
+  const registry = useRegistry();
+  const isAsync = useAsyncMode(); // React can sometimes clear the `useMemo` cache.
+  // We use the cache-stable `useMemoOne` to avoid
+  // losing queues.
+
+  const queueContext = useMemoOne(() => ({
+    queue: true
+  }), [registry]);
+  const [, forceRender] = (0,external_wp_element_namespaceObject.useReducer)(s => s + 1, 0);
+  const latestMapSelect = (0,external_wp_element_namespaceObject.useRef)();
+  const latestIsAsync = (0,external_wp_element_namespaceObject.useRef)(isAsync);
+  const latestMapOutput = (0,external_wp_element_namespaceObject.useRef)();
+  const latestMapOutputError = (0,external_wp_element_namespaceObject.useRef)();
+  const isMountedAndNotUnsubscribing = (0,external_wp_element_namespaceObject.useRef)(); // Keep track of the stores being selected in the _mapSelect function,
+  // and only subscribe to those stores later.
+
+  const listeningStores = (0,external_wp_element_namespaceObject.useRef)([]);
+  const wrapSelect = (0,external_wp_element_namespaceObject.useCallback)(callback => registry.__unstableMarkListeningStores(() => callback(registry.select, registry), listeningStores), [registry]); // Generate a "flag" for used in the effect dependency array.
+  // It's different than just using `mapSelect` since deps could be undefined,
+  // in that case, we would still want to memoize it.
+
+  const depsChangedFlag = (0,external_wp_element_namespaceObject.useMemo)(() => ({}), deps || []);
+  let mapOutput;
+
+  if (_mapSelect) {
+    mapOutput = latestMapOutput.current;
+    const hasReplacedMapSelect = latestMapSelect.current !== _mapSelect;
+    const lastMapSelectFailed = !!latestMapOutputError.current;
+
+    if (hasReplacedMapSelect || lastMapSelectFailed) {
+      try {
+        mapOutput = wrapSelect(_mapSelect);
+      } catch (error) {
+        let errorMessage = `An error occurred while running 'mapSelect': ${error.message}`;
+
+        if (latestMapOutputError.current) {
+          errorMessage += `\nThe error may be correlated with this previous error:\n`;
+          errorMessage += `${latestMapOutputError.current.stack}\n\n`;
+          errorMessage += 'Original stack trace:';
+        } // eslint-disable-next-line no-console
+
+
+        console.error(errorMessage);
+      }
+    }
+  }
+
+  (0,external_wp_compose_namespaceObject.useIsomorphicLayoutEffect)(() => {
+    if (!hasMappingFunction) {
+      return;
+    }
+
+    latestMapSelect.current = _mapSelect;
+    latestMapOutput.current = mapOutput;
+    latestMapOutputError.current = undefined;
+    isMountedAndNotUnsubscribing.current = true; // This has to run after the other ref updates
+    // to avoid using stale values in the flushed
+    // callbacks or potentially overwriting a
+    // changed `latestMapOutput.current`.
+
+    if (latestIsAsync.current !== isAsync) {
+      latestIsAsync.current = isAsync;
+      renderQueue.flush(queueContext);
+    }
+  });
+  (0,external_wp_compose_namespaceObject.useIsomorphicLayoutEffect)(() => {
+    if (!hasMappingFunction) {
+      return;
+    }
+
+    const onStoreChange = () => {
+      if (isMountedAndNotUnsubscribing.current) {
+        try {
+          const newMapOutput = wrapSelect(latestMapSelect.current);
+
+          if (external_wp_isShallowEqual_default()(latestMapOutput.current, newMapOutput)) {
+            return;
+          }
+
+          latestMapOutput.current = newMapOutput;
+        } catch (error) {
+          latestMapOutputError.current = error;
+        }
+
+        forceRender();
+      }
+    };
+
+    const onChange = () => {
+      if (latestIsAsync.current) {
+        renderQueue.add(queueContext, onStoreChange);
+      } else {
+        onStoreChange();
+      }
+    }; // Catch any possible state changes during mount before the subscription
+    // could be set.
+
+
+    onChange();
+    const unsubscribers = listeningStores.current.map(storeName => registry.__unstableSubscribeStore(storeName, onChange));
+    return () => {
+      isMountedAndNotUnsubscribing.current = false; // The return value of the subscribe function could be undefined if the store is a custom generic store.
+
+      unsubscribers.forEach(unsubscribe => unsubscribe === null || unsubscribe === void 0 ? void 0 : unsubscribe());
+      renderQueue.flush(queueContext);
+    }; // If you're tempted to eliminate the spread dependencies below don't do it!
+    // We're passing these in from the calling function and want to make sure we're
+    // examining every individual value inside the `deps` array.
+  }, [registry, wrapSelect, hasMappingFunction, depsChangedFlag]);
+  return hasMappingFunction ? mapOutput : registry.select(mapSelect);
+>>>>>>> fb785cbb (Initial commit)
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/components/with-select/index.js
@@ -4007,7 +4943,10 @@ function useSuspenseSelect(mapSelect, deps) {
  * @example
  * ```js
  * import { withSelect } from '@wordpress/data';
+<<<<<<< HEAD
  * import { store as myCustomStore } from 'my-custom-store';
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * function PriceDisplay( { price, currency } ) {
  * 	return new Intl.NumberFormat( 'en-US', {
@@ -4017,7 +4956,11 @@ function useSuspenseSelect(mapSelect, deps) {
  * }
  *
  * const HammerPriceDisplay = withSelect( ( select, ownProps ) => {
+<<<<<<< HEAD
  * 	const { getPrice } = select( myCustomStore );
+=======
+ * 	const { getPrice } = select( 'my-shop' );
+>>>>>>> fb785cbb (Initial commit)
  * 	const { currency } = ownProps;
  *
  * 	return {
@@ -4131,10 +5074,16 @@ const useDispatchWithMap = (dispatchMap, deps) => {
  * }
  *
  * import { withDispatch } from '@wordpress/data';
+<<<<<<< HEAD
  * import { store as myCustomStore } from 'my-custom-store';
  *
  * const SaleButton = withDispatch( ( dispatch, ownProps ) => {
  *     const { startSale } = dispatch( myCustomStore );
+=======
+ *
+ * const SaleButton = withDispatch( ( dispatch, ownProps ) => {
+ *     const { startSale } = dispatch( 'my-shop' );
+>>>>>>> fb785cbb (Initial commit)
  *     const { discountPercent } = ownProps;
  *
  *     return {
@@ -4169,12 +5118,20 @@ const useDispatchWithMap = (dispatchMap, deps) => {
  * }
  *
  * import { withDispatch } from '@wordpress/data';
+<<<<<<< HEAD
  * import { store as myCustomStore } from 'my-custom-store';
  *
  * const SaleButton = withDispatch( ( dispatch, ownProps, { select } ) => {
  *    // Stock number changes frequently.
  *    const { getStockNumber } = select( myCustomStore );
  *    const { startSale } = dispatch( myCustomStore );
+=======
+ *
+ * const SaleButton = withDispatch( ( dispatch, ownProps, { select } ) => {
+ *    // Stock number changes frequently.
+ *    const { getStockNumber } = select( 'my-shop' );
+ *    const { startSale } = dispatch( 'my-shop' );
+>>>>>>> fb785cbb (Initial commit)
  *    return {
  *        onClick() {
  *            const discountPercent = getStockNumber() > 50 ? 10 : 20;
@@ -4236,6 +5193,7 @@ const withRegistry = (0,external_wp_compose_namespaceObject.createHigherOrderCom
  * Internal dependencies
  */
 
+<<<<<<< HEAD
 /**
  * @typedef {import('../../types').StoreDescriptor<StoreConfig>} StoreDescriptor
  * @template StoreConfig
@@ -4245,6 +5203,9 @@ const withRegistry = (0,external_wp_compose_namespaceObject.createHigherOrderCom
  * @typedef {import('../../types').UseDispatchReturn<StoreNameOrDescriptor>} UseDispatchReturn
  * @template StoreNameOrDescriptor
  */
+=======
+/** @typedef {import('../../types').StoreDescriptor} StoreDescriptor */
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * A custom react hook returning the current registry dispatch actions creators.
@@ -4252,12 +5213,20 @@ const withRegistry = (0,external_wp_compose_namespaceObject.createHigherOrderCom
  * Note: The component using this hook must be within the context of a
  * RegistryProvider.
  *
+<<<<<<< HEAD
  * @template {undefined | string | StoreDescriptor<any>} [StoreNameOrDescriptor=undefined]
  * @param {StoreNameOrDescriptor} [storeNameOrDescriptor] Optionally provide the name of the
  *                                                        store or its descriptor from which to
  *                                                        retrieve action creators. If not
  *                                                        provided, the registry.dispatch
  *                                                        function is returned instead.
+=======
+ * @param {string|StoreDescriptor} [storeNameOrDescriptor] Optionally provide the name of the
+ *                                                         store or its descriptor from which to
+ *                                                         retrieve action creators. If not
+ *                                                         provided, the registry.dispatch
+ *                                                         function is returned instead.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @example
  * This illustrates a pattern where you may need to retrieve dynamic data from
@@ -4267,7 +5236,10 @@ const withRegistry = (0,external_wp_compose_namespaceObject.createHigherOrderCom
  * ```jsx
  * import { useDispatch, useSelect } from '@wordpress/data';
  * import { useCallback } from '@wordpress/element';
+<<<<<<< HEAD
  * import { store as myCustomStore } from 'my-custom-store';
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * function Button( { onClick, children } ) {
  *   return <button type="button" onClick={ onClick }>{ children }</button>
@@ -4275,10 +5247,17 @@ const withRegistry = (0,external_wp_compose_namespaceObject.createHigherOrderCom
  *
  * const SaleButton = ( { children } ) => {
  *   const { stockNumber } = useSelect(
+<<<<<<< HEAD
  *     ( select ) => select( myCustomStore ).getStockNumber(),
  *     []
  *   );
  *   const { startSale } = useDispatch( myCustomStore );
+=======
+ *     ( select ) => select( 'my-shop' ).getStockNumber(),
+ *     []
+ *   );
+ *   const { startSale } = useDispatch( 'my-shop' );
+>>>>>>> fb785cbb (Initial commit)
  *   const onClick = useCallback( () => {
  *     const discountPercent = stockNumber > 50 ? 10: 20;
  *     startSale( discountPercent );
@@ -4290,7 +5269,11 @@ const withRegistry = (0,external_wp_compose_namespaceObject.createHigherOrderCom
  * //
  * // <SaleButton>Start Sale!</SaleButton>
  * ```
+<<<<<<< HEAD
  * @return {UseDispatchReturn<StoreNameOrDescriptor>} A custom react hook.
+=======
+ * @return {Function}  A custom react hook.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const useDispatch = storeNameOrDescriptor => {
@@ -4339,7 +5322,10 @@ const useDispatch = storeNameOrDescriptor => {
  * The combineReducers helper function turns an object whose values are different
  * reducing functions into a single reducing function you can pass to registerReducer.
  *
+<<<<<<< HEAD
  * @type  {import('./types').combineReducers}
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @param {Object} reducers An object whose values correspond to different reducing
  *                          functions that need to be combined into one.
  *
@@ -4375,6 +5361,7 @@ const useDispatch = storeNameOrDescriptor => {
  *                    object, and constructs a state object with the same shape.
  */
 
+<<<<<<< HEAD
 const build_module_combineReducers = (turbo_combine_reducers_default());
 /**
  * Given a store descriptor, returns an object of the store's selectors.
@@ -4384,13 +5371,28 @@ const build_module_combineReducers = (turbo_combine_reducers_default());
  * @param {StoreDescriptor|string} storeNameOrDescriptor The store descriptor. The legacy calling
  *                                                       convention of passing the store name is
  *                                                       also supported.
+=======
+
+/**
+ * Given the name or descriptor of a registered store, returns an object of the store's selectors.
+ * The selector functions are been pre-bound to pass the current state automatically.
+ * As a consumer, you need only pass arguments of the selector, if applicable.
+ *
+ * @param {string|StoreDescriptor} storeNameOrDescriptor Unique namespace identifier for the store
+ *                                                       or the store descriptor.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @example
  * ```js
  * import { select } from '@wordpress/data';
+<<<<<<< HEAD
  * import { store as myCustomStore } from 'my-custom-store';
  *
  * select( myCustomStore ).getPrice( 'hammer' );
+=======
+ *
+ * select( 'my-shop' ).getPrice( 'hammer' );
+>>>>>>> fb785cbb (Initial commit)
  * ```
  *
  * @return {Object} Object containing the store's selectors.
@@ -4398,6 +5400,7 @@ const build_module_combineReducers = (turbo_combine_reducers_default());
 
 const build_module_select = default_registry.select;
 /**
+<<<<<<< HEAD
  * Given a store descriptor, returns an object containing the store's selectors pre-bound to state
  * so that you only need to supply additional arguments, and modified so that they return promises
  * that resolve to their eventual values, after any resolvers have ran.
@@ -4405,13 +5408,27 @@ const build_module_select = default_registry.select;
  * @param {StoreDescriptor|string} storeNameOrDescriptor The store descriptor. The legacy calling
  *                                                       convention of passing the store name is
  *                                                       also supported.
+=======
+ * Given the name of a registered store, returns an object containing the store's
+ * selectors pre-bound to state so that you only need to supply additional arguments,
+ * and modified so that they return promises that resolve to their eventual values,
+ * after any resolvers have ran.
+ *
+ * @param {string|StoreDescriptor} storeNameOrDescriptor Unique namespace identifier for the store
+ *                                                       or the store descriptor.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @example
  * ```js
  * import { resolveSelect } from '@wordpress/data';
+<<<<<<< HEAD
  * import { store as myCustomStore } from 'my-custom-store';
  *
  * resolveSelect( myCustomStore ).getPrice( 'hammer' ).then(console.log)
+=======
+ *
+ * resolveSelect( 'my-shop' ).getPrice( 'hammer' ).then(console.log)
+>>>>>>> fb785cbb (Initial commit)
  * ```
  *
  * @return {Object} Object containing the store's promise-wrapped selectors.
@@ -4419,6 +5436,7 @@ const build_module_select = default_registry.select;
 
 const build_module_resolveSelect = default_registry.resolveSelect;
 /**
+<<<<<<< HEAD
  * Given a store descriptor, returns an object containing the store's selectors pre-bound to state
  * so that you only need to supply additional arguments, and modified so that they throw promises
  * in case the selector is not resolved yet.
@@ -4433,21 +5451,34 @@ const build_module_resolveSelect = default_registry.resolveSelect;
 const suspendSelect = default_registry.suspendSelect;
 /**
  * Given a store descriptor, returns an object of the store's action creators.
+=======
+ * Given the name of a registered store, returns an object of the store's action creators.
+>>>>>>> fb785cbb (Initial commit)
  * Calling an action creator will cause it to be dispatched, updating the state value accordingly.
  *
  * Note: Action creators returned by the dispatch will return a promise when
  * they are called.
  *
+<<<<<<< HEAD
  * @param {StoreDescriptor|string} storeNameOrDescriptor The store descriptor. The legacy calling
  *                                                       convention of passing the store name is
  *                                                       also supported.
+=======
+ * @param {string|StoreDescriptor} storeNameOrDescriptor Unique namespace identifier for the store
+ *                                                       or the store descriptor.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @example
  * ```js
  * import { dispatch } from '@wordpress/data';
+<<<<<<< HEAD
  * import { store as myCustomStore } from 'my-custom-store';
  *
  * dispatch( myCustomStore ).setPrice( 'hammer', 9.75 );
+=======
+ *
+ * dispatch( 'my-shop' ).setPrice( 'hammer', 9.75 );
+>>>>>>> fb785cbb (Initial commit)
  * ```
  * @return {Object} Object containing the action creators.
  */
@@ -4455,6 +5486,7 @@ const suspendSelect = default_registry.suspendSelect;
 const build_module_dispatch = default_registry.dispatch;
 /**
  * Given a listener function, the function will be called any time the state value
+<<<<<<< HEAD
  * of one of the registered stores has changed. If you specify the optional
  * `storeNameOrDescriptor` parameter, the listener function will be called only
  * on updates on that one specific registered store.
@@ -4463,6 +5495,12 @@ const build_module_dispatch = default_registry.dispatch;
  *
  * @param {Function}                listener              Callback function.
  * @param {string|StoreDescriptor?} storeNameOrDescriptor Optional store name.
+=======
+ * of one of the registered stores has changed. This function returns a `unsubscribe`
+ * function used to stop the subscription.
+ *
+ * @param {Function} listener Callback function.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @example
  * ```js

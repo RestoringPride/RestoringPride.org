@@ -27,7 +27,11 @@ class Postname_Permalink_Runner implements Runner_Interface {
 	 * @return void
 	 */
 	public function run() {
+<<<<<<< HEAD
 		$this->permalinks_contain_postname = ( \strpos( \get_option( 'permalink_structure' ), '%postname%' ) !== false );
+=======
+		$this->permalinks_contain_postname = ( strpos( get_option( 'permalink_structure' ), '%postname%' ) !== false );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**

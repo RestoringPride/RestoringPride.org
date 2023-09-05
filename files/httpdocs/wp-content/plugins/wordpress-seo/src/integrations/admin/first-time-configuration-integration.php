@@ -2,6 +2,7 @@
 
 namespace Yoast\WP\SEO\Integrations\Admin;
 
+<<<<<<< HEAD
 use WP_User;
 use WPSEO_Addon_Manager;
 use WPSEO_Admin_Asset_Manager;
@@ -14,6 +15,19 @@ use Yoast\WP\SEO\Helpers\Options_Helper;
 use Yoast\WP\SEO\Helpers\Product_Helper;
 use Yoast\WP\SEO\Helpers\Social_Profiles_Helper;
 use Yoast\WP\SEO\Integrations\Integration_Interface;
+=======
+use WPSEO_Addon_Manager;
+use WPSEO_Admin_Asset_Manager;
+use WPSEO_Shortlinker;
+use WPSEO_Utils;
+use WPSEO_Option_Tab;
+
+use Yoast\WP\SEO\Conditionals\Admin_Conditional;
+use Yoast\WP\SEO\Helpers\Options_Helper;
+use Yoast\WP\SEO\Helpers\Product_Helper;
+use Yoast\WP\SEO\Integrations\Integration_Interface;
+use Yoast\WP\SEO\Integrations\Admin\Social_Profiles_Helper;
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Routes\Indexing_Route;
 
 /**
@@ -64,6 +78,7 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 	private $product_helper;
 
 	/**
+<<<<<<< HEAD
 	 * The meta tags context helper.
 	 *
 	 * @var Meta_Tags_Context
@@ -71,6 +86,8 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 	private $meta_tags_context;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * {@inheritDoc}
 	 */
 	public static function get_conditionals() {
@@ -86,7 +103,10 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 	 * @param Options_Helper            $options_helper         The options helper.
 	 * @param Social_Profiles_Helper    $social_profiles_helper The social profile helper.
 	 * @param Product_Helper            $product_helper         The product helper.
+<<<<<<< HEAD
 	 * @param Meta_Tags_Context         $meta_tags_context      The meta tags context helper.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function __construct(
 		WPSEO_Admin_Asset_Manager $admin_asset_manager,
@@ -94,8 +114,12 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 		WPSEO_Shortlinker $shortlinker,
 		Options_Helper $options_helper,
 		Social_Profiles_Helper $social_profiles_helper,
+<<<<<<< HEAD
 		Product_Helper $product_helper,
 		Meta_Tags_Context $meta_tags_context
+=======
+		Product_Helper $product_helper
+>>>>>>> fb785cbb (Initial commit)
 	) {
 		$this->admin_asset_manager    = $admin_asset_manager;
 		$this->addon_manager          = $addon_manager;
@@ -103,7 +127,10 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 		$this->options_helper         = $options_helper;
 		$this->social_profiles_helper = $social_profiles_helper;
 		$this->product_helper         = $product_helper;
+<<<<<<< HEAD
 		$this->meta_tags_context      = $meta_tags_context;
+=======
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -123,7 +150,11 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 		$dashboard_tabs->add_tab(
 			new WPSEO_Option_Tab(
 				'first-time-configuration',
+<<<<<<< HEAD
 				\__( 'First-time configuration', 'wordpress-seo' ),
+=======
+				__( 'First-time configuration', 'wordpress-seo' ),
+>>>>>>> fb785cbb (Initial commit)
 				[ 'save_button' => false ]
 			)
 		);
@@ -193,17 +224,24 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 					"companyOrPerson": "%s",
 					"companyOrPersonLabel": "%s",
 					"companyName": "%s",
+<<<<<<< HEAD
 					"fallbackCompanyName": "%s",
 					"websiteName": "%s",
 					"fallbackWebsiteName": "%s",
 					"companyLogo": "%s",
 					"companyLogoFallback": "%s",
+=======
+					"companyLogo": "%s",
+>>>>>>> fb785cbb (Initial commit)
 					"companyLogoId": %d,
 					"finishedSteps": %s,
 					"personId": %d,
 					"personName": "%s",
 					"personLogo": "%s",
+<<<<<<< HEAD
 					"personLogoFallback": "%s",
+=======
+>>>>>>> fb785cbb (Initial commit)
 					"personLogoId": %d,
 					"siteTagline": "%s",
 					"socialProfiles": {
@@ -228,21 +266,32 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 				$this->is_company_or_person(),
 				$selected_option_label,
 				$this->get_company_name(),
+<<<<<<< HEAD
 				$this->get_fallback_company_name( $this->get_company_name() ),
 				$this->get_website_name(),
 				$this->get_fallback_website_name( $this->get_website_name() ),
 				$this->get_company_logo(),
 				$this->get_company_fallback_logo( $this->get_company_logo() ),
+=======
+				$this->get_company_logo(),
+>>>>>>> fb785cbb (Initial commit)
 				$this->get_company_logo_id(),
 				WPSEO_Utils::format_json_encode( $finished_steps ),
 				$person_id,
 				$this->get_person_name(),
 				$this->get_person_logo(),
+<<<<<<< HEAD
 				$this->get_person_fallback_logo( $this->get_person_logo() ),
 				$this->get_person_logo_id(),
 				$this->get_site_tagline(),
 				$social_profiles['facebook_site'],
 				$social_profiles['twitter_site'],
+=======
+				$this->get_person_logo_id(),
+				$this->get_site_tagline(),
+				$social_profiles['facebook_url'],
+				$social_profiles['twitter_username'],
+>>>>>>> fb785cbb (Initial commit)
 				WPSEO_Utils::format_json_encode( $social_profiles['other_social_urls'] ),
 				$this->product_helper->is_premium(),
 				$this->has_tracking_enabled(),
@@ -313,6 +362,7 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Gets the fallback company name from the option in the database if there is no company name.
 	 *
 	 * @param string $company_name The given company name by the user, default empty string.
@@ -352,6 +402,8 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Gets the company logo from the option in the database.
 	 *
 	 * @return string The company logo.
@@ -370,6 +422,7 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Gets the company logo url from the option in the database.
 	 *
 	 * @param string $company_logo The given company logo by the user, default empty.
@@ -386,6 +439,8 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Gets the person id from the option in the database.
 	 *
 	 * @return int|null The person id, null if empty.
@@ -401,10 +456,16 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 	 */
 	private function get_person_name() {
 		$user = \get_userdata( $this->get_person_id() );
+<<<<<<< HEAD
 		if ( $user instanceof WP_User ) {
 			return $user->get( 'display_name' );
 		}
 
+=======
+		if ( $user instanceof \WP_User ) {
+			return $user->get( 'display_name' );
+		}
+>>>>>>> fb785cbb (Initial commit)
 		return '';
 	}
 
@@ -418,6 +479,7 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Gets the person logo url from the option in the database.
 	 *
 	 * @param string $person_logo The given person logo by the user, default empty.
@@ -434,6 +496,8 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Gets the person logo id from the option in the database.
 	 *
 	 * @return string The person logo id.
@@ -457,7 +521,15 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 	 * @return string[] The social profiles.
 	 */
 	private function get_social_profiles() {
+<<<<<<< HEAD
 		return $this->social_profiles_helper->get_organization_social_profiles();
+=======
+		return [
+			'facebook_url'      => $this->options_helper->get( 'facebook_site', '' ),
+			'twitter_username'  => $this->options_helper->get( 'twitter_site', '' ),
+			'other_social_urls' => $this->options_helper->get( 'other_social_urls', [] ),
+		];
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**

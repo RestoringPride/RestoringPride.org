@@ -28,8 +28,12 @@ class WPSEO_Expose_Shortlinks implements WPSEO_WordPress_Integration {
 		'shortlinks.nofollow_sponsored'                             => 'https://yoa.st/nofollow-sponsored',
 		'shortlinks.snippet_preview_info'                           => 'https://yoa.st/snippet-preview',
 		'shortlinks.cornerstone_content_info'                       => 'https://yoa.st/1i9',
+<<<<<<< HEAD
 		'shortlinks.upsell.social_preview.facebook'                 => 'https://yoa.st/social-preview-facebook',
 		'shortlinks.upsell.social_preview.twitter'                  => 'https://yoa.st/social-preview-twitter',
+=======
+		'shortlinks.upsell.social_previews'                         => 'https://yoa.st/social-preview-cta',
+>>>>>>> fb785cbb (Initial commit)
 		'shortlinks.upsell.sidebar.news'                            => 'https://yoa.st/get-news-sidebar',
 		'shortlinks.upsell.sidebar.focus_keyword_synonyms_link'     => 'https://yoa.st/textlink-synonyms-popup-sidebar',
 		'shortlinks.upsell.sidebar.focus_keyword_synonyms_button'   => 'https://yoa.st/keyword-synonyms-popup-sidebar',
@@ -53,7 +57,10 @@ class WPSEO_Expose_Shortlinks implements WPSEO_WordPress_Integration {
 		'shortlinks.upsell.metabox.word_complexity'                 => 'https://yoa.st/word-complexity-metabox',
 		'shortlinks.upsell.gsc.create_redirect_button'              => 'https://yoa.st/redirects',
 		'shortlinks.readability_analysis_info'                      => 'https://yoa.st/readability-analysis',
+<<<<<<< HEAD
 		'shortlinks.inclusive_language_analysis_info'               => 'https://yoa.st/inclusive-language-analysis',
+=======
+>>>>>>> fb785cbb (Initial commit)
 		'shortlinks.activate_premium_info'                          => 'https://yoa.st/activate-subscription',
 		'shortlinks.upsell.sidebar.morphology_upsell_metabox'       => 'https://yoa.st/morphology-upsell-metabox',
 		'shortlinks.upsell.sidebar.morphology_upsell_sidebar'       => 'https://yoa.st/morphology-upsell-sidebar',
@@ -72,11 +79,14 @@ class WPSEO_Expose_Shortlinks implements WPSEO_WordPress_Integration {
 		'shortlinks-insights-upsell-metabox-prominent_words'        => 'https://yoa.st/prominent-words-upsell-metabox',
 		'shortlinks-insights-upsell-elementor-prominent_words'      => 'https://yoa.st/prominent-words-upsell-elementor',
 		'shortlinks-insights-word_count'                            => 'https://yoa.st/word-count',
+<<<<<<< HEAD
 		'shortlinks-insights-upsell-sidebar-text_formality'         => 'https://yoa.st/formality-upsell-sidebar',
 		'shortlinks-insights-upsell-metabox-text_formality'         => 'https://yoa.st/formality-upsell-metabox',
 		'shortlinks-insights-upsell-elementor-text_formality'       => 'https://yoa.st/formality-upsell-elementor',
 		'shortlinks-insights-text_formality_info_free'              => 'https://yoa.st/formality-free',
 		'shortlinks-insights-text_formality_info_premium'           => 'https://yoa.st/formality',
+=======
+>>>>>>> fb785cbb (Initial commit)
 	];
 
 	/**

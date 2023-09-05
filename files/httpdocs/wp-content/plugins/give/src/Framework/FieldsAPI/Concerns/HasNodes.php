@@ -8,6 +8,7 @@ use Give\Framework\FieldsAPI\Field;
 
 trait HasNodes
 {
+<<<<<<< HEAD
     /**
      * @var Node[]
      */
@@ -17,6 +18,16 @@ trait HasNodes
      * @inheritdoc
      */
     public function getNodeIndexByName(string $name)
+=======
+
+    /** @var Node[] */
+    protected $nodes = [];
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getNodeIndexByName($name)
+>>>>>>> fb785cbb (Initial commit)
     {
         foreach ($this->nodes as $index => $node) {
             if ($node->getName() === $name) {
@@ -24,6 +35,7 @@ trait HasNodes
             }
         }
 
+<<<<<<< HEAD
         return null;
     }
 
@@ -33,6 +45,15 @@ trait HasNodes
      * @return Node|null
      */
     public function getNodeByName(string $name)
+=======
+        return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getNodeByName($name)
+>>>>>>> fb785cbb (Initial commit)
     {
         foreach ($this->nodes as $node) {
             if ($node->getName() === $name) {
@@ -40,7 +61,11 @@ trait HasNodes
             }
             if ($node instanceof Collection) {
                 $nestedNode = $node->getNodeByName($name);
+<<<<<<< HEAD
                 if ($nestedNode !== null) {
+=======
+                if ( $nestedNode !== null ) {
+>>>>>>> fb785cbb (Initial commit)
                     return $nestedNode;
                 }
             }
@@ -50,19 +75,31 @@ trait HasNodes
     }
 
     /**
+<<<<<<< HEAD
      * @inheritdoc
      */
     public function all(): array
+=======
+     * {@inheritdoc}
+     */
+    public function all()
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->nodes;
     }
 
     /**
+<<<<<<< HEAD
      * @inheritdoc
      *
      * @return Field[]
      */
     public function getFields(): array
+=======
+     * {@inheritdoc}
+     */
+    public function getFields()
+>>>>>>> fb785cbb (Initial commit)
     {
         $fields = [];
 
@@ -70,11 +107,15 @@ trait HasNodes
             if ($node instanceof Field) {
                 $fields[] = $node;
             } elseif ($node instanceof Collection) {
+<<<<<<< HEAD
                 $nestedFields = $node->getFields();
 
                 foreach($nestedFields as $field) {
                     $fields[] = $field;
                 }
+=======
+                $fields = array_merge($fields, $node->getFields());
+>>>>>>> fb785cbb (Initial commit)
             }
         }
 
@@ -82,9 +123,15 @@ trait HasNodes
     }
 
     /**
+<<<<<<< HEAD
      * @inheritdoc
      */
     public function count(): int
+=======
+     * {@inheritdoc}
+     */
+    public function count()
+>>>>>>> fb785cbb (Initial commit)
     {
         return count($this->nodes);
     }

@@ -24,6 +24,7 @@
 		"linkLabel": {
 			"type": "boolean",
 			"default": false
+<<<<<<< HEAD
 		},
 		"arrow": {
 			"type": "string",
@@ -46,10 +47,28 @@
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
+=======
+		}
+	},
+	"supports": {
+		"reusable": false,
+		"html": false,
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
 		}
+<<<<<<< HEAD
 	},
 	"style": "wp-block-post-navigation-link"
+=======
+	}
+>>>>>>> fb785cbb (Initial commit)
 }

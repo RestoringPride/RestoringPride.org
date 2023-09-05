@@ -2,7 +2,10 @@
 
 namespace Give\ServiceProviders;
 
+<<<<<<< HEAD
 use _PHPStan_9a6ded56a\Nette\Neon\Exception;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Closure;
 use Give\Route\Form;
 
@@ -45,11 +48,19 @@ class LegacyServiceProvider implements ServiceProvider
         /**
          * Load libraries.
          */
+<<<<<<< HEAD
         if (!class_exists('WP_Async_Request')) {
             include_once GIVE_PLUGIN_DIR . 'includes/libraries/wp-async-request.php';
         }
 
         if (!class_exists('WP_Background_Process')) {
+=======
+        if ( ! class_exists('WP_Async_Request')) {
+            include_once GIVE_PLUGIN_DIR . 'includes/libraries/wp-async-request.php';
+        }
+
+        if ( ! class_exists('WP_Background_Process')) {
+>>>>>>> fb785cbb (Initial commit)
             include_once GIVE_PLUGIN_DIR . 'includes/libraries/wp-background-process.php';
         }
 
@@ -168,7 +179,11 @@ class LegacyServiceProvider implements ServiceProvider
 
         // This conditional check will add backward compatibility to older Stripe versions (i.e. < 2.2.0) when used with Give 2.5.0.
         if (
+<<<<<<< HEAD
             !defined('GIVE_STRIPE_VERSION') ||
+=======
+            ! defined('GIVE_STRIPE_VERSION') ||
+>>>>>>> fb785cbb (Initial commit)
             (
                 defined('GIVE_STRIPE_VERSION') &&
                 version_compare(GIVE_STRIPE_VERSION, '2.2.0', '>=')
@@ -225,10 +240,17 @@ class LegacyServiceProvider implements ServiceProvider
      *
      * @since 2.8.0
      *
+<<<<<<< HEAD
      * @param string         $alias
      * @param string|Closure $class
      * @param string         $includesPath
      * @param bool           $singleton
+=======
+     * @param string $alias
+     * @param string|Closure $class
+     * @param string $includesPath
+     * @param bool $singleton
+>>>>>>> fb785cbb (Initial commit)
      */
     private function bindInstance($alias, $class, $includesPath, $singleton = false)
     {
@@ -251,11 +273,15 @@ class LegacyServiceProvider implements ServiceProvider
      * @param string $type admin, ajax, cron or frontend.
      *
      * @return bool
+<<<<<<< HEAD
      * @throws UnknownRequestTypeException
+=======
+>>>>>>> fb785cbb (Initial commit)
      */
     private function is_request($type)
     {
         switch ($type) {
+<<<<<<< HEAD
             case RequestType::ADMIN:
                 return is_admin();
             case RequestType::AJAX:
@@ -268,6 +294,18 @@ class LegacyServiceProvider implements ServiceProvider
                 return defined('WP_CLI') && WP_CLI;
             default:
                 throw new UnknownRequestTypeException($type);
+=======
+            case 'admin':
+                return is_admin();
+            case 'ajax':
+                return defined('DOING_AJAX');
+            case 'cron':
+                return defined('DOING_CRON');
+            case 'frontend':
+                return ( ! is_admin() || defined('DOING_AJAX')) && ! defined('DOING_CRON') && ! defined('REST_REQUEST');
+            case 'wpcli':
+                return defined('WP_CLI') && WP_CLI;
+>>>>>>> fb785cbb (Initial commit)
         }
     }
 }

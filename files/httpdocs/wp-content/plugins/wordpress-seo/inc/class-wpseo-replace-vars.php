@@ -395,9 +395,13 @@ class WPSEO_Replace_Vars {
 	private function retrieve_excerpt() {
 		$replacement = null;
 		$locale      = \get_locale();
+<<<<<<< HEAD
 
 		// Japanese doesn't have a jp_JP variant in WP.
 		$limit = ( $locale === 'ja' ) ? 80 : 156;
+=======
+		$limit       = ( $locale === 'ja' ) ? 80 : 156;
+>>>>>>> fb785cbb (Initial commit)
 
 		// The check `post_password_required` is because excerpt must be hidden for a post with a password.
 		if ( ! empty( $this->args->ID ) && ! post_password_required( $this->args->ID ) ) {
@@ -408,7 +412,11 @@ class WPSEO_Replace_Vars {
 				$content = strip_shortcodes( $this->args->post_content );
 				$content = wp_strip_all_tags( $content );
 
+<<<<<<< HEAD
 				if ( mb_strlen( $content ) <= $limit ) {
+=======
+				if ( strlen( utf8_decode( $content ) ) <= $limit ) {
+>>>>>>> fb785cbb (Initial commit)
 					return $content;
 				}
 
@@ -416,7 +424,11 @@ class WPSEO_Replace_Vars {
 
 				// Check if the description has space and trim the auto-generated string to a word boundary.
 				if ( strrpos( $replacement, ' ' ) ) {
+<<<<<<< HEAD
 					$replacement = substr( $replacement, 0, strrpos( $replacement, ' ' ) );
+=======
+						$replacement = substr( $replacement, 0, strrpos( $replacement, ' ' ) );
+>>>>>>> fb785cbb (Initial commit)
 				}
 			}
 		}
@@ -1296,6 +1308,7 @@ class WPSEO_Replace_Vars {
 	 *
 	 * @return array List of replace vars.
 	 */
+<<<<<<< HEAD
 	public function get_replacement_variables_with_labels() {
 		self::setup_statics_once();
 
@@ -1334,6 +1347,8 @@ class WPSEO_Replace_Vars {
 	 *
 	 * @return array List of replace vars.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function get_replacement_variables_list() {
 		self::setup_statics_once();
 

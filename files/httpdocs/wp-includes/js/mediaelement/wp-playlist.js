@@ -85,10 +85,15 @@
 				if ( this.data.images && this.current.get( 'image' ) && -1 === this.current.get( 'image' ).src.indexOf( defaultImage ) ) {
 					this.playerNode.attr( 'poster', this.current.get( 'image' ).src );
 				}
+<<<<<<< HEAD
 				dimensions = this.current.get( 'dimensions' );
 				if ( dimensions && dimensions.resized ) {
 					this.playerNode.attr( dimensions.resized );
 				}
+=======
+				dimensions = this.current.get( 'dimensions' ).resized;
+				this.playerNode.attr( dimensions );
+>>>>>>> fb785cbb (Initial commit)
 			} else {
 				if ( ! this.data.images ) {
 					this.current.set( 'image', false );

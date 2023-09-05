@@ -25,6 +25,7 @@ use Yoast\WP\SEO\Repositories\Indexable_Repository;
  *
  * Class that contains all relevant data for rendering the meta tags.
  *
+<<<<<<< HEAD
  * @property string          $canonical
  * @property string          $permalink
  * @property string          $title
@@ -55,6 +56,35 @@ use Yoast\WP\SEO\Repositories\Indexable_Repository;
  * @property bool            $has_image
  * @property int             $main_image_id
  * @property string          $main_image_url
+=======
+ * @property string       $canonical
+ * @property string       $permalink
+ * @property string       $title
+ * @property string       $description
+ * @property string       $id
+ * @property string       $site_name
+ * @property string       $wordpress_site_name
+ * @property string       $site_url
+ * @property string       $company_name
+ * @property int          $company_logo_id
+ * @property array        $company_logo_meta
+ * @property int          $person_logo_id
+ * @property array        $person_logo_meta
+ * @property int          $site_user_id
+ * @property string       $site_represents
+ * @property array|false  $site_represents_reference
+ * @property string       schema_page_type
+ * @property string       $main_schema_id
+ * @property string|array $main_entity_of_page
+ * @property bool         $open_graph_enabled
+ * @property string       $open_graph_publisher
+ * @property string       $twitter_card
+ * @property string       $page_type
+ * @property bool         $has_article
+ * @property bool         $has_image
+ * @property int          $main_image_id
+ * @property string       $main_image_url
+>>>>>>> fb785cbb (Initial commit)
  */
 class Meta_Tags_Context extends Abstract_Presentation {
 
@@ -265,6 +295,7 @@ class Meta_Tags_Context extends Abstract_Presentation {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Generates the alternate site name.
 	 *
 	 * @return string The alternate site name.
@@ -274,6 +305,8 @@ class Meta_Tags_Context extends Abstract_Presentation {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Generates the site name from the WordPress options.
 	 *
 	 * @return string The site name from the WordPress options.
@@ -318,6 +351,7 @@ class Meta_Tags_Context extends Abstract_Presentation {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Generates the alternate company name.
 	 *
 	 * @return string
@@ -327,6 +361,8 @@ class Meta_Tags_Context extends Abstract_Presentation {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Generates the person logo id.
 	 *
 	 * @return int|bool The company logo id.
@@ -493,7 +529,11 @@ class Meta_Tags_Context extends Abstract_Presentation {
 	 * @return string The twitter card type.
 	 */
 	public function generate_twitter_card() {
+<<<<<<< HEAD
 		return 'summary_large_image';
+=======
+		return $this->options->get( 'twitter_card_type' );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -614,10 +654,13 @@ class Meta_Tags_Context extends Abstract_Presentation {
 			return $this->image->get_attachment_image_url( $this->main_image_id, 'full' );
 		}
 
+<<<<<<< HEAD
 		if ( ! \is_singular() ) {
 			return null;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$url = $this->image->get_post_content_image( $this->id );
 		if ( $url === '' ) {
 			return null;
@@ -629,6 +672,7 @@ class Meta_Tags_Context extends Abstract_Presentation {
 	/**
 	 * Gets the main image ID.
 	 *
+<<<<<<< HEAD
 	 * @return int|null The main image ID.
 	 */
 	public function generate_main_image_id() {
@@ -653,6 +697,16 @@ class Meta_Tags_Context extends Abstract_Presentation {
 			default:
 				return null;
 		}
+=======
+	 * @return int|false|null The main image ID.
+	 */
+	public function generate_main_image_id() {
+		if ( ! \has_post_thumbnail( $this->id ) ) {
+			return null;
+		}
+
+		return \get_post_thumbnail_id( $this->id );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -681,7 +735,11 @@ class Meta_Tags_Context extends Abstract_Presentation {
 	 *
 	 * @return false|int
 	 */
+<<<<<<< HEAD
 	public function fallback_to_site_logo() {
+=======
+	private function fallback_to_site_logo() {
+>>>>>>> fb785cbb (Initial commit)
 		$logo_id = \get_option( 'site_logo' );
 		if ( ! $logo_id ) {
 			$logo_id = \get_theme_mod( 'custom_logo', false );
@@ -690,6 +748,7 @@ class Meta_Tags_Context extends Abstract_Presentation {
 		return $logo_id;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Get the ID for a post's featured image.
 	 *
@@ -711,6 +770,30 @@ class Meta_Tags_Context extends Abstract_Presentation {
 		}
 
 		return null;
+=======
+	/* ********************* DEPRECATED METHODS ********************* */
+
+	/**
+	 * Generates whether or not breadcrumbs are enabled.
+	 *
+	 * @deprecated 15.8
+	 * @codeCoverageIgnore
+	 *
+	 * @return bool Whether or not breadcrumbs are enabled.
+	 */
+	public function generate_breadcrumbs_enabled() {
+		\_deprecated_function( __METHOD__, 'WPSEO 15.8' );
+		$breadcrumbs_enabled = \current_theme_supports( 'yoast-seo-breadcrumbs' );
+		if ( ! $breadcrumbs_enabled ) {
+			$breadcrumbs_enabled = $this->options->get( 'breadcrumbs-enable', false );
+		}
+
+		if ( ! empty( $this->blocks['yoast-seo/breadcrumbs'] ) ) {
+			$breadcrumbs_enabled = true;
+		}
+
+		return $breadcrumbs_enabled;
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 

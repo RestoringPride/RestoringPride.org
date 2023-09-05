@@ -12,7 +12,10 @@
  *
  * @since 2.0.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Role {
 	/**
 	 * Role name.

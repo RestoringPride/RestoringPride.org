@@ -56,8 +56,13 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+<<<<<<< HEAD
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/tools-export-screen/">Documentation on Export</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+=======
+	'<p>' . __( '<a href="https://wordpress.org/support/article/tools-export-screen/">Documentation on Export</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://wordpress.org/support/">Support</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 );
 
 // If the 'download' URL parameter is set, a WXR export file is baked and returned.
@@ -177,12 +182,16 @@ function export_date_options( $post_type = 'post' ) {
 <h2><?php _e( 'Choose what to export' ); ?></h2>
 <form method="get" id="export-filters">
 <fieldset>
+<<<<<<< HEAD
 <legend class="screen-reader-text">
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Content to export' );
 	?>
 </legend>
+=======
+<legend class="screen-reader-text"><?php _e( 'Content to export' ); ?></legend>
+>>>>>>> fb785cbb (Initial commit)
 <input type="hidden" name="download" value="true" />
 <p><label><input type="radio" name="content" value="all" checked="checked" aria-describedby="all-content-desc" /> <?php _e( 'All content' ); ?></label></p>
 <p class="description" id="all-content-desc"><?php _e( 'This will contain all of your posts, pages, comments, custom fields, terms, navigation menus, and custom posts.' ); ?></p>
@@ -212,12 +221,16 @@ function export_date_options( $post_type = 'post' ) {
 	</li>
 	<li>
 		<fieldset>
+<<<<<<< HEAD
 		<legend class="screen-reader-text">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Date range:' )
 			?>
 		</legend>
+=======
+		<legend class="screen-reader-text"><?php _e( 'Date range:' ); ?></legend>
+>>>>>>> fb785cbb (Initial commit)
 		<label for="post-start-date" class="label-responsive"><?php _e( 'Start date:' ); ?></label>
 		<select name="post_start_date" id="post-start-date">
 			<option value="0"><?php _e( '&mdash; Select &mdash;' ); ?></option>
@@ -264,12 +277,16 @@ function export_date_options( $post_type = 'post' ) {
 	</li>
 	<li>
 		<fieldset>
+<<<<<<< HEAD
 		<legend class="screen-reader-text">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Date range:' );
 			?>
 		</legend>
+=======
+		<legend class="screen-reader-text"><?php _e( 'Date range:' ); ?></legend>
+>>>>>>> fb785cbb (Initial commit)
 		<label for="page-start-date" class="label-responsive"><?php _e( 'Start date:' ); ?></label>
 		<select name="page_start_date" id="page-start-date">
 			<option value="0"><?php _e( '&mdash; Select &mdash;' ); ?></option>
@@ -309,12 +326,16 @@ foreach ( get_post_types(
 <ul id="attachment-filters" class="export-filters">
 	<li>
 		<fieldset>
+<<<<<<< HEAD
 		<legend class="screen-reader-text">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Date range:' );
 			?>
 		</legend>
+=======
+		<legend class="screen-reader-text"><?php _e( 'Date range:' ); ?></legend>
+>>>>>>> fb785cbb (Initial commit)
 		<label for="attachment-start-date" class="label-responsive"><?php _e( 'Start date:' ); ?></label>
 		<select name="attachment_start_date" id="attachment-start-date">
 			<option value="0"><?php _e( '&mdash; Select &mdash;' ); ?></option>

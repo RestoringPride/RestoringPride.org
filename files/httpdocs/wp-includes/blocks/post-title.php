@@ -26,12 +26,19 @@ function render_block_core_post_title( $attributes, $content, $block ) {
 		return '';
 	}
 
+<<<<<<< HEAD
 	$tag_name = 'h2';
+=======
+	$tag_name         = 'h2';
+	$align_class_name = empty( $attributes['textAlign'] ) ? '' : "has-text-align-{$attributes['textAlign']}";
+
+>>>>>>> fb785cbb (Initial commit)
 	if ( isset( $attributes['level'] ) ) {
 		$tag_name = 0 === $attributes['level'] ? 'p' : 'h' . $attributes['level'];
 	}
 
 	if ( isset( $attributes['isLink'] ) && $attributes['isLink'] ) {
+<<<<<<< HEAD
 		$rel   = ! empty( $attributes['rel'] ) ? 'rel="' . esc_attr( $attributes['rel'] ) . '"' : '';
 		$title = sprintf( '<a href="%1$s" target="%2$s" %3$s>%4$s</a>', get_the_permalink( $post_ID ), esc_attr( $attributes['linkTarget'] ), $rel, $title );
 	}
@@ -44,6 +51,11 @@ function render_block_core_post_title( $attributes, $content, $block ) {
 		$classes[] = 'has-link-color';
 	}
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) );
+=======
+		$title = sprintf( '<a href="%1$s" target="%2$s" rel="%3$s">%4$s</a>', get_the_permalink( $post_ID ), esc_attr( $attributes['linkTarget'] ), esc_attr( $attributes['rel'] ), $title );
+	}
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $align_class_name ) );
+>>>>>>> fb785cbb (Initial commit)
 
 	return sprintf(
 		'<%1$s %2$s>%3$s</%1$s>',

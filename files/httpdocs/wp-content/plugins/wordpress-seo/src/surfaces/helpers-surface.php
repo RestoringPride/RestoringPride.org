@@ -2,7 +2,10 @@
 
 namespace Yoast\WP\SEO\Surfaces;
 
+<<<<<<< HEAD
 use Yoast\WP\SEO\Exceptions\Forbidden_Property_Mutation_Exception;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Helpers;
 use YoastSEO_Vendor\Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -11,6 +14,7 @@ use YoastSEO_Vendor\Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * Surface for the indexables.
  *
+<<<<<<< HEAD
  * @property Helpers\Asset_Helper                           $asset
  * @property Helpers\Author_Archive_Helper                  $author_archive
  * @property Helpers\Blocks_Helper                          $blocks
@@ -47,6 +51,42 @@ use YoastSEO_Vendor\Symfony\Component\DependencyInjection\ContainerInterface;
  * @property Helpers\User_Helper                            $user
  * @property Helpers\Woocommerce_Helper                     $woocommerce
  * @property Helpers\Wordpress_Helper                       $wordpress
+=======
+ * @property Helpers\Asset_Helper          $asset
+ * @property Helpers\Author_Archive_Helper $author_archive
+ * @property Helpers\Blocks_Helper         $blocks
+ * @property Helpers\Capability_Helper     $capability
+ * @property Helpers\Current_Page_Helper   $current_page
+ * @property Helpers\Date_Helper           $date
+ * @property Helpers\Environment_Helper    $environment
+ * @property Helpers\Home_Url_Helper       $home_url
+ * @property Helpers\Image_Helper          $image
+ * @property Helpers\Indexable_Helper      $indexable
+ * @property Helpers\Indexing_Helper       $indexing
+ * @property Helpers\Input_Helper          $input
+ * @property Helpers\Language_Helper       $language
+ * @property Helpers\Meta_Helper           $meta
+ * @property Helpers\Notification_Helper   $notification
+ * @property Helpers\Options_Helper        $options
+ * @property Helpers\Pagination_Helper     $pagination
+ * @property Helpers\Permalink_Helper      $permalink
+ * @property Helpers\Post_Helper           $post
+ * @property Helpers\Post_Type_Helper      $post_type
+ * @property Helpers\Primary_Term_Helper   $primary_term
+ * @property Helpers\Product_Helper        $product
+ * @property Helpers\Redirect_Helper       $redirect
+ * @property Helpers\Request_Helper      $request
+ * @property Helpers\Require_File_Helper $require_file
+ * @property Helpers\Robots_Helper       $robots
+ * @property Helpers\Short_Link_Helper   $short_link
+ * @property Helpers\Site_Helper         $site
+ * @property Helpers\String_Helper       $string
+ * @property Helpers\Taxonomy_Helper     $taxonomy
+ * @property Helpers\Url_Helper          $url
+ * @property Helpers\User_Helper         $user
+ * @property Helpers\Woocommerce_Helper  $woocommerce
+ * @property Helpers\Wordpress_Helper    $wordpress
+>>>>>>> fb785cbb (Initial commit)
  */
 class Helpers_Surface {
 
@@ -114,13 +154,18 @@ class Helpers_Surface {
 	 *
 	 * @param string $helper The helper to get.
 	 *
+<<<<<<< HEAD
 	 * @return bool Whether the helper exists.
+=======
+	 * @return bool The helper class.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function __isset( $helper ) {
 		return $this->container->has( $this->get_helper_class( $helper ) );
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Prevents setting dynamic properties and unsetting declared properties
 	 * from an inaccessible context.
 	 *
@@ -150,6 +195,8 @@ class Helpers_Surface {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Get the class name from a helper slug
 	 *
 	 * @param string $helper The name of the helper.
@@ -158,7 +205,10 @@ class Helpers_Surface {
 	 */
 	protected function get_helper_class( $helper ) {
 		$helper = \implode( '_', \array_map( 'ucfirst', \explode( '_', $helper ) ) );
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return "Yoast\WP\SEO\Helpers\\{$helper}_Helper";
 	}
 }

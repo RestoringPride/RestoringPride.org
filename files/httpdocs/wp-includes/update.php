@@ -1,13 +1,21 @@
 <?php
 /**
+<<<<<<< HEAD
  * A simple set of functions to check the WordPress.org Version Update service.
+=======
+ * A simple set of functions to check our version 1.0 update service.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @package WordPress
  * @since 2.3.0
  */
 
 /**
+<<<<<<< HEAD
  * Checks WordPress version against the newest version.
+=======
+ * Check WordPress version against the newest version.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The WordPress version, PHP version, and locale is sent.
  *
@@ -21,8 +29,12 @@
  * @global string $wp_local_package Locale code of the package.
  *
  * @param array $extra_stats Extra statistics to report to the WordPress.org API.
+<<<<<<< HEAD
  * @param bool  $force_check Whether to bypass the transient cache and force a fresh update check.
  *                           Defaults to false, true if $extra_stats is set.
+=======
+ * @param bool  $force_check Whether to bypass the transient cache and force a fresh update check. Defaults to false, true if $extra_stats is set.
+>>>>>>> fb785cbb (Initial commit)
  */
 function wp_version_check( $extra_stats = array(), $force_check = false ) {
 	global $wpdb, $wp_local_package;
@@ -33,7 +45,11 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 
 	// Include an unmodified $wp_version.
 	require ABSPATH . WPINC . '/version.php';
+<<<<<<< HEAD
 	$php_version = PHP_VERSION;
+=======
+	$php_version = phpversion();
+>>>>>>> fb785cbb (Initial commit)
 
 	$current      = get_site_transient( 'update_core' );
 	$translations = wp_get_installed_translations( 'core' );
@@ -44,7 +60,11 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 	}
 
 	if ( ! is_object( $current ) ) {
+<<<<<<< HEAD
 		$current                  = new stdClass();
+=======
+		$current                  = new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 		$current->updates         = array();
 		$current->version_checked = $wp_version;
 	}
@@ -90,8 +110,11 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 		$wp_install        = home_url( '/' );
 	}
 
+<<<<<<< HEAD
 	$extensions = get_loaded_extensions();
 	sort( $extensions, SORT_STRING | SORT_FLAG_CASE );
+=======
+>>>>>>> fb785cbb (Initial commit)
 	$query = array(
 		'version'            => $wp_version,
 		'php'                => $php_version,
@@ -102,6 +125,7 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 		'users'              => get_user_count(),
 		'multisite_enabled'  => $multisite_enabled,
 		'initial_db_version' => get_site_option( 'initial_db_version' ),
+<<<<<<< HEAD
 		'extensions'         => array_combine( $extensions, array_map( 'phpversion', $extensions ) ),
 		'platform_flags'     => array(
 			'os'   => PHP_OS,
@@ -138,6 +162,10 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 		);
 	}
 
+=======
+	);
+
+>>>>>>> fb785cbb (Initial commit)
 	/**
 	 * Filters the query arguments sent as part of the core version check.
 	 *
@@ -327,10 +355,17 @@ function wp_update_plugins( $extra_stats = array() ) {
 	$current = get_site_transient( 'update_plugins' );
 
 	if ( ! is_object( $current ) ) {
+<<<<<<< HEAD
 		$current = new stdClass();
 	}
 
 	$updates               = new stdClass();
+=======
+		$current = new stdClass;
+	}
+
+	$updates               = new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 	$updates->last_checked = time();
 	$updates->response     = array();
 	$updates->translations = array();
@@ -400,13 +435,21 @@ function wp_update_plugins( $extra_stats = array() ) {
 	 * @since 3.7.0
 	 * @since 4.5.0 The default value of the `$locales` parameter changed to include all locales.
 	 *
+<<<<<<< HEAD
 	 * @param string[] $locales Plugin locales. Default is all available locales of the site.
+=======
+	 * @param array $locales Plugin locales. Default is all available locales of the site.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	$locales = apply_filters( 'plugins_update_check_locales', $locales );
 	$locales = array_unique( $locales );
 
 	if ( $doing_cron ) {
+<<<<<<< HEAD
 		$timeout = 30; // 30 seconds.
+=======
+		$timeout = 30;
+>>>>>>> fb785cbb (Initial commit)
 	} else {
 		// Three seconds, plus one extra second for every 10 plugins.
 		$timeout = 3 + (int) ( count( $plugins ) / 10 );
@@ -467,7 +510,11 @@ function wp_update_plugins( $extra_stats = array() ) {
 			continue;
 		}
 
+<<<<<<< HEAD
 		$hostname = wp_parse_url( sanitize_url( $plugin_data['UpdateURI'] ), PHP_URL_HOST );
+=======
+		$hostname = wp_parse_url( esc_url_raw( $plugin_data['UpdateURI'] ), PHP_URL_HOST );
+>>>>>>> fb785cbb (Initial commit)
 
 		/**
 		 * Filters the update response for a given plugin hostname.
@@ -506,7 +553,11 @@ function wp_update_plugins( $extra_stats = array() ) {
 		 * }
 		 * @param array       $plugin_data      Plugin headers.
 		 * @param string      $plugin_file      Plugin filename.
+<<<<<<< HEAD
 		 * @param string[]    $locales          Installed locales to look up translations for.
+=======
+		 * @param array       $locales          Installed locales to look translations for.
+>>>>>>> fb785cbb (Initial commit)
 		 */
 		$update = apply_filters( "update_plugins_{$hostname}", false, $plugin_data, $plugin_file, $locales );
 
@@ -595,7 +646,11 @@ function wp_update_themes( $extra_stats = array() ) {
 	$last_update = get_site_transient( 'update_themes' );
 
 	if ( ! is_object( $last_update ) ) {
+<<<<<<< HEAD
 		$last_update = new stdClass();
+=======
+		$last_update = new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	$themes  = array();
@@ -614,7 +669,10 @@ function wp_update_themes( $extra_stats = array() ) {
 			'Version'    => $theme->get( 'Version' ),
 			'Author'     => $theme->get( 'Author' ),
 			'Author URI' => $theme->get( 'AuthorURI' ),
+<<<<<<< HEAD
 			'UpdateURI'  => $theme->get( 'UpdateURI' ),
+=======
+>>>>>>> fb785cbb (Initial commit)
 			'Template'   => $theme->get_template(),
 			'Stylesheet' => $theme->get_stylesheet(),
 		);
@@ -682,13 +740,21 @@ function wp_update_themes( $extra_stats = array() ) {
 	 * @since 3.7.0
 	 * @since 4.5.0 The default value of the `$locales` parameter changed to include all locales.
 	 *
+<<<<<<< HEAD
 	 * @param string[] $locales Theme locales. Default is all available locales of the site.
+=======
+	 * @param array $locales Theme locales. Default is all available locales of the site.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	$locales = apply_filters( 'themes_update_check_locales', $locales );
 	$locales = array_unique( $locales );
 
 	if ( $doing_cron ) {
+<<<<<<< HEAD
 		$timeout = 30; // 30 seconds.
+=======
+		$timeout = 30;
+>>>>>>> fb785cbb (Initial commit)
 	} else {
 		// Three seconds, plus one extra second for every 10 themes.
 		$timeout = 3 + (int) ( count( $themes ) / 10 );
@@ -734,7 +800,11 @@ function wp_update_themes( $extra_stats = array() ) {
 		return;
 	}
 
+<<<<<<< HEAD
 	$new_update               = new stdClass();
+=======
+	$new_update               = new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 	$new_update->last_checked = time();
 	$new_update->checked      = $checked;
 
@@ -746,6 +816,7 @@ function wp_update_themes( $extra_stats = array() ) {
 		$new_update->translations = $response['translations'];
 	}
 
+<<<<<<< HEAD
 	// Support updates for any themes using the `Update URI` header field.
 	foreach ( $themes as $theme_stylesheet => $theme_data ) {
 		if ( ! $theme_data['UpdateURI'] || isset( $new_update->response[ $theme_stylesheet ] ) ) {
@@ -832,6 +903,8 @@ function wp_update_themes( $extra_stats = array() ) {
 		}
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	set_site_transient( 'update_themes', $new_update );
 }
 
@@ -846,7 +919,11 @@ function wp_maybe_auto_update() {
 	include_once ABSPATH . 'wp-admin/includes/admin.php';
 	require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 
+<<<<<<< HEAD
 	$upgrader = new WP_Automatic_Updater();
+=======
+	$upgrader = new WP_Automatic_Updater;
+>>>>>>> fb785cbb (Initial commit)
 	$upgrader->run();
 }
 
@@ -881,7 +958,11 @@ function wp_get_translation_updates() {
 }
 
 /**
+<<<<<<< HEAD
  * Collects counts and UI strings for available updates.
+=======
+ * Collect counts and UI strings for available updates
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.3.0
  *
@@ -999,7 +1080,11 @@ function _maybe_update_core() {
 	wp_version_check();
 }
 /**
+<<<<<<< HEAD
  * Checks the last time plugins were run before checking plugin versions.
+=======
+ * Check the last time plugins were run before checking plugin versions.
+>>>>>>> fb785cbb (Initial commit)
  *
  * This might have been backported to WordPress 2.6.1 for performance reasons.
  * This is used for the wp-admin to check only so often instead of every page
@@ -1021,7 +1106,11 @@ function _maybe_update_plugins() {
 }
 
 /**
+<<<<<<< HEAD
  * Checks themes versions only after a duration of time.
+=======
+ * Check themes versions only after a duration of time.
+>>>>>>> fb785cbb (Initial commit)
  *
  * This is for performance reasons to make sure that on the theme version
  * checker is not run on every page load.
@@ -1042,7 +1131,11 @@ function _maybe_update_themes() {
 }
 
 /**
+<<<<<<< HEAD
  * Schedules core, theme, and plugin update checks.
+=======
+ * Schedule core, theme, and plugin update checks.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.1.0
  */
@@ -1061,7 +1154,11 @@ function wp_schedule_update_checks() {
 }
 
 /**
+<<<<<<< HEAD
  * Clears existing update caches for plugins, themes, and core.
+=======
+ * Clear existing update caches for plugins, themes, and core.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.1.0
  */

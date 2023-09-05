@@ -14,6 +14,7 @@
 		},
 		"templateLock": {
 			"type": [ "string", "boolean" ],
+<<<<<<< HEAD
 			"enum": [ "all", "insert", "contentOnly", false ]
 		}
 	},
@@ -23,6 +24,14 @@
 		"align": [ "wide", "full" ],
 		"anchor": true,
 		"ariaLabel": true,
+=======
+			"enum": [ "all", "insert", false ]
+		}
+	},
+	"supports": {
+		"align": [ "wide", "full" ],
+		"anchor": true,
+>>>>>>> fb785cbb (Initial commit)
 		"html": false,
 		"color": {
 			"gradients": true,
@@ -41,9 +50,12 @@
 				"blockGap": true
 			}
 		},
+<<<<<<< HEAD
 		"dimensions": {
 			"minHeight": true
 		},
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"__experimentalBorder": {
 			"color": true,
 			"radius": true,
@@ -56,6 +68,7 @@
 				"width": true
 			}
 		},
+<<<<<<< HEAD
 		"position": {
 			"sticky": true
 		},
@@ -68,13 +81,26 @@
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
+=======
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
 		},
+<<<<<<< HEAD
 		"__experimentalLayout": {
 			"allowSizingOnChildren": true
 		}
+=======
+		"__experimentalLayout": true
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-group-editor",
 	"style": "wp-block-group"

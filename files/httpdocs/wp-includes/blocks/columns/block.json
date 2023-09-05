@@ -29,8 +29,12 @@
 		},
 		"spacing": {
 			"blockGap": {
+<<<<<<< HEAD
 				"__experimentalDefault": "2em",
 				"sides": [ "horizontal", "vertical" ]
+=======
+				"__experimentalDefault": "2em"
+>>>>>>> fb785cbb (Initial commit)
 			},
 			"margin": [ "top", "bottom" ],
 			"padding": true,
@@ -58,6 +62,7 @@
 				"style": true,
 				"width": true
 			}
+<<<<<<< HEAD
 		},
 		"typography": {
 			"fontSize": true,
@@ -71,6 +76,8 @@
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"editorStyle": "wp-block-columns-editor",

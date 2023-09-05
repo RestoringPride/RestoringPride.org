@@ -31,7 +31,11 @@ $yform->light_switch( 'opengraph', __( 'Add Open Graph meta data', 'wordpress-se
 	$frontpage_settings_message = sprintf(
 		/* translators: 1: link open tag; 2: link close tag. */
 		esc_html__( 'The social homepage settings have been moved to the %1$s‘Search appearance’ settings under the ‘General’ tab%2$s.', 'wordpress-seo' ),
+<<<<<<< HEAD
 		'<a href="' . esc_url( admin_url( 'admin.php?page=wpseo_page_settings#/homepage' ) ) . '">',
+=======
+		'<a href="' . esc_url( admin_url( 'admin.php?page=wpseo_titles#top#general' ) ) . '">',
+>>>>>>> fb785cbb (Initial commit)
 		'</a>'
 	);
 
@@ -57,6 +61,7 @@ $yform->light_switch( 'opengraph', __( 'Add Open Graph meta data', 'wordpress-se
 </div>
 <?php
 
+<<<<<<< HEAD
 /**
  * WARNING: This hook is intended for internal use only.
  * Don't use it in your code as it will be removed shortly.
@@ -75,3 +80,6 @@ do_action_deprecated(
 	'',
 	'This action is going away with no replacement. If you want to add settings that interact with Yoast SEO, please create your own settings page.'
 );
+=======
+do_action( 'wpseo_admin_opengraph_section' );
+>>>>>>> fb785cbb (Initial commit)

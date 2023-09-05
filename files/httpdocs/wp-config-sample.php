@@ -13,7 +13,11 @@
  * * Database table prefix
  * * ABSPATH
  *
+<<<<<<< HEAD
  * @link https://wordpress.org/documentation/article/editing-wp-config-php/
+=======
+ * @link https://wordpress.org/support/article/editing-wp-config-php/
+>>>>>>> fb785cbb (Initial commit)
  *
  * @package WordPress
  */
@@ -77,7 +81,11 @@ $table_prefix = 'wp_';
  * For information on other constants that can be used for debugging,
  * visit the documentation.
  *
+<<<<<<< HEAD
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
+=======
+ * @link https://wordpress.org/support/article/debugging-in-wordpress/
+>>>>>>> fb785cbb (Initial commit)
  */
 define( 'WP_DEBUG', false );
 

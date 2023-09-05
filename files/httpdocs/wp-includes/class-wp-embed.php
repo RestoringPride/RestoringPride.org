@@ -6,7 +6,10 @@
  * @subpackage Embed
  * @since 2.9.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Embed {
 	public $handlers = array();
 	public $post_ID;
@@ -222,11 +225,19 @@ class WP_Embed {
 			return $embed_handler_html;
 		}
 
+<<<<<<< HEAD
 		$post_id = ( ! empty( $post->ID ) ) ? $post->ID : null;
 
 		// Potentially set by WP_Embed::cache_oembed().
 		if ( ! empty( $this->post_ID ) ) {
 			$post_id = $this->post_ID;
+=======
+		$post_ID = ( ! empty( $post->ID ) ) ? $post->ID : null;
+
+		// Potentially set by WP_Embed::cache_oembed().
+		if ( ! empty( $this->post_ID ) ) {
+			$post_ID = $this->post_ID;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		// Check for a cached result (stored as custom post or in the post meta).
@@ -242,18 +253,30 @@ class WP_Embed {
 		 * @param int    $time    Time to live (in seconds).
 		 * @param string $url     The attempted embed URL.
 		 * @param array  $attr    An array of shortcode attributes.
+<<<<<<< HEAD
 		 * @param int    $post_id Post ID.
 		 */
 		$ttl = apply_filters( 'oembed_ttl', DAY_IN_SECONDS, $url, $attr, $post_id );
+=======
+		 * @param int    $post_ID Post ID.
+		 */
+		$ttl = apply_filters( 'oembed_ttl', DAY_IN_SECONDS, $url, $attr, $post_ID );
+>>>>>>> fb785cbb (Initial commit)
 
 		$cache      = '';
 		$cache_time = 0;
 
 		$cached_post_id = $this->find_oembed_post_id( $key_suffix );
 
+<<<<<<< HEAD
 		if ( $post_id ) {
 			$cache      = get_post_meta( $post_id, $cachekey, true );
 			$cache_time = get_post_meta( $post_id, $cachekey_time, true );
+=======
+		if ( $post_ID ) {
+			$cache      = get_post_meta( $post_ID, $cachekey, true );
+			$cache_time = get_post_meta( $post_ID, $cachekey_time, true );
+>>>>>>> fb785cbb (Initial commit)
 
 			if ( ! $cache_time ) {
 				$cache_time = 0;
@@ -284,9 +307,15 @@ class WP_Embed {
 				 * @param string|false $cache   The cached HTML result, stored in post meta.
 				 * @param string       $url     The attempted embed URL.
 				 * @param array        $attr    An array of shortcode attributes.
+<<<<<<< HEAD
 				 * @param int          $post_id Post ID.
 				 */
 				return apply_filters( 'embed_oembed_html', $cache, $url, $attr, $post_id );
+=======
+				 * @param int          $post_ID Post ID.
+				 */
+				return apply_filters( 'embed_oembed_html', $cache, $url, $attr, $post_ID );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
@@ -305,12 +334,21 @@ class WP_Embed {
 		// Use oEmbed to get the HTML.
 		$html = wp_oembed_get( $url, $attr );
 
+<<<<<<< HEAD
 		if ( $post_id ) {
 			if ( $html ) {
 				update_post_meta( $post_id, $cachekey, $html );
 				update_post_meta( $post_id, $cachekey_time, time() );
 			} elseif ( ! $cache ) {
 				update_post_meta( $post_id, $cachekey, '{{unknown}}' );
+=======
+		if ( $post_ID ) {
+			if ( $html ) {
+				update_post_meta( $post_ID, $cachekey, $html );
+				update_post_meta( $post_ID, $cachekey_time, time() );
+			} elseif ( ! $cache ) {
+				update_post_meta( $post_ID, $cachekey, '{{unknown}}' );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		} else {
 			$has_kses = false !== has_filter( 'content_save_pre', 'wp_filter_post_kses' );
@@ -369,7 +407,11 @@ class WP_Embed {
 		// If there was a result, return it.
 		if ( $html ) {
 			/** This filter is documented in wp-includes/class-wp-embed.php */
+<<<<<<< HEAD
 			return apply_filters( 'embed_oembed_html', $html, $url, $attr, $post_id );
+=======
+			return apply_filters( 'embed_oembed_html', $html, $url, $attr, $post_ID );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		// Still unknown.
@@ -379,17 +421,28 @@ class WP_Embed {
 	/**
 	 * Deletes all oEmbed caches. Unused by core as of 4.0.0.
 	 *
+<<<<<<< HEAD
 	 * @param int $post_id Post ID to delete the caches for.
 	 */
 	public function delete_oembed_caches( $post_id ) {
 		$post_metas = get_post_custom_keys( $post_id );
+=======
+	 * @param int $post_ID Post ID to delete the caches for.
+	 */
+	public function delete_oembed_caches( $post_ID ) {
+		$post_metas = get_post_custom_keys( $post_ID );
+>>>>>>> fb785cbb (Initial commit)
 		if ( empty( $post_metas ) ) {
 			return;
 		}
 
 		foreach ( $post_metas as $post_meta_key ) {
 			if ( '_oembed_' === substr( $post_meta_key, 0, 8 ) ) {
+<<<<<<< HEAD
 				delete_post_meta( $post_id, $post_meta_key );
+=======
+				delete_post_meta( $post_ID, $post_meta_key );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 	}
@@ -397,10 +450,17 @@ class WP_Embed {
 	/**
 	 * Triggers a caching of all oEmbed results.
 	 *
+<<<<<<< HEAD
 	 * @param int $post_id Post ID to do the caching for.
 	 */
 	public function cache_oembed( $post_id ) {
 		$post = get_post( $post_id );
+=======
+	 * @param int $post_ID Post ID to do the caching for.
+	 */
+	public function cache_oembed( $post_ID ) {
+		$post = get_post( $post_ID );
+>>>>>>> fb785cbb (Initial commit)
 
 		$post_types = get_post_types( array( 'show_ui' => true ) );
 

@@ -43,8 +43,13 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+<<<<<<< HEAD
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/network-admin-sites-screen/">Documentation on Site Management</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://wordpress.org/support/forum/multisite/">Support forums</a>' ) . '</p>'
+=======
+	'<p>' . __( '<a href="https://wordpress.org/support/article/network-admin-sites-screen/">Documentation on Site Management</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://wordpress.org/support/forum/multisite/">Support Forums</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 );
 
 get_current_screen()->set_screen_reader_content(
@@ -354,7 +359,11 @@ if ( isset( $_GET['updated'] ) ) {
 	}
 
 	if ( ! empty( $msg ) ) {
+<<<<<<< HEAD
 		$msg = '<div id="message" class="notice notice-success is-dismissible"><p>' . $msg . '</p></div>';
+=======
+		$msg = '<div id="message" class="updated notice is-dismissible"><p>' . $msg . '</p></div>';
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 

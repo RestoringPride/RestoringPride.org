@@ -54,8 +54,13 @@ if ( ! class_exists( 'Services_JSON' ) ) :
  * @author      Brett Stimmerman <brettstimmerman[at]gmail[dot]com>
  * @copyright   2005 Michal Migurski
  * @version     CVS: $Id: JSON.php 305040 2010-11-02 23:19:03Z alan_k $
+<<<<<<< HEAD
  * @license     https://www.opensource.org/licenses/bsd-license.php
  * @link        https://pear.php.net/pepr/pepr-proposal-show.php?id=198
+=======
+ * @license     http://www.opensource.org/licenses/bsd-license.php
+ * @link        http://pear.php.net/pepr/pepr-proposal-show.php?id=198
+>>>>>>> fb785cbb (Initial commit)
  */
 
 /**
@@ -122,6 +127,7 @@ define('SERVICES_JSON_USE_TO_JSON', 64);
 class Services_JSON
 {
    /**
+<<<<<<< HEAD
     * Object behavior flags.
     *
     * @var int
@@ -134,6 +140,8 @@ class Services_JSON
     var $_mb_convert_encoding = false;
 
    /**
+=======
+>>>>>>> fb785cbb (Initial commit)
     * constructs a new JSON instance
     *
     * @deprecated 5.3.0 Use the PHP native JSON extension instead.
@@ -166,18 +174,36 @@ class Services_JSON
         $this->_mb_substr            = function_exists('mb_substr');
     }
 
+<<<<<<< HEAD
     /**
      * PHP4 constructor.
+=======
+	/**
+	 * PHP4 constructor.
+>>>>>>> fb785cbb (Initial commit)
      *
      * @deprecated 5.3.0 Use __construct() instead.
      *
      * @see Services_JSON::__construct()
+<<<<<<< HEAD
      */
     public function Services_JSON( $use = 0 ) {
         _deprecated_constructor( 'Services_JSON', '5.3.0', get_class( $this ) );
         self::__construct( $use );
     }
 
+=======
+	 */
+	public function Services_JSON( $use = 0 ) {
+		_deprecated_constructor( 'Services_JSON', '5.3.0', get_class( $this ) );
+		self::__construct( $use );
+	}
+    // private - cache the mbstring lookup results..
+    var $_mb_strlen = false;
+    var $_mb_substr = false;
+    var $_mb_convert_encoding = false;
+    
+>>>>>>> fb785cbb (Initial commit)
    /**
     * convert a string from one UTF-16 char to one UTF-8 char
     *
@@ -291,7 +317,11 @@ class Services_JSON
     {
         _deprecated_function( __METHOD__, '5.3.0', 'The PHP native JSON extension' );
 
+<<<<<<< HEAD
         header('Content-Type: application/json');
+=======
+        header('Content-type: application/json');
+>>>>>>> fb785cbb (Initial commit)
         return $this->encodeUnsafe($var);
     }
     /**
@@ -981,11 +1011,19 @@ if (class_exists('PEAR_Error')) {
 
     class Services_JSON_Error extends PEAR_Error
     {
+<<<<<<< HEAD
         /**
          * PHP5 constructor.
          *
          * @deprecated 5.3.0 Use the PHP native JSON extension instead.
          */
+=======
+	    /**
+	     * PHP5 constructor.
+	     *
+	     * @deprecated 5.3.0 Use the PHP native JSON extension instead.
+	     */
+>>>>>>> fb785cbb (Initial commit)
         function __construct($message = 'unknown error', $code = null,
                                      $mode = null, $options = null, $userinfo = null)
         {
@@ -994,6 +1032,7 @@ if (class_exists('PEAR_Error')) {
             parent::PEAR_Error($message, $code, $mode, $options, $userinfo);
         }
 
+<<<<<<< HEAD
         /**
          * PHP4 constructor.
          *
@@ -1006,6 +1045,20 @@ if (class_exists('PEAR_Error')) {
             _deprecated_constructor( 'Services_JSON_Error', '5.3.0', get_class( $this ) );
             self::__construct($message, $code, $mode, $options, $userinfo);
         }
+=======
+	    /**
+	     * PHP4 constructor.
+	     *
+	     * @deprecated 5.3.0 Use __construct() instead.
+	     *
+	     * @see Services_JSON_Error::__construct()
+	     */
+		public function Services_JSON_Error($message = 'unknown error', $code = null,
+                                     $mode = null, $options = null, $userinfo = null) {
+			_deprecated_constructor( 'Services_JSON_Error', '5.3.0', get_class( $this ) );
+			self::__construct($message, $code, $mode, $options, $userinfo);
+		}
+>>>>>>> fb785cbb (Initial commit)
     }
 
 } else {
@@ -1015,17 +1068,26 @@ if (class_exists('PEAR_Error')) {
      */
     class Services_JSON_Error
     {
+<<<<<<< HEAD
         /**
          * PHP5 constructor.
          *
          * @deprecated 5.3.0 Use the PHP native JSON extension instead.
          */
+=======
+	    /**
+	     * PHP5 constructor.
+	     *
+	     * @deprecated 5.3.0 Use the PHP native JSON extension instead.
+	     */
+>>>>>>> fb785cbb (Initial commit)
         function __construct( $message = 'unknown error', $code = null,
                                      $mode = null, $options = null, $userinfo = null )
         {
             _deprecated_function( __METHOD__, '5.3.0', 'The PHP native JSON extension' );
         }
 
+<<<<<<< HEAD
         /**
          * PHP4 constructor.
          *
@@ -1038,6 +1100,20 @@ if (class_exists('PEAR_Error')) {
             _deprecated_constructor( 'Services_JSON_Error', '5.3.0', get_class( $this ) );
             self::__construct( $message, $code, $mode, $options, $userinfo );
         }
+=======
+	    /**
+	     * PHP4 constructor.
+	     *
+	     * @deprecated 5.3.0 Use __construct() instead.
+	     *
+	     * @see Services_JSON_Error::__construct()
+	     */
+		public function Services_JSON_Error( $message = 'unknown error', $code = null,
+	                                     $mode = null, $options = null, $userinfo = null ) {
+			_deprecated_constructor( 'Services_JSON_Error', '5.3.0', get_class( $this ) );
+			self::__construct( $message, $code, $mode, $options, $userinfo );
+		}
+>>>>>>> fb785cbb (Initial commit)
     }
 
 }

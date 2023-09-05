@@ -7,7 +7,11 @@
  */
 
 /**
+<<<<<<< HEAD
  * Retrieves path to a template.
+=======
+ * Retrieve path to a template
+>>>>>>> fb785cbb (Initial commit)
  *
  * Used to quickly retrieve the path of a template without including the file
  * extension. It will also check the parent theme, if the file exists, with
@@ -104,7 +108,11 @@ function get_query_template( $type, $templates = array() ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of index template in current or parent template.
+=======
+ * Retrieve path of index template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The template hierarchy and template path are filterable via the {@see '$type_template_hierarchy'}
  * and {@see '$type_template'} dynamic hooks, where `$type` is 'index'.
@@ -120,7 +128,11 @@ function get_index_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of 404 template in current or parent template.
+=======
+ * Retrieve path of 404 template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The template hierarchy and template path are filterable via the {@see '$type_template_hierarchy'}
  * and {@see '$type_template'} dynamic hooks, where `$type` is '404'.
@@ -136,7 +148,11 @@ function get_404_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of archive template in current or parent template.
+=======
+ * Retrieve path of archive template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The template hierarchy and template path are filterable via the {@see '$type_template_hierarchy'}
  * and {@see '$type_template'} dynamic hooks, where `$type` is 'archive'.
@@ -162,7 +178,11 @@ function get_archive_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of post type archive template in current or parent template.
+=======
+ * Retrieve path of post type archive template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The template hierarchy and template path are filterable via the {@see '$type_template_hierarchy'}
  * and {@see '$type_template'} dynamic hooks, where `$type` is 'archive'.
@@ -188,7 +208,11 @@ function get_post_type_archive_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of author template in current or parent template.
+=======
+ * Retrieve path of author template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The hierarchy for this template looks like:
  *
@@ -226,7 +250,11 @@ function get_author_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of category template in current or parent template.
+=======
+ * Retrieve path of category template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The hierarchy for this template looks like:
  *
@@ -272,7 +300,11 @@ function get_category_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of tag template in current or parent template.
+=======
+ * Retrieve path of tag template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The hierarchy for this template looks like:
  *
@@ -318,7 +350,11 @@ function get_tag_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of custom taxonomy term template in current or parent template.
+=======
+ * Retrieve path of custom taxonomy term template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The hierarchy for this template looks like:
  *
@@ -365,7 +401,11 @@ function get_taxonomy_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of date template in current or parent template.
+=======
+ * Retrieve path of date template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The template hierarchy and template path are filterable via the {@see '$type_template_hierarchy'}
  * and {@see '$type_template'} dynamic hooks, where `$type` is 'date'.
@@ -381,7 +421,11 @@ function get_date_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of home template in current or parent template.
+=======
+ * Retrieve path of home template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The template hierarchy and template path are filterable via the {@see '$type_template_hierarchy'}
  * and {@see '$type_template'} dynamic hooks, where `$type` is 'home'.
@@ -399,7 +443,11 @@ function get_home_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of front page template in current or parent template.
+=======
+ * Retrieve path of front page template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The template hierarchy and template path are filterable via the {@see '$type_template_hierarchy'}
  * and {@see '$type_template'} dynamic hooks, where `$type` is 'frontpage'.
@@ -417,7 +465,11 @@ function get_front_page_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of Privacy Policy page template in current or parent template.
+=======
+ * Retrieve path of Privacy Policy page template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The template hierarchy and template path are filterable via the {@see '$type_template_hierarchy'}
  * and {@see '$type_template'} dynamic hooks, where `$type` is 'privacypolicy'.
@@ -435,9 +487,13 @@ function get_privacy_policy_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of page template in current or parent template.
  *
  * Note: For block themes, use locate_block_template() function instead.
+=======
+ * Retrieve path of page template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The hierarchy for this template looks like:
  *
@@ -498,7 +554,11 @@ function get_page_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of search template in current or parent template.
+=======
+ * Retrieve path of search template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The template hierarchy and template path are filterable via the {@see '$type_template_hierarchy'}
  * and {@see '$type_template'} dynamic hooks, where `$type` is 'search'.
@@ -514,7 +574,11 @@ function get_search_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of single template in current or parent template. Applies to single Posts,
+=======
+ * Retrieve path of single template in current or parent template. Applies to single Posts,
+>>>>>>> fb785cbb (Initial commit)
  * single Attachments, and single custom post types.
  *
  * The hierarchy for this template looks like:
@@ -628,7 +692,11 @@ function get_singular_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves path of attachment template in current or parent template.
+=======
+ * Retrieve path of attachment template in current or parent template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The hierarchy for this template looks like:
  *
@@ -680,7 +748,11 @@ function get_attachment_template() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the name of the highest priority template file that exists.
+=======
+ * Retrieve the name of the highest priority template file that exists.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Searches in the STYLESHEETPATH before TEMPLATEPATH and wp-includes/theme-compat
  * so that themes which inherit from a parent theme can just overload one file.
@@ -690,13 +762,21 @@ function get_attachment_template() {
  *
  * @param string|array $template_names Template file(s) to search for, in order.
  * @param bool         $load           If true the template file will be loaded if it is found.
+<<<<<<< HEAD
  * @param bool         $load_once      Whether to require_once or require. Has no effect if `$load` is false.
+=======
+ * @param bool         $require_once   Whether to require_once or require. Has no effect if `$load` is false.
+>>>>>>> fb785cbb (Initial commit)
  *                                     Default true.
  * @param array        $args           Optional. Additional arguments passed to the template.
  *                                     Default empty array.
  * @return string The template filename if one is located.
  */
+<<<<<<< HEAD
 function locate_template( $template_names, $load = false, $load_once = true, $args = array() ) {
+=======
+function locate_template( $template_names, $load = false, $require_once = true, $args = array() ) {
+>>>>>>> fb785cbb (Initial commit)
 	$located = '';
 	foreach ( (array) $template_names as $template_name ) {
 		if ( ! $template_name ) {
@@ -715,14 +795,22 @@ function locate_template( $template_names, $load = false, $load_once = true, $ar
 	}
 
 	if ( $load && '' !== $located ) {
+<<<<<<< HEAD
 		load_template( $located, $load_once, $args );
+=======
+		load_template( $located, $require_once, $args );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	return $located;
 }
 
 /**
+<<<<<<< HEAD
  * Requires the template file with WordPress environment.
+=======
+ * Require the template file with WordPress environment.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The globals are set up for the template file to ensure that the WordPress
  * environment is available from within the function. The query variables are
@@ -744,11 +832,19 @@ function locate_template( $template_names, $load = false, $load_once = true, $ar
  * @global int        $user_ID
  *
  * @param string $_template_file Path to template file.
+<<<<<<< HEAD
  * @param bool   $load_once      Whether to require_once or require. Default true.
  * @param array  $args           Optional. Additional arguments passed to the template.
  *                               Default empty array.
  */
 function load_template( $_template_file, $load_once = true, $args = array() ) {
+=======
+ * @param bool   $require_once   Whether to require_once or require. Default true.
+ * @param array  $args           Optional. Additional arguments passed to the template.
+ *                               Default empty array.
+ */
+function load_template( $_template_file, $require_once = true, $args = array() ) {
+>>>>>>> fb785cbb (Initial commit)
 	global $posts, $post, $wp_did_header, $wp_query, $wp_rewrite, $wpdb, $wp_version, $wp, $id, $comment, $user_ID;
 
 	if ( is_array( $wp_query->query_vars ) ) {
@@ -768,6 +864,7 @@ function load_template( $_template_file, $load_once = true, $args = array() ) {
 		$s = esc_attr( $s );
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Fires before a template file is loaded.
 	 *
@@ -780,10 +877,14 @@ function load_template( $_template_file, $load_once = true, $args = array() ) {
 	do_action( 'wp_before_load_template', $_template_file, $load_once, $args );
 
 	if ( $load_once ) {
+=======
+	if ( $require_once ) {
+>>>>>>> fb785cbb (Initial commit)
 		require_once $_template_file;
 	} else {
 		require $_template_file;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Fires after a template file is loaded.
@@ -795,4 +896,6 @@ function load_template( $_template_file, $load_once = true, $args = array() ) {
 	 * @param array  $args           Additional arguments passed to the template.
 	 */
 	do_action( 'wp_after_load_template', $_template_file, $load_once, $args );
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

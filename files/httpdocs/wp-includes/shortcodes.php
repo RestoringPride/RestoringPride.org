@@ -31,7 +31,11 @@
  */
 
 /**
+<<<<<<< HEAD
  * Container for storing shortcode tags and their hook to call for the shortcode.
+=======
+ * Container for storing shortcode tags and their hook to call for the shortcode
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.5.0
  *
@@ -105,10 +109,18 @@ function remove_shortcode( $tag ) {
 }
 
 /**
+<<<<<<< HEAD
  * Clears all shortcodes.
  *
  * This function clears all of the shortcode tags by replacing the shortcodes global with
  * an empty array. This is actually an efficient method for removing all shortcodes.
+=======
+ * Clear all shortcodes.
+ *
+ * This function is simple, it clears all of the shortcode tags by replacing the
+ * shortcodes global by a empty array. This is actually a very efficient method
+ * for removing all shortcodes.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.5.0
  *
@@ -121,7 +133,11 @@ function remove_all_shortcodes() {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether a registered shortcode exists named $tag.
+=======
+ * Whether a registered shortcode exists named $tag
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.6.0
  *
@@ -136,7 +152,11 @@ function shortcode_exists( $tag ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether the passed content contains the specified shortcode.
+=======
+ * Whether the passed content contains the specified shortcode
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.6.0
  *
@@ -169,7 +189,11 @@ function has_shortcode( $content, $tag ) {
 }
 
 /**
+<<<<<<< HEAD
  * Searches content for shortcodes and filter shortcodes through their hooks.
+=======
+ * Search content for shortcodes and filter shortcodes through their hooks.
+>>>>>>> fb785cbb (Initial commit)
  *
  * This function is an alias for do_shortcode().
  *
@@ -187,7 +211,11 @@ function apply_shortcodes( $content, $ignore_html = false ) {
 }
 
 /**
+<<<<<<< HEAD
  * Searches content for shortcodes and filter shortcodes through their hooks.
+=======
+ * Search content for shortcodes and filter shortcodes through their hooks.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If there are no shortcode tags defined, then the content will be returned
  * without any filtering. This might cause issues when plugins are disabled but
@@ -233,7 +261,11 @@ function do_shortcode( $content, $ignore_html = false ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the shortcode regular expression for searching.
+=======
+ * Retrieve the shortcode regular expression for searching.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The regular expression combines the shortcode tags in the regular expression
  * in a regex class.
@@ -340,10 +372,17 @@ function do_shortcode_tag( $m ) {
 	 *
 	 * @since 4.7.0
 	 *
+<<<<<<< HEAD
 	 * @param false|string $output Short-circuit return value. Either false or the value to replace the shortcode with.
 	 * @param string       $tag    Shortcode name.
 	 * @param array|string $attr   Shortcode attributes array or empty string.
 	 * @param array        $m      Regular expression match array.
+=======
+	 * @param false|string $return      Short-circuit return value. Either false or the value to replace the shortcode with.
+	 * @param string       $tag         Shortcode name.
+	 * @param array|string $attr        Shortcode attributes array or empty string.
+	 * @param array        $m           Regular expression match array.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	$return = apply_filters( 'pre_do_shortcode_tag', false, $tag, $attr, $m );
 	if ( false !== $return ) {
@@ -368,7 +407,11 @@ function do_shortcode_tag( $m ) {
 }
 
 /**
+<<<<<<< HEAD
  * Searches only inside HTML elements for shortcodes and process them.
+=======
+ * Search only inside HTML elements for shortcodes and process them.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Any [ or ] characters remaining inside elements will be HTML encoded
  * to prevent interference with shortcodes that are outside the elements.
@@ -482,7 +525,11 @@ function do_shortcodes_in_html_tags( $content, $ignore_html, $tagnames ) {
 }
 
 /**
+<<<<<<< HEAD
  * Removes placeholders added by do_shortcodes_in_html_tags().
+=======
+ * Remove placeholders added by do_shortcodes_in_html_tags().
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.2.3
  *
@@ -502,18 +549,30 @@ function unescape_invalid_shortcodes( $content ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the shortcode attributes regex.
  *
  * @since 4.4.0
  *
  * @return string The shortcode attribute regular expression.
+=======
+ * Retrieve the shortcode attributes regex.
+ *
+ * @since 4.4.0
+ *
+ * @return string The shortcode attribute regular expression
+>>>>>>> fb785cbb (Initial commit)
  */
 function get_shortcode_atts_regex() {
 	return '/([\w-]+)\s*=\s*"([^"]*)"(?:\s|$)|([\w-]+)\s*=\s*\'([^\']*)\'(?:\s|$)|([\w-]+)\s*=\s*([^\s\'"]+)(?:\s|$)|"([^"]*)"(?:\s|$)|\'([^\']*)\'(?:\s|$)|(\S+)(?:\s|$)/';
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves all attributes from the shortcodes tag.
+=======
+ * Retrieve all attributes from the shortcodes tag.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The attributes list has the attribute name as the key and the value of the
  * attribute as the value in the key/value pair. This allows for easier
@@ -564,7 +623,11 @@ function shortcode_parse_atts( $text ) {
 }
 
 /**
+<<<<<<< HEAD
  * Combines user attributes with known attributes and fill in defaults when needed.
+=======
+ * Combine user attributes with known attributes and fill in defaults when needed.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The pairs should be considered to be all of the attributes which are
  * supported by the caller and given as a list. The returned attributes will
@@ -613,7 +676,11 @@ function shortcode_atts( $pairs, $atts, $shortcode = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Removes all shortcode tags from the given content.
+=======
+ * Remove all shortcode tags from the given content.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.5.0
  *

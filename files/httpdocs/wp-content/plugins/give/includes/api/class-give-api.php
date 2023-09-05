@@ -1919,7 +1919,11 @@ class Give_API {
 						?>
 						<?php if ( empty( $user->give_user_public_key ) ) { ?>
 							<input name="give_set_api_key" type="checkbox" id="give_set_api_key" />
+<<<<<<< HEAD
 							<span class="description"><label for="give_set_api_key"><?php _e( 'Generate API Key', 'give' ); ?></label></span>
+=======
+							<span class="description"><?php _e( 'Generate API Key', 'give' ); ?></span>
+>>>>>>> fb785cbb (Initial commit)
 						<?php } else { ?>
 							<strong style="display:inline-block; width: 125px;"><?php _e( 'Public key:', 'give' ); ?>
 								&nbsp;</strong>

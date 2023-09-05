@@ -14,7 +14,10 @@
  *
  * @since 3.7.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Date_Query {
 	/**
 	 * Array of date queries.
@@ -150,8 +153,13 @@ class WP_Date_Query {
 			return;
 		}
 
+<<<<<<< HEAD
 		if ( isset( $date_query['relation'] ) ) {
 			$this->relation = $this->sanitize_relation( $date_query['relation'] );
+=======
+		if ( isset( $date_query['relation'] ) && 'OR' === strtoupper( $date_query['relation'] ) ) {
+			$this->relation = 'OR';
+>>>>>>> fb785cbb (Initial commit)
 		} else {
 			$this->relation = 'AND';
 		}
@@ -220,9 +228,12 @@ class WP_Date_Query {
 			$this->validate_date_values( $queries );
 		}
 
+<<<<<<< HEAD
 		// Sanitize the relation parameter.
 		$queries['relation'] = $this->sanitize_relation( $queries['relation'] );
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		foreach ( $queries as $key => $q ) {
 			if ( ! is_array( $q ) || in_array( $key, $this->time_keys, true ) ) {
 				// This is a first-order query. Trust the values and sanitize when building SQL.
@@ -237,7 +248,11 @@ class WP_Date_Query {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Determines whether this is a first-order clause.
+=======
+	 * Determine whether this is a first-order clause.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Checks to see if the current clause has any time-related keys.
 	 * If so, it's first-order.
@@ -280,7 +295,11 @@ class WP_Date_Query {
 	 * @since 4.1.0
 	 *
 	 * @param array $date_query The date_query array.
+<<<<<<< HEAD
 	 * @return bool True if all values in the query are valid, false if one or more fail.
+=======
+	 * @return bool  True if all values in the query are valid, false if one or more fail.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function validate_date_values( $date_query = array() ) {
 		if ( empty( $date_query ) ) {
@@ -473,8 +492,11 @@ class WP_Date_Query {
 	 *
 	 * @since 3.7.0
 	 *
+<<<<<<< HEAD
 	 * @global wpdb $wpdb WordPress database abstraction object.
 	 *
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * @param string $column The user-supplied column name.
 	 * @return string A validated column name value.
 	 */
@@ -545,7 +567,11 @@ class WP_Date_Query {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Generates WHERE clause to be appended to a main query.
+=======
+	 * Generate WHERE clause to be appended to a main query.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.7.0
 	 *
@@ -568,7 +594,11 @@ class WP_Date_Query {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Generates SQL clauses to be appended to a main query.
+=======
+	 * Generate SQL clauses to be appended to a main query.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Called by the public WP_Date_Query::get_sql(), this method is abstracted
 	 * out to maintain parity with the other Query classes.
@@ -593,7 +623,11 @@ class WP_Date_Query {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Generates SQL clauses for a single query array.
+=======
+	 * Generate SQL clauses for a single query array.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * If nested subqueries are found, this method recurses the tree to
 	 * produce the properly nested SQL.
@@ -701,8 +735,11 @@ class WP_Date_Query {
 	 *
 	 * @since 4.1.0
 	 *
+<<<<<<< HEAD
 	 * @global wpdb $wpdb WordPress database abstraction object.
 	 *
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * @param array $query        Date query clause.
 	 * @param array $parent_query Parent query of the current date query.
 	 * @return string[] {
@@ -866,12 +903,20 @@ class WP_Date_Query {
 	 *
 	 * @since 3.7.0
 	 *
+<<<<<<< HEAD
 	 * @param string|array $datetime       An array of parameters or a strotime() string.
+=======
+	 * @param string|array $datetime       An array of parameters or a strotime() string
+>>>>>>> fb785cbb (Initial commit)
 	 * @param bool         $default_to_max Whether to round up incomplete dates. Supported by values
 	 *                                     of $datetime that are arrays, or string values that are a
 	 *                                     subset of MySQL date format ('Y', 'Y-m', 'Y-m-d', 'Y-m-d H:i').
 	 *                                     Default: false.
+<<<<<<< HEAD
 	 * @return string|false A MySQL format date/time or false on failure.
+=======
+	 * @return string|false A MySQL format date/time or false on failure
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function build_mysql_datetime( $datetime, $default_to_max = false ) {
 		if ( ! is_array( $datetime ) ) {
@@ -965,8 +1010,11 @@ class WP_Date_Query {
 	 *
 	 * @since 3.7.0
 	 *
+<<<<<<< HEAD
 	 * @global wpdb $wpdb WordPress database abstraction object.
 	 *
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * @param string   $column  The column to query against. Needs to be pre-validated!
 	 * @param string   $compare The comparison operator. Needs to be pre-validated!
 	 * @param int|null $hour    Optional. An hour value (0-23).
@@ -1050,6 +1098,7 @@ class WP_Date_Query {
 
 		return $wpdb->prepare( "DATE_FORMAT( $column, %s ) $compare %f", $format, $time );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Sanitizes a 'relation' operator.
@@ -1066,4 +1115,6 @@ class WP_Date_Query {
 			return 'AND';
 		}
 	}
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

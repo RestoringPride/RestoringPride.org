@@ -256,6 +256,11 @@ __webpack_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: external ["wp","element"]
 var external_wp_element_namespaceObject = window["wp"]["element"];
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 // EXTERNAL MODULE: ./node_modules/memize/index.js
 var memize = __webpack_require__(9756);
 var memize_default = /*#__PURE__*/__webpack_require__.n(memize);
@@ -266,12 +271,20 @@ function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
       for (var key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
           target[key] = source[key];
         }
       }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
     return target;
   };
   return _extends.apply(this, arguments);
@@ -376,6 +389,14 @@ const plugins = (0,external_wp_element_namespaceObject.createElement)(external_w
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Defined behavior of a plugin type.
  *
  * @typedef {Object} WPPlugin
@@ -402,9 +423,15 @@ const api_plugins = {};
 /**
  * Registers a plugin to the editor.
  *
+<<<<<<< HEAD
  * @param {string}                 name     A string identifying the plugin.Must be
  *                                          unique across all registered plugins.
  * @param {Omit<WPPlugin, 'name'>} settings The settings for this plugin.
+=======
+ * @param {string}   name     A string identifying the plugin.Must be
+ *                            unique across all registered plugins.
+ * @param {WPPlugin} settings The settings for this plugin.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @example
  * ```js
@@ -503,7 +530,11 @@ function registerPlugin(name, settings) {
     scope
   } = settings;
 
+<<<<<<< HEAD
   if (typeof render !== 'function') {
+=======
+  if (!(0,external_lodash_namespaceObject.isFunction)(render)) {
+>>>>>>> fb785cbb (Initial commit)
     console.error('The "render" property must be specified and must be a valid function.');
     return null;
   }
@@ -549,7 +580,11 @@ function registerPlugin(name, settings) {
  * unregisterPlugin( 'plugin-name' );
  * ```
  *
+<<<<<<< HEAD
  * @return {WPPlugin | undefined} The previous plugin settings object, if it has been
+=======
+ * @return {?WPPlugin} The previous plugin settings object, if it has been
+>>>>>>> fb785cbb (Initial commit)
  *                     successfully unregistered; otherwise `undefined`.
  */
 
@@ -595,6 +630,10 @@ function getPlugins(scope) {
  * External dependencies
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
@@ -658,7 +697,11 @@ class PluginArea extends external_wp_element_namespaceObject.Component {
 
   getCurrentPluginsState() {
     return {
+<<<<<<< HEAD
       plugins: getPlugins(this.props.scope).map(_ref => {
+=======
+      plugins: (0,external_lodash_namespaceObject.map)(getPlugins(this.props.scope), _ref => {
+>>>>>>> fb785cbb (Initial commit)
         let {
           icon,
           name,
@@ -691,7 +734,11 @@ class PluginArea extends external_wp_element_namespaceObject.Component {
       style: {
         display: 'none'
       }
+<<<<<<< HEAD
     }, this.state.plugins.map(_ref2 => {
+=======
+    }, (0,external_lodash_namespaceObject.map)(this.state.plugins, _ref2 => {
+>>>>>>> fb785cbb (Initial commit)
       let {
         context,
         Plugin

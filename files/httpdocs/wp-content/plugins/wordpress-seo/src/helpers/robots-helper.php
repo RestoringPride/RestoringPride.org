@@ -2,14 +2,18 @@
 
 namespace Yoast\WP\SEO\Helpers;
 
+<<<<<<< HEAD
 use Yoast\WP\SEO\Models\Indexable;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * A helper object for the robots meta tag.
  */
 class Robots_Helper {
 
 	/**
+<<<<<<< HEAD
 	 * Holds the Post_Type_Helper.
 	 *
 	 * @var Post_Type_Helper
@@ -59,6 +63,8 @@ class Robots_Helper {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Sets the robots index to noindex.
 	 *
 	 * @param array $robots The current robots value.

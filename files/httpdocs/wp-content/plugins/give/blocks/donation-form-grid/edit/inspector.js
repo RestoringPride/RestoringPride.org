@@ -45,6 +45,10 @@ const Inspector = ({attributes, setAttributes}) => {
         showExcerpt,
         excerptLength,
         showGoal,
+<<<<<<< HEAD
+=======
+        showProgressBar,
+>>>>>>> fb785cbb (Initial commit)
         showFeaturedImage,
         showDonateButton,
         tagBackgroundColor,
@@ -170,6 +174,16 @@ const Inspector = ({attributes, setAttributes}) => {
                     />
                     <ToggleControl
                         className="give-form-grid-inspector"
+<<<<<<< HEAD
+=======
+                        name="showProgressBar"
+                        label={__('Show Progress Bar', 'give')}
+                        checked={!!showProgressBar}
+                        onChange={(value) => saveSetting('showProgressBar', value)}
+                    />
+                    <ToggleControl
+                        className="give-form-grid-inspector"
+>>>>>>> fb785cbb (Initial commit)
                         name="showDonateButton"
                         label={__('Show Donate Button', 'give')}
                         checked={!!showDonateButton}

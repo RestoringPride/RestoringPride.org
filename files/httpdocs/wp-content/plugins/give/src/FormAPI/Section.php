@@ -10,7 +10,11 @@ use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
  * @package Give\Form\Theme
  * @since   2.7.0
  */
+<<<<<<< HEAD
 final class Section
+=======
+class Section
+>>>>>>> fb785cbb (Initial commit)
 {
 
     /**

@@ -76,6 +76,7 @@ function wpseo_import_external_select( $name, $plugins ) {
 		wpseo_import_external_select( 'import_external_plugin', $import_check->needs_import );
 		?>
 		<?php
+<<<<<<< HEAD
 
 		/**
 		 * WARNING: This hook is intended for internal use only.
@@ -95,6 +96,9 @@ function wpseo_import_external_select( $name, $plugins ) {
 			'',
 			'This action is going away with no replacement. If you want to add settings that interact with Yoast SEO, please create your own settings page.'
 		);
+=======
+		do_action( 'wpseo_import_other_plugins' );
+>>>>>>> fb785cbb (Initial commit)
 		?>
 		<input type="submit" class="button button-primary" name="import_external"
 			value="<?php esc_attr_e( 'Import', 'wordpress-seo' ); ?>"/>

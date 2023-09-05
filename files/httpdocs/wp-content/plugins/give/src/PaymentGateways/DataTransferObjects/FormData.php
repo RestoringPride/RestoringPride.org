@@ -15,7 +15,11 @@ use Give\ValueObjects\DonorInfo;
  * Class FormData
  * @since 2.18.0
  */
+<<<<<<< HEAD
 final class FormData
+=======
+class FormData
+>>>>>>> fb785cbb (Initial commit)
 {
     /**
      * @var float
@@ -104,15 +108,21 @@ final class FormData
 
     /** @var bool */
     public $anonymous;
+<<<<<<< HEAD
     /**
      * @var string|null
      */
     public $company;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
     /**
      * Convert data from request into DTO
      *
+<<<<<<< HEAD
      * @since 2.22.0 add support for company field
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.18.0
      */
     public static function fromRequest(array $request): FormData
@@ -141,8 +151,13 @@ final class FormData
             'firstName' => $request['user_info']['first_name'],
             'lastName' => $request['user_info']['last_name'],
             'email' => $request['user_info']['email'],
+<<<<<<< HEAD
             'honorific' => ! empty($request['user_info']['title']) ? $request['user_info']['title'] : '',
             'address' => $request['user_info']['address'],
+=======
+            'honorific' => !empty($request['user_info']['title']) ? $request['user_info']['title'] : '',
+            'address' => $request['user_info']['address']
+>>>>>>> fb785cbb (Initial commit)
         ]);
         $self->cardInfo = CardInfo::fromArray([
             'name' => $request['card_info']['card_name'],
@@ -164,19 +179,29 @@ final class FormData
                 $request['post_data']['give_anonymous_donation']
             );
 
+<<<<<<< HEAD
         $self->company = !empty($request['post_data']['give_company_name']) ? $request['post_data']['give_company_name'] : null;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
         return $self;
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.22.0 add support for company field
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.19.6
      * @throws Exception
      */
     public function toDonation($donorId): Donation
     {
+<<<<<<< HEAD
         $donation = new Donation([
+=======
+        return new Donation([
+>>>>>>> fb785cbb (Initial commit)
             'status' => DonationStatus::PENDING(),
             'gatewayId' => $this->paymentGateway,
             'amount' => Money::fromDecimal($this->price, $this->currency),
@@ -192,6 +217,7 @@ final class FormData
                 'state' => $this->billingAddress->state,
                 'zip' => $this->billingAddress->postalCode,
                 'address1' => $this->billingAddress->line1,
+<<<<<<< HEAD
                 'address2' => $this->billingAddress->line2,
             ]),
             'levelId' => $this->priceId,
@@ -210,5 +236,12 @@ final class FormData
         }
 
         return $donation;
+=======
+                'address2' => $this->billingAddress->line2
+            ]),
+            'levelId' => $this->priceId,
+            'anonymous' => $this->anonymous
+        ]);
+>>>>>>> fb785cbb (Initial commit)
     }
 }

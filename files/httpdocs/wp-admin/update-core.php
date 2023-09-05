@@ -59,7 +59,11 @@ function list_core_update( $update ) {
 
 	$message       = '';
 	$form_action   = 'update-core.php?action=do-core-upgrade';
+<<<<<<< HEAD
 	$php_version   = PHP_VERSION;
+=======
+	$php_version   = phpversion();
+>>>>>>> fb785cbb (Initial commit)
 	$mysql_version = $wpdb->db_version();
 	$show_buttons  = true;
 
@@ -185,7 +189,11 @@ function list_core_update( $update ) {
 		// Partial builds don't need language-specific warnings.
 		echo '<p class="hint">' . sprintf(
 			/* translators: %s: WordPress version. */
+<<<<<<< HEAD
 			__( 'You are about to install WordPress %s <strong>in English (US)</strong>. There is a chance this update will break your translation. You may prefer to wait for the localized version to be released.' ),
+=======
+			__( 'You are about to install WordPress %s <strong>in English (US).</strong> There is a chance this update will break your translation. You may prefer to wait for the localized version to be released.' ),
+>>>>>>> fb785cbb (Initial commit)
 			'development' !== $update->response ? $update->current : ''
 		) . '</p>';
 	}
@@ -265,8 +273,13 @@ function core_upgrade_preamble() {
 		printf(
 			/* translators: 1: Documentation on WordPress backups, 2: Documentation on updating WordPress. */
 			__( '<strong>Important:</strong> Before updating, please <a href="%1$s">back up your database and files</a>. For help with updates, visit the <a href="%2$s">Updating WordPress</a> documentation page.' ),
+<<<<<<< HEAD
 			__( 'https://wordpress.org/documentation/article/wordpress-backups/' ),
 			__( 'https://wordpress.org/documentation/article/updating-wordpress/' )
+=======
+			__( 'https://wordpress.org/support/article/wordpress-backups/' ),
+			__( 'https://wordpress.org/support/article/updating-wordpress/' )
+>>>>>>> fb785cbb (Initial commit)
 		);
 		echo '</p></div>';
 	} elseif ( $is_development_version ) {
@@ -402,7 +415,11 @@ function core_auto_updates_settings() {
 			_e( 'This site is automatically kept up to date with each new version of WordPress.' );
 
 			if ( $can_set_update_option ) {
+<<<<<<< HEAD
 				echo '<br />';
+=======
+				echo '<br>';
+>>>>>>> fb785cbb (Initial commit)
 				printf(
 					'<a href="%s" class="core-auto-update-settings-link core-auto-update-settings-link-disable">%s</a>',
 					wp_nonce_url( add_query_arg( 'value', 'disable', $action_url ), 'core-major-auto-updates-nonce' ),
@@ -413,7 +430,11 @@ function core_auto_updates_settings() {
 			_e( 'This site is automatically kept up to date with maintenance and security releases of WordPress only.' );
 
 			if ( $can_set_update_option ) {
+<<<<<<< HEAD
 				echo '<br />';
+=======
+				echo '<br>';
+>>>>>>> fb785cbb (Initial commit)
 				printf(
 					'<a href="%s" class="core-auto-update-settings-link core-auto-update-settings-link-enable">%s</a>',
 					wp_nonce_url( add_query_arg( 'value', 'enable', $action_url ), 'core-major-auto-updates-nonce' ),
@@ -535,7 +556,11 @@ function list_plugin_updates() {
 		$compatible_php = is_php_version_compatible( $requires_php );
 
 		if ( ! $compatible_php && current_user_can( 'update_php' ) ) {
+<<<<<<< HEAD
 			$compat .= '<br />' . __( 'This update does not work with your version of PHP.' ) . '&nbsp;';
+=======
+			$compat .= '<br>' . __( 'This update does not work with your version of PHP.' ) . '&nbsp;';
+>>>>>>> fb785cbb (Initial commit)
 			$compat .= sprintf(
 				/* translators: %s: URL to Update PHP page. */
 				__( '<a href="%s">Learn more about updating PHP</a>.' ),
@@ -574,7 +599,11 @@ function list_plugin_updates() {
 				<input type="checkbox" name="checked[]" id="<?php echo $checkbox_id; ?>" value="<?php echo esc_attr( $plugin_file ); ?>" />
 				<label for="<?php echo $checkbox_id; ?>" class="screen-reader-text">
 					<?php
+<<<<<<< HEAD
 					/* translators: Hidden accessibility text. %s: Plugin name. */
+=======
+					/* translators: %s: Plugin name. */
+>>>>>>> fb785cbb (Initial commit)
 					printf( __( 'Select %s' ), $plugin_data->Name );
 					?>
 				</label>
@@ -681,12 +710,20 @@ function list_theme_updates() {
 		$compat = '';
 
 		if ( ! $compatible_wp && ! $compatible_php ) {
+<<<<<<< HEAD
 			$compat .= '<br />' . __( 'This update does not work with your versions of WordPress and PHP.' ) . '&nbsp;';
+=======
+			$compat .= '<br>' . __( 'This update does not work with your versions of WordPress and PHP.' ) . '&nbsp;';
+>>>>>>> fb785cbb (Initial commit)
 			if ( current_user_can( 'update_core' ) && current_user_can( 'update_php' ) ) {
 				$compat .= sprintf(
 					/* translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page. */
 					__( '<a href="%1$s">Please update WordPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
+<<<<<<< HEAD
 					esc_url( self_admin_url( 'update-core.php' ) ),
+=======
+					self_admin_url( 'update-core.php' ),
+>>>>>>> fb785cbb (Initial commit)
 					esc_url( wp_get_update_php_url() )
 				);
 
@@ -699,7 +736,11 @@ function list_theme_updates() {
 				$compat .= sprintf(
 					/* translators: %s: URL to WordPress Updates screen. */
 					__( '<a href="%s">Please update WordPress</a>.' ),
+<<<<<<< HEAD
 					esc_url( self_admin_url( 'update-core.php' ) )
+=======
+					self_admin_url( 'update-core.php' )
+>>>>>>> fb785cbb (Initial commit)
 				);
 			} elseif ( current_user_can( 'update_php' ) ) {
 				$compat .= sprintf(
@@ -715,16 +756,28 @@ function list_theme_updates() {
 				}
 			}
 		} elseif ( ! $compatible_wp ) {
+<<<<<<< HEAD
 			$compat .= '<br />' . __( 'This update does not work with your version of WordPress.' ) . '&nbsp;';
+=======
+			$compat .= '<br>' . __( 'This update does not work with your version of WordPress.' ) . '&nbsp;';
+>>>>>>> fb785cbb (Initial commit)
 			if ( current_user_can( 'update_core' ) ) {
 				$compat .= sprintf(
 					/* translators: %s: URL to WordPress Updates screen. */
 					__( '<a href="%s">Please update WordPress</a>.' ),
+<<<<<<< HEAD
 					esc_url( self_admin_url( 'update-core.php' ) )
 				);
 			}
 		} elseif ( ! $compatible_php ) {
 			$compat .= '<br />' . __( 'This update does not work with your version of PHP.' ) . '&nbsp;';
+=======
+					self_admin_url( 'update-core.php' )
+				);
+			}
+		} elseif ( ! $compatible_php ) {
+			$compat .= '<br>' . __( 'This update does not work with your version of PHP.' ) . '&nbsp;';
+>>>>>>> fb785cbb (Initial commit)
 			if ( current_user_can( 'update_php' ) ) {
 				$compat .= sprintf(
 					/* translators: %s: URL to Update PHP page. */
@@ -748,7 +801,11 @@ function list_theme_updates() {
 				<input type="checkbox" name="checked[]" id="<?php echo $checkbox_id; ?>" value="<?php echo esc_attr( $stylesheet ); ?>" />
 				<label for="<?php echo $checkbox_id; ?>" class="screen-reader-text">
 					<?php
+<<<<<<< HEAD
 					/* translators: Hidden accessibility text. %s: Theme name. */
+=======
+					/* translators: %s: Theme name. */
+>>>>>>> fb785cbb (Initial commit)
 					printf( __( 'Select %s' ), $theme->display( 'Name' ) );
 					?>
 				</label>
@@ -890,7 +947,11 @@ function do_core_upgrade( $reinstall = false ) {
 
 	if ( is_wp_error( $result ) ) {
 		show_message( $result );
+<<<<<<< HEAD
 		if ( 'up_to_date' !== $result->get_error_code() && 'locked' !== $result->get_error_code() ) {
+=======
+		if ( 'up_to_date' != $result->get_error_code() && 'locked' != $result->get_error_code() ) {
+>>>>>>> fb785cbb (Initial commit)
 			show_message( __( 'Installation failed.' ) );
 		}
 		echo '</div>';
@@ -917,7 +978,11 @@ function do_core_upgrade( $reinstall = false ) {
 	?>
 	</div>
 	<script type="text/javascript">
+<<<<<<< HEAD
 	window.location = '<?php echo esc_url( self_admin_url( 'about.php?updated' ) ); ?>';
+=======
+	window.location = '<?php echo self_admin_url( 'about.php?updated' ); ?>';
+>>>>>>> fb785cbb (Initial commit)
 	</script>
 	<?php
 }
@@ -1008,14 +1073,24 @@ if ( ( current_user_can( 'update_themes' ) && wp_is_auto_update_enabled_for_type
 		)
 	);
 
+<<<<<<< HEAD
 	$help_sidebar_autoupdates = '<p>' . __( '<a href="https://wordpress.org/documentation/article/plugins-themes-auto-updates/">Documentation on Auto-updates</a>' ) . '</p>';
+=======
+	$help_sidebar_autoupdates = '<p>' . __( '<a href="https://wordpress.org/support/article/plugins-themes-auto-updates/">Learn more: Auto-updates documentation</a>' ) . '</p>';
+>>>>>>> fb785cbb (Initial commit)
 }
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+<<<<<<< HEAD
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/dashboard-updates-screen/">Documentation on Updating WordPress</a>' ) . '</p>' .
 	$help_sidebar_autoupdates .
 	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+=======
+	'<p>' . __( '<a href="https://wordpress.org/support/article/dashboard-updates-screen/">Documentation on Updating WordPress</a>' ) . '</p>' .
+	$help_sidebar_autoupdates .
+	'<p>' . __( '<a href="https://wordpress.org/support/">Support</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 );
 
 if ( 'upgrade-core' === $action ) {

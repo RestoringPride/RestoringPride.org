@@ -12,13 +12,18 @@
 		"query",
 		"queryContext",
 		"displayLayout",
+<<<<<<< HEAD
 		"templateSlug",
 		"previewPostType"
+=======
+		"templateSlug"
+>>>>>>> fb785cbb (Initial commit)
 	],
 	"supports": {
 		"reusable": false,
 		"html": false,
 		"align": true,
+<<<<<<< HEAD
 		"anchor": true,
 		"__experimentalLayout": {
 			"allowEditing": false
@@ -43,6 +48,10 @@
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
+=======
+		"__experimentalLayout": {
+			"allowEditing": false
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"style": "wp-block-post-template",

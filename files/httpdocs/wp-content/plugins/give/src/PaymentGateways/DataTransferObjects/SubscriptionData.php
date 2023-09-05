@@ -6,7 +6,11 @@ namespace Give\PaymentGateways\DataTransferObjects;
  * Class SubscriptionData
  * @since 2.18.0
  */
+<<<<<<< HEAD
 final class SubscriptionData
+=======
+class SubscriptionData
+>>>>>>> fb785cbb (Initial commit)
 {
     /**
      * @var string

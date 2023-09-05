@@ -2,10 +2,15 @@
 
 namespace Give\Donations;
 
+<<<<<<< HEAD
 use Give\Donations\ListTable\DonationsListTable;
 use Give\Framework\Database\DB;
 use Give\Helpers\EnqueueScript;
 use Give\Helpers\Utils;
+=======
+use Give\Helpers\EnqueueScript;
+use WP_REST_Request;
+>>>>>>> fb785cbb (Initial commit)
 
 class DonationsAdminPage
 {
@@ -52,12 +57,20 @@ class DonationsAdminPage
             esc_html__('Donations', 'give'),
             'edit_give_forms',
             'give-payment-history',
+<<<<<<< HEAD
             [$this, 'render']
+=======
+            [$this, 'render'],
+            5
+>>>>>>> fb785cbb (Initial commit)
         );
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.24.0 Add ListTable columns
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.20.0
      * @since 2.21.2 Localized the admin URL as a base for URL concatenation.
      */
@@ -66,11 +79,17 @@ class DonationsAdminPage
         $data = [
             'apiRoot' => $this->apiRoot,
             'apiNonce' => $this->apiNonce,
+<<<<<<< HEAD
             'forms' => $this->getForms(),
             'table' => give(DonationsListTable::class)->toArray(),
             'adminUrl' => $this->adminUrl,
             'paymentMode' => give_is_test_mode(),
             'manualDonations' => Utils::isPluginActive('give-manual-donations/give-manual-donations.php'),
+=======
+            'preload' => $this->preloadDonations(),
+            'forms' => $this->getForms(),
+            'adminUrl' => $this->adminUrl,
+>>>>>>> fb785cbb (Initial commit)
         ];
 
         EnqueueScript::make('give-admin-donations', 'assets/dist/js/give-admin-donations.js')
@@ -110,6 +129,36 @@ class DonationsAdminPage
         return isset($_GET['page']) && $_GET['page'] === 'give-payment-history' && !isset($_GET['view']);
     }
 
+<<<<<<< HEAD
+=======
+
+    /**
+     * Get first page of results from REST API to display as initial table data
+     *
+     * @since 2.20.0
+     * @return array
+     */
+    private function preloadDonations()
+    {
+        $queryParameters = [
+            'page' => 1,
+            'perPage' => 30,
+        ];
+
+        if(isset($_GET['search']))
+        {
+            $queryParameters['search'] = urldecode($_GET['search']);
+        }
+
+        $request = WP_REST_Request::from_url(esc_url(add_query_arg(
+            $queryParameters,
+            $this->apiRoot
+        )));
+
+        return rest_do_request($request)->get_data();
+    }
+
+>>>>>>> fb785cbb (Initial commit)
     /**
      * Retrieve a list of donation forms to populate the form filter dropdown
      *
@@ -118,6 +167,7 @@ class DonationsAdminPage
      */
     private function getForms()
     {
+<<<<<<< HEAD
         $options = DB::table('posts')
             ->select(
                 ['ID', 'value'],
@@ -126,12 +176,37 @@ class DonationsAdminPage
             ->where('post_type', 'give_forms')
             ->whereIn('post_status', ['publish', 'draft', 'pending', 'private'])
             ->getAll(ARRAY_A);
+=======
+        $queryParameters = [
+            'page' => 1,
+            'perPage' => 50,
+            'status' => 'any'
+        ];
+
+        $request = WP_REST_Request::from_url(esc_url_raw(add_query_arg(
+            $queryParameters,
+            rest_url('give-api/v2/admin/forms')
+        )));
+
+        $data = rest_do_request($request)->get_data();
+
+        $options = array_map(static function ($form) {
+            return [
+                'value' => $form['id'],
+                'text' => $form['name'],
+            ];
+        }, $data['items']);
+>>>>>>> fb785cbb (Initial commit)
 
         return array_merge([
             [
                 'value' => '0',
                 'text' => 'Any',
+<<<<<<< HEAD
             ],
+=======
+            ]
+>>>>>>> fb785cbb (Initial commit)
         ], $options);
     }
 }

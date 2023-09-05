@@ -5,14 +5,21 @@ namespace Give\Donors\DataTransferObjects;
 use Give\Donors\Models\Donor;
 use Give\Donors\ValueObjects\DonorMetaKeys;
 use Give\Framework\Support\Facades\DateTime\Temporal;
+<<<<<<< HEAD
 use Give\Framework\Support\ValueObjects\Money;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Class DonorObjectData
  *
  * @since 2.19.6
  */
+<<<<<<< HEAD
 final class DonorQueryData
+=======
+class DonorQueryData
+>>>>>>> fb785cbb (Initial commit)
 {
 
     /**
@@ -44,13 +51,18 @@ final class DonorQueryData
      */
     public $lastName;
     /**
+<<<<<<< HEAD
      * @var array
+=======
+     * @var mixed
+>>>>>>> fb785cbb (Initial commit)
      */
     public $additionalEmails;
     /**
      * @var string
      */
     public $prefix;
+<<<<<<< HEAD
     /**
      * @var Money
      */
@@ -59,11 +71,16 @@ final class DonorQueryData
      * @var int
      */
     public $totalNumberOfDonations;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
     /**
      * Convert data from donor object to Donor Model
      *
+<<<<<<< HEAD
      * @since 2.24.0 add $totalAmountDonated and $totalNumberOfDonations
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.20.0 add donor prefix property
      * @since 2.19.6
      *
@@ -81,9 +98,13 @@ final class DonorQueryData
         $self->firstName = $object->firstName;
         $self->lastName = $object->lastName;
         $self->createdAt = Temporal::toDateTime($object->createdAt);
+<<<<<<< HEAD
         $self->additionalEmails = $object->additionalEmails;
         $self->totalAmountDonated = Money::fromDecimal($object->totalAmountDonated, give_get_currency());
         $self->totalNumberOfDonations = (int)$object->totalNumberOfDonations;
+=======
+        $self->additionalEmails = json_decode($object->additionalEmails, true);
+>>>>>>> fb785cbb (Initial commit)
 
         return $self;
     }

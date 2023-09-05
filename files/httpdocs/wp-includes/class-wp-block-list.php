@@ -11,7 +11,10 @@
  *
  * @since 5.5.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Block_List implements Iterator, ArrayAccess, Countable {
 
 	/**

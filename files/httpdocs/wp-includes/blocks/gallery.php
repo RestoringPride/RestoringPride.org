@@ -50,6 +50,7 @@ function block_core_gallery_render( $attributes, $content ) {
 	// because we only want to match against the value, not the CSS attribute.
 	if ( is_array( $gap ) ) {
 		foreach ( $gap as $key => $value ) {
+<<<<<<< HEAD
 			// Make sure $value is a string to avoid PHP 8.1 deprecation error in preg_match() when the value is null.
 			$value = is_string( $value ) ? $value : '';
 			$value = $value && preg_match( '%[\\\(&=}]|/\*%', $value ) ? null : $value;
@@ -80,6 +81,21 @@ function block_core_gallery_render( $attributes, $content ) {
 	$processed_content        = new WP_HTML_Tag_Processor( $content );
 	$processed_content->next_tag();
 	$processed_content->add_class( $unique_gallery_classname );
+=======
+			$gap[ $key ] = $value && preg_match( '%[\\\(&=}]|/\*%', $value ) ? null : $value;
+		}
+	} else {
+		$gap = $gap && preg_match( '%[\\\(&=}]|/\*%', $gap ) ? null : $gap;
+	}
+
+	$class   = wp_unique_id( 'wp-block-gallery-' );
+	$content = preg_replace(
+		'/' . preg_quote( 'class="', '/' ) . '/',
+		'class="' . $class . ' ',
+		$content,
+		1
+	);
+>>>>>>> fb785cbb (Initial commit)
 
 	// --gallery-block--gutter-size is deprecated. --wp--style--gallery-gap-default should be used by themes that want to set a default
 	// gap on the gallery.
@@ -93,6 +109,7 @@ function block_core_gallery_render( $attributes, $content ) {
 		$gap_value  = $gap_row === $gap_column ? $gap_row : $gap_row . ' ' . $gap_column;
 	}
 
+<<<<<<< HEAD
 	// The unstable gallery gap calculation requires a real value (such as `0px`) and not `0`.
 	if ( '0' === $gap_column ) {
 		$gap_column = '0px';
@@ -116,6 +133,22 @@ function block_core_gallery_render( $attributes, $content ) {
 		)
 	);
 	return (string) $processed_content;
+=======
+	// Set the CSS variable to the column value, and the `gap` property to the combined gap value.
+	$style = '.' . $class . '{ --wp--style--unstable-gallery-gap: ' . $gap_column . '; gap: ' . $gap_value . '}';
+
+	// Ideally styles should be loaded in the head, but blocks may be parsed
+	// after that, so loading in the footer for now.
+	// See https://core.trac.wordpress.org/ticket/53494.
+	add_action(
+		'wp_footer',
+		function () use ( $style ) {
+			echo '<style> ' . $style . '</style>';
+		},
+		11
+	);
+	return $content;
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Registers the `core/gallery` block on server.

@@ -98,6 +98,7 @@ class WPSEO_Post_Type {
 	public static function has_metabox_enabled( $post_type ) {
 		return WPSEO_Options::get( 'display-metabox-pt-' . $post_type, false );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Removes the notification related to the post types which have been made public.
@@ -118,4 +119,6 @@ class WPSEO_Post_Type {
 		$notification_center = Yoast_Notification_Center::get();
 		$notification_center->remove_notification_by_id( 'taxonomies-made-public' );
 	}
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

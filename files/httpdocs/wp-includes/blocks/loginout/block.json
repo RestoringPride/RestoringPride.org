@@ -18,7 +18,10 @@
 		}
 	},
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"className": true,
 		"typography": {
 			"fontSize": false

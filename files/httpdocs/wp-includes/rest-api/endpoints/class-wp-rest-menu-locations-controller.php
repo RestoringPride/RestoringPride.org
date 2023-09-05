@@ -193,9 +193,13 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 
 		$response = rest_ensure_response( $data );
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $location ) );
 		}
+=======
+		$response->add_links( $this->prepare_links( $location ) );
+>>>>>>> fb785cbb (Initial commit)
 
 		/**
 		 * Filters menu location data returned from the REST API.
@@ -210,6 +214,7 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Prepares links for the request.
 	 *
 	 * @since 5.9.0
@@ -248,6 +253,8 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Retrieves the menu location's schema, conforming to JSON Schema.
 	 *
 	 * @since 5.9.0
@@ -300,4 +307,45 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 			'context' => $this->get_context_param( array( 'default' => 'view' ) ),
 		);
 	}
+<<<<<<< HEAD
+=======
+
+	/**
+	 * Prepares links for the request.
+	 *
+	 * @since 5.9.0
+	 *
+	 * @param stdClass $location Menu location.
+	 * @return array Links for the given menu location.
+	 */
+	protected function prepare_links( $location ) {
+		$base = sprintf( '%s/%s', $this->namespace, $this->rest_base );
+
+		// Entity meta.
+		$links = array(
+			'self'       => array(
+				'href' => rest_url( trailingslashit( $base ) . $location->name ),
+			),
+			'collection' => array(
+				'href' => rest_url( $base ),
+			),
+		);
+
+		$locations = get_nav_menu_locations();
+		$menu      = isset( $locations[ $location->name ] ) ? $locations[ $location->name ] : 0;
+		if ( $menu ) {
+			$path = rest_get_route_for_term( $menu );
+			if ( $path ) {
+				$url = rest_url( $path );
+
+				$links['https://api.w.org/menu'][] = array(
+					'href'       => $url,
+					'embeddable' => true,
+				);
+			}
+		}
+
+		return $links;
+	}
+>>>>>>> fb785cbb (Initial commit)
 }

@@ -14,13 +14,19 @@ use Give\Framework\Models\Contracts\ModelHasFactory;
 use Give\Framework\Models\Model;
 use Give\Framework\Models\ModelQueryBuilder;
 use Give\Framework\Models\ValueObjects\Relationship;
+<<<<<<< HEAD
 use Give\Framework\Support\ValueObjects\Money;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Subscriptions\Models\Subscription;
 
 /**
  * Class Donor
  *
+<<<<<<< HEAD
  * @since 2.24.0 add new properties $totalAmountDonated and $totalNumberOfDonations
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @since 2.19.6
  *
  * @property int $id
@@ -32,8 +38,11 @@ use Give\Subscriptions\Models\Subscription;
  * @property string $lastName
  * @property string $email
  * @property string[] $additionalEmails
+<<<<<<< HEAD
  * @property Money $totalAmountDonated
  * @property int $totalNumberOfDonations
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @property Subscription[] $subscriptions
  * @property Donation[] $donations
  */
@@ -51,9 +60,13 @@ class Donor extends Model implements ModelCrud, ModelHasFactory
         'lastName' => 'string',
         'email' => 'string',
         'prefix' => 'string',
+<<<<<<< HEAD
         'additionalEmails' => ['array', []],
         'totalAmountDonated' => Money::class,
         'totalNumberOfDonations' => 'int'
+=======
+        'additionalEmails' => 'array',
+>>>>>>> fb785cbb (Initial commit)
     ];
 
     /**

@@ -11,8 +11,13 @@
  * Base class for displaying a list of items in an ajaxified HTML table.
  *
  * @since 3.1.0
+<<<<<<< HEAD
  */
 #[AllowDynamicProperties]
+=======
+ * @access private
+ */
+>>>>>>> fb785cbb (Initial commit)
 class WP_List_Table {
 
 	/**
@@ -376,6 +381,7 @@ class WP_List_Table {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Generates views links.
 	 *
 	 * @since 6.1.0
@@ -449,6 +455,8 @@ class WP_List_Table {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Gets the list of views available on this table.
 	 *
 	 * The format is an associative array:
@@ -560,10 +568,14 @@ class WP_List_Table {
 			return;
 		}
 
+<<<<<<< HEAD
 		echo '<label for="bulk-action-selector-' . esc_attr( $which ) . '" class="screen-reader-text">' .
 			/* translators: Hidden accessibility text. */
 			__( 'Select bulk action' ) .
 		'</label>';
+=======
+		echo '<label for="bulk-action-selector-' . esc_attr( $which ) . '" class="screen-reader-text">' . __( 'Select bulk action' ) . '</label>';
+>>>>>>> fb785cbb (Initial commit)
 		echo '<select name="action' . $two . '" id="bulk-action-selector-' . esc_attr( $which ) . "\">\n";
 		echo '<option value="-1">' . __( 'Bulk actions' ) . "</option>\n";
 
@@ -631,13 +643,18 @@ class WP_List_Table {
 			$always_visible = true;
 		}
 
+<<<<<<< HEAD
 		$output = '<div class="' . ( $always_visible ? 'row-actions visible' : 'row-actions' ) . '">';
+=======
+		$out = '<div class="' . ( $always_visible ? 'row-actions visible' : 'row-actions' ) . '">';
+>>>>>>> fb785cbb (Initial commit)
 
 		$i = 0;
 
 		foreach ( $actions as $action => $link ) {
 			++$i;
 
+<<<<<<< HEAD
 			$separator = ( $i < $action_count ) ? ' | ' : '';
 
 			$output .= "<span class='$action'>{$link}{$separator}</span>";
@@ -651,6 +668,18 @@ class WP_List_Table {
 		'</span></button>';
 
 		return $output;
+=======
+			$sep = ( $i < $action_count ) ? ' | ' : '';
+
+			$out .= "<span class='$action'>$link$sep</span>";
+		}
+
+		$out .= '</div>';
+
+		$out .= '<button type="button" class="toggle-row"><span class="screen-reader-text">' . __( 'Show more details' ) . '</span></button>';
+
+		return $out;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -679,7 +708,11 @@ class WP_List_Table {
 		}
 
 		/**
+<<<<<<< HEAD
 		 * Filters whether to short-circuit performing the months dropdown query.
+=======
+		 * Filters to short-circuit performing the months dropdown query.
+>>>>>>> fb785cbb (Initial commit)
 		 *
 		 * @since 5.7.0
 		 *
@@ -852,11 +885,15 @@ class WP_List_Table {
 			printf(
 				'<span class="post-com-count post-com-count-no-comments"><span class="comment-count comment-count-no-comments" aria-hidden="true">%s</span><span class="screen-reader-text">%s</span></span>',
 				$approved_comments_number,
+<<<<<<< HEAD
 				$pending_comments ?
 				/* translators: Hidden accessibility text. */
 				__( 'No approved comments' ) :
 				/* translators: Hidden accessibility text. */
 				__( 'No comments' )
+=======
+				$pending_comments ? __( 'No approved comments' ) : __( 'No comments' )
+>>>>>>> fb785cbb (Initial commit)
 			);
 		}
 
@@ -879,11 +916,15 @@ class WP_List_Table {
 			printf(
 				'<span class="post-com-count post-com-count-pending post-com-count-no-pending"><span class="comment-count comment-count-no-pending" aria-hidden="true">%s</span><span class="screen-reader-text">%s</span></span>',
 				$pending_comments_number,
+<<<<<<< HEAD
 				$approved_comments ?
 				/* translators: Hidden accessibility text. */
 				__( 'No pending comments' ) :
 				/* translators: Hidden accessibility text. */
 				__( 'No comments' )
+=======
+				$approved_comments ? __( 'No pending comments' ) : __( 'No comments' )
+>>>>>>> fb785cbb (Initial commit)
 			);
 		}
 	}
@@ -1008,7 +1049,10 @@ class WP_List_Table {
 			$page_links[] = sprintf(
 				"<a class='first-page button' href='%s'><span class='screen-reader-text'>%s</span><span aria-hidden='true'>%s</span></a>",
 				esc_url( remove_query_arg( 'paged', $current_url ) ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+>>>>>>> fb785cbb (Initial commit)
 				__( 'First page' ),
 				'&laquo;'
 			);
@@ -1020,7 +1064,10 @@ class WP_List_Table {
 			$page_links[] = sprintf(
 				"<a class='prev-page button' href='%s'><span class='screen-reader-text'>%s</span><span aria-hidden='true'>%s</span></a>",
 				esc_url( add_query_arg( 'paged', max( 1, $current - 1 ), $current_url ) ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+>>>>>>> fb785cbb (Initial commit)
 				__( 'Previous page' ),
 				'&lsaquo;'
 			);
@@ -1028,6 +1075,7 @@ class WP_List_Table {
 
 		if ( 'bottom' === $which ) {
 			$html_current_page  = $current;
+<<<<<<< HEAD
 			$total_pages_before = '<span class="screen-reader-text">' .
 				/* translators: Hidden accessibility text. */
 				__( 'Current Page' ) .
@@ -1039,6 +1087,13 @@ class WP_List_Table {
 					/* translators: Hidden accessibility text. */
 					__( 'Current Page' ) .
 				'</label>',
+=======
+			$total_pages_before = '<span class="screen-reader-text">' . __( 'Current Page' ) . '</span><span id="table-paging" class="paging-input"><span class="tablenav-paging-text">';
+		} else {
+			$html_current_page = sprintf(
+				"%s<input class='current-page' id='current-page-selector' type='text' name='paged' value='%s' size='%d' aria-describedby='table-paging' /><span class='tablenav-paging-text'>",
+				'<label for="current-page-selector" class="screen-reader-text">' . __( 'Current Page' ) . '</label>',
+>>>>>>> fb785cbb (Initial commit)
 				$current,
 				strlen( $total_pages )
 			);
@@ -1057,7 +1112,10 @@ class WP_List_Table {
 			$page_links[] = sprintf(
 				"<a class='next-page button' href='%s'><span class='screen-reader-text'>%s</span><span aria-hidden='true'>%s</span></a>",
 				esc_url( add_query_arg( 'paged', min( $total_pages, $current + 1 ), $current_url ) ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+>>>>>>> fb785cbb (Initial commit)
 				__( 'Next page' ),
 				'&rsaquo;'
 			);
@@ -1069,7 +1127,10 @@ class WP_List_Table {
 			$page_links[] = sprintf(
 				"<a class='last-page button' href='%s'><span class='screen-reader-text'>%s</span><span aria-hidden='true'>%s</span></a>",
 				esc_url( add_query_arg( 'paged', $total_pages, $current_url ) ),
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+>>>>>>> fb785cbb (Initial commit)
 				__( 'Last page' ),
 				'&raquo;'
 			);
@@ -1205,10 +1266,14 @@ class WP_List_Table {
 	 */
 	protected function get_column_info() {
 		// $_column_headers is already set / cached.
+<<<<<<< HEAD
 		if (
 			isset( $this->_column_headers ) &&
 			is_array( $this->_column_headers )
 		) {
+=======
+		if ( isset( $this->_column_headers ) && is_array( $this->_column_headers ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			/*
 			 * Backward compatibility for `$_column_headers` format prior to WordPress 4.3.
 			 *
@@ -1216,18 +1281,25 @@ class WP_List_Table {
 			 * column headers property. This ensures the primary column name is included
 			 * in plugins setting the property directly in the three item format.
 			 */
+<<<<<<< HEAD
 			if ( 4 === count( $this->_column_headers ) ) {
 				return $this->_column_headers;
 			}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			$column_headers = array( array(), array(), array(), $this->get_primary_column_name() );
 			foreach ( $this->_column_headers as $key => $value ) {
 				$column_headers[ $key ] = $value;
 			}
 
+<<<<<<< HEAD
 			$this->_column_headers = $column_headers;
 
 			return $this->_column_headers;
+=======
+			return $column_headers;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		$columns = get_column_headers( $this->screen );
@@ -1306,11 +1378,16 @@ class WP_List_Table {
 
 		if ( ! empty( $columns['cb'] ) ) {
 			static $cb_counter = 1;
+<<<<<<< HEAD
 			$columns['cb']     = '<label class="screen-reader-text" for="cb-select-all-' . $cb_counter . '">' .
 					/* translators: Hidden accessibility text. */
 					__( 'Select All' ) .
 				'</label>' .
 				'<input id="cb-select-all-' . $cb_counter . '" type="checkbox" />';
+=======
+			$columns['cb']     = '<label class="screen-reader-text" for="cb-select-all-' . $cb_counter . '">' . __( 'Select All' ) . '</label>'
+				. '<input id="cb-select-all-' . $cb_counter . '" type="checkbox" />';
+>>>>>>> fb785cbb (Initial commit)
 			$cb_counter++;
 		}
 
@@ -1575,10 +1652,14 @@ class WP_List_Table {
 	 *                if the current column is not the primary column.
 	 */
 	protected function handle_row_actions( $item, $column_name, $primary ) {
+<<<<<<< HEAD
 		return $column_name === $primary ? '<button type="button" class="toggle-row"><span class="screen-reader-text">' .
 			/* translators: Hidden accessibility text. */
 			__( 'Show more details' ) .
 		'</span></button>' : '';
+=======
+		return $column_name === $primary ? '<button type="button" class="toggle-row"><span class="screen-reader-text">' . __( 'Show more details' ) . '</span></button>' : '';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**

@@ -19,6 +19,7 @@ function render_block_core_file( $attributes, $content ) {
 		wp_enqueue_script( 'wp-block-file-view' );
 	}
 
+<<<<<<< HEAD
 	// Update object's aria-label attribute if present in block HTML.
 
 	// Match an aria-label attribute from an object tag.
@@ -41,6 +42,8 @@ function render_block_core_file( $attributes, $content ) {
 		$content
 	);
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	return $content;
 }
 

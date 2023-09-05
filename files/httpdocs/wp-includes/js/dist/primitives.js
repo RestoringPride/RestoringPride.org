@@ -5,9 +5,15 @@
 /***/ (function(module, exports) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+<<<<<<< HEAD
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
 	http://jedwatson.github.io/classnames
+=======
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+>>>>>>> fb785cbb (Initial commit)
 */
 /* global define */
 
@@ -15,7 +21,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	'use strict';
 
 	var hasOwn = {}.hasOwnProperty;
+<<<<<<< HEAD
 	var nativeCodeString = '[native code]';
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 	function classNames() {
 		var classes = [];
@@ -36,6 +45,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 					}
 				}
 			} else if (argType === 'object') {
+<<<<<<< HEAD
 				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
 					classes.push(arg.toString());
 					continue;
@@ -45,6 +55,16 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 					if (hasOwn.call(arg, key) && arg[key]) {
 						classes.push(key);
 					}
+=======
+				if (arg.toString === Object.prototype.toString) {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				} else {
+					classes.push(arg.toString());
+>>>>>>> fb785cbb (Initial commit)
 				}
 			}
 		}
@@ -149,7 +169,10 @@ __webpack_require__.d(__webpack_exports__, {
   "Defs": function() { return /* reexport */ Defs; },
   "G": function() { return /* reexport */ G; },
   "HorizontalRule": function() { return /* reexport */ HorizontalRule; },
+<<<<<<< HEAD
   "Line": function() { return /* reexport */ Line; },
+=======
+>>>>>>> fb785cbb (Initial commit)
   "LinearGradient": function() { return /* reexport */ LinearGradient; },
   "Path": function() { return /* reexport */ Path; },
   "Polygon": function() { return /* reexport */ Polygon; },
@@ -192,6 +215,7 @@ const Circle = props => (0,external_wp_element_namespaceObject.createElement)('c
 
 const G = props => (0,external_wp_element_namespaceObject.createElement)('g', props);
 /**
+<<<<<<< HEAD
  * @param {import('react').ComponentPropsWithoutRef<'line'>} props
  *
  * @return {JSX.Element} Path component
@@ -199,6 +223,8 @@ const G = props => (0,external_wp_element_namespaceObject.createElement)('g', pr
 
 const Line = props => (0,external_wp_element_namespaceObject.createElement)('line', props);
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @param {import('react').ComponentPropsWithoutRef<'path'>} props
  *
  * @return {JSX.Element} Path component

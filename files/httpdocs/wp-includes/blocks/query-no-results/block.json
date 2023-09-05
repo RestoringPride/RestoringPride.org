@@ -9,13 +9,17 @@
 	"textdomain": "default",
 	"usesContext": [ "queryId", "query" ],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"align": true,
 		"reusable": false,
 		"html": false,
 		"color": {
 			"gradients": true,
 			"link": true
+<<<<<<< HEAD
 		},
 		"typography": {
 			"fontSize": true,
@@ -29,6 +33,8 @@
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 }

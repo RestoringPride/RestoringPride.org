@@ -23,6 +23,7 @@ $social_profiles_help = new WPSEO_Admin_Help_Panel(
 
 echo '<div id="yoast-social-profiles"></div>';
 
+<<<<<<< HEAD
 /**
  * WARNING: This hook is intended for internal use only.
  * Don't use it in your code as it will be removed shortly.
@@ -41,3 +42,7 @@ do_action_deprecated(
 	'',
 	'This action is going away with no replacement. If you want to add settings that interact with Yoast SEO, please create your own settings page.'
 );
+=======
+
+do_action( 'wpseo_admin_other_section' );
+>>>>>>> fb785cbb (Initial commit)

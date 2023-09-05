@@ -11,7 +11,10 @@
  *
  * @since 5.2.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Paused_Extensions_Storage {
 
 	/**

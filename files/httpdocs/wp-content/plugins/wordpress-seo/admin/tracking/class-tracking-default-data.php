@@ -27,12 +27,16 @@ class WPSEO_Tracking_Default_Data implements WPSEO_Collection {
 			'gmt_offset'      => get_option( 'gmt_offset' ),
 			'timezoneString'  => get_option( 'timezone_string' ),
 			'migrationStatus' => get_option( 'yoast_migrations_free' ),
+<<<<<<< HEAD
 			'countPosts'      => $this->get_post_count( 'post' ),
 			'countPages'      => $this->get_post_count( 'page' ),
+=======
+>>>>>>> fb785cbb (Initial commit)
 		];
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns the number of posts of a certain type.
 	 *
 	 * @param string $post_type The post type return the count for.
@@ -48,6 +52,8 @@ class WPSEO_Tracking_Default_Data implements WPSEO_Collection {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Returns the WordPress version.
 	 *
 	 * @return string The version.

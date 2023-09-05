@@ -282,6 +282,7 @@ function wp_cache_flush_runtime() {
 }
 
 /**
+<<<<<<< HEAD
  * Removes all cache items in a group, if the object cache implementation supports it.
  *
  * Before calling this function, always check for group flushing support using the
@@ -327,6 +328,8 @@ function wp_cache_supports( $feature ) {
 }
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Closes the cache.
  *
  * This function has ceased to do anything since WordPress 2.5. The

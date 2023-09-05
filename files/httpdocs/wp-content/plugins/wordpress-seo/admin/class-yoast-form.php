@@ -6,7 +6,10 @@
  */
 
 use Yoast\WP\SEO\Presenters\Admin\Light_Switch_Presenter;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Presenters\Admin\Sidebar_Presenter;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Admin form class.
@@ -190,9 +193,13 @@ class Yoast_Form {
 			return;
 		}
 
+<<<<<<< HEAD
 		$sidebar_presenter = new Sidebar_Presenter();
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in presenter.
 		echo $sidebar_presenter->present();
+=======
+		require_once 'views/sidebar.php';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -200,7 +207,11 @@ class Yoast_Form {
 	 *
 	 * @since 2.0
 	 *
+<<<<<<< HEAD
 	 * @param string $text Label text string, which can contain escaped html.
+=======
+	 * @param string $text Label text string.
+>>>>>>> fb785cbb (Initial commit)
 	 * @param array  $attr HTML attributes set.
 	 */
 	public function label( $text, $attr ) {
@@ -217,7 +228,11 @@ class Yoast_Form {
 			$aria_label = ' aria-label="' . esc_attr( $attr['aria_label'] ) . '"';
 		}
 
+<<<<<<< HEAD
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- output escaped before. Specifically, the $text variable can contain escaped html.
+=======
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- output escaped before.
+>>>>>>> fb785cbb (Initial commit)
 		echo "<label class='" . esc_attr( $attr['class'] ) . "' for='" . esc_attr( $attr['for'] ) . "'$aria_label>$text";
 		if ( $attr['close'] ) {
 			echo '</label>';
@@ -241,7 +256,11 @@ class Yoast_Form {
 
 		$id = ( $attr['id'] === '' ) ? '' : ' id="' . esc_attr( $attr['id'] ) . '"';
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- output escaped before.
+<<<<<<< HEAD
 		echo '<legend class="' . esc_attr( 'yoast-form-legend ' . $attr['class'] ) . '"' . $id . '>' . $text . '</legend>';
+=======
+		echo '<legend class="yoast-form-legend ' . esc_attr( $attr['class'] ) . '"' . $id . '>' . $text . '</legend>';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -277,7 +296,11 @@ class Yoast_Form {
 		$disabled_attribute = $this->get_disabled_attribute( $variable, $attr );
 
 		// phpcs:ignore WordPress.Security.EscapeOutput -- Reason: $disabled_attribute output is hardcoded and all other output is properly escaped.
+<<<<<<< HEAD
 		echo '<input class="', esc_attr( 'checkbox ' . $class ), '" type="checkbox" id="', esc_attr( $variable ), '" name="', esc_attr( $this->option_name . '[' . $variable . ']' ), '" value="on"', checked( $val, 'on', false ), $disabled_attribute, '/>';
+=======
+		echo '<input class="checkbox ', esc_attr( $class ), '" type="checkbox" id="', esc_attr( $variable ), '" name="', esc_attr( $this->option_name ), '[', esc_attr( $variable ), ']" value="on"', checked( $val, 'on', false ), $disabled_attribute, '/>';
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( ! empty( $label ) ) {
 			$this->label( $label, [ 'for' => $variable ] );
@@ -307,7 +330,12 @@ class Yoast_Form {
 			printf(
 				'<input class="checkbox double" id="%1$s" type="checkbox" name="%2$s" %3$s %5$s value="%4$s"/>',
 				esc_attr( $variable . '-' . $name ),
+<<<<<<< HEAD
 				esc_attr( $this->option_name . '[' . $variable . '][' . $name . ']' ),
+=======
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- output escaped before.
+				esc_attr( $this->option_name ) . '[' . esc_attr( $variable ) . '][' . $name . ']',
+>>>>>>> fb785cbb (Initial commit)
 				checked( ! empty( $values[ $name ] ), true, false ),
 				esc_attr( $name ),
 				disabled( ( isset( $attr['disabled'] ) && $attr['disabled'] ), true, false )
@@ -413,7 +441,11 @@ class Yoast_Form {
 		$disabled_attribute = $this->get_disabled_attribute( $variable, $attr );
 
 		// phpcs:ignore WordPress.Security.EscapeOutput -- Reason: $disabled_attribute output is hardcoded and all other output is properly escaped.
+<<<<<<< HEAD
 		echo '<input', $attributes, $aria_attributes, ' class="', esc_attr( 'textinput ' . $attr['class'] ), '" placeholder="', esc_attr( $attr['placeholder'] ), '" type="', $type, '" id="', esc_attr( $variable ), '" name="', esc_attr( $this->option_name . '[' . $variable . ']' ), '" value="', esc_attr( $val ), '"', $disabled_attribute, '/>', '<br class="clear" />';
+=======
+		echo '<input' . $attributes . $aria_attributes . ' class="textinput ' . esc_attr( $attr['class'] ) . '" placeholder="' . esc_attr( $attr['placeholder'] ) . '" type="' . $type . '" id="', esc_attr( $variable ), '" name="', esc_attr( $this->option_name ), '[', esc_attr( $variable ), ']" value="', esc_attr( $val ), '"', $disabled_attribute, '/>', '<br class="clear" />';
+>>>>>>> fb785cbb (Initial commit)
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in getter.
 		echo Yoast_Input_Validation::get_the_error_description( $variable );
 	}
@@ -453,7 +485,11 @@ class Yoast_Form {
 		$disabled_attribute = $this->get_disabled_attribute( $variable, $attr );
 
 		// phpcs:ignore WordPress.Security.EscapeOutput -- Reason: $disabled_attribute output is hardcoded and all other output is properly escaped.
+<<<<<<< HEAD
 		echo '<input' . $aria_attributes . ' class="' . esc_attr( $attr['class'] ) . '" type="' . $type . '" id="', esc_attr( $variable ), '" min="', esc_attr( $attr['min'] ), '" max="', esc_attr( $attr['max'] ), '" name="', esc_attr( $this->option_name . '[' . $variable . ']' ), '" value="', esc_attr( $val ), '"', $disabled_attribute, '/>', '<br class="clear" />';
+=======
+		echo '<input' . $aria_attributes . ' class="' . esc_attr( $attr['class'] ) . '" type="' . $type . '" id="', esc_attr( $variable ), '" min="',esc_attr( $attr['min'] ),'" max="',esc_attr( $attr['max'] ),'" name="', esc_attr( $this->option_name ), '[', esc_attr( $variable ), ']" value="', esc_attr( $val ), '"', $disabled_attribute, '/>', '<br class="clear" />';
+>>>>>>> fb785cbb (Initial commit)
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in getter.
 		echo Yoast_Input_Validation::get_the_error_description( $variable );
 	}
@@ -508,7 +544,11 @@ class Yoast_Form {
 		printf(
 			'<input type="%1$s" name="%2$s" id="%3$s" class="%4$s"%5$s%6$s%7$s value="%8$s"%9$s>',
 			$type,
+<<<<<<< HEAD
 			\esc_attr( $this->option_name . '[' . $variable . ']' ),
+=======
+			\esc_attr( $this->option_name ) . '[' . \esc_attr( $variable ) . ']',
+>>>>>>> fb785cbb (Initial commit)
 			\esc_attr( $variable ),
 			\esc_attr( $attr['class'] ),
 			isset( $attr['placeholder'] ) ? ' placeholder="' . \esc_attr( $attr['placeholder'] ) . '"' : '',
@@ -558,7 +598,11 @@ class Yoast_Form {
 		$disabled_attribute = $this->get_disabled_attribute( $variable, $attr );
 
 		// phpcs:ignore WordPress.Security.EscapeOutput -- Reason: $disabled_attribute output is hardcoded and all other output is properly escaped.
+<<<<<<< HEAD
 		echo '<textarea cols="' . esc_attr( $attr['cols'] ) . '" rows="' . esc_attr( $attr['rows'] ) . '" class="' . esc_attr( 'textinput ' . $attr['class'] ) . '" id="' . esc_attr( $variable ) . '" name="' . esc_attr( $this->option_name . '[' . $variable . ']' ), '"', $disabled_attribute, '>' . esc_textarea( $val ) . '</textarea><br class="clear" />';
+=======
+		echo '<textarea cols="' . esc_attr( $attr['cols'] ) . '" rows="' . esc_attr( $attr['rows'] ) . '" class="textinput ' . esc_attr( $attr['class'] ) . '" id="' . esc_attr( $variable ) . '" name="' . esc_attr( $this->option_name ) . '[' . esc_attr( $variable ) . ']"', $disabled_attribute, '>' . esc_textarea( $val ) . '</textarea><br class="clear" />';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -583,7 +627,11 @@ class Yoast_Form {
 			$id = 'hidden_' . $variable;
 		}
 
+<<<<<<< HEAD
 		echo '<input type="hidden" id="' . esc_attr( $id ) . '" name="' . esc_attr( $this->option_name . '[' . $variable . ']' ), '" value="' . esc_attr( $val ) . '"/>';
+=======
+		echo '<input type="hidden" id="' . esc_attr( $id ) . '" name="' . esc_attr( $this->option_name ) . '[' . esc_attr( $variable ) . ']" value="' . esc_attr( $val ) . '"/>';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -865,17 +913,24 @@ class Yoast_Form {
 
 		$help_class = ! empty( $help ) ? ' switch-container__has-help' : '';
 
+<<<<<<< HEAD
 		$has_premium_upsell = ( isset( $attr['show_premium_upsell'] ) && $attr['show_premium_upsell'] && isset( $attr['premium_upsell_url'] ) && ! empty( $attr['premium_upsell_url'] ) );
 		$upsell_class       = ( $has_premium_upsell ) ? ' premium-upsell' : '';
 
 		$var_esc = esc_attr( $variable );
 
 		printf( '<div class="%s">', esc_attr( 'switch-container' . $help_class . $upsell_class ) );
+=======
+		$var_esc = esc_attr( $variable );
+
+		printf( '<div class="%s">', esc_attr( 'switch-container' . $help_class ) );
+>>>>>>> fb785cbb (Initial commit)
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- output escaped before.
 		echo '<fieldset id="', $var_esc, '" class="fieldset-switch-toggle"><legend>', $label, '</legend>', $help;
 
 		// Show disabled note if attribute does not exists or does exist and is set to true.
 		if ( ! isset( $attr['show_disabled_note'] ) || ( $attr['show_disabled_note'] === true ) ) {
+<<<<<<< HEAD
 			if ( isset( $attr['note_when_disabled'] ) ) {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- output escaped before.
 				echo $this->get_disabled_note( $variable, $attr['note_when_disabled'] );
@@ -884,6 +939,10 @@ class Yoast_Form {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- output escaped before.
 				echo $this->get_disabled_note( $variable );
 			}
+=======
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- output escaped before.
+			echo $this->get_disabled_note( $variable );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		echo '<div class="switch-toggle switch-candy switch-yoast-seo">';
@@ -907,6 +966,7 @@ class Yoast_Form {
 			'<label for="', $for, '">', esc_html( $value ), $screen_reader_text_html, '</label>';
 		}
 
+<<<<<<< HEAD
 		$upsell_button = '';
 		if ( $has_premium_upsell ) {
 			$upsell_button = '<a class="yoast-button yoast-button--buy yoast-button--small" data-action="load-nfd-ctb" data-ctb-id="f6a84663-465f-4cb5-8ba5-f7a6d72224b2" href=' . esc_url( $attr['premium_upsell_url'] ) . ' target="_blank">' . esc_html__( 'Unlock with Premium!', 'wordpress-seo' ) . '<span class="screen-reader-text">' . esc_html__( '(Opens in a new browser tab)', 'wordpress-seo' ) . '</span>' .
@@ -915,6 +975,9 @@ class Yoast_Form {
 
 
 		echo '<a></a></div></fieldset><div class="clear"></div>' . $upsell_button . '</div>' . PHP_EOL . PHP_EOL;
+=======
+		echo '<a></a></div></fieldset><div class="clear"></div></div>' . PHP_EOL . PHP_EOL;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -1029,6 +1092,7 @@ class Yoast_Form {
 	/**
 	 * Gets the explanation note to print if a given control is disabled.
 	 *
+<<<<<<< HEAD
 	 * @param string $variable    The variable within the option to print a disabled note for.
 	 * @param string $custom_note An optional custom note to print instead.
 	 *
@@ -1038,17 +1102,31 @@ class Yoast_Form {
 		if ( $custom_note === '' && ! $this->is_control_disabled( $variable ) ) {
 			return '';
 		}
+=======
+	 * @param string $variable The variable within the option to print a disabled note for.
+	 *
+	 * @return string Explanation note HTML string, or empty string if no note necessary.
+	 */
+	protected function get_disabled_note( $variable ) {
+		if ( ! $this->is_control_disabled( $variable ) ) {
+			return '';
+		}
+
+>>>>>>> fb785cbb (Initial commit)
 		$disabled_message = esc_html__( 'This feature has been disabled by the network admin.', 'wordpress-seo' );
 
 		// The explanation to show when disabling the Usage tracking feature for multisite subsites.
 		if ( $this->is_tracking_on_subsite( $variable ) ) {
 			$disabled_message = esc_html__( 'This feature has been disabled since subsites never send tracking data.', 'wordpress-seo' );
 		}
+<<<<<<< HEAD
 
 		if ( $custom_note ) {
 			$disabled_message = esc_html( $custom_note );
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return '<p class="disabled-note">' . $disabled_message . '</p>';
 	}
 

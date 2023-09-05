@@ -4,7 +4,11 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
 class ComposerStaticInite2ec2ba24c5a208999bb760abc7d0d61
+=======
+class ComposerStaticInitebe3aefe49d19c1b9a1f8f4524105815
+>>>>>>> fb785cbb (Initial commit)
 {
     public static $files = array (
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
@@ -20,8 +24,11 @@ class ComposerStaticInite2ec2ba24c5a208999bb760abc7d0d61
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Stripe\\' => 7,
+<<<<<<< HEAD
             'StellarWP\\Validation\\' => 21,
             'StellarWP\\ContainerContract\\' => 28,
+=======
+>>>>>>> fb785cbb (Initial commit)
             'Sample\\' => 7,
         ),
         'P' => 
@@ -66,6 +73,7 @@ class ComposerStaticInite2ec2ba24c5a208999bb760abc7d0d61
         array (
             0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
         ),
+<<<<<<< HEAD
         'StellarWP\\Validation\\' => 
         array (
             0 => __DIR__ . '/..' . '/stellarwp/validation/src',
@@ -74,6 +82,8 @@ class ComposerStaticInite2ec2ba24c5a208999bb760abc7d0d61
         array (
             0 => __DIR__ . '/..' . '/stellarwp/container-contract/src',
         ),
+=======
+>>>>>>> fb785cbb (Initial commit)
         'Sample\\' => 
         array (
             0 => __DIR__ . '/..' . '/paypal/paypal-checkout-sdk/samples',
@@ -140,9 +150,15 @@ class ComposerStaticInite2ec2ba24c5a208999bb760abc7d0d61
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInite2ec2ba24c5a208999bb760abc7d0d61::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInite2ec2ba24c5a208999bb760abc7d0d61::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInite2ec2ba24c5a208999bb760abc7d0d61::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInitebe3aefe49d19c1b9a1f8f4524105815::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitebe3aefe49d19c1b9a1f8f4524105815::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitebe3aefe49d19c1b9a1f8f4524105815::$classMap;
+>>>>>>> fb785cbb (Initial commit)
 
         }, null, ClassLoader::class);
     }

@@ -39,8 +39,14 @@ class Model
      * Get forms associated with Progress Bar
      *
      * @since 2.9.0
+<<<<<<< HEAD
      */
     public function getForms(): array
+=======
+     **@return array
+     */
+    protected function getForms()
+>>>>>>> fb785cbb (Initial commit)
     {
         if ( ! empty($this->forms)) {
             return $this->forms;
@@ -82,10 +88,14 @@ class Model
         }
     }
 
+<<<<<<< HEAD
     /**
      * @since 2.9.0
      */
     public function getDonations(): array
+=======
+    protected function getDonations()
+>>>>>>> fb785cbb (Initial commit)
     {
         $query_args = [
             'post_status' => [
@@ -104,13 +114,26 @@ class Model
      * Get output markup for Progress Bar
      *
      * @since 2.9.0
+<<<<<<< HEAD
      */
     public function getOutput(): string
+=======
+     **@return string
+     */
+    public function getOutput()
+>>>>>>> fb785cbb (Initial commit)
     {
         ob_start();
         $output = '';
         require $this->getTemplatePath();
+<<<<<<< HEAD
         return ob_get_clean();
+=======
+        $output = ob_get_contents();
+        ob_end_clean();
+
+        return $output;
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -118,7 +141,11 @@ class Model
      * @since 2.9.0
      * @return stdClass seem MultiFormGoals/ProgressBar/Query.php
      */
+<<<<<<< HEAD
     public function getDonationRevenueResults()
+=======
+    protected function getDonationRevenueResults()
+>>>>>>> fb785cbb (Initial commit)
     {
         if ( ! $this->donationRevenueResults) {
             $query = new Query($this->getForms());
@@ -132,8 +159,14 @@ class Model
      * Get raw earnings value for Progress Bar
      *
      * @since 2.9.0
+<<<<<<< HEAD
      */
     public function getTotal(): string
+=======
+     **@return string
+     */
+    protected function getTotal()
+>>>>>>> fb785cbb (Initial commit)
     {
         $query = new Query($this->getForms());
         $results = $query->getResults();
@@ -145,8 +178,14 @@ class Model
      * Get number of donations for Progress Bar
      *
      * @since 2.9.0
+<<<<<<< HEAD
      */
     public function getDonationCount(): int
+=======
+     **@return int
+     */
+    protected function getDonationCount()
+>>>>>>> fb785cbb (Initial commit)
     {
         $results = $this->getDonationRevenueResults();
 
@@ -177,8 +216,14 @@ class Model
      * Get goal for Progress Bar
      *
      * @since 2.9.0
+<<<<<<< HEAD
      */
     public function getGoal(): string
+=======
+     **@return string
+     */
+    protected function getGoal()
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->goal;
     }
@@ -187,8 +232,14 @@ class Model
      * Get goal color for Progress Bar
      *
      * @since 2.9.0
+<<<<<<< HEAD
      */
     public function getColor(): string
+=======
+     **@return string
+     */
+    protected function getColor()
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->color;
     }
@@ -202,12 +253,16 @@ class Model
         return GIVE_PLUGIN_DIR . '/src/MultiFormGoals/resources/views/progressbar.php';
     }
 
+<<<<<<< HEAD
     /**
      * @since 2.24.0
      *
      * @return mixed|string
      */
     public function getFormattedTotal()
+=======
+    protected function getFormattedTotal()
+>>>>>>> fb785cbb (Initial commit)
     {
         return give_currency_filter(
             give_format_amount(
@@ -220,12 +275,16 @@ class Model
         );
     }
 
+<<<<<<< HEAD
     /**
      * @since 2.24.0
      *
      * @return mixed|string
      */
     public function getFormattedGoal()
+=======
+    protected function getFormattedGoal()
+>>>>>>> fb785cbb (Initial commit)
     {
         return give_currency_filter(
             give_format_amount(
@@ -242,8 +301,14 @@ class Model
      * Get end date for Progress Bar
      *
      * @since 2.9.0
+<<<<<<< HEAD
      */
     public function getEndDate(): string
+=======
+     **@return string
+     */
+    protected function getEndDate()
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->enddate;
     }
@@ -252,8 +317,14 @@ class Model
      * Get minutes remaining before Progress Bar end date
      *
      * @since 2.9.0
+<<<<<<< HEAD
      */
     public function getMinutesRemaining(): string
+=======
+     **@return string
+     */
+    protected function getMinutesRemaining()
+>>>>>>> fb785cbb (Initial commit)
     {
         $enddate = strtotime($this->getEndDate());
         if ($enddate) {
@@ -269,6 +340,7 @@ class Model
      * Get time remaining before Progress Bar end date
      *
      * @since 2.9.0
+<<<<<<< HEAD
      *
      * @return float|int
      */
@@ -276,6 +348,13 @@ class Model
     {
         $minutes = $this->getMinutesRemaining();
 
+=======
+     **@return string
+     */
+    protected function getTimeToGo()
+    {
+        $minutes = $this->getMinutesRemaining();
+>>>>>>> fb785cbb (Initial commit)
         switch ($minutes) {
             case $minutes > 1440:
             {
@@ -289,10 +368,13 @@ class Model
             {
                 return round($minutes);
             }
+<<<<<<< HEAD
             default:
             {
                 return 0;
             }
+=======
+>>>>>>> fb785cbb (Initial commit)
         }
     }
 
@@ -300,11 +382,19 @@ class Model
      * Get time remaining before Progress Bar end date
      *
      * @since 2.9.0
+<<<<<<< HEAD
      */
     public function getTimeToGoLabel(): string
     {
         $minutes = $this->getMinutesRemaining();
 
+=======
+     **@return string
+     */
+    protected function getTimeToGoLabel()
+    {
+        $minutes = $this->getMinutesRemaining();
+>>>>>>> fb785cbb (Initial commit)
         switch ($minutes) {
             case $minutes > 1440:
             {
@@ -318,8 +408,11 @@ class Model
             {
                 return _n('minute to go', 'minutes to go', $this->getTimeToGo(), 'give');
             }
+<<<<<<< HEAD
             default:
                 return '';
+=======
+>>>>>>> fb785cbb (Initial commit)
         }
     }
 }

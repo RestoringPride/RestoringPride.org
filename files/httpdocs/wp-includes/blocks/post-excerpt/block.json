@@ -20,7 +20,10 @@
 	},
 	"usesContext": [ "postId", "postType", "queryId" ],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"html": false,
 		"color": {
 			"gradients": true,
@@ -38,12 +41,19 @@
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true,
+<<<<<<< HEAD
 			"__experimentalFontFamily": true,
 			"__experimentalFontWeight": true,
 			"__experimentalFontStyle": true,
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
+=======
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}

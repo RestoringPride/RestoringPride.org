@@ -11,4 +11,8 @@ if ( ! defined( 'WPSEO_VERSION' ) ) {
 	exit();
 }
 
+<<<<<<< HEAD
 echo '<div id="wpseo-first-time-configuration"></div>';
+=======
+echo '<div id="wpseo-first-time-configuration" class="yst-root"></div>';
+>>>>>>> fb785cbb (Initial commit)

@@ -266,7 +266,11 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 			$error = sprintf(
 				/* translators: 1: Current PHP version, 2: Version required by the uploaded plugin. */
 				__( 'The PHP version on your server is %1$s, however the uploaded plugin requires %2$s.' ),
+<<<<<<< HEAD
 				PHP_VERSION,
+=======
+				phpversion(),
+>>>>>>> fb785cbb (Initial commit)
 				$requires_php
 			);
 
@@ -293,13 +297,21 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 				$warning = sprintf(
 					/* translators: %s: Documentation URL. */
 					__( 'You are uploading an older version of a current plugin. You can continue to install the older version, but be sure to <a href="%s">back up your database and files</a> first.' ),
+<<<<<<< HEAD
 					__( 'https://wordpress.org/documentation/article/wordpress-backups/' )
+=======
+					__( 'https://wordpress.org/support/article/wordpress-backups/' )
+>>>>>>> fb785cbb (Initial commit)
 				);
 			} else {
 				$warning = sprintf(
 					/* translators: %s: Documentation URL. */
 					__( 'You are updating a plugin. Be sure to <a href="%s">back up your database and files</a> first.' ),
+<<<<<<< HEAD
 					__( 'https://wordpress.org/documentation/article/wordpress-backups/' )
+=======
+					__( 'https://wordpress.org/support/article/wordpress-backups/' )
+>>>>>>> fb785cbb (Initial commit)
 				);
 			}
 

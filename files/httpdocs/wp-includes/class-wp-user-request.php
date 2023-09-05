@@ -6,7 +6,10 @@
  *
  * @since 4.9.6
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 final class WP_User_Request {
 	/**
 	 * Request ID.

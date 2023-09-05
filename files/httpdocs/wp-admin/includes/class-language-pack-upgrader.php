@@ -62,7 +62,11 @@ class Language_Pack_Upgrader extends WP_Upgrader {
 		 * Avoid messing with VCS installations, at least for now.
 		 * Noted: this is not the ideal way to accomplish this.
 		 */
+<<<<<<< HEAD
 		$check_vcs = new WP_Automatic_Updater();
+=======
+		$check_vcs = new WP_Automatic_Updater;
+>>>>>>> fb785cbb (Initial commit)
 		if ( $check_vcs->is_vcs_checkout( WP_CONTENT_DIR ) ) {
 			return;
 		}

@@ -38,6 +38,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "parse": function() { return /* binding */ parse; }
 /* harmony export */ });
+<<<<<<< HEAD
 /**
  * @type {string}
  */
@@ -88,6 +89,13 @@ let stack;
  */
 
 /**
+=======
+let document;
+let offset;
+let output;
+let stack;
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Matches block comment delimiters
  *
  * While most of this pattern is straightforward the attribute parsing
@@ -130,6 +138,7 @@ let stack;
  */
 
 const tokenizer = /<!--\s+(\/)?wp:([a-z][a-z0-9_-]*\/)?([a-z][a-z0-9_-]*)\s+({(?:(?=([^}]+|}+(?=})|(?!}\s+\/?-->)[^])*)\5|[^]*?)}\s+)?(\/)?-->/g;
+<<<<<<< HEAD
 /**
  * Constructs a block object.
  *
@@ -140,6 +149,8 @@ const tokenizer = /<!--\s+(\/)?wp:([a-z][a-z0-9_-]*\/)?([a-z][a-z0-9_-]*)\s+({(?
  * @param {string[]}      innerContent
  * @return {ParsedBlock} The block object.
  */
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 function Block(blockName, attrs, innerBlocks, innerHTML, innerContent) {
   return {
@@ -150,6 +161,7 @@ function Block(blockName, attrs, innerBlocks, innerHTML, innerContent) {
     innerContent
   };
 }
+<<<<<<< HEAD
 /**
  * Constructs a freeform block object.
  *
@@ -157,10 +169,13 @@ function Block(blockName, attrs, innerBlocks, innerHTML, innerContent) {
  * @return {ParsedBlock} The freeform block object.
  */
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 function Freeform(innerHTML) {
   return Block(null, {}, [], innerHTML, [innerHTML]);
 }
+<<<<<<< HEAD
 /**
  * Constructs a frame object.
  *
@@ -172,6 +187,8 @@ function Freeform(innerHTML) {
  * @return {ParsedFrame} The frame object.
  */
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 function Frame(block, tokenStart, tokenLength, prevOffset, leadingHtmlStart) {
   return {
@@ -257,7 +274,11 @@ function Frame(block, tokenStart, tokenLength, prevOffset, leadingHtmlStart) {
  *     }
  * ];
  * ```
+<<<<<<< HEAD
  * @return {ParsedBlock[]} A block-based representation of the input HTML.
+=======
+ * @return {Array} A block-based representation of the input HTML.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 
@@ -273,6 +294,7 @@ const parse = doc => {
 
   return output;
 };
+<<<<<<< HEAD
 /**
  * Parses the next token in the input document.
  *
@@ -283,6 +305,13 @@ function proceed() {
   const stackDepth = stack.length;
   const next = nextToken();
   const [tokenType, blockName, attrs, startOffset, tokenLength] = next; // We may have some HTML soup before the next block.
+=======
+
+function proceed() {
+  const next = nextToken();
+  const [tokenType, blockName, attrs, startOffset, tokenLength] = next;
+  const stackDepth = stack.length; // We may have some HTML soup before the next block.
+>>>>>>> fb785cbb (Initial commit)
 
   const leadingHtmlStart = startOffset > offset ? offset : null;
 
@@ -359,9 +388,13 @@ function proceed() {
       // block and add it as a innerBlock to the parent.
 
 
+<<<<<<< HEAD
       const stackTop =
       /** @type {ParsedFrame} */
       stack.pop();
+=======
+      const stackTop = stack.pop();
+>>>>>>> fb785cbb (Initial commit)
       const html = document.substr(stackTop.prevOffset, startOffset - stackTop.prevOffset);
       stackTop.block.innerHTML += html;
       stackTop.block.innerContent.push(html);
@@ -395,12 +428,15 @@ function parseJSON(input) {
     return null;
   }
 }
+<<<<<<< HEAD
 /**
  * Finds the next token in the document.
  *
  * @return {Token} The next matched token.
  */
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 function nextToken() {
   // Aye the magic
@@ -412,7 +448,11 @@ function nextToken() {
   const matches = tokenizer.exec(document); // We have no more tokens.
 
   if (null === matches) {
+<<<<<<< HEAD
     return ['no-more-tokens', '', null, 0, 0];
+=======
+    return ['no-more-tokens'];
+>>>>>>> fb785cbb (Initial commit)
   }
 
   const startedAt = matches.index;
@@ -442,12 +482,15 @@ function nextToken() {
 
   return ['block-opener', name, attrs, startedAt, length];
 }
+<<<<<<< HEAD
 /**
  * Adds a freeform block to the output.
  *
  * @param {number} [rawLength]
  */
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 function addFreeform(rawLength) {
   const length = rawLength ? rawLength : document.length - offset;
@@ -458,6 +501,7 @@ function addFreeform(rawLength) {
 
   output.push(Freeform(document.substr(offset, length)));
 }
+<<<<<<< HEAD
 /**
  * Adds inner block to the parent block.
  *
@@ -467,6 +511,8 @@ function addFreeform(rawLength) {
  * @param {number}      [lastOffset]
  */
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 function addInnerBlock(block, tokenStart, tokenLength, lastOffset) {
   const parent = stack[stack.length - 1];
@@ -481,12 +527,15 @@ function addInnerBlock(block, tokenStart, tokenLength, lastOffset) {
   parent.block.innerContent.push(null);
   parent.prevOffset = lastOffset ? lastOffset : tokenStart + tokenLength;
 }
+<<<<<<< HEAD
 /**
  * Adds block from the stack to the output.
  *
  * @param {number} [endOffset]
  */
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 function addBlockFromStack(endOffset) {
   const {
@@ -494,9 +543,13 @@ function addBlockFromStack(endOffset) {
     leadingHtmlStart,
     prevOffset,
     tokenStart
+<<<<<<< HEAD
   } =
   /** @type {ParsedFrame} */
   stack.pop();
+=======
+  } = stack.pop();
+>>>>>>> fb785cbb (Initial commit)
   const html = endOffset ? document.substr(prevOffset, endOffset - prevOffset) : document.substr(prevOffset);
 
   if (html) {

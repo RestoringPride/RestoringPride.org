@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Controlgroup 1.13.2
+=======
+ * jQuery UI Controlgroup 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -36,8 +40,13 @@
 
 var controlgroupCornerRegex = /ui-corner-([a-z]){2,6}/g;
 
+<<<<<<< HEAD
 $.widget( "ui.controlgroup", {
 	version: "1.13.2",
+=======
+return $.widget( "ui.controlgroup", {
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	defaultElement: "<div>",
 	options: {
 		direction: "horizontal",

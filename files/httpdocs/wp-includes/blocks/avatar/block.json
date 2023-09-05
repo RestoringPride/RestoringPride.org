@@ -4,7 +4,11 @@
 	"name": "core/avatar",
 	"title": "Avatar",
 	"category": "theme",
+<<<<<<< HEAD
 	"description": "Add a user’s avatar.",
+=======
+	"description": "Add a user's avatar.",
+>>>>>>> fb785cbb (Initial commit)
 	"textdomain": "default",
 	"attributes": {
 		"userId": {
@@ -22,16 +26,27 @@
 			"type": "string",
 			"default": "_self"
 		}
+<<<<<<< HEAD
 	},
 	"usesContext": [ "postType", "postId", "commentId" ],
 	"supports": {
 		"anchor": true,
+=======
+
+	},
+	"usesContext": [ "postType", "postId", "commentId" ],
+	"supports": {
+>>>>>>> fb785cbb (Initial commit)
 		"html": false,
 		"align": true,
 		"alignWide": false,
 		"spacing": {
+<<<<<<< HEAD
 			"margin": true,
 			"padding": true
+=======
+			"margin": true
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"__experimentalBorder": {
 			"__experimentalSkipSerialization": true,

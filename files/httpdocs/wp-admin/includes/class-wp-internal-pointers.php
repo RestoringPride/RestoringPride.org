@@ -12,7 +12,10 @@
  *
  * @since 3.3.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 final class WP_Internal_Pointers {
 	/**
 	 * Initializes the new feature pointers.

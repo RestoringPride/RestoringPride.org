@@ -20,7 +20,11 @@ function render_block_core_image( $attributes, $content ) {
 		// which now wraps Image Blocks within innerBlocks.
 		// The data-id attribute is added in a core/gallery `render_block_data` hook.
 		$data_id_attribute = 'data-id="' . esc_attr( $attributes['data-id'] ) . '"';
+<<<<<<< HEAD
 		if ( ! str_contains( $content, $data_id_attribute ) ) {
+=======
+		if ( false === strpos( $content, $data_id_attribute ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			$content = str_replace( '<img', '<img ' . $data_id_attribute . ' ', $content );
 		}
 	}

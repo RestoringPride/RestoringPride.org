@@ -8,12 +8,17 @@
 	"textdomain": "default",
 	"attributes": {
 		"url": {
+<<<<<<< HEAD
 			"type": "string",
 			"__experimentalRole": "content"
+=======
+			"type": "string"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"caption": {
 			"type": "string",
 			"source": "html",
+<<<<<<< HEAD
 			"selector": "figcaption",
 			"__experimentalRole": "content"
 		},
@@ -24,6 +29,15 @@
 		"providerNameSlug": {
 			"type": "string",
 			"__experimentalRole": "content"
+=======
+			"selector": "figcaption"
+		},
+		"type": {
+			"type": "string"
+		},
+		"providerNameSlug": {
+			"type": "string"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"allowResponsive": {
 			"type": "boolean",
@@ -31,6 +45,7 @@
 		},
 		"responsive": {
 			"type": "boolean",
+<<<<<<< HEAD
 			"default": false,
 			"__experimentalRole": "content"
 		},
@@ -38,6 +53,13 @@
 			"type": "boolean",
 			"default": true,
 			"__experimentalRole": "content"
+=======
+			"default": false
+		},
+		"previewable": {
+			"type": "boolean",
+			"default": true
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"supports": {

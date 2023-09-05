@@ -68,8 +68,19 @@ __webpack_require__.d(selectors_namespaceObject, {
 
 ;// CONCATENATED MODULE: external ["wp","data"]
 var external_wp_data_namespaceObject = window["wp"]["data"];
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/keyboard-shortcuts/build-module/store/reducer.js
 /**
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+;// CONCATENATED MODULE: ./node_modules/@wordpress/keyboard-shortcuts/build-module/store/reducer.js
+/**
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Reducer returning the registered shortcuts
  *
  * @param {Object} state  Current state.
@@ -77,6 +88,10 @@ var external_wp_data_namespaceObject = window["wp"]["data"];
  *
  * @return {Object} Updated state.
  */
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 function reducer() {
   let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   let action = arguments.length > 1 ? arguments[1] : undefined;
@@ -93,11 +108,15 @@ function reducer() {
       };
 
     case 'UNREGISTER_SHORTCUT':
+<<<<<<< HEAD
       const {
         [action.name]: actionName,
         ...remainingState
       } = state;
       return remainingState;
+=======
+      return (0,external_lodash_namespaceObject.omit)(state, action.name);
+>>>>>>> fb785cbb (Initial commit)
   }
 
   return state;
@@ -168,6 +187,7 @@ function unregisterShortcut(name) {
   };
 }
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/rememo/rememo.js
 
 
@@ -203,17 +223,37 @@ function unregisterShortcut(name) {
  * @property {CacheNode?} [head] Cache head.
  * @property {*[]} [lastDependants] Dependants from previous invocation.
  */
+=======
+;// CONCATENATED MODULE: ./node_modules/rememo/es/rememo.js
+
+
+var LEAF_KEY, hasWeakMap;
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Arbitrary value used as key for referencing cache object in WeakMap tree.
  *
+<<<<<<< HEAD
  * @type {{}}
  */
 var LEAF_KEY = {};
+=======
+ * @type {Object}
+ */
+LEAF_KEY = {};
+
+/**
+ * Whether environment supports WeakMap.
+ *
+ * @type {boolean}
+ */
+hasWeakMap = typeof WeakMap !== 'undefined';
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Returns the first argument as the sole entry in an array.
  *
+<<<<<<< HEAD
  * @template T
  *
  * @param {T} value Value to return.
@@ -222,6 +262,14 @@ var LEAF_KEY = {};
  */
 function arrayOf(value) {
 	return [value];
+=======
+ * @param {*} value Value to return.
+ *
+ * @return {Array} Value returned as entry in array.
+ */
+function arrayOf( value ) {
+	return [ value ];
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -232,19 +280,32 @@ function arrayOf(value) {
  *
  * @return {boolean} Whether value is object-like.
  */
+<<<<<<< HEAD
 function isObjectLike(value) {
 	return !!value && 'object' === typeof value;
+=======
+function isObjectLike( value ) {
+	return !! value && 'object' === typeof value;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
  * Creates and returns a new cache object.
  *
+<<<<<<< HEAD
  * @return {Cache} Cache object.
  */
 function createCache() {
 	/** @type {Cache} */
 	var cache = {
 		clear: function () {
+=======
+ * @return {Object} Cache object.
+ */
+function createCache() {
+	var cache = {
+		clear: function() {
+>>>>>>> fb785cbb (Initial commit)
 			cache.head = null;
 		},
 	};
@@ -256,12 +317,18 @@ function createCache() {
  * Returns true if entries within the two arrays are strictly equal by
  * reference from a starting index.
  *
+<<<<<<< HEAD
  * @param {*[]} a First array.
  * @param {*[]} b Second array.
+=======
+ * @param {Array}  a         First array.
+ * @param {Array}  b         Second array.
+>>>>>>> fb785cbb (Initial commit)
  * @param {number} fromIndex Index from which to start comparison.
  *
  * @return {boolean} Whether arrays are shallowly equal.
  */
+<<<<<<< HEAD
 function isShallowEqual(a, b, fromIndex) {
 	var i;
 
@@ -271,6 +338,17 @@ function isShallowEqual(a, b, fromIndex) {
 
 	for (i = fromIndex; i < a.length; i++) {
 		if (a[i] !== b[i]) {
+=======
+function isShallowEqual( a, b, fromIndex ) {
+	var i;
+
+	if ( a.length !== b.length ) {
+		return false;
+	}
+
+	for ( i = fromIndex; i < a.length; i++ ) {
+		if ( a[ i ] !== b[ i ] ) {
+>>>>>>> fb785cbb (Initial commit)
 			return false;
 		}
 	}
@@ -286,6 +364,7 @@ function isShallowEqual(a, b, fromIndex) {
  * dependant references remain the same. If getDependants returns a different
  * reference(s), the cache is cleared and the selector value regenerated.
  *
+<<<<<<< HEAD
  * @template {(...args: *[]) => *} S
  *
  * @param {S} selector Selector function.
@@ -298,6 +377,33 @@ function isShallowEqual(a, b, fromIndex) {
 
 	/** @type {GetDependants} */
 	var normalizedGetDependants = getDependants ? getDependants : arrayOf;
+=======
+ * @param {Function} selector      Selector function.
+ * @param {Function} getDependants Dependant getter returning an immutable
+ *                                 reference or array of reference used in
+ *                                 cache bust consideration.
+ *
+ * @return {Function} Memoized selector.
+ */
+/* harmony default export */ function rememo(selector, getDependants ) {
+	var rootCache, getCache;
+
+	// Use object source as dependant if getter not provided
+	if ( ! getDependants ) {
+		getDependants = arrayOf;
+	}
+
+	/**
+	 * Returns the root cache. If WeakMap is supported, this is assigned to the
+	 * root WeakMap cache set, otherwise it is a shared instance of the default
+	 * cache object.
+	 *
+	 * @return {(WeakMap|Object)} Root cache object.
+	 */
+	function getRootCache() {
+		return rootCache;
+	}
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Returns the cache for a given dependants array. When possible, a WeakMap
@@ -313,6 +419,7 @@ function isShallowEqual(a, b, fromIndex) {
 	 *
 	 * @see isObjectLike
 	 *
+<<<<<<< HEAD
 	 * @param {*[]} dependants Selector dependants.
 	 *
 	 * @return {Cache} Cache object.
@@ -330,11 +437,28 @@ function isShallowEqual(a, b, fromIndex) {
 
 			// Can only compose WeakMap from object-like key.
 			if (!isObjectLike(dependant)) {
+=======
+	 * @param {Array} dependants Selector dependants.
+	 *
+	 * @return {Object} Cache object.
+	 */
+	function getWeakMapCache( dependants ) {
+		var caches = rootCache,
+			isUniqueByDependants = true,
+			i, dependant, map, cache;
+
+		for ( i = 0; i < dependants.length; i++ ) {
+			dependant = dependants[ i ];
+
+			// Can only compose WeakMap from object-like key.
+			if ( ! isObjectLike( dependant ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				isUniqueByDependants = false;
 				break;
 			}
 
 			// Does current segment of cache already have a WeakMap?
+<<<<<<< HEAD
 			if (caches.has(dependant)) {
 				// Traverse into nested WeakMap.
 				caches = caches.get(dependant);
@@ -342,12 +466,22 @@ function isShallowEqual(a, b, fromIndex) {
 				// Create, set, and traverse into a new one.
 				map = new WeakMap();
 				caches.set(dependant, map);
+=======
+			if ( caches.has( dependant ) ) {
+				// Traverse into nested WeakMap.
+				caches = caches.get( dependant );
+			} else {
+				// Create, set, and traverse into a new one.
+				map = new WeakMap();
+				caches.set( dependant, map );
+>>>>>>> fb785cbb (Initial commit)
 				caches = map;
 			}
 		}
 
 		// We use an arbitrary (but consistent) object as key for the last item
 		// in the WeakMap to serve as our running cache.
+<<<<<<< HEAD
 		if (!caches.has(LEAF_KEY)) {
 			cache = createCache();
 			cache.isUniqueByDependants = isUniqueByDependants;
@@ -357,18 +491,40 @@ function isShallowEqual(a, b, fromIndex) {
 		return caches.get(LEAF_KEY);
 	}
 
+=======
+		if ( ! caches.has( LEAF_KEY ) ) {
+			cache = createCache();
+			cache.isUniqueByDependants = isUniqueByDependants;
+			caches.set( LEAF_KEY, cache );
+		}
+
+		return caches.get( LEAF_KEY );
+	}
+
+	// Assign cache handler by availability of WeakMap
+	getCache = hasWeakMap ? getWeakMapCache : getRootCache;
+
+>>>>>>> fb785cbb (Initial commit)
 	/**
 	 * Resets root memoization cache.
 	 */
 	function clear() {
+<<<<<<< HEAD
 		rootCache = new WeakMap();
 	}
 
 	/* eslint-disable jsdoc/check-param-names */
+=======
+		rootCache = hasWeakMap ? new WeakMap() : createCache();
+	}
+
+	// eslint-disable-next-line jsdoc/check-param-names
+>>>>>>> fb785cbb (Initial commit)
 	/**
 	 * The augmented selector call, considering first whether dependants have
 	 * changed before passing it to underlying memoize function.
 	 *
+<<<<<<< HEAD
 	 * @param {*}    source    Source object for derivation.
 	 * @param {...*} extraArgs Additional arguments to pass to selector.
 	 *
@@ -400,6 +556,31 @@ function isShallowEqual(a, b, fromIndex) {
 				cache.lastDependants &&
 				!isShallowEqual(dependants, cache.lastDependants, 0)
 			) {
+=======
+	 * @param {Object} source    Source object for derivation.
+	 * @param {...*}   extraArgs Additional arguments to pass to selector.
+	 *
+	 * @return {*} Selector result.
+	 */
+	function callSelector( /* source, ...extraArgs */ ) {
+		var len = arguments.length,
+			cache, node, i, args, dependants;
+
+		// Create copy of arguments (avoid leaking deoptimization).
+		args = new Array( len );
+		for ( i = 0; i < len; i++ ) {
+			args[ i ] = arguments[ i ];
+		}
+
+		dependants = getDependants.apply( null, args );
+		cache = getCache( dependants );
+
+		// If not guaranteed uniqueness by dependants (primitive type or lack
+		// of WeakMap support), shallow compare against last dependants and, if
+		// references have changed, destroy cache to recalculate result.
+		if ( ! cache.isUniqueByDependants ) {
+			if ( cache.lastDependants && ! isShallowEqual( dependants, cache.lastDependants, 0 ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				cache.clear();
 			}
 
@@ -407,9 +588,15 @@ function isShallowEqual(a, b, fromIndex) {
 		}
 
 		node = cache.head;
+<<<<<<< HEAD
 		while (node) {
 			// Check whether node arguments match arguments
 			if (!isShallowEqual(node.args, args, 1)) {
+=======
+		while ( node ) {
+			// Check whether node arguments match arguments
+			if ( ! isShallowEqual( node.args, args, 1 ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				node = node.next;
 				continue;
 			}
@@ -417,16 +604,27 @@ function isShallowEqual(a, b, fromIndex) {
 			// At this point we can assume we've found a match
 
 			// Surface matched node to head if not already
+<<<<<<< HEAD
 			if (node !== cache.head) {
 				// Adjust siblings to point to each other.
 				/** @type {CacheNode} */ (node.prev).next = node.next;
 				if (node.next) {
+=======
+			if ( node !== cache.head ) {
+				// Adjust siblings to point to each other.
+				node.prev.next = node.next;
+				if ( node.next ) {
+>>>>>>> fb785cbb (Initial commit)
 					node.next.prev = node.prev;
 				}
 
 				node.next = cache.head;
 				node.prev = null;
+<<<<<<< HEAD
 				/** @type {CacheNode} */ (cache.head).prev = node;
+=======
+				cache.head.prev = node;
+>>>>>>> fb785cbb (Initial commit)
 				cache.head = node;
 			}
 
@@ -436,6 +634,7 @@ function isShallowEqual(a, b, fromIndex) {
 
 		// No cached value found. Continue to insertion phase:
 
+<<<<<<< HEAD
 		node = /** @type {CacheNode} */ ({
 			// Generate the result from original function
 			val: selector.apply(null, args),
@@ -443,13 +642,26 @@ function isShallowEqual(a, b, fromIndex) {
 
 		// Avoid including the source object in the cache.
 		args[0] = null;
+=======
+		node = {
+			// Generate the result from original function
+			val: selector.apply( null, args ),
+		};
+
+		// Avoid including the source object in the cache.
+		args[ 0 ] = null;
+>>>>>>> fb785cbb (Initial commit)
 		node.args = args;
 
 		// Don't need to check whether node is already head, since it would
 		// have been returned above already if it was
 
 		// Shift existing head down list
+<<<<<<< HEAD
 		if (cache.head) {
+=======
+		if ( cache.head ) {
+>>>>>>> fb785cbb (Initial commit)
 			cache.head.prev = node;
 			node.next = cache.head;
 		}
@@ -459,11 +671,19 @@ function isShallowEqual(a, b, fromIndex) {
 		return node.val;
 	}
 
+<<<<<<< HEAD
 	callSelector.getDependants = normalizedGetDependants;
 	callSelector.clear = clear;
 	clear();
 
 	return /** @type {S & EnhancedSelector} */ (callSelector);
+=======
+	callSelector.getDependants = getDependants;
+	callSelector.clear = clear;
+	clear();
+
+	return callSelector;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 ;// CONCATENATED MODULE: external ["wp","keycodes"]
@@ -473,6 +693,10 @@ var external_wp_keycodes_namespaceObject = window["wp"]["keycodes"];
  * External dependencies
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
@@ -574,7 +798,11 @@ function getShortcutAliases(state, name) {
   return state[name] && state[name].aliases ? state[name].aliases : EMPTY_ARRAY;
 }
 const getAllShortcutKeyCombinations = rememo((state, name) => {
+<<<<<<< HEAD
   return [getShortcutKeyCombination(state, name), ...getShortcutAliases(state, name)].filter(Boolean);
+=======
+  return (0,external_lodash_namespaceObject.compact)([getShortcutKeyCombination(state, name), ...getShortcutAliases(state, name)]);
+>>>>>>> fb785cbb (Initial commit)
 }, (state, name) => [state[name]]);
 /**
  * Returns the raw representation of all the keyboard combinations of a given shortcut name.
@@ -651,7 +879,11 @@ var external_wp_element_namespaceObject = window["wp"]["element"];
 /**
  * Returns a function to check if a keyboard event matches a shortcut name.
  *
+<<<<<<< HEAD
  * @return {Function} A function to check if a keyboard event matches a
+=======
+ * @return {Function} A function to to check if a keyboard event matches a
+>>>>>>> fb785cbb (Initial commit)
  *                    predefined shortcut combination.
  */
 
@@ -740,12 +972,20 @@ function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
       for (var key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
           target[key] = source[key];
         }
       }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
     return target;
   };
   return _extends.apply(this, arguments);

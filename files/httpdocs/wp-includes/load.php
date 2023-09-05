@@ -143,12 +143,17 @@ function wp_populate_basic_auth_from_authorization_header() {
  */
 function wp_check_php_mysql_versions() {
 	global $required_php_version, $wp_version;
+<<<<<<< HEAD
 	$php_version = PHP_VERSION;
+=======
+	$php_version = phpversion();
+>>>>>>> fb785cbb (Initial commit)
 
 	if ( version_compare( $required_php_version, $php_version, '>' ) ) {
 		$protocol = wp_get_server_protocol();
 		header( sprintf( '%s 500 Internal Server Error', $protocol ), true, 500 );
 		header( 'Content-Type: text/html; charset=utf-8' );
+<<<<<<< HEAD
 		printf(
 			'Your server is running PHP version %1$s but WordPress %2$s requires at least %3$s.',
 			$php_version,
@@ -159,12 +164,20 @@ function wp_check_php_mysql_versions() {
 	}
 
 	if ( ! function_exists( 'mysqli_connect' ) && ! function_exists( 'mysql_connect' )
+=======
+		printf( 'Your server is running PHP version %1$s but WordPress %2$s requires at least %3$s.', $php_version, $wp_version, $required_php_version );
+		exit( 1 );
+	}
+
+	if ( ! extension_loaded( 'mysql' ) && ! extension_loaded( 'mysqli' ) && ! extension_loaded( 'mysqlnd' )
+>>>>>>> fb785cbb (Initial commit)
 		// This runs before default constants are defined, so we can't assume WP_CONTENT_DIR is set yet.
 		&& ( defined( 'WP_CONTENT_DIR' ) && ! file_exists( WP_CONTENT_DIR . '/db.php' )
 			|| ! file_exists( ABSPATH . 'wp-content/db.php' ) )
 	) {
 		require_once ABSPATH . WPINC . '/functions.php';
 		wp_load_translations_early();
+<<<<<<< HEAD
 
 		$message = '<p>' . __( 'Your PHP installation appears to be missing the MySQL extension which is required by WordPress.' ) . "</p>\n";
 
@@ -180,12 +193,18 @@ function wp_check_php_mysql_versions() {
 			__( 'https://wordpress.org/support/forums/' )
 		) . "</p>\n";
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$args = array(
 			'exit' => false,
 			'code' => 'mysql_not_found',
 		);
 		wp_die(
+<<<<<<< HEAD
 			$message,
+=======
+			__( 'Your PHP installation appears to be missing the MySQL extension which is required by WordPress.' ),
+>>>>>>> fb785cbb (Initial commit)
 			__( 'Requirements Not Met' ),
 			$args
 		);
@@ -247,7 +266,11 @@ function wp_get_environment_type() {
 	}
 
 	// Fetch the environment from a constant, this overrides the global system variable.
+<<<<<<< HEAD
 	if ( defined( 'WP_ENVIRONMENT_TYPE' ) && WP_ENVIRONMENT_TYPE ) {
+=======
+	if ( defined( 'WP_ENVIRONMENT_TYPE' ) ) {
+>>>>>>> fb785cbb (Initial commit)
 		$current_env = WP_ENVIRONMENT_TYPE;
 	}
 
@@ -564,8 +587,12 @@ function wp_set_lang_dir() {
 function require_wp_db() {
 	global $wpdb;
 
+<<<<<<< HEAD
 	require_once ABSPATH . WPINC . '/class-wpdb.php';
 
+=======
+	require_once ABSPATH . WPINC . '/wp-db.php';
+>>>>>>> fb785cbb (Initial commit)
 	if ( file_exists( WP_CONTENT_DIR . '/db.php' ) ) {
 		require_once WP_CONTENT_DIR . '/db.php';
 	}
@@ -645,7 +672,11 @@ function wp_set_wpdb_vars() {
 		wp_die(
 			sprintf(
 				/* translators: 1: $table_prefix, 2: wp-config.php */
+<<<<<<< HEAD
 				__( '<strong>Error:</strong> %1$s in %2$s can only contain numbers, letters, and underscores.' ),
+=======
+				__( '<strong>Error</strong>: %1$s in %2$s can only contain numbers, letters, and underscores.' ),
+>>>>>>> fb785cbb (Initial commit)
 				'<code>$table_prefix</code>',
 				'<code>wp-config.php</code>'
 			)
@@ -751,6 +782,7 @@ function wp_start_object_cache() {
 	}
 
 	if ( function_exists( 'wp_cache_add_global_groups' ) ) {
+<<<<<<< HEAD
 		wp_cache_add_global_groups(
 			array(
 				'blog-details',
@@ -774,6 +806,10 @@ function wp_start_object_cache() {
 		);
 
 		wp_cache_add_non_persistent_groups( array( 'counts', 'plugins', 'theme_json' ) );
+=======
+		wp_cache_add_global_groups( array( 'users', 'userlogins', 'usermeta', 'user_meta', 'useremail', 'userslugs', 'site-transient', 'site-options', 'blog-lookup', 'blog-details', 'site-details', 'rss', 'global-posts', 'blog-id-cache', 'networks', 'sites', 'blog_meta' ) );
+		wp_cache_add_non_persistent_groups( array( 'counts', 'plugins' ) );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	$first_init = false;
@@ -788,6 +824,7 @@ function wp_start_object_cache() {
  * @access private
  */
 function wp_not_installed() {
+<<<<<<< HEAD
 	if ( is_blog_installed() || wp_installing() ) {
 		return;
 	}
@@ -805,6 +842,25 @@ function wp_not_installed() {
 
 	wp_redirect( $link );
 	die();
+=======
+	if ( is_multisite() ) {
+		if ( ! is_blog_installed() && ! wp_installing() ) {
+			nocache_headers();
+
+			wp_die( __( 'The site you have requested is not installed properly. Please contact the system administrator.' ) );
+		}
+	} elseif ( ! is_blog_installed() && ! wp_installing() ) {
+		nocache_headers();
+
+		require ABSPATH . WPINC . '/kses.php';
+		require ABSPATH . WPINC . '/pluggable.php';
+
+		$link = wp_guess_url() . '/wp-admin/install.php';
+
+		wp_redirect( $link );
+		die();
+	}
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1152,6 +1208,7 @@ function shutdown_action_hook() {
  * @since 2.7.0
  * @deprecated 3.2.0
  *
+<<<<<<< HEAD
  * @param object $input_object The object to clone.
  * @return object The cloned object.
  */
@@ -1171,6 +1228,14 @@ function wp_clone( $input_object ) {
  */
 function is_login() {
 	return false !== stripos( wp_login_url(), $_SERVER['SCRIPT_NAME'] );
+=======
+ * @param object $object The object to clone.
+ * @return object The cloned object.
+ */
+function wp_clone( $object ) {
+	// Use parens for clone to accommodate PHP 4. See #17880.
+	return clone( $object );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1200,7 +1265,11 @@ function is_admin() {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether the current request is for a site's administrative interface.
+=======
+ * Whether the current request is for a site's administrative interface.
+>>>>>>> fb785cbb (Initial commit)
  *
  * e.g. `/wp-admin/`
  *
@@ -1211,7 +1280,11 @@ function is_admin() {
  *
  * @global WP_Screen $current_screen WordPress current screen object.
  *
+<<<<<<< HEAD
  * @return bool True if inside WordPress site administration pages.
+=======
+ * @return bool True if inside WordPress blog administration pages.
+>>>>>>> fb785cbb (Initial commit)
  */
 function is_blog_admin() {
 	if ( isset( $GLOBALS['current_screen'] ) ) {
@@ -1224,7 +1297,11 @@ function is_blog_admin() {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether the current request is for the network administrative interface.
+=======
+ * Whether the current request is for the network administrative interface.
+>>>>>>> fb785cbb (Initial commit)
  *
  * e.g. `/wp-admin/network/`
  *
@@ -1251,7 +1328,11 @@ function is_network_admin() {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether the current request is for a user admin screen.
+=======
+ * Whether the current request is for a user admin screen.
+>>>>>>> fb785cbb (Initial commit)
  *
  * e.g. `/wp-admin/user/`
  *
@@ -1341,11 +1422,18 @@ function get_current_network_id() {
  * @since 3.4.0
  * @access private
  *
+<<<<<<< HEAD
  * @global WP_Textdomain_Registry $wp_textdomain_registry WordPress Textdomain Registry.
  * @global WP_Locale              $wp_locale              WordPress date and time locale object.
  */
 function wp_load_translations_early() {
 	global $wp_textdomain_registry, $wp_locale;
+=======
+ * @global WP_Locale $wp_locale WordPress date and time locale object.
+ */
+function wp_load_translations_early() {
+	global $wp_locale;
+>>>>>>> fb785cbb (Initial commit)
 
 	static $loaded = false;
 	if ( $loaded ) {
@@ -1363,7 +1451,10 @@ function wp_load_translations_early() {
 	// Translation and localization.
 	require_once ABSPATH . WPINC . '/pomo/mo.php';
 	require_once ABSPATH . WPINC . '/l10n.php';
+<<<<<<< HEAD
 	require_once ABSPATH . WPINC . '/class-wp-textdomain-registry.php';
+=======
+>>>>>>> fb785cbb (Initial commit)
 	require_once ABSPATH . WPINC . '/class-wp-locale.php';
 	require_once ABSPATH . WPINC . '/class-wp-locale-switcher.php';
 
@@ -1373,10 +1464,13 @@ function wp_load_translations_early() {
 	$locales   = array();
 	$locations = array();
 
+<<<<<<< HEAD
 	if ( ! $wp_textdomain_registry instanceof WP_Textdomain_Registry ) {
 		$wp_textdomain_registry = new WP_Textdomain_Registry();
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	while ( true ) {
 		if ( defined( 'WPLANG' ) ) {
 			if ( '' === WPLANG ) {
@@ -1418,9 +1512,15 @@ function wp_load_translations_early() {
 		foreach ( $locales as $locale ) {
 			foreach ( $locations as $location ) {
 				if ( file_exists( $location . '/' . $locale . '.mo' ) ) {
+<<<<<<< HEAD
 					load_textdomain( 'default', $location . '/' . $locale . '.mo', $locale );
 					if ( defined( 'WP_SETUP_CONFIG' ) && file_exists( $location . '/admin-' . $locale . '.mo' ) ) {
 						load_textdomain( 'default', $location . '/admin-' . $locale . '.mo', $locale );
+=======
+					load_textdomain( 'default', $location . '/' . $locale . '.mo' );
+					if ( defined( 'WP_SETUP_CONFIG' ) && file_exists( $location . '/admin-' . $locale . '.mo' ) ) {
+						load_textdomain( 'default', $location . '/admin-' . $locale . '.mo' );
+>>>>>>> fb785cbb (Initial commit)
 					}
 					break 2;
 				}

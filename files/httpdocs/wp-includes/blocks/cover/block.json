@@ -73,11 +73,15 @@
 		},
 		"templateLock": {
 			"type": [ "string", "boolean" ],
+<<<<<<< HEAD
 			"enum": [ "all", "insert", "contentOnly", false ]
 		},
 		"tagName": {
 			"type": "string",
 			"default": "div"
+=======
+			"enum": [ "all", "insert", false ]
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"usesContext": [ "postId", "postType" ],
@@ -87,7 +91,10 @@
 		"html": false,
 		"spacing": {
 			"padding": true,
+<<<<<<< HEAD
 			"margin": [ "top", "bottom" ],
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"padding": true
 			}
@@ -96,6 +103,7 @@
 			"__experimentalDuotone": "> .wp-block-cover__image-background, > .wp-block-cover__video-background",
 			"text": false,
 			"background": false
+<<<<<<< HEAD
 		},
 		"typography": {
 			"fontSize": true,
@@ -109,6 +117,8 @@
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"editorStyle": "wp-block-cover-editor",

@@ -15,8 +15,11 @@ jQuery( function( $ ) {
 		isStatusTab = $( '.health-check-body.health-check-status-tab' ).length,
 		isDebugTab = $( '.health-check-body.health-check-debug-tab' ).length,
 		pathsSizesSection = $( '#health-check-accordion-block-wp-paths-sizes' ),
+<<<<<<< HEAD
 		menuCounterWrapper = $( '#adminmenu .site-health-counter' ),
 		menuCounter = $( '#adminmenu .site-health-counter .count' ),
+=======
+>>>>>>> fb785cbb (Initial commit)
 		successTimeout;
 
 	// Debug information copy section.
@@ -36,6 +39,13 @@ jQuery( function( $ ) {
 		// Hide success visual feedback after 3 seconds since last success.
 		successTimeout = setTimeout( function() {
 			successElement.addClass( 'hidden' );
+<<<<<<< HEAD
+=======
+			// Remove the visually hidden textarea so that it isn't perceived by assistive technologies.
+			if ( clipboard.clipboardAction.fakeElem && clipboard.clipboardAction.removeFake ) {
+				clipboard.clipboardAction.removeFake();
+			}
+>>>>>>> fb785cbb (Initial commit)
 		}, 3000 );
 
 		// Handle success audible feedback.
@@ -166,6 +176,7 @@ jQuery( function( $ ) {
 			$( '.site-health-issue-count-title', issueWrapper ).html( heading );
 		}
 
+<<<<<<< HEAD
 		menuCounter.text( SiteHealth.site_status.issues.critical );
 
 		if ( 0 < parseInt( SiteHealth.site_status.issues.critical, 0 ) ) {
@@ -179,6 +190,8 @@ jQuery( function( $ ) {
 			$( '#health-check-issues-recommended' ).removeClass( 'hidden' );
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$( '.issues', '#health-check-issues-' + issue.status ).append( template( issue ) );
 	}
 
@@ -221,6 +234,17 @@ jQuery( function( $ ) {
 
 		$circle.css( { strokeDashoffset: pct } );
 
+<<<<<<< HEAD
+=======
+		if ( 1 > parseInt( SiteHealth.site_status.issues.critical, 0 ) ) {
+			$( '#health-check-issues-critical' ).addClass( 'hidden' );
+		}
+
+		if ( 1 > parseInt( SiteHealth.site_status.issues.recommended, 0 ) ) {
+			$( '#health-check-issues-recommended' ).addClass( 'hidden' );
+		}
+
+>>>>>>> fb785cbb (Initial commit)
 		if ( 80 <= val && 0 === parseInt( SiteHealth.site_status.issues.critical, 0 ) ) {
 			$wrapper.addClass( 'green' ).removeClass( 'orange' );
 

@@ -121,7 +121,16 @@ class Page
             null
         );
 
+<<<<<<< HEAD
         wp_enqueue_style('givewp-admin-fonts');
+=======
+        wp_enqueue_style(
+            'give-google-font-open-sans',
+            'https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap',
+            [],
+            null
+        );
+>>>>>>> fb785cbb (Initial commit)
 
         $formID = $this->formRepository->getDefaultFormID();
         $featureGoal = get_post_meta($formID, '_give_goal_option', true);

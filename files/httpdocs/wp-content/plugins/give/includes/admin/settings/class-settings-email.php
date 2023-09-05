@@ -36,6 +36,7 @@ if ( ! class_exists( 'Give_Settings_Email' ) ) :
 			$this->enable_save = ! ( Give_Admin_Settings::is_setting_page( 'emails', 'donor-email' ) || Give_Admin_Settings::is_setting_page( 'emails', 'admin-email' ) );
 
 			add_action( 'give_admin_field_email_notification', array( $this, 'email_notification_setting' ) );
+<<<<<<< HEAD
             add_action( 'give_admin_field_give_sendwp_button', [ $this, '_render_give_sendwp_button' ], 10, 3 );
 		}
 
@@ -178,6 +179,8 @@ if ( ! class_exists( 'Give_Settings_Email' ) ) :
                 </script>
                 <?php
             endif;
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		/**
@@ -226,12 +229,15 @@ if ( ! class_exists( 'Give_Settings_Email' ) ) :
 							'default' => get_bloginfo( 'admin_email' ),
 							'type'    => 'text',
 						),
+<<<<<<< HEAD
                         array(
 							'id'      => 'sendwp',
 							'name'    => esc_html__( 'SendWP', 'give' ),
 							'desc'    => esc_html__( 'We recommend SendWP to ensure quick and reliable delivery of all emails sent from your store, such as donation receipts, recurring donation renewal reminders, password resets, and more.', 'give' ),
 							'type'    => 'give_sendwp_button',
 						),
+=======
+>>>>>>> fb785cbb (Initial commit)
 						array(
 							'name'  => esc_html__( 'Donation Notification Settings Docs Link', 'give' ),
 							'id'    => 'donation_notification_settings_docs_link',

@@ -10,7 +10,11 @@
 	"attributes": {
 		"content": {
 			"type": "string",
+<<<<<<< HEAD
 			"source": "raw"
+=======
+			"source": "html"
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"supports": {

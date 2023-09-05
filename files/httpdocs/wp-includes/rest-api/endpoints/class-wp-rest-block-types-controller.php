@@ -256,14 +256,35 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 			$data['is_dynamic'] = $block_type->is_dynamic();
 		}
 
+<<<<<<< HEAD
 		$schema = $this->get_item_schema();
 		// Fields deprecated in WordPress 6.1, but left in the schema for backwards compatibility.
 		$deprecated_fields = array(
+=======
+		$schema       = $this->get_item_schema();
+		$extra_fields = array(
+			'api_version',
+			'name',
+			'title',
+			'description',
+			'icon',
+			'category',
+			'keywords',
+			'parent',
+			'ancestor',
+			'provides_context',
+			'uses_context',
+			'supports',
+			'styles',
+			'textdomain',
+			'example',
+>>>>>>> fb785cbb (Initial commit)
 			'editor_script',
 			'script',
 			'view_script',
 			'editor_style',
 			'style',
+<<<<<<< HEAD
 		);
 		$extra_fields      = array_merge(
 			array(
@@ -290,15 +311,21 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 				'variations',
 			),
 			$deprecated_fields
+=======
+			'variations',
+>>>>>>> fb785cbb (Initial commit)
 		);
 		foreach ( $extra_fields as $extra_field ) {
 			if ( rest_is_field_included( $extra_field, $fields ) ) {
 				if ( isset( $block_type->$extra_field ) ) {
 					$field = $block_type->$extra_field;
+<<<<<<< HEAD
 					if ( in_array( $extra_field, $deprecated_fields, true ) && is_array( $field ) ) {
 						// Since the schema only allows strings or null (but no arrays), we return the first array item.
 						$field = ! empty( $field ) ? array_shift( $field ) : '';
 					}
+=======
+>>>>>>> fb785cbb (Initial commit)
 				} elseif ( array_key_exists( 'default', $schema['properties'][ $extra_field ] ) ) {
 					$field = $schema['properties'][ $extra_field ]['default'];
 				} else {
@@ -321,9 +348,13 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 
 		$response = rest_ensure_response( $data );
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $block_type ) );
 		}
+=======
+		$response->add_links( $this->prepare_links( $block_type ) );
+>>>>>>> fb785cbb (Initial commit)
 
 		/**
 		 * Filters a block type returned from the REST API.
@@ -364,11 +395,15 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 
 		if ( $block_type->is_dynamic() ) {
 			$links['https://api.w.org/render-block'] = array(
+<<<<<<< HEAD
 				'href' => add_query_arg(
 					'context',
 					'edit',
 					rest_url( sprintf( '%s/%s/%s', 'wp/v2', 'block-renderer', $block_type->name ) )
 				),
+=======
+				'href' => add_query_arg( 'context', 'edit', rest_url( sprintf( '%s/%s/%s', 'wp/v2', 'block-renderer', $block_type->name ) ) ),
+>>>>>>> fb785cbb (Initial commit)
 			);
 		}
 
@@ -452,41 +487,66 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 			'readonly'    => true,
 		);
 
+<<<<<<< HEAD
 		$this->schema = array(
+=======
+		$schema = array(
+>>>>>>> fb785cbb (Initial commit)
 			'$schema'    => 'http://json-schema.org/draft-04/schema#',
 			'title'      => 'block-type',
 			'type'       => 'object',
 			'properties' => array(
+<<<<<<< HEAD
 				'api_version'           => array(
+=======
+				'api_version'      => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Version of block API.' ),
 					'type'        => 'integer',
 					'default'     => 1,
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'title'                 => array(
+=======
+				'title'            => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Title of block type.' ),
 					'type'        => 'string',
 					'default'     => '',
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'name'                  => array(
+=======
+				'name'             => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Unique name identifying the block type.' ),
 					'type'        => 'string',
 					'default'     => '',
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'description'           => array(
+=======
+				'description'      => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Description of block type.' ),
 					'type'        => 'string',
 					'default'     => '',
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'icon'                  => $icon_definition,
 				'attributes'            => array(
+=======
+				'icon'             => $icon_definition,
+				'attributes'       => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description'          => __( 'Block attributes.' ),
 					'type'                 => array( 'object', 'null' ),
 					'properties'           => array(),
@@ -497,7 +557,11 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 					'context'              => array( 'embed', 'view', 'edit' ),
 					'readonly'             => true,
 				),
+<<<<<<< HEAD
 				'provides_context'      => array(
+=======
+				'provides_context' => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description'          => __( 'Context provided by blocks of this type.' ),
 					'type'                 => 'object',
 					'properties'           => array(),
@@ -508,7 +572,11 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 					'context'              => array( 'embed', 'view', 'edit' ),
 					'readonly'             => true,
 				),
+<<<<<<< HEAD
 				'uses_context'          => array(
+=======
+				'uses_context'     => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Context values inherited by blocks of this type.' ),
 					'type'        => 'array',
 					'default'     => array(),
@@ -518,7 +586,11 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'supports'              => array(
+=======
+				'supports'         => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Block supports.' ),
 					'type'        => 'object',
 					'default'     => array(),
@@ -526,14 +598,20 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'category'              => $category_definition,
 				'is_dynamic'            => array(
+=======
+				'category'         => $category_definition,
+				'is_dynamic'       => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Is the block dynamically rendered.' ),
 					'type'        => 'boolean',
 					'default'     => false,
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'editor_script_handles' => array(
 					'description' => __( 'Editor script handles.' ),
 					'type'        => array( 'array' ),
@@ -585,6 +663,44 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 					'readonly'    => true,
 				),
 				'styles'                => array(
+=======
+				'editor_script'    => array(
+					'description' => __( 'Editor script handle.' ),
+					'type'        => array( 'string', 'null' ),
+					'default'     => null,
+					'context'     => array( 'embed', 'view', 'edit' ),
+					'readonly'    => true,
+				),
+				'script'           => array(
+					'description' => __( 'Public facing and editor script handle.' ),
+					'type'        => array( 'string', 'null' ),
+					'default'     => null,
+					'context'     => array( 'embed', 'view', 'edit' ),
+					'readonly'    => true,
+				),
+				'view_script'      => array(
+					'description' => __( 'Public facing script handle.' ),
+					'type'        => array( 'string', 'null' ),
+					'default'     => null,
+					'context'     => array( 'embed', 'view', 'edit' ),
+					'readonly'    => true,
+				),
+				'editor_style'     => array(
+					'description' => __( 'Editor style handle.' ),
+					'type'        => array( 'string', 'null' ),
+					'default'     => null,
+					'context'     => array( 'embed', 'view', 'edit' ),
+					'readonly'    => true,
+				),
+				'style'            => array(
+					'description' => __( 'Public facing and editor style handle.' ),
+					'type'        => array( 'string', 'null' ),
+					'default'     => null,
+					'context'     => array( 'embed', 'view', 'edit' ),
+					'readonly'    => true,
+				),
+				'styles'           => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Block style variations.' ),
 					'type'        => 'array',
 					'items'       => array(
@@ -613,7 +729,11 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'variations'            => array(
+=======
+				'variations'       => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Block variations.' ),
 					'type'        => 'array',
 					'items'       => array(
@@ -665,14 +785,22 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'default'     => null,
 				),
+<<<<<<< HEAD
 				'textdomain'            => array(
+=======
+				'textdomain'       => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Public text domain.' ),
 					'type'        => array( 'string', 'null' ),
 					'default'     => null,
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'parent'                => array(
+=======
+				'parent'           => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Parent blocks.' ),
 					'type'        => array( 'array', 'null' ),
 					'items'       => array(
@@ -682,7 +810,11 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'ancestor'              => array(
+=======
+				'ancestor'         => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'Ancestor blocks.' ),
 					'type'        => array( 'array', 'null' ),
 					'items'       => array(
@@ -692,6 +824,7 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 					'context'     => array( 'embed', 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'keywords'              => $keywords_definition,
 				'example'               => $example_definition,
 			),
@@ -736,6 +869,14 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 			),
 		);
 		$this->schema['properties'] = array_merge( $this->schema['properties'], $deprecated_properties );
+=======
+				'keywords'         => $keywords_definition,
+				'example'          => $example_definition,
+			),
+		);
+
+		$this->schema = $schema;
+>>>>>>> fb785cbb (Initial commit)
 
 		return $this->add_additional_fields_schema( $this->schema );
 	}

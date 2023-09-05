@@ -74,7 +74,11 @@ get_current_screen()->add_help_tab(
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
 	'<p>' . __( '<a href="https://codex.wordpress.org/Links_Add_New_Screen">Documentation on Creating Links</a>' ) . '</p>' .
+<<<<<<< HEAD
 	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+=======
+	'<p>' . __( '<a href="https://wordpress.org/support/">Support</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 );
 
 require_once ABSPATH . 'wp-admin/admin-header.php';

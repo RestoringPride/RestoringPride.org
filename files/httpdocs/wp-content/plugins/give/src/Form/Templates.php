@@ -51,7 +51,11 @@ class Templates
          *
          * @since 2.7.0
          *
+<<<<<<< HEAD
          * @param array $templates
+=======
+         * @param Template[]
+>>>>>>> fb785cbb (Initial commit)
          */
         $this->templates = apply_filters(
             'give_register_form_template',

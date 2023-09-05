@@ -12,6 +12,13 @@ are styled in the Privacy section of edit.css */
 	font-weight: 400;
 }
 
+<<<<<<< HEAD
+=======
+.health-check-widget-title-section {
+	text-align: center;
+}
+
+>>>>>>> fb785cbb (Initial commit)
 .site-health-progress-wrapper {
 	margin-bottom: 1rem;
 }
@@ -281,6 +288,20 @@ are styled in the Privacy section of edit.css */
 	padding-right: 20px;
 }
 
+<<<<<<< HEAD
+=======
+
+/* Better position for the WordPress admin notices and update nag. */
+.site-health .notice {
+	margin: 5px 22px 15px 20px;
+}
+
+.site-health .update-nag {
+	margin-bottom: 20px;
+	margin-right: 22px;
+}
+
+>>>>>>> fb785cbb (Initial commit)
 .health-check-wp-paths-sizes.spinner {
 	visibility: visible;
 	float: none;
@@ -293,6 +314,7 @@ are styled in the Privacy section of edit.css */
 	padding-right: 16px;
 }
 
+<<<<<<< HEAD
 #dashboard_site_health .site-health-details p:first-child {
 	margin-top: 0;
 }
@@ -301,6 +323,8 @@ are styled in the Privacy section of edit.css */
 	margin-bottom: 0;
 }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 #dashboard_site_health .health-check-widget {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
@@ -312,11 +336,14 @@ are styled in the Privacy section of edit.css */
 	margin-right: 0;
 }
 
+<<<<<<< HEAD
 .health-check-widget-title-section {
 	margin-bottom: 0;
 	text-align: center;
 }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 @media screen and (max-width: 480px) {
 	#dashboard_site_health .health-check-widget {
 		grid-template-columns: 100%;

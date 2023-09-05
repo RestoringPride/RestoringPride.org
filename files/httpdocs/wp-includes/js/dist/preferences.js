@@ -49,7 +49,10 @@ __webpack_require__.r(actions_namespaceObject);
 __webpack_require__.d(actions_namespaceObject, {
   "set": function() { return set; },
   "setDefaults": function() { return setDefaults; },
+<<<<<<< HEAD
   "setPersistenceLayer": function() { return setPersistenceLayer; },
+=======
+>>>>>>> fb785cbb (Initial commit)
   "toggle": function() { return toggle; }
 });
 
@@ -123,6 +126,7 @@ function defaults() {
   return state;
 }
 /**
+<<<<<<< HEAD
  * Higher order reducer that does the following:
  * - Merges any data from the persistence layer into the state when the
  *   `SET_PERSISTENCE_LAYER` action is received.
@@ -159,6 +163,8 @@ function withPersistenceLayer(reducer) {
   };
 }
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Reducer returning the user preferences.
  *
  * @param {Object} state  Current state.
@@ -167,8 +173,12 @@ function withPersistenceLayer(reducer) {
  * @return {Object} Updated state.
  */
 
+<<<<<<< HEAD
 
 const preferences = withPersistenceLayer(function () {
+=======
+function preferences() {
+>>>>>>> fb785cbb (Initial commit)
   let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   let action = arguments.length > 1 ? arguments[1] : undefined;
 
@@ -186,7 +196,11 @@ const preferences = withPersistenceLayer(function () {
   }
 
   return state;
+<<<<<<< HEAD
 });
+=======
+}
+>>>>>>> fb785cbb (Initial commit)
 /* harmony default export */ var reducer = ((0,external_wp_data_namespaceObject.combineReducers)({
   defaults,
   preferences
@@ -246,6 +260,7 @@ function setDefaults(scope, defaults) {
     defaults
   };
 }
+<<<<<<< HEAD
 /** @typedef {() => Promise<Object>} WPPreferencesPersistenceLayerGet */
 
 /** @typedef {(*) => void} WPPreferencesPersistenceLayerSet */
@@ -281,6 +296,8 @@ async function setPersistenceLayer(persistenceLayer) {
     persistedData
   };
 }
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/preferences/build-module/store/selectors.js
 /**
@@ -317,6 +334,13 @@ const STORE_NAME = 'core/preferences';
  * Internal dependencies
  */
 
+<<<<<<< HEAD
+=======
+/**
+ * Internal dependencies
+ */
+
+>>>>>>> fb785cbb (Initial commit)
 
 
 
@@ -332,9 +356,23 @@ const STORE_NAME = 'core/preferences';
 const store = (0,external_wp_data_namespaceObject.createReduxStore)(STORE_NAME, {
   reducer: reducer,
   actions: actions_namespaceObject,
+<<<<<<< HEAD
   selectors: selectors_namespaceObject
 });
 (0,external_wp_data_namespaceObject.register)(store);
+=======
+  selectors: selectors_namespaceObject,
+  persist: ['preferences']
+}); // Once we build a more generic persistence plugin that works across types of stores
+// we'd be able to replace this with a register call.
+
+(0,external_wp_data_namespaceObject.registerStore)(STORE_NAME, {
+  reducer: reducer,
+  actions: actions_namespaceObject,
+  selectors: selectors_namespaceObject,
+  persist: ['preferences']
+});
+>>>>>>> fb785cbb (Initial commit)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/preferences/build-module/components/preference-toggle-menu-item/index.js
 
@@ -360,9 +398,13 @@ function PreferenceToggleMenuItem(_ref) {
     info,
     messageActivated,
     messageDeactivated,
+<<<<<<< HEAD
     shortcut,
     onToggle = () => null,
     disabled = false
+=======
+    shortcut
+>>>>>>> fb785cbb (Initial commit)
   } = _ref;
   const isActive = (0,external_wp_data_namespaceObject.useSelect)(select => !!select(store).get(scope, name), [name]);
   const {
@@ -387,14 +429,21 @@ function PreferenceToggleMenuItem(_ref) {
     icon: isActive && library_check,
     isSelected: isActive,
     onClick: () => {
+<<<<<<< HEAD
       onToggle();
+=======
+>>>>>>> fb785cbb (Initial commit)
       toggle(scope, name);
       speakMessage();
     },
     role: "menuitemcheckbox",
     info: info,
+<<<<<<< HEAD
     shortcut: shortcut,
     disabled: disabled
+=======
+    shortcut: shortcut
+>>>>>>> fb785cbb (Initial commit)
   }, label);
 }
 

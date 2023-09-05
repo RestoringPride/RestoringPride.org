@@ -143,7 +143,11 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 			),
 		);
 
+<<<<<<< HEAD
 		$response = wp_remote_post( sanitize_url( $endpoint ), $request );
+=======
+		$response = wp_remote_post( esc_url_raw( $endpoint ), $request );
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
 			if ( WP_DEBUG ) {
@@ -167,11 +171,19 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 			$is_human, $response_body );
 
 		if ( $submission = WPCF7_Submission::get_instance() ) {
+<<<<<<< HEAD
 			$submission->push( 'recaptcha', array(
 				'version' => '3.0',
 				'threshold' => $threshold,
 				'response' => $response_body,
 			) );
+=======
+			$submission->recaptcha = array(
+				'version' => '3.0',
+				'threshold' => $threshold,
+				'response' => $response_body,
+			);
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return $is_human;
@@ -265,6 +277,7 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 
 
 	public function display( $action = '' ) {
+<<<<<<< HEAD
 		echo sprintf(
 			'<p>%s</p>',
 			esc_html( __( "reCAPTCHA protects you against spam and other types of automated abuse. With Contact Form 7&#8217;s reCAPTCHA integration module, you can block abusive form submissions by spam bots.", 'contact-form-7' ) )
@@ -272,11 +285,19 @@ class WPCF7_RECAPTCHA extends WPCF7_Service {
 
 		echo sprintf(
 			'<p><strong>%s</strong></p>',
+=======
+		echo '<p>' . sprintf(
+			esc_html( __( 'reCAPTCHA protects you against spam and other types of automated abuse. With Contact Form 7&#8217;s reCAPTCHA integration module, you can block abusive form submissions by spam bots. For details, see %s.', 'contact-form-7' ) ),
+>>>>>>> fb785cbb (Initial commit)
 			wpcf7_link(
 				__( 'https://contactform7.com/recaptcha/', 'contact-form-7' ),
 				__( 'reCAPTCHA (v3)', 'contact-form-7' )
 			)
+<<<<<<< HEAD
 		);
+=======
+		) . '</p>';
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( $this->is_active() ) {
 			echo sprintf(

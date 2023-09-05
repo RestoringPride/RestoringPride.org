@@ -144,7 +144,11 @@ class IXR_Message
     function tag_open($parser, $tag, $attr)
     {
         $this->_currentTagContents = '';
+<<<<<<< HEAD
         $this->_currentTag = $tag;
+=======
+        $this->currentTag = $tag;
+>>>>>>> fb785cbb (Initial commit)
         switch($tag) {
             case 'methodCall':
             case 'methodResponse':

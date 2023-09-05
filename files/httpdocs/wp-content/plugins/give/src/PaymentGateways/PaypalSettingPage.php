@@ -77,8 +77,13 @@ class PaypalSettingPage implements SettingPage
      */
     public function getSettings()
     {
+<<<<<<< HEAD
         $settings[$this->payPalCommerce::id()] = $this->payPalCommerce->getOptions();
         $settings[$this->paypalStandard::id()] = $this->paypalStandard->getOptions();
+=======
+        $settings[$this->payPalCommerce->getId()] = $this->payPalCommerce->getOptions();
+        $settings[$this->paypalStandard->getId()] = $this->paypalStandard->getOptions();
+>>>>>>> fb785cbb (Initial commit)
 
         return $settings;
     }
@@ -93,8 +98,13 @@ class PaypalSettingPage implements SettingPage
     public function getGroups()
     {
         return [
+<<<<<<< HEAD
             $this->payPalCommerce::id() => $this->payPalCommerce->getName(),
             $this->paypalStandard::id() => $this->paypalStandard->getName(),
+=======
+            $this->payPalCommerce->getId() => $this->payPalCommerce->getName(),
+            $this->paypalStandard->getId() => $this->paypalStandard->getName(),
+>>>>>>> fb785cbb (Initial commit)
         ];
     }
 

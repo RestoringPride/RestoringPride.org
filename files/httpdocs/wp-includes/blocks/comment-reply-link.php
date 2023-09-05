@@ -34,7 +34,11 @@ function render_block_core_comment_reply_link( $attributes, $content, $block ) {
 
 	// Compute comment's depth iterating over its ancestors.
 	while ( ! empty( $parent_id ) ) {
+<<<<<<< HEAD
 		++$depth;
+=======
+		$depth++;
+>>>>>>> fb785cbb (Initial commit)
 		$parent_id = get_comment( $parent_id )->comment_parent;
 	}
 
@@ -51,6 +55,7 @@ function render_block_core_comment_reply_link( $attributes, $content, $block ) {
 		return;
 	}
 
+<<<<<<< HEAD
 	$classes = array();
 	if ( isset( $attributes['textAlign'] ) ) {
 		$classes[] = 'has-text-align-' . $attributes['textAlign'];
@@ -60,6 +65,14 @@ function render_block_core_comment_reply_link( $attributes, $content, $block ) {
 	}
 
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) );
+=======
+	$classes = '';
+	if ( isset( $attributes['textAlign'] ) ) {
+		$classes .= 'has-text-align-' . $attributes['textAlign'];
+	}
+
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classes ) );
+>>>>>>> fb785cbb (Initial commit)
 
 	return sprintf(
 		'<div %1$s>%2$s</div>',

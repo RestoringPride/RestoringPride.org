@@ -21,7 +21,10 @@
 		}
 	},
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"align": true,
 		"html": false,
 		"reusable": false

@@ -13,6 +13,7 @@ use Give\Framework\FieldsAPI\Group;
  */
 class SetupFieldConfirmation
 {
+<<<<<<< HEAD
     /**
      * @var Donation
      */
@@ -22,6 +23,8 @@ class SetupFieldConfirmation
      * @var array
      */
     protected $receiptArgs;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
     /**
      * @since 2.10.2

@@ -14,7 +14,10 @@
  *
  * @since 5.5.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Sitemaps {
 	/**
 	 * The main index of supported sitemaps.
@@ -99,8 +102,13 @@ class WP_Sitemaps {
 		 *
 		 * @since 5.5.0
 		 *
+<<<<<<< HEAD
 		 * @param bool $is_enabled Whether XML Sitemaps are enabled or not.
 		 *                         Defaults to true for public sites.
+=======
+		 * @param bool $is_enabled Whether XML Sitemaps are enabled or not. Defaults
+		 * to true for public sites.
+>>>>>>> fb785cbb (Initial commit)
 		 */
 		return (bool) apply_filters( 'wp_sitemaps_enabled', $is_enabled );
 	}
@@ -250,12 +258,21 @@ class WP_Sitemaps {
 	 *
 	 * @since 5.5.0
 	 *
+<<<<<<< HEAD
 	 * @param string $output    robots.txt output.
 	 * @param bool   $is_public Whether the site is public.
 	 * @return string The robots.txt output.
 	 */
 	public function add_robots( $output, $is_public ) {
 		if ( $is_public ) {
+=======
+	 * @param string $output robots.txt output.
+	 * @param bool   $public Whether the site is public.
+	 * @return string The robots.txt output.
+	 */
+	public function add_robots( $output, $public ) {
+		if ( $public ) {
+>>>>>>> fb785cbb (Initial commit)
 			$output .= "\nSitemap: " . esc_url( $this->index->get_index_url() ) . "\n";
 		}
 

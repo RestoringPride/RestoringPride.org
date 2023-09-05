@@ -5,7 +5,10 @@ namespace Give\PaymentGateways\Actions;
 use Give\Donations\Models\Donation;
 use Give\Framework\Exceptions\Primitives\Exception;
 use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
+<<<<<<< HEAD
 use Give\Framework\LegacyPaymentGateways\Adapters\LegacyPaymentGatewayRegisterAdapter;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\PaymentGateways\PaymentGatewayRegister;
 use Give\PaymentGateways\Gateways\PayPalStandard\PayPalStandard;
 use Give\PaymentGateways\Gateways\Stripe\Actions\GetPaymentMethodFromRequest;
@@ -46,10 +49,16 @@ class RegisterPaymentGateways
     /**
      * Registers all the payment gateways with GiveWP
      *
+<<<<<<< HEAD
      * @since 2.25.0 add afterRegisteredGateways
      * @since 2.18.0
      *
      * @param  array  $gateways
+=======
+     * @since 2.18.0
+     *
+     * @param array $gateways
+>>>>>>> fb785cbb (Initial commit)
      *
      * @return array
      *
@@ -76,8 +85,11 @@ class RegisterPaymentGateways
         $this->register3rdPartyPaymentGateways($paymentGatewayRegister);
         $this->unregister3rdPartyPaymentGateways($paymentGatewayRegister);
 
+<<<<<<< HEAD
         $this->afterRegisteredGateways();
 
+=======
+>>>>>>> fb785cbb (Initial commit)
         return $gateways;
     }
 
@@ -115,6 +127,7 @@ class RegisterPaymentGateways
         foreach ($this->stripePaymentMethods as $gatewayClass) {
             add_filter(
                 sprintf(
+<<<<<<< HEAD
                     'givewp_create_payment_gateway_data_%1$s',
                     $gatewayClass::id()
                 ),
@@ -122,6 +135,13 @@ class RegisterPaymentGateways
                     $gatewayData['stripePaymentMethod'] = (new GetPaymentMethodFromRequest)($donation);
 
                     return $gatewayData;
+=======
+                    'givewp_new_payment_%1$s_gateway_data',
+                    $gatewayClass::id()
+                ),
+                function ($gatewayData, Donation $donation) {
+                    return (new GetPaymentMethodFromRequest)($donation);
+>>>>>>> fb785cbb (Initial commit)
                 },
                 10,
                 2
@@ -136,6 +156,7 @@ class RegisterPaymentGateways
     {
         add_filter(
             sprintf(
+<<<<<<< HEAD
                 'givewp_create_payment_gateway_data_%1$s',
                 PayPalCommerce::id()
             ),
@@ -161,4 +182,14 @@ class RegisterPaymentGateways
             $legacyPaymentGatewayRegisterAdapter->connectGatewayToLegacyPaymentGatewayAdapter($gatewayClass);
         }
     }
+=======
+                'givewp_new_payment_%1$s_gateway_data',
+                PayPalCommerce::id()
+            ),
+            function () {
+                return (new GetPayPalOrderFromRequest())();
+            }
+        );
+    }
+>>>>>>> fb785cbb (Initial commit)
 }

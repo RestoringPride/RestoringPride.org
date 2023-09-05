@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Selectable 1.13.2
+=======
+ * jQuery UI Selectable 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -34,7 +38,11 @@
 "use strict";
 
 return $.widget( "ui.selectable", $.ui.mouse, {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	options: {
 		appendTo: "body",
 		autoRefresh: true,
@@ -210,10 +218,17 @@ return $.widget( "ui.selectable", $.ui.mouse, {
 
 			if ( options.tolerance === "touch" ) {
 				hit = ( !( offset.left > x2 || offset.right < x1 || offset.top > y2 ||
+<<<<<<< HEAD
                     offset.bottom < y1 ) );
 			} else if ( options.tolerance === "fit" ) {
 				hit = ( offset.left > x1 && offset.right < x2 && offset.top > y1 &&
                     offset.bottom < y2 );
+=======
+					offset.bottom < y1 ) );
+			} else if ( options.tolerance === "fit" ) {
+				hit = ( offset.left > x1 && offset.right < x2 && offset.top > y1 &&
+					offset.bottom < y2 );
+>>>>>>> fb785cbb (Initial commit)
 			}
 
 			if ( hit ) {

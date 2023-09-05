@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Tabs 1.13.2
+=======
+ * jQuery UI Tabs 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -35,7 +39,11 @@
 "use strict";
 
 $.widget( "ui.tabs", {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	delay: 300,
 	options: {
 		active: null,
@@ -176,6 +184,7 @@ $.widget( "ui.tabs", {
 		}
 
 		switch ( event.keyCode ) {
+<<<<<<< HEAD
 		case $.ui.keyCode.RIGHT:
 		case $.ui.keyCode.DOWN:
 			selectedIndex++;
@@ -209,6 +218,41 @@ $.widget( "ui.tabs", {
 			return;
 		default:
 			return;
+=======
+			case $.ui.keyCode.RIGHT:
+			case $.ui.keyCode.DOWN:
+				selectedIndex++;
+				break;
+			case $.ui.keyCode.UP:
+			case $.ui.keyCode.LEFT:
+				goingForward = false;
+				selectedIndex--;
+				break;
+			case $.ui.keyCode.END:
+				selectedIndex = this.anchors.length - 1;
+				break;
+			case $.ui.keyCode.HOME:
+				selectedIndex = 0;
+				break;
+			case $.ui.keyCode.SPACE:
+
+				// Activate only, no collapsing
+				event.preventDefault();
+				clearTimeout( this.activating );
+				this._activate( selectedIndex );
+				return;
+			case $.ui.keyCode.ENTER:
+
+				// Toggle (cancel delayed activation, allow collapsing)
+				event.preventDefault();
+				clearTimeout( this.activating );
+
+				// Determine if we should collapse or activate
+				this._activate( selectedIndex === this.options.active ? false : selectedIndex );
+				return;
+			default:
+				return;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		// Focus the appropriate tab, based on which key was pressed
@@ -330,7 +374,11 @@ $.widget( "ui.tabs", {
 			options.active = false;
 			this.active = $();
 
+<<<<<<< HEAD
 		// was active, but active tab is gone
+=======
+			// was active, but active tab is gone
+>>>>>>> fb785cbb (Initial commit)
 		} else if ( this.active.length && !$.contains( this.tablist[ 0 ], this.active[ 0 ] ) ) {
 
 			// all remaining tabs are disabled
@@ -338,12 +386,20 @@ $.widget( "ui.tabs", {
 				options.active = false;
 				this.active = $();
 
+<<<<<<< HEAD
 			// activate previous tab
+=======
+				// activate previous tab
+>>>>>>> fb785cbb (Initial commit)
 			} else {
 				this._activate( this._findNextTab( Math.max( 0, options.active - 1 ), false ) );
 			}
 
+<<<<<<< HEAD
 		// was active, active tab still exists
+=======
+			// was active, active tab still exists
+>>>>>>> fb785cbb (Initial commit)
 		} else {
 
 			// make sure active index is correct
@@ -447,7 +503,11 @@ $.widget( "ui.tabs", {
 				panelId = selector.substring( 1 );
 				panel = that.element.find( that._sanitizeSelector( selector ) );
 
+<<<<<<< HEAD
 			// remote tab
+=======
+				// remote tab
+>>>>>>> fb785cbb (Initial commit)
 			} else {
 
 				// If the tab doesn't already have aria-controls,
@@ -605,6 +665,7 @@ $.widget( "ui.tabs", {
 
 		if ( tab.hasClass( "ui-state-disabled" ) ||
 
+<<<<<<< HEAD
 				// tab is already loading
 				tab.hasClass( "ui-tabs-loading" ) ||
 
@@ -616,6 +677,19 @@ $.widget( "ui.tabs", {
 
 				// allow canceling activation
 				( this._trigger( "beforeActivate", event, eventData ) === false ) ) {
+=======
+			// tab is already loading
+			tab.hasClass( "ui-tabs-loading" ) ||
+
+			// can't switch durning an animation
+			this.running ||
+
+			// click on active header, but not collapsible
+			( clickedIsActive && !options.collapsible ) ||
+
+			// allow canceling activation
+			( this._trigger( "beforeActivate", event, eventData ) === false ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			return;
 		}
 

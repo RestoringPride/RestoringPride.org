@@ -198,6 +198,7 @@ function wp_nav_menu( $args = array() ) {
 	$sorted_menu_items        = array();
 	$menu_items_with_children = array();
 	foreach ( (array) $menu_items as $menu_item ) {
+<<<<<<< HEAD
 		/*
 		 * Fix invalid `menu_item_parent`. See: https://core.trac.wordpress.org/ticket/56926.
 		 * Compare as strings. Plugins may change the ID to a string.
@@ -206,6 +207,8 @@ function wp_nav_menu( $args = array() ) {
 			$menu_item->menu_item_parent = 0;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$sorted_menu_items[ $menu_item->menu_order ] = $menu_item;
 		if ( $menu_item->menu_item_parent ) {
 			$menu_items_with_children[ $menu_item->menu_item_parent ] = true;
@@ -611,7 +614,11 @@ function _wp_menu_item_classes_by_context( &$menu_items ) {
  * @return string The HTML list content for the menu items.
  */
 function walk_nav_menu_tree( $items, $depth, $args ) {
+<<<<<<< HEAD
 	$walker = ( empty( $args->walker ) ) ? new Walker_Nav_Menu() : $args->walker;
+=======
+	$walker = ( empty( $args->walker ) ) ? new Walker_Nav_Menu : $args->walker;
+>>>>>>> fb785cbb (Initial commit)
 
 	return $walker->walk( $items, $depth, $args );
 }
@@ -637,6 +644,7 @@ function _nav_menu_item_id_use_once( $id, $item ) {
 
 	return $id;
 }
+<<<<<<< HEAD
 
 /**
  * Remove the `menu-item-has-children` class from bottom level menu items.
@@ -694,3 +702,5 @@ function wp_nav_menu_remove_menu_item_has_children_class( $classes, $menu_item, 
 
 	return $classes;
 }
+=======
+>>>>>>> fb785cbb (Initial commit)

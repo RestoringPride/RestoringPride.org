@@ -14,7 +14,10 @@
  *
  * @see register_block_type()
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Block_Type {
 
 	/**
@@ -55,7 +58,11 @@ class WP_Block_Type {
 	 * when nested within the specified blocks.
 	 *
 	 * @since 5.5.0
+<<<<<<< HEAD
 	 * @var string[]|null
+=======
+	 * @var array|null
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public $parent = null;
 
@@ -64,7 +71,11 @@ class WP_Block_Type {
 	 * block types at any position of the ancestor's block subtree.
 	 *
 	 * @since 6.0.0
+<<<<<<< HEAD
 	 * @var string[]|null
+=======
+	 * @var array|null
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public $ancestor = null;
 
@@ -113,7 +124,11 @@ class WP_Block_Type {
 	 * Block variations.
 	 *
 	 * @since 5.8.0
+<<<<<<< HEAD
 	 * @var array[]
+=======
+	 * @var array
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public $variations = array();
 
@@ -153,7 +168,11 @@ class WP_Block_Type {
 	 * Context values inherited by blocks of this type.
 	 *
 	 * @since 5.5.0
+<<<<<<< HEAD
 	 * @var string[]
+=======
+	 * @var array
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public $uses_context = array();
 
@@ -161,11 +180,16 @@ class WP_Block_Type {
 	 * Context provided by blocks of this type.
 	 *
 	 * @since 5.5.0
+<<<<<<< HEAD
 	 * @var string[]|null
+=======
+	 * @var array|null
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public $provides_context = null;
 
 	/**
+<<<<<<< HEAD
 	 * Block type editor only script handles.
 	 *
 	 * @since 6.1.0
@@ -218,6 +242,46 @@ class WP_Block_Type {
 		'editor_style',
 		'style',
 	);
+=======
+	 * Block type editor only script handle.
+	 *
+	 * @since 5.0.0
+	 * @var string|null
+	 */
+	public $editor_script = null;
+
+	/**
+	 * Block type front end and editor script handle.
+	 *
+	 * @since 5.0.0
+	 * @var string|null
+	 */
+	public $script = null;
+
+	/**
+	 * Block type front end only script handle.
+	 *
+	 * @since 5.9.0
+	 * @var string|null
+	 */
+	public $view_script = null;
+
+	/**
+	 * Block type editor only style handle.
+	 *
+	 * @since 5.0.0
+	 * @var string|null
+	 */
+	public $editor_style = null;
+
+	/**
+	 * Block type front end and editor style handle.
+	 *
+	 * @since 5.0.0
+	 * @var string|null
+	 */
+	public $style = null;
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Attributes supported by every block.
@@ -242,9 +306,12 @@ class WP_Block_Type {
 	 * @since 5.8.0 Added the `variations` property.
 	 * @since 5.9.0 Added the `view_script` property.
 	 * @since 6.0.0 Added the `ancestor` property.
+<<<<<<< HEAD
 	 * @since 6.1.0 Added the `editor_script_handles`, `script_handles`, `view_script_handles,
 	 *              `editor_style_handles`, and `style_handles` properties.
 	 *              Deprecated the `editor_script`, `script`, `view_script`, `editor_style`, and `style` properties.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @see register_block_type()
 	 *
@@ -253,6 +320,7 @@ class WP_Block_Type {
 	 *     Optional. Array or string of arguments for registering a block type. Any arguments may be defined,
 	 *     however the ones described below are supported by default. Default empty array.
 	 *
+<<<<<<< HEAD
 	 *     @type string        $api_version              Block API version.
 	 *     @type string        $title                    Human-readable block type label.
 	 *     @type string|null   $category                 Block type category classification, used in
@@ -279,6 +347,34 @@ class WP_Block_Type {
 	 *     @type string[]      $view_script_handles      Block type front end only script handles.
 	 *     @type string[]      $editor_style_handles     Block type editor only style handles.
 	 *     @type string[]      $style_handles            Block type front end and editor style handles.
+=======
+	 *     @type string        $api_version      Block API version.
+	 *     @type string        $title            Human-readable block type label.
+	 *     @type string|null   $category         Block type category classification, used in
+	 *                                           search interfaces to arrange block types by category.
+	 *     @type array|null    $parent           Setting parent lets a block require that it is only
+	 *                                           available when nested within the specified blocks.
+	 *     @type array|null    $ancestor         Setting ancestor makes a block available only inside the specified
+	 *                                           block types at any position of the ancestor's block subtree.
+	 *     @type string|null   $icon             Block type icon.
+	 *     @type string        $description      A detailed block type description.
+	 *     @type string[]      $keywords         Additional keywords to produce block type as
+	 *                                           result in search interfaces.
+	 *     @type string|null   $textdomain       The translation textdomain.
+	 *     @type array         $styles           Alternative block styles.
+	 *     @type array         $variations       Block variations.
+	 *     @type array|null    $supports         Supported features.
+	 *     @type array|null    $example          Structured data for the block preview.
+	 *     @type callable|null $render_callback  Block type render callback.
+	 *     @type array|null    $attributes       Block type attributes property schemas.
+	 *     @type array         $uses_context     Context values inherited by blocks of this type.
+	 *     @type array|null    $provides_context Context provided by blocks of this type.
+	 *     @type string|null   $editor_script    Block type editor only script handle.
+	 *     @type string|null   $script           Block type front end and editor script handle.
+	 *     @type string|null   $view_script      Block type front end only script handle.
+	 *     @type string|null   $editor_style     Block type editor only style handle.
+	 *     @type string|null   $style            Block type front end and editor style handle.
+>>>>>>> fb785cbb (Initial commit)
 	 * }
 	 */
 	public function __construct( $block_type, $args = array() ) {
@@ -288,6 +384,7 @@ class WP_Block_Type {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Proxies getting values for deprecated properties for script and style handles for backward compatibility.
 	 * Gets the value for the corresponding new property if the first item in the array provided.
 	 *
@@ -380,6 +477,8 @@ class WP_Block_Type {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Renders the block type output for given attributes.
 	 *
 	 * @since 5.0.0

@@ -1345,7 +1345,11 @@ ul.cat-checklist {
 }
 
 .plugins tr.paused th.check-column {
+<<<<<<< HEAD
 	border-right: 4px solid #b32d2e;
+=======
+	border-right: 4px solid #d63638;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 .plugins tr.paused th,
@@ -1355,7 +1359,11 @@ ul.cat-checklist {
 
 .plugins tr.paused .plugin-title,
 .plugins .paused .dashicons-warning {
+<<<<<<< HEAD
 	color: #b32d2e;
+=======
+	color: #d63638;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 .plugins .paused .error-display p,
@@ -1365,7 +1373,11 @@ ul.cat-checklist {
 }
 
 .plugins .resume-link {
+<<<<<<< HEAD
 	color: #b32d2e;
+=======
+	color: #d63638;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 .plugin-card .update-now:before {
@@ -1373,11 +1385,19 @@ ul.cat-checklist {
 	content: "\f463";
 	display: inline-block;
 	font: normal 20px/1 dashicons;
+<<<<<<< HEAD
 	margin: -3px -2px 0 5px;
 	speak: never;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	vertical-align: middle;
+=======
+	margin: 3px -2px 0 5px;
+	speak: never;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	vertical-align: top;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 .plugin-card .updating-message:before {
@@ -1399,6 +1419,7 @@ ul.cat-checklist {
 	content: "\f147";
 }
 
+<<<<<<< HEAD
 .plugin-install-php #the-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -1410,6 +1431,8 @@ ul.cat-checklist {
 	justify-content: space-between;
 }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 .plugin-install-php h2 {
 	clear: both;
 }
@@ -1637,7 +1660,10 @@ div.action-links,
 	font-style: normal;
 	margin: 0;
 	padding: 100px 0 0;
+<<<<<<< HEAD
 	width: 100%;
+=======
+>>>>>>> fb785cbb (Initial commit)
 	text-align: center;
 }
 
@@ -1765,6 +1791,7 @@ div.action-links,
 		display: none;
 	}
 
+<<<<<<< HEAD
 	.tablenav.bottom .actions select {
 		margin-bottom: 5px;
 	}
@@ -1774,6 +1801,8 @@ div.action-links,
 		margin-top: 10px;
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	.tablenav.bottom .tablenav-pages.one-page {
 		margin-top: 15px;
 		height: 0;

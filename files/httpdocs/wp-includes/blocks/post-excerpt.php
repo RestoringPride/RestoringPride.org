@@ -38,6 +38,7 @@ function render_block_core_post_excerpt( $attributes, $content, $block ) {
 	 * result in showing only one `read more` link at a time.
 	 */
 	add_filter( 'excerpt_more', $filter_excerpt_more );
+<<<<<<< HEAD
 	$classes = array();
 	if ( isset( $attributes['textAlign'] ) ) {
 		$classes[] = 'has-text-align-' . $attributes['textAlign'];
@@ -46,6 +47,13 @@ function render_block_core_post_excerpt( $attributes, $content, $block ) {
 		$classes[] = 'has-link-color';
 	}
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) );
+=======
+	$classes = '';
+	if ( isset( $attributes['textAlign'] ) ) {
+		$classes .= "has-text-align-{$attributes['textAlign']}";
+	}
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classes ) );
+>>>>>>> fb785cbb (Initial commit)
 
 	$content               = '<p class="wp-block-post-excerpt__excerpt">' . $excerpt;
 	$show_more_on_new_line = ! isset( $attributes['showMoreOnNewLine'] ) || $attributes['showMoreOnNewLine'];

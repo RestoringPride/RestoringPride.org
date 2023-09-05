@@ -6,12 +6,18 @@ use Give\Donations\Models\Donation;
 use Give\Framework\Exceptions\Primitives\Exception;
 use Give\Framework\PaymentGateways\Commands\GatewayCommand;
 use Give\Framework\PaymentGateways\Commands\PaymentComplete;
+<<<<<<< HEAD
 use Give\Framework\PaymentGateways\Commands\SubscriptionComplete;
 use Give\Framework\PaymentGateways\PaymentGateway;
 use Give\Helpers\Form\Utils as FormUtils;
 use Give\PaymentGateways\Gateways\TestGateway\Views\LegacyFormFieldMarkup;
 use Give\Subscriptions\Models\Subscription;
 use Give\Subscriptions\ValueObjects\SubscriptionStatus;
+=======
+use Give\Framework\PaymentGateways\PaymentGateway;
+use Give\Helpers\Form\Utils as FormUtils;
+use Give\PaymentGateways\Gateways\TestGateway\Views\LegacyFormFieldMarkup;
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Class TestGateway
@@ -71,6 +77,7 @@ class TestGateway extends PaymentGateway
      */
     public function createPayment(Donation $donation, $gatewayData = null): GatewayCommand
     {
+<<<<<<< HEAD
         return new PaymentComplete("test-gateway-transaction-id-$donation->id");
     }
 
@@ -99,6 +106,11 @@ class TestGateway extends PaymentGateway
     {
         $subscription->status = SubscriptionStatus::CANCELLED();
         $subscription->save();
+=======
+        $transactionId = "test-gateway-transaction-id-{$donation->id}";
+
+        return new PaymentComplete($transactionId);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**

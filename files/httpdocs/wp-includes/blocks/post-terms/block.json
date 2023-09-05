@@ -16,6 +16,7 @@
 		"separator": {
 			"type": "string",
 			"default": ", "
+<<<<<<< HEAD
 		},
 		"prefix": {
 			"type": "string",
@@ -24,11 +25,16 @@
 		"suffix": {
 			"type": "string",
 			"default": ""
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"usesContext": [ "postId", "postType" ],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"html": false,
 		"color": {
 			"gradients": true,
@@ -39,6 +45,7 @@
 				"link": true
 			}
 		},
+<<<<<<< HEAD
 		"spacing": {
 			"margin": true,
 			"padding": true
@@ -52,6 +59,15 @@
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
+=======
+		"typography": {
+			"lineHeight": true,
+			"fontSize": true,
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}

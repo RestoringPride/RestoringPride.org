@@ -3,13 +3,19 @@
 namespace Give\LegacyPaymentGateways\Adapters;
 
 use Exception;
+<<<<<<< HEAD
 use Give\Donations\ValueObjects\DonationType;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Donors\Models\Donor;
 use Give\Framework\PaymentGateways\Contracts\PaymentGatewayInterface;
 use Give\PaymentGateways\DataTransferObjects\FormData;
 use Give\PaymentGateways\DataTransferObjects\SubscriptionData;
 use Give\Subscriptions\Models\Subscription;
+<<<<<<< HEAD
 use Give\Subscriptions\ValueObjects\SubscriptionMode;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Subscriptions\ValueObjects\SubscriptionPeriod;
 use Give\Subscriptions\ValueObjects\SubscriptionStatus;
 
@@ -37,7 +43,10 @@ class LegacyPaymentGatewayAdapter
     /**
      * First we create a payment, then move on to the gateway processing
      *
+<<<<<<< HEAD
      * @since 2.24.0 add support for payment mode
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.21.0 Replace give_insert_payment with donation model. Store legacy subscription data in donation meta.
      *             Attach subscription id to donation.
      * @since 2.19.0 Replace is_recurring with is_donation_recurring to detect recurring donations.
@@ -50,6 +59,10 @@ class LegacyPaymentGatewayAdapter
         $formData = FormData::fromRequest($legacyDonationData);
 
         $this->validateGatewayNonce($formData->gatewayNonce);
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
         $donor = $this->getOrCreateDonor(
             $formData->donorInfo->wpUserId,
             $formData->donorInfo->email,
@@ -58,16 +71,25 @@ class LegacyPaymentGatewayAdapter
         );
 
         $donation = $formData->toDonation($donor->id);
+<<<<<<< HEAD
+=======
+        $donation->save();
+
+        $this->setSession($donation->id);
+>>>>>>> fb785cbb (Initial commit)
 
         if (give_recurring_is_donation_recurring($legacyDonationData)) {
             $subscriptionData = SubscriptionData::fromRequest($legacyDonationData);
 
+<<<<<<< HEAD
             $paymentMode = !empty($legacyDonationData['payment_mode']) ? new SubscriptionMode($legacyDonationData['payment_mode']) : null;
 
             if ( $paymentMode === null ) {
                 $paymentMode = give_is_test_mode() ? SubscriptionMode::TEST() : SubscriptionMode::LIVE();
             }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
             $subscription = Subscription::create([
                 'amount' => $donation->amount,
                 'period' => new SubscriptionPeriod($subscriptionData->period),
@@ -75,6 +97,7 @@ class LegacyPaymentGatewayAdapter
                 'donorId' => $donor->id,
                 'installments' => (int)$subscriptionData->times,
                 'status' => SubscriptionStatus::PENDING(),
+<<<<<<< HEAD
                 'mode' => $paymentMode,
                 'donationFormId' => $formData->formId,
             ]);
@@ -94,6 +117,24 @@ class LegacyPaymentGatewayAdapter
             $this->setSession($donation->id);
             $registeredGateway->handleCreatePayment($donation);
         }
+=======
+                'donationFormId' => $formData->formId
+            ]);
+
+            give()->donations->updateLegacyDonationMetaAsInitialSubscriptionDonation($donation->id);
+            give()->subscriptions->updateLegacyColumns(
+                $subscription->id,
+                [
+                    'parent_payment_id' => $donation->id,
+                    'expiration' => $subscription->expiration()
+                ]
+            );
+
+            $registeredGateway->handleCreateSubscription($donation, $subscription);
+        }
+
+        $registeredGateway->handleCreatePayment($donation);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -172,7 +213,11 @@ class LegacyPaymentGatewayAdapter
                 'firstName' => $firstName,
                 'lastName' => $lastName,
                 'email' => $donorEmail,
+<<<<<<< HEAD
                 'userId' => $userId ?: null,
+=======
+                'userId' => $userId ?: null
+>>>>>>> fb785cbb (Initial commit)
             ]);
         }
 

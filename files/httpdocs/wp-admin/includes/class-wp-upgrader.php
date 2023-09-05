@@ -48,7 +48,10 @@ require_once ABSPATH . 'wp-admin/includes/class-wp-ajax-upgrader-skin.php';
  *
  * @since 2.8.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Upgrader {
 
 	/**
@@ -429,7 +432,10 @@ class WP_Upgrader {
 	 * clear out the destination folder if it already exists.
 	 *
 	 * @since 2.8.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Use move_dir() instead of copy_dir() when possible.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @global WP_Filesystem_Base $wp_filesystem        WordPress filesystem subclass.
 	 * @global array              $wp_theme_directories
@@ -471,9 +477,13 @@ class WP_Upgrader {
 		$destination       = $args['destination'];
 		$clear_destination = $args['clear_destination'];
 
+<<<<<<< HEAD
 		if ( function_exists( 'set_time_limit' ) ) {
 			set_time_limit( 300 );
 		}
+=======
+		set_time_limit( 300 );
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( empty( $source ) || empty( $destination ) ) {
 			return new WP_Error( 'bad_request', $this->strings['bad_request'] );
@@ -589,6 +599,7 @@ class WP_Upgrader {
 			}
 		}
 
+<<<<<<< HEAD
 		/*
 		 * If 'clear_working' is false, the source should not be removed, so use copy_dir() instead.
 		 *
@@ -612,6 +623,22 @@ class WP_Upgrader {
 				}
 			}
 			$result = copy_dir( $source, $remote_destination );
+=======
+		// Create destination if needed.
+		if ( ! $wp_filesystem->exists( $remote_destination ) ) {
+			if ( ! $wp_filesystem->mkdir( $remote_destination, FS_CHMOD_DIR ) ) {
+				return new WP_Error( 'mkdir_failed_destination', $this->strings['mkdir_failed'], $remote_destination );
+			}
+		}
+
+		// Copy new version of item into place.
+		$result = copy_dir( $source, $remote_destination );
+		if ( is_wp_error( $result ) ) {
+			if ( $args['clear_working'] ) {
+				$wp_filesystem->delete( $remote_source, true );
+			}
+			return $result;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		// Clear the working folder?
@@ -619,10 +646,13 @@ class WP_Upgrader {
 			$wp_filesystem->delete( $remote_source, true );
 		}
 
+<<<<<<< HEAD
 		if ( is_wp_error( $result ) ) {
 			return $result;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$destination_name = basename( str_replace( $local_destination, '', $destination ) );
 		if ( '.' === $destination_name ) {
 			$destination_name = '';
@@ -911,8 +941,11 @@ class WP_Upgrader {
 	 *
 	 * @since 4.5.0
 	 *
+<<<<<<< HEAD
 	 * @global wpdb $wpdb The WordPress database abstraction object.
 	 *
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * @param string $lock_name       The name of this unique lock.
 	 * @param int    $release_timeout Optional. The duration in seconds to respect an existing lock.
 	 *                                Default: 1 hour.

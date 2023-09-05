@@ -36,9 +36,12 @@ window.wp = window.wp || {};
 			};
 
 		return function ( data ) {
+<<<<<<< HEAD
 			if ( ! document.getElementById( 'tmpl-' + id ) ) {
 				throw new Error( 'Template not found: ' + '#tmpl-' + id );
 			}
+=======
+>>>>>>> fb785cbb (Initial commit)
 			compiled = compiled || _.template( $( '#tmpl-' + id ).html(),  options );
 			return compiled( data );
 		};

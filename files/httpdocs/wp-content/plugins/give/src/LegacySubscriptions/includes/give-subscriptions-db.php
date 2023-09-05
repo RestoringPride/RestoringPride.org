@@ -44,8 +44,11 @@ class Give_Subscriptions_DB extends Give_DB
      * Get columns and formats
      *
      * @access  public
+<<<<<<< HEAD
      *
      * @since 2.24.0 add payment_mode column
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since   1.0
      */
     public function get_columns()
@@ -64,7 +67,10 @@ class Give_Subscriptions_DB extends Give_DB
             'product_id' => '%d',
             'created' => '%s',
             'expiration' => '%s',
+<<<<<<< HEAD
             'payment_mode' => '%s',
+=======
+>>>>>>> fb785cbb (Initial commit)
             'status' => '%s',
             'notes' => '%s',
             'profile_id' => '%s',
@@ -643,8 +649,13 @@ class Give_Subscriptions_DB extends Give_DB
                     "
 				SELECT id,name FROM {$donors_db->table_name}
 				WHERE name
+<<<<<<< HEAD
 				LIKE '%s'",
                     '%' . $args['search'] . '%'
+=======
+				LIKE '%%%s%%'",
+                    $args['search']
+>>>>>>> fb785cbb (Initial commit)
                 );
                 $subscription_donor_id = [];
                 $donor_ids = $wpdb->get_results($query, ARRAY_A);

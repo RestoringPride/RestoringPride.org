@@ -288,7 +288,11 @@ function wpcf7_welcome_panel_screen_settings( $screen_settings, $screen ) {
 		wpcf7_format_atts( array(
 			'id' => $checkbox_id,
 			'type' => 'checkbox',
+<<<<<<< HEAD
 			'checked' => $checked,
+=======
+			'checked' => $checked ? 'checked' : null,
+>>>>>>> fb785cbb (Initial commit)
 		) )
 	);
 

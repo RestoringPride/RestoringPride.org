@@ -10,6 +10,10 @@
 /**
  * Fetches an instance of a WP_List_Table class.
  *
+<<<<<<< HEAD
+=======
+ * @access private
+>>>>>>> fb785cbb (Initial commit)
  * @since 3.1.0
  *
  * @global string $hook_suffix
@@ -57,6 +61,7 @@ function _get_list_table( $class_name, $args = array() ) {
 			$args['screen'] = null;
 		}
 
+<<<<<<< HEAD
 		/**
 		 * Filters the list table class to instantiate.
 		 *
@@ -71,6 +76,8 @@ function _get_list_table( $class_name, $args = array() ) {
 			$class_name = $custom_class_name;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return new $class_name( $args );
 	}
 

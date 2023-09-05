@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery JavaScript Library v3.6.3
+=======
+ * jQuery JavaScript Library v3.6.0
+>>>>>>> fb785cbb (Initial commit)
  * https://jquery.com/
  *
  * Includes Sizzle.js
@@ -9,7 +13,11 @@
  * Released under the MIT license
  * https://jquery.org/license
  *
+<<<<<<< HEAD
  * Date: 2022-12-20T21:28Z
+=======
+ * Date: 2021-03-02T17:08Z
+>>>>>>> fb785cbb (Initial commit)
  */
 ( function( global, factory ) {
 
@@ -23,7 +31,11 @@
 		// (such as Node.js), expose a factory as module.exports.
 		// This accentuates the need for the creation of a real `window`.
 		// e.g. var jQuery = require("jquery")(window);
+<<<<<<< HEAD
 		// See ticket trac-14549 for more info.
+=======
+		// See ticket #14549 for more info.
+>>>>>>> fb785cbb (Initial commit)
 		module.exports = global.document ?
 			factory( global, true ) :
 			function( w ) {
@@ -151,7 +163,11 @@ function toType( obj ) {
 
 
 var
+<<<<<<< HEAD
 	version = "3.6.3",
+=======
+	version = "3.6.0",
+>>>>>>> fb785cbb (Initial commit)
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -522,14 +538,22 @@ function isArrayLike( obj ) {
 }
 var Sizzle =
 /*!
+<<<<<<< HEAD
  * Sizzle CSS Selector Engine v2.3.9
+=======
+ * Sizzle CSS Selector Engine v2.3.6
+>>>>>>> fb785cbb (Initial commit)
  * https://sizzlejs.com/
  *
  * Copyright JS Foundation and other contributors
  * Released under the MIT license
  * https://js.foundation/
  *
+<<<<<<< HEAD
  * Date: 2022-12-19
+=======
+ * Date: 2021-02-16
+>>>>>>> fb785cbb (Initial commit)
  */
 ( function( window ) {
 var i,
@@ -879,6 +903,7 @@ function Sizzle( selector, context, results, seed ) {
 				}
 
 				try {
+<<<<<<< HEAD
 
 					// `qSA` may not throw for unrecognized parts using forgiving parsing:
 					// https://drafts.csswg.org/selectors/#forgiving-selector
@@ -900,6 +925,8 @@ function Sizzle( selector, context, results, seed ) {
 						throw new Error();
 					}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 					push.apply( results,
 						newContext.querySelectorAll( newSelector )
 					);
@@ -1195,6 +1222,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			!el.querySelectorAll( ":scope fieldset div" ).length;
 	} );
 
+<<<<<<< HEAD
 	// Support: Chrome 105+, Firefox 104+, Safari 15.4+
 	// Make sure forgiving mode is not used in `CSS.supports( "selector(...)" )`.
 	//
@@ -1220,6 +1248,8 @@ setDocument = Sizzle.setDocument = function( node ) {
 		/* eslint-enable */
 	} );
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	/* Attributes
 	---------------------------------------------------------------------- */
 
@@ -1486,6 +1516,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		} );
 	}
 
+<<<<<<< HEAD
 	if ( !support.cssSupportsSelector ) {
 
 		// Support: Chrome 105+, Safari 15.4+
@@ -1497,6 +1528,8 @@ setDocument = Sizzle.setDocument = function( node ) {
 		rbuggyQSA.push( ":has" );
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	rbuggyQSA = rbuggyQSA.length && new RegExp( rbuggyQSA.join( "|" ) );
 	rbuggyMatches = rbuggyMatches.length && new RegExp( rbuggyMatches.join( "|" ) );
 
@@ -1509,6 +1542,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// As in, an element does not contain itself
 	contains = hasCompare || rnative.test( docElem.contains ) ?
 		function( a, b ) {
+<<<<<<< HEAD
 
 			// Support: IE <9 only
 			// IE doesn't have `contains` on `document` so we need to check for
@@ -1517,6 +1551,9 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// as `ownerDocument` of elements within `<template/>` may have
 			// a null one - a default behavior of all modern browsers.
 			var adown = a.nodeType === 9 && a.documentElement || a,
+=======
+			var adown = a.nodeType === 9 ? a.documentElement : a,
+>>>>>>> fb785cbb (Initial commit)
 				bup = b && b.parentNode;
 			return a === bup || !!( bup && bup.nodeType === 1 && (
 				adown.contains ?
@@ -2306,7 +2343,11 @@ Expr = Sizzle.selectors = {
 			return elem.nodeName.toLowerCase() === "input" &&
 				elem.type === "text" &&
 
+<<<<<<< HEAD
 				// Support: IE <10 only
+=======
+				// Support: IE<8
+>>>>>>> fb785cbb (Initial commit)
 				// New HTML5 attribute values (e.g., "search") appear with elem.type === "text"
 				( ( attr = elem.getAttribute( "type" ) ) == null ||
 					attr.toLowerCase() === "text" );
@@ -3193,8 +3234,13 @@ jQuery.fn.extend( {
 var rootjQuery,
 
 	// A simple way to check for HTML strings
+<<<<<<< HEAD
 	// Prioritize #id over <tag> to avoid XSS via location.hash (trac-9521)
 	// Strict HTML recognition (trac-11290: must start with <)
+=======
+	// Prioritize #id over <tag> to avoid XSS via location.hash (#9521)
+	// Strict HTML recognition (#11290: must start with <)
+>>>>>>> fb785cbb (Initial commit)
 	// Shortcut simple #id case for speed
 	rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/,
 
@@ -4151,7 +4197,11 @@ jQuery.extend( {
 	isReady: false,
 
 	// A counter to track how many items to wait for before
+<<<<<<< HEAD
 	// the ready event fires. See trac-6781
+=======
+	// the ready event fires. See #6781
+>>>>>>> fb785cbb (Initial commit)
 	readyWait: 1,
 
 	// Handle when the DOM is ready
@@ -4279,7 +4329,11 @@ function fcamelCase( _all, letter ) {
 
 // Convert dashed to camelCase; used by the css and data modules
 // Support: IE <=9 - 11, Edge 12 - 15
+<<<<<<< HEAD
 // Microsoft forgot to hump their vendor prefix (trac-9572)
+=======
+// Microsoft forgot to hump their vendor prefix (#9572)
+>>>>>>> fb785cbb (Initial commit)
 function camelCase( string ) {
 	return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
 }
@@ -4315,7 +4369,11 @@ Data.prototype = {
 			value = {};
 
 			// We can accept data for non-element nodes in modern browsers,
+<<<<<<< HEAD
 			// but we should not, see trac-8335.
+=======
+			// but we should not, see #8335.
+>>>>>>> fb785cbb (Initial commit)
 			// Always return an empty object.
 			if ( acceptData( owner ) ) {
 
@@ -4554,7 +4612,11 @@ jQuery.fn.extend( {
 					while ( i-- ) {
 
 						// Support: IE 11 only
+<<<<<<< HEAD
 						// The attrs elements can be null (trac-14894)
+=======
+						// The attrs elements can be null (#14894)
+>>>>>>> fb785cbb (Initial commit)
 						if ( attrs[ i ] ) {
 							name = attrs[ i ].name;
 							if ( name.indexOf( "data-" ) === 0 ) {
@@ -4977,9 +5039,15 @@ var rscriptType = ( /^$|^module$|\/(?:java|ecma)script/i );
 		input = document.createElement( "input" );
 
 	// Support: Android 4.0 - 4.3 only
+<<<<<<< HEAD
 	// Check state lost if the name is set (trac-11217)
 	// Support: Windows Web Apps (WWA)
 	// `name` and `type` must use .setAttribute for WWA (trac-14901)
+=======
+	// Check state lost if the name is set (#11217)
+	// Support: Windows Web Apps (WWA)
+	// `name` and `type` must use .setAttribute for WWA (#14901)
+>>>>>>> fb785cbb (Initial commit)
 	input.setAttribute( "type", "radio" );
 	input.setAttribute( "checked", "checked" );
 	input.setAttribute( "name", "t" );
@@ -5003,7 +5071,11 @@ var rscriptType = ( /^$|^module$|\/(?:java|ecma)script/i );
 } )();
 
 
+<<<<<<< HEAD
 // We have to close these tags to support XHTML (trac-13200)
+=======
+// We have to close these tags to support XHTML (#13200)
+>>>>>>> fb785cbb (Initial commit)
 var wrapMap = {
 
 	// XHTML parsers do not magically insert elements in the
@@ -5029,7 +5101,11 @@ if ( !support.option ) {
 function getAll( context, tag ) {
 
 	// Support: IE <=9 - 11 only
+<<<<<<< HEAD
 	// Use typeof to avoid zero-argument method invocation on host objects (trac-15151)
+=======
+	// Use typeof to avoid zero-argument method invocation on host objects (#15151)
+>>>>>>> fb785cbb (Initial commit)
 	var ret;
 
 	if ( typeof context.getElementsByTagName !== "undefined" ) {
@@ -5112,7 +5188,11 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 				// Remember the top-level container
 				tmp = fragment.firstChild;
 
+<<<<<<< HEAD
 				// Ensure the created nodes are orphaned (trac-12392)
+=======
+				// Ensure the created nodes are orphaned (#12392)
+>>>>>>> fb785cbb (Initial commit)
 				tmp.textContent = "";
 			}
 		}
@@ -5533,15 +5613,24 @@ jQuery.event = {
 
 			for ( ; cur !== this; cur = cur.parentNode || this ) {
 
+<<<<<<< HEAD
 				// Don't check non-elements (trac-13208)
 				// Don't process clicks on disabled elements (trac-6911, trac-8165, trac-11382, trac-11764)
+=======
+				// Don't check non-elements (#13208)
+				// Don't process clicks on disabled elements (#6911, #8165, #11382, #11764)
+>>>>>>> fb785cbb (Initial commit)
 				if ( cur.nodeType === 1 && !( event.type === "click" && cur.disabled === true ) ) {
 					matchedHandlers = [];
 					matchedSelectors = {};
 					for ( i = 0; i < delegateCount; i++ ) {
 						handleObj = handlers[ i ];
 
+<<<<<<< HEAD
 						// Don't conflict with Object.prototype properties (trac-13203)
+=======
+						// Don't conflict with Object.prototype properties (#13203)
+>>>>>>> fb785cbb (Initial commit)
 						sel = handleObj.selector + " ";
 
 						if ( matchedSelectors[ sel ] === undefined ) {
@@ -5795,7 +5884,11 @@ jQuery.Event = function( src, props ) {
 
 		// Create target properties
 		// Support: Safari <=6 - 7 only
+<<<<<<< HEAD
 		// Target should not be a text node (trac-504, trac-13143)
+=======
+		// Target should not be a text node (#504, #13143)
+>>>>>>> fb785cbb (Initial commit)
 		this.target = ( src.target && src.target.nodeType === 3 ) ?
 			src.target.parentNode :
 			src.target;
@@ -5918,10 +6011,17 @@ jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateTyp
 			return true;
 		},
 
+<<<<<<< HEAD
 		// Suppress native focus or blur if we're currently inside
 		// a leveraged native-event stack
 		_default: function( event ) {
 			return dataPriv.get( event.target, type );
+=======
+		// Suppress native focus or blur as it's already being fired
+		// in leverageNative.
+		_default: function() {
+			return true;
+>>>>>>> fb785cbb (Initial commit)
 		},
 
 		delegateType: delegateType
@@ -6020,8 +6120,12 @@ var
 
 	// checked="checked" or checked
 	rchecked = /checked\s*(?:[^=]|=\s*.checked.)/i,
+<<<<<<< HEAD
 
 	rcleanScript = /^\s*<!\[CDATA\[|\]\]>\s*$/g;
+=======
+	rcleanScript = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g;
+>>>>>>> fb785cbb (Initial commit)
 
 // Prefer a tbody over its parent table for containing new rows
 function manipulationTarget( elem, content ) {
@@ -6135,7 +6239,11 @@ function domManip( collection, args, callback, ignored ) {
 
 			// Use the original fragment for the last item
 			// instead of the first because it can end up
+<<<<<<< HEAD
 			// being emptied incorrectly in certain situations (trac-8070).
+=======
+			// being emptied incorrectly in certain situations (#8070).
+>>>>>>> fb785cbb (Initial commit)
 			for ( ; i < l; i++ ) {
 				node = fragment;
 
@@ -6176,12 +6284,15 @@ function domManip( collection, args, callback, ignored ) {
 								}, doc );
 							}
 						} else {
+<<<<<<< HEAD
 
 							// Unwrap a CDATA section containing script contents. This shouldn't be
 							// needed as in XML documents they're already not visible when
 							// inspecting element contents and in HTML documents they have no
 							// meaning but we're preserving that logic for backwards compatibility.
 							// This will be removed completely in 4.0. See gh-4904.
+=======
+>>>>>>> fb785cbb (Initial commit)
 							DOMEval( node.textContent.replace( rcleanScript, "" ), node, doc );
 						}
 					}
@@ -6464,12 +6575,18 @@ jQuery.each( {
 } );
 var rnumnonpx = new RegExp( "^(" + pnum + ")(?!px)[a-z%]+$", "i" );
 
+<<<<<<< HEAD
 var rcustomProp = /^--/;
 
 
 var getStyles = function( elem ) {
 
 		// Support: IE <=11 only, Firefox <=30 (trac-15098, trac-14150)
+=======
+var getStyles = function( elem ) {
+
+		// Support: IE <=11 only, Firefox <=30 (#15098, #14150)
+>>>>>>> fb785cbb (Initial commit)
 		// IE throws on elements created in popups
 		// FF meanwhile throws on frame elements through "defaultView.getComputedStyle"
 		var view = elem.ownerDocument.defaultView;
@@ -6504,6 +6621,7 @@ var swap = function( elem, options, callback ) {
 
 var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 
+<<<<<<< HEAD
 var whitespace = "[\\x20\\t\\r\\n\\f]";
 
 
@@ -6513,6 +6631,8 @@ var rtrimCSS = new RegExp(
 );
 
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 
 ( function() {
@@ -6578,7 +6698,11 @@ var rtrimCSS = new RegExp(
 	}
 
 	// Support: IE <=9 - 11 only
+<<<<<<< HEAD
 	// Style of cloned element affects source element cloned (trac-8908)
+=======
+	// Style of cloned element affects source element cloned (#8908)
+>>>>>>> fb785cbb (Initial commit)
 	div.style.backgroundClip = "content-box";
 	div.cloneNode( true ).style.backgroundClip = "";
 	support.clearCloneStyle = div.style.backgroundClip === "content-box";
@@ -6658,7 +6782,10 @@ var rtrimCSS = new RegExp(
 
 function curCSS( elem, name, computed ) {
 	var width, minWidth, maxWidth, ret,
+<<<<<<< HEAD
 		isCustomProp = rcustomProp.test( name ),
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 		// Support: Firefox 51+
 		// Retrieving style before computed somehow
@@ -6669,6 +6796,7 @@ function curCSS( elem, name, computed ) {
 	computed = computed || getStyles( elem );
 
 	// getPropertyValue is needed for:
+<<<<<<< HEAD
 	//   .css('filter') (IE 9 only, trac-12537)
 	//   .css('--customProperty) (gh-3144)
 	if ( computed ) {
@@ -6705,6 +6833,13 @@ function curCSS( elem, name, computed ) {
 			ret = ret.replace( rtrimCSS, "$1" ) || undefined;
 		}
 
+=======
+	//   .css('filter') (IE 9 only, #12537)
+	//   .css('--customProperty) (#3144)
+	if ( computed ) {
+		ret = computed.getPropertyValue( name ) || computed[ name ];
+
+>>>>>>> fb785cbb (Initial commit)
 		if ( ret === "" && !isAttached( elem ) ) {
 			ret = jQuery.style( elem, name );
 		}
@@ -6800,6 +6935,10 @@ var
 	// except "table", "table-cell", or "table-caption"
 	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
 	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
+<<<<<<< HEAD
+=======
+	rcustomProp = /^--/,
+>>>>>>> fb785cbb (Initial commit)
 	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
 	cssNormalTransform = {
 		letterSpacing: "0",
@@ -7035,6 +7174,7 @@ jQuery.extend( {
 		if ( value !== undefined ) {
 			type = typeof value;
 
+<<<<<<< HEAD
 			// Convert "+=" or "-=" to relative numbers (trac-7345)
 			if ( type === "string" && ( ret = rcssNum.exec( value ) ) && ret[ 1 ] ) {
 				value = adjustCSS( elem, name, ret );
@@ -7044,6 +7184,17 @@ jQuery.extend( {
 			}
 
 			// Make sure that null and NaN values aren't set (trac-7116)
+=======
+			// Convert "+=" or "-=" to relative numbers (#7345)
+			if ( type === "string" && ( ret = rcssNum.exec( value ) ) && ret[ 1 ] ) {
+				value = adjustCSS( elem, name, ret );
+
+				// Fixes bug #9237
+				type = "number";
+			}
+
+			// Make sure that null and NaN values aren't set (#7116)
+>>>>>>> fb785cbb (Initial commit)
 			if ( value == null || value !== value ) {
 				return;
 			}
@@ -7667,7 +7818,11 @@ function Animation( elem, properties, options ) {
 				remaining = Math.max( 0, animation.startTime + animation.duration - currentTime ),
 
 				// Support: Android 2.3 only
+<<<<<<< HEAD
 				// Archaic crash bug won't allow us to use `1 - ( 0.5 || 0 )` (trac-12497)
+=======
+				// Archaic crash bug won't allow us to use `1 - ( 0.5 || 0 )` (#12497)
+>>>>>>> fb785cbb (Initial commit)
 				temp = remaining / animation.duration || 0,
 				percent = 1 - temp,
 				index = 0,
@@ -8057,6 +8212,10 @@ jQuery.fx.speeds = {
 
 
 // Based off of the plugin by Clint Helfers, with permission.
+<<<<<<< HEAD
+=======
+// https://web.archive.org/web/20100324014747/http://blindsignals.com/index.php/2009/07/jquery-delay/
+>>>>>>> fb785cbb (Initial commit)
 jQuery.fn.delay = function( time, type ) {
 	time = jQuery.fx ? jQuery.fx.speeds[ time ] || time : time;
 	type = type || "fx";
@@ -8281,7 +8440,12 @@ jQuery.extend( {
 				// Support: IE <=9 - 11 only
 				// elem.tabIndex doesn't always return the
 				// correct value when it hasn't been explicitly set
+<<<<<<< HEAD
 				// Use proper attribute retrieval (trac-12072)
+=======
+				// https://web.archive.org/web/20141116233347/http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
+				// Use proper attribute retrieval(#12072)
+>>>>>>> fb785cbb (Initial commit)
 				var tabindex = jQuery.find.attr( elem, "tabindex" );
 
 				if ( tabindex ) {
@@ -8385,7 +8549,12 @@ function classesToArray( value ) {
 
 jQuery.fn.extend( {
 	addClass: function( value ) {
+<<<<<<< HEAD
 		var classNames, cur, curValue, className, i, finalValue;
+=======
+		var classes, elem, cur, curValue, clazz, j, finalValue,
+			i = 0;
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( isFunction( value ) ) {
 			return this.each( function( j ) {
@@ -8393,6 +8562,7 @@ jQuery.fn.extend( {
 			} );
 		}
 
+<<<<<<< HEAD
 		classNames = classesToArray( value );
 
 		if ( classNames.length ) {
@@ -8405,23 +8575,49 @@ jQuery.fn.extend( {
 						className = classNames[ i ];
 						if ( cur.indexOf( " " + className + " " ) < 0 ) {
 							cur += className + " ";
+=======
+		classes = classesToArray( value );
+
+		if ( classes.length ) {
+			while ( ( elem = this[ i++ ] ) ) {
+				curValue = getClass( elem );
+				cur = elem.nodeType === 1 && ( " " + stripAndCollapse( curValue ) + " " );
+
+				if ( cur ) {
+					j = 0;
+					while ( ( clazz = classes[ j++ ] ) ) {
+						if ( cur.indexOf( " " + clazz + " " ) < 0 ) {
+							cur += clazz + " ";
+>>>>>>> fb785cbb (Initial commit)
 						}
 					}
 
 					// Only assign if different to avoid unneeded rendering.
 					finalValue = stripAndCollapse( cur );
 					if ( curValue !== finalValue ) {
+<<<<<<< HEAD
 						this.setAttribute( "class", finalValue );
 					}
 				}
 			} );
+=======
+						elem.setAttribute( "class", finalValue );
+					}
+				}
+			}
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return this;
 	},
 
 	removeClass: function( value ) {
+<<<<<<< HEAD
 		var classNames, cur, curValue, className, i, finalValue;
+=======
+		var classes, elem, cur, curValue, clazz, j, finalValue,
+			i = 0;
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( isFunction( value ) ) {
 			return this.each( function( j ) {
@@ -8433,6 +8629,7 @@ jQuery.fn.extend( {
 			return this.attr( "class", "" );
 		}
 
+<<<<<<< HEAD
 		classNames = classesToArray( value );
 
 		if ( classNames.length ) {
@@ -8449,26 +8646,61 @@ jQuery.fn.extend( {
 						// Remove *all* instances
 						while ( cur.indexOf( " " + className + " " ) > -1 ) {
 							cur = cur.replace( " " + className + " ", " " );
+=======
+		classes = classesToArray( value );
+
+		if ( classes.length ) {
+			while ( ( elem = this[ i++ ] ) ) {
+				curValue = getClass( elem );
+
+				// This expression is here for better compressibility (see addClass)
+				cur = elem.nodeType === 1 && ( " " + stripAndCollapse( curValue ) + " " );
+
+				if ( cur ) {
+					j = 0;
+					while ( ( clazz = classes[ j++ ] ) ) {
+
+						// Remove *all* instances
+						while ( cur.indexOf( " " + clazz + " " ) > -1 ) {
+							cur = cur.replace( " " + clazz + " ", " " );
+>>>>>>> fb785cbb (Initial commit)
 						}
 					}
 
 					// Only assign if different to avoid unneeded rendering.
 					finalValue = stripAndCollapse( cur );
 					if ( curValue !== finalValue ) {
+<<<<<<< HEAD
 						this.setAttribute( "class", finalValue );
 					}
 				}
 			} );
+=======
+						elem.setAttribute( "class", finalValue );
+					}
+				}
+			}
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return this;
 	},
 
 	toggleClass: function( value, stateVal ) {
+<<<<<<< HEAD
 		var classNames, className, i, self,
 			type = typeof value,
 			isValidValue = type === "string" || Array.isArray( value );
 
+=======
+		var type = typeof value,
+			isValidValue = type === "string" || Array.isArray( value );
+
+		if ( typeof stateVal === "boolean" && isValidValue ) {
+			return stateVal ? this.addClass( value ) : this.removeClass( value );
+		}
+
+>>>>>>> fb785cbb (Initial commit)
 		if ( isFunction( value ) ) {
 			return this.each( function( i ) {
 				jQuery( this ).toggleClass(
@@ -8478,6 +8710,7 @@ jQuery.fn.extend( {
 			} );
 		}
 
+<<<<<<< HEAD
 		if ( typeof stateVal === "boolean" && isValidValue ) {
 			return stateVal ? this.addClass( value ) : this.removeClass( value );
 		}
@@ -8492,6 +8725,19 @@ jQuery.fn.extend( {
 
 				for ( i = 0; i < classNames.length; i++ ) {
 					className = classNames[ i ];
+=======
+		return this.each( function() {
+			var className, i, self, classNames;
+
+			if ( isValidValue ) {
+
+				// Toggle individual class names
+				i = 0;
+				self = jQuery( this );
+				classNames = classesToArray( value );
+
+				while ( ( className = classNames[ i++ ] ) ) {
+>>>>>>> fb785cbb (Initial commit)
 
 					// Check each className given, space separated list
 					if ( self.hasClass( className ) ) {
@@ -8625,7 +8871,11 @@ jQuery.extend( {
 					val :
 
 					// Support: IE <=10 - 11 only
+<<<<<<< HEAD
 					// option.text throws exceptions (trac-14686, trac-14858)
+=======
+					// option.text throws exceptions (#14686, #14858)
+>>>>>>> fb785cbb (Initial commit)
 					// Strip and collapse whitespace
 					// https://html.spec.whatwg.org/#strip-and-collapse-whitespace
 					stripAndCollapse( jQuery.text( elem ) );
@@ -8652,7 +8902,11 @@ jQuery.extend( {
 					option = options[ i ];
 
 					// Support: IE <=9 only
+<<<<<<< HEAD
 					// IE8-9 doesn't update selected after form reset (trac-2551)
+=======
+					// IE8-9 doesn't update selected after form reset (#2551)
+>>>>>>> fb785cbb (Initial commit)
 					if ( ( option.selected || i === index ) &&
 
 							// Don't return options that are disabled or in a disabled optgroup
@@ -8795,8 +9049,13 @@ jQuery.extend( jQuery.event, {
 			return;
 		}
 
+<<<<<<< HEAD
 		// Determine event propagation path in advance, per W3C events spec (trac-9951)
 		// Bubble up to document, then to window; watch for a global ownerDocument var (trac-9724)
+=======
+		// Determine event propagation path in advance, per W3C events spec (#9951)
+		// Bubble up to document, then to window; watch for a global ownerDocument var (#9724)
+>>>>>>> fb785cbb (Initial commit)
 		if ( !onlyHandlers && !special.noBubble && !isWindow( elem ) ) {
 
 			bubbleType = special.delegateType || type;
@@ -8848,7 +9107,11 @@ jQuery.extend( jQuery.event, {
 				acceptData( elem ) ) {
 
 				// Call a native DOM method on the target with the same name as the event.
+<<<<<<< HEAD
 				// Don't do default actions on window, that's where global variables be (trac-6170)
+=======
+				// Don't do default actions on window, that's where global variables be (#6170)
+>>>>>>> fb785cbb (Initial commit)
 				if ( ontype && isFunction( elem[ type ] ) && !isWindow( elem ) ) {
 
 					// Don't re-trigger an onFOO event when we call its FOO() method
@@ -9122,7 +9385,11 @@ var
 	rantiCache = /([?&])_=[^&]*/,
 	rheaders = /^(.*?):[ \t]*([^\r\n]*)$/mg,
 
+<<<<<<< HEAD
 	// trac-7653, trac-8125, trac-8152: local protocol detection
+=======
+	// #7653, #8125, #8152: local protocol detection
+>>>>>>> fb785cbb (Initial commit)
 	rlocalProtocol = /^(?:about|app|app-storage|.+-extension|file|res|widget):$/,
 	rnoContent = /^(?:GET|HEAD)$/,
 	rprotocol = /^\/\//,
@@ -9145,7 +9412,11 @@ var
 	 */
 	transports = {},
 
+<<<<<<< HEAD
 	// Avoid comment-prolog char sequence (trac-10098); must appease lint and evade compression
+=======
+	// Avoid comment-prolog char sequence (#10098); must appease lint and evade compression
+>>>>>>> fb785cbb (Initial commit)
 	allTypes = "*/".concat( "*" ),
 
 	// Anchor tag for parsing the document origin
@@ -9216,7 +9487,11 @@ function inspectPrefiltersOrTransports( structure, options, originalOptions, jqX
 
 // A special extend for ajax options
 // that takes "flat" options (not to be deep extended)
+<<<<<<< HEAD
 // Fixes trac-9887
+=======
+// Fixes #9887
+>>>>>>> fb785cbb (Initial commit)
 function ajaxExtend( target, src ) {
 	var key, deep,
 		flatOptions = jQuery.ajaxSettings.flatOptions || {};
@@ -9627,12 +9902,20 @@ jQuery.extend( {
 		deferred.promise( jqXHR );
 
 		// Add protocol if not provided (prefilters might expect it)
+<<<<<<< HEAD
 		// Handle falsy url in the settings object (trac-10093: consistency with old signature)
+=======
+		// Handle falsy url in the settings object (#10093: consistency with old signature)
+>>>>>>> fb785cbb (Initial commit)
 		// We also use the url parameter if available
 		s.url = ( ( url || s.url || location.href ) + "" )
 			.replace( rprotocol, location.protocol + "//" );
 
+<<<<<<< HEAD
 		// Alias method option to type as per ticket trac-12004
+=======
+		// Alias method option to type as per ticket #12004
+>>>>>>> fb785cbb (Initial commit)
 		s.type = options.method || options.type || s.method || s.type;
 
 		// Extract dataTypes list
@@ -9675,7 +9958,11 @@ jQuery.extend( {
 		}
 
 		// We can fire global events as of now if asked to
+<<<<<<< HEAD
 		// Don't fire events if jQuery.event is undefined in an AMD-usage scenario (trac-15118)
+=======
+		// Don't fire events if jQuery.event is undefined in an AMD-usage scenario (#15118)
+>>>>>>> fb785cbb (Initial commit)
 		fireGlobals = jQuery.event && s.global;
 
 		// Watch for a new set of requests
@@ -9704,7 +9991,11 @@ jQuery.extend( {
 			if ( s.data && ( s.processData || typeof s.data === "string" ) ) {
 				cacheURL += ( rquery.test( cacheURL ) ? "&" : "?" ) + s.data;
 
+<<<<<<< HEAD
 				// trac-9682: remove data so that it's not used in an eventual retry
+=======
+				// #9682: remove data so that it's not used in an eventual retry
+>>>>>>> fb785cbb (Initial commit)
 				delete s.data;
 			}
 
@@ -9977,7 +10268,11 @@ jQuery._evalUrl = function( url, options, doc ) {
 	return jQuery.ajax( {
 		url: url,
 
+<<<<<<< HEAD
 		// Make this explicit, since user can override this through ajaxSetup (trac-11264)
+=======
+		// Make this explicit, since user can override this through ajaxSetup (#11264)
+>>>>>>> fb785cbb (Initial commit)
 		type: "GET",
 		dataType: "script",
 		cache: true,
@@ -10086,7 +10381,11 @@ var xhrSuccessStatus = {
 		0: 200,
 
 		// Support: IE <=9 only
+<<<<<<< HEAD
 		// trac-1450: sometimes IE returns 1223 when it should be 204
+=======
+		// #1450: sometimes IE returns 1223 when it should be 204
+>>>>>>> fb785cbb (Initial commit)
 		1223: 204
 	},
 	xhrSupported = jQuery.ajaxSettings.xhr();
@@ -10158,7 +10457,11 @@ jQuery.ajaxTransport( function( options ) {
 								} else {
 									complete(
 
+<<<<<<< HEAD
 										// File: protocol always yields status 0; see trac-8605, trac-14207
+=======
+										// File: protocol always yields status 0; see #8605, #14207
+>>>>>>> fb785cbb (Initial commit)
 										xhr.status,
 										xhr.statusText
 									);
@@ -10219,7 +10522,11 @@ jQuery.ajaxTransport( function( options ) {
 					xhr.send( options.hasContent && options.data || null );
 				} catch ( e ) {
 
+<<<<<<< HEAD
 					// trac-14683: Only rethrow if this hasn't been notified as an error yet
+=======
+					// #14683: Only rethrow if this hasn't been notified as an error yet
+>>>>>>> fb785cbb (Initial commit)
 					if ( callback ) {
 						throw e;
 					}
@@ -10863,9 +11170,13 @@ jQuery.each(
 
 // Support: Android <=4.0 only
 // Make sure we trim BOM and NBSP
+<<<<<<< HEAD
 // Require that the "whitespace run" starts from a non-whitespace
 // to avoid O(N^2) behavior when the engine would try matching "\s+$" at each space position.
 var rtrim = /^[\s\uFEFF\xA0]+|([^\s\uFEFF\xA0])[\s\uFEFF\xA0]+$/g;
+=======
+var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+>>>>>>> fb785cbb (Initial commit)
 
 // Bind a function to a context, optionally partially applying any
 // arguments.
@@ -10932,7 +11243,11 @@ jQuery.isNumeric = function( obj ) {
 jQuery.trim = function( text ) {
 	return text == null ?
 		"" :
+<<<<<<< HEAD
 		( text + "" ).replace( rtrim, "$1" );
+=======
+		( text + "" ).replace( rtrim, "" );
+>>>>>>> fb785cbb (Initial commit)
 };
 
 
@@ -10980,8 +11295,13 @@ jQuery.noConflict = function( deep ) {
 };
 
 // Expose jQuery and $ identifiers, even in AMD
+<<<<<<< HEAD
 // (trac-7102#comment:10, https://github.com/jquery/jquery/pull/557)
 // and CommonJS for browser emulators (trac-13566)
+=======
+// (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
+// and CommonJS for browser emulators (#13566)
+>>>>>>> fb785cbb (Initial commit)
 if ( typeof noGlobal === "undefined" ) {
 	window.jQuery = window.$ = jQuery;
 }

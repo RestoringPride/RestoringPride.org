@@ -4,7 +4,10 @@ namespace Give\Donations\Models;
 
 use DateTime;
 use Give\Donations\Factories\DonationNoteFactory;
+<<<<<<< HEAD
 use Give\Donations\ValueObjects\DonationNoteType;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\Exceptions\Primitives\Exception;
 use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
 use Give\Framework\Models\Contracts\ModelCrud;
@@ -20,7 +23,10 @@ use Give\Framework\Support\Facades\DateTime\Temporal;
  * @property int $id
  * @property int $donationId
  * @property string $content
+<<<<<<< HEAD
  * @property DonationNoteType $type
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @property DateTime $createdAt
  * @property Donation $donation
  */
@@ -33,7 +39,10 @@ class DonationNote extends Model implements ModelCrud, ModelHasFactory
         'id' => 'int',
         'donationId' => 'int',
         'content' => 'string',
+<<<<<<< HEAD
         'type' => DonationNoteType::class,
+=======
+>>>>>>> fb785cbb (Initial commit)
         'createdAt' => DateTime::class,
     ];
 
@@ -124,10 +133,16 @@ class DonationNote extends Model implements ModelCrud, ModelHasFactory
     {
         return new DonationNote([
             'id' => (int)$object->id,
+<<<<<<< HEAD
             'type' => $object->type ? new DonationNoteType($object->type) : DonationNoteType::ADMIN(),
             'donationId' => (int)$object->donationId,
             'content' => (string)$object->content,
             'createdAt' => Temporal::toDateTime($object->createdAt),
+=======
+            'donationId' => (int)$object->donationId,
+            'createdAt' => Temporal::toDateTime($object->createdAt),
+            'content' => (string)$object->content,
+>>>>>>> fb785cbb (Initial commit)
         ]);
     }
 

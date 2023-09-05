@@ -22,7 +22,11 @@ function render_block_core_template_part( $attributes ) {
 	if (
 		isset( $attributes['slug'] ) &&
 		isset( $attributes['theme'] ) &&
+<<<<<<< HEAD
 		get_stylesheet() === $attributes['theme']
+=======
+		wp_get_theme()->get_stylesheet() === $attributes['theme']
+>>>>>>> fb785cbb (Initial commit)
 	) {
 		$template_part_id    = $attributes['theme'] . '//' . $attributes['slug'];
 		$template_part_query = new WP_Query(
@@ -33,7 +37,11 @@ function render_block_core_template_part( $attributes ) {
 				'tax_query'      => array(
 					array(
 						'taxonomy' => 'wp_theme',
+<<<<<<< HEAD
 						'field'    => 'name',
+=======
+						'field'    => 'slug',
+>>>>>>> fb785cbb (Initial commit)
 						'terms'    => $attributes['theme'],
 					),
 				),
@@ -105,7 +113,12 @@ function render_block_core_template_part( $attributes ) {
 
 	// WP_DEBUG_DISPLAY must only be honored when WP_DEBUG. This precedent
 	// is set in `wp_debug_mode()`.
+<<<<<<< HEAD
 	$is_debug = WP_DEBUG && WP_DEBUG_DISPLAY;
+=======
+	$is_debug = defined( 'WP_DEBUG' ) && WP_DEBUG &&
+		defined( 'WP_DEBUG_DISPLAY' ) && WP_DEBUG_DISPLAY;
+>>>>>>> fb785cbb (Initial commit)
 
 	if ( is_null( $content ) && $is_debug ) {
 		if ( ! isset( $attributes['slug'] ) ) {
@@ -126,6 +139,7 @@ function render_block_core_template_part( $attributes ) {
 			'';
 	}
 
+<<<<<<< HEAD
 	// Look up area definition.
 	$area_definition = null;
 	$defined_areas   = get_allowed_block_template_part_areas();
@@ -141,6 +155,8 @@ function render_block_core_template_part( $attributes ) {
 		$area = WP_TEMPLATE_PART_AREA_UNCATEGORIZED;
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	// Run through the actions that are typically taken on the_content.
 	$seen_ids[ $template_part_id ] = true;
 	$content                       = do_blocks( $content );
@@ -148,7 +164,11 @@ function render_block_core_template_part( $attributes ) {
 	$content = wptexturize( $content );
 	$content = convert_smilies( $content );
 	$content = shortcode_unautop( $content );
+<<<<<<< HEAD
 	$content = wp_filter_content_tags( $content, "template_part_{$area}" );
+=======
+	$content = wp_filter_content_tags( $content );
+>>>>>>> fb785cbb (Initial commit)
 	$content = do_shortcode( $content );
 
 	// Handle embeds for block template parts.
@@ -156,9 +176,18 @@ function render_block_core_template_part( $attributes ) {
 	$content = $wp_embed->autoembed( $content );
 
 	if ( empty( $attributes['tagName'] ) ) {
+<<<<<<< HEAD
 		$area_tag = 'div';
 		if ( $area_definition && isset( $area_definition['area_tag'] ) ) {
 			$area_tag = $area_definition['area_tag'];
+=======
+		$defined_areas = get_allowed_block_template_part_areas();
+		$area_tag      = 'div';
+		foreach ( $defined_areas as $defined_area ) {
+			if ( $defined_area['area'] === $area && isset( $defined_area['area_tag'] ) ) {
+				$area_tag = $defined_area['area_tag'];
+			}
+>>>>>>> fb785cbb (Initial commit)
 		}
 		$html_tag = $area_tag;
 	} else {
@@ -170,11 +199,19 @@ function render_block_core_template_part( $attributes ) {
 }
 
 /**
+<<<<<<< HEAD
  * Returns an array of area variation objects for the template part block.
  *
  * @return array Array containing the block variation objects.
  */
 function build_template_part_block_area_variations() {
+=======
+ * Returns an array of variation objects for the template part block.
+ *
+ * @return array Array containing the block variation objects.
+ */
+function build_template_part_block_variations() {
+>>>>>>> fb785cbb (Initial commit)
 	$variations    = array();
 	$defined_areas = get_allowed_block_template_part_areas();
 	foreach ( $defined_areas as $area ) {
@@ -195,6 +232,7 @@ function build_template_part_block_area_variations() {
 }
 
 /**
+<<<<<<< HEAD
  * Returns an array of instance variation objects for the template part block
  *
  * @return array Array containing the block variation objects.
@@ -258,6 +296,8 @@ function build_template_part_block_variations() {
 }
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Registers the `core/template-part` block on the server.
  */
 function register_block_core_template_part() {

@@ -170,6 +170,7 @@ class Schema_Types {
 	/**
 	 * Gets the values of the article type options.
 	 *
+<<<<<<< HEAD
 	 * @deprecated 19.12
 	 * @codeCoverageIgnore
 	 *
@@ -177,6 +178,11 @@ class Schema_Types {
 	 */
 	public function get_article_type_options_values() {
 		\_deprecated_function( __METHOD__, 'WPSEO 19.12' );
+=======
+	 * @return array[] The values of the Schema article type options.
+	 */
+	public function get_article_type_options_values() {
+>>>>>>> fb785cbb (Initial commit)
 		$article_types       = $this->get_article_type_options();
 		$article_type_values = [];
 

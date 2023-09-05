@@ -25,11 +25,14 @@ if ( $doaction ) {
 	check_admin_referer( 'bulk-comments' );
 
 	if ( 'delete_all' === $doaction && ! empty( $_REQUEST['pagegen_timestamp'] ) ) {
+<<<<<<< HEAD
 		/**
 		 * @global wpdb $wpdb WordPress database abstraction object.
 		 */
 		global $wpdb;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$comment_status = wp_unslash( $_REQUEST['comment_status'] );
 		$delete_time    = wp_unslash( $_REQUEST['pagegen_timestamp'] );
 		$comment_ids    = $wpdb->get_col( $wpdb->prepare( "SELECT comment_ID FROM $wpdb->comments WHERE comment_approved = %s AND %s > comment_date_gmt", $comment_status, $delete_time ) );
@@ -140,11 +143,14 @@ $wp_list_table->prepare_items();
 wp_enqueue_script( 'admin-comments' );
 enqueue_comment_hotkeys_js();
 
+<<<<<<< HEAD
 /**
  * @global int $post_id
  */
 global $post_id;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 if ( $post_id ) {
 	$comments_count      = wp_count_comments( $post_id );
 	$draft_or_post_title = wp_html_excerpt( _draft_or_post_title( $post_id ), 50, '&hellip;' );
@@ -207,10 +213,17 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+<<<<<<< HEAD
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/comments-screen/">Documentation on Comments</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/understand-comment-spam/">Documentation on Comment Spam</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/keyboard-shortcuts-classic-editor/#keyboard-shortcuts-for-comments">Documentation on Keyboard Shortcuts</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+=======
+	'<p>' . __( '<a href="https://wordpress.org/support/article/comments-screen/">Documentation on Comments</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://wordpress.org/support/article/comment-spam/">Documentation on Comment Spam</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://wordpress.org/support/article/keyboard-shortcuts/">Documentation on Keyboard Shortcuts</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://wordpress.org/support/">Support</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 );
 
 get_current_screen()->set_screen_reader_content(
@@ -345,7 +358,11 @@ if ( isset( $_REQUEST['approved'] ) || isset( $_REQUEST['deleted'] ) || isset( $
 			}
 		}
 
+<<<<<<< HEAD
 		echo '<div id="moderated" class="updated notice is-dismissible"><p>' . implode( "<br />\n", $messages ) . '</p></div>';
+=======
+		echo '<div id="moderated" class="updated notice is-dismissible"><p>' . implode( "<br/>\n", $messages ) . '</p></div>';
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 ?>

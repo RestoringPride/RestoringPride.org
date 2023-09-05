@@ -11,7 +11,10 @@ require_once __DIR__ . '/plural-forms.php';
 require_once __DIR__ . '/entry.php';
 
 if ( ! class_exists( 'Translations', false ) ) :
+<<<<<<< HEAD
 	#[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 	class Translations {
 		public $entries = array();
 		public $headers = array();
@@ -182,6 +185,7 @@ if ( ! class_exists( 'Translations', false ) ) :
 	}
 
 	class Gettext_Translations extends Translations {
+<<<<<<< HEAD
 
 		/**
 		 * Number of plural forms.
@@ -197,6 +201,8 @@ if ( ! class_exists( 'Translations', false ) ) :
 		 */
 		public $_gettext_select_plural_form;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		/**
 		 * The gettext implementation of select_plural_form.
 		 *
@@ -315,7 +321,10 @@ if ( ! class_exists( 'NOOP_Translations', false ) ) :
 	/**
 	 * Provides the same interface as Translations, but doesn't do anything
 	 */
+<<<<<<< HEAD
 	#[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 	class NOOP_Translations {
 		public $entries = array();
 		public $headers = array();

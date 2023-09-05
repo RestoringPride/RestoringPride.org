@@ -68,11 +68,16 @@ function render_block_core_post_template( $attributes, $content, $block ) {
 			$classnames = "is-flex-container columns-{$block->context['displayLayout']['columns']}";
 		}
 	}
+<<<<<<< HEAD
 	if ( isset( $attributes['style']['elements']['link']['color']['text'] ) ) {
 		$classnames .= ' has-link-color';
 	}
 
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => trim( $classnames ) ) );
+=======
+
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classnames ) );
+>>>>>>> fb785cbb (Initial commit)
 
 	$content = '';
 	while ( $query->have_posts() ) {

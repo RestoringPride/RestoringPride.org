@@ -2,8 +2,11 @@
 
 namespace Yoast\WP\SEO\Helpers;
 
+<<<<<<< HEAD
 use WP_Post_Type;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * A helper object for post types.
  */
@@ -43,6 +46,7 @@ class Post_Type_Helper {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks if the request post type has the Yoast Metabox enabled.
 	 *
 	 * @param string $post_type_name The name of the post type to lookup.
@@ -54,6 +58,8 @@ class Post_Type_Helper {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Returns an array with the public post types.
 	 *
 	 * @codeCoverageIgnore It only wraps a WordPress function.
@@ -140,6 +146,7 @@ class Post_Type_Helper {
 
 		return ( ! empty( $post_type->has_archive ) );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Returns the post types that should be indexed.
@@ -171,4 +178,6 @@ class Post_Type_Helper {
 
 		return $post_type_objects;
 	}
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

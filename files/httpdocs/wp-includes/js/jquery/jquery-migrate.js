@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery Migrate - v3.4.0 - 2022-03-24T16:30Z
+=======
+ * jQuery Migrate - v3.3.2 - 2020-11-18T08:29Z
+>>>>>>> fb785cbb (Initial commit)
  * Copyright OpenJS Foundation and other contributors
  */
 ( function( factory ) {
@@ -24,7 +28,11 @@
 } )( function( jQuery, window ) {
 "use strict";
 
+<<<<<<< HEAD
 jQuery.migrateVersion = "3.4.0";
+=======
+jQuery.migrateVersion = "3.3.2";
+>>>>>>> fb785cbb (Initial commit)
 
 // Returns 0 if v1 == v2, -1 if v1 < v2, 1 if v1 > v2
 function compareVersions( v1, v2 ) {
@@ -48,6 +56,7 @@ function jQueryVersionSince( version ) {
 	return compareVersions( jQuery.fn.jquery, version ) >= 0;
 }
 
+<<<<<<< HEAD
 // A map from disabled patch codes to `true`. This should really
 // be a `Set` but those are unsupported in IE.
 var disabledPatches = Object.create( null );
@@ -82,6 +91,8 @@ jQuery.migrateIsPatchEnabled = function( patchCode ) {
 	return !disabledPatches[ patchCode ];
 };
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ( function() {
 
 	// Support: IE9 only
@@ -125,12 +136,20 @@ jQuery.migrateReset = function() {
 	jQuery.migrateWarnings.length = 0;
 };
 
+<<<<<<< HEAD
 function migrateWarn( code, msg ) {
 	var console = window.console;
 	if ( jQuery.migrateIsPatchEnabled( code ) &&
 		( !jQuery.migrateDeduplicateWarnings || !warnedAbout[ msg ] ) ) {
 		warnedAbout[ msg ] = true;
 		jQuery.migrateWarnings.push( msg + " [" + code + "]" );
+=======
+function migrateWarn( msg ) {
+	var console = window.console;
+	if ( !jQuery.migrateDeduplicateWarnings || !warnedAbout[ msg ] ) {
+		warnedAbout[ msg ] = true;
+		jQuery.migrateWarnings.push( msg );
+>>>>>>> fb785cbb (Initial commit)
 		if ( console && console.warn && !jQuery.migrateMute ) {
 			console.warn( "JQMIGRATE: " + msg );
 			if ( jQuery.migrateTrace && console.trace ) {
@@ -140,21 +159,34 @@ function migrateWarn( code, msg ) {
 	}
 }
 
+<<<<<<< HEAD
 function migrateWarnProp( obj, prop, value, code, msg ) {
+=======
+function migrateWarnProp( obj, prop, value, msg ) {
+>>>>>>> fb785cbb (Initial commit)
 	Object.defineProperty( obj, prop, {
 		configurable: true,
 		enumerable: true,
 		get: function() {
+<<<<<<< HEAD
 			migrateWarn( code, msg );
 			return value;
 		},
 		set: function( newValue ) {
 			migrateWarn( code, msg );
+=======
+			migrateWarn( msg );
+			return value;
+		},
+		set: function( newValue ) {
+			migrateWarn( msg );
+>>>>>>> fb785cbb (Initial commit)
 			value = newValue;
 		}
 	} );
 }
 
+<<<<<<< HEAD
 function migrateWarnFuncInternal( obj, prop, newFunc, code, msg ) {
 	var finalFunc,
 		origFunc = obj[ prop ];
@@ -196,6 +228,19 @@ if ( window.document.compatMode === "BackCompat" ) {
 
 	// jQuery has never supported or tested Quirks Mode
 	migrateWarn( "quirks", "jQuery is not compatible with Quirks Mode" );
+=======
+function migrateWarnFunc( obj, prop, newFunc, msg ) {
+	obj[ prop ] = function() {
+		migrateWarn( msg );
+		return newFunc.apply( this, arguments );
+	};
+}
+
+if ( window.document.compatMode === "BackCompat" ) {
+
+	// JQuery has never supported or tested Quirks Mode
+	migrateWarn( "jQuery is not compatible with Quirks Mode" );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 var findProp,
@@ -210,6 +255,7 @@ var findProp,
 	// Make sure we trim BOM and NBSP
 	rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
 
+<<<<<<< HEAD
 migratePatchFunc( jQuery.fn, "init", function( arg1 ) {
 	var args = Array.prototype.slice.call( arguments );
 
@@ -219,10 +265,20 @@ migratePatchFunc( jQuery.fn, "init", function( arg1 ) {
 		// JQuery( "#" ) is a bogus ID selector, but it returned an empty set
 		// before jQuery 3.0
 		migrateWarn( "selector-empty-id", "jQuery( '#' ) is not a valid selector" );
+=======
+jQuery.fn.init = function( arg1 ) {
+	var args = Array.prototype.slice.call( arguments );
+
+	if ( typeof arg1 === "string" && arg1 === "#" ) {
+
+		// JQuery( "#" ) is a bogus ID selector, but it returned an empty set before jQuery 3.0
+		migrateWarn( "jQuery( '#' ) is not a valid selector" );
+>>>>>>> fb785cbb (Initial commit)
 		args[ 0 ] = [];
 	}
 
 	return oldInit.apply( this, args );
+<<<<<<< HEAD
 }, "selector-empty-id" );
 
 // This is already done in Core but the above patch will lose this assignment
@@ -231,6 +287,12 @@ migratePatchFunc( jQuery.fn, "init", function( arg1 ) {
 jQuery.fn.init.prototype = jQuery.fn;
 
 migratePatchFunc( jQuery, "find", function( selector ) {
+=======
+};
+jQuery.fn.init.prototype = jQuery.fn;
+
+jQuery.find = function( selector ) {
+>>>>>>> fb785cbb (Initial commit)
 	var args = Array.prototype.slice.call( arguments );
 
 	// Support: PhantomJS 1.x
@@ -252,18 +314,29 @@ migratePatchFunc( jQuery, "find", function( selector ) {
 			// Note that there may be false alarms if selector uses jQuery extensions
 			try {
 				window.document.querySelector( selector );
+<<<<<<< HEAD
 				migrateWarn( "selector-hash",
 					"Attribute selector with '#' must be quoted: " + args[ 0 ] );
 				args[ 0 ] = selector;
 			} catch ( err2 ) {
 				migrateWarn( "selector-hash",
 					"Attribute selector with '#' was not fixed: " + args[ 0 ] );
+=======
+				migrateWarn( "Attribute selector with '#' must be quoted: " + args[ 0 ] );
+				args[ 0 ] = selector;
+			} catch ( err2 ) {
+				migrateWarn( "Attribute selector with '#' was not fixed: " + args[ 0 ] );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 	}
 
 	return oldFind.apply( this, args );
+<<<<<<< HEAD
 }, "selector-hash" );
+=======
+};
+>>>>>>> fb785cbb (Initial commit)
 
 // Copy properties attached to original jQuery.find method (e.g. .attr, .isXML)
 for ( findProp in oldFind ) {
@@ -273,6 +346,7 @@ for ( findProp in oldFind ) {
 }
 
 // The number of elements contained in the matched element set
+<<<<<<< HEAD
 migratePatchAndWarnFunc( jQuery.fn, "size", function() {
 	return this.length;
 }, "size",
@@ -293,33 +367,76 @@ migratePatchAndWarnFunc( jQuery, "unique", jQuery.uniqueSort,
 migrateWarnProp( jQuery.expr, "filters", jQuery.expr.pseudos, "expr-pre-pseudos",
 	"jQuery.expr.filters is deprecated; use jQuery.expr.pseudos" );
 migrateWarnProp( jQuery.expr, ":", jQuery.expr.pseudos, "expr-pre-pseudos",
+=======
+migrateWarnFunc( jQuery.fn, "size", function() {
+	return this.length;
+},
+"jQuery.fn.size() is deprecated and removed; use the .length property" );
+
+migrateWarnFunc( jQuery, "parseJSON", function() {
+	return JSON.parse.apply( null, arguments );
+},
+"jQuery.parseJSON is deprecated; use JSON.parse" );
+
+migrateWarnFunc( jQuery, "holdReady", jQuery.holdReady,
+	"jQuery.holdReady is deprecated" );
+
+migrateWarnFunc( jQuery, "unique", jQuery.uniqueSort,
+	"jQuery.unique is deprecated; use jQuery.uniqueSort" );
+
+// Now jQuery.expr.pseudos is the standard incantation
+migrateWarnProp( jQuery.expr, "filters", jQuery.expr.pseudos,
+	"jQuery.expr.filters is deprecated; use jQuery.expr.pseudos" );
+migrateWarnProp( jQuery.expr, ":", jQuery.expr.pseudos,
+>>>>>>> fb785cbb (Initial commit)
 	"jQuery.expr[':'] is deprecated; use jQuery.expr.pseudos" );
 
 // Prior to jQuery 3.1.1 there were internal refs so we don't warn there
 if ( jQueryVersionSince( "3.1.1" ) ) {
+<<<<<<< HEAD
 	migratePatchAndWarnFunc( jQuery, "trim", function( text ) {
 		return text == null ?
 			"" :
 			( text + "" ).replace( rtrim, "" );
 	}, "trim",
+=======
+	migrateWarnFunc( jQuery, "trim", function( text ) {
+		return text == null ?
+			"" :
+			( text + "" ).replace( rtrim, "" );
+	},
+>>>>>>> fb785cbb (Initial commit)
 	"jQuery.trim is deprecated; use String.prototype.trim" );
 }
 
 // Prior to jQuery 3.2 there were internal refs so we don't warn there
 if ( jQueryVersionSince( "3.2.0" ) ) {
+<<<<<<< HEAD
 	migratePatchAndWarnFunc( jQuery, "nodeName", function( elem, name ) {
 		return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
 	}, "nodeName",
 	"jQuery.nodeName is deprecated" );
 
 	migratePatchAndWarnFunc( jQuery, "isArray", Array.isArray, "isArray",
+=======
+	migrateWarnFunc( jQuery, "nodeName", function( elem, name ) {
+		return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
+	},
+	"jQuery.nodeName is deprecated" );
+
+	migrateWarnFunc( jQuery, "isArray", Array.isArray,
+>>>>>>> fb785cbb (Initial commit)
 		"jQuery.isArray is deprecated; use Array.isArray"
 	);
 }
 
 if ( jQueryVersionSince( "3.3.0" ) ) {
 
+<<<<<<< HEAD
 	migratePatchAndWarnFunc( jQuery, "isNumeric", function( obj ) {
+=======
+	migrateWarnFunc( jQuery, "isNumeric", function( obj ) {
+>>>>>>> fb785cbb (Initial commit)
 
 			// As of jQuery 3.0, isNumeric is limited to
 			// strings and numbers (primitives or objects)
@@ -331,7 +448,11 @@ if ( jQueryVersionSince( "3.3.0" ) ) {
 				// ...but misinterprets leading-number strings, e.g. hex literals ("0x...")
 				// subtraction forces infinities to NaN
 				!isNaN( obj - parseFloat( obj ) );
+<<<<<<< HEAD
 		}, "isNumeric",
+=======
+		},
+>>>>>>> fb785cbb (Initial commit)
 		"jQuery.isNumeric() is deprecated"
 	);
 
@@ -342,7 +463,11 @@ if ( jQueryVersionSince( "3.3.0" ) ) {
 		class2type[ "[object " + name + "]" ] = name.toLowerCase();
 	} );
 
+<<<<<<< HEAD
 	migratePatchAndWarnFunc( jQuery, "type", function( obj ) {
+=======
+	migrateWarnFunc( jQuery, "type", function( obj ) {
+>>>>>>> fb785cbb (Initial commit)
 		if ( obj == null ) {
 			return obj + "";
 		}
@@ -351,6 +476,7 @@ if ( jQueryVersionSince( "3.3.0" ) ) {
 		return typeof obj === "object" || typeof obj === "function" ?
 			class2type[ Object.prototype.toString.call( obj ) ] || "object" :
 			typeof obj;
+<<<<<<< HEAD
 	}, "type",
 	"jQuery.type is deprecated" );
 
@@ -364,6 +490,21 @@ if ( jQueryVersionSince( "3.3.0" ) ) {
 		function( obj ) {
 			return obj != null && obj === obj.window;
 		}, "isWindow",
+=======
+	},
+	"jQuery.type is deprecated" );
+
+	migrateWarnFunc( jQuery, "isFunction",
+		function( obj ) {
+			return typeof obj === "function";
+		},
+		"jQuery.isFunction() is deprecated" );
+
+	migrateWarnFunc( jQuery, "isWindow",
+		function( obj ) {
+			return obj != null && obj === obj.window;
+		},
+>>>>>>> fb785cbb (Initial commit)
 		"jQuery.isWindow() is deprecated"
 	);
 }
@@ -374,21 +515,37 @@ if ( jQuery.ajax ) {
 var oldAjax = jQuery.ajax,
 	rjsonp = /(=)\?(?=&|$)|\?\?/;
 
+<<<<<<< HEAD
 migratePatchFunc( jQuery, "ajax", function() {
+=======
+jQuery.ajax = function( ) {
+>>>>>>> fb785cbb (Initial commit)
 	var jQXHR = oldAjax.apply( this, arguments );
 
 	// Be sure we got a jQXHR (e.g., not sync)
 	if ( jQXHR.promise ) {
+<<<<<<< HEAD
 		migratePatchAndWarnFunc( jQXHR, "success", jQXHR.done, "jqXHR-methods",
 			"jQXHR.success is deprecated and removed" );
 		migratePatchAndWarnFunc( jQXHR, "error", jQXHR.fail, "jqXHR-methods",
 			"jQXHR.error is deprecated and removed" );
 		migratePatchAndWarnFunc( jQXHR, "complete", jQXHR.always, "jqXHR-methods",
+=======
+		migrateWarnFunc( jQXHR, "success", jQXHR.done,
+			"jQXHR.success is deprecated and removed" );
+		migrateWarnFunc( jQXHR, "error", jQXHR.fail,
+			"jQXHR.error is deprecated and removed" );
+		migrateWarnFunc( jQXHR, "complete", jQXHR.always,
+>>>>>>> fb785cbb (Initial commit)
 			"jQXHR.complete is deprecated and removed" );
 	}
 
 	return jQXHR;
+<<<<<<< HEAD
 }, "jqXHR-methods" );
+=======
+};
+>>>>>>> fb785cbb (Initial commit)
 
 // Only trigger the logic in jQuery <4 as the JSON-to-JSONP auto-promotion
 // behavior is gone in jQuery 4.0 and as it has security implications, we don't
@@ -407,7 +564,11 @@ if ( !jQueryVersionSince( "4.0.0" ) ) {
 					.indexOf( "application/x-www-form-urlencoded" ) === 0 &&
 				rjsonp.test( s.data )
 		) ) {
+<<<<<<< HEAD
 			migrateWarn( "jsonp-promotion", "JSON-to-JSONP auto-promotion is deprecated" );
+=======
+			migrateWarn( "JSON-to-JSONP auto-promotion is deprecated" );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	} );
 }
@@ -418,18 +579,27 @@ var oldRemoveAttr = jQuery.fn.removeAttr,
 	oldToggleClass = jQuery.fn.toggleClass,
 	rmatchNonSpace = /\S+/g;
 
+<<<<<<< HEAD
 migratePatchFunc( jQuery.fn, "removeAttr", function( name ) {
+=======
+jQuery.fn.removeAttr = function( name ) {
+>>>>>>> fb785cbb (Initial commit)
 	var self = this;
 
 	jQuery.each( name.match( rmatchNonSpace ), function( _i, attr ) {
 		if ( jQuery.expr.match.bool.test( attr ) ) {
+<<<<<<< HEAD
 			migrateWarn( "removeAttr-bool",
 				"jQuery.fn.removeAttr no longer sets boolean properties: " + attr );
+=======
+			migrateWarn( "jQuery.fn.removeAttr no longer sets boolean properties: " + attr );
+>>>>>>> fb785cbb (Initial commit)
 			self.prop( attr, false );
 		}
 	} );
 
 	return oldRemoveAttr.apply( this, arguments );
+<<<<<<< HEAD
 }, "removeAttr-bool" );
 
 migratePatchFunc( jQuery.fn, "toggleClass", function( state ) {
@@ -441,6 +611,18 @@ migratePatchFunc( jQuery.fn, "toggleClass", function( state ) {
 	}
 
 	migrateWarn( "toggleClass-bool", "jQuery.fn.toggleClass( boolean ) is deprecated" );
+=======
+};
+
+jQuery.fn.toggleClass = function( state ) {
+
+	// Only deprecating no-args or single boolean arg
+	if ( state !== undefined && typeof state !== "boolean" ) {
+		return oldToggleClass.apply( this, arguments );
+	}
+
+	migrateWarn( "jQuery.fn.toggleClass( boolean ) is deprecated" );
+>>>>>>> fb785cbb (Initial commit)
 
 	// Toggle entire class name of each element
 	return this.each( function() {
@@ -462,7 +644,11 @@ migratePatchFunc( jQuery.fn, "toggleClass", function( state ) {
 			);
 		}
 	} );
+<<<<<<< HEAD
 }, "toggleClass-bool" );
+=======
+};
+>>>>>>> fb785cbb (Initial commit)
 
 function camelCase( string ) {
 	return string.replace( /-([a-z])/g, function( _, letter ) {
@@ -470,7 +656,11 @@ function camelCase( string ) {
 	} );
 }
 
+<<<<<<< HEAD
 var origFnCss,
+=======
+var oldFnCss,
+>>>>>>> fb785cbb (Initial commit)
 	internalSwapCall = false,
 	ralphaStart = /^[a-z]/,
 
@@ -515,12 +705,20 @@ if ( jQuery.swap ) {
 	} );
 }
 
+<<<<<<< HEAD
 migratePatchFunc( jQuery, "swap", function( elem, options, callback, args ) {
+=======
+jQuery.swap = function( elem, options, callback, args ) {
+>>>>>>> fb785cbb (Initial commit)
 	var ret, name,
 		old = {};
 
 	if ( !internalSwapCall ) {
+<<<<<<< HEAD
 		migrateWarn( "swap", "jQuery.swap() is undocumented and deprecated" );
+=======
+		migrateWarn( "jQuery.swap() is undocumented and deprecated" );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	// Remember the old values, and insert the new ones
@@ -537,17 +735,28 @@ migratePatchFunc( jQuery, "swap", function( elem, options, callback, args ) {
 	}
 
 	return ret;
+<<<<<<< HEAD
 }, "swap" );
 
 if ( jQueryVersionSince( "3.4.0" ) && typeof Proxy !== "undefined" ) {
 	jQuery.cssProps = new Proxy( jQuery.cssProps || {}, {
 		set: function() {
 			migrateWarn( "cssProps", "jQuery.cssProps is deprecated" );
+=======
+};
+
+if ( jQueryVersionSince( "3.4.0" ) && typeof Proxy !== "undefined" ) {
+
+	jQuery.cssProps = new Proxy( jQuery.cssProps || {}, {
+		set: function() {
+			migrateWarn( "JQMIGRATE: jQuery.cssProps is deprecated" );
+>>>>>>> fb785cbb (Initial commit)
 			return Reflect.set.apply( this, arguments );
 		}
 	} );
 }
 
+<<<<<<< HEAD
 // In jQuery >=4 where jQuery.cssNumber is missing fill it with the latest 3.x version:
 // https://github.com/jquery/jquery/blob/3.6.0/src/css.js#L212-L233
 // This way, number values for the CSS properties below won't start triggering
@@ -584,6 +793,12 @@ if ( jQueryVersionSince( "4.0.0" ) && typeof Proxy !== "undefined" ) {
 			return Reflect.set.apply( this, arguments );
 		}
 	} );
+=======
+// Create a dummy jQuery.cssNumber if missing. It won't be used by jQuery but
+// it will prevent code adding new keys to it unconditionally from crashing.
+if ( !jQuery.cssNumber ) {
+	jQuery.cssNumber = {};
+>>>>>>> fb785cbb (Initial commit)
 }
 
 function isAutoPx( prop ) {
@@ -595,38 +810,63 @@ function isAutoPx( prop ) {
 		rautoPx.test( prop[ 0 ].toUpperCase() + prop.slice( 1 ) );
 }
 
+<<<<<<< HEAD
 origFnCss = jQuery.fn.css;
 
 migratePatchFunc( jQuery.fn, "css", function( name, value ) {
 	var camelName,
 		origThis = this;
 
+=======
+oldFnCss = jQuery.fn.css;
+
+jQuery.fn.css = function( name, value ) {
+	var camelName,
+		origThis = this;
+>>>>>>> fb785cbb (Initial commit)
 	if ( name && typeof name === "object" && !Array.isArray( name ) ) {
 		jQuery.each( name, function( n, v ) {
 			jQuery.fn.css.call( origThis, n, v );
 		} );
 		return this;
 	}
+<<<<<<< HEAD
 
 	if ( typeof value === "number" ) {
 		camelName = camelCase( name );
 		if ( !isAutoPx( camelName ) && !jQuery.cssNumber[ camelName ] ) {
 			migrateWarn( "css-number",
 				"Number-typed values are deprecated for jQuery.fn.css( \"" +
+=======
+	if ( typeof value === "number" ) {
+		camelName = camelCase( name );
+		if ( !isAutoPx( camelName ) && !jQuery.cssNumber[ camelName ] ) {
+			migrateWarn( "Number-typed values are deprecated for jQuery.fn.css( \"" +
+>>>>>>> fb785cbb (Initial commit)
 				name + "\", value )" );
 		}
 	}
 
+<<<<<<< HEAD
 	return origFnCss.apply( this, arguments );
 }, "css-number" );
 
 var origData = jQuery.data;
 
 migratePatchFunc( jQuery, "data", function( elem, name, value ) {
+=======
+	return oldFnCss.apply( this, arguments );
+};
+
+var oldData = jQuery.data;
+
+jQuery.data = function( elem, name, value ) {
+>>>>>>> fb785cbb (Initial commit)
 	var curData, sameKeys, key;
 
 	// Name can be an object, and each entry in the object is meant to be set as data
 	if ( name && typeof name === "object" && arguments.length === 2 ) {
+<<<<<<< HEAD
 
 		curData = jQuery.hasData( elem ) && origData.call( this, elem );
 		sameKeys = {};
@@ -634,24 +874,41 @@ migratePatchFunc( jQuery, "data", function( elem, name, value ) {
 			if ( key !== camelCase( key ) ) {
 				migrateWarn( "data-camelCase",
 					"jQuery.data() always sets/gets camelCased names: " + key );
+=======
+		curData = jQuery.hasData( elem ) && oldData.call( this, elem );
+		sameKeys = {};
+		for ( key in name ) {
+			if ( key !== camelCase( key ) ) {
+				migrateWarn( "jQuery.data() always sets/gets camelCased names: " + key );
+>>>>>>> fb785cbb (Initial commit)
 				curData[ key ] = name[ key ];
 			} else {
 				sameKeys[ key ] = name[ key ];
 			}
 		}
 
+<<<<<<< HEAD
 		origData.call( this, elem, sameKeys );
+=======
+		oldData.call( this, elem, sameKeys );
+>>>>>>> fb785cbb (Initial commit)
 
 		return name;
 	}
 
 	// If the name is transformed, look for the un-transformed name in the data object
 	if ( name && typeof name === "string" && name !== camelCase( name ) ) {
+<<<<<<< HEAD
 
 		curData = jQuery.hasData( elem ) && origData.call( this, elem );
 		if ( curData && name in curData ) {
 			migrateWarn( "data-camelCase",
 				"jQuery.data() always sets/gets camelCased names: " + name );
+=======
+		curData = jQuery.hasData( elem ) && oldData.call( this, elem );
+		if ( curData && name in curData ) {
+			migrateWarn( "jQuery.data() always sets/gets camelCased names: " + name );
+>>>>>>> fb785cbb (Initial commit)
 			if ( arguments.length > 2 ) {
 				curData[ name ] = value;
 			}
@@ -659,8 +916,13 @@ migratePatchFunc( jQuery, "data", function( elem, name, value ) {
 		}
 	}
 
+<<<<<<< HEAD
 	return origData.apply( this, arguments );
 }, "data-camelCase" );
+=======
+	return oldData.apply( this, arguments );
+};
+>>>>>>> fb785cbb (Initial commit)
 
 // Support jQuery slim which excludes the effects module
 if ( jQuery.fx ) {
@@ -671,10 +933,16 @@ var intervalValue, intervalMsg,
 		return pct;
 	};
 
+<<<<<<< HEAD
 migratePatchFunc( jQuery.Tween.prototype, "run", function( ) {
 	if ( jQuery.easing[ this.easing ].length > 1 ) {
 		migrateWarn(
 			"easing-one-arg",
+=======
+jQuery.Tween.prototype.run = function( ) {
+	if ( jQuery.easing[ this.easing ].length > 1 ) {
+		migrateWarn(
+>>>>>>> fb785cbb (Initial commit)
 			"'jQuery.easing." + this.easing.toString() + "' should use only one argument"
 		);
 
@@ -682,9 +950,15 @@ migratePatchFunc( jQuery.Tween.prototype, "run", function( ) {
 	}
 
 	oldTweenRun.apply( this, arguments );
+<<<<<<< HEAD
 }, "easing-one-arg" );
 
 intervalValue = jQuery.fx.interval;
+=======
+};
+
+intervalValue = jQuery.fx.interval || 13;
+>>>>>>> fb785cbb (Initial commit)
 intervalMsg = "jQuery.fx.interval is deprecated";
 
 // Support: IE9, Android <=4.4
@@ -696,6 +970,7 @@ if ( window.requestAnimationFrame ) {
 		enumerable: true,
 		get: function() {
 			if ( !window.document.hidden ) {
+<<<<<<< HEAD
 				migrateWarn( "fx-interval", intervalMsg );
 			}
 
@@ -707,6 +982,14 @@ if ( window.requestAnimationFrame ) {
 		},
 		set: function( newValue ) {
 			migrateWarn( "fx-interval", intervalMsg );
+=======
+				migrateWarn( intervalMsg );
+			}
+			return intervalValue;
+		},
+		set: function( newValue ) {
+			migrateWarn( intervalMsg );
+>>>>>>> fb785cbb (Initial commit)
 			intervalValue = newValue;
 		}
 	} );
@@ -722,18 +1005,28 @@ jQuery.event.props = [];
 jQuery.event.fixHooks = {};
 
 migrateWarnProp( jQuery.event.props, "concat", jQuery.event.props.concat,
+<<<<<<< HEAD
 	"event-old-patch",
 	"jQuery.event.props.concat() is deprecated and removed" );
 
 migratePatchFunc( jQuery.event, "fix", function( originalEvent ) {
+=======
+	"jQuery.event.props.concat() is deprecated and removed" );
+
+jQuery.event.fix = function( originalEvent ) {
+>>>>>>> fb785cbb (Initial commit)
 	var event,
 		type = originalEvent.type,
 		fixHook = this.fixHooks[ type ],
 		props = jQuery.event.props;
 
 	if ( props.length ) {
+<<<<<<< HEAD
 		migrateWarn( "event-old-patch",
 			"jQuery.event.props are deprecated and removed: " + props.join() );
+=======
+		migrateWarn( "jQuery.event.props are deprecated and removed: " + props.join() );
+>>>>>>> fb785cbb (Initial commit)
 		while ( props.length ) {
 			jQuery.event.addProp( props.pop() );
 		}
@@ -741,8 +1034,12 @@ migratePatchFunc( jQuery.event, "fix", function( originalEvent ) {
 
 	if ( fixHook && !fixHook._migrated_ ) {
 		fixHook._migrated_ = true;
+<<<<<<< HEAD
 		migrateWarn( "event-old-patch",
 			"jQuery.event.fixHooks are deprecated and removed: " + type );
+=======
+		migrateWarn( "jQuery.event.fixHooks are deprecated and removed: " + type );
+>>>>>>> fb785cbb (Initial commit)
 		if ( ( props = fixHook.props ) && props.length ) {
 			while ( props.length ) {
 				jQuery.event.addProp( props.pop() );
@@ -752,6 +1049,7 @@ migratePatchFunc( jQuery.event, "fix", function( originalEvent ) {
 
 	event = originalFix.call( this, originalEvent );
 
+<<<<<<< HEAD
 	return fixHook && fixHook.filter ?
 		fixHook.filter( event, originalEvent ) :
 		event;
@@ -770,6 +1068,23 @@ migratePatchFunc( jQuery.event, "add", function( elem, types ) {
 jQuery.each( [ "load", "unload", "error" ], function( _, name ) {
 
 	migratePatchFunc( jQuery.fn, name, function() {
+=======
+	return fixHook && fixHook.filter ? fixHook.filter( event, originalEvent ) : event;
+};
+
+jQuery.event.add = function( elem, types ) {
+
+	// This misses the multiple-types case but that seems awfully rare
+	if ( elem === window && types === "load" && window.document.readyState === "complete" ) {
+		migrateWarn( "jQuery(window).on('load'...) called after load event occurred" );
+	}
+	return oldEventAdd.apply( this, arguments );
+};
+
+jQuery.each( [ "load", "unload", "error" ], function( _, name ) {
+
+	jQuery.fn[ name ] = function() {
+>>>>>>> fb785cbb (Initial commit)
 		var args = Array.prototype.slice.call( arguments, 0 );
 
 		// If this is an ajax load() the first arg should be the string URL;
@@ -780,8 +1095,12 @@ jQuery.each( [ "load", "unload", "error" ], function( _, name ) {
 			return oldLoad.apply( this, args );
 		}
 
+<<<<<<< HEAD
 		migrateWarn( "shorthand-removed-v3",
 			"jQuery.fn." + name + "() is deprecated" );
+=======
+		migrateWarn( "jQuery.fn." + name + "() is deprecated" );
+>>>>>>> fb785cbb (Initial commit)
 
 		args.splice( 0, 0, name );
 		if ( arguments.length ) {
@@ -794,7 +1113,11 @@ jQuery.each( [ "load", "unload", "error" ], function( _, name ) {
 		// See http://bugs.jquery.com/ticket/11820
 		this.triggerHandler.apply( this, args );
 		return this;
+<<<<<<< HEAD
 	}, "shorthand-removed-v3" );
+=======
+	};
+>>>>>>> fb785cbb (Initial commit)
 
 } );
 
@@ -804,6 +1127,7 @@ jQuery.each( ( "blur focus focusin focusout resize scroll click dblclick " +
 	function( _i, name ) {
 
 	// Handle event binding
+<<<<<<< HEAD
 	migratePatchAndWarnFunc( jQuery.fn, name, function( data, fn ) {
 		return arguments.length > 0 ?
 			this.on( name, null, data, fn ) :
@@ -811,6 +1135,14 @@ jQuery.each( ( "blur focus focusin focusout resize scroll click dblclick " +
 		},
 		"shorthand-deprecated-v3",
 		"jQuery.fn." + name + "() event shorthand is deprecated" );
+=======
+	jQuery.fn[ name ] = function( data, fn ) {
+		migrateWarn( "jQuery.fn." + name + "() event shorthand is deprecated" );
+		return arguments.length > 0 ?
+			this.on( name, null, data, fn ) :
+			this.trigger( name );
+	};
+>>>>>>> fb785cbb (Initial commit)
 } );
 
 // Trigger "ready" event only once, on document ready
@@ -821,11 +1153,16 @@ jQuery( function() {
 jQuery.event.special.ready = {
 	setup: function() {
 		if ( this === window.document ) {
+<<<<<<< HEAD
 			migrateWarn( "ready-event", "'ready' event is deprecated" );
+=======
+			migrateWarn( "'ready' event is deprecated" );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 };
 
+<<<<<<< HEAD
 migratePatchAndWarnFunc( jQuery.fn, "bind", function( types, data, fn ) {
 	return this.on( types, null, data, fn );
 }, "pre-on-methods", "jQuery.fn.bind() is deprecated" );
@@ -845,6 +1182,36 @@ migratePatchAndWarnFunc( jQuery.fn, "hover", function( fnOver, fnOut ) {
 }, "pre-on-methods", "jQuery.fn.hover() is deprecated" );
 
 var rxhtmlTag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([a-z][^\/\0>\x20\t\r\n\f]*)[^>]*)\/>/gi,
+=======
+jQuery.fn.extend( {
+
+	bind: function( types, data, fn ) {
+		migrateWarn( "jQuery.fn.bind() is deprecated" );
+		return this.on( types, null, data, fn );
+	},
+	unbind: function( types, fn ) {
+		migrateWarn( "jQuery.fn.unbind() is deprecated" );
+		return this.off( types, null, fn );
+	},
+	delegate: function( selector, types, data, fn ) {
+		migrateWarn( "jQuery.fn.delegate() is deprecated" );
+		return this.on( types, selector, data, fn );
+	},
+	undelegate: function( selector, types, fn ) {
+		migrateWarn( "jQuery.fn.undelegate() is deprecated" );
+		return arguments.length === 1 ?
+			this.off( selector, "**" ) :
+			this.off( types, selector || "**", fn );
+	},
+	hover: function( fnOver, fnOut ) {
+		migrateWarn( "jQuery.fn.hover() is deprecated" );
+		return this.on( "mouseenter", fnOver ).on( "mouseleave", fnOut || fnOver );
+	}
+} );
+
+var rxhtmlTag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([a-z][^\/\0>\x20\t\r\n\f]*)[^>]*)\/>/gi,
+	origHtmlPrefilter = jQuery.htmlPrefilter,
+>>>>>>> fb785cbb (Initial commit)
 	makeMarkup = function( html ) {
 		var doc = window.document.implementation.createHTMLDocument( "" );
 		doc.body.innerHTML = html;
@@ -853,6 +1220,7 @@ var rxhtmlTag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([a-z][^\/\
 	warnIfChanged = function( html ) {
 		var changed = html.replace( rxhtmlTag, "<$1></$2>" );
 		if ( changed !== html && makeMarkup( html ) !== makeMarkup( changed ) ) {
+<<<<<<< HEAD
 			migrateWarn( "self-closed-tags",
 				"HTML tags must be properly nested and closed: " + html );
 		}
@@ -887,19 +1255,56 @@ migratePatchFunc( jQuery.fn, "offset", function() {
 
 	return origOffset.apply( this, arguments );
 }, "offset-valid-elem" );
+=======
+			migrateWarn( "HTML tags must be properly nested and closed: " + html );
+		}
+	};
+
+jQuery.UNSAFE_restoreLegacyHtmlPrefilter = function() {
+	jQuery.htmlPrefilter = function( html ) {
+		warnIfChanged( html );
+		return html.replace( rxhtmlTag, "<$1></$2>" );
+	};
+};
+
+jQuery.htmlPrefilter = function( html ) {
+	warnIfChanged( html );
+	return origHtmlPrefilter( html );
+};
+
+var oldOffset = jQuery.fn.offset;
+
+jQuery.fn.offset = function() {
+	var elem = this[ 0 ];
+
+	if ( elem && ( !elem.nodeType || !elem.getBoundingClientRect ) ) {
+		migrateWarn( "jQuery.fn.offset() requires a valid DOM element" );
+		return arguments.length ? this : undefined;
+	}
+
+	return oldOffset.apply( this, arguments );
+};
+>>>>>>> fb785cbb (Initial commit)
 
 // Support jQuery slim which excludes the ajax module
 // The jQuery.param patch is about respecting `jQuery.ajaxSettings.traditional`
 // so it doesn't make sense for the slim build.
 if ( jQuery.ajax ) {
 
+<<<<<<< HEAD
 var origParam = jQuery.param;
 
 migratePatchFunc( jQuery, "param", function( data, traditional ) {
+=======
+var oldParam = jQuery.param;
+
+jQuery.param = function( data, traditional ) {
+>>>>>>> fb785cbb (Initial commit)
 	var ajaxTraditional = jQuery.ajaxSettings && jQuery.ajaxSettings.traditional;
 
 	if ( traditional === undefined && ajaxTraditional ) {
 
+<<<<<<< HEAD
 		migrateWarn( "param-ajax-traditional",
 			"jQuery.param() no longer uses jQuery.ajaxSettings.traditional" );
 		traditional = ajaxTraditional;
@@ -912,6 +1317,23 @@ migratePatchFunc( jQuery, "param", function( data, traditional ) {
 
 migratePatchAndWarnFunc( jQuery.fn, "andSelf", jQuery.fn.addBack, "andSelf",
 	"jQuery.fn.andSelf() is deprecated and removed, use jQuery.fn.addBack()" );
+=======
+		migrateWarn( "jQuery.param() no longer uses jQuery.ajaxSettings.traditional" );
+		traditional = ajaxTraditional;
+	}
+
+	return oldParam.call( this, data, traditional );
+};
+
+}
+
+var oldSelf = jQuery.fn.andSelf || jQuery.fn.addBack;
+
+jQuery.fn.andSelf = function() {
+	migrateWarn( "jQuery.fn.andSelf() is deprecated and removed, use jQuery.fn.addBack()" );
+	return oldSelf.apply( this, arguments );
+};
+>>>>>>> fb785cbb (Initial commit)
 
 // Support jQuery slim which excludes the deferred module in jQuery 4.0+
 if ( jQuery.Deferred ) {
@@ -928,6 +1350,7 @@ var oldDeferred = jQuery.Deferred,
 			jQuery.Callbacks( "memory" ) ]
 	];
 
+<<<<<<< HEAD
 migratePatchFunc( jQuery, "Deferred", function( func ) {
 	var deferred = oldDeferred(),
 		promise = deferred.promise();
@@ -935,6 +1358,17 @@ migratePatchFunc( jQuery, "Deferred", function( func ) {
 	function newDeferredPipe( /* fnDone, fnFail, fnProgress */ ) {
 		var fns = arguments;
 
+=======
+jQuery.Deferred = function( func ) {
+	var deferred = oldDeferred(),
+		promise = deferred.promise();
+
+	deferred.pipe = promise.pipe = function( /* fnDone, fnFail, fnProgress */ ) {
+		var fns = arguments;
+
+		migrateWarn( "deferred.pipe() is deprecated" );
+
+>>>>>>> fb785cbb (Initial commit)
 		return jQuery.Deferred( function( newDefer ) {
 			jQuery.each( tuples, function( i, tuple ) {
 				var fn = typeof fns[ i ] === "function" && fns[ i ];
@@ -959,19 +1393,28 @@ migratePatchFunc( jQuery, "Deferred", function( func ) {
 			} );
 			fns = null;
 		} ).promise();
+<<<<<<< HEAD
 	}
 
 	migratePatchAndWarnFunc( deferred, "pipe", newDeferredPipe, "deferred-pipe",
 		"deferred.pipe() is deprecated" );
 	migratePatchAndWarnFunc( promise, "pipe", newDeferredPipe, "deferred-pipe",
 		"deferred.pipe() is deprecated" );
+=======
+
+	};
+>>>>>>> fb785cbb (Initial commit)
 
 	if ( func ) {
 		func.call( deferred, deferred );
 	}
 
 	return deferred;
+<<<<<<< HEAD
 }, "deferred-pipe" );
+=======
+};
+>>>>>>> fb785cbb (Initial commit)
 
 // Preserve handler of uncaught exceptions in promise chains
 jQuery.Deferred.exceptionHook = oldDeferred.exceptionHook;

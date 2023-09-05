@@ -8,7 +8,11 @@
  */
 
 /**
+<<<<<<< HEAD
  * Core wrapper object for a WpOrg\Requests\Response for standardisation.
+=======
+ * Core wrapper object for a Requests_Response for standardisation.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.6.0
  *
@@ -19,7 +23,11 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 	 * Requests Response object.
 	 *
 	 * @since 4.6.0
+<<<<<<< HEAD
 	 * @var \WpOrg\Requests\Response
+=======
+	 * @var Requests_Response
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	protected $response;
 
@@ -36,10 +44,17 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 	 *
 	 * @since 4.6.0
 	 *
+<<<<<<< HEAD
 	 * @param \WpOrg\Requests\Response $response HTTP response.
 	 * @param string                   $filename Optional. File name. Default empty.
 	 */
 	public function __construct( WpOrg\Requests\Response $response, $filename = '' ) {
+=======
+	 * @param Requests_Response $response HTTP response.
+	 * @param string            $filename Optional. File name. Default empty.
+	 */
+	public function __construct( Requests_Response $response, $filename = '' ) {
+>>>>>>> fb785cbb (Initial commit)
 		$this->response = $response;
 		$this->filename = $filename;
 	}
@@ -49,7 +64,11 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 	 *
 	 * @since 4.6.0
 	 *
+<<<<<<< HEAD
 	 * @return WpOrg\Requests\Response HTTP response.
+=======
+	 * @return Requests_Response HTTP response.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function get_response_object() {
 		return $this->response;
@@ -60,11 +79,19 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 	 *
 	 * @since 4.6.0
 	 *
+<<<<<<< HEAD
 	 * @return \WpOrg\Requests\Utility\CaseInsensitiveDictionary Map of header name to header value.
 	 */
 	public function get_headers() {
 		// Ensure headers remain case-insensitive.
 		$converted = new WpOrg\Requests\Utility\CaseInsensitiveDictionary();
+=======
+	 * @return \Requests_Utility_CaseInsensitiveDictionary Map of header name to header value.
+	 */
+	public function get_headers() {
+		// Ensure headers remain case-insensitive.
+		$converted = new Requests_Utility_CaseInsensitiveDictionary();
+>>>>>>> fb785cbb (Initial commit)
 
 		foreach ( $this->response->headers->getAll() as $key => $value ) {
 			if ( count( $value ) === 1 ) {
@@ -85,7 +112,11 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 	 * @param array $headers Map of header name to header value.
 	 */
 	public function set_headers( $headers ) {
+<<<<<<< HEAD
 		$this->response->headers = new WpOrg\Requests\Response\Headers( $headers );
+=======
+		$this->response->headers = new Requests_Response_Headers( $headers );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**

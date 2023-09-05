@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Dialog 1.13.2
+=======
+ * jQuery UI Dialog 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -39,7 +43,11 @@
 "use strict";
 
 $.widget( "ui.dialog", {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	options: {
 		appendTo: "body",
 		autoOpen: true,
@@ -354,7 +362,11 @@ $.widget( "ui.dialog", {
 		this._on( this.uiDialog, {
 			keydown: function( event ) {
 				if ( this.options.closeOnEscape && !event.isDefaultPrevented() && event.keyCode &&
+<<<<<<< HEAD
 						event.keyCode === $.ui.keyCode.ESCAPE ) {
+=======
+					event.keyCode === $.ui.keyCode.ESCAPE ) {
+>>>>>>> fb785cbb (Initial commit)
 					event.preventDefault();
 					this.close( event );
 					return;
@@ -369,13 +381,21 @@ $.widget( "ui.dialog", {
 					last = tabbables.last();
 
 				if ( ( event.target === last[ 0 ] || event.target === this.uiDialog[ 0 ] ) &&
+<<<<<<< HEAD
 						!event.shiftKey ) {
+=======
+					!event.shiftKey ) {
+>>>>>>> fb785cbb (Initial commit)
 					this._delay( function() {
 						first.trigger( "focus" );
 					} );
 					event.preventDefault();
 				} else if ( ( event.target === first[ 0 ] ||
+<<<<<<< HEAD
 						event.target === this.uiDialog[ 0 ] ) && event.shiftKey ) {
+=======
+					event.target === this.uiDialog[ 0 ] ) && event.shiftKey ) {
+>>>>>>> fb785cbb (Initial commit)
 					this._delay( function() {
 						last.trigger( "focus" );
 					} );

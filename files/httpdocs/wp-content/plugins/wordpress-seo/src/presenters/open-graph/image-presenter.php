@@ -44,6 +44,7 @@ class Image_Presenter extends Abstract_Indexable_Presenter {
 		foreach ( $images as $image_index => $image_meta ) {
 			$image_url = $image_meta['url'];
 
+<<<<<<< HEAD
 			if ( \is_attachment() ) {
 				global $wp;
 				$image_url = \home_url( $wp->request );
@@ -52,13 +53,20 @@ class Image_Presenter extends Abstract_Indexable_Presenter {
 			$class = \is_admin_bar_showing() ? ' class="yoast-seo-meta-tag"' : '';
 
 			$return .= '<meta property="og:image" content="' . \esc_url( $image_url, null, 'attribute' ) . '"' . $class . ' />';
+=======
+			$return .= '<meta property="og:image" content="' . \esc_url( $image_url, null, 'attribute' ) . '" />';
+>>>>>>> fb785cbb (Initial commit)
 
 			foreach ( static::$image_tags as $key => $value ) {
 				if ( empty( $image_meta[ $key ] ) ) {
 					continue;
 				}
 
+<<<<<<< HEAD
 				$return .= \PHP_EOL . "\t" . '<meta property="og:image:' . \esc_attr( $key ) . '" content="' . \esc_attr( $image_meta[ $key ] ) . '"' . $class . ' />';
+=======
+				$return .= \PHP_EOL . "\t" . '<meta property="og:image:' . \esc_attr( $key ) . '" content="' . \esc_attr( $image_meta[ $key ] ) . '" />';
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 

@@ -18,6 +18,7 @@ function render_block_core_read_more( $attributes, $content, $block ) {
 		return '';
 	}
 
+<<<<<<< HEAD
 	$post_ID    = $block->context['postId'];
 	$post_title = get_the_title( $post_ID );
 	if ( '' === $post_title ) {
@@ -32,16 +33,27 @@ function render_block_core_read_more( $attributes, $content, $block ) {
 		__( ': %s' ),
 		$post_title
 	);
+=======
+	$post_ID            = $block->context['postId'];
+>>>>>>> fb785cbb (Initial commit)
 	$justify_class_name = empty( $attributes['justifyContent'] ) ? '' : "is-justified-{$attributes['justifyContent']}";
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $justify_class_name ) );
 	$more_text          = ! empty( $attributes['content'] ) ? wp_kses_post( $attributes['content'] ) : __( 'Read more' );
 	return sprintf(
+<<<<<<< HEAD
 		'<a %1s href="%2s" target="%3s">%4s<span class="screen-reader-text">%5s</span></a>',
 		$wrapper_attributes,
 		get_the_permalink( $post_ID ),
 		esc_attr( $attributes['linkTarget'] ),
 		$more_text,
 		$screen_reader_text
+=======
+		'<a %1s href="%2s" target="%3s">%4s</a>',
+		$wrapper_attributes,
+		get_the_permalink( $post_ID ),
+		esc_attr( $attributes['linkTarget'] ),
+		$more_text
+>>>>>>> fb785cbb (Initial commit)
 	);
 }
 

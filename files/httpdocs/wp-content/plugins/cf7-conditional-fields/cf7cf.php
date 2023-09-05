@@ -8,6 +8,18 @@ class CF7CF {
 
     function __construct() {
 
+<<<<<<< HEAD
+=======
+	    // can't use wpcf7_enqueue_scripts hook, because it's possible that people
+	    // want to disable the CF7 scripts. but in this case Conditional fields should still work.
+        // add_action('wpcf7_enqueue_scripts', array(__CLASS__, 'enqueue_js')); // <-- don't use this
+
+	    // Enqueue_scripts moved to function outside class.
+
+//	    add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueue_js'), 20);
+//	    add_action('wpcf7_enqueue_styles', array(__CLASS__, 'enqueue_css'));
+
+>>>>>>> fb785cbb (Initial commit)
         // Register shortcodes
         add_action('wpcf7_init', array(__CLASS__, 'add_shortcodes'));
 
@@ -26,6 +38,7 @@ class CF7CF {
         add_filter( 'wpcf7_validate_file*', array($this, 'skip_validation_for_hidden_file_field'), 30, 3);
         add_filter( 'wpcf7_validate_multifile*', array($this, 'skip_validation_for_hidden_file_field'), 30, 3);
 
+<<<<<<< HEAD
         // If acceptance_as_validation is on, then Acceptance fields inside hidden groups should not trigger an error
         add_filter( 'wpcf7_acceptance', function($accepted, $submission) {
             $acceptance_as_validation = $submission->get_contact_form()->additional_setting('acceptance_as_validation');
@@ -35,6 +48,12 @@ class CF7CF {
 	    // validation messages
 	    add_action('wpcf7_config_validator_validate', array($this,'wpcf7cf_config_validator_validate'));
 
+=======
+	    // validation messages
+	    add_action('wpcf7_config_validator_validate', array($this,'wpcf7cf_config_validator_validate'));
+
+
+>>>>>>> fb785cbb (Initial commit)
 	    add_action("wpcf7_before_send_mail", [$this, 'hide_hidden_mail_fields'], 10, 3);
 
         register_activation_hook(__FILE__, array($this, 'activate'));
@@ -105,12 +124,18 @@ class CF7CF {
         }
     }
 
+<<<<<<< HEAD
     // TODO: check if we can remove this function. Doesn't seem to be called.
+=======
+>>>>>>> fb785cbb (Initial commit)
     function group_shortcode_handler( $atts, $content = "" ) {
         return $content;
     }
 
+<<<<<<< HEAD
     // TODO: check if we can remove this function. Doesn't seem to be called.
+=======
+>>>>>>> fb785cbb (Initial commit)
     public static function shortcode_handler($tag) {
         //$tag = new WPCF7_Shortcode($tag);
         $tag = new WPCF7_FormTag($tag);
@@ -279,6 +304,7 @@ class CF7CF {
             if (!is_array($props[$mail])) { continue; }
 			foreach ($props[$mail] as $key=>$val) {
 
+<<<<<<< HEAD
                 // remove unwanted whitespace between closing and opening groups from email
                 $count = 1;
                 while ($count) {
@@ -289,6 +315,15 @@ class CF7CF {
                 $parser = new Wpcf7cfMailParser($val, $this->visible_groups, $this->hidden_groups, $this->repeaters, $_POST);
 				$props[$mail][$key] = $parser->getParsedMail();
             }
+=======
+                $parser = new Wpcf7cfMailParser($val, $this->visible_groups, $this->hidden_groups, $this->repeaters, $_POST);
+
+				// $props[$mail][$key] = preg_replace_callback(WPCF7CF_REGEX_MAIL_GROUP, array($this, 'hide_hidden_mail_fields_regex_callback'), $val );
+				$props[$mail][$key] = $parser->getParsedMail();
+            }
+
+
+>>>>>>> fb785cbb (Initial commit)
         }
 
 
@@ -437,12 +472,19 @@ function wpcf7cf_properties($properties, $wpcf7form) {
 	    		$tag_html_data = array();
 
 	    		foreach ($tag_parts as $i => $tag_part) {
+<<<<<<< HEAD
                     if ($i==0) continue;
                     $tag_part = explode(':',$tag_part);
 					if ($tag_part[0] == 'inline') $tag_html_type = 'span';
 					else if ($tag_part[0] == 'clear_on_hide') $tag_html_data[] = 'data-clear_on_hide';
 					else if ($tag_part[0] == 'disable_on_hide' && WPCF7CF_IS_PRO) $tag_html_data[] = 'data-disable_on_hide';
                     else if ($tag_part[0] == 'class') $tag_html_data[] = 'class="'.($tag_part[1]??'').'"';
+=======
+	    			if ($i==0) continue;
+					else if ($tag_part == 'inline') $tag_html_type = 'span';
+					else if ($tag_part == 'clear_on_hide') $tag_html_data[] = 'data-clear_on_hide';
+					else if ($tag_part == 'disable_on_hide' && WPCF7CF_IS_PRO) $tag_html_data[] = 'data-disable_on_hide';
+>>>>>>> fb785cbb (Initial commit)
 			    }
 
 			    array_push($stack,$tag_html_type);

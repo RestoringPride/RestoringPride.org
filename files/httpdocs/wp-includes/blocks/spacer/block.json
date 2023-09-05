@@ -17,6 +17,7 @@
 	},
 	"usesContext": [ "orientation" ],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
 		"spacing": {
 			"margin": [ "top", "bottom" ],
@@ -24,6 +25,9 @@
 				"margin": true
 			}
 		}
+=======
+		"anchor": true
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-spacer-editor",
 	"style": "wp-block-spacer"

@@ -4,7 +4,10 @@ namespace Yoast\WP\SEO\Builders;
 
 use WP_Error;
 use WP_Post;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Exceptions\Indexable\Post_Not_Built_Exception;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Exceptions\Indexable\Post_Not_Found_Exception;
 use Yoast\WP\SEO\Helpers\Meta_Helper;
 use Yoast\WP\SEO\Helpers\Post_Helper;
@@ -97,11 +100,18 @@ class Indexable_Post_Builder {
 	 * @return bool|Indexable The extended indexable. False when unable to build.
 	 *
 	 * @throws Post_Not_Found_Exception When the post could not be found.
+<<<<<<< HEAD
 	 * @throws Post_Not_Built_Exception When the post should not be indexed.
 	 */
 	public function build( $post_id, $indexable ) {
 		if ( ! $this->post_helper->is_post_indexable( $post_id ) ) {
 			throw Post_Not_Built_Exception::because_not_indexable( $post_id );
+=======
+	 */
+	public function build( $post_id, $indexable ) {
+		if ( ! $this->post_helper->is_post_indexable( $post_id ) ) {
+			return false;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		$post = $this->post_helper->get_post( $post_id );
@@ -111,7 +121,11 @@ class Indexable_Post_Builder {
 		}
 
 		if ( $this->should_exclude_post( $post ) ) {
+<<<<<<< HEAD
 			throw Post_Not_Built_Exception::because_post_type_excluded( $post_id );
+=======
+			return false;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		$indexable->object_id       = $post_id;
@@ -415,6 +429,7 @@ class Indexable_Post_Builder {
 	/**
 	 * Transforms an empty string into null. Leaves non-empty strings intact.
 	 *
+<<<<<<< HEAD
 	 * @param string $text The string.
 	 *
 	 * @return string|null The input string or null.
@@ -425,5 +440,17 @@ class Indexable_Post_Builder {
 		}
 
 		return $text;
+=======
+	 * @param string $string The string.
+	 *
+	 * @return string|null The input string or null.
+	 */
+	protected function empty_string_to_null( $string ) {
+		if ( ! is_string( $string ) || $string === '' ) {
+			return null;
+		}
+
+		return $string;
+>>>>>>> fb785cbb (Initial commit)
 	}
 }

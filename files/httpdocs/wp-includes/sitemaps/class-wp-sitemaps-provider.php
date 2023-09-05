@@ -14,7 +14,10 @@
  *
  * @since 5.5.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 abstract class WP_Sitemaps_Provider {
 	/**
 	 * Provider name.
@@ -107,7 +110,11 @@ abstract class WP_Sitemaps_Provider {
 		$sitemap_types = $this->get_sitemap_type_data();
 
 		foreach ( $sitemap_types as $type ) {
+<<<<<<< HEAD
 			for ( $page = 1; $page <= $type['pages']; $page++ ) {
+=======
+			for ( $page = 1; $page <= $type['pages']; $page ++ ) {
+>>>>>>> fb785cbb (Initial commit)
 				$sitemap_entry = array(
 					'loc' => $this->get_sitemap_url( $type['name'], $page ),
 				);

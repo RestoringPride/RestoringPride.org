@@ -2,7 +2,11 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
 	"name": "core/comments-pagination-next",
+<<<<<<< HEAD
 	"title": "Comments Next Page",
+=======
+	"title": "Next Page",
+>>>>>>> fb785cbb (Initial commit)
 	"category": "theme",
 	"parent": [ "core/comments-pagination" ],
 	"description": "Displays the next comment's page link.",
@@ -14,7 +18,10 @@
 	},
 	"usesContext": [ "postId", "comments/paginationArrow" ],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"reusable": false,
 		"html": false,
 		"color": {
@@ -27,12 +34,19 @@
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true,
+<<<<<<< HEAD
 			"__experimentalFontFamily": true,
 			"__experimentalFontWeight": true,
 			"__experimentalFontStyle": true,
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
+=======
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}

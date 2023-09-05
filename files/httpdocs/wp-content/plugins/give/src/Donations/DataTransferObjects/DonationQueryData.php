@@ -8,17 +8,26 @@ use Give\Donations\Properties\BillingAddress;
 use Give\Donations\ValueObjects\DonationMetaKeys;
 use Give\Donations\ValueObjects\DonationMode;
 use Give\Donations\ValueObjects\DonationStatus;
+<<<<<<< HEAD
 use Give\Donations\ValueObjects\DonationType;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\Support\Facades\DateTime\Temporal;
 use Give\Framework\Support\ValueObjects\Money;
 
 /**
  * Class DonationData
  *
+<<<<<<< HEAD
  * @since 2.23.0 remove parentId property
  * @since 2.19.6
  */
 final class DonationQueryData
+=======
+ * @since 2.19.6
+ */
+class DonationQueryData
+>>>>>>> fb785cbb (Initial commit)
 {
     /**
      * @var Money
@@ -59,6 +68,13 @@ final class DonationQueryData
     /**
      * @var int
      */
+<<<<<<< HEAD
+=======
+    public $parentId;
+    /**
+     * @var int
+     */
+>>>>>>> fb785cbb (Initial commit)
     public $subscriptionId;
     /**
      * @var DateTime
@@ -77,10 +93,13 @@ final class DonationQueryData
      */
     public $mode;
     /**
+<<<<<<< HEAD
      * @var DonationType
      */
     public $type;
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @var int
      */
     public $formId;
@@ -112,16 +131,22 @@ final class DonationQueryData
      * @var string
      */
     public $gatewayTransactionId;
+<<<<<<< HEAD
     /**
      * @var string|null
      */
     public $company;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
     /**
      * Convert data from object to Donation
      *
+<<<<<<< HEAD
      * @since 2.23.0 remove parentId property
      * @since 2.22.0 add support for company field
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.20.0 update for new amount property, fee amount recovered, and exchange rate
      * @since 2.19.6
      *
@@ -129,7 +154,11 @@ final class DonationQueryData
      *
      * @return self
      */
+<<<<<<< HEAD
     public static function fromObject($donationQueryObject): self
+=======
+    public static function fromObject($donationQueryObject)
+>>>>>>> fb785cbb (Initial commit)
     {
         $self = new static();
 
@@ -139,10 +168,14 @@ final class DonationQueryData
         $self->id = (int)$donationQueryObject->id;
         $self->formId = (int)$donationQueryObject->{DonationMetaKeys::FORM_ID()->getKeyAsCamelCase()};
         $self->formTitle = $donationQueryObject->{DonationMetaKeys::FORM_TITLE()->getKeyAsCamelCase()};
+<<<<<<< HEAD
         $self->amount = Money::fromDecimal(
             $donationQueryObject->{DonationMetaKeys::AMOUNT()->getKeyAsCamelCase()},
             $currency
         );
+=======
+        $self->amount = Money::fromDecimal($donationQueryObject->{DonationMetaKeys::AMOUNT()->getKeyAsCamelCase()}, $currency);
+>>>>>>> fb785cbb (Initial commit)
         $self->feeAmountRecovered = $feeAmountRecovered ? Money::fromDecimal($feeAmountRecovered, $currency) : null;
         $self->exchangeRate = $donationQueryObject->{DonationMetaKeys::EXCHANGE_RATE()->getKeyAsCamelCase()};
         $self->donorId = (int)$donationQueryObject->{DonationMetaKeys::DONOR_ID()->getKeyAsCamelCase()};
@@ -153,6 +186,10 @@ final class DonationQueryData
         $self->createdAt = Temporal::toDateTime($donationQueryObject->createdAt);
         $self->updatedAt = Temporal::toDateTime($donationQueryObject->updatedAt);
         $self->status = new DonationStatus($donationQueryObject->status);
+<<<<<<< HEAD
+=======
+        $self->parentId = (int)$donationQueryObject->parentId;
+>>>>>>> fb785cbb (Initial commit)
         $self->subscriptionId = (int)$donationQueryObject->{DonationMetaKeys::SUBSCRIPTION_ID()->getKeyAsCamelCase()};
         $self->mode = new DonationMode($donationQueryObject->{DonationMetaKeys::MODE()->getKeyAsCamelCase()});
         $self->billingAddress = BillingAddress::fromArray([
@@ -169,6 +206,7 @@ final class DonationQueryData
         $self->levelId = (string)$donationQueryObject->{DonationMetaKeys::LEVEL_ID()->getKeyAsCamelCase()};
         $self->gatewayTransactionId = $donationQueryObject->{DonationMetaKeys::GATEWAY_TRANSACTION_ID()
             ->getKeyAsCamelCase()};
+<<<<<<< HEAD
         $self->company = $donationQueryObject->{DonationMetaKeys::COMPANY()
             ->getKeyAsCamelCase()};
 
@@ -179,14 +217,23 @@ final class DonationQueryData
         } else {
             $self->type = DonationType::SINGLE();
         }
+=======
+>>>>>>> fb785cbb (Initial commit)
 
         return $self;
     }
 
     /**
      * Convert DTO to Donation
+<<<<<<< HEAD
      */
     public function toDonation(): Donation
+=======
+     *
+     * @return Donation
+     */
+    public function toDonation()
+>>>>>>> fb785cbb (Initial commit)
     {
         $attributes = get_object_vars($this);
 

@@ -84,6 +84,7 @@
 	},
 	"supports": {
 		"align": true,
+<<<<<<< HEAD
 		"anchor": true,
 		"html": false,
 		"color": {
@@ -112,6 +113,9 @@
 				"fontSize": true
 			}
 		}
+=======
+		"html": false
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-latest-posts-editor",
 	"style": "wp-block-latest-posts"

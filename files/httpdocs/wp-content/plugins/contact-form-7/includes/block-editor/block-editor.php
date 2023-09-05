@@ -14,6 +14,7 @@ function wpcf7_init_block_editor_assets() {
 	}
 
 	$assets = wp_parse_args( $assets, array(
+<<<<<<< HEAD
 		'dependencies' => array(
 			'wp-api-fetch',
 			'wp-block-editor',
@@ -22,13 +23,27 @@ function wpcf7_init_block_editor_assets() {
 			'wp-element',
 			'wp-i18n',
 			'wp-url',
+=======
+		'src' => wpcf7_plugin_url( 'includes/block-editor/index.js' ),
+		'dependencies' => array(
+			'wp-api-fetch',
+			'wp-components',
+			'wp-compose',
+			'wp-blocks',
+			'wp-element',
+			'wp-i18n',
+>>>>>>> fb785cbb (Initial commit)
 		),
 		'version' => WPCF7_VERSION,
 	) );
 
 	wp_register_script(
 		'contact-form-7-block-editor',
+<<<<<<< HEAD
 		wpcf7_plugin_url( 'includes/block-editor/index.js' ),
+=======
+		$assets['src'],
+>>>>>>> fb785cbb (Initial commit)
 		$assets['dependencies'],
 		$assets['version']
 	);
@@ -39,7 +54,11 @@ function wpcf7_init_block_editor_assets() {
 	);
 
 	register_block_type(
+<<<<<<< HEAD
 		wpcf7_plugin_path( 'includes/block-editor' ),
+=======
+		'contact-form-7/contact-form-selector',
+>>>>>>> fb785cbb (Initial commit)
 		array(
 			'editor_script' => 'contact-form-7-block-editor',
 		)
@@ -56,8 +75,11 @@ function wpcf7_init_block_editor_assets() {
 		},
 		WPCF7_ContactForm::find( array(
 			'posts_per_page' => 20,
+<<<<<<< HEAD
 			'orderby' => 'modified',
 			'order' => 'DESC',
+=======
+>>>>>>> fb785cbb (Initial commit)
 		) )
 	);
 

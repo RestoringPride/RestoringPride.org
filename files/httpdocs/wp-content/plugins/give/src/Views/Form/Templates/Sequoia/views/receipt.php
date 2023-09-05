@@ -72,7 +72,11 @@ ob_start();
                     continue;
                 }
 
+<<<<<<< HEAD
                 echo '<div class="details ' . sanitize_title($section->id) . '-section">';
+=======
+                echo '<div class="details">';
+>>>>>>> fb785cbb (Initial commit)
                 if ($section->label) {
                     printf('<h3 class="headline">%1$s</h3>', $section->label);
                 }
@@ -85,6 +89,7 @@ ob_start();
                         continue;
                     }
 
+<<<<<<< HEAD
                     $detailRowClass = sanitize_title($lineItem->id) . '-row';
                     // This class is required to highlight total donation amount in receipt.
                     if (DonationReceipt::DONATIONSECTIONID === $section->id) {
@@ -93,6 +98,16 @@ ob_start();
 
                     printf(
                         '<div class="details-row %1$s">%2$s<div class="detail">%3$s</div><div class="value">%4$s</div></div>',
+=======
+                    // This class is required to highlight total donation amount in receipt.
+                    $detailRowClass = '';
+                    if (DonationReceipt::DONATIONSECTIONID === $section->id) {
+                        $detailRowClass = 'totalAmount' === $lineItem->id ? ' total' : '';
+                    }
+
+                    printf(
+                        '<div class="details-row%1$s">%2$s<div class="detail">%3$s</div><div class="value">%4$s</div></div>',
+>>>>>>> fb785cbb (Initial commit)
                         $detailRowClass,
                         $lineItem->icon,
                         $lineItem->label,
@@ -122,6 +137,7 @@ ob_start();
     </div>
 
 <?php
+<<<<<<< HEAD
 
 $pageId     = give_get_option('success_page');
 $iframeView = new IframeContentView();
@@ -129,3 +145,10 @@ $iframeView = new IframeContentView();
 echo $iframeView->setTitle(esc_html__('Donation Receipt', 'give'))->setPostId($pageId)
                 ->setBody(ob_get_clean())
                 ->renderBody();
+=======
+$iframeView = new IframeContentView();
+
+echo $iframeView->setTitle(esc_html__('Donation Receipt', 'give'))
+    ->setBody(ob_get_clean())
+    ->renderBody();
+>>>>>>> fb785cbb (Initial commit)

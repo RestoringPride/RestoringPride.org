@@ -9,9 +9,15 @@ namespace Yoast\WP\SEO\Presenters;
  */
 abstract class Abstract_Indexable_Tag_Presenter extends Abstract_Indexable_Presenter {
 
+<<<<<<< HEAD
 	const META_PROPERTY_CONTENT = '<meta property="%2$s" content="%1$s"%3$s />';
 	const META_NAME_CONTENT     = '<meta name="%2$s" content="%1$s"%3$s />';
 	const LINK_REL_HREF         = '<link rel="%2$s" href="%1$s"%3$s />';
+=======
+	const META_PROPERTY_CONTENT = '<meta property="%2$s" content="%1$s" />';
+	const META_NAME_CONTENT     = '<meta name="%2$s" content="%1$s" />';
+	const LINK_REL_HREF         = '<link rel="%2$s" href="%1$s" />';
+>>>>>>> fb785cbb (Initial commit)
 	const DEFAULT_TAG_FORMAT    = self::META_NAME_CONTENT;
 
 	/**
@@ -44,12 +50,16 @@ abstract class Abstract_Indexable_Tag_Presenter extends Abstract_Indexable_Prese
 		 * There may be some classes that are derived from this class that do not use the $key property
 		 * in their $tag_format string. In that case the key property will simply not be used.
 		 */
+<<<<<<< HEAD
 		return \sprintf(
 			$this->tag_format,
 			$this->escape_value( $value ),
 			$this->key,
 			\is_admin_bar_showing() ? ' class="yoast-seo-meta-tag"' : ''
 		);
+=======
+		return \sprintf( $this->tag_format, $this->escape_value( $value ), $this->key );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**

@@ -12,7 +12,10 @@
  *
  * @since 3.4.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Customize_Control {
 
 	/**
@@ -168,7 +171,11 @@ class WP_Customize_Control {
 	 *
 	 * Supplied `$args` override class property defaults.
 	 *
+<<<<<<< HEAD
 	 * If `$args['settings']` is not defined, use the `$id` as the setting ID.
+=======
+	 * If `$args['settings']` is not defined, use the $id as the setting ID.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.4.0
 	 *
@@ -633,12 +640,16 @@ class WP_Customize_Control {
 						?>
 					</button>
 					<div class="new-content-item">
+<<<<<<< HEAD
 						<label for="create-input-<?php echo esc_attr( $this->id ); ?>"><span class="screen-reader-text">
 							<?php
 							/* translators: Hidden accessibility text. */
 							_e( 'New page title' );
 							?>
 						</span></label>
+=======
+						<label for="create-input-<?php echo esc_attr( $this->id ); ?>"><span class="screen-reader-text"><?php _e( 'New page title' ); ?></span></label>
+>>>>>>> fb785cbb (Initial commit)
 						<input type="text" id="create-input-<?php echo esc_attr( $this->id ); ?>" class="create-item-input" placeholder="<?php esc_attr_e( 'New page title&hellip;' ); ?>">
 						<button type="button" class="button add-content"><?php _e( 'Add' ); ?></button>
 					</div>

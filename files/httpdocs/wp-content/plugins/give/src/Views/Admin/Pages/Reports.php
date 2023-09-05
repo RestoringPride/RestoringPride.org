@@ -22,7 +22,11 @@ class Reports
      */
     public function init()
     {
+<<<<<<< HEAD
         add_action('admin_menu', [$this, 'add_page'], 40);
+=======
+        add_action('admin_menu', [$this, 'add_page']);
+>>>>>>> fb785cbb (Initial commit)
         add_action('admin_enqueue_scripts', [$this, 'enqueue_scripts']);
     }
 

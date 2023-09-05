@@ -8,6 +8,7 @@
 	"textdomain": "default",
 	"usesContext": [ "postId", "postType", "queryId" ],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
 		"align": [ "wide", "full" ],
 		"html": false,
@@ -28,6 +29,11 @@
 				"fontSize": true
 			}
 		}
+=======
+		"align": [ "wide", "full" ],
+		"html": false,
+		"__experimentalLayout": true
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-post-content-editor"
 }

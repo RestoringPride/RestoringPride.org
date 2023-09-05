@@ -8,12 +8,19 @@ use Exception;
 use Give\Container\Exceptions\BindingResolutionException;
 use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
 use Give\Framework\Exceptions\Primitives\LogicException;
+<<<<<<< HEAD
 use Give\Vendors\StellarWP\ContainerContract\ContainerInterface;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use ReflectionClass;
 use ReflectionException;
 use ReflectionParameter;
 
+<<<<<<< HEAD
 class Container implements ArrayAccess, ContainerInterface
+=======
+class Container implements ArrayAccess
+>>>>>>> fb785cbb (Initial commit)
 {
     /**
      * An array of the types that have been resolved.
@@ -122,8 +129,17 @@ class Container implements ArrayAccess, ContainerInterface
 
     /**
      * Determine if the given abstract type has been bound.
+<<<<<<< HEAD
      */
     public function bound(string $abstract): bool
+=======
+     *
+     * @param string $abstract
+     *
+     * @return bool
+     */
+    public function bound($abstract)
+>>>>>>> fb785cbb (Initial commit)
     {
         return isset($this->bindings[$abstract]) ||
                isset($this->instances[$abstract]) ||
@@ -136,16 +152,34 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * `has($id)` returning true does not mean that `get($id)` will not throw an exception.
      * It does however mean that `get($id)` will not throw a `NotFoundExceptionInterface`.
+<<<<<<< HEAD
      */
     public function has(string $id): bool
+=======
+     *
+     * @param string $id Identifier of the entry to look for.
+     *
+     * @return bool
+     */
+    public function has($id)
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->bound($id);
     }
 
     /**
      * Determine if the given abstract type has been resolved.
+<<<<<<< HEAD
      */
     public function resolved(string $abstract): bool
+=======
+     *
+     * @param string $abstract
+     *
+     * @return bool
+     */
+    public function resolved($abstract)
+>>>>>>> fb785cbb (Initial commit)
     {
         if ($this->isAlias($abstract)) {
             $abstract = $this->getAlias($abstract);
@@ -157,8 +191,17 @@ class Container implements ArrayAccess, ContainerInterface
 
     /**
      * Determine if a given type is shared.
+<<<<<<< HEAD
      */
     public function isShared(string $abstract): bool
+=======
+     *
+     * @param string $abstract
+     *
+     * @return bool
+     */
+    public function isShared($abstract)
+>>>>>>> fb785cbb (Initial commit)
     {
         return isset($this->instances[$abstract]) ||
                (isset($this->bindings[$abstract]['shared']) &&
@@ -167,8 +210,17 @@ class Container implements ArrayAccess, ContainerInterface
 
     /**
      * Determine if a given string is an alias.
+<<<<<<< HEAD
      */
     public function isAlias(string $name): bool
+=======
+     *
+     * @param string $name
+     *
+     * @return bool
+     */
+    public function isAlias($name)
+>>>>>>> fb785cbb (Initial commit)
     {
         return isset($this->aliases[$name]);
     }
@@ -182,7 +234,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return void
      */
+<<<<<<< HEAD
     public function bind(string $abstract, $concrete = null, bool $shared = false)
+=======
+    public function bind($abstract, $concrete = null, $shared = false)
+>>>>>>> fb785cbb (Initial commit)
     {
         $this->dropStaleInstances($abstract);
 
@@ -212,10 +268,22 @@ class Container implements ArrayAccess, ContainerInterface
 
     /**
      * Get the Closure to be used when building a type.
+<<<<<<< HEAD
      */
     protected function getClosure(string $abstract, string $concrete): Closure
     {
         return static function ($container, $parameters = []) use ($abstract, $concrete) {
+=======
+     *
+     * @param string $abstract
+     * @param string $concrete
+     *
+     * @return Closure
+     */
+    protected function getClosure($abstract, $concrete)
+    {
+        return function ($container, $parameters = []) use ($abstract, $concrete) {
+>>>>>>> fb785cbb (Initial commit)
             if ($abstract == $concrete) {
                 return $container->build($concrete);
             }
@@ -230,8 +298,17 @@ class Container implements ArrayAccess, ContainerInterface
 
     /**
      * Determine if the container has a method binding.
+<<<<<<< HEAD
      */
     public function hasMethodBinding(string $method): bool
+=======
+     *
+     * @param string $method
+     *
+     * @return bool
+     */
+    public function hasMethodBinding($method)
+>>>>>>> fb785cbb (Initial commit)
     {
         return isset($this->methodBindings[$method]);
     }
@@ -244,7 +321,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return void
      */
+<<<<<<< HEAD
     public function bindMethod($method, Closure $callback)
+=======
+    public function bindMethod($method, $callback)
+>>>>>>> fb785cbb (Initial commit)
     {
         $this->methodBindings[$this->parseBindMethod($method)] = $callback;
     }
@@ -256,7 +337,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return string
      */
+<<<<<<< HEAD
     protected function parseBindMethod($method): string
+=======
+    protected function parseBindMethod($method)
+>>>>>>> fb785cbb (Initial commit)
     {
         if (is_array($method)) {
             return $method[0] . '@' . $method[1];
@@ -273,7 +358,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return mixed
      */
+<<<<<<< HEAD
     public function callMethodBinding(string $method, $instance)
+=======
+    public function callMethodBinding($method, $instance)
+>>>>>>> fb785cbb (Initial commit)
     {
         return call_user_func($this->methodBindings[$method], $instance, $this);
     }
@@ -287,7 +376,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return void
      */
+<<<<<<< HEAD
     public function bindIf(string $abstract, $concrete = null, bool $shared = false)
+=======
+    public function bindIf($abstract, $concrete = null, $shared = false)
+>>>>>>> fb785cbb (Initial commit)
     {
         if ( ! $this->bound($abstract)) {
             $this->bind($abstract, $concrete, $shared);
@@ -302,7 +395,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return void
      */
+<<<<<<< HEAD
     public function singleton(string $abstract, $concrete = null)
+=======
+    public function singleton($abstract, $concrete = null)
+>>>>>>> fb785cbb (Initial commit)
     {
         $this->bind($abstract, $concrete, true);
     }
@@ -315,7 +412,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return void
      */
+<<<<<<< HEAD
     public function singletonIf(string $abstract, $concrete = null)
+=======
+    public function singletonIf($abstract, $concrete = null)
+>>>>>>> fb785cbb (Initial commit)
     {
         if ( ! $this->bound($abstract)) {
             $this->singleton($abstract, $concrete);
@@ -332,7 +433,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @throws \InvalidArgumentException
      */
+<<<<<<< HEAD
     public function extend(string $abstract, Closure $closure)
+=======
+    public function extend($abstract, Closure $closure)
+>>>>>>> fb785cbb (Initial commit)
     {
         $abstract = $this->getAlias($abstract);
 
@@ -357,7 +462,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return mixed
      */
+<<<<<<< HEAD
     public function instance(string $abstract, $instance)
+=======
+    public function instance($abstract, $instance)
+>>>>>>> fb785cbb (Initial commit)
     {
         $this->removeAbstractAlias($abstract);
 
@@ -380,9 +489,17 @@ class Container implements ArrayAccess, ContainerInterface
     /**
      * Remove an alias from the contextual binding alias cache.
      *
+<<<<<<< HEAD
      * @return void
      */
     protected function removeAbstractAlias(string $searched)
+=======
+     * @param string $searched
+     *
+     * @return void
+     */
+    protected function removeAbstractAlias($searched)
+>>>>>>> fb785cbb (Initial commit)
     {
         if ( ! isset($this->aliases[$searched])) {
             return;
@@ -423,11 +540,21 @@ class Container implements ArrayAccess, ContainerInterface
     /**
      * Alias a type to a different name.
      *
+<<<<<<< HEAD
+=======
+     * @param string $abstract
+     * @param string $alias
+     *
+>>>>>>> fb785cbb (Initial commit)
      * @return void
      *
      * @throws LogicException
      */
+<<<<<<< HEAD
     public function alias(string $abstract, string $alias)
+=======
+    public function alias($abstract, $alias)
+>>>>>>> fb785cbb (Initial commit)
     {
         if ($alias === $abstract) {
             throw new LogicException("[{$abstract}] is aliased to itself.");
@@ -446,7 +573,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return mixed
      */
+<<<<<<< HEAD
     public function rebinding(string $abstract, Closure $callback)
+=======
+    public function rebinding($abstract, Closure $callback)
+>>>>>>> fb785cbb (Initial commit)
     {
         $this->reboundCallbacks[$abstract = $this->getAlias($abstract)][] = $callback;
 
@@ -466,7 +597,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return mixed
      */
+<<<<<<< HEAD
     public function refresh(string $abstract, $target, string $method)
+=======
+    public function refresh($abstract, $target, $method)
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->rebinding(
             $abstract,
@@ -479,9 +614,17 @@ class Container implements ArrayAccess, ContainerInterface
     /**
      * Fire the "rebound" callbacks for the given abstract type.
      *
+<<<<<<< HEAD
      * @return void
      */
     protected function rebound(string $abstract)
+=======
+     * @param string $abstract
+     *
+     * @return void
+     */
+    protected function rebound($abstract)
+>>>>>>> fb785cbb (Initial commit)
     {
         $instance = $this->make($abstract);
 
@@ -492,16 +635,36 @@ class Container implements ArrayAccess, ContainerInterface
 
     /**
      * Get the rebound callbacks for a given type.
+<<<<<<< HEAD
      */
     protected function getReboundCallbacks(string $abstract): array
     {
         return $this->reboundCallbacks[$abstract] ?? [];
+=======
+     *
+     * @param string $abstract
+     *
+     * @return array
+     */
+    protected function getReboundCallbacks($abstract)
+    {
+        return isset($this->reboundCallbacks[$abstract]) ? $this->reboundCallbacks[$abstract] : [];
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
      * Get a closure to resolve the given type from the container.
+<<<<<<< HEAD
      */
     public function factory(string $abstract): Closure
+=======
+     *
+     * @param string $abstract
+     *
+     * @return Closure
+     */
+    public function factory($abstract)
+>>>>>>> fb785cbb (Initial commit)
     {
         return function () use ($abstract) {
             return $this->make($abstract);
@@ -516,7 +679,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return mixed
      */
+<<<<<<< HEAD
     public function make(string $abstract, array $parameters = [])
+=======
+    public function make($abstract, array $parameters = [])
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->resolve($abstract, $parameters);
     }
@@ -529,7 +696,11 @@ class Container implements ArrayAccess, ContainerInterface
      * @return mixed Entry.
      * @throws InvalidArgumentException|BindingResolutionException
      */
+<<<<<<< HEAD
     public function get(string $id)
+=======
+    public function get($id)
+>>>>>>> fb785cbb (Initial commit)
     {
         try {
             return $this->resolve($id);
@@ -545,10 +716,21 @@ class Container implements ArrayAccess, ContainerInterface
     /**
      * Resolve the given type from the container.
      *
+<<<<<<< HEAD
      * @return mixed
      * @throws BindingResolutionException
      */
     protected function resolve(string $abstract, array $parameters = [], bool $raiseEvents = true)
+=======
+     * @param string $abstract
+     * @param array  $parameters
+     * @param bool   $raiseEvents
+     *
+     * @return mixed
+     * @throws BindingResolutionException
+     */
+    protected function resolve($abstract, $parameters = [], $raiseEvents = true)
+>>>>>>> fb785cbb (Initial commit)
     {
         $abstract = $this->getAlias($abstract);
 
@@ -559,7 +741,11 @@ class Container implements ArrayAccess, ContainerInterface
         // If an instance of the type is currently being managed as a singleton we'll
         // just return an existing instance instead of instantiating new instances
         // so the developer can keep using the same objects instance every time.
+<<<<<<< HEAD
         if (isset($this->instances[$abstract])) {
+=======
+        if (isset($this->instances[$abstract]) && ! $needsContextualBuild) {
+>>>>>>> fb785cbb (Initial commit)
             return $this->instances[$abstract];
         }
 
@@ -609,9 +795,17 @@ class Container implements ArrayAccess, ContainerInterface
     /**
      * Get the concrete type for a given abstract.
      *
+<<<<<<< HEAD
      * @return mixed
      */
     protected function getConcrete(string $abstract)
+=======
+     * @param string $abstract
+     *
+     * @return mixed
+     */
+    protected function getConcrete($abstract)
+>>>>>>> fb785cbb (Initial commit)
     {
         // If we don't have a registered resolver or concrete for the type, we'll just
         // assume each type is a concrete name and will attempt to resolve it as is
@@ -626,12 +820,20 @@ class Container implements ArrayAccess, ContainerInterface
     /**
      * Determine if the given concrete is buildable.
      *
+<<<<<<< HEAD
      * @param mixed $concrete
+=======
+     * @param mixed  $concrete
+>>>>>>> fb785cbb (Initial commit)
      * @param string $abstract
      *
      * @return bool
      */
+<<<<<<< HEAD
     protected function isBuildable($concrete, string $abstract): bool
+=======
+    protected function isBuildable($concrete, $abstract)
+>>>>>>> fb785cbb (Initial commit)
     {
         return $concrete === $abstract || $concrete instanceof Closure;
     }
@@ -677,7 +879,11 @@ class Container implements ArrayAccess, ContainerInterface
         if (is_null($constructor)) {
             array_pop($this->buildStack);
 
+<<<<<<< HEAD
             return new $concrete();
+=======
+            return new $concrete;
+>>>>>>> fb785cbb (Initial commit)
         }
 
         $dependencies = $constructor->getParameters();
@@ -699,12 +905,24 @@ class Container implements ArrayAccess, ContainerInterface
     }
 
     /**
+<<<<<<< HEAD
      * Resolve all the dependencies from the ReflectionParameters.
      *
      * @throws BindingResolutionException
      * @throws ReflectionException
      */
     protected function resolveDependencies(array $dependencies): array
+=======
+     * Resolve all of the dependencies from the ReflectionParameters.
+     *
+     * @param array $dependencies
+     *
+     * @return array
+     * @throws BindingResolutionException
+     * @throws ReflectionException
+     */
+    protected function resolveDependencies(array $dependencies)
+>>>>>>> fb785cbb (Initial commit)
     {
         $results = [];
 
@@ -739,8 +957,17 @@ class Container implements ArrayAccess, ContainerInterface
 
     /**
      * Determine if the given dependency has a parameter override.
+<<<<<<< HEAD
      */
     protected function hasParameterOverride(ReflectionParameter $dependency): bool
+=======
+     *
+     * @param ReflectionParameter $dependency
+     *
+     * @return bool
+     */
+    protected function hasParameterOverride($dependency)
+>>>>>>> fb785cbb (Initial commit)
     {
         return array_key_exists(
             $dependency->name,
@@ -751,17 +978,32 @@ class Container implements ArrayAccess, ContainerInterface
     /**
      * Get a parameter override for a dependency.
      *
+<<<<<<< HEAD
      * @return mixed
      */
     protected function getParameterOverride(ReflectionParameter $dependency)
+=======
+     * @param ReflectionParameter $dependency
+     *
+     * @return mixed
+     */
+    protected function getParameterOverride($dependency)
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->getLastParameterOverride()[$dependency->name];
     }
 
     /**
      * Get the last parameter override.
+<<<<<<< HEAD
      */
     protected function getLastParameterOverride(): array
+=======
+     *
+     * @return array
+     */
+    protected function getLastParameterOverride()
+>>>>>>> fb785cbb (Initial commit)
     {
         return count($this->with) ? end($this->with) : [];
     }
@@ -772,7 +1014,11 @@ class Container implements ArrayAccess, ContainerInterface
      * @param ReflectionParameter $parameter
      *
      * @return mixed
+<<<<<<< HEAD
      * @throws BindingResolutionException
+=======
+     * @throws ReflectionException
+>>>>>>> fb785cbb (Initial commit)
      */
     protected function resolvePrimitive(ReflectionParameter $parameter)
     {
@@ -781,6 +1027,11 @@ class Container implements ArrayAccess, ContainerInterface
         }
 
         $this->unresolvablePrimitive($parameter);
+<<<<<<< HEAD
+=======
+
+        return null;
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -828,7 +1079,11 @@ class Container implements ArrayAccess, ContainerInterface
      * @return void
      * @throws BindingResolutionException
      */
+<<<<<<< HEAD
     protected function notInstantiable(string $concrete)
+=======
+    protected function notInstantiable($concrete)
+>>>>>>> fb785cbb (Initial commit)
     {
         if ( ! empty($this->buildStack)) {
             $previous = implode(', ', $this->buildStack);
@@ -945,7 +1200,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return array
      */
+<<<<<<< HEAD
     protected function getCallbacksForType(string $abstract, $object, array $callbacksPerType): array
+=======
+    protected function getCallbacksForType($abstract, $object, array $callbacksPerType)
+>>>>>>> fb785cbb (Initial commit)
     {
         $results = [];
 
@@ -994,16 +1253,32 @@ class Container implements ArrayAccess, ContainerInterface
 
     /**
      * Get the container's bindings.
+<<<<<<< HEAD
      */
     public function getBindings(): array
+=======
+     *
+     * @return array
+     */
+    public function getBindings()
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->bindings;
     }
 
     /**
      * Get the alias for an abstract if available.
+<<<<<<< HEAD
      */
     public function getAlias(string $abstract): string
+=======
+     *
+     * @param string $abstract
+     *
+     * @return string
+     */
+    public function getAlias($abstract)
+>>>>>>> fb785cbb (Initial commit)
     {
         if ( ! isset($this->aliases[$abstract])) {
             return $abstract;
@@ -1014,6 +1289,7 @@ class Container implements ArrayAccess, ContainerInterface
 
     /**
      * Get the extender callbacks for a given type.
+<<<<<<< HEAD
      */
     protected function getExtenders(string $abstract): array
     {
@@ -1034,12 +1310,44 @@ class Container implements ArrayAccess, ContainerInterface
 
     /**
      * Drop all the stale instances and aliases.
+=======
+     *
+     * @param string $abstract
+     *
+     * @return array
+     */
+    protected function getExtenders($abstract)
+    {
+        $abstract = $this->getAlias($abstract);
+
+        return isset($this->extenders[$abstract]) ? $this->extenders[$abstract] : [];
+    }
+
+    /**
+     * Remove all of the extender callbacks for a given type.
+>>>>>>> fb785cbb (Initial commit)
      *
      * @param string $abstract
      *
      * @return void
      */
+<<<<<<< HEAD
     protected function dropStaleInstances(string $abstract)
+=======
+    public function forgetExtenders($abstract)
+    {
+        unset($this->extenders[$this->getAlias($abstract)]);
+    }
+
+    /**
+     * Drop all of the stale instances and aliases.
+     *
+     * @param string $abstract
+     *
+     * @return void
+     */
+    protected function dropStaleInstances($abstract)
+>>>>>>> fb785cbb (Initial commit)
     {
         unset($this->instances[$abstract], $this->aliases[$abstract]);
     }
@@ -1047,15 +1355,27 @@ class Container implements ArrayAccess, ContainerInterface
     /**
      * Remove a resolved instance from the instance cache.
      *
+<<<<<<< HEAD
      * @return void
      */
     public function forgetInstance(string $abstract)
+=======
+     * @param string $abstract
+     *
+     * @return void
+     */
+    public function forgetInstance($abstract)
+>>>>>>> fb785cbb (Initial commit)
     {
         unset($this->instances[$abstract]);
     }
 
     /**
+<<<<<<< HEAD
      * Clear all the instances from the container.
+=======
+     * Clear all of the instances from the container.
+>>>>>>> fb785cbb (Initial commit)
      *
      * @return void
      */
@@ -1114,7 +1434,11 @@ class Container implements ArrayAccess, ContainerInterface
     {
         $this->bind(
             $key,
+<<<<<<< HEAD
             $value instanceof Closure ? $value : static function () use ($value) {
+=======
+            $value instanceof Closure ? $value : function () use ($value) {
+>>>>>>> fb785cbb (Initial commit)
                 return $value;
             }
         );
@@ -1139,7 +1463,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return mixed
      */
+<<<<<<< HEAD
     public function __get(string $key)
+=======
+    public function __get($key)
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this[$key];
     }
@@ -1152,7 +1480,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return void
      */
+<<<<<<< HEAD
     public function __set(string $key, $value)
+=======
+    public function __set($key, $value)
+>>>>>>> fb785cbb (Initial commit)
     {
         $this[$key] = $value;
     }
@@ -1164,7 +1496,11 @@ class Container implements ArrayAccess, ContainerInterface
      *
      * @return bool
      */
+<<<<<<< HEAD
     public function __isset($key): bool
+=======
+    public function __isset($key)
+>>>>>>> fb785cbb (Initial commit)
     {
         return isset($this[$key]);
     }

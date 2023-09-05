@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Selectmenu 1.13.2
+=======
+ * jQuery UI Selectmenu 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -38,7 +42,11 @@
 "use strict";
 
 return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	defaultElement: "<select>",
 	options: {
 		appendTo: null,
@@ -227,7 +235,11 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 		this.menuInstance.refresh();
 		this.menuItems = this.menu.find( "li" )
 			.not( ".ui-selectmenu-optgroup" )
+<<<<<<< HEAD
 				.find( ".ui-menu-item-wrapper" );
+=======
+			.find( ".ui-menu-item-wrapper" );
+>>>>>>> fb785cbb (Initial commit)
 
 		this._rendered = true;
 
@@ -403,7 +415,11 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 			selection.removeAllRanges();
 			selection.addRange( this.range );
 
+<<<<<<< HEAD
 		// Support: IE8
+=======
+			// Support: IE8
+>>>>>>> fb785cbb (Initial commit)
 		} else {
 			this.range.select();
 		}
@@ -411,7 +427,11 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 		// Support: IE
 		// Setting the text selection kills the button focus in IE, but
 		// restoring the focus doesn't kill the selection.
+<<<<<<< HEAD
 		this.button.trigger( "focus" );
+=======
+		this.button.focus();
+>>>>>>> fb785cbb (Initial commit)
 	},
 
 	_documentClick: {
@@ -439,7 +459,11 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 					this.range = selection.getRangeAt( 0 );
 				}
 
+<<<<<<< HEAD
 			// Support: IE8
+=======
+				// Support: IE8
+>>>>>>> fb785cbb (Initial commit)
 			} else {
 				this.range = document.selection.createRange();
 			}
@@ -453,6 +477,7 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 		keydown: function( event ) {
 			var preventDefault = true;
 			switch ( event.keyCode ) {
+<<<<<<< HEAD
 			case $.ui.keyCode.TAB:
 			case $.ui.keyCode.ESCAPE:
 				this.close( event );
@@ -501,6 +526,56 @@ return $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 			default:
 				this.menu.trigger( event );
 				preventDefault = false;
+=======
+				case $.ui.keyCode.TAB:
+				case $.ui.keyCode.ESCAPE:
+					this.close( event );
+					preventDefault = false;
+					break;
+				case $.ui.keyCode.ENTER:
+					if ( this.isOpen ) {
+						this._selectFocusedItem( event );
+					}
+					break;
+				case $.ui.keyCode.UP:
+					if ( event.altKey ) {
+						this._toggle( event );
+					} else {
+						this._move( "prev", event );
+					}
+					break;
+				case $.ui.keyCode.DOWN:
+					if ( event.altKey ) {
+						this._toggle( event );
+					} else {
+						this._move( "next", event );
+					}
+					break;
+				case $.ui.keyCode.SPACE:
+					if ( this.isOpen ) {
+						this._selectFocusedItem( event );
+					} else {
+						this._toggle( event );
+					}
+					break;
+				case $.ui.keyCode.LEFT:
+					this._move( "prev", event );
+					break;
+				case $.ui.keyCode.RIGHT:
+					this._move( "next", event );
+					break;
+				case $.ui.keyCode.HOME:
+				case $.ui.keyCode.PAGE_UP:
+					this._move( "first", event );
+					break;
+				case $.ui.keyCode.END:
+				case $.ui.keyCode.PAGE_DOWN:
+					this._move( "last", event );
+					break;
+				default:
+					this.menu.trigger( event );
+					preventDefault = false;
+>>>>>>> fb785cbb (Initial commit)
 			}
 
 			if ( preventDefault ) {

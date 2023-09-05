@@ -102,10 +102,17 @@ class WP_REST_Block_Pattern_Categories_Controller extends WP_REST_Controller {
 	 */
 	public function prepare_item_for_response( $item, $request ) {
 		$fields = $this->get_fields_for_response( $request );
+<<<<<<< HEAD
 		$keys   = array( 'name', 'label', 'description' );
 		$data   = array();
 		foreach ( $keys as $key ) {
 			if ( isset( $item[ $key ] ) && rest_is_field_included( $key, $fields ) ) {
+=======
+		$keys   = array( 'name', 'label' );
+		$data   = array();
+		foreach ( $keys as $key ) {
+			if ( rest_is_field_included( $key, $fields ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				$data[ $key ] = $item[ $key ];
 			}
 		}
@@ -130,24 +137,35 @@ class WP_REST_Block_Pattern_Categories_Controller extends WP_REST_Controller {
 			'title'      => 'block-pattern-category',
 			'type'       => 'object',
 			'properties' => array(
+<<<<<<< HEAD
 				'name'        => array(
+=======
+				'name'  => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'The category name.' ),
 					'type'        => 'string',
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
+<<<<<<< HEAD
 				'label'       => array(
+=======
+				'label' => array(
+>>>>>>> fb785cbb (Initial commit)
 					'description' => __( 'The category label, in human readable format.' ),
 					'type'        => 'string',
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
+<<<<<<< HEAD
 				'description' => array(
 					'description' => __( 'The category description, in human readable format.' ),
 					'type'        => 'string',
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
+=======
+>>>>>>> fb785cbb (Initial commit)
 			),
 		);
 

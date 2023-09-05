@@ -6,7 +6,11 @@
  * Description: The most robust, flexible, and intuitive way to accept donations on WordPress.
  * Author: GiveWP
  * Author URI: https://givewp.com/
+<<<<<<< HEAD
  * Version: 2.25.0
+=======
+ * Version: 2.21.4
+>>>>>>> fb785cbb (Initial commit)
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Text Domain: give
@@ -55,6 +59,7 @@ use Give\Donors\Repositories\DonorRepositoryProxy;
 use Give\Donors\ServiceProvider as DonorsServiceProvider;
 use Give\Form\LegacyConsumer\ServiceProvider as FormLegacyConsumerServiceProvider;
 use Give\Form\Templates;
+<<<<<<< HEAD
 use Give\Framework\Database\ServiceProvider as DatabaseServiceProvider;
 use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
 use Give\Framework\Exceptions\UncaughtExceptionLogger;
@@ -62,6 +67,11 @@ use Give\Framework\Http\ServiceProvider as HttpServiceProvider;
 use Give\Framework\Migrations\MigrationsServiceProvider;
 use Give\Framework\PaymentGateways\PaymentGatewayRegister;
 use Give\Framework\ValidationRules\ValidationRulesServiceProvider;
+=======
+use Give\Framework\Exceptions\UncaughtExceptionLogger;
+use Give\Framework\Migrations\MigrationsServiceProvider;
+use Give\Framework\PaymentGateways\PaymentGatewayRegister;
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\WordPressShims\ServiceProvider as WordPressShimsServiceProvider;
 use Give\LegacySubscriptions\ServiceProvider as LegacySubscriptionsServiceProvider;
 use Give\License\LicenseServiceProvider;
@@ -72,7 +82,10 @@ use Give\PaymentGateways\ServiceProvider as PaymentGatewaysServiceProvider;
 use Give\Promotions\ServiceProvider as PromotionsServiceProvider;
 use Give\Revenue\RevenueServiceProvider;
 use Give\Route\Form as FormRoute;
+<<<<<<< HEAD
 use Give\ServiceProviders\GlobalStyles as GlobalStylesServiceProvider;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\ServiceProviders\LegacyServiceProvider;
 use Give\ServiceProviders\Onboarding;
 use Give\ServiceProviders\PaymentGateways;
@@ -83,7 +96,10 @@ use Give\Subscriptions\Repositories\SubscriptionRepository;
 use Give\Subscriptions\ServiceProvider as SubscriptionServiceProvider;
 use Give\TestData\ServiceProvider as TestDataServiceProvider;
 use Give\Tracking\TrackingServiceProvider;
+<<<<<<< HEAD
 use Give\VendorOverrides\Validation\ValidationServiceProvider;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 // Exit if accessed directly.
 if (!defined('ABSPATH')) {
@@ -123,7 +139,11 @@ if (!defined('ABSPATH')) {
  * @property-read DonationRepository $donations
  * @property-read DonorRepositoryProxy $donors
  * @property-read SubscriptionRepository $subscriptions
+<<<<<<< HEAD
  * @property-read DonationFormsRepository $donationForms
+=======
+ * @property-read DonationFormsRepository $donationFormsRepository
+>>>>>>> fb785cbb (Initial commit)
  * @property-read Profile $donorDashboard
  * @property-read TabsRegister $donorDashboardTabs
  * @property-read Give_Recurring_DB_Subscription_Meta $subscription_meta
@@ -170,9 +190,14 @@ final class Give
     private $container;
 
     /**
+<<<<<<< HEAD
      * @since 2.25.0 added HttpServiceProvider
      * @since      2.19.6 added Donors, Donations, and Subscriptions
      * @since      2.8.0
+=======
+     * @since 2.19.6 added Donors, Donations, and Subscriptions
+     * @since 2.8.0
+>>>>>>> fb785cbb (Initial commit)
      *
      * @var array Array of Service Providers to load
      */
@@ -204,11 +229,14 @@ final class Give
         PromotionsServiceProvider::class,
         LegacySubscriptionsServiceProvider::class,
         WordPressShimsServiceProvider::class,
+<<<<<<< HEAD
         DatabaseServiceProvider::class,
         GlobalStylesServiceProvider::class,
         ValidationServiceProvider::class,
         ValidationRulesServiceProvider::class,
         HttpServiceProvider::class,
+=======
+>>>>>>> fb785cbb (Initial commit)
     ];
 
     /**
@@ -312,7 +340,11 @@ final class Give
     {
         // Plugin version.
         if (!defined('GIVE_VERSION')) {
+<<<<<<< HEAD
             define('GIVE_VERSION', '2.25.0');
+=======
+            define('GIVE_VERSION', '2.21.4');
+>>>>>>> fb785cbb (Initial commit)
         }
 
         // Plugin Root File.
@@ -486,6 +518,7 @@ final class Give
     }
 
     /**
+<<<<<<< HEAD
      * Retrieves the underlying container instance. This isn't usually necessary, but sometimes we want to pass along
      * the container itself.
      *
@@ -497,6 +530,8 @@ final class Give
     }
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * Sets up the Exception Handler to catch and handle uncaught exceptions
      *
      * @since 2.11.1
@@ -541,6 +576,9 @@ function give($abstract = null)
 }
 
 require __DIR__ . '/vendor/autoload.php';
+<<<<<<< HEAD
 require __DIR__ . '/vendor/vendor-prefixed/autoload.php';
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 give()->boot();

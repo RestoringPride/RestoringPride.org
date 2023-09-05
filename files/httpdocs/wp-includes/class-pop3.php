@@ -11,7 +11,11 @@
  * POP3 class
  *
  * @copyright 1999-2011 The SquirrelMail Project Team
+<<<<<<< HEAD
  * @license https://opensource.org/licenses/gpl-license.php GNU Public License
+=======
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+>>>>>>> fb785cbb (Initial commit)
  * @package plugins
  * @subpackage mail_fetch
  */
@@ -59,9 +63,13 @@ class POP3 {
         if(!empty($timeout)) {
             settype($timeout,"integer");
             $this->TIMEOUT = $timeout;
+<<<<<<< HEAD
             if(function_exists("set_time_limit")){
                 set_time_limit($timeout);
             }
+=======
+            set_time_limit($timeout);
+>>>>>>> fb785cbb (Initial commit)
         }
         return true;
     }
@@ -74,9 +82,13 @@ class POP3 {
 	}
 
     function update_timer () {
+<<<<<<< HEAD
         if(function_exists("set_time_limit")){
             set_time_limit($this->TIMEOUT);
         }
+=======
+        set_time_limit($this->TIMEOUT);
+>>>>>>> fb785cbb (Initial commit)
         return true;
     }
 
@@ -447,7 +459,11 @@ class POP3 {
         //  Sends a user defined command string to the
         //  POP server and returns the results. Useful for
         //  non-compliant or custom POP servers.
+<<<<<<< HEAD
         //  Do NOT include the \r\n as part of your command
+=======
+        //  Do NOT includ the \r\n as part of your command
+>>>>>>> fb785cbb (Initial commit)
         //  string - it will be appended automatically.
 
         //  The return value is a standard fgets() call, which

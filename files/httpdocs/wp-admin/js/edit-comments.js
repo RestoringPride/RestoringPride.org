@@ -1225,7 +1225,11 @@ window.commentReply = {
 	discardCommentChanges: function() {
 		var editRow = $( '#replyrow' );
 
+<<<<<<< HEAD
 		if  ( '' === $( '#replycontent', editRow ).val() || this.originalContent === $( '#replycontent', editRow ).val() ) {
+=======
+		if  ( this.originalContent === $( '#replycontent', editRow ).val() ) {
+>>>>>>> fb785cbb (Initial commit)
 			return true;
 		}
 

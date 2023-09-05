@@ -101,12 +101,21 @@ class WP_Widget_RSS extends WP_Widget {
 			/**
 			 * Filters the classic RSS widget's feed icon link.
 			 *
+<<<<<<< HEAD
 			 * Themes can remove the icon link by using `add_filter( 'rss_widget_feed_link', '__return_empty_string' );`.
 			 *
 			 * @since 5.9.0
 			 *
 			 * @param string|false $feed_link HTML for link to RSS feed.
 			 * @param array        $instance  Array of settings for the current widget.
+=======
+			 * Themes can remove the icon link by using `add_filter( 'rss_widget_feed_link', '__return_false' );`.
+			 *
+			 * @since 5.9.0
+			 *
+			 * @param string $feed_link HTML for link to RSS feed.
+			 * @param array  $instance  Array of settings for the current widget.
+>>>>>>> fb785cbb (Initial commit)
 			 */
 			$feed_link = apply_filters( 'rss_widget_feed_link', $feed_link, $instance );
 

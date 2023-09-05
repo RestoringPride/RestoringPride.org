@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Checkboxradio 1.13.2
+=======
+ * jQuery UI Checkboxradio 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -36,7 +40,11 @@
 "use strict";
 
 $.widget( "ui.checkboxradio", [ $.ui.formResetMixin, {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	options: {
 		disabled: null,
 		label: null,
@@ -48,7 +56,12 @@ $.widget( "ui.checkboxradio", [ $.ui.formResetMixin, {
 	},
 
 	_getCreateOptions: function() {
+<<<<<<< HEAD
 		var disabled, labels, labelContents;
+=======
+		var disabled, labels;
+		var that = this;
+>>>>>>> fb785cbb (Initial commit)
 		var options = this._super() || {};
 
 		// We read the type here, because it makes more sense to throw a element type error first,
@@ -68,6 +81,7 @@ $.widget( "ui.checkboxradio", [ $.ui.formResetMixin, {
 
 		// We need to get the label text but this may also need to make sure it does not contain the
 		// input itself.
+<<<<<<< HEAD
 		// The label contents could be text, html, or a mix. We wrap all elements
 		// and read the wrapper's `innerHTML` to get a string representation of
 		// the label, without the input as part of it.
@@ -80,6 +94,14 @@ $.widget( "ui.checkboxradio", [ $.ui.formResetMixin, {
 				.parent()
 				.html();
 		}
+=======
+		this.label.contents().not( this.element[ 0 ] ).each( function() {
+
+			// The label contents could be text, html, or a mix. We concat each element to get a
+			// string representation of the label, without the input as part of it.
+			that.originalLabel += this.nodeType === 3 ? $( this ).text() : this.outerHTML;
+		} );
+>>>>>>> fb785cbb (Initial commit)
 
 		// Set the label option if we found label text
 		if ( this.originalLabel ) {

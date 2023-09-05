@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * clipboard.js v2.0.11
+=======
+ * clipboard.js v2.0.10
+>>>>>>> fb785cbb (Initial commit)
  * https://clipboardjs.com/
  *
  * Licensed MIT © Zeno Rocha
@@ -95,6 +99,7 @@ function createFakeElement(value) {
 
 
 /**
+<<<<<<< HEAD
  * Create fake copy action wrapper using a fake element.
  * @param {String} target
  * @param {Object} options
@@ -110,13 +115,18 @@ var fakeCopyAction = function fakeCopyAction(value, options) {
   return selectedText;
 };
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Copy action wrapper.
  * @param {String|HTMLElement} target
  * @param {Object} options
  * @return {String}
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 var ClipboardActionCopy = function ClipboardActionCopy(target) {
   var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
     container: document.body
@@ -124,10 +134,18 @@ var ClipboardActionCopy = function ClipboardActionCopy(target) {
   var selectedText = '';
 
   if (typeof target === 'string') {
+<<<<<<< HEAD
     selectedText = fakeCopyAction(target, options);
   } else if (target instanceof HTMLInputElement && !['text', 'search', 'url', 'tel', 'password'].includes(target === null || target === void 0 ? void 0 : target.type)) {
     // If input type doesn't support `setSelectionRange`. Simulate it. https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
     selectedText = fakeCopyAction(target.value, options);
+=======
+    var fakeElement = createFakeElement(target);
+    options.container.appendChild(fakeElement);
+    selectedText = select_default()(fakeElement);
+    command('copy');
+    fakeElement.remove();
+>>>>>>> fb785cbb (Initial commit)
   } else {
     selectedText = select_default()(target);
     command('copy');
@@ -319,6 +337,10 @@ var Clipboard = /*#__PURE__*/function (_Emitter) {
             trigger.focus();
           }
 
+<<<<<<< HEAD
+=======
+          document.activeElement.blur();
+>>>>>>> fb785cbb (Initial commit)
           window.getSelection().removeAllRanges();
         }
       });

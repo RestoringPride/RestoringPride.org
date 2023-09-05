@@ -30,6 +30,7 @@
 					}
 				]
 		},
+<<<<<<< HEAD
 		"spacing": {
 			"spacingSizes": [
 				{
@@ -37,6 +38,8 @@
 				}
 			]
 		},
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"blocks": {
 			"*": {
 				"typography": {
@@ -62,6 +65,7 @@
 							"name": "Gradient name"
 						}
 					]
+<<<<<<< HEAD
 				},
 				"spacing": {
 					"spacingSizes": [
@@ -69,6 +73,8 @@
 							"name": "Space size name"
 						}
 					]
+=======
+>>>>>>> fb785cbb (Initial commit)
 				}
 			}
 		}

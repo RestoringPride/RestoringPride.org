@@ -12,7 +12,10 @@ use WPSEO_Language_Utils;
 use WPSEO_Meta;
 use WPSEO_Metabox_Analysis_Readability;
 use WPSEO_Metabox_Analysis_SEO;
+<<<<<<< HEAD
 use WPSEO_Metabox_Analysis_Inclusive_Language;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use WPSEO_Metabox_Formatter;
 use WPSEO_Post_Metabox_Formatter;
 use WPSEO_Replace_Vars;
@@ -93,6 +96,7 @@ class Elementor implements Integration_Interface {
 	protected $readability_analysis;
 
 	/**
+<<<<<<< HEAD
 	 * Helper to determine whether or not the inclusive language analysis is enabled.
 	 *
 	 * @var WPSEO_Metabox_Analysis_Inclusive_Language
@@ -100,6 +104,8 @@ class Elementor implements Integration_Interface {
 	protected $inclusive_language_analysis;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Represents the estimated_reading_time_conditional.
 	 *
 	 * @var Estimated_Reading_Time_Conditional
@@ -136,7 +142,10 @@ class Elementor implements Integration_Interface {
 
 		$this->seo_analysis                       = new WPSEO_Metabox_Analysis_SEO();
 		$this->readability_analysis               = new WPSEO_Metabox_Analysis_Readability();
+<<<<<<< HEAD
 		$this->inclusive_language_analysis        = new WPSEO_Metabox_Analysis_Inclusive_Language();
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$this->social_is_enabled                  = $this->options->get( 'opengraph', false ) || $this->options->get( 'twitter', false );
 		$this->is_advanced_metadata_enabled       = $this->capability->current_user_can( 'wpseo_edit_advanced_metadata' ) || $this->options->get( 'disableadvanced_meta' ) === false;
 		$this->estimated_reading_time_conditional = $estimated_reading_time_conditional;
@@ -247,8 +256,13 @@ class Elementor implements Integration_Interface {
 
 		$post_id = \filter_input( \INPUT_POST, 'post_id', \FILTER_SANITIZE_NUMBER_INT );
 
+<<<<<<< HEAD
 		if ( ! \current_user_can( 'edit_post', $post_id ) ) {
 			\wp_send_json_error( 'Forbidden', 403 );
+=======
+		if ( ! \current_user_can( 'manage_options' ) ) {
+			\wp_send_json_error( 'Unauthorized', 401 );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		\check_ajax_referer( 'wpseo_elementor_save', '_wpseo_elementor_nonce' );
@@ -328,8 +342,12 @@ class Elementor implements Integration_Interface {
 		}
 
 		// Saving the WP post to save the slug.
+<<<<<<< HEAD
 		// phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged -- This deprecation will be addressed later.
 		$slug = \filter_input( \INPUT_POST, WPSEO_Meta::$form_prefix . 'slug', @\FILTER_SANITIZE_STRING );
+=======
+		$slug = \filter_input( \INPUT_POST, WPSEO_Meta::$form_prefix . 'slug', \FILTER_SANITIZE_STRING );
+>>>>>>> fb785cbb (Initial commit)
 		if ( $post->post_name !== $slug ) {
 			$post_array              = $post->to_array();
 			$post_array['post_name'] = $slug;
@@ -369,10 +387,13 @@ class Elementor implements Integration_Interface {
 			return true;
 		}
 
+<<<<<<< HEAD
 		if ( $key === 'inclusive_language_score' && ! $this->inclusive_language_analysis->is_enabled() ) {
 			return true;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return false;
 	}
 
@@ -395,6 +416,10 @@ class Elementor implements Integration_Interface {
 		$this->asset_manager->enqueue_style( 'admin-global' );
 		$this->asset_manager->enqueue_style( 'metabox-css' );
 		$this->asset_manager->enqueue_style( 'scoring' );
+<<<<<<< HEAD
+=======
+		$this->asset_manager->enqueue_style( 'select2' );
+>>>>>>> fb785cbb (Initial commit)
 		$this->asset_manager->enqueue_style( 'monorepo' );
 		$this->asset_manager->enqueue_style( 'admin-css' );
 		$this->asset_manager->enqueue_style( 'elementor' );
@@ -718,6 +743,7 @@ class Elementor implements Integration_Interface {
 
 		$custom_fields = \get_post_custom( $post->ID );
 
+<<<<<<< HEAD
 		// Simply concatenate all fields containing replace vars so we can handle them all with a single regex find.
 		$replace_vars_fields = \implode(
 			' ',
@@ -729,17 +755,22 @@ class Elementor implements Integration_Interface {
 
 		\preg_match_all( '/%%cf_([A-Za-z0-9_]+)%%/', $replace_vars_fields, $matches );
 		$fields_to_include = $matches[1];
+=======
+>>>>>>> fb785cbb (Initial commit)
 		foreach ( $custom_fields as $custom_field_name => $custom_field ) {
 			// Skip private custom fields.
 			if ( \substr( $custom_field_name, 0, 1 ) === '_' ) {
 				continue;
 			}
 
+<<<<<<< HEAD
 			// Skip custom fields that are not used, new ones will be fetched dynamically.
 			if ( ! \in_array( $custom_field_name, $fields_to_include, true ) ) {
 				continue;
 			}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			// Skip custom field values that are serialized.
 			if ( \is_serialized( $custom_field[0] ) ) {
 				continue;

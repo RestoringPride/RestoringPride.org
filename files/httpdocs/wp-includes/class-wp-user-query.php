@@ -14,7 +14,10 @@
  *
  * @see WP_User_Query::prepare_query() for information on accepted arguments.
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_User_Query {
 
 	/**
@@ -141,8 +144,13 @@ class WP_User_Query {
 	 * @since 5.3.0 Introduced the 'meta_type_key' parameter.
 	 * @since 5.9.0 Added 'capability', 'capability__in', and 'capability__not_in' parameters.
 	 *
+<<<<<<< HEAD
 	 * @global wpdb     $wpdb     WordPress database abstraction object.
 	 * @global WP_Roles $wp_roles WordPress role management object.
+=======
+	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global int  $blog_id
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param string|array $query {
 	 *     Optional. Array or string of Query parameters.
@@ -158,6 +166,7 @@ class WP_User_Query {
 	 *     @type string|string[] $meta_key            Meta key or keys to filter by.
 	 *     @type string|string[] $meta_value          Meta value or values to filter by.
 	 *     @type string          $meta_compare        MySQL operator used for comparing the meta value.
+<<<<<<< HEAD
 	 *                                                See WP_Meta_Query::__construct() for accepted values and default value.
 	 *     @type string          $meta_compare_key    MySQL operator used for comparing the meta key.
 	 *                                                See WP_Meta_Query::__construct() for accepted values and default value.
@@ -167,6 +176,17 @@ class WP_User_Query {
 	 *                                                See WP_Meta_Query::__construct() for accepted values and default value.
 	 *     @type array           $meta_query          An associative array of WP_Meta_Query arguments.
 	 *                                                See WP_Meta_Query::__construct() for accepted values.
+=======
+	 *                                                See WP_Meta_Query::__construct for accepted values and default value.
+	 *     @type string          $meta_compare_key    MySQL operator used for comparing the meta key.
+	 *                                                See WP_Meta_Query::__construct for accepted values and default value.
+	 *     @type string          $meta_type           MySQL data type that the meta_value column will be CAST to for comparisons.
+	 *                                                See WP_Meta_Query::__construct for accepted values and default value.
+	 *     @type string          $meta_type_key       MySQL data type that the meta_key column will be CAST to for comparisons.
+	 *                                                See WP_Meta_Query::__construct for accepted values and default value.
+	 *     @type array           $meta_query          An associative array of WP_Meta_Query arguments.
+	 *                                                See WP_Meta_Query::__construct for accepted values.
+>>>>>>> fb785cbb (Initial commit)
 	 *     @type string|string[] $capability          An array or a comma-separated list of capability names that users must match
 	 *                                                to be included in results. Note that this is an inclusive list: users
 	 *                                                must match *each* capability.
@@ -236,8 +256,13 @@ class WP_User_Query {
 	 *                                                - 'user_status'
 	 *                                                - 'spam' (only available on multisite installs)
 	 *                                                - 'deleted' (only available on multisite installs)
+<<<<<<< HEAD
 	 *                                                - 'all' for all fields and loads user meta.
 	 *                                                - 'all_with_meta' Deprecated. Use 'all'.
+=======
+	 *                                                - 'all' for all fields
+	 *                                                - 'all_with_meta' to include meta fields.
+>>>>>>> fb785cbb (Initial commit)
 	 *                                                Default 'all'.
 	 *     @type string          $who                 Type of users to query. Accepts 'authors'.
 	 *                                                Default empty (all users).
@@ -257,7 +282,11 @@ class WP_User_Query {
 	 * }
 	 */
 	public function prepare_query( $query = array() ) {
+<<<<<<< HEAD
 		global $wpdb, $wp_roles;
+=======
+		global $wpdb;
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( empty( $this->query_vars ) || ! empty( $query ) ) {
 			$this->query_limit = null;
@@ -311,7 +340,13 @@ class WP_User_Query {
 				$this->query_fields[] = "$wpdb->users.$field";
 			}
 			$this->query_fields = implode( ',', $this->query_fields );
+<<<<<<< HEAD
 		} elseif ( 'all_with_meta' === $qv['fields'] || 'all' === $qv['fields'] || ! in_array( $qv['fields'], $allowed_fields, true ) ) {
+=======
+		} elseif ( 'all' === $qv['fields'] ) {
+			$this->query_fields = "$wpdb->users.*";
+		} elseif ( ! in_array( $qv['fields'], $allowed_fields, true ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			$this->query_fields = "$wpdb->users.ID";
 		} else {
 			$field              = 'id' === strtolower( $qv['fields'] ) ? 'ID' : sanitize_key( $qv['fields'] );
@@ -449,6 +484,11 @@ class WP_User_Query {
 		$available_roles = array();
 
 		if ( ! empty( $qv['capability'] ) || ! empty( $qv['capability__in'] ) || ! empty( $qv['capability__not_in'] ) ) {
+<<<<<<< HEAD
+=======
+			global $wp_roles;
+
+>>>>>>> fb785cbb (Initial commit)
 			$wp_roles->for_site( $blog_id );
 			$available_roles = $wp_roles->roles;
 		}
@@ -776,6 +816,7 @@ class WP_User_Query {
 	public function query() {
 		global $wpdb;
 
+<<<<<<< HEAD
 		if ( ! did_action( 'plugins_loaded' ) ) {
 			_doing_it_wrong(
 				'WP_User_Query::query',
@@ -788,6 +829,8 @@ class WP_User_Query {
 			);
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$qv =& $this->query_vars;
 
 		/**
@@ -817,7 +860,11 @@ class WP_User_Query {
 				{$this->query_limit}
 			";
 
+<<<<<<< HEAD
 			if ( is_array( $qv['fields'] ) ) {
+=======
+			if ( is_array( $qv['fields'] ) || 'all' === $qv['fields'] ) {
+>>>>>>> fb785cbb (Initial commit)
 				$this->results = $wpdb->get_results( $this->request );
 			} else {
 				$this->results = $wpdb->get_col( $this->request );
@@ -851,6 +898,7 @@ class WP_User_Query {
 			foreach ( $this->results as $result ) {
 				$result->id = $result->ID;
 			}
+<<<<<<< HEAD
 		} elseif ( 'all_with_meta' === $qv['fields'] || 'all' === $qv['fields'] ) {
 			if ( function_exists( 'cache_users' ) ) {
 				cache_users( $this->results );
@@ -866,6 +914,21 @@ class WP_User_Query {
 			}
 
 			$this->results = $r;
+=======
+		} elseif ( 'all_with_meta' === $qv['fields'] ) {
+			cache_users( $this->results );
+
+			$r = array();
+			foreach ( $this->results as $userid ) {
+				$r[ $userid ] = new WP_User( $userid, '', $qv['blog_id'] );
+			}
+
+			$this->results = $r;
+		} elseif ( 'all' === $qv['fields'] ) {
+			foreach ( $this->results as $key => $user ) {
+				$this->results[ $key ] = new WP_User( $user, '', $qv['blog_id'] );
+			}
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 

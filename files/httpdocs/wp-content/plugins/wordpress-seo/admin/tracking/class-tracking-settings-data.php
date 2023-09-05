@@ -26,7 +26,10 @@ class WPSEO_Tracking_Settings_Data implements WPSEO_Collection {
 		'alternate_website_name',
 		'company_logo',
 		'company_name',
+<<<<<<< HEAD
 		'company_alternate_name',
+=======
+>>>>>>> fb785cbb (Initial commit)
 		'person_name',
 		'person_logo',
 		'person_logo_id',
@@ -46,7 +49,10 @@ class WPSEO_Tracking_Settings_Data implements WPSEO_Collection {
 		'open_graph_frontpage_image',
 		'open_graph_frontpage_image_id',
 		'other_social_urls',
+<<<<<<< HEAD
 		'mastodon_url',
+=======
+>>>>>>> fb785cbb (Initial commit)
 		'pinterest_url',
 		'pinterestverify',
 		'twitter_site',
@@ -56,11 +62,14 @@ class WPSEO_Tracking_Settings_Data implements WPSEO_Collection {
 		'zapier_api_key',
 		'wincher_tokens',
 		'wincher_website_id',
+<<<<<<< HEAD
 		'least_readability_ignore_list',
 		'least_seo_score_ignore_list',
 		'most_linked_ignore_list',
 		'least_linked_ignore_list',
 		'indexables_page_reading_list',
+=======
+>>>>>>> fb785cbb (Initial commit)
 	];
 
 	/**
@@ -82,7 +91,10 @@ class WPSEO_Tracking_Settings_Data implements WPSEO_Collection {
 		'environment_type',
 		'content_analysis_active',
 		'keyword_analysis_active',
+<<<<<<< HEAD
 		'inclusive_language_analysis_active',
+=======
+>>>>>>> fb785cbb (Initial commit)
 		'enable_admin_bar_menu',
 		'enable_cornerstone_content',
 		'enable_xml_sitemap',
@@ -174,7 +186,10 @@ class WPSEO_Tracking_Settings_Data implements WPSEO_Collection {
 		'twitter_card_type',
 		'youtube_url',
 		'wikipedia_url',
+<<<<<<< HEAD
 		'mastodon_url',
+=======
+>>>>>>> fb785cbb (Initial commit)
 		'indexables_indexing_completed',
 		'semrush_integration_active',
 		'semrush_tokens',
@@ -217,11 +232,15 @@ class WPSEO_Tracking_Settings_Data implements WPSEO_Collection {
 		'search_cleanup_emoji',
 		'search_cleanup_patterns',
 		'search_character_limit',
+<<<<<<< HEAD
 		'redirect_search_pretty_urls',
 		'wordproof_integration_active',
 		'indexables_overview_state',
 		'deny_search_crawling',
 		'deny_wp_json_crawling',
+=======
+		'wordproof_integration_active',
+>>>>>>> fb785cbb (Initial commit)
 	];
 
 	/**

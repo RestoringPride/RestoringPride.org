@@ -95,6 +95,7 @@ class DonorsExport extends Give_Batch_Export
             })
             ->where('donations.post_type', 'give_payment');
 
+<<<<<<< HEAD
         if ($this->searchBy === 'donor') {
             if ($this->startDate && $this->endDate) {
                 $donorQuery->whereBetween('DATE(donors.date_created)', $this->startDate, $this->endDate);
@@ -109,10 +110,28 @@ class DonorsExport extends Give_Batch_Export
             } elseif ($this->startDate) {
                 $donationQuery->where('DATE(donations.post_date)', $this->startDate, '>=');
             } elseif ($this->endDate) {
+=======
+        if($this->searchBy === 'donor') {
+            if( $this->startDate && $this->endDate ) {
+                $donorQuery->whereBetween('DATE(donors.date_created)', $this->startDate, $this->endDate);
+            } elseif( $this->startDate ) {
+                $donorQuery->where('DATE(donors.date_created)', $this->startDate, '>=');
+            } elseif( $this->endDate ) {
+                $donorQuery->where('DATE(donors.date_created)', $this->endDate, '<=');
+            }
+        }
+        else {
+            if( $this->startDate && $this->endDate ) {
+                $donationQuery->whereBetween('DATE(donations.post_date)', $this->startDate, $this->endDate);
+            } elseif( $this->startDate ) {
+                $donationQuery->where('DATE(donations.post_date)', $this->startDate, '>=');
+            } elseif( $this->endDate ) {
+>>>>>>> fb785cbb (Initial commit)
                 $donationQuery->where('DATE(donations.post_date)', $this->endDate, '<=');
             }
         }
 
+<<<<<<< HEAD
         $donorQuery->joinRaw("JOIN ({$donationQuery->getSQL()}) AS sub ON donors.id = sub.donorId");
 
         if ($this->shouldIncludeAddress()) {
@@ -125,13 +144,33 @@ class DonorsExport extends Give_Batch_Export
                 ['_give_donor_address_billing_state_0', 'address_state'],
                 ['_give_donor_address_billing_zip_0',   'address_zip'],
                 ['_give_donor_address_billing_country_0', 'address_country']
+=======
+        $donorQuery->joinRaw( "JOIN ({$donationQuery->getSQL()}) AS sub ON donors.id = sub.donorId" );
+
+        if( $this->shouldIncludeAddress() ) {
+            $donorQuery->attachMeta('give_donormeta',
+                'donors.ID',
+                'donor_id',
+                [ '_give_donor_address_billing_line1_0', 'address_line1' ],
+                [ '_give_donor_address_billing_line2_0', 'address_line2' ],
+                [ '_give_donor_address_billing_city_0', 'address_city' ],
+                [ '_give_donor_address_billing_state_0', 'address_state' ],
+                [ '_give_donor_address_billing_country_0', 'address_country' ],
+                [ '_give_donor_address_billing_zip_0', 'address_zip' ]
+>>>>>>> fb785cbb (Initial commit)
             );
         }
 
         return $this->filterExportData(
+<<<<<<< HEAD
             array_map(function ($row) {
                 return array_intersect_key($row, $this->csv_cols());
             }, $donorQuery->getAll(ARRAY_A))
+=======
+            array_map(function( $row ) {
+                return array_intersect_key( $row, $this->csv_cols() );
+            }, $donorQuery->getAll(ARRAY_A) )
+>>>>>>> fb785cbb (Initial commit)
         );
     }
 
@@ -160,7 +199,10 @@ class DonorsExport extends Give_Batch_Export
             $columnarData = array_merge($columnarData, $columnarData[$columnName]);
             unset($columnarData[$columnName]);
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
         return $columnarData;
     }
 
@@ -171,8 +213,12 @@ class DonorsExport extends Give_Batch_Export
     {
         /**
          * @since 2.21.2
+<<<<<<< HEAD
          *
          * @param array $exportData
+=======
+         * @param $exportData
+>>>>>>> fb785cbb (Initial commit)
          */
         return apply_filters("give_export_get_data_{$this->export_type}", $exportData);
     }

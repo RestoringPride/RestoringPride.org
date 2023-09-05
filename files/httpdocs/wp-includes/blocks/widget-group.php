@@ -28,7 +28,11 @@ function render_block_core_widget_group( $attributes, $content, $block ) {
 	$html = '';
 
 	if ( ! empty( $attributes['title'] ) ) {
+<<<<<<< HEAD
 		$html .= $before_title . esc_html( $attributes['title'] ) . $after_title;
+=======
+		$html .= $before_title . $attributes['title'] . $after_title;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	$html .= '<div class="wp-widget-group__inner-blocks">';

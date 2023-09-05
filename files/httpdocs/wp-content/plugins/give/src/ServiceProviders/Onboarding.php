@@ -38,6 +38,10 @@ class Onboarding implements ServiceProvider
         give()->singleton(SetupPage::class);
         give()->singleton(WizardPage::class);
         give()->singleton(FormPreview::class);
+<<<<<<< HEAD
+=======
+        give()->bind(DonationsRedirect::class);
+>>>>>>> fb785cbb (Initial commit)
         give()->bind(SettingsRoute::class);
         give()->bind(CurrencyRoute::class);
         give()->bind(AddonsRoute::class);
@@ -103,7 +107,11 @@ class Onboarding implements ServiceProvider
         if (give_is_setting_enabled(SetupPage::getSetupPageEnabledOrDisabled())) {
             Hooks::addAction('admin_init', AdminNoticeHandler::class, 'maybeHandle');
             Hooks::addAction('admin_init', TopLevelMenuRedirect::class, 'maybeHandle');
+<<<<<<< HEAD
             Hooks::addAction('admin_menu', SetupPage::class, 'add_page', 80);
+=======
+            Hooks::addAction('admin_menu', SetupPage::class, 'add_page');
+>>>>>>> fb785cbb (Initial commit)
             Hooks::addAction('admin_enqueue_scripts', SetupPage::class, 'enqueue_scripts');
             Hooks::addAction('admin_post_dismiss_setup_page', SetupPage::class, 'dismissSetupPage');
         }
@@ -117,7 +125,12 @@ class Onboarding implements ServiceProvider
     private function registerMigrations()
     {
         give(MigrationsRegister::class)->addMigrations([
+<<<<<<< HEAD
             SetFormDonationLevelsToStrings::class,
         ]);
+=======
+                                                           SetFormDonationLevelsToStrings::class,
+                                                       ]);
+>>>>>>> fb785cbb (Initial commit)
     }
 }

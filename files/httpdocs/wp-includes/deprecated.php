@@ -741,12 +741,21 @@ function list_authors($optioncount = false, $exclude_admin = true, $show_fullnam
  * @see wp_get_post_categories()
  *
  * @param int $blogid Not Used
+<<<<<<< HEAD
  * @param int $post_id
  * @return array
  */
 function wp_get_post_cats($blogid = '1', $post_id = 0) {
 	_deprecated_function( __FUNCTION__, '2.1.0', 'wp_get_post_categories()' );
 	return wp_get_post_categories($post_id);
+=======
+ * @param int $post_ID
+ * @return array
+ */
+function wp_get_post_cats($blogid = '1', $post_ID = 0) {
+	_deprecated_function( __FUNCTION__, '2.1.0', 'wp_get_post_categories()' );
+	return wp_get_post_categories($post_ID);
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -758,6 +767,7 @@ function wp_get_post_cats($blogid = '1', $post_id = 0) {
  * @see wp_set_post_categories()
  *
  * @param int $blogid Not used
+<<<<<<< HEAD
  * @param int $post_id
  * @param array $post_categories
  * @return bool|mixed
@@ -765,6 +775,15 @@ function wp_get_post_cats($blogid = '1', $post_id = 0) {
 function wp_set_post_cats($blogid = '1', $post_id = 0, $post_categories = array()) {
 	_deprecated_function( __FUNCTION__, '2.1.0', 'wp_set_post_categories()' );
 	return wp_set_post_categories($post_id, $post_categories);
+=======
+ * @param int $post_ID
+ * @param array $post_categories
+ * @return bool|mixed
+ */
+function wp_set_post_cats($blogid = '1', $post_ID = 0, $post_categories = array()) {
+	_deprecated_function( __FUNCTION__, '2.1.0', 'wp_set_post_categories()' );
+	return wp_set_post_categories($post_ID, $post_categories);
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1150,6 +1169,7 @@ function comments_rss_link($link_text = 'Comments RSS') {
  * @see get_category_feed_link()
  *
  * @param bool $display
+<<<<<<< HEAD
  * @param int $cat_id
  * @return string
  */
@@ -1157,6 +1177,15 @@ function get_category_rss_link($display = false, $cat_id = 1) {
 	_deprecated_function( __FUNCTION__, '2.5.0', 'get_category_feed_link()' );
 
 	$link = get_category_feed_link($cat_id, 'rss2');
+=======
+ * @param int $cat_ID
+ * @return string
+ */
+function get_category_rss_link($display = false, $cat_ID = 1) {
+	_deprecated_function( __FUNCTION__, '2.5.0', 'get_category_feed_link()' );
+
+	$link = get_category_feed_link($cat_ID, 'rss2');
+>>>>>>> fb785cbb (Initial commit)
 
 	if ( $display )
 		echo $link;
@@ -1225,20 +1254,34 @@ function gzip_compression() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieve an array of comment data about comment $comment_id.
+=======
+ * Retrieve an array of comment data about comment $comment_ID.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 0.71
  * @deprecated 2.7.0 Use get_comment()
  * @see get_comment()
  *
+<<<<<<< HEAD
  * @param int $comment_id The ID of the comment
+=======
+ * @param int $comment_ID The ID of the comment
+>>>>>>> fb785cbb (Initial commit)
  * @param int $no_cache Whether to use the cache (cast to bool)
  * @param bool $include_unapproved Whether to include unapproved comments
  * @return array The comment data
  */
+<<<<<<< HEAD
 function get_commentdata( $comment_id, $no_cache = 0, $include_unapproved = false ) {
 	_deprecated_function( __FUNCTION__, '2.7.0', 'get_comment()' );
 	return get_comment($comment_id, ARRAY_A);
+=======
+function get_commentdata( $comment_ID, $no_cache = 0, $include_unapproved = false ) {
+	_deprecated_function( __FUNCTION__, '2.7.0', 'get_comment()' );
+	return get_comment($comment_ID, ARRAY_A);
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1248,12 +1291,21 @@ function get_commentdata( $comment_id, $no_cache = 0, $include_unapproved = fals
  * @deprecated 2.8.0 Use get_cat_name()
  * @see get_cat_name()
  *
+<<<<<<< HEAD
  * @param int $cat_id Category ID
  * @return string category name
  */
 function get_catname( $cat_id ) {
 	_deprecated_function( __FUNCTION__, '2.8.0', 'get_cat_name()' );
 	return get_cat_name( $cat_id );
+=======
+ * @param int $cat_ID Category ID
+ * @return string category name
+ */
+function get_catname( $cat_ID ) {
+	_deprecated_function( __FUNCTION__, '2.8.0', 'get_cat_name()' );
+	return get_cat_name( $cat_ID );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -2027,7 +2079,11 @@ function get_link( $bookmark_id, $output = OBJECT, $filter = 'raw' ) {
  * Checks and cleans a URL.
  *
  * A number of characters are removed from the URL. If the URL is for displaying
+<<<<<<< HEAD
  * (the default behavior) ampersands are also replaced. The 'clean_url' filter
+=======
+ * (the default behaviour) ampersands are also replaced. The 'clean_url' filter
+>>>>>>> fb785cbb (Initial commit)
  * is applied to the returned cleaned URL.
  *
  * @since 1.2.0
@@ -2041,7 +2097,11 @@ function get_link( $bookmark_id, $output = OBJECT, $filter = 'raw' ) {
  */
 function clean_url( $url, $protocols = null, $context = 'display' ) {
 	if ( $context == 'db' )
+<<<<<<< HEAD
 		_deprecated_function( 'clean_url( $context = \'db\' )', '3.0.0', 'sanitize_url()' );
+=======
+		_deprecated_function( 'clean_url( $context = \'db\' )', '3.0.0', 'esc_url_raw()' );
+>>>>>>> fb785cbb (Initial commit)
 	else
 		_deprecated_function( __FUNCTION__, '3.0.0', 'esc_url()' );
 	return esc_url( $url, $protocols, $context );
@@ -2530,7 +2590,11 @@ function is_term( $term, $taxonomy = '', $parent = 0 ) {
  * @return bool
  */
 function is_plugin_page() {
+<<<<<<< HEAD
 	_deprecated_function( __FUNCTION__, '3.1.0' );
+=======
+	_deprecated_function( __FUNCTION__, '3.1.0'  );
+>>>>>>> fb785cbb (Initial commit)
 
 	global $plugin_page;
 
@@ -2553,7 +2617,11 @@ function is_plugin_page() {
  * @return bool Always return True
  */
 function update_category_cache() {
+<<<<<<< HEAD
 	_deprecated_function( __FUNCTION__, '3.1.0' );
+=======
+	_deprecated_function( __FUNCTION__, '3.1.0'  );
+>>>>>>> fb785cbb (Initial commit)
 
 	return true;
 }
@@ -3631,6 +3699,7 @@ function wp_htmledit_pre($output) {
  * @deprecated 4.4.0 Use get_permalink()
  * @see get_permalink()
  *
+<<<<<<< HEAD
  * @param int|WP_Post $post Optional. Post ID or WP_Post object. Default is global $post.
  * @return string|false
  */
@@ -3638,6 +3707,15 @@ function post_permalink( $post = 0 ) {
 	_deprecated_function( __FUNCTION__, '4.4.0', 'get_permalink()' );
 
 	return get_permalink( $post );
+=======
+ * @param int|WP_Post $post_id Optional. Post ID or WP_Post object. Default is global $post.
+ * @return string|false
+ */
+function post_permalink( $post_id = 0 ) {
+	_deprecated_function( __FUNCTION__, '4.4.0', 'get_permalink()' );
+
+	return get_permalink( $post_id );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -3654,14 +3732,22 @@ function post_permalink( $post = 0 ) {
  * @param string|bool $file_path Optional. File path to write request to. Default false.
  * @param int         $red       Optional. The number of Redirects followed, Upon 5 being hit,
  *                               returns false. Default 1.
+<<<<<<< HEAD
  * @return \WpOrg\Requests\Utility\CaseInsensitiveDictionary|false Headers on success, false on failure.
+=======
+ * @return bool|string False on failure and string of headers if HEAD request.
+>>>>>>> fb785cbb (Initial commit)
  */
 function wp_get_http( $url, $file_path = false, $red = 1 ) {
 	_deprecated_function( __FUNCTION__, '4.4.0', 'WP_Http' );
 
+<<<<<<< HEAD
 	if ( function_exists( 'set_time_limit' ) ) {
 		@set_time_limit( 60 );
 	}
+=======
+	@set_time_limit( 60 );
+>>>>>>> fb785cbb (Initial commit)
 
 	if ( $red > 5 )
 		return false;
@@ -4313,6 +4399,7 @@ function wp_skip_spacing_serialization( $block_type ) {
 function wp_add_iframed_editor_assets_html() {
 	_deprecated_function( __FUNCTION__, '6.0.0' );
 }
+<<<<<<< HEAD
 
 /**
  * Retrieves thumbnail for an attachment.
@@ -4591,3 +4678,5 @@ function get_page_by_title( $page_title, $output = OBJECT, $post_type = 'page' )
 
 	return null;
 }
+=======
+>>>>>>> fb785cbb (Initial commit)

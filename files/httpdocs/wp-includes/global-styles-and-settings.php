@@ -6,7 +6,11 @@
  */
 
 /**
+<<<<<<< HEAD
  * Gets the settings resulting of merging core, theme, and user data.
+=======
+ * Function to get the settings resulting of merging core, theme, and user data.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.9.0
  *
@@ -21,10 +25,15 @@
  *                              Valid values are 'all' (core, theme, and user) or 'base' (core and theme).
  *                              If empty or unknown, 'all' is used.
  * }
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return array The settings to retrieve.
  */
 function wp_get_global_settings( $path = array(), $context = array() ) {
 	if ( ! empty( $context['block_name'] ) ) {
+<<<<<<< HEAD
 		$new_path = array( 'blocks', $context['block_name'] );
 		foreach ( $path as $subpath ) {
 			$new_path[] = $subpath;
@@ -84,12 +93,27 @@ function wp_get_global_settings( $path = array(), $context = array() ) {
 			wp_cache_set( $cache_key, $settings, $cache_group );
 		}
 	}
+=======
+		$path = array_merge( array( 'blocks', $context['block_name'] ), $path );
+	}
+
+	$origin = 'custom';
+	if ( isset( $context['origin'] ) && 'base' === $context['origin'] ) {
+		$origin = 'theme';
+	}
+
+	$settings = WP_Theme_JSON_Resolver::get_merged_data( $origin )->get_settings();
+>>>>>>> fb785cbb (Initial commit)
 
 	return _wp_array_get( $settings, $path, $settings );
 }
 
 /**
+<<<<<<< HEAD
  * Gets the styles resulting of merging core, theme, and user data.
+=======
+ * Function to get the styles resulting of merging core, theme, and user data.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.9.0
  *
@@ -104,6 +128,10 @@ function wp_get_global_settings( $path = array(), $context = array() ) {
  *                              Valid values are 'all' (core, theme, and user) or 'base' (core and theme).
  *                              If empty or unknown, 'all' is used.
  * }
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return array The styles to retrieve.
  */
 function wp_get_global_styles( $path = array(), $context = array() ) {
@@ -125,6 +153,7 @@ function wp_get_global_styles( $path = array(), $context = array() ) {
  * Returns the stylesheet resulting of merging core, theme, and user data.
  *
  * @since 5.9.0
+<<<<<<< HEAD
  * @since 6.1.0 Added 'base-layout-styles' support.
  *
  * @param array $types Optional. Types of styles to load.
@@ -163,6 +192,29 @@ function wp_get_global_stylesheet( $types = array() ) {
 	$cache_key   = 'wp_get_global_stylesheet';
 	if ( $can_use_cached ) {
 		$cached = wp_cache_get( $cache_key, $cache_group );
+=======
+ *
+ * @param array $types Types of styles to load. Optional.
+ *                     It accepts 'variables', 'styles', 'presets' as values.
+ *                     If empty, it'll load all for themes with theme.json support
+ *                     and only [ 'variables', 'presets' ] for themes without theme.json support.
+ *
+ * @return string Stylesheet.
+ */
+function wp_get_global_stylesheet( $types = array() ) {
+	// Return cached value if it can be used and exists.
+	// It's cached by theme to make sure that theme switching clears the cache.
+	$can_use_cached = (
+		( empty( $types ) ) &&
+		( ! defined( 'WP_DEBUG' ) || ! WP_DEBUG ) &&
+		( ! defined( 'SCRIPT_DEBUG' ) || ! SCRIPT_DEBUG ) &&
+		( ! defined( 'REST_REQUEST' ) || ! REST_REQUEST ) &&
+		! is_admin()
+	);
+	$transient_name = 'global_styles_' . get_stylesheet();
+	if ( $can_use_cached ) {
+		$cached = get_transient( $transient_name );
+>>>>>>> fb785cbb (Initial commit)
 		if ( $cached ) {
 			return $cached;
 		}
@@ -170,21 +222,33 @@ function wp_get_global_stylesheet( $types = array() ) {
 
 	$tree = WP_Theme_JSON_Resolver::get_merged_data();
 
+<<<<<<< HEAD
 	$supports_theme_json = wp_theme_has_theme_json();
 	if ( empty( $types ) && ! $supports_theme_json ) {
 		$types = array( 'variables', 'presets', 'base-layout-styles' );
+=======
+	$supports_theme_json = WP_Theme_JSON_Resolver::theme_has_support();
+	if ( empty( $types ) && ! $supports_theme_json ) {
+		$types = array( 'variables', 'presets' );
+>>>>>>> fb785cbb (Initial commit)
 	} elseif ( empty( $types ) ) {
 		$types = array( 'variables', 'styles', 'presets' );
 	}
 
 	/*
+<<<<<<< HEAD
 	 * If variables are part of the stylesheet, then add them.
+=======
+	 * If variables are part of the stylesheet,
+	 * we add them for all origins (default, theme, user).
+>>>>>>> fb785cbb (Initial commit)
 	 * This is so themes without a theme.json still work as before 5.9:
 	 * they can override the default presets.
 	 * See https://core.trac.wordpress.org/ticket/54782
 	 */
 	$styles_variables = '';
 	if ( in_array( 'variables', $types, true ) ) {
+<<<<<<< HEAD
 		/*
 		 * Only use the default, theme, and custom origins. Why?
 		 * Because styles for `blocks` origin are added at a later phase
@@ -193,6 +257,9 @@ function wp_get_global_stylesheet( $types = array() ) {
 		 */
 		$origins          = array( 'default', 'theme', 'custom' );
 		$styles_variables = $tree->get_stylesheet( array( 'variables' ), $origins );
+=======
+		$styles_variables = $tree->get_stylesheet( array( 'variables' ) );
+>>>>>>> fb785cbb (Initial commit)
 		$types            = array_diff( $types, array( 'variables' ) );
 	}
 
@@ -204,12 +271,15 @@ function wp_get_global_stylesheet( $types = array() ) {
 	 */
 	$styles_rest = '';
 	if ( ! empty( $types ) ) {
+<<<<<<< HEAD
 		/*
 		 * Only use the default, theme, and custom origins. Why?
 		 * Because styles for `blocks` origin are added at a later phase
 		 * (i.e. in the render cycle). Here, only the ones in use are rendered.
 		 * @see wp_add_global_styles_for_blocks
 		 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$origins = array( 'default', 'theme', 'custom' );
 		if ( ! $supports_theme_json ) {
 			$origins = array( 'default' );
@@ -218,6 +288,7 @@ function wp_get_global_stylesheet( $types = array() ) {
 	}
 
 	$stylesheet = $styles_variables . $styles_rest;
+<<<<<<< HEAD
 	if ( $can_use_cached ) {
 		wp_cache_set( $cache_key, $stylesheet, $cache_group );
 	}
@@ -274,6 +345,13 @@ function wp_get_global_styles_custom_css() {
 
 	if ( $can_use_cached ) {
 		wp_cache_set( $cache_key, $stylesheet, $cache_group );
+=======
+
+	if ( $can_use_cached ) {
+		// Cache for a minute.
+		// This cache doesn't need to be any longer, we only want to avoid spikes on high-traffic sites.
+		set_transient( $transient_name, $stylesheet, MINUTE_IN_SECONDS );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	return $stylesheet;
@@ -287,6 +365,7 @@ function wp_get_global_styles_custom_css() {
  * @return string
  */
 function wp_get_global_styles_svg_filters() {
+<<<<<<< HEAD
 	/*
 	 * Ignore cache when `WP_DEBUG` is enabled, so it doesn't interfere with the theme
 	 * developer's workflow.
@@ -298,12 +377,29 @@ function wp_get_global_styles_svg_filters() {
 	$cache_key      = 'wp_get_global_styles_svg_filters';
 	if ( $can_use_cached ) {
 		$cached = wp_cache_get( $cache_key, $cache_group );
+=======
+	// Return cached value if it can be used and exists.
+	// It's cached by theme to make sure that theme switching clears the cache.
+	$can_use_cached = (
+		( ! defined( 'WP_DEBUG' ) || ! WP_DEBUG ) &&
+		( ! defined( 'SCRIPT_DEBUG' ) || ! SCRIPT_DEBUG ) &&
+		( ! defined( 'REST_REQUEST' ) || ! REST_REQUEST ) &&
+		! is_admin()
+	);
+	$transient_name = 'global_styles_svg_filters_' . get_stylesheet();
+	if ( $can_use_cached ) {
+		$cached = get_transient( $transient_name );
+>>>>>>> fb785cbb (Initial commit)
 		if ( $cached ) {
 			return $cached;
 		}
 	}
 
+<<<<<<< HEAD
 	$supports_theme_json = wp_theme_has_theme_json();
+=======
+	$supports_theme_json = WP_Theme_JSON_Resolver::theme_has_support();
+>>>>>>> fb785cbb (Initial commit)
 
 	$origins = array( 'default', 'theme', 'custom' );
 	if ( ! $supports_theme_json ) {
@@ -314,11 +410,17 @@ function wp_get_global_styles_svg_filters() {
 	$svgs = $tree->get_svg_filters( $origins );
 
 	if ( $can_use_cached ) {
+<<<<<<< HEAD
 		wp_cache_set( $cache_key, $svgs, $cache_group );
+=======
+		// Cache for a minute, same as wp_get_global_stylesheet.
+		set_transient( $transient_name, $svgs, MINUTE_IN_SECONDS );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	return $svgs;
 }
+<<<<<<< HEAD
 
 /**
  * Adds global style rules to the inline style for each block.
@@ -426,3 +528,5 @@ function wp_clean_theme_json_cache() {
 	wp_cache_delete( 'wp_get_global_styles_custom_css', 'theme_json' );
 	WP_Theme_JSON_Resolver::clean_cached_data();
 }
+=======
+>>>>>>> fb785cbb (Initial commit)

@@ -11,6 +11,7 @@ use Yoast\WP\SEO\Config\Researcher_Languages;
 class Language_Helper {
 
 	/**
+<<<<<<< HEAD
 	 * The languages with inclusive language analysis support.
 	 *
 	 * @var string[]
@@ -18,6 +19,8 @@ class Language_Helper {
 	public static $languages_with_inclusive_language_support = [ 'en' ];
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Checks whether word form recognition is active for the used language.
 	 *
 	 * @param string $language The used language.
@@ -45,6 +48,7 @@ class Language_Helper {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks whether the given language has inclusive language support.
 	 *
 	 * @param string $language The language to check if inclusive language is supported.
@@ -56,6 +60,8 @@ class Language_Helper {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Checks whether we have a specific researcher for the current locale and returns that language.
 	 * If there is no researcher for the current locale, returns default as the researcher.
 	 *
@@ -70,6 +76,7 @@ class Language_Helper {
 		}
 		return $researcher_language;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Returns The site language code without region
@@ -80,4 +87,6 @@ class Language_Helper {
 	public function get_language() {
 		return WPSEO_Language_Utils::get_language( \get_locale() );
 	}
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

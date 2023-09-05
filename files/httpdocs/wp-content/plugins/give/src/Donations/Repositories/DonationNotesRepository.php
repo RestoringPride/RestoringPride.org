@@ -3,8 +3,11 @@
 namespace Give\Donations\Repositories;
 
 use Give\Donations\Models\DonationNote;
+<<<<<<< HEAD
 use Give\Donations\ValueObjects\DonationNoteMetaKeys;
 use Give\Donations\ValueObjects\DonationNoteType;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\Database\DB;
 use Give\Framework\Exceptions\Primitives\Exception;
 use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
@@ -52,10 +55,13 @@ class DonationNotesRepository
      */
     public function insert(DonationNote $donationNote)
     {
+<<<<<<< HEAD
         if (!$donationNote->type) {
             $donationNote->type = DonationNoteType::ADMIN();
         }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
         $this->validateDonationNote($donationNote);
 
         Hooks::doAction('givewp_donation_note_creating', $donationNote);
@@ -75,6 +81,7 @@ class DonationNotesRepository
                     'comment_parent' => $donationNote->donationId,
                     'comment_type' => 'donation',
                 ]);
+<<<<<<< HEAD
 
             $commentId = DB::last_insert_id();
 
@@ -86,6 +93,8 @@ class DonationNotesRepository
                         'meta_value' => DonationNoteType::DONOR,
                     ]);
             }
+=======
+>>>>>>> fb785cbb (Initial commit)
         } catch (Exception $exception) {
             DB::query('ROLLBACK');
 
@@ -96,7 +105,11 @@ class DonationNotesRepository
 
         DB::query('COMMIT');
 
+<<<<<<< HEAD
         $donationNote->id = $commentId;
+=======
+        $donationNote->id = DB::last_insert_id();
+>>>>>>> fb785cbb (Initial commit)
         $donationNote->createdAt = $dateCreated;
 
         Hooks::doAction('givewp_donation_note_created', $donationNote);
@@ -125,10 +138,13 @@ class DonationNotesRepository
                     'comment_parent' => $donationNote->donationId,
                     'comment_type' => 'donation',
                 ]);
+<<<<<<< HEAD
 
             if ($donationNote->isDirty('type') && $donationNote->type->isDonor()) {
                 $this->upsertDonationNoteType($donationNote);
             }
+=======
+>>>>>>> fb785cbb (Initial commit)
         } catch (Exception $exception) {
             DB::query('ROLLBACK');
 
@@ -160,10 +176,13 @@ class DonationNotesRepository
             DB::table('give_comments')
                 ->where('comment_ID', $donationNote->id)
                 ->delete();
+<<<<<<< HEAD
 
             DB::table('give_commentmeta')
                 ->where('give_comment_id', $donationNote->id)
                 ->delete();
+=======
+>>>>>>> fb785cbb (Initial commit)
         } catch (Exception $exception) {
             DB::query('ROLLBACK');
 
@@ -227,6 +246,7 @@ class DonationNotesRepository
                 ['comment_content', 'content'],
                 ['comment_date', 'createdAt']
             )
+<<<<<<< HEAD
             ->attachMeta(
                 'give_commentmeta',
                 'comment_ID',
@@ -263,4 +283,8 @@ class DonationNotesRepository
                 ]);
         }
     }
+=======
+            ->where('comment_type', 'donation');
+    }
+>>>>>>> fb785cbb (Initial commit)
 }

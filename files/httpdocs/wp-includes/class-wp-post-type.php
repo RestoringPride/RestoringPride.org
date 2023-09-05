@@ -14,7 +14,10 @@
  *
  * @see register_post_type()
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 final class WP_Post_Type {
 	/**
 	 * Post type key.
@@ -222,7 +225,11 @@ final class WP_Post_Type {
 	 * Default empty array.
 	 *
 	 * @since 4.6.0
+<<<<<<< HEAD
 	 * @var string[] $taxonomies
+=======
+	 * @var array $taxonomies
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public $taxonomies = array();
 
@@ -282,7 +289,11 @@ final class WP_Post_Type {
 	 * @link https://developer.wordpress.org/block-editor/developers/block-api/block-templates/
 	 *
 	 * @since 5.0.0
+<<<<<<< HEAD
 	 * @var array[] $template
+=======
+	 * @var array $template
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public $template = array();
 

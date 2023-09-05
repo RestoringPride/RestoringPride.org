@@ -75,7 +75,10 @@ class Schema_Generator implements Generator_Interface {
 		$pieces_to_generate = $this->filter_graph_pieces_to_generate( $pieces );
 		$graph              = $this->generate_graph( $pieces_to_generate, $context );
 		$graph              = $this->add_schema_blocks_graph_pieces( $graph, $context );
+<<<<<<< HEAD
 		$graph              = $this->finalize_graph( $graph, $context );
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 		return [
 			'@context' => 'https://schema.org',
@@ -95,7 +98,11 @@ class Schema_Generator implements Generator_Interface {
 		$pieces_to_generate = [];
 		foreach ( $graph_pieces as $piece ) {
 			$identifier = \strtolower( \str_replace( 'Yoast\WP\SEO\Generators\Schema\\', '', \get_class( $piece ) ) );
+<<<<<<< HEAD
 			if ( isset( $piece->identifier ) ) {
+=======
+			if ( \property_exists( $piece, 'identifier' ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				$identifier = $piece->identifier;
 			}
 
@@ -200,6 +207,7 @@ class Schema_Generator implements Generator_Interface {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Finalizes the schema graph after all filtering is done.
 	 *
 	 * @param array             $graph   The current schema graph.
@@ -256,6 +264,8 @@ class Schema_Generator implements Generator_Interface {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Adapts the WebPage graph piece for password-protected posts.
 	 *
 	 * It should only have certain whitelisted properties.
@@ -296,15 +306,22 @@ class Schema_Generator implements Generator_Interface {
 	protected function get_graph_pieces( $context ) {
 		if ( $context->indexable->object_type === 'post' && \post_password_required( $context->post ) ) {
 			$schema_pieces = [
+<<<<<<< HEAD
 				new Schema\WebPage(),
 				new Schema\Website(),
 				new Schema\Organization(),
+=======
+				new Schema\Organization(),
+				new Schema\Website(),
+				new Schema\WebPage(),
+>>>>>>> fb785cbb (Initial commit)
 			];
 
 			\add_filter( 'wpseo_schema_webpage', [ $this, 'protected_webpage_schema' ], 1 );
 		}
 		else {
 			$schema_pieces = [
+<<<<<<< HEAD
 				new Schema\Article(),
 				new Schema\WebPage(),
 				new Schema\Main_Image(),
@@ -312,6 +329,15 @@ class Schema_Generator implements Generator_Interface {
 				new Schema\Website(),
 				new Schema\Organization(),
 				new Schema\Person(),
+=======
+				new Schema\Organization(),
+				new Schema\Person(),
+				new Schema\Website(),
+				new Schema\Main_Image(),
+				new Schema\WebPage(),
+				new Schema\Breadcrumb(),
+				new Schema\Article(),
+>>>>>>> fb785cbb (Initial commit)
 				new Schema\Author(),
 				new Schema\FAQ(),
 				new Schema\HowTo(),

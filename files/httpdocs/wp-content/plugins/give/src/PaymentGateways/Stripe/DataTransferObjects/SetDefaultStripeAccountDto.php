@@ -6,9 +6,15 @@ namespace Give\PaymentGateways\Stripe\DataTransferObjects;
  * Class SetDefaultStripeAccountDto
  * @package Give\PaymentGateways\Stripe\DataTransferObjects
  *
+<<<<<<< HEAD
  * @since   2.13.0
  */
 final class SetDefaultStripeAccountDto
+=======
+ * @since 2.13.0
+ */
+class SetDefaultStripeAccountDto
+>>>>>>> fb785cbb (Initial commit)
 {
     /**
      * @var mixed|string

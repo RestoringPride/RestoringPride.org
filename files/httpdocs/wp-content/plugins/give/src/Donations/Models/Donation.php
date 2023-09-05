@@ -8,7 +8,10 @@ use Give\Donations\Factories\DonationFactory;
 use Give\Donations\Properties\BillingAddress;
 use Give\Donations\ValueObjects\DonationMode;
 use Give\Donations\ValueObjects\DonationStatus;
+<<<<<<< HEAD
 use Give\Donations\ValueObjects\DonationType;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Donors\Models\Donor;
 use Give\Framework\Exceptions\Primitives\Exception;
 use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
@@ -24,7 +27,10 @@ use Give\Subscriptions\Models\Subscription;
 /**
  * Class Donation
  *
+<<<<<<< HEAD
  * @since 2.23.0 add type property; remove parentId property
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @since 2.20.0 update amount type, fee recovered, and exchange rate
  * @since 2.19.6
  *
@@ -35,7 +41,10 @@ use Give\Subscriptions\Models\Subscription;
  * @property DateTime $updatedAt
  * @property DonationStatus $status
  * @property DonationMode $mode
+<<<<<<< HEAD
  * @property DonationType $type
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @property Money $amount amount charged to the gateway
  * @property Money $feeAmountRecovered
  * @property string $exchangeRate
@@ -44,6 +53,10 @@ use Give\Subscriptions\Models\Subscription;
  * @property string $firstName
  * @property string $lastName
  * @property string $email
+<<<<<<< HEAD
+=======
+ * @property int $parentId
+>>>>>>> fb785cbb (Initial commit)
  * @property int $subscriptionId
  * @property BillingAddress $billingAddress
  * @property string $purchaseKey
@@ -54,7 +67,10 @@ use Give\Subscriptions\Models\Subscription;
  * @property Donor $donor
  * @property Subscription $subscription
  * @property DonationNote[] $notes
+<<<<<<< HEAD
  * @property string $company
+=======
+>>>>>>> fb785cbb (Initial commit)
  */
 class Donation extends Model implements ModelCrud, ModelHasFactory
 {
@@ -70,7 +86,10 @@ class Donation extends Model implements ModelCrud, ModelHasFactory
         'createdAt' => DateTime::class,
         'updatedAt' => DateTime::class,
         'status' => DonationStatus::class,
+<<<<<<< HEAD
         'type' => DonationType::class,
+=======
+>>>>>>> fb785cbb (Initial commit)
         'mode' => DonationMode::class,
         'amount' => Money::class,
         'feeAmountRecovered' => Money::class,
@@ -80,12 +99,19 @@ class Donation extends Model implements ModelCrud, ModelHasFactory
         'firstName' => 'string',
         'lastName' => 'string',
         'email' => 'string',
+<<<<<<< HEAD
+=======
+        'parentId' => ['int', 0],
+>>>>>>> fb785cbb (Initial commit)
         'subscriptionId' => ['int', 0],
         'billingAddress' => BillingAddress::class,
         'anonymous' => ['bool', false],
         'levelId' => ['string', ''],
         'gatewayTransactionId' => 'string',
+<<<<<<< HEAD
         'company' => 'string',
+=======
+>>>>>>> fb785cbb (Initial commit)
     ];
 
     /**
@@ -102,7 +128,11 @@ class Donation extends Model implements ModelCrud, ModelHasFactory
      *
      * @since 2.19.6
      *
+<<<<<<< HEAD
      * @param int $id
+=======
+     * @param  int  $id
+>>>>>>> fb785cbb (Initial commit)
      *
      * @return Donation|null
      */

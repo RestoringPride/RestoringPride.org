@@ -1864,7 +1864,11 @@ class SimplePie
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Send the Content-Type header with correct encoding
+=======
+	 * Send the content-type header with correct encoding
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * This method ensures that the SimplePie-enabled page is being served with
 	 * the correct {@link http://www.iana.org/assignments/media-types/ mime-type}
@@ -1886,7 +1890,11 @@ class SimplePie
 	{
 		if (!headers_sent())
 		{
+<<<<<<< HEAD
 			$header = "Content-Type: $mime;";
+=======
+			$header = "Content-type: $mime;";
+>>>>>>> fb785cbb (Initial commit)
 			if ($this->get_encoding())
 			{
 				$header .= ' charset=' . $this->get_encoding();

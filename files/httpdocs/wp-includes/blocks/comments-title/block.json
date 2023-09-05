@@ -4,7 +4,11 @@
 	"name": "core/comments-title",
 	"title": "Comments Title",
 	"category": "theme",
+<<<<<<< HEAD
 	"ancestor": [ "core/comments" ],
+=======
+	"ancestor": [ "core/comments-query-loop" ],
+>>>>>>> fb785cbb (Initial commit)
 	"description": "Displays a title with the number of comments",
 	"textdomain": "default",
 	"usesContext": [ "postId", "postType" ],
@@ -49,12 +53,19 @@
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true,
+<<<<<<< HEAD
 			"__experimentalFontFamily": true,
 			"__experimentalFontWeight": true,
 			"__experimentalFontStyle": true,
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
+=======
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalTextTransform": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true,
 				"__experimentalFontFamily": true,

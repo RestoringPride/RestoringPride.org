@@ -599,7 +599,11 @@ class Theme_Upgrader extends WP_Upgrader {
 			$error = sprintf(
 				/* translators: 1: Current PHP version, 2: Version required by the uploaded theme. */
 				__( 'The PHP version on your server is %1$s, however the uploaded theme requires %2$s.' ),
+<<<<<<< HEAD
 				PHP_VERSION,
+=======
+				phpversion(),
+>>>>>>> fb785cbb (Initial commit)
 				$requires_php
 			);
 

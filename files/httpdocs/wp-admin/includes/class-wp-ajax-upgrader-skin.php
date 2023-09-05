@@ -19,6 +19,7 @@
 class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 
 	/**
+<<<<<<< HEAD
 	 * Plugin info.
 	 *
 	 * The Plugin_Upgrader::bulk_upgrade() method will fill this in
@@ -40,6 +41,8 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 	public $theme_info = false;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Holds the WP_Error object.
 	 *
 	 * @since 4.6.0

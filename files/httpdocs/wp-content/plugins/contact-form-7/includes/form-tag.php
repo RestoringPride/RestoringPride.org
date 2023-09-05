@@ -3,7 +3,11 @@
 /**
  * A form-tag.
  *
+<<<<<<< HEAD
  * @link https://contactform7.com/tag-syntax/#form_tag
+=======
+ * @see https://contactform7.com/tag-syntax/#form_tag
+>>>>>>> fb785cbb (Initial commit)
  */
 class WPCF7_FormTag implements ArrayAccess {
 
@@ -57,8 +61,12 @@ class WPCF7_FormTag implements ArrayAccess {
 	 *               whose value part matches this pattern will be returned.
 	 * @param bool $single Optional. If true, only the first matching option
 	 *             will be returned. Default false.
+<<<<<<< HEAD
 	 * @return string|array|bool The option value or an array of option values.
 	 *                           False if there is no option matches the pattern.
+=======
+	 * @return string|array The option value or an array of option values.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function get_option( $option_name, $pattern = '', $single = false ) {
 		$preset_patterns = array(
@@ -124,8 +132,12 @@ class WPCF7_FormTag implements ArrayAccess {
 	 *
 	 * @param string|array $default_classes Optional. Preset classes as an array
 	 *                     or a whitespace-separated list. Default empty string.
+<<<<<<< HEAD
 	 * @return string|bool A whitespace-separated list of classes.
 	 *                     False if there is no class to return.
+=======
+	 * @return string A whitespace-separated list of classes.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function get_class_option( $default_classes = '' ) {
 		if ( is_string( $default_classes ) ) {
@@ -139,10 +151,13 @@ class WPCF7_FormTag implements ArrayAccess {
 
 		$options = array_filter( array_unique( $options ) );
 
+<<<<<<< HEAD
 		if ( empty( $options ) ) {
 			return false;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return implode( ' ', $options );
 	}
 
@@ -153,7 +168,11 @@ class WPCF7_FormTag implements ArrayAccess {
 	 * @param string $default_value Optional default value.
 	 * @return string The option value.
 	 */
+<<<<<<< HEAD
 	public function get_size_option( $default_value = false ) {
+=======
+	public function get_size_option( $default_value = '' ) {
+>>>>>>> fb785cbb (Initial commit)
 		$option = $this->get_option( 'size', 'int', true );
 
 		if ( $option ) {
@@ -178,7 +197,11 @@ class WPCF7_FormTag implements ArrayAccess {
 	 * @param string $default_value Optional default value.
 	 * @return string The option value.
 	 */
+<<<<<<< HEAD
 	public function get_maxlength_option( $default_value = false ) {
+=======
+	public function get_maxlength_option( $default_value = '' ) {
+>>>>>>> fb785cbb (Initial commit)
 		$option = $this->get_option( 'maxlength', 'int', true );
 
 		if ( $option ) {
@@ -205,7 +228,11 @@ class WPCF7_FormTag implements ArrayAccess {
 	 * @param string $default_value Optional default value.
 	 * @return string The option value.
 	 */
+<<<<<<< HEAD
 	public function get_minlength_option( $default_value = false ) {
+=======
+	public function get_minlength_option( $default_value = '' ) {
+>>>>>>> fb785cbb (Initial commit)
 		$option = $this->get_option( 'minlength', 'int', true );
 
 		if ( $option ) {
@@ -222,7 +249,11 @@ class WPCF7_FormTag implements ArrayAccess {
 	 * @param string $default_value Optional default value.
 	 * @return string The option value.
 	 */
+<<<<<<< HEAD
 	public function get_cols_option( $default_value = false ) {
+=======
+	public function get_cols_option( $default_value = '' ) {
+>>>>>>> fb785cbb (Initial commit)
 		$option = $this->get_option( 'cols', 'int', true );
 
 		if ( $option ) {
@@ -249,7 +280,11 @@ class WPCF7_FormTag implements ArrayAccess {
 	 * @param string $default_value Optional default value.
 	 * @return string The option value.
 	 */
+<<<<<<< HEAD
 	public function get_rows_option( $default_value = false ) {
+=======
+	public function get_rows_option( $default_value = '' ) {
+>>>>>>> fb785cbb (Initial commit)
 		$option = $this->get_option( 'rows', 'int', true );
 
 		if ( $option ) {
@@ -517,9 +552,14 @@ class WPCF7_FormTag implements ArrayAccess {
 	/**
 	 * Assigns a value to the specified offset.
 	 *
+<<<<<<< HEAD
 	 * @link https://www.php.net/manual/en/arrayaccess.offsetset.php
 	 */
 	#[ReturnTypeWillChange]
+=======
+	 * @see https://www.php.net/manual/en/arrayaccess.offsetset.php
+	 */
+>>>>>>> fb785cbb (Initial commit)
 	public function offsetSet( $offset, $value ) {
 		if ( property_exists( __CLASS__, $offset ) ) {
 			$this->{$offset} = $value;
@@ -530,9 +570,14 @@ class WPCF7_FormTag implements ArrayAccess {
 	/**
 	 * Returns the value at specified offset.
 	 *
+<<<<<<< HEAD
 	 * @link https://www.php.net/manual/en/arrayaccess.offsetget.php
 	 */
 	#[ReturnTypeWillChange]
+=======
+	 * @see https://www.php.net/manual/en/arrayaccess.offsetget.php
+	 */
+>>>>>>> fb785cbb (Initial commit)
 	public function offsetGet( $offset ) {
 		if ( property_exists( __CLASS__, $offset ) ) {
 			return $this->{$offset};
@@ -545,9 +590,14 @@ class WPCF7_FormTag implements ArrayAccess {
 	/**
 	 * Returns true if the specified offset exists.
 	 *
+<<<<<<< HEAD
 	 * @link https://www.php.net/manual/en/arrayaccess.offsetexists.php
 	 */
 	#[ReturnTypeWillChange]
+=======
+	 * @see https://www.php.net/manual/en/arrayaccess.offsetexists.php
+	 */
+>>>>>>> fb785cbb (Initial commit)
 	public function offsetExists( $offset ) {
 		return property_exists( __CLASS__, $offset );
 	}
@@ -556,9 +606,14 @@ class WPCF7_FormTag implements ArrayAccess {
 	/**
 	 * Unsets an offset.
 	 *
+<<<<<<< HEAD
 	 * @link https://www.php.net/manual/en/arrayaccess.offsetunset.php
 	 */
 	#[ReturnTypeWillChange]
+=======
+	 * @see https://www.php.net/manual/en/arrayaccess.offsetunset.php
+	 */
+>>>>>>> fb785cbb (Initial commit)
 	public function offsetUnset( $offset ) {
 	}
 

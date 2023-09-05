@@ -19,7 +19,11 @@
 		},
 		"templateLock": {
 			"type": [ "string", "boolean" ],
+<<<<<<< HEAD
 			"enum": [ "all", "insert", "contentOnly", false ]
+=======
+			"enum": [ "all", "insert", false ]
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"supports": {
@@ -41,6 +45,7 @@
 				"padding": true
 			}
 		},
+<<<<<<< HEAD
 		"__experimentalBorder": {
 			"color": true,
 			"style": true,
@@ -64,6 +69,8 @@
 				"fontSize": true
 			}
 		},
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"__experimentalLayout": true
 	}
 }

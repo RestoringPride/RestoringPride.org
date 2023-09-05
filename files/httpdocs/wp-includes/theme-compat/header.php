@@ -43,8 +43,12 @@ _deprecated_file(
 
 <?php
 if ( is_singular() ) {
+<<<<<<< HEAD
 	wp_enqueue_script( 'comment-reply' );
 }
+=======
+	wp_enqueue_script( 'comment-reply' );}
+>>>>>>> fb785cbb (Initial commit)
 ?>
 
 <?php wp_head(); ?>

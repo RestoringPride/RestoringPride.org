@@ -17,7 +17,10 @@
  * @see WP_Customize_Manager
  * @link https://developer.wordpress.org/themes/customize-api
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Customize_Setting {
 	/**
 	 * Customizer bootstrap instance.

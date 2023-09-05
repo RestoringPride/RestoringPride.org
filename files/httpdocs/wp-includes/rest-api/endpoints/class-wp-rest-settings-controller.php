@@ -258,7 +258,11 @@ class WP_REST_Settings_Controller extends WP_REST_Controller {
 				continue;
 			}
 
+<<<<<<< HEAD
 			$rest_args['schema'] = rest_default_additional_properties_to_false( $rest_args['schema'] );
+=======
+			$rest_args['schema'] = $this->set_additional_properties_to_false( $rest_args['schema'] );
+>>>>>>> fb785cbb (Initial commit)
 
 			$rest_options[ $rest_args['name'] ] = $rest_args;
 		}
@@ -322,22 +326,48 @@ class WP_REST_Settings_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Recursively add additionalProperties = false to all objects in a schema
 	 * if no additionalProperties setting is specified.
 	 *
 	 * This is needed to restrict properties of objects in settings values to only
+=======
+	 * Recursively add additionalProperties = false to all objects in a schema.
+	 *
+	 * This is need to restrict properties of objects in settings values to only
+>>>>>>> fb785cbb (Initial commit)
 	 * registered items, as the REST API will allow additional properties by
 	 * default.
 	 *
 	 * @since 4.9.0
+<<<<<<< HEAD
 	 * @deprecated 6.1.0 Use {@see rest_default_additional_properties_to_false()} instead.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param array $schema The schema array.
 	 * @return array
 	 */
 	protected function set_additional_properties_to_false( $schema ) {
+<<<<<<< HEAD
 		_deprecated_function( __METHOD__, '6.1.0', 'rest_default_additional_properties_to_false()' );
 
 		return rest_default_additional_properties_to_false( $schema );
+=======
+		switch ( $schema['type'] ) {
+			case 'object':
+				foreach ( $schema['properties'] as $key => $child_schema ) {
+					$schema['properties'][ $key ] = $this->set_additional_properties_to_false( $child_schema );
+				}
+
+				$schema['additionalProperties'] = false;
+				break;
+			case 'array':
+				$schema['items'] = $this->set_additional_properties_to_false( $schema['items'] );
+				break;
+		}
+
+		return $schema;
+>>>>>>> fb785cbb (Initial commit)
 	}
 }

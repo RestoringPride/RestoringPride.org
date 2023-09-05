@@ -8,7 +8,11 @@
 require ABSPATH . WPINC . '/option.php';
 
 /**
+<<<<<<< HEAD
  * Converts given MySQL date string into a different format.
+=======
+ * Convert given MySQL date string into a different format.
+>>>>>>> fb785cbb (Initial commit)
  *
  *  - `$format` should be a PHP date format string.
  *  - 'U' and 'G' formats will return an integer sum of timestamp with timezone offset.
@@ -72,7 +76,11 @@ function mysql2date( $format, $date, $translate = true ) {
 function current_time( $type, $gmt = 0 ) {
 	// Don't use non-GMT timestamp, unless you know the difference and really need to.
 	if ( 'timestamp' === $type || 'U' === $type ) {
+<<<<<<< HEAD
 		return $gmt ? time() : time() + ( (int) get_option( 'gmt_offset' ) * HOUR_IN_SECONDS );
+=======
+		return $gmt ? time() : time() + (int) ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	if ( 'mysql' === $type ) {
@@ -163,6 +171,11 @@ function wp_timezone() {
  * @since 0.71
  * @since 5.3.0 Converted into a wrapper for wp_date().
  *
+<<<<<<< HEAD
+=======
+ * @global WP_Locale $wp_locale WordPress date and time locale object.
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @param string   $format                Format to display the date.
  * @param int|bool $timestamp_with_offset Optional. A sum of Unix timestamp and timezone offset
  *                                        in seconds. Default false.
@@ -262,7 +275,11 @@ function wp_date( $format, $timestamp = null, $timezone = null ) {
 		$month         = $wp_locale->get_month( $datetime->format( 'm' ) );
 		$weekday       = $wp_locale->get_weekday( $datetime->format( 'w' ) );
 
+<<<<<<< HEAD
 		for ( $i = 0; $i < $format_length; $i++ ) {
+=======
+		for ( $i = 0; $i < $format_length; $i ++ ) {
+>>>>>>> fb785cbb (Initial commit)
 			switch ( $format[ $i ] ) {
 				case 'D':
 					$new_format .= addcslashes( $wp_locale->get_weekday_abbrev( $weekday ), '\\A..Za..z' );
@@ -406,7 +423,11 @@ function wp_maybe_decline_date( $date, $format = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Converts float number to format based on the locale.
+=======
+ * Convert float number to format based on the locale.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.3.0
  *
@@ -496,7 +517,11 @@ function size_format( $bytes, $decimals = 0 ) {
 }
 
 /**
+<<<<<<< HEAD
  * Converts a duration to human readable format.
+=======
+ * Convert a duration to human readable format.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.1.0
  *
@@ -566,7 +591,11 @@ function human_readable_duration( $duration = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Gets the week start and end from the datetime or date string from MySQL.
+=======
+ * Get the week start and end from the datetime or date string from MySQL.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 0.71
  *
@@ -612,7 +641,11 @@ function get_weekstartend( $mysqlstring, $start_of_week = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Serializes data, if needed.
+=======
+ * Serialize data, if needed.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.5
  *
@@ -637,7 +670,11 @@ function maybe_serialize( $data ) {
 }
 
 /**
+<<<<<<< HEAD
  * Unserializes data only if it was serialized.
+=======
+ * Unserialize data only if it was serialized.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
@@ -653,6 +690,7 @@ function maybe_unserialize( $data ) {
 }
 
 /**
+<<<<<<< HEAD
  * Checks value to find if it was serialized.
  *
  * If $data is not a string, then returned value will always be false.
@@ -660,6 +698,14 @@ function maybe_unserialize( $data ) {
  *
  * @since 2.0.5
  * @since 6.1.0 Added Enum support.
+=======
+ * Check value to find if it was serialized.
+ *
+ * If $data is not an string, then returned value will always be false.
+ * Serialized data is always a string.
+ *
+ * @since 2.0.5
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param string $data   Value to check to see if was serialized.
  * @param bool   $strict Optional. Whether to be strict about the end of the string. Default true.
@@ -713,7 +759,10 @@ function is_serialized( $data, $strict = true ) {
 			// Or else fall through.
 		case 'a':
 		case 'O':
+<<<<<<< HEAD
 		case 'E':
+=======
+>>>>>>> fb785cbb (Initial commit)
 			return (bool) preg_match( "/^{$token}:[0-9]+:/s", $data );
 		case 'b':
 		case 'i':
@@ -725,7 +774,11 @@ function is_serialized( $data, $strict = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Checks whether serialized data is of string type.
+=======
+ * Check whether serialized data is of string type.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.5
  *
@@ -754,7 +807,11 @@ function is_serialized_string( $data ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves post title from XMLRPC XML.
+=======
+ * Retrieve post title from XMLRPC XML.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If the title element is not part of the XML, then the default post title from
  * the $post_default_title will be used instead.
@@ -777,7 +834,11 @@ function xmlrpc_getposttitle( $content ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the post category or categories from XMLRPC XML.
+=======
+ * Retrieve the post category or categories from XMLRPC XML.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If the category element is not found, then the default post category will be
  * used. The return type then would be what $post_default_category. If the
@@ -817,7 +878,11 @@ function xmlrpc_removepostdata( $content ) {
 }
 
 /**
+<<<<<<< HEAD
  * Uses RegEx to extract URLs from arbitrary content.
+=======
+ * Use RegEx to extract URLs from arbitrary content.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.7.0
  * @since 6.0.0 Fixes support for HTML entities (Trac 30580).
@@ -859,7 +924,11 @@ function wp_extract_urls( $content ) {
 }
 
 /**
+<<<<<<< HEAD
  * Checks content for video and audio links to add as enclosures.
+=======
+ * Check content for video and audio links to add as enclosures.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Will not add enclosures that have already been added and will
  * remove enclosures that are no longer in the post. This is called as
@@ -932,7 +1001,11 @@ function do_enclose( $content, $post ) {
 	 * @since 4.4.0
 	 *
 	 * @param string[] $post_links An array of enclosure links.
+<<<<<<< HEAD
 	 * @param int      $post_id    Post ID.
+=======
+	 * @param int      $post_ID    Post ID.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	$post_links = apply_filters( 'enclosure_links', $post_links, $post->ID );
 
@@ -943,8 +1016,13 @@ function do_enclose( $content, $post ) {
 
 			$headers = wp_get_http_headers( $url );
 			if ( $headers ) {
+<<<<<<< HEAD
 				$len           = isset( $headers['Content-Length'] ) ? (int) $headers['Content-Length'] : 0;
 				$type          = isset( $headers['Content-Type'] ) ? $headers['Content-Type'] : '';
+=======
+				$len           = isset( $headers['content-length'] ) ? (int) $headers['content-length'] : 0;
+				$type          = isset( $headers['content-type'] ) ? $headers['content-type'] : '';
+>>>>>>> fb785cbb (Initial commit)
 				$allowed_types = array( 'video', 'audio' );
 
 				// Check to see if we can figure out the mime type from the extension.
@@ -970,13 +1048,21 @@ function do_enclose( $content, $post ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves HTTP Headers from URL.
+=======
+ * Retrieve HTTP Headers from URL.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 1.5.1
  *
  * @param string $url        URL to retrieve HTTP headers from.
  * @param bool   $deprecated Not Used.
+<<<<<<< HEAD
  * @return \WpOrg\Requests\Utility\CaseInsensitiveDictionary|false Headers on success, false on failure.
+=======
+ * @return string|false Headers on success, false on failure.
+>>>>>>> fb785cbb (Initial commit)
  */
 function wp_get_http_headers( $url, $deprecated = false ) {
 	if ( ! empty( $deprecated ) ) {
@@ -1018,7 +1104,11 @@ function is_new_day() {
 }
 
 /**
+<<<<<<< HEAD
  * Builds URL query based on an associative and, or indexed array.
+=======
+ * Build URL query based on an associative and, or indexed array.
+>>>>>>> fb785cbb (Initial commit)
  *
  * This is a convenient function for easily building url queries. It sets the
  * separator to '&' and uses _http_build_query() function.
@@ -1049,7 +1139,11 @@ function build_query( $data ) {
  *                                Default null.
  * @param string       $sep       Optional. Argument separator; defaults to 'arg_separator.output'.
  *                                Default null.
+<<<<<<< HEAD
  * @param string       $key       Optional. Used to prefix key name. Default empty string.
+=======
+ * @param string       $key       Optional. Used to prefix key name. Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @param bool         $urlencode Optional. Whether to use urlencode() in the result. Default true.
  * @return string The query string.
  */
@@ -1267,6 +1361,7 @@ function wp_removable_query_args() {
  * @since 0.71
  * @since 5.5.0 Non-string values are left untouched.
  *
+<<<<<<< HEAD
  * @param array $input_array Array to walk while sanitizing contents.
  * @return array Sanitized $input_array.
  */
@@ -1276,12 +1371,27 @@ function add_magic_quotes( $input_array ) {
 			$input_array[ $k ] = add_magic_quotes( $v );
 		} elseif ( is_string( $v ) ) {
 			$input_array[ $k ] = addslashes( $v );
+=======
+ * @param array $array Array to walk while sanitizing contents.
+ * @return array Sanitized $array.
+ */
+function add_magic_quotes( $array ) {
+	foreach ( (array) $array as $k => $v ) {
+		if ( is_array( $v ) ) {
+			$array[ $k ] = add_magic_quotes( $v );
+		} elseif ( is_string( $v ) ) {
+			$array[ $k ] = addslashes( $v );
+>>>>>>> fb785cbb (Initial commit)
 		} else {
 			continue;
 		}
 	}
 
+<<<<<<< HEAD
 	return $input_array;
+=======
+	return $array;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1314,7 +1424,11 @@ function wp_remote_fopen( $uri ) {
 }
 
 /**
+<<<<<<< HEAD
  * Sets up the WordPress query.
+=======
+ * Set up the WordPress query.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
@@ -1335,7 +1449,11 @@ function wp( $query_vars = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the description for the HTTP status.
+=======
+ * Retrieve the description for the HTTP status.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.3.0
  * @since 3.9.0 Added status codes 418, 428, 429, 431, and 511.
@@ -1429,7 +1547,11 @@ function get_status_header_desc( $code ) {
 }
 
 /**
+<<<<<<< HEAD
  * Sets HTTP status header.
+=======
+ * Set HTTP status header.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  * @since 4.4.0 Added the `$description` parameter.
@@ -1438,7 +1560,10 @@ function get_status_header_desc( $code ) {
  *
  * @param int    $code        HTTP status code.
  * @param string $description Optional. A custom description for the HTTP status.
+<<<<<<< HEAD
  *                            Defaults to the result of get_status_header_desc() for the given code.
+=======
+>>>>>>> fb785cbb (Initial commit)
  */
 function status_header( $code, $description = '' ) {
 	if ( ! $description ) {
@@ -1472,7 +1597,11 @@ function status_header( $code, $description = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Gets the header information to prevent caching.
+=======
+ * Get the header information to prevent caching.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The several different headers cover the different ways cache prevention
  * is handled by different browsers
@@ -1495,7 +1624,16 @@ function wp_get_nocache_headers() {
 		 *
 		 * @see wp_get_nocache_headers()
 		 *
+<<<<<<< HEAD
 		 * @param array $headers Header names and field values.
+=======
+		 * @param array $headers {
+		 *     Header names and field values.
+		 *
+		 *     @type string $Expires       Expires header.
+		 *     @type string $Cache-Control Cache-Control header.
+		 * }
+>>>>>>> fb785cbb (Initial commit)
 		 */
 		$headers = (array) apply_filters( 'nocache_headers', $headers );
 	}
@@ -1504,7 +1642,11 @@ function wp_get_nocache_headers() {
 }
 
 /**
+<<<<<<< HEAD
  * Sets the headers to prevent caching for the different browsers.
+=======
+ * Set the headers to prevent caching for the different browsers.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Different browsers support different nocache headers, so several
  * headers must be sent so that all of them get the point that no
@@ -1531,7 +1673,11 @@ function nocache_headers() {
 }
 
 /**
+<<<<<<< HEAD
  * Sets the headers for caching for 10 days with JavaScript content type.
+=======
+ * Set the headers for caching for 10 days with JavaScript content type.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.1.0
  */
@@ -1544,7 +1690,11 @@ function cache_javascript_headers() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the number of database queries during the WordPress execution.
+=======
+ * Retrieve the number of database queries during the WordPress execution.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
@@ -1558,7 +1708,11 @@ function get_num_queries() {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether input is yes or no.
+=======
+ * Whether input is yes or no.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Must be 'y' to be true.
  *
@@ -1572,7 +1726,11 @@ function bool_from_yn( $yn ) {
 }
 
 /**
+<<<<<<< HEAD
  * Loads the feed template from the use of an action hook.
+=======
+ * Load the feed template from the use of an action hook.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If the feed action does not have a hook, then the function will die with a
  * message telling the visitor that the feed is not valid.
@@ -1596,7 +1754,11 @@ function do_feed() {
 	}
 
 	if ( ! has_action( "do_feed_{$feed}" ) ) {
+<<<<<<< HEAD
 		wp_die( __( '<strong>Error:</strong> This is not a valid feed template.' ), '', array( 'response' => 404 ) );
+=======
+		wp_die( __( '<strong>Error</strong>: This is not a valid feed template.' ), '', array( 'response' => 404 ) );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -1621,7 +1783,11 @@ function do_feed() {
 }
 
 /**
+<<<<<<< HEAD
  * Loads the RDF RSS 0.91 Feed template.
+=======
+ * Load the RDF RSS 0.91 Feed template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.1.0
  *
@@ -1632,7 +1798,11 @@ function do_feed_rdf() {
 }
 
 /**
+<<<<<<< HEAD
  * Loads the RSS 1.0 Feed Template.
+=======
+ * Load the RSS 1.0 Feed Template.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.1.0
  *
@@ -1643,7 +1813,11 @@ function do_feed_rss() {
 }
 
 /**
+<<<<<<< HEAD
  * Loads either the RSS2 comment feed or the RSS2 posts feed.
+=======
+ * Load either the RSS2 comment feed or the RSS2 posts feed.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.1.0
  *
@@ -1660,7 +1834,11 @@ function do_feed_rss2( $for_comments ) {
 }
 
 /**
+<<<<<<< HEAD
  * Loads either Atom comment feed or Atom posts feed.
+=======
+ * Load either Atom comment feed or Atom posts feed.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.1.0
  *
@@ -1714,7 +1892,11 @@ function do_robots() {
 }
 
 /**
+<<<<<<< HEAD
  * Displays the favicon.ico file content.
+=======
+ * Display the favicon.ico file content.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.4.0
  */
@@ -1831,7 +2013,11 @@ function is_blog_installed() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves URL with nonce added to URL query.
+=======
+ * Retrieve URL with nonce added to URL query.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.4
  *
@@ -1846,7 +2032,11 @@ function wp_nonce_url( $actionurl, $action = -1, $name = '_wpnonce' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves or display nonce hidden field for forms.
+=======
+ * Retrieve or display nonce hidden field for forms.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The nonce field is used to validate that the contents of the form came from
  * the location on the current site and not somewhere else. The nonce does not
@@ -1868,10 +2058,17 @@ function wp_nonce_url( $actionurl, $action = -1, $name = '_wpnonce' ) {
  * @param int|string $action  Optional. Action name. Default -1.
  * @param string     $name    Optional. Nonce name. Default '_wpnonce'.
  * @param bool       $referer Optional. Whether to set the referer field for validation. Default true.
+<<<<<<< HEAD
  * @param bool       $display Optional. Whether to display or return hidden form field. Default true.
  * @return string Nonce field HTML markup.
  */
 function wp_nonce_field( $action = -1, $name = '_wpnonce', $referer = true, $display = true ) {
+=======
+ * @param bool       $echo    Optional. Whether to display or return hidden form field. Default true.
+ * @return string Nonce field HTML markup.
+ */
+function wp_nonce_field( $action = -1, $name = '_wpnonce', $referer = true, $echo = true ) {
+>>>>>>> fb785cbb (Initial commit)
 	$name        = esc_attr( $name );
 	$nonce_field = '<input type="hidden" id="' . $name . '" name="' . $name . '" value="' . wp_create_nonce( $action ) . '" />';
 
@@ -1879,7 +2076,11 @@ function wp_nonce_field( $action = -1, $name = '_wpnonce', $referer = true, $dis
 		$nonce_field .= wp_referer_field( false );
 	}
 
+<<<<<<< HEAD
 	if ( $display ) {
+=======
+	if ( $echo ) {
+>>>>>>> fb785cbb (Initial commit)
 		echo $nonce_field;
 	}
 
@@ -1887,13 +2088,18 @@ function wp_nonce_field( $action = -1, $name = '_wpnonce', $referer = true, $dis
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves or displays referer hidden field for forms.
+=======
+ * Retrieve or display referer hidden field for forms.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The referer link is the current Request URI from the server super global. The
  * input name is '_wp_http_referer', in case you wanted to check manually.
  *
  * @since 2.0.4
  *
+<<<<<<< HEAD
  * @param bool $display Optional. Whether to echo or return the referer field. Default true.
  * @return string Referer field HTML markup.
  */
@@ -1902,6 +2108,15 @@ function wp_referer_field( $display = true ) {
 	$referer_field = '<input type="hidden" name="_wp_http_referer" value="' . esc_url( $request_url ) . '" />';
 
 	if ( $display ) {
+=======
+ * @param bool $echo Optional. Whether to echo or return the referer field. Default true.
+ * @return string Referer field HTML markup.
+ */
+function wp_referer_field( $echo = true ) {
+	$referer_field = '<input type="hidden" name="_wp_http_referer" value="' . esc_attr( wp_unslash( $_SERVER['REQUEST_URI'] ) ) . '" />';
+
+	if ( $echo ) {
+>>>>>>> fb785cbb (Initial commit)
 		echo $referer_field;
 	}
 
@@ -1909,7 +2124,11 @@ function wp_referer_field( $display = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves or displays original referer hidden field for forms.
+=======
+ * Retrieve or display original referer hidden field for forms.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The input name is '_wp_original_http_referer' and will be either the same
  * value of wp_referer_field(), if that was posted already or it will be the
@@ -1917,12 +2136,20 @@ function wp_referer_field( $display = true ) {
  *
  * @since 2.0.4
  *
+<<<<<<< HEAD
  * @param bool   $display      Optional. Whether to echo the original http referer. Default true.
+=======
+ * @param bool   $echo         Optional. Whether to echo the original http referer. Default true.
+>>>>>>> fb785cbb (Initial commit)
  * @param string $jump_back_to Optional. Can be 'previous' or page you want to jump back to.
  *                             Default 'current'.
  * @return string Original referer field.
  */
+<<<<<<< HEAD
 function wp_original_referer_field( $display = true, $jump_back_to = 'current' ) {
+=======
+function wp_original_referer_field( $echo = true, $jump_back_to = 'current' ) {
+>>>>>>> fb785cbb (Initial commit)
 	$ref = wp_get_original_referer();
 
 	if ( ! $ref ) {
@@ -1931,7 +2158,11 @@ function wp_original_referer_field( $display = true, $jump_back_to = 'current' )
 
 	$orig_referer_field = '<input type="hidden" name="_wp_original_http_referer" value="' . esc_attr( $ref ) . '" />';
 
+<<<<<<< HEAD
 	if ( $display ) {
+=======
+	if ( $echo ) {
+>>>>>>> fb785cbb (Initial commit)
 		echo $orig_referer_field;
 	}
 
@@ -1939,7 +2170,11 @@ function wp_original_referer_field( $display = true, $jump_back_to = 'current' )
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves referer from '_wp_http_referer' or HTTP referer.
+=======
+ * Retrieve referer from '_wp_http_referer' or HTTP referer.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If it's the same as the current request URL, will return false.
  *
@@ -1981,7 +2216,11 @@ function wp_get_raw_referer() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves original referer that was posted, if it exists.
+=======
+ * Retrieve original referer that was posted, if it exists.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.4
  *
@@ -2073,7 +2312,11 @@ function wp_mkdir_p( $target ) {
 }
 
 /**
+<<<<<<< HEAD
  * Tests if a given filesystem path is absolute.
+=======
+ * Test if a given filesystem path is absolute.
+>>>>>>> fb785cbb (Initial commit)
  *
  * For example, '/foo/bar', or 'c:\windows'.
  *
@@ -2095,11 +2338,19 @@ function path_is_absolute( $path ) {
 	 * This is definitive if true but fails if $path does not exist or contains
 	 * a symbolic link.
 	 */
+<<<<<<< HEAD
 	if ( realpath( $path ) === $path ) {
 		return true;
 	}
 
 	if ( strlen( $path ) === 0 || '.' === $path[0] ) {
+=======
+	if ( realpath( $path ) == $path ) {
+		return true;
+	}
+
+	if ( strlen( $path ) == 0 || '.' === $path[0] ) {
+>>>>>>> fb785cbb (Initial commit)
 		return false;
 	}
 
@@ -2113,7 +2364,11 @@ function path_is_absolute( $path ) {
 }
 
 /**
+<<<<<<< HEAD
  * Joins two filesystem paths together.
+=======
+ * Join two filesystem paths together.
+>>>>>>> fb785cbb (Initial commit)
  *
  * For example, 'give me $path relative to $base'. If the $path is absolute,
  * then it the full path is returned.
@@ -2129,11 +2384,19 @@ function path_join( $base, $path ) {
 		return $path;
 	}
 
+<<<<<<< HEAD
 	return rtrim( $base, '/' ) . '/' . $path;
 }
 
 /**
  * Normalizes a filesystem path.
+=======
+	return rtrim( $base, '/' ) . '/' . ltrim( $path, '/' );
+}
+
+/**
+ * Normalize a filesystem path.
+>>>>>>> fb785cbb (Initial commit)
  *
  * On windows systems, replaces backslashes with forward slashes
  * and forces upper-case drive letters.
@@ -2172,7 +2435,11 @@ function wp_normalize_path( $path ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines a writable directory for temporary files.
+=======
+ * Determine a writable directory for temporary files.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Function's preference is the return value of sys_get_temp_dir(),
  * followed by your PHP temporary upload directory, followed by WP_CONTENT_DIR,
@@ -2216,7 +2483,11 @@ function get_temp_dir() {
 }
 
 /**
+<<<<<<< HEAD
  * Determines if a directory is writable.
+=======
+ * Determine if a directory is writable.
+>>>>>>> fb785cbb (Initial commit)
  *
  * This function is used to work around certain ACL issues in PHP primarily
  * affecting Windows Servers.
@@ -2499,7 +2770,11 @@ function _wp_upload_dir( $time = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Gets a filename that is sanitized and unique for the given directory.
+=======
+ * Get a filename that is sanitized and unique for the given directory.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If the filename is not unique, then a number will be added to the filename
  * before the extension, and will continue adding numbers until the filename
@@ -2824,7 +3099,11 @@ function _wp_check_existing_file_names( $filename, $files ) {
 }
 
 /**
+<<<<<<< HEAD
  * Creates a file in the upload folder with given content.
+=======
+ * Create a file in the upload folder with given content.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If there is an error, then the key 'error' will exist with the error message.
  * If success, then the key 'file' will have the unique file path, the 'url' key
@@ -2954,7 +3233,11 @@ function wp_upload_bits( $name, $deprecated, $bits, $time = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the file type based on the extension name.
+=======
+ * Retrieve the file type based on the extension name.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.5.0
  *
@@ -2993,7 +3276,11 @@ function wp_get_default_extension_for_mime_type( $mime_type ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the file type from the file name.
+=======
+ * Retrieve the file type from the file name.
+>>>>>>> fb785cbb (Initial commit)
  *
  * You can optionally define the mime array, if needed.
  *
@@ -3001,7 +3288,10 @@ function wp_get_default_extension_for_mime_type( $mime_type ) {
  *
  * @param string   $filename File name or path.
  * @param string[] $mimes    Optional. Array of allowed mime types keyed by their file extension regex.
+<<<<<<< HEAD
  *                           Defaults to the result of get_allowed_mime_types().
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @return array {
  *     Values for the extension and mime type.
  *
@@ -3029,7 +3319,11 @@ function wp_check_filetype( $filename, $mimes = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Attempts to determine the real file type of a file.
+=======
+ * Attempt to determine the real file type of a file.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If unable to, the file name extension will be used to determine type.
  *
@@ -3044,7 +3338,10 @@ function wp_check_filetype( $filename, $mimes = null ) {
  * @param string   $filename The name of the file (may differ from $file due to $file being
  *                           in a tmp directory).
  * @param string[] $mimes    Optional. Array of allowed mime types keyed by their file extension regex.
+<<<<<<< HEAD
  *                           Defaults to the result of get_allowed_mime_types().
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @return array {
  *     Values for the extension, mime type, and corrected filename.
  *
@@ -3312,7 +3609,11 @@ function wp_get_image_mime( $file ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the list of mime types and file extensions.
+=======
+ * Retrieve list of mime types and file extensions.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.5.0
  * @since 4.2.0 Support was added for GIMP (.xcf) files.
@@ -3331,7 +3632,11 @@ function wp_get_mime_types() {
 	 * @since 3.5.0
 	 *
 	 * @param string[] $wp_get_mime_types Mime types keyed by the file extension regex
+<<<<<<< HEAD
 	 *                                    corresponding to those types.
+=======
+	 *                                 corresponding to those types.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	return apply_filters(
 		'mime_types',
@@ -3516,7 +3821,11 @@ function wp_filesize( $path ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the list of allowed mime types and file extensions.
+=======
+ * Retrieve list of allowed mime types and file extensions.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.8.6
  *
@@ -3537,7 +3846,11 @@ function get_allowed_mime_types( $user = null ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Filters the list of allowed mime types and file extensions.
+=======
+	 * Filters list of allowed mime types and file extensions.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.0.0
 	 *
@@ -3548,7 +3861,11 @@ function get_allowed_mime_types( $user = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays "Are You Sure" message to confirm the action being taken.
+=======
+ * Display "Are You Sure" message to confirm the action being taken.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If the action has the nonce explain message, then it will be displayed
  * along with the "Are you sure?" message.
@@ -3568,18 +3885,26 @@ function wp_nonce_ays( $action ) {
 			__( 'You are attempting to log out of %s' ),
 			get_bloginfo( 'name' )
 		);
+<<<<<<< HEAD
 
 		$redirect_to = isset( $_REQUEST['redirect_to'] ) ? $_REQUEST['redirect_to'] : '';
 
 		$html  = $title;
 		$html .= '</p><p>';
 		$html .= sprintf(
+=======
+		$html        = $title;
+		$html       .= '</p><p>';
+		$redirect_to = isset( $_REQUEST['redirect_to'] ) ? $_REQUEST['redirect_to'] : '';
+		$html       .= sprintf(
+>>>>>>> fb785cbb (Initial commit)
 			/* translators: %s: Logout URL. */
 			__( 'Do you really want to <a href="%s">log out</a>?' ),
 			wp_logout_url( $redirect_to )
 		);
 	} else {
 		$html = __( 'The link you followed has expired.' );
+<<<<<<< HEAD
 
 		if ( wp_get_referer() ) {
 			$wp_http_referer = remove_query_arg( 'updated', wp_get_referer() );
@@ -3589,6 +3914,13 @@ function wp_nonce_ays( $action ) {
 			$html .= sprintf(
 				'<a href="%s">%s</a>',
 				esc_url( $wp_http_referer ),
+=======
+		if ( wp_get_referer() ) {
+			$html .= '</p><p>';
+			$html .= sprintf(
+				'<a href="%s">%s</a>',
+				esc_url( remove_query_arg( 'updated', wp_get_referer() ) ),
+>>>>>>> fb785cbb (Initial commit)
 				__( 'Please try again.' )
 			);
 		}
@@ -3621,11 +3953,19 @@ function wp_nonce_ays( $action ) {
  *
  * @param string|WP_Error  $message Optional. Error message. If this is a WP_Error object,
  *                                  and not an Ajax or XML-RPC request, the error's messages are used.
+<<<<<<< HEAD
  *                                  Default empty string.
  * @param string|int       $title   Optional. Error title. If `$message` is a `WP_Error` object,
  *                                  error data with the key 'title' may be used to specify the title.
  *                                  If `$title` is an integer, then it is treated as the response code.
  *                                  Default empty string.
+=======
+ *                                  Default empty.
+ * @param string|int       $title   Optional. Error title. If `$message` is a `WP_Error` object,
+ *                                  error data with the key 'title' may be used to specify the title.
+ *                                  If `$title` is an integer, then it is treated as the response
+ *                                  code. Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @param string|array|int $args {
  *     Optional. Arguments to control behavior. If `$args` is an integer, then it is treated
  *     as the response code. Default empty array.
@@ -3728,7 +4068,11 @@ function wp_die( $message = '', $title = '', $args = array() ) {
  * @access private
  *
  * @param string|WP_Error $message Error message or WP_Error object.
+<<<<<<< HEAD
  * @param string          $title   Optional. Error title. Default empty string.
+=======
+ * @param string          $title   Optional. Error title. Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @param string|array    $args    Optional. Arguments to control behavior. Default empty array.
  */
 function _default_wp_die_handler( $message, $title = '', $args = array() ) {
@@ -3930,7 +4274,11 @@ function _default_wp_die_handler( $message, $title = '', $args = array() ) {
  * @access private
  *
  * @param string       $message Error message.
+<<<<<<< HEAD
  * @param string       $title   Optional. Error title (unused). Default empty string.
+=======
+ * @param string       $title   Optional. Error title (unused). Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @param string|array $args    Optional. Arguments to control behavior. Default empty array.
  */
 function _ajax_wp_die_handler( $message, $title = '', $args = array() ) {
@@ -3972,7 +4320,11 @@ function _ajax_wp_die_handler( $message, $title = '', $args = array() ) {
  * @access private
  *
  * @param string       $message Error message.
+<<<<<<< HEAD
  * @param string       $title   Optional. Error title. Default empty string.
+=======
+ * @param string       $title   Optional. Error title. Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @param string|array $args    Optional. Arguments to control behavior. Default empty array.
  */
 function _json_wp_die_handler( $message, $title = '', $args = array() ) {
@@ -4010,7 +4362,11 @@ function _json_wp_die_handler( $message, $title = '', $args = array() ) {
  * @access private
  *
  * @param string       $message Error message.
+<<<<<<< HEAD
  * @param string       $title   Optional. Error title. Default empty string.
+=======
+ * @param string       $title   Optional. Error title. Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @param string|array $args    Optional. Arguments to control behavior. Default empty array.
  */
 function _jsonp_wp_die_handler( $message, $title = '', $args = array() ) {
@@ -4054,7 +4410,11 @@ function _jsonp_wp_die_handler( $message, $title = '', $args = array() ) {
  * @global wp_xmlrpc_server $wp_xmlrpc_server
  *
  * @param string       $message Error message.
+<<<<<<< HEAD
  * @param string       $title   Optional. Error title. Default empty string.
+=======
+ * @param string       $title   Optional. Error title. Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @param string|array $args    Optional. Arguments to control behavior. Default empty array.
  */
 function _xmlrpc_wp_die_handler( $message, $title = '', $args = array() ) {
@@ -4084,7 +4444,11 @@ function _xmlrpc_wp_die_handler( $message, $title = '', $args = array() ) {
  * @access private
  *
  * @param string       $message Error message.
+<<<<<<< HEAD
  * @param string       $title   Optional. Error title. Default empty string.
+=======
+ * @param string       $title   Optional. Error title. Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @param string|array $args    Optional. Arguments to control behavior. Default empty array.
  */
 function _xml_wp_die_handler( $message, $title = '', $args = array() ) {
@@ -4128,8 +4492,13 @@ EOD;
  * @since 5.1.0 Added the $title and $args parameters.
  * @access private
  *
+<<<<<<< HEAD
  * @param string       $message Optional. Response to print. Default empty string.
  * @param string       $title   Optional. Error title (unused). Default empty string.
+=======
+ * @param string       $message Optional. Response to print. Default empty.
+ * @param string       $title   Optional. Error title (unused). Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @param string|array $args    Optional. Arguments to control behavior. Default empty array.
  */
 function _scalar_wp_die_handler( $message = '', $title = '', $args = array() ) {
@@ -4154,7 +4523,11 @@ function _scalar_wp_die_handler( $message = '', $title = '', $args = array() ) {
  * @access private
  *
  * @param string|WP_Error $message Error message or WP_Error object.
+<<<<<<< HEAD
  * @param string          $title   Optional. Error title. Default empty string.
+=======
+ * @param string          $title   Optional. Error title. Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @param string|array    $args    Optional. Arguments to control behavior. Default empty array.
  * @return array {
  *     Processed arguments.
@@ -4237,7 +4610,11 @@ function _wp_die_process_input( $message, $title = '', $args = array() ) {
 }
 
 /**
+<<<<<<< HEAD
  * Encodes a variable into JSON, with some sanity checks.
+=======
+ * Encode a variable into JSON, with some sanity checks.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.1.0
  * @since 5.3.0 No longer handles support for PHP < 5.6.
@@ -4266,7 +4643,11 @@ function wp_json_encode( $data, $options = 0, $depth = 512 ) {
 }
 
 /**
+<<<<<<< HEAD
  * Performs sanity checks on data that shall be encoded to JSON.
+=======
+ * Perform sanity checks on data that shall be encoded to JSON.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @ignore
  * @since 4.1.0
@@ -4305,7 +4686,11 @@ function _wp_json_sanity_check( $data, $depth ) {
 			}
 		}
 	} elseif ( is_object( $data ) ) {
+<<<<<<< HEAD
 		$output = new stdClass();
+=======
+		$output = new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 		foreach ( $data as $id => $el ) {
 			if ( is_string( $id ) ) {
 				$clean_id = _wp_json_convert_string( $id );
@@ -4331,7 +4716,11 @@ function _wp_json_sanity_check( $data, $depth ) {
 }
 
 /**
+<<<<<<< HEAD
  * Converts a string to UTF-8, so that it can be safely encoded to JSON.
+=======
+ * Convert a string to UTF-8, so that it can be safely encoded to JSON.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @ignore
  * @since 4.1.0
@@ -4339,16 +4728,24 @@ function _wp_json_sanity_check( $data, $depth ) {
  *
  * @see _wp_json_sanity_check()
  *
+<<<<<<< HEAD
  * @param string $input_string The string which is to be converted.
  * @return string The checked string.
  */
 function _wp_json_convert_string( $input_string ) {
+=======
+ * @param string $string The string which is to be converted.
+ * @return string The checked string.
+ */
+function _wp_json_convert_string( $string ) {
+>>>>>>> fb785cbb (Initial commit)
 	static $use_mb = null;
 	if ( is_null( $use_mb ) ) {
 		$use_mb = function_exists( 'mb_convert_encoding' );
 	}
 
 	if ( $use_mb ) {
+<<<<<<< HEAD
 		$encoding = mb_detect_encoding( $input_string, mb_detect_order(), true );
 		if ( $encoding ) {
 			return mb_convert_encoding( $input_string, 'UTF-8', $encoding );
@@ -4357,6 +4754,16 @@ function _wp_json_convert_string( $input_string ) {
 		}
 	} else {
 		return wp_check_invalid_utf8( $input_string, true );
+=======
+		$encoding = mb_detect_encoding( $string, mb_detect_order(), true );
+		if ( $encoding ) {
+			return mb_convert_encoding( $string, 'UTF-8', $encoding );
+		} else {
+			return mb_convert_encoding( $string, 'UTF-8', 'UTF-8' );
+		}
+	} else {
+		return wp_check_invalid_utf8( $string, true );
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 
@@ -4380,7 +4787,11 @@ function _wp_json_prepare_data( $data ) {
 }
 
 /**
+<<<<<<< HEAD
  * Sends a JSON response back to an Ajax request.
+=======
+ * Send a JSON response back to an Ajax request.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.5.0
  * @since 4.7.0 The `$status_code` parameter was added.
@@ -4428,7 +4839,11 @@ function wp_send_json( $response, $status_code = null, $options = 0 ) {
 }
 
 /**
+<<<<<<< HEAD
  * Sends a JSON response back to an Ajax request, indicating success.
+=======
+ * Send a JSON response back to an Ajax request, indicating success.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.5.0
  * @since 4.7.0 The `$status_code` parameter was added.
@@ -4449,7 +4864,11 @@ function wp_send_json_success( $data = null, $status_code = null, $options = 0 )
 }
 
 /**
+<<<<<<< HEAD
  * Sends a JSON response back to an Ajax request, indicating failure.
+=======
+ * Send a JSON response back to an Ajax request, indicating failure.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If the `$data` parameter is a WP_Error object, the errors
  * within the object are processed and output as an array of error
@@ -4521,7 +4940,11 @@ function wp_check_jsonp_callback( $callback ) {
  *     Optional. Options to be used with `json_decode()`.
  *
  *     @type bool $associative Optional. When `true`, JSON objects will be returned as associative arrays.
+<<<<<<< HEAD
  *                             When `false`, JSON objects will be returned as objects. Default false.
+=======
+ *                             When `false`, JSON objects will be returned as objects.
+>>>>>>> fb785cbb (Initial commit)
  * }
  *
  * @return mixed Returns the value encoded in JSON in appropriate PHP type.
@@ -4530,8 +4953,12 @@ function wp_check_jsonp_callback( $callback ) {
 function wp_json_file_decode( $filename, $options = array() ) {
 	$result   = null;
 	$filename = wp_normalize_path( realpath( $filename ) );
+<<<<<<< HEAD
 
 	if ( ! $filename ) {
+=======
+	if ( ! file_exists( $filename ) ) {
+>>>>>>> fb785cbb (Initial commit)
 		trigger_error(
 			sprintf(
 				/* translators: %s: Path to the JSON file. */
@@ -4561,7 +4988,11 @@ function wp_json_file_decode( $filename, $options = array() ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the WordPress home page URL.
+=======
+ * Retrieve the WordPress home page URL.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If the constant named 'WP_HOME' exists, then it will be used and returned
  * by the function. This can be used to counter the redirection on your local
@@ -4583,7 +5014,11 @@ function _config_wp_home( $url = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the WordPress site URL.
+=======
+ * Retrieve the WordPress site URL.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If the constant named 'WP_SITEURL' is defined, then the value in that
  * constant will always be returned. This can be used for debugging a site
@@ -4605,7 +5040,11 @@ function _config_wp_siteurl( $url = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Deletes the fresh site option.
+=======
+ * Delete the fresh site option.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.7.0
  * @access private
@@ -4615,7 +5054,11 @@ function _delete_option_fresh_site() {
 }
 
 /**
+<<<<<<< HEAD
  * Sets the localized direction for MCE plugin.
+=======
+ * Set the localized direction for MCE plugin.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Will only set the direction to 'rtl', if the WordPress locale has
  * the text direction set to 'rtl'.
@@ -4650,7 +5093,11 @@ function _mce_set_direction( $mce_init ) {
 
 
 /**
+<<<<<<< HEAD
  * Converts smiley code to the icon graphic file equivalent.
+=======
+ * Convert smiley code to the icon graphic file equivalent.
+>>>>>>> fb785cbb (Initial commit)
  *
  * You can turn off smilies, by going to the write setting screen and unchecking
  * the box, or by setting 'use_smilies' option to false or removing the option.
@@ -4814,6 +5261,7 @@ function wp_parse_args( $args, $defaults = array() ) {
  *
  * @since 5.1.0
  *
+<<<<<<< HEAD
  * @param array|string $input_list List of values.
  * @return array Array of values.
  */
@@ -4826,6 +5274,17 @@ function wp_parse_list( $input_list ) {
 	$input_list = array_filter( $input_list, 'is_scalar' );
 
 	return $input_list;
+=======
+ * @param array|string $list List of values.
+ * @return array Array of values.
+ */
+function wp_parse_list( $list ) {
+	if ( ! is_array( $list ) ) {
+		return preg_split( '/[\s,]+/', $list, -1, PREG_SPLIT_NO_EMPTY );
+	}
+
+	return $list;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -4834,6 +5293,7 @@ function wp_parse_list( $input_list ) {
  * @since 3.0.0
  * @since 5.1.0 Refactored to use wp_parse_list().
  *
+<<<<<<< HEAD
  * @param array|string $input_list List of IDs.
  * @return int[] Sanitized array of IDs.
  */
@@ -4841,6 +5301,15 @@ function wp_parse_id_list( $input_list ) {
 	$input_list = wp_parse_list( $input_list );
 
 	return array_unique( array_map( 'absint', $input_list ) );
+=======
+ * @param array|string $list List of IDs.
+ * @return int[] Sanitized array of IDs.
+ */
+function wp_parse_id_list( $list ) {
+	$list = wp_parse_list( $list );
+
+	return array_unique( array_map( 'absint', $list ) );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -4849,6 +5318,7 @@ function wp_parse_id_list( $input_list ) {
  * @since 4.7.0
  * @since 5.1.0 Refactored to use wp_parse_list().
  *
+<<<<<<< HEAD
  * @param array|string $input_list List of slugs.
  * @return string[] Sanitized array of slugs.
  */
@@ -4873,6 +5343,32 @@ function wp_array_slice_assoc( $input_array, $keys ) {
 	foreach ( $keys as $key ) {
 		if ( isset( $input_array[ $key ] ) ) {
 			$slice[ $key ] = $input_array[ $key ];
+=======
+ * @param array|string $list List of slugs.
+ * @return string[] Sanitized array of slugs.
+ */
+function wp_parse_slug_list( $list ) {
+	$list = wp_parse_list( $list );
+
+	return array_unique( array_map( 'sanitize_title', $list ) );
+}
+
+/**
+ * Extract a slice of an array, given a list of keys.
+ *
+ * @since 3.1.0
+ *
+ * @param array $array The original array.
+ * @param array $keys  The list of keys.
+ * @return array The array slice.
+ */
+function wp_array_slice_assoc( $array, $keys ) {
+	$slice = array();
+
+	foreach ( $keys as $key ) {
+		if ( isset( $array[ $key ] ) ) {
+			$slice[ $key ] = $array[ $key ];
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 
@@ -4880,6 +5376,7 @@ function wp_array_slice_assoc( $input_array, $keys ) {
 }
 
 /**
+<<<<<<< HEAD
  * Sorts the keys of an array alphabetically.
  *
  * The array is passed by reference so it doesn't get returned
@@ -4900,6 +5397,8 @@ function wp_recursive_ksort( &$input_array ) {
 }
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Accesses an array in depth based on a path of keys.
  *
  * It is the PHP equivalent of JavaScript's `lodash.get()` and mirroring it may help other components
@@ -4907,20 +5406,29 @@ function wp_recursive_ksort( &$input_array ) {
  *
  * Example usage:
  *
+<<<<<<< HEAD
  *     $input_array = array(
+=======
+ *     $array = array(
+>>>>>>> fb785cbb (Initial commit)
  *         'a' => array(
  *             'b' => array(
  *                 'c' => 1,
  *             ),
  *         ),
  *     );
+<<<<<<< HEAD
  *     _wp_array_get( $input_array, array( 'a', 'b', 'c' ) );
+=======
+ *     _wp_array_get( $array, array( 'a', 'b', 'c' ) );
+>>>>>>> fb785cbb (Initial commit)
  *
  * @internal
  *
  * @since 5.6.0
  * @access private
  *
+<<<<<<< HEAD
  * @param array $input_array   An array from which we want to retrieve some information.
  * @param array $path          An array of keys describing the path with which to retrieve information.
  * @param mixed $default_value Optional. The return value if the path does not exist within the array,
@@ -4931,10 +5439,23 @@ function _wp_array_get( $input_array, $path, $default_value = null ) {
 	// Confirm $path is valid.
 	if ( ! is_array( $path ) || 0 === count( $path ) ) {
 		return $default_value;
+=======
+ * @param array $array   An array from which we want to retrieve some information.
+ * @param array $path    An array of keys describing the path with which to retrieve information.
+ * @param mixed $default The return value if the path does not exist within the array,
+ *                       or if `$array` or `$path` are not arrays.
+ * @return mixed The value from the path specified.
+ */
+function _wp_array_get( $array, $path, $default = null ) {
+	// Confirm $path is valid.
+	if ( ! is_array( $path ) || 0 === count( $path ) ) {
+		return $default;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	foreach ( $path as $path_element ) {
 		if (
+<<<<<<< HEAD
 			! is_array( $input_array ) ||
 			( ! is_string( $path_element ) && ! is_integer( $path_element ) && ! is_null( $path_element ) ) ||
 			! array_key_exists( $path_element, $input_array )
@@ -4945,6 +5466,18 @@ function _wp_array_get( $input_array, $path, $default_value = null ) {
 	}
 
 	return $input_array;
+=======
+			! is_array( $array ) ||
+			( ! is_string( $path_element ) && ! is_integer( $path_element ) && ! is_null( $path_element ) ) ||
+			! array_key_exists( $path_element, $array )
+		) {
+			return $default;
+		}
+		$array = $array[ $path_element ];
+	}
+
+	return $array;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -4955,10 +5488,17 @@ function _wp_array_get( $input_array, $path, $default_value = null ) {
  *
  * Example usage:
  *
+<<<<<<< HEAD
  *     $input_array = array();
  *     _wp_array_set( $input_array, array( 'a', 'b', 'c', 1 ) );
  *
  *     $input_array becomes:
+=======
+ *     $array = array();
+ *     _wp_array_set( $array, array( 'a', 'b', 'c', 1 ) );
+ *
+ *     $array becomes:
+>>>>>>> fb785cbb (Initial commit)
  *     array(
  *         'a' => array(
  *             'b' => array(
@@ -4972,6 +5512,7 @@ function _wp_array_get( $input_array, $path, $default_value = null ) {
  * @since 5.8.0
  * @access private
  *
+<<<<<<< HEAD
  * @param array $input_array An array that we want to mutate to include a specific value in a path.
  * @param array $path        An array of keys describing the path that we want to mutate.
  * @param mixed $value       The value that will be set.
@@ -4979,6 +5520,15 @@ function _wp_array_get( $input_array, $path, $default_value = null ) {
 function _wp_array_set( &$input_array, $path, $value = null ) {
 	// Confirm $input_array is valid.
 	if ( ! is_array( $input_array ) ) {
+=======
+ * @param array $array An array that we want to mutate to include a specific value in a path.
+ * @param array $path  An array of keys describing the path that we want to mutate.
+ * @param mixed $value The value that will be set.
+ */
+function _wp_array_set( &$array, $path, $value = null ) {
+	// Confirm $array is valid.
+	if ( ! is_array( $array ) ) {
+>>>>>>> fb785cbb (Initial commit)
 		return;
 	}
 
@@ -5005,6 +5555,7 @@ function _wp_array_set( &$input_array, $path, $value = null ) {
 	for ( $i = 0; $i < $path_length - 1; ++$i ) {
 		$path_element = $path[ $i ];
 		if (
+<<<<<<< HEAD
 			! array_key_exists( $path_element, $input_array ) ||
 			! is_array( $input_array[ $path_element ] )
 		) {
@@ -5014,6 +5565,17 @@ function _wp_array_set( &$input_array, $path, $value = null ) {
 	}
 
 	$input_array[ $path[ $i ] ] = $value;
+=======
+			! array_key_exists( $path_element, $array ) ||
+			! is_array( $array[ $path_element ] )
+		) {
+			$array[ $path_element ] = array();
+		}
+		$array = &$array[ $path_element ]; // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.VariableRedeclaration
+	}
+
+	$array[ $path[ $i ] ] = $value;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -5037,11 +5599,19 @@ function _wp_array_set( &$input_array, $path, $value = null ) {
  * @link https://github.com/lodash-php/lodash-php/blob/master/src/String/kebabCase.php
  * @link https://github.com/lodash-php/lodash-php/blob/master/src/internal/unicodeWords.php
  *
+<<<<<<< HEAD
  * @param string $input_string The string to kebab-case.
  *
  * @return string kebab-cased-string.
  */
 function _wp_to_kebab_case( $input_string ) {
+=======
+ * @param string $string The string to kebab-case.
+ *
+ * @return string kebab-cased-string.
+ */
+function _wp_to_kebab_case( $string ) {
+>>>>>>> fb785cbb (Initial commit)
 	//phpcs:disable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 	// ignore the camelCase names for variables so the names are the same as lodash
 	// so comparing and porting new changes is easier.
@@ -5088,7 +5658,11 @@ function _wp_to_kebab_case( $input_string ) {
 		)
 	) . '/u';
 
+<<<<<<< HEAD
 	preg_match_all( $regexp, str_replace( "'", '', $input_string ), $matches );
+=======
+	preg_match_all( $regexp, str_replace( "'", '', $string ), $matches );
+>>>>>>> fb785cbb (Initial commit)
 	return strtolower( implode( '-', $matches[0] ) );
 	//phpcs:enable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 }
@@ -5129,6 +5703,7 @@ function wp_is_numeric_array( $data ) {
  * @since 3.0.0
  * @since 4.7.0 Uses `WP_List_Util` class.
  *
+<<<<<<< HEAD
  * @param array       $input_list An array of objects to filter.
  * @param array       $args       Optional. An array of key => value arguments to match
  *                                against each object. Default empty array.
@@ -5146,6 +5721,25 @@ function wp_filter_object_list( $input_list, $args = array(), $operator = 'and',
 	}
 
 	$util = new WP_List_Util( $input_list );
+=======
+ * @param array       $list     An array of objects to filter.
+ * @param array       $args     Optional. An array of key => value arguments to match
+ *                              against each object. Default empty array.
+ * @param string      $operator Optional. The logical operation to perform. 'AND' means
+ *                              all elements from the array must match. 'OR' means only
+ *                              one element needs to match. 'NOT' means no elements may
+ *                              match. Default 'AND'.
+ * @param bool|string $field    Optional. A field from the object to place instead
+ *                              of the entire object. Default false.
+ * @return array A list of objects or object fields.
+ */
+function wp_filter_object_list( $list, $args = array(), $operator = 'and', $field = false ) {
+	if ( ! is_array( $list ) ) {
+		return array();
+	}
+
+	$util = new WP_List_Util( $list );
+>>>>>>> fb785cbb (Initial commit)
 
 	$util->filter( $args, $operator );
 
@@ -5173,6 +5767,7 @@ function wp_filter_object_list( $input_list, $args = array(), $operator = 'and',
  * @since 4.7.0 Uses `WP_List_Util` class.
  * @since 5.9.0 Converted into a wrapper for `wp_filter_object_list()`.
  *
+<<<<<<< HEAD
  * @param array  $input_list An array of objects to filter.
  * @param array  $args       Optional. An array of key => value arguments to match
  *                           against each object. Default empty array.
@@ -5184,6 +5779,19 @@ function wp_filter_object_list( $input_list, $args = array(), $operator = 'and',
  */
 function wp_list_filter( $input_list, $args = array(), $operator = 'AND' ) {
 	return wp_filter_object_list( $input_list, $args, $operator );
+=======
+ * @param array  $list     An array of objects to filter.
+ * @param array  $args     Optional. An array of key => value arguments to match
+ *                         against each object. Default empty array.
+ * @param string $operator Optional. The logical operation to perform. 'AND' means
+ *                         all elements from the array must match. 'OR' means only
+ *                         one element needs to match. 'NOT' means no elements may
+ *                         match. Default 'AND'.
+ * @return array Array of found values.
+ */
+function wp_list_filter( $list, $args = array(), $operator = 'AND' ) {
+	return wp_filter_object_list( $list, $args, $operator );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -5196,6 +5804,7 @@ function wp_list_filter( $input_list, $args = array(), $operator = 'AND' ) {
  * @since 4.0.0 $index_key parameter added.
  * @since 4.7.0 Uses `WP_List_Util` class.
  *
+<<<<<<< HEAD
  * @param array      $input_list List of objects or arrays.
  * @param int|string $field      Field from the object to place instead of the entire object.
  * @param int|string $index_key  Optional. Field from the object to use as keys for the new array.
@@ -5210,6 +5819,22 @@ function wp_list_pluck( $input_list, $field, $index_key = null ) {
 	}
 
 	$util = new WP_List_Util( $input_list );
+=======
+ * @param array      $list      List of objects or arrays.
+ * @param int|string $field     Field from the object to place instead of the entire object.
+ * @param int|string $index_key Optional. Field from the object to use as keys for the new array.
+ *                              Default null.
+ * @return array Array of found values. If `$index_key` is set, an array of found values with keys
+ *               corresponding to `$index_key`. If `$index_key` is null, array keys from the original
+ *               `$list` will be preserved in the results.
+ */
+function wp_list_pluck( $list, $field, $index_key = null ) {
+	if ( ! is_array( $list ) ) {
+		return array();
+	}
+
+	$util = new WP_List_Util( $list );
+>>>>>>> fb785cbb (Initial commit)
 
 	return $util->pluck( $field, $index_key );
 }
@@ -5219,6 +5844,7 @@ function wp_list_pluck( $input_list, $field, $index_key = null ) {
  *
  * @since 4.7.0
  *
+<<<<<<< HEAD
  * @param array        $input_list    An array of objects or arrays to sort.
  * @param string|array $orderby       Optional. Either the field name to order by or an array
  *                                    of multiple orderby fields as `$orderby => $order`.
@@ -5234,6 +5860,22 @@ function wp_list_sort( $input_list, $orderby = array(), $order = 'ASC', $preserv
 	}
 
 	$util = new WP_List_Util( $input_list );
+=======
+ * @param array        $list          An array of objects to sort.
+ * @param string|array $orderby       Optional. Either the field name to order by or an array
+ *                                    of multiple orderby fields as $orderby => $order.
+ * @param string       $order         Optional. Either 'ASC' or 'DESC'. Only used if $orderby
+ *                                    is a string.
+ * @param bool         $preserve_keys Optional. Whether to preserve keys. Default false.
+ * @return array The sorted array.
+ */
+function wp_list_sort( $list, $orderby = array(), $order = 'ASC', $preserve_keys = false ) {
+	if ( ! is_array( $list ) ) {
+		return array();
+	}
+
+	$util = new WP_List_Util( $list );
+>>>>>>> fb785cbb (Initial commit)
 
 	return $util->sort( $orderby, $order, $preserve_keys );
 }
@@ -5268,7 +5910,11 @@ function wp_maybe_load_widgets() {
 }
 
 /**
+<<<<<<< HEAD
  * Appends the Widgets menu to the themes main menu.
+=======
+ * Append the Widgets menu to the themes main menu.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.2.0
  * @since 5.9.3 Don't specify menu order when the active theme is a block theme.
@@ -5283,7 +5929,11 @@ function wp_widgets_add_menu() {
 	}
 
 	$menu_name = __( 'Widgets' );
+<<<<<<< HEAD
 	if ( wp_is_block_theme() || current_theme_supports( 'block-template-parts' ) ) {
+=======
+	if ( wp_is_block_theme() ) {
+>>>>>>> fb785cbb (Initial commit)
 		$submenu['themes.php'][] = array( $menu_name, 'edit_theme_options', 'widgets.php' );
 	} else {
 		$submenu['themes.php'][7] = array( $menu_name, 'edit_theme_options', 'widgets.php' );
@@ -5293,7 +5943,11 @@ function wp_widgets_add_menu() {
 }
 
 /**
+<<<<<<< HEAD
  * Flushes all output buffers for PHP 5.2.
+=======
+ * Flush all output buffers for PHP 5.2.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Make sure all output buffers are flushed before our singletons are destroyed.
  *
@@ -5307,7 +5961,11 @@ function wp_ob_end_flush_all() {
 }
 
 /**
+<<<<<<< HEAD
  * Loads custom DB error or display WordPress DB error.
+=======
+ * Load custom DB error or display WordPress DB error.
+>>>>>>> fb785cbb (Initial commit)
  *
  * If a file exists in the wp-content directory named db-error.php, then it will
  * be loaded instead of displaying the WordPress DB error. If it is not found,
@@ -5345,7 +6003,11 @@ function dead_db() {
 }
 
 /**
+<<<<<<< HEAD
  * Converts a value to non-negative integer.
+=======
+ * Convert a value to non-negative integer.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.5.0
  *
@@ -5357,9 +6019,15 @@ function absint( $maybeint ) {
 }
 
 /**
+<<<<<<< HEAD
  * Marks a function as deprecated and inform when it has been used.
  *
  * There is a hook {@see 'deprecated_function_run'} that will be called that can be used
+=======
+ * Mark a function as deprecated and inform when it has been used.
+ *
+ * There is a {@see 'hook deprecated_function_run'} that will be called that can be used
+>>>>>>> fb785cbb (Initial commit)
  * to get the backtrace up to what file and function called the deprecated
  * function.
  *
@@ -5371,22 +6039,38 @@ function absint( $maybeint ) {
  * @since 5.4.0 This function is no longer marked as "private".
  * @since 5.4.0 The error type is now classified as E_USER_DEPRECATED (used to default to E_USER_NOTICE).
  *
+<<<<<<< HEAD
  * @param string $function_name The function that was called.
  * @param string $version       The version of WordPress that deprecated the function.
  * @param string $replacement   Optional. The function that should have been called. Default empty string.
  */
 function _deprecated_function( $function_name, $version, $replacement = '' ) {
+=======
+ * @param string $function    The function that was called.
+ * @param string $version     The version of WordPress that deprecated the function.
+ * @param string $replacement Optional. The function that should have been called. Default empty.
+ */
+function _deprecated_function( $function, $version, $replacement = '' ) {
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Fires when a deprecated function is called.
 	 *
 	 * @since 2.5.0
 	 *
+<<<<<<< HEAD
 	 * @param string $function_name The function that was called.
 	 * @param string $replacement   The function that should have been called.
 	 * @param string $version       The version of WordPress that deprecated the function.
 	 */
 	do_action( 'deprecated_function_run', $function_name, $replacement, $version );
+=======
+	 * @param string $function    The function that was called.
+	 * @param string $replacement The function that should have been called.
+	 * @param string $version     The version of WordPress that deprecated the function.
+	 */
+	do_action( 'deprecated_function_run', $function, $replacement, $version );
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Filters whether to trigger an error for deprecated functions.
@@ -5402,7 +6086,11 @@ function _deprecated_function( $function_name, $version, $replacement = '' ) {
 					sprintf(
 						/* translators: 1: PHP function name, 2: Version number, 3: Alternative function name. */
 						__( 'Function %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.' ),
+<<<<<<< HEAD
 						$function_name,
+=======
+						$function,
+>>>>>>> fb785cbb (Initial commit)
 						$version,
 						$replacement
 					),
@@ -5413,7 +6101,11 @@ function _deprecated_function( $function_name, $version, $replacement = '' ) {
 					sprintf(
 						/* translators: 1: PHP function name, 2: Version number. */
 						__( 'Function %1$s is <strong>deprecated</strong> since version %2$s with no alternative available.' ),
+<<<<<<< HEAD
 						$function_name,
+=======
+						$function,
+>>>>>>> fb785cbb (Initial commit)
 						$version
 					),
 					E_USER_DEPRECATED
@@ -5424,7 +6116,11 @@ function _deprecated_function( $function_name, $version, $replacement = '' ) {
 				trigger_error(
 					sprintf(
 						'Function %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.',
+<<<<<<< HEAD
 						$function_name,
+=======
+						$function,
+>>>>>>> fb785cbb (Initial commit)
 						$version,
 						$replacement
 					),
@@ -5434,7 +6130,11 @@ function _deprecated_function( $function_name, $version, $replacement = '' ) {
 				trigger_error(
 					sprintf(
 						'Function %1$s is <strong>deprecated</strong> since version %2$s with no alternative available.',
+<<<<<<< HEAD
 						$function_name,
+=======
+						$function,
+>>>>>>> fb785cbb (Initial commit)
 						$version
 					),
 					E_USER_DEPRECATED
@@ -5459,12 +6159,20 @@ function _deprecated_function( $function_name, $version, $replacement = '' ) {
  * @since 5.4.0 This function is no longer marked as "private".
  * @since 5.4.0 The error type is now classified as E_USER_DEPRECATED (used to default to E_USER_NOTICE).
  *
+<<<<<<< HEAD
  * @param string $class_name   The class containing the deprecated constructor.
+=======
+ * @param string $class        The class containing the deprecated constructor.
+>>>>>>> fb785cbb (Initial commit)
  * @param string $version      The version of WordPress that deprecated the function.
  * @param string $parent_class Optional. The parent class calling the deprecated constructor.
  *                             Default empty string.
  */
+<<<<<<< HEAD
 function _deprecated_constructor( $class_name, $version, $parent_class = '' ) {
+=======
+function _deprecated_constructor( $class, $version, $parent_class = '' ) {
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Fires when a deprecated constructor is called.
@@ -5472,11 +6180,19 @@ function _deprecated_constructor( $class_name, $version, $parent_class = '' ) {
 	 * @since 4.3.0
 	 * @since 4.5.0 Added the `$parent_class` parameter.
 	 *
+<<<<<<< HEAD
 	 * @param string $class_name   The class containing the deprecated constructor.
 	 * @param string $version      The version of WordPress that deprecated the function.
 	 * @param string $parent_class The parent class calling the deprecated constructor.
 	 */
 	do_action( 'deprecated_constructor_run', $class_name, $version, $parent_class );
+=======
+	 * @param string $class        The class containing the deprecated constructor.
+	 * @param string $version      The version of WordPress that deprecated the function.
+	 * @param string $parent_class The parent class calling the deprecated constructor.
+	 */
+	do_action( 'deprecated_constructor_run', $class, $version, $parent_class );
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Filters whether to trigger an error for deprecated functions.
@@ -5494,7 +6210,11 @@ function _deprecated_constructor( $class_name, $version, $parent_class = '' ) {
 					sprintf(
 						/* translators: 1: PHP class name, 2: PHP parent class name, 3: Version number, 4: __construct() method. */
 						__( 'The called constructor method for %1$s class in %2$s is <strong>deprecated</strong> since version %3$s! Use %4$s instead.' ),
+<<<<<<< HEAD
 						$class_name,
+=======
+						$class,
+>>>>>>> fb785cbb (Initial commit)
 						$parent_class,
 						$version,
 						'<code>__construct()</code>'
@@ -5506,7 +6226,11 @@ function _deprecated_constructor( $class_name, $version, $parent_class = '' ) {
 					sprintf(
 						/* translators: 1: PHP class name, 2: Version number, 3: __construct() method. */
 						__( 'The called constructor method for %1$s class is <strong>deprecated</strong> since version %2$s! Use %3$s instead.' ),
+<<<<<<< HEAD
 						$class_name,
+=======
+						$class,
+>>>>>>> fb785cbb (Initial commit)
 						$version,
 						'<code>__construct()</code>'
 					),
@@ -5518,7 +6242,11 @@ function _deprecated_constructor( $class_name, $version, $parent_class = '' ) {
 				trigger_error(
 					sprintf(
 						'The called constructor method for %1$s class in %2$s is <strong>deprecated</strong> since version %3$s! Use %4$s instead.',
+<<<<<<< HEAD
 						$class_name,
+=======
+						$class,
+>>>>>>> fb785cbb (Initial commit)
 						$parent_class,
 						$version,
 						'<code>__construct()</code>'
@@ -5529,7 +6257,11 @@ function _deprecated_constructor( $class_name, $version, $parent_class = '' ) {
 				trigger_error(
 					sprintf(
 						'The called constructor method for %1$s class is <strong>deprecated</strong> since version %2$s! Use %3$s instead.',
+<<<<<<< HEAD
 						$class_name,
+=======
+						$class,
+>>>>>>> fb785cbb (Initial commit)
 						$version,
 						'<code>__construct()</code>'
 					),
@@ -5542,7 +6274,11 @@ function _deprecated_constructor( $class_name, $version, $parent_class = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Marks a file as deprecated and inform when it has been used.
+=======
+ * Mark a file as deprecated and inform when it has been used.
+>>>>>>> fb785cbb (Initial commit)
  *
  * There is a hook {@see 'deprecated_file_included'} that will be called that can be used
  * to get the backtrace up to what file and function included the deprecated
@@ -5559,8 +6295,13 @@ function _deprecated_constructor( $class_name, $version, $parent_class = '' ) {
  * @param string $file        The file that was included.
  * @param string $version     The version of WordPress that deprecated the file.
  * @param string $replacement Optional. The file that should have been included based on ABSPATH.
+<<<<<<< HEAD
  *                            Default empty string.
  * @param string $message     Optional. A message regarding the change. Default empty string.
+=======
+ *                            Default empty.
+ * @param string $message     Optional. A message regarding the change. Default empty.
+>>>>>>> fb785cbb (Initial commit)
  */
 function _deprecated_file( $file, $version, $replacement = '', $message = '' ) {
 
@@ -5634,7 +6375,11 @@ function _deprecated_file( $file, $version, $replacement = '', $message = '' ) {
 	}
 }
 /**
+<<<<<<< HEAD
  * Marks a function argument as deprecated and inform when it has been used.
+=======
+ * Mark a function argument as deprecated and inform when it has been used.
+>>>>>>> fb785cbb (Initial commit)
  *
  * This function is to be used whenever a deprecated function argument is used.
  * Before this function is called, the argument must be checked for whether it was
@@ -5655,22 +6400,38 @@ function _deprecated_file( $file, $version, $replacement = '', $message = '' ) {
  * @since 5.4.0 This function is no longer marked as "private".
  * @since 5.4.0 The error type is now classified as E_USER_DEPRECATED (used to default to E_USER_NOTICE).
  *
+<<<<<<< HEAD
  * @param string $function_name The function that was called.
  * @param string $version       The version of WordPress that deprecated the argument used.
  * @param string $message       Optional. A message regarding the change. Default empty string.
  */
 function _deprecated_argument( $function_name, $version, $message = '' ) {
+=======
+ * @param string $function The function that was called.
+ * @param string $version  The version of WordPress that deprecated the argument used.
+ * @param string $message  Optional. A message regarding the change. Default empty.
+ */
+function _deprecated_argument( $function, $version, $message = '' ) {
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Fires when a deprecated argument is called.
 	 *
 	 * @since 3.0.0
 	 *
+<<<<<<< HEAD
 	 * @param string $function_name The function that was called.
 	 * @param string $message       A message regarding the change.
 	 * @param string $version       The version of WordPress that deprecated the argument used.
 	 */
 	do_action( 'deprecated_argument_run', $function_name, $message, $version );
+=======
+	 * @param string $function The function that was called.
+	 * @param string $message  A message regarding the change.
+	 * @param string $version  The version of WordPress that deprecated the argument used.
+	 */
+	do_action( 'deprecated_argument_run', $function, $message, $version );
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Filters whether to trigger an error for deprecated arguments.
@@ -5686,7 +6447,11 @@ function _deprecated_argument( $function_name, $version, $message = '' ) {
 					sprintf(
 						/* translators: 1: PHP function name, 2: Version number, 3: Optional message regarding the change. */
 						__( 'Function %1$s was called with an argument that is <strong>deprecated</strong> since version %2$s! %3$s' ),
+<<<<<<< HEAD
 						$function_name,
+=======
+						$function,
+>>>>>>> fb785cbb (Initial commit)
 						$version,
 						$message
 					),
@@ -5697,7 +6462,11 @@ function _deprecated_argument( $function_name, $version, $message = '' ) {
 					sprintf(
 						/* translators: 1: PHP function name, 2: Version number. */
 						__( 'Function %1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available.' ),
+<<<<<<< HEAD
 						$function_name,
+=======
+						$function,
+>>>>>>> fb785cbb (Initial commit)
 						$version
 					),
 					E_USER_DEPRECATED
@@ -5708,7 +6477,11 @@ function _deprecated_argument( $function_name, $version, $message = '' ) {
 				trigger_error(
 					sprintf(
 						'Function %1$s was called with an argument that is <strong>deprecated</strong> since version %2$s! %3$s',
+<<<<<<< HEAD
 						$function_name,
+=======
+						$function,
+>>>>>>> fb785cbb (Initial commit)
 						$version,
 						$message
 					),
@@ -5718,7 +6491,11 @@ function _deprecated_argument( $function_name, $version, $message = '' ) {
 				trigger_error(
 					sprintf(
 						'Function %1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available.',
+<<<<<<< HEAD
 						$function_name,
+=======
+						$function,
+>>>>>>> fb785cbb (Initial commit)
 						$version
 					),
 					E_USER_DEPRECATED
@@ -5745,7 +6522,11 @@ function _deprecated_argument( $function_name, $version, $message = '' ) {
  *
  * @param string $hook        The hook that was used.
  * @param string $version     The version of WordPress that deprecated the hook.
+<<<<<<< HEAD
  * @param string $replacement Optional. The hook that should have been used. Default empty string.
+=======
+ * @param string $replacement Optional. The hook that should have been used. Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @param string $message     Optional. A message regarding the change. Default empty.
  */
 function _deprecated_hook( $hook, $version, $replacement = '', $message = '' ) {
@@ -5798,7 +6579,11 @@ function _deprecated_hook( $hook, $version, $replacement = '', $message = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Marks something as being incorrectly called.
+=======
+ * Mark something as being incorrectly called.
+>>>>>>> fb785cbb (Initial commit)
  *
  * There is a hook {@see 'doing_it_wrong_run'} that will be called that can be used
  * to get the backtrace up to what file and function called the deprecated
@@ -5809,27 +6594,44 @@ function _deprecated_hook( $hook, $version, $replacement = '', $message = '' ) {
  * @since 3.1.0
  * @since 5.4.0 This function is no longer marked as "private".
  *
+<<<<<<< HEAD
  * @param string $function_name The function that was called.
  * @param string $message       A message explaining what has been done incorrectly.
  * @param string $version       The version of WordPress where the message was added.
  */
 function _doing_it_wrong( $function_name, $message, $version ) {
+=======
+ * @param string $function The function that was called.
+ * @param string $message  A message explaining what has been done incorrectly.
+ * @param string $version  The version of WordPress where the message was added.
+ */
+function _doing_it_wrong( $function, $message, $version ) {
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Fires when the given function is being used incorrectly.
 	 *
 	 * @since 3.1.0
 	 *
+<<<<<<< HEAD
 	 * @param string $function_name The function that was called.
 	 * @param string $message       A message explaining what has been done incorrectly.
 	 * @param string $version       The version of WordPress where the message was added.
 	 */
 	do_action( 'doing_it_wrong_run', $function_name, $message, $version );
+=======
+	 * @param string $function The function that was called.
+	 * @param string $message  A message explaining what has been done incorrectly.
+	 * @param string $version  The version of WordPress where the message was added.
+	 */
+	do_action( 'doing_it_wrong_run', $function, $message, $version );
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Filters whether to trigger an error for _doing_it_wrong() calls.
 	 *
 	 * @since 3.1.0
+<<<<<<< HEAD
 	 * @since 5.1.0 Added the $function_name, $message and $version parameters.
 	 *
 	 * @param bool   $trigger       Whether to trigger the error for _doing_it_wrong() calls. Default true.
@@ -5838,6 +6640,16 @@ function _doing_it_wrong( $function_name, $message, $version ) {
 	 * @param string $version       The version of WordPress where the message was added.
 	 */
 	if ( WP_DEBUG && apply_filters( 'doing_it_wrong_trigger_error', true, $function_name, $message, $version ) ) {
+=======
+	 * @since 5.1.0 Added the $function, $message and $version parameters.
+	 *
+	 * @param bool   $trigger  Whether to trigger the error for _doing_it_wrong() calls. Default true.
+	 * @param string $function The function that was called.
+	 * @param string $message  A message explaining what has been done incorrectly.
+	 * @param string $version  The version of WordPress where the message was added.
+	 */
+	if ( WP_DEBUG && apply_filters( 'doing_it_wrong_trigger_error', true, $function, $message, $version ) ) {
+>>>>>>> fb785cbb (Initial commit)
 		if ( function_exists( '__' ) ) {
 			if ( $version ) {
 				/* translators: %s: Version number. */
@@ -5847,14 +6659,22 @@ function _doing_it_wrong( $function_name, $message, $version ) {
 			$message .= ' ' . sprintf(
 				/* translators: %s: Documentation URL. */
 				__( 'Please see <a href="%s">Debugging in WordPress</a> for more information.' ),
+<<<<<<< HEAD
 				__( 'https://wordpress.org/documentation/article/debugging-in-wordpress/' )
+=======
+				__( 'https://wordpress.org/support/article/debugging-in-wordpress/' )
+>>>>>>> fb785cbb (Initial commit)
 			);
 
 			trigger_error(
 				sprintf(
 					/* translators: Developer debugging message. 1: PHP function name, 2: Explanatory message, 3: WordPress version number. */
 					__( 'Function %1$s was called <strong>incorrectly</strong>. %2$s %3$s' ),
+<<<<<<< HEAD
 					$function_name,
+=======
+					$function,
+>>>>>>> fb785cbb (Initial commit)
 					$message,
 					$version
 				),
@@ -5867,13 +6687,21 @@ function _doing_it_wrong( $function_name, $message, $version ) {
 
 			$message .= sprintf(
 				' Please see <a href="%s">Debugging in WordPress</a> for more information.',
+<<<<<<< HEAD
 				'https://wordpress.org/documentation/article/debugging-in-wordpress/'
+=======
+				'https://wordpress.org/support/article/debugging-in-wordpress/'
+>>>>>>> fb785cbb (Initial commit)
 			);
 
 			trigger_error(
 				sprintf(
 					'Function %1$s was called <strong>incorrectly</strong>. %2$s %3$s',
+<<<<<<< HEAD
 					$function_name,
+=======
+					$function,
+>>>>>>> fb785cbb (Initial commit)
 					$message,
 					$version
 				),
@@ -5884,7 +6712,11 @@ function _doing_it_wrong( $function_name, $message, $version ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether the server is running an earlier than 1.5.0 version of lighttpd.
+=======
+ * Is the server running earlier than 1.5.0 version of lighttpd?
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.5.0
  *
@@ -5898,23 +6730,36 @@ function is_lighttpd_before_150() {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether the specified module exist in the Apache config.
+=======
+ * Does the specified module exist in the Apache config?
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.5.0
  *
  * @global bool $is_apache
  *
+<<<<<<< HEAD
  * @param string $mod           The module, e.g. mod_rewrite.
  * @param bool   $default_value Optional. The default return value if the module is not found. Default false.
  * @return bool Whether the specified module is loaded.
  */
 function apache_mod_loaded( $mod, $default_value = false ) {
+=======
+ * @param string $mod     The module, e.g. mod_rewrite.
+ * @param bool   $default Optional. The default return value if the module is not found. Default false.
+ * @return bool Whether the specified module is loaded.
+ */
+function apache_mod_loaded( $mod, $default = false ) {
+>>>>>>> fb785cbb (Initial commit)
 	global $is_apache;
 
 	if ( ! $is_apache ) {
 		return false;
 	}
 
+<<<<<<< HEAD
 	$loaded_mods = array();
 
 	if ( function_exists( 'apache_get_modules' ) ) {
@@ -5933,16 +6778,35 @@ function apache_mod_loaded( $mod, $default_value = false ) {
 		phpinfo( INFO_MODULES );
 		$phpinfo = ob_get_clean();
 
+=======
+	if ( function_exists( 'apache_get_modules' ) ) {
+		$mods = apache_get_modules();
+		if ( in_array( $mod, $mods, true ) ) {
+			return true;
+		}
+	} elseif ( function_exists( 'phpinfo' ) && false === strpos( ini_get( 'disable_functions' ), 'phpinfo' ) ) {
+			ob_start();
+			phpinfo( 8 );
+			$phpinfo = ob_get_clean();
+>>>>>>> fb785cbb (Initial commit)
 		if ( false !== strpos( $phpinfo, $mod ) ) {
 			return true;
 		}
 	}
 
+<<<<<<< HEAD
 	return $default_value;
 }
 
 /**
  * Checks if IIS 7+ supports pretty permalinks.
+=======
+	return $default;
+}
+
+/**
+ * Check if IIS 7+ supports pretty permalinks.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.8.0
  *
@@ -5989,7 +6853,11 @@ function iis7_supports_permalinks() {
  * @since 1.2.0
  *
  * @param string   $file          File path.
+<<<<<<< HEAD
  * @param string[] $allowed_files Optional. Array of allowed files. Default empty array.
+=======
+ * @param string[] $allowed_files Optional. Array of allowed files.
+>>>>>>> fb785cbb (Initial commit)
  * @return int 0 means nothing is wrong, greater than 0 means something was wrong.
  */
 function validate_file( $file, $allowed_files = array() ) {
@@ -6026,7 +6894,11 @@ function validate_file( $file, $allowed_files = array() ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether to force SSL used for the Administration Screens.
+=======
+ * Whether to force SSL used for the Administration Screens.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.6.0
  *
@@ -6046,7 +6918,11 @@ function force_ssl_admin( $force = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Guesses the URL for the site.
+=======
+ * Guess the URL for the site.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Will remove wp-admin links to retrieve only return URLs not in the wp-admin
  * directory.
@@ -6064,7 +6940,11 @@ function wp_guess_url() {
 
 		// The request is for the admin.
 		if ( strpos( $_SERVER['REQUEST_URI'], 'wp-admin' ) !== false || strpos( $_SERVER['REQUEST_URI'], 'wp-login.php' ) !== false ) {
+<<<<<<< HEAD
 			$path = preg_replace( '#/(wp-admin/?.*|wp-login\.php.*)#i', '', $_SERVER['REQUEST_URI'] );
+=======
+			$path = preg_replace( '#/(wp-admin/.*|wp-login.php)#i', '', $_SERVER['REQUEST_URI'] );
+>>>>>>> fb785cbb (Initial commit)
 
 			// The request is for a file in ABSPATH.
 		} elseif ( $script_filename_dir . '/' === $abspath_fix ) {
@@ -6095,7 +6975,11 @@ function wp_guess_url() {
 }
 
 /**
+<<<<<<< HEAD
  * Temporarily suspends cache additions.
+=======
+ * Temporarily suspend cache additions.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Stops more data being added to the cache, but still allows cache retrieval.
  * This is useful for actions, such as imports, when a lot of data would otherwise
@@ -6107,8 +6991,12 @@ function wp_guess_url() {
  * @since 3.3.0
  *
  * @param bool $suspend Optional. Suspends additions if true, re-enables them if false.
+<<<<<<< HEAD
  *                      Defaults to not changing the current setting.
  * @return bool The current suspend setting.
+=======
+ * @return bool The current suspend setting
+>>>>>>> fb785cbb (Initial commit)
  */
 function wp_suspend_cache_addition( $suspend = null ) {
 	static $_suspend = false;
@@ -6121,7 +7009,11 @@ function wp_suspend_cache_addition( $suspend = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Suspends cache invalidation.
+=======
+ * Suspend cache invalidation.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Turns cache invalidation on and off. Useful during imports where you don't want to do
  * invalidations every time a post is inserted. Callers must be sure that what they are
@@ -6143,7 +7035,11 @@ function wp_suspend_cache_invalidation( $suspend = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether a site is the main site of the current network.
+=======
+ * Determine whether a site is the main site of the current network.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.0.0
  * @since 4.9.0 The `$network_id` parameter was added.
@@ -6191,7 +7087,11 @@ function get_main_site_id( $network_id = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether a network is the main network of the Multisite installation.
+=======
+ * Determine whether a network is the main network of the Multisite installation.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.7.0
  *
@@ -6213,7 +7113,11 @@ function is_main_network( $network_id = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Gets the main network ID.
+=======
+ * Get the main network ID.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.3.0
  *
@@ -6252,6 +7156,44 @@ function get_main_network_id() {
 }
 
 /**
+<<<<<<< HEAD
+=======
+ * Determine whether global terms are enabled.
+ *
+ * @since 3.0.0
+ *
+ * @return bool True if multisite and global terms enabled.
+ */
+function global_terms_enabled() {
+	if ( ! is_multisite() ) {
+		return false;
+	}
+
+	static $global_terms = null;
+	if ( is_null( $global_terms ) ) {
+
+		/**
+		 * Filters whether global terms are enabled.
+		 *
+		 * Returning a non-null value from the filter will effectively short-circuit the function
+		 * and return the value of the 'global_terms_enabled' site option instead.
+		 *
+		 * @since 3.0.0
+		 *
+		 * @param null $enabled Whether global terms are enabled.
+		 */
+		$filter = apply_filters( 'global_terms_enabled', null );
+		if ( ! is_null( $filter ) ) {
+			$global_terms = (bool) $filter;
+		} else {
+			$global_terms = (bool) get_site_option( 'global_terms_enabled', false );
+		}
+	}
+	return $global_terms;
+}
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Determines whether site meta is enabled.
  *
  * This function checks whether the 'blogmeta' database table exists. The result is saved as
@@ -6284,7 +7226,11 @@ function is_site_meta_supported() {
 }
 
 /**
+<<<<<<< HEAD
  * Modifies gmt_offset for smart timezone handling.
+=======
+ * gmt_offset modification for smart timezone handling.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Overrides the gmt_offset option if we have a timezone_string available.
  *
@@ -6374,6 +7320,7 @@ function wp_timezone_choice( $selected_zone, $locale = null ) {
 		$locale_loaded = $locale ? $locale : get_locale();
 		$mofile        = WP_LANG_DIR . '/continents-cities-' . $locale_loaded . '.mo';
 		unload_textdomain( 'continents-cities' );
+<<<<<<< HEAD
 		load_textdomain( 'continents-cities', $mofile, $locale_loaded );
 		$mo_loaded = true;
 	}
@@ -6382,6 +7329,14 @@ function wp_timezone_choice( $selected_zone, $locale = null ) {
 	$zonen          = array();
 
 	foreach ( $tz_identifiers as $zone ) {
+=======
+		load_textdomain( 'continents-cities', $mofile );
+		$mo_loaded = true;
+	}
+
+	$zonen = array();
+	foreach ( timezone_identifiers_list() as $zone ) {
+>>>>>>> fb785cbb (Initial commit)
 		$zone = explode( '/', $zone );
 		if ( ! in_array( $zone[0], $continents, true ) ) {
 			continue;
@@ -6416,6 +7371,7 @@ function wp_timezone_choice( $selected_zone, $locale = null ) {
 		$structure[] = '<option selected="selected" value="">' . __( 'Select a city' ) . '</option>';
 	}
 
+<<<<<<< HEAD
 	// If this is a deprecated, but valid, timezone string, display it at the top of the list as-is.
 	if ( in_array( $selected_zone, $tz_identifiers, true ) === false
 		&& in_array( $selected_zone, timezone_identifiers_list( DateTimeZone::ALL_WITH_BC ), true )
@@ -6423,6 +7379,8 @@ function wp_timezone_choice( $selected_zone, $locale = null ) {
 		$structure[] = '<option selected="selected" value="' . esc_attr( $selected_zone ) . '">' . esc_html( $selected_zone ) . '</option>';
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	foreach ( $zonen as $key => $zone ) {
 		// Build value in an array to join later.
 		$value = array( $zone['continent'] );
@@ -6556,7 +7514,11 @@ function wp_timezone_choice( $selected_zone, $locale = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Strips close comment and close php tags from file headers used by WP.
+=======
+ * Strip close comment and close php tags from file headers used by WP.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.8.0
  * @access private
@@ -6571,7 +7533,11 @@ function _cleanup_header_comment( $str ) {
 }
 
 /**
+<<<<<<< HEAD
  * Permanently deletes comments or posts of any type that have held a status
+=======
+ * Permanently delete comments or posts of any type that have held a status
+>>>>>>> fb785cbb (Initial commit)
  * of 'trash' for the number of days defined in EMPTY_TRASH_DAYS.
  *
  * The default value of `EMPTY_TRASH_DAYS` is 30 (days).
@@ -6623,7 +7589,11 @@ function wp_scheduled_delete() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves metadata from a file.
+=======
+ * Retrieve metadata from a file.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Searches for metadata in the first 8 KB of a file, such as a plugin or theme.
  * Each piece of metadata must be on its own line. Fields can not span multiple
@@ -6639,7 +7609,11 @@ function wp_scheduled_delete() {
  * @param string $file            Absolute path to the file.
  * @param array  $default_headers List of headers, in the format `array( 'HeaderKey' => 'Header Name' )`.
  * @param string $context         Optional. If specified adds filter hook {@see 'extra_$context_headers'}.
+<<<<<<< HEAD
  *                                Default empty string.
+=======
+ *                                Default empty.
+>>>>>>> fb785cbb (Initial commit)
  * @return string[] Array of file header values keyed by header name.
  */
 function get_file_data( $file, $default_headers, $context = '' ) {
@@ -6767,7 +7741,11 @@ function __return_empty_string() { // phpcs:ignore WordPress.NamingConventions.V
 }
 
 /**
+<<<<<<< HEAD
  * Sends a HTTP header to disable content type sniffing in browsers which support it.
+=======
+ * Send a HTTP header to disable content type sniffing in browsers which support it.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.0.0
  *
@@ -6779,7 +7757,11 @@ function send_nosniff_header() {
 }
 
 /**
+<<<<<<< HEAD
  * Returns a MySQL expression for selecting the week number based on the start_of_week option.
+=======
+ * Return a MySQL expression for selecting the week number based on the start_of_week option.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @ignore
  * @since 3.0.0
@@ -6805,7 +7787,11 @@ function _wp_mysql_week( $column ) {
 }
 
 /**
+<<<<<<< HEAD
  * Finds hierarchy loops using a callback function that maps object IDs to parent IDs.
+=======
+ * Find hierarchy loops using a callback function that maps object IDs to parent IDs.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.1.0
  * @access private
@@ -6813,8 +7799,13 @@ function _wp_mysql_week( $column ) {
  * @param callable $callback      Function that accepts ( ID, $callback_args ) and outputs parent_ID.
  * @param int      $start         The ID to start the loop check at.
  * @param int      $start_parent  The parent_ID of $start to use instead of calling $callback( $start ).
+<<<<<<< HEAD
  *                                Use null to always use $callback.
  * @param array    $callback_args Optional. Additional arguments to send to $callback. Default empty array.
+=======
+ *                                Use null to always use $callback
+ * @param array    $callback_args Optional. Additional arguments to send to $callback.
+>>>>>>> fb785cbb (Initial commit)
  * @return array IDs of all members of loop.
  */
 function wp_find_hierarchy_loop( $callback, $start, $start_parent, $callback_args = array() ) {
@@ -6829,7 +7820,11 @@ function wp_find_hierarchy_loop( $callback, $start, $start_parent, $callback_arg
 }
 
 /**
+<<<<<<< HEAD
  * Uses the "The Tortoise and the Hare" algorithm to detect loops.
+=======
+ * Use the "The Tortoise and the Hare" algorithm to detect loops.
+>>>>>>> fb785cbb (Initial commit)
  *
  * For every step of the algorithm, the hare takes two steps and the tortoise one.
  * If the hare ever laps the tortoise, there must be a loop.
@@ -6882,7 +7877,11 @@ function wp_find_hierarchy_loop_tortoise_hare( $callback, $start, $override = ar
 }
 
 /**
+<<<<<<< HEAD
  * Sends a HTTP header to limit rendering of pages to same origin iframes.
+=======
+ * Send a HTTP header to limit rendering of pages to same origin iframes.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.1.3
  *
@@ -6893,7 +7892,11 @@ function send_frame_options_header() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves a list of protocols to allow in HTML attributes.
+=======
+ * Retrieve a list of protocols to allow in HTML attributes.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.3.0
  * @since 4.3.0 Added 'webcal' to the protocols array.
@@ -6991,10 +7994,17 @@ function wp_debug_backtrace_summary( $ignore_class = null, $skip_frames = 0, $pr
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves IDs that are not already present in the cache.
  *
  * @since 3.4.0
  * @since 6.1.0 This function is no longer marked as "private".
+=======
+ * Retrieve IDs that are not already present in the cache.
+ *
+ * @since 3.4.0
+ * @access private
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param int[]  $object_ids Array of IDs.
  * @param string $cache_key  The cache bucket to check against.
@@ -7014,7 +8024,11 @@ function _get_non_cached_ids( $object_ids, $cache_key ) {
 }
 
 /**
+<<<<<<< HEAD
  * Tests if the current device has the capability to upload files.
+=======
+ * Test if the current device has the capability to upload files.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.4.0
  * @access private
@@ -7038,7 +8052,11 @@ function _device_can_upload() {
 }
 
 /**
+<<<<<<< HEAD
  * Tests if a given path is a stream URL
+=======
+ * Test if a given path is a stream URL
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.5.0
  *
@@ -7059,7 +8077,11 @@ function wp_is_stream( $path ) {
 }
 
 /**
+<<<<<<< HEAD
  * Tests if the supplied date is valid for the Gregorian calendar.
+=======
+ * Test if the supplied date is valid for the Gregorian calendar.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.5.0
  *
@@ -7084,7 +8106,11 @@ function wp_checkdate( $month, $day, $year, $source_date ) {
 }
 
 /**
+<<<<<<< HEAD
  * Loads the auth check for monitoring whether the user is still logged in.
+=======
+ * Load the auth check for monitoring whether the user is still logged in.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Can be disabled with remove_action( 'admin_enqueue_scripts', 'wp_auth_check_load' );
  *
@@ -7128,7 +8154,11 @@ function wp_auth_check_load() {
 }
 
 /**
+<<<<<<< HEAD
  * Outputs the HTML that shows the wp-login dialog when the user is no longer logged in.
+=======
+ * Output the HTML that shows the wp-login dialog when the user is no longer logged in.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.6.0
  */
@@ -7151,12 +8181,16 @@ function wp_auth_check_html() {
 	<div id="wp-auth-check-wrap" class="<?php echo $wrap_class; ?>">
 	<div id="wp-auth-check-bg"></div>
 	<div id="wp-auth-check">
+<<<<<<< HEAD
 	<button type="button" class="wp-auth-check-close button-link"><span class="screen-reader-text">
 		<?php
 		/* translators: Hidden accessibility text. */
 		_e( 'Close dialog' );
 		?>
 	</span></button>
+=======
+	<button type="button" class="wp-auth-check-close button-link"><span class="screen-reader-text"><?php _e( 'Close dialog' ); ?></span></button>
+>>>>>>> fb785cbb (Initial commit)
 	<?php
 
 	if ( $same_domain ) {
@@ -7184,7 +8218,11 @@ function wp_auth_check_html() {
 }
 
 /**
+<<<<<<< HEAD
  * Checks whether a user is still logged in, for the heartbeat.
+=======
+ * Check whether a user is still logged in, for the heartbeat.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Send a result that shows a log-in box if the user is no longer logged in,
  * or if their cookie is within the grace period.
@@ -7202,7 +8240,11 @@ function wp_auth_check( $response ) {
 }
 
 /**
+<<<<<<< HEAD
  * Returns RegEx body to liberally match an opening HTML tag.
+=======
+ * Return RegEx body to liberally match an opening HTML tag.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Matches an opening HTML tag that:
  * 1. Is self-closing or
@@ -7225,7 +8267,11 @@ function get_tag_regex( $tag ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves a canonical form of the provided charset appropriate for passing to PHP
+=======
+ * Retrieve a canonical form of the provided charset appropriate for passing to PHP
+>>>>>>> fb785cbb (Initial commit)
  * functions such as htmlspecialchars() and charset HTML attributes.
  *
  * @since 3.6.0
@@ -7251,7 +8297,11 @@ function _canonical_charset( $charset ) {
 }
 
 /**
+<<<<<<< HEAD
  * Sets the mbstring internal encoding to a binary safe encoding when func_overload
+=======
+ * Set the mbstring internal encoding to a binary safe encoding when func_overload
+>>>>>>> fb785cbb (Initial commit)
  * is enabled.
  *
  * When mbstring.func_overload is in use for multi-byte encodings, the results from
@@ -7304,7 +8354,11 @@ function mbstring_binary_safe_encoding( $reset = false ) {
 }
 
 /**
+<<<<<<< HEAD
  * Resets the mbstring internal encoding to a users previously set encoding.
+=======
+ * Reset the mbstring internal encoding to a users previously set encoding.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @see mbstring_binary_safe_encoding()
  *
@@ -7315,6 +8369,7 @@ function reset_mbstring_encoding() {
 }
 
 /**
+<<<<<<< HEAD
  * Filters/validates a variable as a boolean.
  *
  * Alternative to `filter_var( $value, FILTER_VALIDATE_BOOLEAN )`.
@@ -7338,6 +8393,31 @@ function wp_validate_boolean( $value ) {
 
 /**
  * Deletes a file.
+=======
+ * Filter/validate a variable as a boolean.
+ *
+ * Alternative to `filter_var( $var, FILTER_VALIDATE_BOOLEAN )`.
+ *
+ * @since 4.0.0
+ *
+ * @param mixed $var Boolean value to validate.
+ * @return bool Whether the value is validated.
+ */
+function wp_validate_boolean( $var ) {
+	if ( is_bool( $var ) ) {
+		return $var;
+	}
+
+	if ( is_string( $var ) && 'false' === strtolower( $var ) ) {
+		return false;
+	}
+
+	return (bool) $var;
+}
+
+/**
+ * Delete a file
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.2.0
  *
@@ -7554,7 +8634,11 @@ function wp_raise_memory_limit( $context = 'admin' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Generates a random UUID (version 4).
+=======
+ * Generate a random UUID (version 4).
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.7.0
  *
@@ -7641,7 +8725,11 @@ function wp_cache_get_last_changed( $group ) {
 }
 
 /**
+<<<<<<< HEAD
  * Sends an email to the old site admin email address when the site admin email address changes.
+=======
+ * Send an email to the old site admin email address when the site admin email address changes.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.9.0
  *
@@ -7738,7 +8826,11 @@ All at ###SITENAME###
 }
 
 /**
+<<<<<<< HEAD
  * Returns an anonymized IPv4 or IPv6 address.
+=======
+ * Return an anonymized IPv4 or IPv6 address.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.9.6 Abstracted from `WP_Community_Events::get_unsafe_client_ip()`.
  *
@@ -7812,12 +8904,20 @@ function wp_privacy_anonymize_ip( $ip_addr, $ipv6_fallback = false ) {
 }
 
 /**
+<<<<<<< HEAD
  * Returns uniform "anonymous" data by type.
+=======
+ * Return uniform "anonymous" data by type.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.9.6
  *
  * @param string $type The type of data to be anonymized.
+<<<<<<< HEAD
  * @param string $data Optional. The data to be anonymized. Default empty string.
+=======
+ * @param string $data Optional The data to be anonymized.
+>>>>>>> fb785cbb (Initial commit)
  * @return string The anonymous data for the requested type.
  */
 function wp_privacy_anonymize_data( $type, $data = '' ) {
@@ -7911,7 +9011,11 @@ function wp_privacy_exports_url() {
 }
 
 /**
+<<<<<<< HEAD
  * Schedules a `WP_Cron` job to delete expired export files.
+=======
+ * Schedule a `WP_Cron` job to delete expired export files.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.9.6
  */
@@ -8099,7 +9203,11 @@ function wp_get_direct_php_update_url() {
 }
 
 /**
+<<<<<<< HEAD
  * Displays a button directly linking to a PHP update process.
+=======
+ * Display a button directly linking to a PHP update process.
+>>>>>>> fb785cbb (Initial commit)
  *
  * This provides hosts with a way for users to be sent directly to their PHP update process.
  *
@@ -8119,7 +9227,11 @@ function wp_direct_php_update_button() {
 		'<a class="button button-primary" href="%1$s" target="_blank" rel="noopener">%2$s <span class="screen-reader-text">%3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>',
 		esc_url( $direct_update_url ),
 		__( 'Update PHP' ),
+<<<<<<< HEAD
 		/* translators: Hidden accessibility text. */
+=======
+		/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 		__( '(opens in a new tab)' )
 	);
 	echo '</p>';
@@ -8177,7 +9289,11 @@ function wp_get_update_https_url() {
  */
 function wp_get_default_update_https_url() {
 	/* translators: Documentation explaining HTTPS and why it should be used. */
+<<<<<<< HEAD
 	return __( 'https://wordpress.org/documentation/article/why-should-i-use-https/' );
+=======
+	return __( 'https://wordpress.org/support/article/why-should-i-use-https/' );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -8211,7 +9327,11 @@ function wp_get_direct_update_https_url() {
 }
 
 /**
+<<<<<<< HEAD
  * Gets the size of a directory.
+=======
+ * Get the size of a directory.
+>>>>>>> fb785cbb (Initial commit)
  *
  * A helper function that is used primarily to check whether
  * a blog has exceeded its allowed upload space.
@@ -8238,7 +9358,11 @@ function get_dirsize( $directory, $max_execution_time = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Gets the size of a directory recursively.
+=======
+ * Get the size of a directory recursively.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Used by get_dirsize() to get a directory size when it contains other directories.
  *
@@ -8250,6 +9374,7 @@ function get_dirsize( $directory, $max_execution_time = null ) {
  * @param string          $directory          Full path of a directory.
  * @param string|string[] $exclude            Optional. Full path of a subdirectory to exclude from the total,
  *                                            or array of paths. Expected without trailing slash(es).
+<<<<<<< HEAD
  *                                            Default null.
  * @param int             $max_execution_time Optional. Maximum time to run before giving up. In seconds.
  *                                            The timeout is global and is measured from the moment
@@ -8257,6 +9382,13 @@ function get_dirsize( $directory, $max_execution_time = null ) {
  *                                            `max_execution_time` PHP setting.
  * @param array           $directory_cache    Optional. Array of cached directory paths.
  *                                            Defaults to the value of `dirsize_cache` transient.
+=======
+ * @param int             $max_execution_time Optional. Maximum time to run before giving up. In seconds.
+ *                                            The timeout is global and is measured from the moment
+ *                                            WordPress started to load.
+ * @param array           $directory_cache    Optional. Array of cached directory paths.
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return int|false|null Size in bytes if a valid directory. False if not. Null if timeout.
  */
 function recurse_dirsize( $directory, $exclude = null, $max_execution_time = null, &$directory_cache = null ) {
@@ -8443,7 +9575,11 @@ function is_wp_version_compatible( $required ) {
  * @return bool True if required version is compatible or empty, false if not.
  */
 function is_php_version_compatible( $required ) {
+<<<<<<< HEAD
 	return empty( $required ) || version_compare( PHP_VERSION, $required, '>=' );
+=======
+	return empty( $required ) || version_compare( phpversion(), $required, '>=' );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -8461,3 +9597,24 @@ function is_php_version_compatible( $required ) {
 function wp_fuzzy_number_match( $expected, $actual, $precision = 1 ) {
 	return abs( (float) $expected - (float) $actual ) <= $precision;
 }
+<<<<<<< HEAD
+=======
+
+/**
+ * Sorts the keys of an array alphabetically.
+ * The array is passed by reference so it doesn't get returned
+ * which mimics the behaviour of ksort.
+ *
+ * @since 6.0.0
+ *
+ * @param array $array The array to sort, passed by reference.
+ */
+function wp_recursive_ksort( &$array ) {
+	foreach ( $array as &$value ) {
+		if ( is_array( $value ) ) {
+			wp_recursive_ksort( $value );
+		}
+	}
+	ksort( $array );
+}
+>>>>>>> fb785cbb (Initial commit)

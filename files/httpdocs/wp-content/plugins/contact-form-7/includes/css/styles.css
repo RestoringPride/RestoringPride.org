@@ -157,6 +157,7 @@ form.submitting .wpcf7-spinner {
 .wpcf7 input[type="tel"] {
 	direction: ltr;
 }
+<<<<<<< HEAD
 
 .wpcf7-reflection > output {
 	display: list-item;
@@ -166,3 +167,5 @@ form.submitting .wpcf7-spinner {
 .wpcf7-reflection > output[hidden] {
 	display: none;
 }
+=======
+>>>>>>> fb785cbb (Initial commit)

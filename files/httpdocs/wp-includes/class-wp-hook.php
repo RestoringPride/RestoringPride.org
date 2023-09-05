@@ -15,7 +15,10 @@
  * @see Iterator
  * @see ArrayAccess
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 final class WP_Hook implements Iterator, ArrayAccess {
 
 	/**

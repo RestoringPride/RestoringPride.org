@@ -617,7 +617,11 @@ window.screenMeta = {
 		 * @return {void}
 		 */
 		panel.slideDown( 'fast', function() {
+<<<<<<< HEAD
 			panel.removeClass( 'hidden' ).trigger( 'focus' );
+=======
+			panel.trigger( 'focus' );
+>>>>>>> fb785cbb (Initial commit)
 			button.addClass( 'screen-meta-active' ).attr( 'aria-expanded', true );
 		});
 
@@ -646,7 +650,10 @@ window.screenMeta = {
 			button.removeClass( 'screen-meta-active' ).attr( 'aria-expanded', false );
 			$('.screen-meta-toggle').css('visibility', '');
 			panel.parent().hide();
+<<<<<<< HEAD
 			panel.addClass( 'hidden' );
+=======
+>>>>>>> fb785cbb (Initial commit)
 		});
 
 		$document.trigger( 'screen:options:close' );
@@ -752,6 +759,7 @@ $availableStructureTags.on( 'click', function() {
 	    selectionStart          = $permalinkStructure[ 0 ].selectionStart,
 	    selectionEnd            = $permalinkStructure[ 0 ].selectionEnd,
 	    textToAppend            = $( this ).text().trim(),
+<<<<<<< HEAD
 	    textToAnnounce,
 	    newSelectionStart;
 
@@ -761,6 +769,11 @@ $availableStructureTags.on( 'click', function() {
 		textToAnnounce = $( this ).attr( 'data-added' );
 	}
 
+=======
+	    textToAnnounce          = $( this ).attr( 'data-added' ),
+	    newSelectionStart;
+
+>>>>>>> fb785cbb (Initial commit)
 	// Remove structure tag if already part of the structure.
 	if ( -1 !== permalinkStructureValue.indexOf( textToAppend ) ) {
 		permalinkStructureValue = permalinkStructureValue.replace( textToAppend + '/', '' );
@@ -938,7 +951,11 @@ $( function() {
 			adjustment = maxtop;
 		}
 
+<<<<<<< HEAD
 		if ( adjustment > 1 && $('#wp-admin-bar-menu-toggle').is(':hidden') ) {
+=======
+		if ( adjustment > 1 ) {
+>>>>>>> fb785cbb (Initial commit)
 			$submenu.css( 'margin-top', '-' + adjustment + 'px' );
 		} else {
 			$submenu.css( 'margin-top', '' );
@@ -1702,6 +1719,7 @@ $( function() {
 				}
 			} );
 
+<<<<<<< HEAD
 			// Close sidebar when focus moves outside of toggle and sidebar.
 			$( '#wp-admin-bar-menu-toggle, #adminmenumain' ).on( 'focusout', function() {
 				var focusIsInToggle, focusIsInSidebar;
@@ -1721,6 +1739,8 @@ $( function() {
 			} );
 
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			// Add menu events.
 			$adminmenu.on( 'click.wp-responsive', 'li.wp-has-submenu > a', function( event ) {
 				if ( ! $adminmenu.data('wp-responsive') ) {
@@ -1728,7 +1748,10 @@ $( function() {
 				}
 
 				$( this ).parent( 'li' ).toggleClass( 'selected' );
+<<<<<<< HEAD
 				$( this ).trigger( 'focus' );
+=======
+>>>>>>> fb785cbb (Initial commit)
 				event.preventDefault();
 			});
 

@@ -170,7 +170,11 @@ label.bulk-select-button:focus-within {
 	color: #0a4b78;
 }
 
+<<<<<<< HEAD
 input.bulk-select-switcher:focus + .bulk-select-button-label {
+=======
+input.bulk-select-switcher:focus + .bulk-select-button-label{
+>>>>>>> fb785cbb (Initial commit)
 	color: #0a4b78;
 }
 
@@ -192,7 +196,13 @@ input.bulk-select-switcher:focus + .bulk-select-button-label {
 }
 
 .bulk-actions input.menu-items-delete.disabled {
+<<<<<<< HEAD
 	display: none;
+=======
+	cursor: default;
+	color: #a7aaad;
+	box-shadow: none;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 .menu-settings {

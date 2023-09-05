@@ -1694,6 +1694,7 @@ themes.view.Installer = themes.view.Appearance.extend({
 	browse: function( section ) {
 		// Create a new collection with the proper theme data
 		// for each section.
+<<<<<<< HEAD
 		if ( 'block-themes' === section ) {
 			// Get the themes by sending Ajax POST request to api.wordpress.org/themes
 			// or searching the local cache.
@@ -1701,6 +1702,9 @@ themes.view.Installer = themes.view.Appearance.extend({
 		} else {
 			this.collection.query( { browse: section } );
 		}
+=======
+		this.collection.query( { browse: section } );
+>>>>>>> fb785cbb (Initial commit)
 	},
 
 	// Sorting navigation.

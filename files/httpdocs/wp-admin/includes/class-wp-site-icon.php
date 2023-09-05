@@ -12,7 +12,10 @@
  *
  * @since 4.3.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Site_Icon {
 
 	/**

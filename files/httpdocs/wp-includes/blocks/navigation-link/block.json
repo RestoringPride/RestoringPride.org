@@ -58,6 +58,7 @@
 	"supports": {
 		"reusable": false,
 		"html": false,
+<<<<<<< HEAD
 		"__experimentalSlashInserter": true,
 		"typography": {
 			"fontSize": true,
@@ -72,6 +73,9 @@
 				"fontSize": true
 			}
 		}
+=======
+		"__experimentalSlashInserter": true
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-navigation-link-editor",
 	"style": "wp-block-navigation-link"

@@ -5,7 +5,10 @@ require_once WPCF7_PLUGIN_DIR . '/includes/capabilities.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/functions.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/formatting.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/pipe.php';
+<<<<<<< HEAD
 require_once WPCF7_PLUGIN_DIR . '/includes/pocket-holder.php';
+=======
+>>>>>>> fb785cbb (Initial commit)
 require_once WPCF7_PLUGIN_DIR . '/includes/form-tag.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/form-tags-manager.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/shortcodes.php';
@@ -24,7 +27,10 @@ require_once WPCF7_PLUGIN_DIR . '/includes/integration.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/config-validator.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/rest-api.php';
 require_once WPCF7_PLUGIN_DIR . '/includes/block-editor/block-editor.php';
+<<<<<<< HEAD
 require_once WPCF7_PLUGIN_DIR . '/includes/html-formatter.php';
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 if ( is_admin() ) {
 	require_once WPCF7_PLUGIN_DIR . '/admin/admin.php';
@@ -55,7 +61,10 @@ class WPCF7 {
 		self::load_module( 'quiz' );
 		self::load_module( 'really-simple-captcha' );
 		self::load_module( 'recaptcha' );
+<<<<<<< HEAD
 		self::load_module( 'reflection' );
+=======
+>>>>>>> fb785cbb (Initial commit)
 		self::load_module( 'response' );
 		self::load_module( 'select' );
 		self::load_module( 'sendinblue' );

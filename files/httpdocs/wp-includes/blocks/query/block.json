@@ -24,8 +24,12 @@
 				"exclude": [],
 				"sticky": "",
 				"inherit": true,
+<<<<<<< HEAD
 				"taxQuery": null,
 				"parents": []
+=======
+				"taxQuery": null
+>>>>>>> fb785cbb (Initial commit)
 			}
 		},
 		"tagName": {
@@ -37,9 +41,12 @@
 			"default": {
 				"type": "list"
 			}
+<<<<<<< HEAD
 		},
 		"namespace": {
 			"type": "string"
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"providesContext": {
@@ -49,8 +56,20 @@
 	},
 	"supports": {
 		"align": [ "wide", "full" ],
+<<<<<<< HEAD
 		"anchor": true,
 		"html": false,
+=======
+		"html": false,
+		"color": {
+			"gradients": true,
+			"link": true,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": true
+			}
+		},
+>>>>>>> fb785cbb (Initial commit)
 		"__experimentalLayout": true
 	},
 	"editorStyle": "wp-block-query-editor"

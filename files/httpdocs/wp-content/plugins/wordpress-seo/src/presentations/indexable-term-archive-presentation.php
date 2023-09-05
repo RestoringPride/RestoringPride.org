@@ -3,7 +3,10 @@
 namespace Yoast\WP\SEO\Presentations;
 
 use WP_Term;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Helpers\Pagination_Helper;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Helpers\Taxonomy_Helper;
 use Yoast\WP\SEO\Wrappers\WP_Query_Wrapper;
 
@@ -19,6 +22,7 @@ class Indexable_Term_Archive_Presentation extends Indexable_Presentation {
 	use Archive_Adjacent;
 
 	/**
+<<<<<<< HEAD
 	 * Holds the Pagination_Helper instance.
 	 *
 	 * @var Pagination_Helper
@@ -26,6 +30,8 @@ class Indexable_Term_Archive_Presentation extends Indexable_Presentation {
 	protected $pagination;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Holds the WP query wrapper instance.
 	 *
 	 * @var WP_Query_Wrapper
@@ -100,11 +106,15 @@ class Indexable_Term_Archive_Presentation extends Indexable_Presentation {
 	 * @return array The source.
 	 */
 	public function generate_source() {
+<<<<<<< HEAD
 		if ( ! empty( $this->model->object_id ) ) {
 			return \get_term( $this->model->object_id, $this->model->object_sub_type );
 		}
 
 		return \get_term( \get_queried_object()->term_id, \get_queried_object()->taxonomy );
+=======
+		return \get_term( $this->model->object_id, $this->model->object_sub_type );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**

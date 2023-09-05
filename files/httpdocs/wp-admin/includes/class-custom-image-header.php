@@ -11,7 +11,10 @@
  *
  * @since 2.1.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class Custom_Image_Header {
 
 	/**
@@ -135,7 +138,11 @@ class Custom_Image_Header {
 		get_current_screen()->set_help_sidebar(
 			'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
 			'<p>' . __( '<a href="https://codex.wordpress.org/Appearance_Header_Screen">Documentation on Custom Header</a>' ) . '</p>' .
+<<<<<<< HEAD
 			'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+=======
+			'<p>' . __( '<a href="https://wordpress.org/support/">Support</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 		);
 	}
 
@@ -332,7 +339,11 @@ class Custom_Image_Header {
 			if ( ! empty( $header['attachment_id'] ) ) {
 				$width = ' width="230"';
 			}
+<<<<<<< HEAD
 			echo '<img src="' . esc_url( set_url_scheme( $header_thumbnail ) ) . '" alt="' . esc_attr( $header_alt_text ) . '"' . $width . ' /></label>';
+=======
+			echo '<img src="' . set_url_scheme( $header_thumbnail ) . '" alt="' . esc_attr( $header_alt_text ) . '"' . $width . ' /></label>';
+>>>>>>> fb785cbb (Initial commit)
 			echo '</div>';
 		}
 
@@ -522,7 +533,11 @@ class Custom_Image_Header {
 	<p>
 			<?php
 			/* translators: %s: Home URL. */
+<<<<<<< HEAD
 			printf( __( 'Header updated. <a href="%s">Visit your site</a> to see how it looks.' ), esc_url( home_url( '/' ) ) );
+=======
+			printf( __( 'Header updated. <a href="%s">Visit your site</a> to see how it looks.' ), home_url( '/' ) );
+>>>>>>> fb785cbb (Initial commit)
 			?>
 	</p>
 </div>
@@ -1160,7 +1175,11 @@ endif;
 				return;
 			}
 
+<<<<<<< HEAD
 			$choice['url'] = sanitize_url( $choice['url'] );
+=======
+			$choice['url'] = esc_url_raw( $choice['url'] );
+>>>>>>> fb785cbb (Initial commit)
 
 			$header_image_data = (object) array(
 				'attachment_id' => $choice['attachment_id'],
@@ -1198,7 +1217,11 @@ endif;
 			}
 		}
 
+<<<<<<< HEAD
 		set_theme_mod( 'header_image', sanitize_url( $header_image_data['url'] ) );
+=======
+		set_theme_mod( 'header_image', esc_url_raw( $header_image_data['url'] ) );
+>>>>>>> fb785cbb (Initial commit)
 		set_theme_mod( 'header_image_data', $header_image_data );
 	}
 

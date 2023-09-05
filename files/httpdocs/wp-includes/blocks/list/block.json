@@ -40,6 +40,7 @@
 		"className": false,
 		"typography": {
 			"fontSize": true,
+<<<<<<< HEAD
 			"lineHeight": true,
 			"__experimentalFontFamily": true,
 			"__experimentalFontWeight": true,
@@ -47,6 +48,14 @@
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
+=======
+			"__experimentalFontFamily": true,
+			"lineHeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
@@ -59,10 +68,13 @@
 				"text": true
 			}
 		},
+<<<<<<< HEAD
 		"spacing": {
 			"margin": true,
 			"padding": true
 		},
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"__unstablePasteTextInline": true,
 		"__experimentalSelector": "ol,ul",
 		"__experimentalSlashInserter": true

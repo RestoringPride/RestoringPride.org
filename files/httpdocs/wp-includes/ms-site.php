@@ -339,7 +339,11 @@ function get_site( $site = null ) {
  *
  * @since 4.6.0
  * @since 5.1.0 Introduced the `$update_meta_cache` parameter.
+<<<<<<< HEAD
  * @since 6.1.0 This function is no longer marked as "private".
+=======
+ * @access private
+>>>>>>> fb785cbb (Initial commit)
  *
  * @see update_site_cache()
  * @global wpdb $wpdb WordPress database abstraction object.
@@ -1234,9 +1238,14 @@ function wp_maybe_transition_site_statuses_on_update( $new_site, $old_site = nul
 		 *
 		 * @since MU (3.0.0)
 		 *
+<<<<<<< HEAD
 		 * @param int    $site_id   Site ID.
 		 * @param string $is_public Whether the site is public. A numeric string,
 		 *                          for compatibility reasons. Accepts '1' or '0'.
+=======
+		 * @param int    $site_id Site ID.
+		 * @param string $value   The value of the site status.
+>>>>>>> fb785cbb (Initial commit)
 		 */
 		do_action( 'update_blog_public', $site_id, $new_site->public );
 	}
@@ -1248,7 +1257,11 @@ function wp_maybe_transition_site_statuses_on_update( $new_site, $old_site = nul
  * @since 5.1.0
  *
  * @param WP_Site $new_site The site object after the update.
+<<<<<<< HEAD
  * @param WP_Site $old_site The site object prior to the update.
+=======
+ * @param WP_Site $old_site The site obejct prior to the update.
+>>>>>>> fb785cbb (Initial commit)
  */
 function wp_maybe_clean_new_site_cache_on_update( $new_site, $old_site ) {
 	if ( $old_site->domain !== $new_site->domain || $old_site->path !== $new_site->path ) {
@@ -1261,18 +1274,29 @@ function wp_maybe_clean_new_site_cache_on_update( $new_site, $old_site ) {
  *
  * @since 5.1.0
  *
+<<<<<<< HEAD
  * @param int    $site_id   Site ID.
  * @param string $is_public Whether the site is public. A numeric string,
  *                          for compatibility reasons. Accepts '1' or '0'.
  */
 function wp_update_blog_public_option_on_site_update( $site_id, $is_public ) {
+=======
+ * @param int    $site_id Site ID.
+ * @param string $public  The value of the site status.
+ */
+function wp_update_blog_public_option_on_site_update( $site_id, $public ) {
+>>>>>>> fb785cbb (Initial commit)
 
 	// Bail if the site's database tables do not exist (yet).
 	if ( ! wp_is_site_initialized( $site_id ) ) {
 		return;
 	}
 
+<<<<<<< HEAD
 	update_blog_option( $site_id, 'blog_public', $is_public );
+=======
+	update_blog_option( $site_id, 'blog_public', $public );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**

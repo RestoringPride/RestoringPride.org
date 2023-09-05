@@ -11,7 +11,10 @@
  *
  * @since 2.9.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_MatchesMapRegex {
 	/**
 	 * store for matches

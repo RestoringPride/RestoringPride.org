@@ -35,7 +35,11 @@ class SMTP
      *
      * @var string
      */
+<<<<<<< HEAD
     const VERSION = '6.7';
+=======
+    const VERSION = '6.6.0';
+>>>>>>> fb785cbb (Initial commit)
 
     /**
      * SMTP line break constant.
@@ -682,6 +686,10 @@ class SMTP
      */
     public function close()
     {
+<<<<<<< HEAD
+=======
+        $this->setError('');
+>>>>>>> fb785cbb (Initial commit)
         $this->server_caps = null;
         $this->helo_rply = null;
         if (is_resource($this->smtp_conn)) {
@@ -1036,10 +1044,14 @@ class SMTP
             return false;
         }
 
+<<<<<<< HEAD
         //Don't clear the error store when using keepalive
         if ($command !== 'RSET') {
             $this->setError('');
         }
+=======
+        $this->setError('');
+>>>>>>> fb785cbb (Initial commit)
 
         return true;
     }

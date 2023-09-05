@@ -22,6 +22,7 @@
 		"style"
 	],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
 		"reusable": false,
 		"html": false,
@@ -38,6 +39,10 @@
 				"fontSize": true
 			}
 		}
+=======
+		"reusable": false,
+		"html": false
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-home-link-editor",
 	"style": "wp-block-home-link"

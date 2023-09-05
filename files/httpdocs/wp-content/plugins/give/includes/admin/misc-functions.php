@@ -249,6 +249,7 @@ function give_add_ons_feed( $feed_type = '', $echo = true ) {
 
 	return $cache;
 }
+<<<<<<< HEAD
 
 /**
  * Handle installation and connection for SendWP via ajax
@@ -345,3 +346,5 @@ function give_sendwp_disconnect () {
 	wp_send_json_success();
 }
 add_action( 'wp_ajax_give_sendwp_disconnect', 'give_sendwp_disconnect' );
+=======
+>>>>>>> fb785cbb (Initial commit)

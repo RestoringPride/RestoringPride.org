@@ -27,7 +27,11 @@ get_current_screen()->add_help_tab(
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
 	'<p>' . __( '<a href="https://codex.wordpress.org/Network_Admin_Users_Screen">Documentation on Network Users</a>' ) . '</p>' .
+<<<<<<< HEAD
 	'<p>' . __( '<a href="https://wordpress.org/support/forum/multisite/">Support forums</a>' ) . '</p>'
+=======
+	'<p>' . __( '<a href="https://wordpress.org/support/forum/multisite/">Support Forums</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 );
 
 if ( isset( $_REQUEST['action'] ) && 'add-user' === $_REQUEST['action'] ) {
@@ -77,8 +81,13 @@ if ( isset( $_REQUEST['action'] ) && 'add-user' === $_REQUEST['action'] ) {
 	}
 }
 
+<<<<<<< HEAD
 $message = '';
 if ( isset( $_GET['update'] ) ) {
+=======
+if ( isset( $_GET['update'] ) ) {
+	$messages = array();
+>>>>>>> fb785cbb (Initial commit)
 	if ( 'added' === $_GET['update'] ) {
 		$edit_link = '';
 		if ( isset( $_GET['user_id'] ) ) {
@@ -93,6 +102,11 @@ if ( isset( $_GET['update'] ) ) {
 		if ( $edit_link ) {
 			$message .= sprintf( ' <a href="%s">%s</a>', $edit_link, __( 'Edit user' ) );
 		}
+<<<<<<< HEAD
+=======
+
+		$messages[] = $message;
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 
@@ -105,21 +119,36 @@ require_once ABSPATH . 'wp-admin/admin-header.php'; ?>
 <div class="wrap">
 <h1 id="add-new-user"><?php _e( 'Add New User' ); ?></h1>
 <?php
+<<<<<<< HEAD
 if ( '' !== $message ) {
 	echo '<div id="message" class="notice notice-success is-dismissible"><p>' . $message . '</p></div>';
+=======
+if ( ! empty( $messages ) ) {
+	foreach ( $messages as $msg ) {
+		echo '<div id="message" class="updated notice is-dismissible"><p>' . $msg . '</p></div>';
+	}
+>>>>>>> fb785cbb (Initial commit)
 }
 
 if ( isset( $add_user_errors ) && is_wp_error( $add_user_errors ) ) {
 	?>
+<<<<<<< HEAD
 	<div id="message" class="notice notice-error is-dismissible">
 		<?php
 		foreach ( $add_user_errors->get_error_messages() as $error ) {
 			echo "<p>$error</p>";
+=======
+	<div class="error">
+		<?php
+		foreach ( $add_user_errors->get_error_messages() as $message ) {
+			echo "<p>$message</p>";
+>>>>>>> fb785cbb (Initial commit)
 		}
 		?>
 	</div>
 <?php } ?>
 	<form action="<?php echo esc_url( network_admin_url( 'user-new.php?action=add-user' ) ); ?>" id="adduser" method="post" novalidate="novalidate">
+<<<<<<< HEAD
 		<p><?php echo wp_required_field_message(); ?></p>
 		<table class="form-table" role="presentation">
 			<tr class="form-field form-required">
@@ -134,6 +163,21 @@ if ( isset( $add_user_errors ) && is_wp_error( $add_user_errors ) ) {
 				<td colspan="2" class="td-full"><?php _e( 'A password reset link will be sent to the user via email.' ); ?></td>
 			</tr>
 		</table>
+=======
+	<table class="form-table" role="presentation">
+		<tr class="form-field form-required">
+			<th scope="row"><label for="username"><?php _e( 'Username' ); ?></label></th>
+			<td><input type="text" class="regular-text" name="user[username]" id="username" autocapitalize="none" autocorrect="off" maxlength="60" /></td>
+		</tr>
+		<tr class="form-field form-required">
+			<th scope="row"><label for="email"><?php _e( 'Email' ); ?></label></th>
+			<td><input type="email" class="regular-text" name="user[email]" id="email" /></td>
+		</tr>
+		<tr class="form-field">
+			<td colspan="2" class="td-full"><?php _e( 'A password reset link will be sent to the user via email.' ); ?></td>
+		</tr>
+	</table>
+>>>>>>> fb785cbb (Initial commit)
 	<?php
 	/**
 	 * Fires at the end of the new user form in network admin.

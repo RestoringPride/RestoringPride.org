@@ -2,12 +2,17 @@
 
 namespace Give\Donations\Endpoints;
 
+<<<<<<< HEAD
 use Give\Donations\ListTable\DonationsListTable;
 use Give\Donations\ValueObjects\DonationMetaKeys;
 use Give\Donations\ValueObjects\DonationMode;
 use Give\Framework\Database\DB;
 use Give\Framework\ListTable\Exceptions\ColumnIdCollisionException;
 use Give\Framework\QueryBuilder\QueryBuilder;
+=======
+use Give\Donations\Controllers\DonationsRequestController;
+use Give\Donations\DataTransferObjects\DonationResponseData;
+>>>>>>> fb785cbb (Initial commit)
 use WP_REST_Request;
 use WP_REST_Response;
 
@@ -19,6 +24,7 @@ class ListDonations extends Endpoint
     protected $endpoint = 'admin/donations';
 
     /**
+<<<<<<< HEAD
      * @var WP_REST_Request
      */
     protected $request;
@@ -29,6 +35,8 @@ class ListDonations extends Endpoint
     protected $listTable;
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @inheritDoc
      */
     public function registerRoute()
@@ -80,6 +88,7 @@ class ListDonations extends Endpoint
                         'required' => false,
                         'sanitize_callback' => 'sanitize_text_field',
                     ],
+<<<<<<< HEAD
                     'sortColumn' => [
                         'type' => 'string',
                         'required' => false,
@@ -112,12 +121,15 @@ class ListDonations extends Endpoint
                             'columns',
                         ],
                     ],
+=======
+>>>>>>> fb785cbb (Initial commit)
                 ],
             ]
         );
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.24.0 Change this to use the new ListTable class
      * @since      2.20.0
      *
@@ -140,10 +152,28 @@ class ListDonations extends Endpoint
         } else {
             $this->listTable->items($donations, $this->request->get_param('locale') ?? '');
             $items = $this->listTable->getItems();
+=======
+     * @param WP_REST_Request $request
+     * @since 2.20.0
+     *
+     * @return WP_REST_Response
+     */
+    public function handleRequest(WP_REST_Request $request): WP_REST_Response
+    {
+        $data = [];
+        $controller = new DonationsRequestController($request);
+        $donations = $controller->getDonations();
+        $donationsCount = $controller->getTotalDonationsCount();
+        $totalPages = (int)ceil($donationsCount / $request->get_param('perPage'));
+
+        foreach ($donations as $donation) {
+            $data[] = DonationResponseData::fromObject($donation)->toArray();
+>>>>>>> fb785cbb (Initial commit)
         }
 
         return new WP_REST_Response(
             [
+<<<<<<< HEAD
                 'items' => $items,
                 'totalItems' => $donationsCount,
                 'totalPages' => $totalPages,
@@ -285,4 +315,12 @@ class ListDonations extends Endpoint
             $dependencies,
         ];
     }
+=======
+                'items' => $data,
+                'totalItems' => $donationsCount,
+                'totalPages' => $totalPages
+            ]
+        );
+    }
+>>>>>>> fb785cbb (Initial commit)
 }

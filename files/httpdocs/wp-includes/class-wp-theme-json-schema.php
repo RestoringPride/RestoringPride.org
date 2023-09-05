@@ -17,7 +17,10 @@
  * @since 5.9.0
  * @access private
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Theme_JSON_Schema {
 
 	/**

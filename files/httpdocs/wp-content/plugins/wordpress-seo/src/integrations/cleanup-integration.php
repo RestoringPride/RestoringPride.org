@@ -4,9 +4,12 @@ namespace Yoast\WP\SEO\Integrations;
 
 use Closure;
 use Yoast\WP\Lib\Model;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Helpers\Author_Archive_Helper;
 use Yoast\WP\SEO\Helpers\Post_Type_Helper;
 use Yoast\WP\SEO\Helpers\Taxonomy_Helper;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Adds cleanup hooks.
@@ -29,6 +32,7 @@ class Cleanup_Integration implements Integration_Interface {
 	const START_HOOK = 'wpseo_start_cleanup_indexables';
 
 	/**
+<<<<<<< HEAD
 	 * A helper for taxonomies.
 	 *
 	 * @var Taxonomy_Helper
@@ -63,6 +67,8 @@ class Cleanup_Integration implements Integration_Interface {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Initializes the integration.
 	 *
 	 * This is the place to register hooks and filters.
@@ -108,7 +114,10 @@ class Cleanup_Integration implements Integration_Interface {
 
 			// There are more items to delete for the current cleanup job, start a cronjob at the specified job.
 			$this->start_cron_job( $name );
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			return;
 		}
 	}
@@ -118,7 +127,11 @@ class Cleanup_Integration implements Integration_Interface {
 	 *
 	 * @return Closure[] The cleanup tasks.
 	 */
+<<<<<<< HEAD
 	public function get_cleanup_tasks() {
+=======
+	protected function get_cleanup_tasks() {
+>>>>>>> fb785cbb (Initial commit)
 		return \array_merge(
 			[
 				'clean_indexables_with_object_type_and_object_sub_type_shop_order' => function( $limit ) {
@@ -127,6 +140,7 @@ class Cleanup_Integration implements Integration_Interface {
 				'clean_indexables_by_post_status_auto-draft' => function( $limit ) {
 					return $this->clean_indexables_with_post_status( 'auto-draft', $limit );
 				},
+<<<<<<< HEAD
 				'clean_indexables_for_non_publicly_viewable_post' => function ( $limit ) {
 					return $this->clean_indexables_for_non_publicly_viewable_post( $limit );
 				},
@@ -139,6 +153,8 @@ class Cleanup_Integration implements Integration_Interface {
 				'clean_indexables_for_authors_without_archive' => function ( $limit ) {
 					return $this->clean_indexables_for_authors_without_archive( $limit );
 				},
+=======
+>>>>>>> fb785cbb (Initial commit)
 			],
 			$this->get_additional_tasks(),
 			[
@@ -242,7 +258,10 @@ class Cleanup_Integration implements Integration_Interface {
 
 		if ( $current_task_name === false ) {
 			$this->reset_cleanup();
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			return;
 		}
 
@@ -267,7 +286,10 @@ class Cleanup_Integration implements Integration_Interface {
 
 			if ( $items_cleaned === false ) {
 				$this->reset_cleanup();
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 				return;
 			}
 
@@ -275,16 +297,24 @@ class Cleanup_Integration implements Integration_Interface {
 				// Check if we are finished with all tasks.
 				if ( \next( $tasks ) === false ) {
 					$this->reset_cleanup();
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 					return;
 				}
 
 				// Continue with the next task next time the cron job is run.
 				\update_option( self::CURRENT_TASK_OPTION, \key( $tasks ) );
+<<<<<<< HEAD
 
 				return;
 			}
 
+=======
+				return;
+			}
+>>>>>>> fb785cbb (Initial commit)
 			// There were items deleted for the current task, continue with the same task next cron call.
 			return;
 		}
@@ -306,7 +336,10 @@ class Cleanup_Integration implements Integration_Interface {
 
 		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- Reason: There is no unescaped user input.
 		$sql = $wpdb->prepare( "DELETE FROM $indexable_table WHERE object_type = %s AND object_sub_type = %s ORDER BY id LIMIT %d", $object_type, $object_sub_type, $limit );
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Reason: Already prepared.
 		return $wpdb->query( $sql );
 	}
@@ -326,12 +359,16 @@ class Cleanup_Integration implements Integration_Interface {
 
 		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- Reason: There is no unescaped user input.
 		$sql = $wpdb->prepare( "DELETE FROM $indexable_table WHERE object_type = 'post' AND post_status = %s ORDER BY id LIMIT %d", $post_status, $limit );
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Reason: Already prepared.
 		return $wpdb->query( $sql );
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Cleans up any indexables that belong to post types that are not/no longer publicly viewable.
 	 *
 	 * @param int $limit The limit we'll apply to the queries.
@@ -481,6 +518,8 @@ class Cleanup_Integration implements Integration_Interface {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Cleans orphaned rows from a yoast table.
 	 *
 	 * @param string $table  The table to clean up.

@@ -17,7 +17,10 @@
 		"anchor": true,
 		"align": [ "center", "wide", "full" ],
 		"color": {
+<<<<<<< HEAD
 			"enableContrastChecker": false,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalSkipSerialization": true,
 			"gradients": true,
 			"background": true,
@@ -25,9 +28,12 @@
 			"__experimentalDefaultControls": {
 				"background": true
 			}
+<<<<<<< HEAD
 		},
 		"spacing": {
 			"margin": [ "top", "bottom" ]
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"styles": [

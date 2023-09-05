@@ -21,11 +21,15 @@ trait Aggregate
     {
         $column = ( ! $column || $column === '*') ? '1' : trim($column);
 
+<<<<<<< HEAD
         if (empty($this->selects)) {
             $this->selects[] = new RawSQL('SELECT COUNT(%1s) AS count', $column);
         } else {
             $this->selects[] = new RawSQL('COUNT(%1s) AS count', $column);
         }
+=======
+        $this->selects[] = new RawSQL('SELECT COUNT(%1s) AS count', $column);
+>>>>>>> fb785cbb (Initial commit)
 
         return +$this->get()->count;
     }

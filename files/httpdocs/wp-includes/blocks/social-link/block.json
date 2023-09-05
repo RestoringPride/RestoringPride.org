@@ -16,9 +16,12 @@
 		},
 		"label": {
 			"type": "string"
+<<<<<<< HEAD
 		},
 		"rel": {
 			"type": "string"
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"usesContext": [
@@ -28,7 +31,10 @@
 		"iconBackgroundColorValue"
 	],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"reusable": false,
 		"html": false
 	},

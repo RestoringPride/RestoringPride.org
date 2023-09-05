@@ -30,9 +30,12 @@ global $wp_filter;
 /** @var int[] $wp_actions */
 global $wp_actions;
 
+<<<<<<< HEAD
 /** @var int[] $wp_filters */
 global $wp_filters;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /** @var string[] $wp_current_filter */
 global $wp_current_filter;
 
@@ -46,10 +49,13 @@ if ( ! isset( $wp_actions ) ) {
 	$wp_actions = array();
 }
 
+<<<<<<< HEAD
 if ( ! isset( $wp_filters ) ) {
 	$wp_filters = array();
 }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 if ( ! isset( $wp_current_filter ) ) {
 	$wp_current_filter = array();
 }
@@ -162,7 +168,10 @@ function add_filter( $hook_name, $callback, $priority = 10, $accepted_args = 1 )
  *              by adding it to the function signature.
  *
  * @global WP_Hook[] $wp_filter         Stores all of the filters and actions.
+<<<<<<< HEAD
  * @global int[]     $wp_filters        Stores the number of times each filter was triggered.
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @global string[]  $wp_current_filter Stores the list of current filters with the current one last.
  *
  * @param string $hook_name The name of the filter hook.
@@ -171,6 +180,7 @@ function add_filter( $hook_name, $callback, $priority = 10, $accepted_args = 1 )
  * @return mixed The filtered value after all hooked functions are applied to it.
  */
 function apply_filters( $hook_name, $value, ...$args ) {
+<<<<<<< HEAD
 	global $wp_filter, $wp_filters, $wp_current_filter;
 
 	if ( ! isset( $wp_filters[ $hook_name ] ) ) {
@@ -178,6 +188,9 @@ function apply_filters( $hook_name, $value, ...$args ) {
 	} else {
 		++$wp_filters[ $hook_name ];
 	}
+=======
+	global $wp_filter, $wp_current_filter;
+>>>>>>> fb785cbb (Initial commit)
 
 	// Do 'all' actions first.
 	if ( isset( $wp_filter['all'] ) ) {
@@ -218,7 +231,10 @@ function apply_filters( $hook_name, $value, ...$args ) {
  *                      functions hooked to `$hook_name` are supplied using an array.
  *
  * @global WP_Hook[] $wp_filter         Stores all of the filters and actions.
+<<<<<<< HEAD
  * @global int[]     $wp_filters        Stores the number of times each filter was triggered.
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @global string[]  $wp_current_filter Stores the list of current filters with the current one last.
  *
  * @param string $hook_name The name of the filter hook.
@@ -226,6 +242,7 @@ function apply_filters( $hook_name, $value, ...$args ) {
  * @return mixed The filtered value after all hooked functions are applied to it.
  */
 function apply_filters_ref_array( $hook_name, $args ) {
+<<<<<<< HEAD
 	global $wp_filter, $wp_filters, $wp_current_filter;
 
 	if ( ! isset( $wp_filters[ $hook_name ] ) ) {
@@ -233,6 +250,9 @@ function apply_filters_ref_array( $hook_name, $args ) {
 	} else {
 		++$wp_filters[ $hook_name ];
 	}
+=======
+	global $wp_filter, $wp_current_filter;
+>>>>>>> fb785cbb (Initial commit)
 
 	// Do 'all' actions first.
 	if ( isset( $wp_filter['all'] ) ) {
@@ -370,9 +390,15 @@ function current_filter() {
 /**
  * Returns whether or not a filter hook is currently being processed.
  *
+<<<<<<< HEAD
  * The function current_filter() only returns the most recent filter being executed.
  * did_filter() returns the number of times a filter has been applied during
  * the current request.
+=======
+ * The function current_filter() only returns the most recent filter or action
+ * being executed. did_action() returns true once the action is initially
+ * processed.
+>>>>>>> fb785cbb (Initial commit)
  *
  * This function allows detection for any filter currently being executed
  * (regardless of whether it's the most recent filter to fire, in the case of
@@ -381,10 +407,17 @@ function current_filter() {
  * @since 3.9.0
  *
  * @see current_filter()
+<<<<<<< HEAD
  * @see did_filter()
  * @global string[] $wp_current_filter Current filter.
  *
  * @param string|null $hook_name Optional. Filter hook to check. Defaults to null,
+=======
+ * @see did_action()
+ * @global string[] $wp_current_filter Current filter.
+ *
+ * @param null|string $hook_name Optional. Filter hook to check. Defaults to null,
+>>>>>>> fb785cbb (Initial commit)
  *                               which checks if any filter is currently being run.
  * @return bool Whether the filter is currently in the stack.
  */
@@ -399,6 +432,7 @@ function doing_filter( $hook_name = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the number of times a filter has been applied during the current request.
  *
  * @since 6.1.0
@@ -419,6 +453,8 @@ function did_filter( $hook_name ) {
 }
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Adds a callback function to an action hook.
  *
  * Actions are the hooks that the WordPress core launches at specific points
@@ -465,7 +501,11 @@ function add_action( $hook_name, $callback, $priority = 10, $accepted_args = 1 )
  *      *
  *      * - 'example_action' is the action hook.
  *      * - $arg1 and $arg2 are the additional arguments passed to the callback.
+<<<<<<< HEAD
  *     do_action( 'example_action', $arg1, $arg2 );
+=======
+ *     $value = do_action( 'example_action', $arg1, $arg2 );
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 1.2.0
  * @since 5.3.0 Formalized the existing and already documented `...$arg` parameter
@@ -641,6 +681,7 @@ function current_action() {
 /**
  * Returns whether or not an action hook is currently being processed.
  *
+<<<<<<< HEAD
  * The function current_action() only returns the most recent action being executed.
  * did_action() returns the number of times an action has been fired during
  * the current request.
@@ -654,6 +695,10 @@ function current_action() {
  * @see current_action()
  * @see did_action()
  *
+=======
+ * @since 3.9.0
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @param string|null $hook_name Optional. Action hook to check. Defaults to null,
  *                               which checks if any action is currently being run.
  * @return bool Whether the action is currently in the stack.

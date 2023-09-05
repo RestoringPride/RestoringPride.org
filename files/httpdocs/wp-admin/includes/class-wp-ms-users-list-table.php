@@ -11,6 +11,10 @@
  * Core class used to implement displaying users in a list table for the network admin.
  *
  * @since 3.1.0
+<<<<<<< HEAD
+=======
+ * @access private
+>>>>>>> fb785cbb (Initial commit)
  *
  * @see WP_List_Table
  */
@@ -136,10 +140,20 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 		$super_admins = get_super_admins();
 		$total_admins = count( $super_admins );
 
+<<<<<<< HEAD
 		$role_links        = array();
 		$role_links['all'] = array(
 			'url'     => network_admin_url( 'users.php' ),
 			'label'   => sprintf(
+=======
+		$current_link_attributes = 'super' !== $role ? ' class="current" aria-current="page"' : '';
+		$role_links              = array();
+		$role_links['all']       = sprintf(
+			'<a href="%s"%s>%s</a>',
+			network_admin_url( 'users.php' ),
+			$current_link_attributes,
+			sprintf(
+>>>>>>> fb785cbb (Initial commit)
 				/* translators: Number of users. */
 				_nx(
 					'All <span class="count">(%s)</span>',
@@ -148,6 +162,7 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 					'users'
 				),
 				number_format_i18n( $total_users )
+<<<<<<< HEAD
 			),
 			'current' => 'super' !== $role,
 		);
@@ -155,6 +170,16 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 		$role_links['super'] = array(
 			'url'     => network_admin_url( 'users.php?role=super' ),
 			'label'   => sprintf(
+=======
+			)
+		);
+		$current_link_attributes = 'super' === $role ? ' class="current" aria-current="page"' : '';
+		$role_links['super']     = sprintf(
+			'<a href="%s"%s>%s</a>',
+			network_admin_url( 'users.php?role=super' ),
+			$current_link_attributes,
+			sprintf(
+>>>>>>> fb785cbb (Initial commit)
 				/* translators: Number of users. */
 				_n(
 					'Super Admin <span class="count">(%s)</span>',
@@ -162,11 +187,18 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 					$total_admins
 				),
 				number_format_i18n( $total_admins )
+<<<<<<< HEAD
 			),
 			'current' => 'super' === $role,
 		);
 
 		return $this->get_views_links( $role_links );
+=======
+			)
+		);
+
+		return $role_links;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -237,7 +269,11 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 		?>
 		<label class="screen-reader-text" for="blog_<?php echo $user->ID; ?>">
 			<?php
+<<<<<<< HEAD
 			/* translators: Hidden accessibility text. %s: User login. */
+=======
+			/* translators: %s: User login. */
+>>>>>>> fb785cbb (Initial commit)
 			printf( __( 'Select %s' ), $user->user_login );
 			?>
 		</label>
@@ -298,21 +334,29 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 	 */
 	public function column_name( $user ) {
 		if ( $user->first_name && $user->last_name ) {
+<<<<<<< HEAD
 			printf(
 				/* translators: 1: User's first name, 2: Last name. */
 				_x( '%1$s %2$s', 'Display name based on first name and last name' ),
 				$user->first_name,
 				$user->last_name
 			);
+=======
+			echo "$user->first_name $user->last_name";
+>>>>>>> fb785cbb (Initial commit)
 		} elseif ( $user->first_name ) {
 			echo $user->first_name;
 		} elseif ( $user->last_name ) {
 			echo $user->last_name;
 		} else {
+<<<<<<< HEAD
 			echo '<span aria-hidden="true">&#8212;</span><span class="screen-reader-text">' .
 				/* translators: Hidden accessibility text. */
 				_x( 'Unknown', 'name' ) .
 			'</span>';
+=======
+			echo '<span aria-hidden="true">&#8212;</span><span class="screen-reader-text">' . _x( 'Unknown', 'name' ) . '</span>';
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 
@@ -437,12 +481,21 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 			foreach ( $actions as $action => $link ) {
 				++$i;
 
+<<<<<<< HEAD
 				$separator = ( $i < $action_count ) ? ' | ' : '';
 
 				echo "<span class='$action'>{$link}{$separator}</span>";
 			}
 
 			echo '</small></span><br />';
+=======
+				$sep = ( $i < $action_count ) ? ' | ' : '';
+
+				echo "<span class='$action'>$link$sep</span>";
+			}
+
+			echo '</small></span><br/>';
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 

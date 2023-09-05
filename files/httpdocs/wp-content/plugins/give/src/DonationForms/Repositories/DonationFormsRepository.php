@@ -2,6 +2,7 @@
 
 namespace Give\DonationForms\Repositories;
 
+<<<<<<< HEAD
 use Give\DonationForms\Models\DonationForm;
 use Give\DonationForms\ValueObjects\DonationFormMetaKeys;
 use Give\Donations\Models\Donation;
@@ -9,11 +10,18 @@ use Give\Framework\Models\ModelQueryBuilder;
 
 /**
  * @since 2.24.0 add support methods for donation form model
+=======
+use Give\Donations\ValueObjects\DonationMetaKeys;
+use Give\Framework\Database\DB;
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * @since 2.19.0
  */
 class DonationFormsRepository
 {
     /**
+<<<<<<< HEAD
      * Get DonationForm By ID
      *
      * @since 2.24.0
@@ -51,5 +59,18 @@ class DonationFormsRepository
                 ...DonationFormMetaKeys::getColumnsForAttachMetaQuery()
             )
             ->where('post_type', 'give_forms');
+=======
+     * @param int $formId
+     *
+     * @return int
+     */
+    public function getFormDonationsCount(int $formId): int
+    {
+        return DB::table('posts')
+            ->leftJoin('give_donationmeta', 'ID', 'donation_id')
+            ->where('meta_key', DonationMetaKeys::FORM_ID)
+            ->where('meta_value', $formId)
+            ->count();
+>>>>>>> fb785cbb (Initial commit)
     }
 }

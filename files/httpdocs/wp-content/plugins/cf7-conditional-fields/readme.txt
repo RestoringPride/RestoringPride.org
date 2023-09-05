@@ -5,8 +5,13 @@ Author: Jules Colle
 Website: http://bdwm.be
 Tags: wordpress, contact form 7, forms, conditional fields
 Requires at least: 5.0
+<<<<<<< HEAD
 Tested up to: 6.1.1
 Stable tag: 2.3.4
+=======
+Tested up to: 6.0
+Stable tag: 2.2
+>>>>>>> fb785cbb (Initial commit)
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,7 +23,11 @@ Adds conditional logic to Contact Form 7.
 This plugin adds conditional logic to [Contact Form 7](https://wordpress.org/plugins/contact-form-7/).
 
 If you edit your CF7 form, you will see an additional tag called "Conditional fields Group". Everything you put between the start and end tag will be hidden by default.
+<<<<<<< HEAD
 After you have added the field group(s), go to the "Conditional fields" tab to create one or more conditions that will make the group(s) appear.
+=======
+After you have added the field group(s), click Save and go to the "Conditional fields" tab to create one or more conditions that will make the group(s) appear.
+>>>>>>> fb785cbb (Initial commit)
 
 = How to use it =
 
@@ -125,6 +134,7 @@ Make sure to also update CF7 to the latest version! (Version 2.0 is only compati
 
 Make sure to also update CF7 to the latest version! (Version 2.2 is only compatible with CF7 versions 5.6 and up. Version 2.1.6 is only compatible with CF7 version 5.5.*)
 
+<<<<<<< HEAD
 = 2.2.10 =
 
 Because the nature of the changes introduced in version 5.7 of Contact Form 7 you might need to make some manual changes to your forms and/or to your wp-config.php file. Please check the changelog. You could also wait for the release of version 5.7.1 of Contact Form 7. We hope the author will have address some of the issues by then.
@@ -196,6 +206,11 @@ Reverted autop-fix because it was causing addional errors. Bottom line: Make sur
 = 2.2.1 (2022-07-21) =
 * Fully tested with Contact Form 7 version 5.6.1
 
+=======
+
+== Changelog ==
+
+>>>>>>> fb785cbb (Initial commit)
 = 2.2 (2022-06-17) =
 * Make compatibile with Contact Form 7 version 5.6
 

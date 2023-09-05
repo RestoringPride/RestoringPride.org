@@ -16,7 +16,10 @@
  *
  * @see WP_Customize_Manager
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Customize_Section {
 
 	/**
@@ -357,23 +360,31 @@ class WP_Customize_Section {
 		<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }}">
 			<h3 class="accordion-section-title" tabindex="0">
 				{{ data.title }}
+<<<<<<< HEAD
 				<span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Press return or enter to open this section' );
 					?>
 				</span>
+=======
+				<span class="screen-reader-text"><?php _e( 'Press return or enter to open this section' ); ?></span>
+>>>>>>> fb785cbb (Initial commit)
 			</h3>
 			<ul class="accordion-section-content">
 				<li class="customize-section-description-container section-meta <# if ( data.description_hidden ) { #>customize-info<# } #>">
 					<div class="customize-section-title">
 						<button class="customize-section-back" tabindex="-1">
+<<<<<<< HEAD
 							<span class="screen-reader-text">
 								<?php
 								/* translators: Hidden accessibility text. */
 								_e( 'Back' );
 								?>
 							</span>
+=======
+							<span class="screen-reader-text"><?php _e( 'Back' ); ?></span>
+>>>>>>> fb785cbb (Initial commit)
 						</button>
 						<h3>
 							<span class="customize-action">
@@ -382,12 +393,16 @@ class WP_Customize_Section {
 							{{ data.title }}
 						</h3>
 						<# if ( data.description && data.description_hidden ) { #>
+<<<<<<< HEAD
 							<button type="button" class="customize-help-toggle dashicons dashicons-editor-help" aria-expanded="false"><span class="screen-reader-text">
 								<?php
 								/* translators: Hidden accessibility text. */
 								_e( 'Help' );
 								?>
 							</span></button>
+=======
+							<button type="button" class="customize-help-toggle dashicons dashicons-editor-help" aria-expanded="false"><span class="screen-reader-text"><?php _e( 'Help' ); ?></span></button>
+>>>>>>> fb785cbb (Initial commit)
 							<div class="description customize-section-description">
 								{{{ data.description }}}
 							</div>

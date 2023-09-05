@@ -3,7 +3,10 @@
 namespace Yoast\WP\SEO\Builders;
 
 use wpdb;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Exceptions\Indexable\Author_Not_Built_Exception;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Helpers\Author_Archive_Helper;
 use Yoast\WP\SEO\Helpers\Post_Helper;
 use Yoast\WP\SEO\Models\Indexable;
@@ -73,6 +76,7 @@ class Indexable_Author_Builder {
 	 * @param Indexable $indexable The indexable to format.
 	 *
 	 * @return Indexable The extended indexable.
+<<<<<<< HEAD
 	 *
 	 * @throws Author_Not_Built_Exception When author is not built.
 	 */
@@ -82,6 +86,10 @@ class Indexable_Author_Builder {
 			throw $exception;
 		}
 
+=======
+	 */
+	public function build( $user_id, Indexable $indexable ) {
+>>>>>>> fb785cbb (Initial commit)
 		$meta_data = $this->get_meta_data( $user_id );
 
 		$indexable->object_id              = $user_id;
@@ -198,6 +206,7 @@ class Indexable_Author_Builder {
 		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared -- We are using wpdb prepare.
 		return $this->wpdb->get_row( $this->wpdb->prepare( $sql, $replacements ) );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Checks if the user should be indexed.
@@ -229,4 +238,6 @@ class Indexable_Author_Builder {
 		 */
 		return \apply_filters( 'wpseo_should_build_and_save_user_indexable', $exception, $user_id );
 	}
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

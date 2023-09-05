@@ -7,9 +7,12 @@
  * @uses Yoast_Form $yform Form object.
  */
 
+<<<<<<< HEAD
 use Yoast\WP\SEO\Presenters\Admin\Beta_Badge_Presenter;
 use Yoast\WP\SEO\Presenters\Admin\Premium_Badge_Presenter;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 if ( ! defined( 'WPSEO_VERSION' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -29,6 +32,7 @@ $feature_toggles = Yoast_Feature_Toggles::instance()->get_all();
 	);
 
 	foreach ( $feature_toggles as $feature ) {
+<<<<<<< HEAD
 		$is_premium      = YoastSEO()->helpers->product->is_premium();
 		$premium_version = YoastSEO()->helpers->product->get_premium_version();
 
@@ -40,11 +44,14 @@ $feature_toggles = Yoast_Feature_Toggles::instance()->get_all();
 			}
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$help_text = esc_html( $feature->label );
 		if ( ! empty( $feature->extra ) ) {
 			$help_text .= ' ' . $feature->extra;
 		}
 		if ( ! empty( $feature->read_more_label ) ) {
+<<<<<<< HEAD
 			$url = $feature->read_more_url;
 			if ( ! empty( $feature->premium ) && $feature->premium === true ) {
 				$url = $feature->premium_url;
@@ -52,6 +59,12 @@ $feature_toggles = Yoast_Feature_Toggles::instance()->get_all();
 			$help_text .= sprintf(
 				'<a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a>',
 				esc_url( WPSEO_Shortlinker::get( $url ) ),
+=======
+			$help_text .= ' ';
+			$help_text .= sprintf(
+				'<a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a>',
+				esc_url( WPSEO_Shortlinker::get( $feature->read_more_url ) ),
+>>>>>>> fb785cbb (Initial commit)
 				esc_html( $feature->read_more_label )
 			);
 		}
@@ -63,6 +76,7 @@ $feature_toggles = Yoast_Feature_Toggles::instance()->get_all();
 			$help_text
 		);
 
+<<<<<<< HEAD
 		$name = $feature->name;
 		if ( ! empty( $feature->premium ) && $feature->premium === true ) {
 			$name .= ' ' . new Premium_Badge_Presenter( $feature->name );
@@ -88,12 +102,15 @@ $feature_toggles = Yoast_Feature_Toggles::instance()->get_all();
 			$preserve_disabled_value = true;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$yform->toggle_switch(
 			WPSEO_Option::ALLOW_KEY_PREFIX . $feature->setting,
 			[
 				'on'  => __( 'Allow Control', 'wordpress-seo' ),
 				'off' => __( 'Disable', 'wordpress-seo' ),
 			],
+<<<<<<< HEAD
 			$name,
 			$feature_help->get_button_html() . $feature_help->get_panel_html(),
 			[
@@ -103,6 +120,10 @@ $feature_toggles = Yoast_Feature_Toggles::instance()->get_all();
 				'premium_upsell_url'      => $premium_upsell_url,
 				'note_when_disabled'      => $note_when_disabled,
 			]
+=======
+			$feature->name,
+			$feature_help->get_button_html() . $feature_help->get_panel_html()
+>>>>>>> fb785cbb (Initial commit)
 		);
 	}
 	?>

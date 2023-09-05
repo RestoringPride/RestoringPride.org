@@ -65,9 +65,12 @@ if ( 0 === $count ) {
 	wp_die( __( 'There does not seem to be any new mail.' ) );
 }
 
+<<<<<<< HEAD
 // Always run as an unauthenticated user.
 wp_set_current_user( 0 );
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 for ( $i = 1; $i <= $count; $i++ ) {
 
 	$message = $pop3->get( $i );
@@ -137,6 +140,11 @@ for ( $i = 1; $i <= $count; $i++ ) {
 				}
 				$author = sanitize_email( $author );
 				if ( is_email( $author ) ) {
+<<<<<<< HEAD
+=======
+					/* translators: %s: Post author email address. */
+					echo '<p>' . sprintf( __( 'Author is %s' ), $author ) . '</p>';
+>>>>>>> fb785cbb (Initial commit)
 					$userdata = get_user_by( 'email', $author );
 					if ( ! empty( $userdata ) ) {
 						$post_author  = $userdata->ID;
@@ -147,7 +155,11 @@ for ( $i = 1; $i <= $count; $i++ ) {
 
 			if ( preg_match( '/Date: /i', $line ) ) { // Of the form '20 Mar 2002 20:32:37 +0100'.
 				$ddate = str_replace( 'Date: ', '', trim( $line ) );
+<<<<<<< HEAD
 				// Remove parenthesized timezone string if it exists, as this confuses strtotime().
+=======
+				// Remove parenthesised timezone string if it exists, as this confuses strtotime().
+>>>>>>> fb785cbb (Initial commit)
 				$ddate           = preg_replace( '!\s*\(.+\)\s*$!', '', $ddate );
 				$ddate_timestamp = strtotime( $ddate );
 				$post_date       = gmdate( 'Y-m-d H:i:s', $ddate_timestamp + $time_difference );
@@ -171,7 +183,11 @@ for ( $i = 1; $i <= $count; $i++ ) {
 		$content = explode( '--' . $boundary, $content );
 		$content = $content[2];
 
+<<<<<<< HEAD
 		// Match case-insensitive Content-Transfer-Encoding.
+=======
+		// Match case-insensitive content-transfer-encoding.
+>>>>>>> fb785cbb (Initial commit)
 		if ( preg_match( '/Content-Transfer-Encoding: quoted-printable/i', $content, $delim ) ) {
 			$content = explode( $delim[0], $content );
 			$content = $content[1];
@@ -231,7 +247,11 @@ for ( $i = 1; $i <= $count; $i++ ) {
 		echo "\n" . $post_ID->get_error_message();
 	}
 
+<<<<<<< HEAD
 	// The post wasn't inserted or updated, for whatever reason. Better move forward to the next email.
+=======
+	// We couldn't post, for whatever reason. Better move forward to the next email.
+>>>>>>> fb785cbb (Initial commit)
 	if ( empty( $post_ID ) ) {
 		continue;
 	}

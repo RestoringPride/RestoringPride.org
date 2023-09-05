@@ -12,7 +12,10 @@
  *
  * @since 3.1.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Admin_Bar {
 	private $nodes = array();
 	private $bound = false;
@@ -41,7 +44,11 @@ class WP_Admin_Bar {
 	 * @since 3.1.0
 	 */
 	public function initialize() {
+<<<<<<< HEAD
 		$this->user = new stdClass();
+=======
+		$this->user = new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( is_user_logged_in() ) {
 			/* Populate settings we need for the menu based on the current user. */

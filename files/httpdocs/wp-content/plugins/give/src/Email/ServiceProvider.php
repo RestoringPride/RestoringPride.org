@@ -2,9 +2,13 @@
 
 namespace Give\Email;
 
+<<<<<<< HEAD
 use Give\Email\Notifications\DonationProcessingReceipt;
 use Give\Helpers\Hooks;
 use Give_Email_Notification;
+=======
+use Give\Helpers\Hooks;
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * @since 2.17.1
@@ -24,6 +28,7 @@ class ServiceProvider implements \Give\ServiceProviders\ServiceProvider
      */
     public function boot()
     {
+<<<<<<< HEAD
         Hooks::addFilter('give_email_notifications', self::class, 'loadEmailNotifications');
         Hooks::addAction('admin_init', GlobalSettingValidator::class);
     }
@@ -41,4 +46,8 @@ class ServiceProvider implements \Give\ServiceProviders\ServiceProvider
 
         return $emails;
     }
+=======
+        Hooks::addAction('admin_init', GlobalSettingValidator::class);
+    }
+>>>>>>> fb785cbb (Initial commit)
 }

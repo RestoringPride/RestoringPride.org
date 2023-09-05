@@ -7,10 +7,17 @@
  */
 
 /**
+<<<<<<< HEAD
  * Loads header template.
  *
  * Includes the header template for a theme or if a name is specified then a
  * specialized header will be included.
+=======
+ * Load header template.
+ *
+ * Includes the header template for a theme or if a name is specified then a
+ * specialised header will be included.
+>>>>>>> fb785cbb (Initial commit)
  *
  * For the parameter, if the file is called "header-special.php" then specify
  * "special".
@@ -19,7 +26,11 @@
  * @since 5.5.0 A return value was added.
  * @since 5.5.0 The `$args` parameter was added.
  *
+<<<<<<< HEAD
  * @param string $name The name of the specialized header.
+=======
+ * @param string $name The name of the specialised header.
+>>>>>>> fb785cbb (Initial commit)
  * @param array  $args Optional. Additional arguments passed to the header template.
  *                     Default empty array.
  * @return void|false Void on success, false if the template does not exist.
@@ -51,10 +62,17 @@ function get_header( $name = null, $args = array() ) {
 }
 
 /**
+<<<<<<< HEAD
  * Loads footer template.
  *
  * Includes the footer template for a theme or if a name is specified then a
  * specialized footer will be included.
+=======
+ * Load footer template.
+ *
+ * Includes the footer template for a theme or if a name is specified then a
+ * specialised footer will be included.
+>>>>>>> fb785cbb (Initial commit)
  *
  * For the parameter, if the file is called "footer-special.php" then specify
  * "special".
@@ -63,7 +81,11 @@ function get_header( $name = null, $args = array() ) {
  * @since 5.5.0 A return value was added.
  * @since 5.5.0 The `$args` parameter was added.
  *
+<<<<<<< HEAD
  * @param string $name The name of the specialized footer.
+=======
+ * @param string $name The name of the specialised footer.
+>>>>>>> fb785cbb (Initial commit)
  * @param array  $args Optional. Additional arguments passed to the footer template.
  *                     Default empty array.
  * @return void|false Void on success, false if the template does not exist.
@@ -95,10 +117,17 @@ function get_footer( $name = null, $args = array() ) {
 }
 
 /**
+<<<<<<< HEAD
  * Loads sidebar template.
  *
  * Includes the sidebar template for a theme or if a name is specified then a
  * specialized sidebar will be included.
+=======
+ * Load sidebar template.
+ *
+ * Includes the sidebar template for a theme or if a name is specified then a
+ * specialised sidebar will be included.
+>>>>>>> fb785cbb (Initial commit)
  *
  * For the parameter, if the file is called "sidebar-special.php" then specify
  * "special".
@@ -107,7 +136,11 @@ function get_footer( $name = null, $args = array() ) {
  * @since 5.5.0 A return value was added.
  * @since 5.5.0 The `$args` parameter was added.
  *
+<<<<<<< HEAD
  * @param string $name The name of the specialized sidebar.
+=======
+ * @param string $name The name of the specialised sidebar.
+>>>>>>> fb785cbb (Initial commit)
  * @param array  $args Optional. Additional arguments passed to the sidebar template.
  *                     Default empty array.
  * @return void|false Void on success, false if the template does not exist.
@@ -145,7 +178,11 @@ function get_sidebar( $name = null, $args = array() ) {
  * in the theme.
  *
  * Includes the named template part for a theme or if a name is specified then a
+<<<<<<< HEAD
  * specialized part will be included. If the theme contains no {slug}.php file
+=======
+ * specialised part will be included. If the theme contains no {slug}.php file
+>>>>>>> fb785cbb (Initial commit)
  * then no template will be included.
  *
  * The template is included using require, not require_once, so you may include the
@@ -159,7 +196,11 @@ function get_sidebar( $name = null, $args = array() ) {
  * @since 5.5.0 The `$args` parameter was added.
  *
  * @param string $slug The slug name for the generic template.
+<<<<<<< HEAD
  * @param string $name The name of the specialized template.
+=======
+ * @param string $name The name of the specialised template.
+>>>>>>> fb785cbb (Initial commit)
  * @param array  $args Optional. Additional arguments passed to the template.
  *                     Default empty array.
  * @return void|false Void on success, false if the template does not exist.
@@ -207,7 +248,11 @@ function get_template_part( $slug, $name = null, $args = array() ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays search form.
+=======
+ * Display search form.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Will first attempt to locate the searchform.php file in either the child or
  * the parent, then load it. If it doesn't exist, then the default search form
@@ -322,10 +367,14 @@ function get_search_form( $args = array() ) {
 		if ( 'html5' === $format ) {
 			$form = '<form role="search" ' . $aria_label . 'method="get" class="search-form" action="' . esc_url( home_url( '/' ) ) . '">
 				<label>
+<<<<<<< HEAD
 					<span class="screen-reader-text">' .
 					/* translators: Hidden accessibility text. */
 					_x( 'Search for:', 'label' ) .
 					'</span>
+=======
+					<span class="screen-reader-text">' . _x( 'Search for:', 'label' ) . '</span>
+>>>>>>> fb785cbb (Initial commit)
 					<input type="search" class="search-field" placeholder="' . esc_attr_x( 'Search &hellip;', 'placeholder' ) . '" value="' . get_search_query() . '" name="s" />
 				</label>
 				<input type="submit" class="search-submit" value="' . esc_attr_x( 'Search', 'submit button' ) . '" />
@@ -333,10 +382,14 @@ function get_search_form( $args = array() ) {
 		} else {
 			$form = '<form role="search" ' . $aria_label . 'method="get" id="searchform" class="searchform" action="' . esc_url( home_url( '/' ) ) . '">
 				<div>
+<<<<<<< HEAD
 					<label class="screen-reader-text" for="s">' .
 					/* translators: Hidden accessibility text. */
 					_x( 'Search for:', 'label' ) .
 					'</label>
+=======
+					<label class="screen-reader-text" for="s">' . _x( 'Search for:', 'label' ) . '</label>
+>>>>>>> fb785cbb (Initial commit)
 					<input type="text" value="' . get_search_query() . '" name="s" id="s" />
 					<input type="submit" id="searchsubmit" value="' . esc_attr_x( 'Search', 'submit button' ) . '" />
 				</div>
@@ -368,7 +421,11 @@ function get_search_form( $args = array() ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays the Log In/Out link.
+=======
+ * Display the Log In/Out link.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Displays a link, which allows users to navigate to the Log In page to log in
  * or log out depending on whether they are currently logged in.
@@ -376,17 +433,28 @@ function get_search_form( $args = array() ) {
  * @since 1.5.0
  *
  * @param string $redirect Optional path to redirect to on login/logout.
+<<<<<<< HEAD
  * @param bool   $display  Default to echo and not return the link.
  * @return void|string Void if `$display` argument is true, log in/out link if `$display` is false.
  */
 function wp_loginout( $redirect = '', $display = true ) {
+=======
+ * @param bool   $echo     Default to echo and not return the link.
+ * @return void|string Void if `$echo` argument is true, log in/out link if `$echo` is false.
+ */
+function wp_loginout( $redirect = '', $echo = true ) {
+>>>>>>> fb785cbb (Initial commit)
 	if ( ! is_user_logged_in() ) {
 		$link = '<a href="' . esc_url( wp_login_url( $redirect ) ) . '">' . __( 'Log in' ) . '</a>';
 	} else {
 		$link = '<a href="' . esc_url( wp_logout_url( $redirect ) ) . '">' . __( 'Log out' ) . '</a>';
 	}
 
+<<<<<<< HEAD
 	if ( $display ) {
+=======
+	if ( $echo ) {
+>>>>>>> fb785cbb (Initial commit)
 		/**
 		 * Filters the HTML output for the Log In/Log Out link.
 		 *
@@ -601,7 +669,11 @@ function wp_login_form( $args = array() ) {
 		sprintf(
 			'<p class="login-password">
 				<label for="%1$s">%2$s</label>
+<<<<<<< HEAD
 				<input type="password" name="pwd" id="%1$s" autocomplete="current-password" spellcheck="false" class="input" value="" size="20" />
+=======
+				<input type="password" name="pwd" id="%1$s" autocomplete="current-password" class="input" value="" size="20" />
+>>>>>>> fb785cbb (Initial commit)
 			</p>',
 			esc_attr( $args['id_password'] ),
 			esc_html( $args['label_password'] )
@@ -635,7 +707,11 @@ function wp_login_form( $args = array() ) {
 }
 
 /**
+<<<<<<< HEAD
  * Returns the URL that allows the user to reset the lost password.
+=======
+ * Returns the URL that allows the user to retrieve the lost password
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.8.0
  *
@@ -672,13 +748,18 @@ function wp_lostpassword_url( $redirect = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays the Registration or Admin link.
+=======
+ * Display the Registration or Admin link.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Display a link which allows the user to navigate to the registration page if
  * not logged in and registration is enabled or to the dashboard if logged in.
  *
  * @since 1.5.0
  *
+<<<<<<< HEAD
  * @param string $before  Text to output before the link. Default `<li>`.
  * @param string $after   Text to output after the link. Default `</li>`.
  * @param bool   $display Default to echo and not return the link.
@@ -686,6 +767,15 @@ function wp_lostpassword_url( $redirect = '' ) {
  *                     if `$display` is false.
  */
 function wp_register( $before = '<li>', $after = '</li>', $display = true ) {
+=======
+ * @param string $before Text to output before the link. Default `<li>`.
+ * @param string $after  Text to output after the link. Default `</li>`.
+ * @param bool   $echo   Default to echo and not return the link.
+ * @return void|string Void if `$echo` argument is true, registration or admin link
+ *                     if `$echo` is false.
+ */
+function wp_register( $before = '<li>', $after = '</li>', $echo = true ) {
+>>>>>>> fb785cbb (Initial commit)
 	if ( ! is_user_logged_in() ) {
 		if ( get_option( 'users_can_register' ) ) {
 			$link = $before . '<a href="' . esc_url( wp_registration_url() ) . '">' . __( 'Register' ) . '</a>' . $after;
@@ -710,7 +800,11 @@ function wp_register( $before = '<li>', $after = '</li>', $display = true ) {
 	 */
 	$link = apply_filters( 'register', $link );
 
+<<<<<<< HEAD
 	if ( $display ) {
+=======
+	if ( $echo ) {
+>>>>>>> fb785cbb (Initial commit)
 		echo $link;
 	} else {
 		return $link;
@@ -761,7 +855,11 @@ function bloginfo( $show = '' ) {
  * - 'admin_email' - Admin email (set in Settings > General)
  * - 'charset' - The "Encoding for pages and feeds"  (set in Settings > Reading)
  * - 'version' - The current WordPress version
+<<<<<<< HEAD
  * - 'html_type' - The Content-Type (default: "text/html"). Themes and plugins
+=======
+ * - 'html_type' - The content-type (default: "text/html"). Themes and plugins
+>>>>>>> fb785cbb (Initial commit)
  *   can override the default value using the {@see 'pre_option_html_type'} filter
  * - 'text_direction' - The text direction determined by the site's language. is_rtl()
  *   should be used instead
@@ -997,7 +1095,11 @@ function site_icon_url( $size = 512, $url = '', $blog_id = 0 ) {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether the site has a Site Icon.
+=======
+ * Whether the site has a Site Icon.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.3.0
  *
@@ -1299,7 +1401,11 @@ function _wp_render_title_tag() {
 }
 
 /**
+<<<<<<< HEAD
  * Displays or retrieves page title for all areas of blog.
+=======
+ * Display or retrieve page title for all areas of blog.
+>>>>>>> fb785cbb (Initial commit)
  *
  * By default, the page title will display the separator before the page title,
  * so that the blog title will be before the page title. This is not good for
@@ -1453,7 +1559,11 @@ function wp_title( $sep = '&raquo;', $display = true, $seplocation = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays or retrieves page title for post.
+=======
+ * Display or retrieve page title for post.
+>>>>>>> fb785cbb (Initial commit)
  *
  * This is optimized for single.php template file for displaying the post title.
  *
@@ -1492,7 +1602,11 @@ function single_post_title( $prefix = '', $display = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays or retrieves title for a post type archive.
+=======
+ * Display or retrieve title for a post type archive.
+>>>>>>> fb785cbb (Initial commit)
  *
  * This is optimized for archive.php and archive-{$post_type}.php template files
  * for displaying the title of the post type.
@@ -1533,7 +1647,11 @@ function post_type_archive_title( $prefix = '', $display = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays or retrieves page title for category archive.
+=======
+ * Display or retrieve page title for category archive.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Useful for category template files for displaying the category page title.
  * The prefix does not automatically place a space between the prefix, so if
@@ -1550,7 +1668,11 @@ function single_cat_title( $prefix = '', $display = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays or retrieves page title for tag post archive.
+=======
+ * Display or retrieve page title for tag post archive.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Useful for tag template files for displaying the tag page title. The prefix
  * does not automatically place a space between the prefix, so if there should
@@ -1567,7 +1689,11 @@ function single_tag_title( $prefix = '', $display = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays or retrieves page title for taxonomy term archive.
+=======
+ * Display or retrieve page title for taxonomy term archive.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Useful for taxonomy term template files for displaying the taxonomy term page title.
  * The prefix does not automatically place a space between the prefix, so if there should
@@ -1629,7 +1755,11 @@ function single_term_title( $prefix = '', $display = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays or retrieves page title for post archive based on date.
+=======
+ * Display or retrieve page title for post archive based on date.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Useful for when the template only needs to display the month and year,
  * if either are available. The prefix does not automatically place a space
@@ -1672,7 +1802,11 @@ function single_month_title( $prefix = '', $display = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays the archive title based on the queried object.
+=======
+ * Display the archive title based on the queried object.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.1.0
  *
@@ -1690,7 +1824,11 @@ function the_archive_title( $before = '', $after = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the archive title based on the queried object.
+=======
+ * Retrieve the archive title based on the queried object.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.1.0
  * @since 5.5.0 The title part is wrapped in a `<span>` element.
@@ -1788,7 +1926,11 @@ function get_the_archive_title() {
 }
 
 /**
+<<<<<<< HEAD
  * Displays category, tag, term, or author description.
+=======
+ * Display category, tag, term, or author description.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.1.0
  *
@@ -1869,7 +2011,11 @@ function get_the_post_type_description() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves archive link content based on predefined or custom code.
+=======
+ * Retrieve archive link content based on predefined or custom code.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The format can be one of four styles. The 'link' for head element, 'option'
  * for use in the select element, 'html' for use in list (either ol or ul HTML
@@ -1938,7 +2084,11 @@ function get_archives_link( $url, $text, $format = 'html', $before = '', $after 
 }
 
 /**
+<<<<<<< HEAD
  * Displays archive links based on type and format.
+=======
+ * Display archive links based on type and format.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 1.2.0
  * @since 4.4.0 The `$post_type` argument was added.
@@ -2198,7 +2348,11 @@ function wp_get_archives( $args = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Gets number of days since the start of the week.
+=======
+ * Get number of days since the start of the week.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 1.5.0
  *
@@ -2211,7 +2365,11 @@ function calendar_week_mod( $num ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays calendar with days that have posts as links.
+=======
+ * Display calendar with days that have posts as links.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The calendar is cached, which will be retrieved, if it exists. If there are
  * no posts for the month, then it will not be displayed.
@@ -2226,10 +2384,17 @@ function calendar_week_mod( $num ) {
  * @global array     $posts
  *
  * @param bool $initial Optional. Whether to use initial calendar names. Default true.
+<<<<<<< HEAD
  * @param bool $display Optional. Whether to display the calendar output. Default true.
  * @return void|string Void if `$display` argument is true, calendar HTML if `$display` is false.
  */
 function get_calendar( $initial = true, $display = true ) {
+=======
+ * @param bool $echo    Optional. Whether to display the calendar output. Default true.
+ * @return void|string Void if `$echo` argument is true, calendar HTML if `$echo` is false.
+ */
+function get_calendar( $initial = true, $echo = true ) {
+>>>>>>> fb785cbb (Initial commit)
 	global $wpdb, $m, $monthnum, $year, $wp_locale, $posts;
 
 	$key   = md5( $m . $monthnum . $year );
@@ -2239,7 +2404,11 @@ function get_calendar( $initial = true, $display = true ) {
 		/** This filter is documented in wp-includes/general-template.php */
 		$output = apply_filters( 'get_calendar', $cache[ $key ] );
 
+<<<<<<< HEAD
 		if ( $display ) {
+=======
+		if ( $echo ) {
+>>>>>>> fb785cbb (Initial commit)
 			echo $output;
 			return;
 		}
@@ -2436,7 +2605,11 @@ function get_calendar( $initial = true, $display = true ) {
 	$cache[ $key ] = $calendar_output;
 	wp_cache_set( 'get_calendar', $cache, 'calendar' );
 
+<<<<<<< HEAD
 	if ( $display ) {
+=======
+	if ( $echo ) {
+>>>>>>> fb785cbb (Initial commit)
 		/**
 		 * Filters the HTML calendar output.
 		 *
@@ -2452,7 +2625,11 @@ function get_calendar( $initial = true, $display = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Purges the cached results of get_calendar.
+=======
+ * Purge the cached results of get_calendar.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @see get_calendar()
  * @since 2.1.0
@@ -2462,13 +2639,20 @@ function delete_get_calendar_cache() {
 }
 
 /**
+<<<<<<< HEAD
  * Displays all of the allowed tags in HTML format with attributes.
+=======
+ * Display all of the allowed tags in HTML format with attributes.
+>>>>>>> fb785cbb (Initial commit)
  *
  * This is useful for displaying in the comment area, which elements and
  * attributes are supported. As well as any plugins which want to display it.
  *
  * @since 1.0.1
+<<<<<<< HEAD
  * @since 4.4.0 No longer used in core.
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @global array $allowedtags
  *
@@ -2501,7 +2685,11 @@ function the_date_xml() {
 }
 
 /**
+<<<<<<< HEAD
  * Displays or retrieves the date the current post was written (once per date)
+=======
+ * Display or Retrieve the date the current post was written (once per date)
+>>>>>>> fb785cbb (Initial commit)
  *
  * Will only output the date if the current post's date is different from the
  * previous one output.
@@ -2517,6 +2705,7 @@ function the_date_xml() {
  * @global string $currentday  The day of the current post in the loop.
  * @global string $previousday The day of the previous post in the loop.
  *
+<<<<<<< HEAD
  * @param string $format  Optional. PHP date format. Defaults to the 'date_format' option.
  * @param string $before  Optional. Output before the date. Default empty.
  * @param string $after   Optional. Output after the date. Default empty.
@@ -2524,6 +2713,15 @@ function the_date_xml() {
  * @return string|void String if retrieving.
  */
 function the_date( $format = '', $before = '', $after = '', $display = true ) {
+=======
+ * @param string $format Optional. PHP date format. Defaults to the 'date_format' option.
+ * @param string $before Optional. Output before the date. Default empty.
+ * @param string $after  Optional. Output after the date. Default empty.
+ * @param bool   $echo   Optional. Whether to echo the date or return it. Default true.
+ * @return string|void String if retrieving.
+ */
+function the_date( $format = '', $before = '', $after = '', $echo = true ) {
+>>>>>>> fb785cbb (Initial commit)
 	global $currentday, $previousday;
 
 	$the_date = '';
@@ -2545,7 +2743,11 @@ function the_date( $format = '', $before = '', $after = '', $display = true ) {
 	 */
 	$the_date = apply_filters( 'the_date', $the_date, $format, $before, $after );
 
+<<<<<<< HEAD
 	if ( $display ) {
+=======
+	if ( $echo ) {
+>>>>>>> fb785cbb (Initial commit)
 		echo $the_date;
 	} else {
 		return $the_date;
@@ -2553,7 +2755,11 @@ function the_date( $format = '', $before = '', $after = '', $display = true ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the date on which the post was written.
+=======
+ * Retrieve the date on which the post was written.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Unlike the_date() this function will always return the date.
  * Modify output with the {@see 'get_the_date'} filter.
@@ -2588,6 +2794,7 @@ function get_the_date( $format = '', $post = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays the date on which the post was last modified.
  *
  * @since 2.1.0
@@ -2599,6 +2806,19 @@ function get_the_date( $format = '', $post = null ) {
  * @return string|void String if retrieving.
  */
 function the_modified_date( $format = '', $before = '', $after = '', $display = true ) {
+=======
+ * Display the date on which the post was last modified.
+ *
+ * @since 2.1.0
+ *
+ * @param string $format Optional. PHP date format. Defaults to the 'date_format' option.
+ * @param string $before Optional. Output before the date. Default empty.
+ * @param string $after  Optional. Output after the date. Default empty.
+ * @param bool   $echo   Optional. Whether to echo the date or return it. Default true.
+ * @return string|void String if retrieving.
+ */
+function the_modified_date( $format = '', $before = '', $after = '', $echo = true ) {
+>>>>>>> fb785cbb (Initial commit)
 	$the_modified_date = $before . get_the_modified_date( $format ) . $after;
 
 	/**
@@ -2613,7 +2833,11 @@ function the_modified_date( $format = '', $before = '', $after = '', $display = 
 	 */
 	$the_modified_date = apply_filters( 'the_modified_date', $the_modified_date, $format, $before, $after );
 
+<<<<<<< HEAD
 	if ( $display ) {
+=======
+	if ( $echo ) {
+>>>>>>> fb785cbb (Initial commit)
 		echo $the_modified_date;
 	} else {
 		return $the_modified_date;
@@ -2622,7 +2846,11 @@ function the_modified_date( $format = '', $before = '', $after = '', $display = 
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the date on which the post was last modified.
+=======
+ * Retrieve the date on which the post was last modified.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.1.0
  * @since 4.6.0 Added the `$post` parameter.
@@ -2657,7 +2885,11 @@ function get_the_modified_date( $format = '', $post = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays the time at which the post was written.
+=======
+ * Display the time at which the post was written.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 0.71
  *
@@ -2679,14 +2911,22 @@ function the_time( $format = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the time at which the post was written.
+=======
+ * Retrieve the time at which the post was written.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 1.5.0
  *
  * @param string      $format Optional. Format to use for retrieving the time the post
  *                            was written. Accepts 'G', 'U', or PHP date format.
  *                            Defaults to the 'time_format' option.
+<<<<<<< HEAD
  * @param int|WP_Post $post   Post ID or post object. Default is global `$post` object.
+=======
+ * @param int|WP_Post $post   WP_Post object or ID. Default is global `$post` object.
+>>>>>>> fb785cbb (Initial commit)
  * @return string|int|false Formatted date string or Unix timestamp if `$format` is 'U' or 'G'.
  *                          False on failure.
  */
@@ -2715,14 +2955,22 @@ function get_the_time( $format = '', $post = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the time at which the post was written.
+=======
+ * Retrieve the time at which the post was written.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
  * @param string      $format    Optional. Format to use for retrieving the time the post
  *                               was written. Accepts 'G', 'U', or PHP date format. Default 'U'.
  * @param bool        $gmt       Optional. Whether to retrieve the GMT time. Default false.
+<<<<<<< HEAD
  * @param int|WP_Post $post      Post ID or post object. Default is global `$post` object.
+=======
+ * @param int|WP_Post $post      WP_Post object or ID. Default is global `$post` object.
+>>>>>>> fb785cbb (Initial commit)
  * @param bool        $translate Whether to translate the time string. Default false.
  * @return string|int|false Formatted date string or Unix timestamp if `$format` is 'U' or 'G'.
  *                          False on failure.
@@ -2772,7 +3020,11 @@ function get_post_time( $format = 'U', $gmt = false, $post = null, $translate = 
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves post published or modified time as a `DateTimeImmutable` object instance.
+=======
+ * Retrieve post published or modified time as a `DateTimeImmutable` object instance.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The object will be set to the timezone from WordPress settings.
  *
@@ -2783,7 +3035,11 @@ function get_post_time( $format = 'U', $gmt = false, $post = null, $translate = 
  *
  * @since 5.3.0
  *
+<<<<<<< HEAD
  * @param int|WP_Post $post   Optional. Post ID or post object. Default is global `$post` object.
+=======
+ * @param int|WP_Post $post   Optional. WP_Post object or ID. Default is global `$post` object.
+>>>>>>> fb785cbb (Initial commit)
  * @param string      $field  Optional. Published or modified time to use from database. Accepts 'date' or 'modified'.
  *                            Default 'date'.
  * @param string      $source Optional. Local or UTC time to use from database. Accepts 'local' or 'gmt'.
@@ -2821,14 +3077,22 @@ function get_post_datetime( $post = null, $field = 'date', $source = 'local' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves post published or modified time as a Unix timestamp.
+=======
+ * Retrieve post published or modified time as a Unix timestamp.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Note that this function returns a true Unix timestamp, not summed with timezone offset
  * like older WP functions.
  *
  * @since 5.3.0
  *
+<<<<<<< HEAD
  * @param int|WP_Post $post  Optional. Post ID or post object. Default is global `$post` object.
+=======
+ * @param int|WP_Post $post  Optional. WP_Post object or ID. Default is global `$post` object.
+>>>>>>> fb785cbb (Initial commit)
  * @param string      $field Optional. Published or modified time to use from database. Accepts 'date' or 'modified'.
  *                           Default 'date'.
  * @return int|false Unix timestamp on success, false on failure.
@@ -2844,7 +3108,11 @@ function get_post_timestamp( $post = null, $field = 'date' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays the time at which the post was last modified.
+=======
+ * Display the time at which the post was last modified.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
@@ -2866,7 +3134,11 @@ function the_modified_time( $format = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the time at which the post was last modified.
+=======
+ * Retrieve the time at which the post was last modified.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  * @since 4.6.0 Added the `$post` parameter.
@@ -2904,14 +3176,22 @@ function get_the_modified_time( $format = '', $post = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the time at which the post was last modified.
+=======
+ * Retrieve the time at which the post was last modified.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
  * @param string      $format    Optional. Format to use for retrieving the time the post
  *                               was modified. Accepts 'G', 'U', or PHP date format. Default 'U'.
  * @param bool        $gmt       Optional. Whether to retrieve the GMT time. Default false.
+<<<<<<< HEAD
  * @param int|WP_Post $post      Post ID or post object. Default is global `$post` object.
+=======
+ * @param int|WP_Post $post      WP_Post object or ID. Default is global `$post` object.
+>>>>>>> fb785cbb (Initial commit)
  * @param bool        $translate Whether to translate the time string. Default false.
  * @return string|int|false Formatted date string or Unix timestamp if `$format` is 'U' or 'G'.
  *                          False on failure.
@@ -2961,7 +3241,11 @@ function get_post_modified_time( $format = 'U', $gmt = false, $post = null, $tra
 }
 
 /**
+<<<<<<< HEAD
  * Displays the weekday on which the post was written.
+=======
+ * Display the weekday on which the post was written.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 0.71
  *
@@ -2989,7 +3273,11 @@ function the_weekday() {
 }
 
 /**
+<<<<<<< HEAD
  * Displays the weekday on which the post was written.
+=======
+ * Display the weekday on which the post was written.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Will only output the weekday if the current post's weekday is different from
  * the previous one output.
@@ -3034,7 +3322,11 @@ function the_weekday_date( $before = '', $after = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Fires the wp_head action.
+=======
+ * Fire the wp_head action.
+>>>>>>> fb785cbb (Initial commit)
  *
  * See {@see 'wp_head'}.
  *
@@ -3050,7 +3342,11 @@ function wp_head() {
 }
 
 /**
+<<<<<<< HEAD
  * Fires the wp_footer action.
+=======
+ * Fire the wp_footer action.
+>>>>>>> fb785cbb (Initial commit)
  *
  * See {@see 'wp_footer'}.
  *
@@ -3066,7 +3362,11 @@ function wp_footer() {
 }
 
 /**
+<<<<<<< HEAD
  * Fires the wp_body_open action.
+=======
+ * Fire the wp_body_open action.
+>>>>>>> fb785cbb (Initial commit)
  *
  * See {@see 'wp_body_open'}.
  *
@@ -3082,7 +3382,11 @@ function wp_body_open() {
 }
 
 /**
+<<<<<<< HEAD
  * Displays the links to the general feeds.
+=======
+ * Display the links to the general feeds.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.8.0
  *
@@ -3112,12 +3416,16 @@ function feed_links( $args = array() ) {
 	 * @param bool $show Whether to display the posts feed link. Default true.
 	 */
 	if ( apply_filters( 'feed_links_show_posts_feed', true ) ) {
+<<<<<<< HEAD
 		printf(
 			'<link rel="alternate" type="%s" title="%s" href="%s" />' . "\n",
 			feed_content_type(),
 			esc_attr( sprintf( $args['feedtitle'], get_bloginfo( 'name' ), $args['separator'] ) ),
 			esc_url( get_feed_link() )
 		);
+=======
+		echo '<link rel="alternate" type="' . feed_content_type() . '" title="' . esc_attr( sprintf( $args['feedtitle'], get_bloginfo( 'name' ), $args['separator'] ) ) . '" href="' . esc_url( get_feed_link() ) . "\" />\n";
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -3128,17 +3436,25 @@ function feed_links( $args = array() ) {
 	 * @param bool $show Whether to display the comments feed link. Default true.
 	 */
 	if ( apply_filters( 'feed_links_show_comments_feed', true ) ) {
+<<<<<<< HEAD
 		printf(
 			'<link rel="alternate" type="%s" title="%s" href="%s" />' . "\n",
 			feed_content_type(),
 			esc_attr( sprintf( $args['comstitle'], get_bloginfo( 'name' ), $args['separator'] ) ),
 			esc_url( get_feed_link( 'comments_' . get_default_feed() ) )
 		);
+=======
+		echo '<link rel="alternate" type="' . feed_content_type() . '" title="' . esc_attr( sprintf( $args['comstitle'], get_bloginfo( 'name' ), $args['separator'] ) ) . '" href="' . esc_url( get_feed_link( 'comments_' . get_default_feed() ) ) . "\" />\n";
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 
 /**
+<<<<<<< HEAD
  * Displays the links to the extra feeds such as category feeds.
+=======
+ * Display the links to the extra feeds such as category feeds.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.8.0
  *
@@ -3173,6 +3489,7 @@ function feed_links_extra( $args = array() ) {
 		/** This filter is documented in wp-includes/general-template.php */
 		$show_comments_feed = apply_filters( 'feed_links_show_comments_feed', true );
 
+<<<<<<< HEAD
 		/**
 		 * Filters whether to display the post comments feed link.
 		 *
@@ -3196,6 +3513,10 @@ function feed_links_extra( $args = array() ) {
 				the_title_attribute( array( 'echo' => false ) )
 			);
 
+=======
+		if ( $show_comments_feed && ( comments_open() || pings_open() || $post->comment_count > 0 ) ) {
+			$title     = sprintf( $args['singletitle'], get_bloginfo( 'name' ), $args['separator'], the_title_attribute( array( 'echo' => false ) ) );
+>>>>>>> fb785cbb (Initial commit)
 			$feed_link = get_post_comments_feed_link( $post->ID );
 
 			if ( $feed_link ) {
@@ -3203,6 +3524,7 @@ function feed_links_extra( $args = array() ) {
 			}
 		}
 	} elseif ( is_post_type_archive() ) {
+<<<<<<< HEAD
 		/**
 		 * Filters whether to display the post type archive feed link.
 		 *
@@ -3356,16 +3678,65 @@ function feed_links_extra( $args = array() ) {
 			esc_attr( $title ),
 			esc_url( $href )
 		);
+=======
+		$post_type = get_query_var( 'post_type' );
+		if ( is_array( $post_type ) ) {
+			$post_type = reset( $post_type );
+		}
+
+		$post_type_obj = get_post_type_object( $post_type );
+		$title         = sprintf( $args['posttypetitle'], get_bloginfo( 'name' ), $args['separator'], $post_type_obj->labels->name );
+		$href          = get_post_type_archive_feed_link( $post_type_obj->name );
+	} elseif ( is_category() ) {
+		$term = get_queried_object();
+
+		if ( $term ) {
+			$title = sprintf( $args['cattitle'], get_bloginfo( 'name' ), $args['separator'], $term->name );
+			$href  = get_category_feed_link( $term->term_id );
+		}
+	} elseif ( is_tag() ) {
+		$term = get_queried_object();
+
+		if ( $term ) {
+			$title = sprintf( $args['tagtitle'], get_bloginfo( 'name' ), $args['separator'], $term->name );
+			$href  = get_tag_feed_link( $term->term_id );
+		}
+	} elseif ( is_tax() ) {
+		$term = get_queried_object();
+
+		if ( $term ) {
+			$tax   = get_taxonomy( $term->taxonomy );
+			$title = sprintf( $args['taxtitle'], get_bloginfo( 'name' ), $args['separator'], $term->name, $tax->labels->singular_name );
+			$href  = get_term_feed_link( $term->term_id, $term->taxonomy );
+		}
+	} elseif ( is_author() ) {
+		$author_id = (int) get_query_var( 'author' );
+
+		$title = sprintf( $args['authortitle'], get_bloginfo( 'name' ), $args['separator'], get_the_author_meta( 'display_name', $author_id ) );
+		$href  = get_author_feed_link( $author_id );
+	} elseif ( is_search() ) {
+		$title = sprintf( $args['searchtitle'], get_bloginfo( 'name' ), $args['separator'], get_search_query( false ) );
+		$href  = get_search_feed_link();
+	}
+
+	if ( isset( $title ) && isset( $href ) ) {
+		echo '<link rel="alternate" type="' . feed_content_type() . '" title="' . esc_attr( $title ) . '" href="' . esc_url( $href ) . '" />' . "\n";
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 
 /**
+<<<<<<< HEAD
  * Displays the link to the Really Simple Discovery service endpoint.
+=======
+ * Display the link to the Really Simple Discovery service endpoint.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @link http://archipelago.phrasewise.com/rsd
  * @since 2.0.0
  */
 function rsd_link() {
+<<<<<<< HEAD
 	printf(
 		'<link rel="EditURI" type="application/rsd+xml" title="RSD" href="%s" />' . "\n",
 		esc_url( site_url( 'xmlrpc.php?rsd', 'rpc' ) )
@@ -3374,15 +3745,26 @@ function rsd_link() {
 
 /**
  * Displays the link to the Windows Live Writer manifest file.
+=======
+	echo '<link rel="EditURI" type="application/rsd+xml" title="RSD" href="' . esc_url( site_url( 'xmlrpc.php?rsd', 'rpc' ) ) . '" />' . "\n";
+}
+
+/**
+ * Display the link to the Windows Live Writer manifest file.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @link https://msdn.microsoft.com/en-us/library/bb463265.aspx
  * @since 2.3.1
  */
 function wlwmanifest_link() {
+<<<<<<< HEAD
 	printf(
 		'<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="%s" />' . "\n",
 		includes_url( 'wlwmanifest.xml' )
 	);
+=======
+	echo '<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="' . includes_url( 'wlwmanifest.xml' ) . '" /> ' . "\n";
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -3404,7 +3786,11 @@ function wp_strict_cross_origin_referrer() {
 }
 
 /**
+<<<<<<< HEAD
  * Displays site icon meta tags.
+=======
+ * Display site icon meta tags.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.3.0
  *
@@ -3471,6 +3857,16 @@ function wp_resource_hints() {
 		'prerender'    => array(),
 	);
 
+<<<<<<< HEAD
+=======
+	/*
+	 * Add DNS prefetch for the Emoji CDN.
+	 * The path is removed in the foreach loop below.
+	 */
+	/** This filter is documented in wp-includes/formatting.php */
+	$hints['dns-prefetch'][] = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/13.0.0/svg/' );
+
+>>>>>>> fb785cbb (Initial commit)
 	foreach ( $hints as $relation_type => $urls ) {
 		$unique_urls = array();
 
@@ -3571,6 +3967,7 @@ function wp_resource_hints() {
 }
 
 /**
+<<<<<<< HEAD
  * Prints resource preloads directives to browsers.
  *
  * Gives directive to browsers to preload specific resources that website will
@@ -3685,13 +4082,18 @@ function wp_preload_resources() {
 }
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Retrieves a list of unique hosts of all enqueued scripts and styles.
  *
  * @since 4.6.0
  *
+<<<<<<< HEAD
  * @global WP_Scripts $wp_scripts The WP_Scripts object for printing scripts.
  * @global WP_Styles  $wp_styles  The WP_Styles object for printing styles.
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @return string[] A list of unique hosts of enqueued scripts and styles.
  */
 function wp_dependencies_unique_hosts() {
@@ -3723,7 +4125,11 @@ function wp_dependencies_unique_hosts() {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether the user can access the visual editor.
+=======
+ * Whether the user can access the visual editor.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Checks if the user can access the visual editor and that it's supported by the user's browser.
  *
@@ -3767,7 +4173,11 @@ function user_can_richedit() {
 }
 
 /**
+<<<<<<< HEAD
  * Finds out which editor should be displayed by default.
+=======
+ * Find out which editor should be displayed by default.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Works out which of the two editors to display as the current editor for a
  * user. The 'html' setting is for the "Text" editor tab.
@@ -3839,7 +4249,11 @@ function wp_enqueue_editor() {
 }
 
 /**
+<<<<<<< HEAD
  * Enqueues assets needed by the code editor for the given settings.
+=======
+ * Enqueue assets needed by the code editor for the given settings.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 4.9.0
  *
@@ -3932,7 +4346,11 @@ function wp_enqueue_code_editor( $args ) {
 }
 
 /**
+<<<<<<< HEAD
  * Generates and returns code editor settings.
+=======
+ * Generate and return code editor settings.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.0.0
  *
@@ -4347,7 +4765,10 @@ function the_search_query() {
  * @since 4.3.0
  *
  * @param string $doctype Optional. The type of HTML document. Accepts 'xhtml' or 'html'. Default 'html'.
+<<<<<<< HEAD
  * @return string A space-separated list of language attributes.
+=======
+>>>>>>> fb785cbb (Initial commit)
  */
 function get_language_attributes( $doctype = 'html' ) {
 	$attributes = array();
@@ -4463,8 +4884,13 @@ function language_attributes( $doctype = 'html' ) {
  *                                      Default 1.
  *     @type int    $mid_size           How many numbers to either side of the current pages. Default 2.
  *     @type bool   $prev_next          Whether to include the previous and next links in the list. Default true.
+<<<<<<< HEAD
  *     @type string $prev_text          The previous page text. Default '&laquo; Previous'.
  *     @type string $next_text          The next page text. Default 'Next &raquo;'.
+=======
+ *     @type bool   $prev_text          The previous page text. Default '&laquo; Previous'.
+ *     @type bool   $next_text          The next page text. Default 'Next &raquo;'.
+>>>>>>> fb785cbb (Initial commit)
  *     @type string $type               Controls format of the returned value. Possible values are 'plain',
  *                                      'array' and 'list'. Default is 'plain'.
  *     @type array  $add_args           An array of query args to add. Default false.
@@ -4472,8 +4898,13 @@ function language_attributes( $doctype = 'html' ) {
  *     @type string $before_page_number A string to appear before the page number. Default empty.
  *     @type string $after_page_number  A string to append after the page number. Default empty.
  * }
+<<<<<<< HEAD
  * @return string|string[]|void String of page links or array of page links, depending on 'type' argument.
  *                              Void if total number of pages is less than 2.
+=======
+ * @return string|array|void String of page links or array of page links, depending on 'type' argument.
+ *                           Void if total number of pages is less than 2.
+>>>>>>> fb785cbb (Initial commit)
  */
 function paginate_links( $args = '' ) {
 	global $wp_query, $wp_rewrite;
@@ -4825,7 +5256,11 @@ function register_admin_color_schemes() {
 /**
  * Displays the URL of a WordPress admin CSS file.
  *
+<<<<<<< HEAD
  * @see WP_Styles::_css_href() and its {@see 'style_loader_src'} filter.
+=======
+ * @see WP_Styles::_css_href and its {@see 'style_loader_src'} filter.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.3.0
  *
@@ -4952,7 +5387,11 @@ function wp_generator() {
 }
 
 /**
+<<<<<<< HEAD
  * Displays the generator XML or Comment for RSS, ATOM, etc.
+=======
+ * Display the generator XML or Comment for RSS, ATOM, etc.
+>>>>>>> fb785cbb (Initial commit)
  *
  * Returns the correct generator type for the requested output format. Allows
  * for a plugin to filter generators overall the {@see 'the_generator'} filter.
@@ -5025,10 +5464,17 @@ function get_the_generator( $type = '' ) {
 			$gen = '<generator uri="https://wordpress.org/" version="' . esc_attr( get_bloginfo_rss( 'version' ) ) . '">WordPress</generator>';
 			break;
 		case 'rss2':
+<<<<<<< HEAD
 			$gen = '<generator>' . sanitize_url( 'https://wordpress.org/?v=' . get_bloginfo_rss( 'version' ) ) . '</generator>';
 			break;
 		case 'rdf':
 			$gen = '<admin:generatorAgent rdf:resource="' . sanitize_url( 'https://wordpress.org/?v=' . get_bloginfo_rss( 'version' ) ) . '" />';
+=======
+			$gen = '<generator>' . esc_url_raw( 'https://wordpress.org/?v=' . get_bloginfo_rss( 'version' ) ) . '</generator>';
+			break;
+		case 'rdf':
+			$gen = '<admin:generatorAgent rdf:resource="' . esc_url_raw( 'https://wordpress.org/?v=' . get_bloginfo_rss( 'version' ) ) . '" />';
+>>>>>>> fb785cbb (Initial commit)
 			break;
 		case 'comment':
 			$gen = '<!-- generator="WordPress/' . esc_attr( get_bloginfo( 'version' ) ) . '" -->';
@@ -5072,12 +5518,21 @@ function get_the_generator( $type = '' ) {
  * @param mixed $checked One of the values to compare.
  * @param mixed $current Optional. The other value to compare if not just true.
  *                       Default true.
+<<<<<<< HEAD
  * @param bool  $display Optional. Whether to echo or just return the string.
  *                       Default true.
  * @return string HTML attribute or empty string.
  */
 function checked( $checked, $current = true, $display = true ) {
 	return __checked_selected_helper( $checked, $current, $display, 'checked' );
+=======
+ * @param bool  $echo    Optional. Whether to echo or just return the string.
+ *                       Default true.
+ * @return string HTML attribute or empty string.
+ */
+function checked( $checked, $current = true, $echo = true ) {
+	return __checked_selected_helper( $checked, $current, $echo, 'checked' );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -5090,12 +5545,21 @@ function checked( $checked, $current = true, $display = true ) {
  * @param mixed $selected One of the values to compare.
  * @param mixed $current  Optional. The other value to compare if not just true.
  *                        Default true.
+<<<<<<< HEAD
  * @param bool  $display  Optional. Whether to echo or just return the string.
  *                        Default true.
  * @return string HTML attribute or empty string.
  */
 function selected( $selected, $current = true, $display = true ) {
 	return __checked_selected_helper( $selected, $current, $display, 'selected' );
+=======
+ * @param bool  $echo     Optional. Whether to echo or just return the string.
+ *                        Default true.
+ * @return string HTML attribute or empty string.
+ */
+function selected( $selected, $current = true, $echo = true ) {
+	return __checked_selected_helper( $selected, $current, $echo, 'selected' );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -5108,12 +5572,21 @@ function selected( $selected, $current = true, $display = true ) {
  * @param mixed $disabled One of the values to compare.
  * @param mixed $current  Optional. The other value to compare if not just true.
  *                        Default true.
+<<<<<<< HEAD
  * @param bool  $display  Optional. Whether to echo or just return the string.
  *                        Default true.
  * @return string HTML attribute or empty string.
  */
 function disabled( $disabled, $current = true, $display = true ) {
 	return __checked_selected_helper( $disabled, $current, $display, 'disabled' );
+=======
+ * @param bool  $echo     Optional. Whether to echo or just return the string.
+ *                        Default true.
+ * @return string HTML attribute or empty string.
+ */
+function disabled( $disabled, $current = true, $echo = true ) {
+	return __checked_selected_helper( $disabled, $current, $echo, 'disabled' );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -5123,6 +5596,7 @@ function disabled( $disabled, $current = true, $display = true ) {
  *
  * @since 5.9.0
  *
+<<<<<<< HEAD
  * @param mixed $readonly_value One of the values to compare.
  * @param mixed $current        Optional. The other value to compare if not just true.
  *                              Default true.
@@ -5132,6 +5606,17 @@ function disabled( $disabled, $current = true, $display = true ) {
  */
 function wp_readonly( $readonly_value, $current = true, $display = true ) {
 	return __checked_selected_helper( $readonly_value, $current, $display, 'readonly' );
+=======
+ * @param mixed $readonly One of the values to compare.
+ * @param mixed $current  Optional. The other value to compare if not just true.
+ *                        Default true.
+ * @param bool  $echo     Optional. Whether to echo or just return the string.
+ *                        Default true.
+ * @return string HTML attribute or empty string.
+ */
+function wp_readonly( $readonly, $current = true, $echo = true ) {
+	return __checked_selected_helper( $readonly, $current, $echo, 'readonly' );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /*
@@ -5154,18 +5639,30 @@ if ( PHP_VERSION_ID < 80100 ) {
  *
  * @param mixed  $helper  One of the values to compare.
  * @param mixed  $current The other value to compare if not just true.
+<<<<<<< HEAD
  * @param bool   $display Whether to echo or just return the string.
  * @param string $type    The type of checked|selected|disabled|readonly we are doing.
  * @return string HTML attribute or empty string.
  */
 function __checked_selected_helper( $helper, $current, $display, $type ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore,PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore
+=======
+ * @param bool   $echo    Whether to echo or just return the string.
+ * @param string $type    The type of checked|selected|disabled|readonly we are doing.
+ * @return string HTML attribute or empty string.
+ */
+function __checked_selected_helper( $helper, $current, $echo, $type ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore,PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore
+>>>>>>> fb785cbb (Initial commit)
 	if ( (string) $helper === (string) $current ) {
 		$result = " $type='$type'";
 	} else {
 		$result = '';
 	}
 
+<<<<<<< HEAD
 	if ( $display ) {
+=======
+	if ( $echo ) {
+>>>>>>> fb785cbb (Initial commit)
 		echo $result;
 	}
 
@@ -5173,6 +5670,7 @@ function __checked_selected_helper( $helper, $current, $display, $type ) { // ph
 }
 
 /**
+<<<<<<< HEAD
  * Assigns a visual indicator for required form fields.
  *
  * @since 6.1.0
@@ -5222,6 +5720,11 @@ function wp_required_field_message() {
  * Default settings for heartbeat.
  *
  * Outputs the nonce used in the heartbeat XHR.
+=======
+ * Default settings for heartbeat
+ *
+ * Outputs the nonce used in the heartbeat XHR
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 3.6.0
  *

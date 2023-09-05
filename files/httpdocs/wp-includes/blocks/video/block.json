@@ -17,8 +17,12 @@
 		"caption": {
 			"type": "string",
 			"source": "html",
+<<<<<<< HEAD
 			"selector": "figcaption",
 			"__experimentalRole": "content"
+=======
+			"selector": "figcaption"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"controls": {
 			"type": "boolean",
@@ -28,8 +32,12 @@
 			"default": true
 		},
 		"id": {
+<<<<<<< HEAD
 			"type": "number",
 			"__experimentalRole": "content"
+=======
+			"type": "number"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"loop": {
 			"type": "boolean",
@@ -60,8 +68,12 @@
 			"type": "string",
 			"source": "attribute",
 			"selector": "video",
+<<<<<<< HEAD
 			"attribute": "src",
 			"__experimentalRole": "content"
+=======
+			"attribute": "src"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"playsInline": {
 			"type": "boolean",
@@ -70,7 +82,10 @@
 			"attribute": "playsinline"
 		},
 		"tracks": {
+<<<<<<< HEAD
 			"__experimentalRole": "content",
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"type": "array",
 			"items": {
 				"type": "object"
@@ -80,11 +95,15 @@
 	},
 	"supports": {
 		"anchor": true,
+<<<<<<< HEAD
 		"align": true,
 		"spacing": {
 			"margin": true,
 			"padding": true
 		}
+=======
+		"align": true
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-video-editor",
 	"style": "wp-block-video"

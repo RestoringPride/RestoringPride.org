@@ -5,14 +5,23 @@ namespace Give\PaymentGateways\Gateways\Stripe;
 use Give\Donations\Models\Donation;
 use Give\Framework\Exceptions\Primitives\Exception;
 use Give\Framework\PaymentGateways\Commands\GatewayCommand;
+<<<<<<< HEAD
+=======
+use Give\Framework\PaymentGateways\Commands\PaymentProcessing;
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\PaymentGateways\Commands\RedirectOffsite;
 use Give\Framework\PaymentGateways\Exceptions\PaymentGatewayException;
 use Give\Framework\PaymentGateways\PaymentGateway;
 use Give\Framework\PaymentGateways\PaymentGatewayRegister;
 use Give\Helpers\Call;
 use Give\Helpers\Gateways\Stripe;
+<<<<<<< HEAD
 use Give\PaymentGateways\Gateways\Stripe\Exceptions\CheckoutException;
 use Give\PaymentGateways\Gateways\Stripe\Exceptions\CheckoutTypeException;
+=======
+use Give\PaymentGateways\Exceptions\InvalidPropertyName;
+use Give\PaymentGateways\Gateways\Stripe\Exceptions\CheckoutException;
+>>>>>>> fb785cbb (Initial commit)
 use Give\PaymentGateways\Gateways\Stripe\ValueObjects\PaymentMethod;
 
 /**
@@ -29,6 +38,7 @@ class CheckoutGateway extends PaymentGateway
      * @inheritDoc
      * @since 2.19.0
      *
+<<<<<<< HEAD
      * @param array{stripePaymentMethod: PaymentMethod} $gatewayData
      *
      * @throws PaymentGatewayException
@@ -40,6 +50,19 @@ class CheckoutGateway extends PaymentGateway
                 return give(PaymentGatewayRegister::class)
                     ->getPaymentGateway(CreditCardGateway::id())
                     ->createPayment($donation, $gatewayData);
+=======
+     * @param PaymentMethod $donation
+     *
+     * @throws PaymentGatewayException
+     */
+    public function createPayment(Donation $donation, $paymentMethod): GatewayCommand
+    {
+        switch ($this->getCheckoutType()) {
+            case 'modal':
+                return  give(PaymentGatewayRegister::class)
+                    ->getPaymentGateway(CreditCardGateway::id())
+                    ->createPayment($donation, $paymentMethod);
+>>>>>>> fb785cbb (Initial commit)
             case 'redirect':
                 return $this->createPaymentRedirect($donation);
             default:
@@ -105,14 +128,18 @@ class CheckoutGateway extends PaymentGateway
     /**
      * @inheritDoc
      *
+<<<<<<< HEAD
      * @since 2.23.1
      *
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @return string|void
      */
     public function getLegacyFormFieldMarkup(int $formId, array $args): string
     {
         Stripe::canShowBillingAddress($formId, $args);
 
+<<<<<<< HEAD
         switch ($checkoutType = give_stripe_get_checkout_type()) {
             case 'redirect':
                 return $this->getCheckoutInstructions();
@@ -121,6 +148,14 @@ class CheckoutGateway extends PaymentGateway
                        . $this->getCheckoutModalHTML($formId, $args);
             default:
                 throw new CheckoutTypeException($checkoutType);
+=======
+        switch (give_stripe_get_checkout_type()) {
+            case 'modal':
+                return $this->getCheckoutInstructions()
+                    . $this->getCheckoutModalHTML($formId, $args);
+            case 'redirect':
+                return $this->getCheckoutInstructions();
+>>>>>>> fb785cbb (Initial commit)
         }
     }
 

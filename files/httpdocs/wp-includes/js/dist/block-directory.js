@@ -102,11 +102,26 @@ var external_wp_blocks_namespaceObject = window["wp"]["blocks"];
 var external_wp_data_namespaceObject = window["wp"]["data"];
 ;// CONCATENATED MODULE: external ["wp","editor"]
 var external_wp_editor_namespaceObject = window["wp"]["editor"];
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-directory/build-module/store/reducer.js
 /**
  * WordPress dependencies
  */
 
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+;// CONCATENATED MODULE: ./node_modules/@wordpress/block-directory/build-module/store/reducer.js
+/**
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Reducer returning an array of downloadable blocks.
  *
@@ -199,11 +214,15 @@ const errorNotices = function () {
       };
 
     case 'CLEAR_ERROR_NOTICE':
+<<<<<<< HEAD
       const {
         [action.blockId]: blockId,
         ...restState
       } = state;
       return restState;
+=======
+      return (0,external_lodash_namespaceObject.omit)(state, action.blockId);
+>>>>>>> fb785cbb (Initial commit)
   }
 
   return state;
@@ -472,6 +491,13 @@ function getPluginUrl(block) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-directory/build-module/store/actions.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -479,6 +505,10 @@ function getPluginUrl(block) {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -582,10 +612,14 @@ const installBlockType = block => async _ref => {
       }
 
       (0,external_wp_blocks_namespaceObject.unstable__bootstrapServerSideBlockDefinitions)({
+<<<<<<< HEAD
         [name]: Object.fromEntries(Object.entries(response).filter(_ref2 => {
           let [key] = _ref2;
           return metadataFields.includes(key);
         }))
+=======
+        [name]: (0,external_lodash_namespaceObject.pick)(response, metadataFields)
+>>>>>>> fb785cbb (Initial commit)
       });
     });
     await loadAssets();
@@ -633,11 +667,19 @@ const installBlockType = block => async _ref => {
  * @param {Object} block The blockType object.
  */
 
+<<<<<<< HEAD
 const uninstallBlockType = block => async _ref3 => {
   let {
     registry,
     dispatch
   } = _ref3;
+=======
+const uninstallBlockType = block => async _ref2 => {
+  let {
+    registry,
+    dispatch
+  } = _ref2;
+>>>>>>> fb785cbb (Initial commit)
 
   try {
     const url = getPluginUrl(block);
@@ -737,6 +779,7 @@ function clearErrorNotice(blockId) {
   };
 }
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -1096,6 +1139,8 @@ function camelCase(input, options) {
     return pascalCase(input, __assign({ transform: camelCaseTransform }, options));
 }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-directory/build-module/store/resolvers.js
 /**
  * External dependencies
@@ -1125,10 +1170,14 @@ const resolvers_getDownloadableBlocks = filterValue => async _ref => {
     const results = await external_wp_apiFetch_default()({
       path: `wp/v2/block-directory/search?term=${filterValue}`
     });
+<<<<<<< HEAD
     const blocks = results.map(result => Object.fromEntries(Object.entries(result).map(_ref2 => {
       let [key, value] = _ref2;
       return [camelCase(key), value];
     })));
+=======
+    const blocks = results.map(result => (0,external_lodash_namespaceObject.mapKeys)(result, (value, key) => (0,external_lodash_namespaceObject.camelCase)(key)));
+>>>>>>> fb785cbb (Initial commit)
     dispatch(receiveDownloadableBlocks(blocks, filterValue));
   } catch {}
 };
@@ -1212,10 +1261,17 @@ function AutoBlockUninstaller() {
   return null;
 }
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: external ["wp","compose"]
 var external_wp_compose_namespaceObject = window["wp"]["compose"];
 ;// CONCATENATED MODULE: external ["wp","components"]
 var external_wp_components_namespaceObject = window["wp"]["components"];
+=======
+;// CONCATENATED MODULE: external ["wp","components"]
+var external_wp_components_namespaceObject = window["wp"]["components"];
+;// CONCATENATED MODULE: external ["wp","compose"]
+var external_wp_compose_namespaceObject = window["wp"]["compose"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","coreData"]
 var external_wp_coreData_namespaceObject = window["wp"]["coreData"];
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
@@ -1223,12 +1279,20 @@ function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
       for (var key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
           target[key] = source[key];
         }
       }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
     return target;
   };
   return _extends.apply(this, arguments);
@@ -1320,11 +1384,22 @@ const starEmpty = (0,external_wp_element_namespaceObject.createElement)(external
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 function Stars(_ref) {
   let {
     rating
@@ -1337,23 +1412,35 @@ function Stars(_ref) {
     "aria-label": (0,external_wp_i18n_namespaceObject.sprintf)(
     /* translators: %s: number of stars. */
     (0,external_wp_i18n_namespaceObject.__)('%s out of 5 stars'), stars)
+<<<<<<< HEAD
   }, Array.from({
     length: fullStarCount
   }).map((_, i) => (0,external_wp_element_namespaceObject.createElement)(icon, {
+=======
+  }, (0,external_lodash_namespaceObject.times)(fullStarCount, i => (0,external_wp_element_namespaceObject.createElement)(icon, {
+>>>>>>> fb785cbb (Initial commit)
     key: `full_stars_${i}`,
     className: "block-directory-block-ratings__star-full",
     icon: star_filled,
     size: 16
+<<<<<<< HEAD
   })), Array.from({
     length: halfStarCount
   }).map((_, i) => (0,external_wp_element_namespaceObject.createElement)(icon, {
+=======
+  })), (0,external_lodash_namespaceObject.times)(halfStarCount, i => (0,external_wp_element_namespaceObject.createElement)(icon, {
+>>>>>>> fb785cbb (Initial commit)
     key: `half_stars_${i}`,
     className: "block-directory-block-ratings__star-half-full",
     icon: star_half,
     size: 16
+<<<<<<< HEAD
   })), Array.from({
     length: emptyStarCount
   }).map((_, i) => (0,external_wp_element_namespaceObject.createElement)(icon, {
+=======
+  })), (0,external_lodash_namespaceObject.times)(emptyStarCount, i => (0,external_wp_element_namespaceObject.createElement)(icon, {
+>>>>>>> fb785cbb (Initial commit)
     key: `empty_stars_${i}`,
     className: "block-directory-block-ratings__star-empty",
     icon: star_empty,
@@ -1592,12 +1679,23 @@ function DownloadableBlockListItem(_ref3) {
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -1605,12 +1703,19 @@ function DownloadableBlockListItem(_ref3) {
 
 
 
+<<<<<<< HEAD
 const noop = () => {};
 
 function DownloadableBlocksList(_ref) {
   let {
     items,
     onHover = noop,
+=======
+function DownloadableBlocksList(_ref) {
+  let {
+    items,
+    onHover = external_lodash_namespaceObject.noop,
+>>>>>>> fb785cbb (Initial commit)
     onSelect
   } = _ref;
   const composite = (0,external_wp_components_namespaceObject.__unstableUseCompositeState)();
@@ -1719,18 +1824,27 @@ const blockDefault = (0,external_wp_element_namespaceObject.createElement)(exter
 
 
 
+<<<<<<< HEAD
 
 function DownloadableBlocksNoResults() {
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_element_namespaceObject.Fragment, null, (0,external_wp_element_namespaceObject.createElement)("div", {
+=======
+function DownloadableBlocksNoResults() {
+  return (0,external_wp_element_namespaceObject.createElement)("div", {
+>>>>>>> fb785cbb (Initial commit)
     className: "block-editor-inserter__no-results"
   }, (0,external_wp_element_namespaceObject.createElement)(icon, {
     className: "block-editor-inserter__no-results-icon",
     icon: block_default
+<<<<<<< HEAD
   }), (0,external_wp_element_namespaceObject.createElement)("p", null, (0,external_wp_i18n_namespaceObject.__)('No results found.'))), (0,external_wp_element_namespaceObject.createElement)("div", {
     className: "block-editor-inserter__tips"
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Tip, null, (0,external_wp_i18n_namespaceObject.__)('Interested in creating your own block?'), (0,external_wp_element_namespaceObject.createElement)("br", null), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.ExternalLink, {
     href: "https://developer.wordpress.org/block-editor/"
   }, (0,external_wp_i18n_namespaceObject.__)('Get started here'), "."))));
+=======
+  }), (0,external_wp_element_namespaceObject.createElement)("p", null, (0,external_wp_i18n_namespaceObject.__)('No results found.')));
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /* harmony default export */ var no_results = (DownloadableBlocksNoResults);
@@ -1826,6 +1940,13 @@ function DownloadableBlocksPanel(_ref) {
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -1839,7 +1960,11 @@ function DownloadableBlocksPanel(_ref) {
 
 function InserterMenuDownloadableBlocksPanel() {
   const [debouncedFilterValue, setFilterValue] = (0,external_wp_element_namespaceObject.useState)('');
+<<<<<<< HEAD
   const debouncedSetFilterValue = (0,external_wp_compose_namespaceObject.debounce)(setFilterValue, 400);
+=======
+  const debouncedSetFilterValue = (0,external_lodash_namespaceObject.debounce)(setFilterValue, 400);
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.__unstableInserterMenuExtension, null, _ref => {
     let {
       onSelect,
@@ -1870,6 +1995,11 @@ function InserterMenuDownloadableBlocksPanel() {
 
 /* harmony default export */ var inserter_menu_downloadable_blocks_panel = (InserterMenuDownloadableBlocksPanel);
 
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: external ["wp","editPost"]
+var external_wp_editPost_namespaceObject = window["wp"]["editPost"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-directory/build-module/components/compact-list/index.js
 
 
@@ -1919,8 +2049,11 @@ function CompactList(_ref) {
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-directory/build-module/plugins/installed-blocks-pre-publish-panel/index.js
+<<<<<<< HEAD
 var _window$wp$editPost, _window, _window$wp;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 
 /**
@@ -1929,17 +2062,25 @@ var _window$wp$editPost, _window, _window$wp;
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
 
 
+<<<<<<< HEAD
  // We shouldn't import the edit-post package directly
 // because it would include the wp-edit-post in all pages loading the block-directory script.
 
 const {
   PluginPrePublishPanel
 } = (_window$wp$editPost = (_window = window) === null || _window === void 0 ? void 0 : (_window$wp = _window.wp) === null || _window$wp === void 0 ? void 0 : _window$wp.editPost) !== null && _window$wp$editPost !== void 0 ? _window$wp$editPost : {};
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 function InstalledBlocksPrePublishPanel() {
   const newBlockTypes = (0,external_wp_data_namespaceObject.useSelect)(select => select(store).getNewBlockTypes(), []);
 
@@ -1947,7 +2088,11 @@ function InstalledBlocksPrePublishPanel() {
     return null;
   }
 
+<<<<<<< HEAD
   return (0,external_wp_element_namespaceObject.createElement)(PluginPrePublishPanel, {
+=======
+  return (0,external_wp_element_namespaceObject.createElement)(external_wp_editPost_namespaceObject.PluginPrePublishPanel, {
+>>>>>>> fb785cbb (Initial commit)
     icon: block_default,
     title: (0,external_wp_i18n_namespaceObject.sprintf)( // translators: %d: number of blocks (number).
     (0,external_wp_i18n_namespaceObject._n)('Added: %d block', 'Added: %d blocks', newBlockTypes.length), newBlockTypes.length),
@@ -2069,8 +2214,12 @@ const ModifiedWarning = _ref2 => {
   } = _ref2;
   const {
     originalName,
+<<<<<<< HEAD
     originalUndelimitedContent,
     clientId
+=======
+    originalUndelimitedContent
+>>>>>>> fb785cbb (Initial commit)
   } = props.attributes;
   const {
     replaceBlock
@@ -2083,6 +2232,7 @@ const ModifiedWarning = _ref2 => {
   };
 
   const hasContent = !!originalUndelimitedContent;
+<<<<<<< HEAD
   const hasHTMLBlock = (0,external_wp_data_namespaceObject.useSelect)(select => {
     const {
       canInsertBlockType,
@@ -2090,6 +2240,9 @@ const ModifiedWarning = _ref2 => {
     } = select(external_wp_blockEditor_namespaceObject.store);
     return canInsertBlockType('core/html', getBlockRootClientId(clientId));
   }, [clientId]);
+=======
+  const hasHTMLBlock = (0,external_wp_blocks_namespaceObject.getBlockType)('core/html');
+>>>>>>> fb785cbb (Initial commit)
   let messageHTML = (0,external_wp_i18n_namespaceObject.sprintf)(
   /* translators: %s: block name */
   (0,external_wp_i18n_namespaceObject.__)('Your site doesn’t include support for the %s block. You can try installing the block or remove it entirely.'), originalBlock.title || originalName);
@@ -2107,7 +2260,11 @@ const ModifiedWarning = _ref2 => {
     actions.push((0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Button, {
       key: "convert",
       onClick: convertToHTML,
+<<<<<<< HEAD
       variant: "tertiary"
+=======
+      variant: "link"
+>>>>>>> fb785cbb (Initial commit)
     }, (0,external_wp_i18n_namespaceObject.__)('Keep as HTML')));
   }
 

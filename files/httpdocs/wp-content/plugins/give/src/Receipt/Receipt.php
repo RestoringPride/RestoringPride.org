@@ -12,7 +12,11 @@ use Iterator;
  * Receipt can have multiple sections and sections can have multiple line items.
  *
  * @package Give\Receipt
+<<<<<<< HEAD
  * @since   2.7.0
+=======
+ * @since 2.7.0
+>>>>>>> fb785cbb (Initial commit)
  */
 abstract class Receipt implements Iterator, ArrayAccess
 {
@@ -121,6 +125,7 @@ abstract class Receipt implements Iterator, ArrayAccess
     }
 
     /**
+<<<<<<< HEAD
      * Validate section.
      *
      * @param array $array
@@ -130,6 +135,8 @@ abstract class Receipt implements Iterator, ArrayAccess
     abstract protected function validateSection($array);
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * Remove receipt section.
      *
      * @since 2.7.0
@@ -147,7 +154,11 @@ abstract class Receipt implements Iterator, ArrayAccess
      *
      * @since 2.7.0
      *
+<<<<<<< HEAD
      * @param array  $value  Section Data.
+=======
+     * @param array  $value Section Data.
+>>>>>>> fb785cbb (Initial commit)
      * @param string $offset Section ID.
      */
     public function offsetSet($offset, $value)

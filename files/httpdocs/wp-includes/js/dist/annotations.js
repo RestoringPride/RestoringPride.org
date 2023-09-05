@@ -325,8 +325,19 @@ const addAnnotationClassName = OriginalComponent => {
 
 (0,external_wp_hooks_namespaceObject.addFilter)('editor.BlockListBlock', 'core/annotations', addAnnotationClassName);
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/annotations/build-module/store/reducer.js
 /**
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+;// CONCATENATED MODULE: ./node_modules/@wordpress/annotations/build-module/store/reducer.js
+/**
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Filters an array based on the predicate, but keeps the reference the same if
  * the array hasn't changed.
  *
@@ -335,11 +346,16 @@ const addAnnotationClassName = OriginalComponent => {
  *                              in the array.
  * @return {Array} Filtered array.
  */
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 function filterWithReference(collection, predicate) {
   const filteredCollection = collection.filter(predicate);
   return collection.length === filteredCollection.length ? collection : filteredCollection;
 }
 /**
+<<<<<<< HEAD
  * Creates a new object with the same keys, but with `callback()` called as
  * a transformer function on each of the values.
  *
@@ -356,6 +372,8 @@ const mapValues = (obj, callback) => Object.entries(obj).reduce((acc, _ref) => {
   };
 }, {});
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Verifies whether the given annotations is a valid annotation.
  *
  * @param {Object} annotation The annotation to verify.
@@ -364,7 +382,11 @@ const mapValues = (obj, callback) => Object.entries(obj).reduce((acc, _ref) => {
 
 
 function isValidAnnotationRange(annotation) {
+<<<<<<< HEAD
   return typeof annotation.start === 'number' && typeof annotation.end === 'number' && annotation.start <= annotation.end;
+=======
+  return (0,external_lodash_namespaceObject.isNumber)(annotation.start) && (0,external_lodash_namespaceObject.isNumber)(annotation.end) && annotation.start <= annotation.end;
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Reducer managing annotations.
@@ -404,14 +426,22 @@ function annotations() {
       };
 
     case 'ANNOTATION_REMOVE':
+<<<<<<< HEAD
       return mapValues(state, annotationsForBlock => {
+=======
+      return (0,external_lodash_namespaceObject.mapValues)(state, annotationsForBlock => {
+>>>>>>> fb785cbb (Initial commit)
         return filterWithReference(annotationsForBlock, annotation => {
           return annotation.id !== action.annotationId;
         });
       });
 
     case 'ANNOTATION_UPDATE_RANGE':
+<<<<<<< HEAD
       return mapValues(state, annotationsForBlock => {
+=======
+      return (0,external_lodash_namespaceObject.mapValues)(state, annotationsForBlock => {
+>>>>>>> fb785cbb (Initial commit)
         let hasChangedRange = false;
         const newAnnotations = annotationsForBlock.map(annotation => {
           if (annotation.id === action.annotationId) {
@@ -430,7 +460,11 @@ function annotations() {
       });
 
     case 'ANNOTATION_REMOVE_SOURCE':
+<<<<<<< HEAD
       return mapValues(state, annotationsForBlock => {
+=======
+      return (0,external_lodash_namespaceObject.mapValues)(state, annotationsForBlock => {
+>>>>>>> fb785cbb (Initial commit)
         return filterWithReference(annotationsForBlock, annotation => {
           return annotation.source !== action.source;
         });
@@ -441,6 +475,7 @@ function annotations() {
 }
 /* harmony default export */ var reducer = (annotations);
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/rememo/rememo.js
 
 
@@ -476,17 +511,37 @@ function annotations() {
  * @property {CacheNode?} [head] Cache head.
  * @property {*[]} [lastDependants] Dependants from previous invocation.
  */
+=======
+;// CONCATENATED MODULE: ./node_modules/rememo/es/rememo.js
+
+
+var LEAF_KEY, hasWeakMap;
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Arbitrary value used as key for referencing cache object in WeakMap tree.
  *
+<<<<<<< HEAD
  * @type {{}}
  */
 var LEAF_KEY = {};
+=======
+ * @type {Object}
+ */
+LEAF_KEY = {};
+
+/**
+ * Whether environment supports WeakMap.
+ *
+ * @type {boolean}
+ */
+hasWeakMap = typeof WeakMap !== 'undefined';
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Returns the first argument as the sole entry in an array.
  *
+<<<<<<< HEAD
  * @template T
  *
  * @param {T} value Value to return.
@@ -495,6 +550,14 @@ var LEAF_KEY = {};
  */
 function arrayOf(value) {
 	return [value];
+=======
+ * @param {*} value Value to return.
+ *
+ * @return {Array} Value returned as entry in array.
+ */
+function arrayOf( value ) {
+	return [ value ];
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -505,19 +568,32 @@ function arrayOf(value) {
  *
  * @return {boolean} Whether value is object-like.
  */
+<<<<<<< HEAD
 function isObjectLike(value) {
 	return !!value && 'object' === typeof value;
+=======
+function isObjectLike( value ) {
+	return !! value && 'object' === typeof value;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
  * Creates and returns a new cache object.
  *
+<<<<<<< HEAD
  * @return {Cache} Cache object.
  */
 function createCache() {
 	/** @type {Cache} */
 	var cache = {
 		clear: function () {
+=======
+ * @return {Object} Cache object.
+ */
+function createCache() {
+	var cache = {
+		clear: function() {
+>>>>>>> fb785cbb (Initial commit)
 			cache.head = null;
 		},
 	};
@@ -529,12 +605,18 @@ function createCache() {
  * Returns true if entries within the two arrays are strictly equal by
  * reference from a starting index.
  *
+<<<<<<< HEAD
  * @param {*[]} a First array.
  * @param {*[]} b Second array.
+=======
+ * @param {Array}  a         First array.
+ * @param {Array}  b         Second array.
+>>>>>>> fb785cbb (Initial commit)
  * @param {number} fromIndex Index from which to start comparison.
  *
  * @return {boolean} Whether arrays are shallowly equal.
  */
+<<<<<<< HEAD
 function isShallowEqual(a, b, fromIndex) {
 	var i;
 
@@ -544,6 +626,17 @@ function isShallowEqual(a, b, fromIndex) {
 
 	for (i = fromIndex; i < a.length; i++) {
 		if (a[i] !== b[i]) {
+=======
+function isShallowEqual( a, b, fromIndex ) {
+	var i;
+
+	if ( a.length !== b.length ) {
+		return false;
+	}
+
+	for ( i = fromIndex; i < a.length; i++ ) {
+		if ( a[ i ] !== b[ i ] ) {
+>>>>>>> fb785cbb (Initial commit)
 			return false;
 		}
 	}
@@ -559,6 +652,7 @@ function isShallowEqual(a, b, fromIndex) {
  * dependant references remain the same. If getDependants returns a different
  * reference(s), the cache is cleared and the selector value regenerated.
  *
+<<<<<<< HEAD
  * @template {(...args: *[]) => *} S
  *
  * @param {S} selector Selector function.
@@ -571,6 +665,33 @@ function isShallowEqual(a, b, fromIndex) {
 
 	/** @type {GetDependants} */
 	var normalizedGetDependants = getDependants ? getDependants : arrayOf;
+=======
+ * @param {Function} selector      Selector function.
+ * @param {Function} getDependants Dependant getter returning an immutable
+ *                                 reference or array of reference used in
+ *                                 cache bust consideration.
+ *
+ * @return {Function} Memoized selector.
+ */
+/* harmony default export */ function rememo(selector, getDependants ) {
+	var rootCache, getCache;
+
+	// Use object source as dependant if getter not provided
+	if ( ! getDependants ) {
+		getDependants = arrayOf;
+	}
+
+	/**
+	 * Returns the root cache. If WeakMap is supported, this is assigned to the
+	 * root WeakMap cache set, otherwise it is a shared instance of the default
+	 * cache object.
+	 *
+	 * @return {(WeakMap|Object)} Root cache object.
+	 */
+	function getRootCache() {
+		return rootCache;
+	}
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Returns the cache for a given dependants array. When possible, a WeakMap
@@ -586,6 +707,7 @@ function isShallowEqual(a, b, fromIndex) {
 	 *
 	 * @see isObjectLike
 	 *
+<<<<<<< HEAD
 	 * @param {*[]} dependants Selector dependants.
 	 *
 	 * @return {Cache} Cache object.
@@ -603,11 +725,28 @@ function isShallowEqual(a, b, fromIndex) {
 
 			// Can only compose WeakMap from object-like key.
 			if (!isObjectLike(dependant)) {
+=======
+	 * @param {Array} dependants Selector dependants.
+	 *
+	 * @return {Object} Cache object.
+	 */
+	function getWeakMapCache( dependants ) {
+		var caches = rootCache,
+			isUniqueByDependants = true,
+			i, dependant, map, cache;
+
+		for ( i = 0; i < dependants.length; i++ ) {
+			dependant = dependants[ i ];
+
+			// Can only compose WeakMap from object-like key.
+			if ( ! isObjectLike( dependant ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				isUniqueByDependants = false;
 				break;
 			}
 
 			// Does current segment of cache already have a WeakMap?
+<<<<<<< HEAD
 			if (caches.has(dependant)) {
 				// Traverse into nested WeakMap.
 				caches = caches.get(dependant);
@@ -615,12 +754,22 @@ function isShallowEqual(a, b, fromIndex) {
 				// Create, set, and traverse into a new one.
 				map = new WeakMap();
 				caches.set(dependant, map);
+=======
+			if ( caches.has( dependant ) ) {
+				// Traverse into nested WeakMap.
+				caches = caches.get( dependant );
+			} else {
+				// Create, set, and traverse into a new one.
+				map = new WeakMap();
+				caches.set( dependant, map );
+>>>>>>> fb785cbb (Initial commit)
 				caches = map;
 			}
 		}
 
 		// We use an arbitrary (but consistent) object as key for the last item
 		// in the WeakMap to serve as our running cache.
+<<<<<<< HEAD
 		if (!caches.has(LEAF_KEY)) {
 			cache = createCache();
 			cache.isUniqueByDependants = isUniqueByDependants;
@@ -630,18 +779,40 @@ function isShallowEqual(a, b, fromIndex) {
 		return caches.get(LEAF_KEY);
 	}
 
+=======
+		if ( ! caches.has( LEAF_KEY ) ) {
+			cache = createCache();
+			cache.isUniqueByDependants = isUniqueByDependants;
+			caches.set( LEAF_KEY, cache );
+		}
+
+		return caches.get( LEAF_KEY );
+	}
+
+	// Assign cache handler by availability of WeakMap
+	getCache = hasWeakMap ? getWeakMapCache : getRootCache;
+
+>>>>>>> fb785cbb (Initial commit)
 	/**
 	 * Resets root memoization cache.
 	 */
 	function clear() {
+<<<<<<< HEAD
 		rootCache = new WeakMap();
 	}
 
 	/* eslint-disable jsdoc/check-param-names */
+=======
+		rootCache = hasWeakMap ? new WeakMap() : createCache();
+	}
+
+	// eslint-disable-next-line jsdoc/check-param-names
+>>>>>>> fb785cbb (Initial commit)
 	/**
 	 * The augmented selector call, considering first whether dependants have
 	 * changed before passing it to underlying memoize function.
 	 *
+<<<<<<< HEAD
 	 * @param {*}    source    Source object for derivation.
 	 * @param {...*} extraArgs Additional arguments to pass to selector.
 	 *
@@ -673,6 +844,31 @@ function isShallowEqual(a, b, fromIndex) {
 				cache.lastDependants &&
 				!isShallowEqual(dependants, cache.lastDependants, 0)
 			) {
+=======
+	 * @param {Object} source    Source object for derivation.
+	 * @param {...*}   extraArgs Additional arguments to pass to selector.
+	 *
+	 * @return {*} Selector result.
+	 */
+	function callSelector( /* source, ...extraArgs */ ) {
+		var len = arguments.length,
+			cache, node, i, args, dependants;
+
+		// Create copy of arguments (avoid leaking deoptimization).
+		args = new Array( len );
+		for ( i = 0; i < len; i++ ) {
+			args[ i ] = arguments[ i ];
+		}
+
+		dependants = getDependants.apply( null, args );
+		cache = getCache( dependants );
+
+		// If not guaranteed uniqueness by dependants (primitive type or lack
+		// of WeakMap support), shallow compare against last dependants and, if
+		// references have changed, destroy cache to recalculate result.
+		if ( ! cache.isUniqueByDependants ) {
+			if ( cache.lastDependants && ! isShallowEqual( dependants, cache.lastDependants, 0 ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				cache.clear();
 			}
 
@@ -680,9 +876,15 @@ function isShallowEqual(a, b, fromIndex) {
 		}
 
 		node = cache.head;
+<<<<<<< HEAD
 		while (node) {
 			// Check whether node arguments match arguments
 			if (!isShallowEqual(node.args, args, 1)) {
+=======
+		while ( node ) {
+			// Check whether node arguments match arguments
+			if ( ! isShallowEqual( node.args, args, 1 ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				node = node.next;
 				continue;
 			}
@@ -690,16 +892,27 @@ function isShallowEqual(a, b, fromIndex) {
 			// At this point we can assume we've found a match
 
 			// Surface matched node to head if not already
+<<<<<<< HEAD
 			if (node !== cache.head) {
 				// Adjust siblings to point to each other.
 				/** @type {CacheNode} */ (node.prev).next = node.next;
 				if (node.next) {
+=======
+			if ( node !== cache.head ) {
+				// Adjust siblings to point to each other.
+				node.prev.next = node.next;
+				if ( node.next ) {
+>>>>>>> fb785cbb (Initial commit)
 					node.next.prev = node.prev;
 				}
 
 				node.next = cache.head;
 				node.prev = null;
+<<<<<<< HEAD
 				/** @type {CacheNode} */ (cache.head).prev = node;
+=======
+				cache.head.prev = node;
+>>>>>>> fb785cbb (Initial commit)
 				cache.head = node;
 			}
 
@@ -709,6 +922,7 @@ function isShallowEqual(a, b, fromIndex) {
 
 		// No cached value found. Continue to insertion phase:
 
+<<<<<<< HEAD
 		node = /** @type {CacheNode} */ ({
 			// Generate the result from original function
 			val: selector.apply(null, args),
@@ -716,13 +930,26 @@ function isShallowEqual(a, b, fromIndex) {
 
 		// Avoid including the source object in the cache.
 		args[0] = null;
+=======
+		node = {
+			// Generate the result from original function
+			val: selector.apply( null, args ),
+		};
+
+		// Avoid including the source object in the cache.
+		args[ 0 ] = null;
+>>>>>>> fb785cbb (Initial commit)
 		node.args = args;
 
 		// Don't need to check whether node is already head, since it would
 		// have been returned above already if it was
 
 		// Shift existing head down list
+<<<<<<< HEAD
 		if (cache.head) {
+=======
+		if ( cache.head ) {
+>>>>>>> fb785cbb (Initial commit)
 			cache.head.prev = node;
 			node.next = cache.head;
 		}
@@ -732,11 +959,19 @@ function isShallowEqual(a, b, fromIndex) {
 		return node.val;
 	}
 
+<<<<<<< HEAD
 	callSelector.getDependants = normalizedGetDependants;
 	callSelector.clear = clear;
 	clear();
 
 	return /** @type {S & EnhancedSelector} */ (callSelector);
+=======
+	callSelector.getDependants = getDependants;
+	callSelector.clear = clear;
+	clear();
+
+	return callSelector;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/annotations/build-module/store/selectors.js
@@ -744,6 +979,10 @@ function isShallowEqual(a, b, fromIndex) {
  * External dependencies
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Shared reference to an empty array for cases where it is important to avoid
  * returning a new array reference on every invocation, as in a connected or
@@ -820,10 +1059,19 @@ const __experimentalGetAnnotationsForRichText = rememo((state, blockClientId, ri
  */
 
 function __experimentalGetAnnotations(state) {
+<<<<<<< HEAD
   return Object.values(state).flat();
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/annotations/node_modules/uuid/dist/esm-browser/rng.js
+=======
+  return (0,external_lodash_namespaceObject.flatMap)(state, annotations => {
+    return annotations;
+  });
+}
+
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/rng.js
+>>>>>>> fb785cbb (Initial commit)
 // Unique ID creation requires a high quality random # generator. In the browser we therefore
 // require the crypto API and do not support built-in fallback to lower quality random number
 // generators (like Math.random()).
@@ -843,9 +1091,15 @@ function rng() {
 
   return getRandomValues(rnds8);
 }
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/annotations/node_modules/uuid/dist/esm-browser/regex.js
 /* harmony default export */ var regex = (/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/annotations/node_modules/uuid/dist/esm-browser/validate.js
+=======
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/regex.js
+/* harmony default export */ var regex = (/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i);
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/validate.js
+>>>>>>> fb785cbb (Initial commit)
 
 
 function validate(uuid) {
@@ -853,7 +1107,11 @@ function validate(uuid) {
 }
 
 /* harmony default export */ var esm_browser_validate = (validate);
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/annotations/node_modules/uuid/dist/esm-browser/stringify.js
+=======
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/stringify.js
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Convert array of 16 byte values to UUID string format of the form:
@@ -884,7 +1142,11 @@ function stringify(arr) {
 }
 
 /* harmony default export */ var esm_browser_stringify = (stringify);
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/annotations/node_modules/uuid/dist/esm-browser/v4.js
+=======
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/v4.js
+>>>>>>> fb785cbb (Initial commit)
 
 
 

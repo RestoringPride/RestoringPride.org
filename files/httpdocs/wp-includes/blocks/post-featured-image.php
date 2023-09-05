@@ -19,6 +19,7 @@ function render_block_core_post_featured_image( $attributes, $content, $block ) 
 	}
 	$post_ID = $block->context['postId'];
 
+<<<<<<< HEAD
 	// Check is needed for backward compatibility with third-party plugins
 	// that might rely on the `in_the_loop` check; calling `the_post` sets it to true.
 	if ( ! in_the_loop() && have_posts() ) {
@@ -196,6 +197,38 @@ function get_block_core_post_featured_image_border_attributes( $attributes ) {
 		$attributes['style'] = $styles['css'];
 	}
 	return $attributes;
+=======
+	$size_slug      = isset( $attributes['sizeSlug'] ) ? $attributes['sizeSlug'] : 'post-thumbnail';
+	$post_title     = trim( strip_tags( get_the_title( $post_ID ) ) );
+	$featured_image = get_the_post_thumbnail( $post_ID, $size_slug, array( 'alt' => $post_title ) );
+	if ( ! $featured_image ) {
+		return '';
+	}
+	$wrapper_attributes = get_block_wrapper_attributes();
+	if ( isset( $attributes['isLink'] ) && $attributes['isLink'] ) {
+		$featured_image = sprintf( '<a href="%1s">%2s</a>', get_the_permalink( $post_ID ), $featured_image );
+	}
+
+	$has_width  = ! empty( $attributes['width'] );
+	$has_height = ! empty( $attributes['height'] );
+	if ( ! $has_height && ! $has_width ) {
+		return "<figure $wrapper_attributes>$featured_image</figure>";
+	}
+
+	if ( $has_width ) {
+		$wrapper_attributes = get_block_wrapper_attributes( array( 'style' => "width:{$attributes['width']};" ) );
+	}
+
+	if ( $has_height ) {
+		$image_styles = "height:{$attributes['height']};";
+		if ( ! empty( $attributes['scale'] ) ) {
+			$image_styles .= "object-fit:{$attributes['scale']};";
+		}
+		$featured_image = str_replace( 'src=', 'style="' . esc_attr( $image_styles ) . '" src=', $featured_image );
+	}
+
+	return "<figure $wrapper_attributes>$featured_image</figure>";
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**

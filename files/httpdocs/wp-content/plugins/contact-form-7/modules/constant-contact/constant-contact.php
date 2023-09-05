@@ -14,7 +14,11 @@ wpcf7_include_module_file( 'constant-contact/doi.php' );
 add_action(
 	'wpcf7_init',
 	'wpcf7_constant_contact_register_service',
+<<<<<<< HEAD
 	20, 0
+=======
+	5, 0
+>>>>>>> fb785cbb (Initial commit)
 );
 
 /**

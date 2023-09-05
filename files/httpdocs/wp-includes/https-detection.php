@@ -178,8 +178,13 @@ function wp_schedule_https_detection() {
  * @since 5.7.0
  * @access private
  *
+<<<<<<< HEAD
  * @param array $request The cron request arguments.
  * @return array The filtered cron request arguments.
+=======
+ * @param array $request The Cron request arguments.
+ * @return array The filtered Cron request arguments.
+>>>>>>> fb785cbb (Initial commit)
  */
 function wp_cron_conditionally_prevent_sslverify( $request ) {
 	if ( 'https' === wp_parse_url( $request['url'], PHP_URL_SCHEME ) ) {

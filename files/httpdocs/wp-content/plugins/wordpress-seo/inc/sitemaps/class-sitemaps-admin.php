@@ -62,7 +62,11 @@ class WPSEO_Sitemaps_Admin {
 			return;
 		}
 
+<<<<<<< HEAD
 		if ( ! YoastSEO()->helpers->environment->is_production_mode() ) {
+=======
+		if ( wp_get_environment_type() !== 'production' ) {
+>>>>>>> fb785cbb (Initial commit)
 			return;
 		}
 

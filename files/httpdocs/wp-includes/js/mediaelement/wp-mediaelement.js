@@ -19,8 +19,11 @@
 		 * @return {void}
 		 */
 		function initialize() {
+<<<<<<< HEAD
 			var selectors = [];
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			if ( typeof _wpmejsSettings !== 'undefined' ) {
 				settings = $.extend( true, {}, _wpmejsSettings );
 			}
@@ -65,6 +68,7 @@
 				}
 			};
 
+<<<<<<< HEAD
 			if ( 'undefined' === typeof settings.videoShortcodeLibrary || 'mediaelement' === settings.videoShortcodeLibrary ) {
 				selectors.push( '.wp-video-shortcode' );
 			}
@@ -77,6 +81,10 @@
 
 			// Only initialize new media elements.
 			$( selectors.join( ', ' ) )
+=======
+			// Only initialize new media elements.
+			$( '.wp-audio-shortcode, .wp-video-shortcode' )
+>>>>>>> fb785cbb (Initial commit)
 				.not( '.mejs-container' )
 				.filter(function () {
 					return ! $( this ).parent().hasClass( 'mejs-mediaelement' );

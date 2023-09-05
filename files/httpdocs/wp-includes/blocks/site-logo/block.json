@@ -31,17 +31,23 @@
 	},
 	"supports": {
 		"html": false,
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"align": true,
 		"alignWide": false,
 		"color": {
 			"__experimentalDuotone": "img, .components-placeholder__illustration, .components-placeholder::before",
 			"text": false,
 			"background": false
+<<<<<<< HEAD
 		},
 		"spacing": {
 			"margin": true,
 			"padding": true
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"styles": [

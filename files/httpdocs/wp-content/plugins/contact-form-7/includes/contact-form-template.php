@@ -22,10 +22,17 @@ class WPCF7_ContactFormTemplate {
 		$template = sprintf(
 			'
 <label> %2$s
+<<<<<<< HEAD
     [text* your-name autocomplete:name] </label>
 
 <label> %3$s
     [email* your-email autocomplete:email] </label>
+=======
+    [text* your-name] </label>
+
+<label> %3$s
+    [email* your-email] </label>
+>>>>>>> fb785cbb (Initial commit)
 
 <label> %4$s
     [text* your-subject] </label>
@@ -60,9 +67,15 @@ class WPCF7_ContactFormTemplate {
 			),
 			'body' =>
 				sprintf(
+<<<<<<< HEAD
 					/* translators: %s: [your-name] [your-email] */
 					__( 'From: %s', 'contact-form-7' ),
 					'[your-name] [your-email]'
+=======
+					/* translators: %s: [your-name] <[your-email]> */
+					__( 'From: %s', 'contact-form-7' ),
+					'[your-name] <[your-email]>'
+>>>>>>> fb785cbb (Initial commit)
 				) . "\n"
 				. sprintf(
 					/* translators: %s: [your-subject] */

@@ -963,7 +963,11 @@ function give_multiradio( $field ) {
 				</label>
 				<?php if ( isset( $data['description'] ) ) : ?>
 					<span class="give-field-description">
+<<<<<<< HEAD
 						<?php echo wp_kses_post( $data['description'] ); ?>
+=======
+						<?php echo esc_html( $data['description'] ); ?>
+>>>>>>> fb785cbb (Initial commit)
 					</span>
 				<?php endif; ?>
 			</li>

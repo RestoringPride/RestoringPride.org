@@ -46,8 +46,13 @@ class Aioseo_Cleanup_Action extends Abstract_Aioseo_Importing_Action {
 	/**
 	 * Class constructor.
 	 *
+<<<<<<< HEAD
 	 * @param wpdb           $wpdb    The WordPress database instance.
 	 * @param Options_Helper $options The options helper.
+=======
+	 * @param wpdb           $wpdb        The WordPress database instance.
+	 * @param Options_Helper $options     The options helper.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function __construct(
 		wpdb $wpdb,

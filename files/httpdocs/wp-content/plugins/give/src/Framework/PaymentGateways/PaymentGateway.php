@@ -12,14 +12,20 @@ use Give\Framework\PaymentGateways\CommandHandlers\PaymentProcessingHandler;
 use Give\Framework\PaymentGateways\CommandHandlers\RedirectOffsiteHandler;
 use Give\Framework\PaymentGateways\CommandHandlers\RespondToBrowserHandler;
 use Give\Framework\PaymentGateways\CommandHandlers\SubscriptionCompleteHandler;
+<<<<<<< HEAD
 use Give\Framework\PaymentGateways\CommandHandlers\SubscriptionProcessingHandler;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\PaymentGateways\Commands\GatewayCommand;
 use Give\Framework\PaymentGateways\Commands\PaymentComplete;
 use Give\Framework\PaymentGateways\Commands\PaymentProcessing;
 use Give\Framework\PaymentGateways\Commands\RedirectOffsite;
 use Give\Framework\PaymentGateways\Commands\RespondToBrowser;
 use Give\Framework\PaymentGateways\Commands\SubscriptionComplete;
+<<<<<<< HEAD
 use Give\Framework\PaymentGateways\Commands\SubscriptionProcessing;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\PaymentGateways\Contracts\PaymentGatewayInterface;
 use Give\Framework\PaymentGateways\Contracts\Subscription\SubscriptionAmountEditable;
 use Give\Framework\PaymentGateways\Contracts\Subscription\SubscriptionDashboardLinkable;
@@ -32,8 +38,13 @@ use Give\Framework\PaymentGateways\Traits\HandleHttpResponses;
 use Give\Framework\PaymentGateways\Traits\HasRouteMethods;
 use Give\Framework\Support\ValueObjects\Money;
 use Give\Helpers\Call;
+<<<<<<< HEAD
 use Give\PaymentGateways\Actions\GetGatewayDataFromRequest;
 use Give\Subscriptions\Models\Subscription;
+=======
+use Give\Subscriptions\Models\Subscription;
+use ReflectionException;
+>>>>>>> fb785cbb (Initial commit)
 use ReflectionMethod;
 
 use function Give\Framework\Http\Response\response;
@@ -80,7 +91,11 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
      */
     public function supportsSubscriptions(): bool
     {
+<<<<<<< HEAD
         return isset($this->subscriptionModule) || $this->isFunctionImplementedInGatewayClass('createSubscription');
+=======
+        return isset($this->subscriptionModule);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -97,8 +112,13 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
              * @since 2.21.2
              */
             $gatewayData = apply_filters(
+<<<<<<< HEAD
                 "givewp_create_payment_gateway_data_{$donation->gatewayId}",
                 (new GetGatewayDataFromRequest)(),
+=======
+                "givewp_new_payment_{$donation->gatewayId}_gateway_data",
+                null,
+>>>>>>> fb785cbb (Initial commit)
                 $donation
             );
 
@@ -108,7 +128,11 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
             PaymentGatewayLog::error(
                 $exception->getMessage(),
                 [
+<<<<<<< HEAD
                     'Payment Gateway' => static::id(),
+=======
+                    'Payment Gateway' => $this->getId(),
+>>>>>>> fb785cbb (Initial commit)
                     'Donation' => $donation,
                 ]
             );
@@ -137,8 +161,13 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
              * @since 2.21.2
              */
             $gatewayData = apply_filters(
+<<<<<<< HEAD
                 "givewp_create_subscription_gateway_data_{$donation->gatewayId}",
                 (new GetGatewayDataFromRequest)(),
+=======
+                "givewp_new_subscription_{$donation->gatewayId}_gateway_data",
+                null,
+>>>>>>> fb785cbb (Initial commit)
                 $donation,
                 $subscription
             );
@@ -149,7 +178,11 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
             PaymentGatewayLog::error(
                 $exception->getMessage(),
                 [
+<<<<<<< HEAD
                     'Payment Gateway' => static::id(),
+=======
+                    'Payment Gateway' => $this->getId(),
+>>>>>>> fb785cbb (Initial commit)
                     'Donation' => $donation,
                     'Subscription' => $subscription,
                 ]
@@ -189,6 +222,10 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
     /**
      * @since 2.21.2
      * @inheritDoc
+<<<<<<< HEAD
+=======
+     * @throws ReflectionException
+>>>>>>> fb785cbb (Initial commit)
      */
     public function canSyncSubscriptionWithPaymentGateway(): bool
     {
@@ -202,6 +239,10 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
     /**
      * @since 2.21.2
      * @inheritDoc
+<<<<<<< HEAD
+=======
+     * @throws ReflectionException
+>>>>>>> fb785cbb (Initial commit)
      */
     public function canUpdateSubscriptionAmount(): bool
     {
@@ -215,6 +256,10 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
     /**
      * @since 2.21.2
      * @inheritDoc
+<<<<<<< HEAD
+=======
+     * @throws ReflectionException
+>>>>>>> fb785cbb (Initial commit)
      */
     public function canUpdateSubscriptionPaymentMethod(): bool
     {
@@ -226,8 +271,14 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.25.0 update return logic
      * @since 2.21.2
+=======
+     * @since 2.21.2
+     * @since 2.21.2
+     * @throws Exception
+>>>>>>> fb785cbb (Initial commit)
      */
     public function hasGatewayDashboardSubscriptionUrl(): bool
     {
@@ -235,7 +286,11 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
             return $this->subscriptionModule->hasGatewayDashboardSubscriptionUrl();
         }
 
+<<<<<<< HEAD
         return $this->isFunctionImplementedInGatewayClass('gatewayDashboardSubscriptionUrl');
+=======
+        throw new Exception('Method has not been implemented yet.');
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -289,6 +344,10 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
     /**
      * @since 2.21.2
      * @inheritDoc
+<<<<<<< HEAD
+=======
+     * @throws Exception
+>>>>>>> fb785cbb (Initial commit)
      */
     public function gatewayDashboardSubscriptionUrl(Subscription $subscription): string
     {
@@ -296,7 +355,11 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
             return $this->subscriptionModule->gatewayDashboardSubscriptionUrl($subscription);
         }
 
+<<<<<<< HEAD
         return false;
+=======
+        throw new Exception('Gateway does not support providing a dashboard link.');
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -375,6 +438,7 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
             $this->handleResponse($response);
         }
 
+<<<<<<< HEAD
         if ($command instanceof SubscriptionProcessing) {
             $handler = new SubscriptionProcessingHandler($command, $subscription, $donation);
             $handler();
@@ -384,6 +448,8 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
             $this->handleResponse($response);
         }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
         if ($command instanceof RedirectOffsite) {
             $response = Call::invoke(RedirectOffsiteHandler::class, $command);
 
@@ -406,7 +472,11 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
      */
     public function generateGatewayRouteUrl(string $gatewayMethod, array $args = []): string
     {
+<<<<<<< HEAD
         return Call::invoke(GenerateGatewayRouteUrl::class, static::id(), $gatewayMethod, $args);
+=======
+        return Call::invoke(GenerateGatewayRouteUrl::class, $this->getId(), $gatewayMethod, $args);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -418,11 +488,19 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
      */
     public function generateSecureGatewayRouteUrl(string $gatewayMethod, int $donationId, array $args = []): string
     {
+<<<<<<< HEAD
         $signature = new RouteSignature(static::id(), $gatewayMethod, $donationId);
 
         return Call::invoke(
             GenerateGatewayRouteUrl::class,
             static::id(),
+=======
+        $signature = new RouteSignature($this->getId(), $gatewayMethod, $donationId);
+
+        return Call::invoke(
+            GenerateGatewayRouteUrl::class,
+            $this->getId(),
+>>>>>>> fb785cbb (Initial commit)
             $gatewayMethod,
             array_merge($args, [
                 'give-route-signature' => $signature->toHash(),
@@ -487,11 +565,18 @@ abstract class PaymentGateway implements PaymentGatewayInterface,
      * to see if the gateway is implementing a recurring feature without using a subscription module.
      *
      * @since 2.21.2
+<<<<<<< HEAD
+=======
+     * @throws ReflectionException
+>>>>>>> fb785cbb (Initial commit)
      */
     private function isFunctionImplementedInGatewayClass(string $methodName): bool
     {
         $reflector = new ReflectionMethod($this, $methodName);
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
         return ($reflector->getDeclaringClass()->getName() === get_class($this));
     }
 }

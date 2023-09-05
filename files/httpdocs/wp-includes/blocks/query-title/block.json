@@ -16,6 +16,7 @@
 		"level": {
 			"type": "number",
 			"default": 1
+<<<<<<< HEAD
 		},
 		"showPrefix": {
 			"type": "boolean",
@@ -28,6 +29,11 @@
 	},
 	"supports": {
 		"anchor": true,
+=======
+		}
+	},
+	"supports": {
+>>>>>>> fb785cbb (Initial commit)
 		"align": [ "wide", "full" ],
 		"html": false,
 		"color": {
@@ -38,8 +44,12 @@
 			}
 		},
 		"spacing": {
+<<<<<<< HEAD
 			"margin": true,
 			"padding": true
+=======
+			"margin": true
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"typography": {
 			"fontSize": true,
@@ -49,7 +59,10 @@
 			"__experimentalFontWeight": true,
 			"__experimentalLetterSpacing": true,
 			"__experimentalTextTransform": true,
+<<<<<<< HEAD
 			"__experimentalTextDecoration": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true,
 				"fontAppearance": true,
@@ -57,5 +70,9 @@
 			}
 		}
 	},
+<<<<<<< HEAD
 	"style": "wp-block-query-title"
+=======
+	"editorStyle": "wp-block-query-title-editor"
+>>>>>>> fb785cbb (Initial commit)
 }

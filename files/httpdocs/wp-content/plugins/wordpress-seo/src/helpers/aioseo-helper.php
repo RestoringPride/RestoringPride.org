@@ -3,6 +3,10 @@
 namespace Yoast\WP\SEO\Helpers;
 
 use wpdb;
+<<<<<<< HEAD
+=======
+use Yoast\WP\SEO\Helpers\Wpdb_Helper;
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * The AIOSEO Helper.

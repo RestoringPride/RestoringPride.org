@@ -5,8 +5,11 @@
  * @package WPSEO\Admin
  */
 
+<<<<<<< HEAD
 use Yoast\WP\SEO\Conditionals\Indexables_Page_Conditional;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Notifications template variables.
  *
@@ -38,6 +41,7 @@ $wpseo_contributors_phrase = sprintf(
 	</div>
 </div>
 
+<<<<<<< HEAD
 <?php
 if ( YoastSEO()->classes->get( Indexables_Page_Conditional::class )->is_met() ) {
 	?>
@@ -48,6 +52,8 @@ if ( YoastSEO()->classes->get( Indexables_Page_Conditional::class )->is_met() ) 
 }
 ?>
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 <div class="tab-block">
 	<h2><?php esc_html_e( 'Credits', 'wordpress-seo' ); ?></h2>
 	<p>

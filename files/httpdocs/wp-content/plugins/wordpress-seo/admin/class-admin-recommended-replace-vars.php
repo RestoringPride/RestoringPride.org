@@ -30,7 +30,11 @@ class WPSEO_Admin_Recommended_Replace_Vars {
 		'post_format'              => [ 'sitename', 'term_title', 'sep', 'page' ],
 
 		// Custom taxonomy.
+<<<<<<< HEAD
 		'term-in-custom-taxonomy'  => [ 'sitename', 'term_title', 'sep', 'term_hierarchy' ],
+=======
+		'term-in-custom-taxomomy'  => [ 'sitename', 'term_title', 'sep', 'term_hierarchy' ],
+>>>>>>> fb785cbb (Initial commit)
 
 		// Settings - archive pages.
 		'author_archive'           => [ 'sitename', 'title', 'sep', 'page' ],
@@ -55,7 +59,11 @@ class WPSEO_Admin_Recommended_Replace_Vars {
 			return $taxonomy;
 		}
 
+<<<<<<< HEAD
 		return 'term-in-custom-taxonomy';
+=======
+		return 'term-in-custom-taxomomy';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**

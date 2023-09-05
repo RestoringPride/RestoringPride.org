@@ -316,6 +316,7 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Moves a file or directory.
 	 *
 	 * After moving files or directories, OPcache will need to be invalidated.
@@ -324,6 +325,9 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 	 *
 	 * Use `move_dir()` for moving directories with OPcache invalidation and a
 	 * fallback to `copy_dir()`.
+=======
+	 * Moves a file.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.5.0
 	 *
@@ -338,18 +342,25 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 			return false;
 		}
 
+<<<<<<< HEAD
 		if ( $overwrite && $this->exists( $destination ) && ! $this->delete( $destination, true ) ) {
 			// Can't overwrite if the destination couldn't be deleted.
 			return false;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		// Try using rename first. if that fails (for example, source is read only) try copy.
 		if ( @rename( $source, $destination ) ) {
 			return true;
 		}
 
+<<<<<<< HEAD
 		// Backward compatibility: Only fall back to `::copy()` for single files.
 		if ( $this->is_file( $source ) && $this->copy( $source, $destination, $overwrite ) && $this->exists( $destination ) ) {
+=======
+		if ( $this->copy( $source, $destination, $overwrite ) && $this->exists( $destination ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			$this->delete( $source );
 
 			return true;
@@ -412,11 +423,19 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 	 *
 	 * @since 2.5.0
 	 *
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path exists or not.
 	 */
 	public function exists( $path ) {
 		return @file_exists( $path );
+=======
+	 * @param string $file Path to file or directory.
+	 * @return bool Whether $file exists or not.
+	 */
+	public function exists( $file ) {
+		return @file_exists( $file );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -460,11 +479,19 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 	 *
 	 * @since 2.5.0
 	 *
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path is writable.
 	 */
 	public function is_writable( $path ) {
 		return @is_writable( $path );
+=======
+	 * @param string $file Path to file or directory.
+	 * @return bool Whether $file is writable.
+	 */
+	public function is_writable( $file ) {
+		return @is_writable( $file );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -629,8 +656,12 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 			return false;
 		}
 
+<<<<<<< HEAD
 		$path = trailingslashit( $path );
 		$ret  = array();
+=======
+		$ret = array();
+>>>>>>> fb785cbb (Initial commit)
 
 		while ( false !== ( $entry = $dir->read() ) ) {
 			$struc         = array();
@@ -648,6 +679,7 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 				continue;
 			}
 
+<<<<<<< HEAD
 			$struc['perms']       = $this->gethchmod( $path . $entry );
 			$struc['permsn']      = $this->getnumchmodfromh( $struc['perms'] );
 			$struc['number']      = false;
@@ -662,6 +694,22 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 			if ( 'd' === $struc['type'] ) {
 				if ( $recursive ) {
 					$struc['files'] = $this->dirlist( $path . $struc['name'], $include_hidden, $recursive );
+=======
+			$struc['perms']       = $this->gethchmod( $path . '/' . $entry );
+			$struc['permsn']      = $this->getnumchmodfromh( $struc['perms'] );
+			$struc['number']      = false;
+			$struc['owner']       = $this->owner( $path . '/' . $entry );
+			$struc['group']       = $this->group( $path . '/' . $entry );
+			$struc['size']        = $this->size( $path . '/' . $entry );
+			$struc['lastmodunix'] = $this->mtime( $path . '/' . $entry );
+			$struc['lastmod']     = gmdate( 'M j', $struc['lastmodunix'] );
+			$struc['time']        = gmdate( 'h:i:s', $struc['lastmodunix'] );
+			$struc['type']        = $this->is_dir( $path . '/' . $entry ) ? 'd' : 'f';
+
+			if ( 'd' === $struc['type'] ) {
+				if ( $recursive ) {
+					$struc['files'] = $this->dirlist( $path . '/' . $struc['name'], $include_hidden, $recursive );
+>>>>>>> fb785cbb (Initial commit)
 				} else {
 					$struc['files'] = array();
 				}

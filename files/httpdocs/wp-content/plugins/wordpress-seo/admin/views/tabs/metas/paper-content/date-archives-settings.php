@@ -60,6 +60,7 @@ $yform->toggle_switch(
 	echo '</div>';
 
 	/**
+<<<<<<< HEAD
 	 * WARNING: This hook is intended for internal use only.
 	 * Don't use it in your code as it will be removed shortly.
 	 */
@@ -80,5 +81,12 @@ $yform->toggle_switch(
 		'',
 		'This action is going away with no replacement. If you want to add settings that interact with Yoast SEO, please create your own settings page.'
 	);
+=======
+	 * Allow adding custom fields to the admin meta page - Date archives panel in the Archives tab.
+	 *
+	 * @param Yoast_Form $yform The Yoast_Form object.
+	 */
+	do_action( 'Yoast\WP\SEO\admin_date_archives_meta', $yform );
+>>>>>>> fb785cbb (Initial commit)
 	?>
 </div>

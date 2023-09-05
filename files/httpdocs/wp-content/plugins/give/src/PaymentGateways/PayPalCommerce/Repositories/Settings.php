@@ -2,8 +2,11 @@
 
 namespace Give\PaymentGateways\PayPalCommerce\Repositories;
 
+<<<<<<< HEAD
 use Give\PaymentGateways\PayPalCommerce\Models\MerchantDetail;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 class Settings
 {
     /**
@@ -14,7 +17,11 @@ class Settings
     const COUNTRY_KEY = 'paypal_commerce_account_country';
 
     /**
+<<<<<<< HEAD
      * wp_options key for the seller access token
+=======
+     * wp_options key for the access token
+>>>>>>> fb785cbb (Initial commit)
      *
      * @since 2.9.0
      */
@@ -54,7 +61,11 @@ class Settings
     }
 
     /**
+<<<<<<< HEAD
      * Returns the PayPal merchant seller access token.
+=======
+     * Returns the account access token
+>>>>>>> fb785cbb (Initial commit)
      *
      * @since 2.9.0
      *
@@ -90,7 +101,11 @@ class Settings
     }
 
     /**
+<<<<<<< HEAD
      * Updates the PayPal merchant seller access token.
+=======
+     * Updates the account access token
+>>>>>>> fb785cbb (Initial commit)
      *
      * @param $token
      *
@@ -102,9 +117,13 @@ class Settings
     }
 
     /**
+<<<<<<< HEAD
      * Deletes the PayPal seller access token.
      *
      * @since 2.9.0
+=======
+     * Deletes the account access token
+>>>>>>> fb785cbb (Initial commit)
      *
      * @return bool
      */
@@ -148,6 +167,7 @@ class Settings
     }
 
     /**
+<<<<<<< HEAD
      * Updates the partner link details
      *
      * @since 2.25.0
@@ -168,6 +188,8 @@ class Settings
     }
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * Deletes the partner link details
      *
      * @since 2.11.1
@@ -185,6 +207,7 @@ class Settings
     {
         return 'donation' === $this->getTransactionType();
     }
+<<<<<<< HEAD
 
     /**
      * This function returns the seller access token option name
@@ -198,4 +221,6 @@ class Settings
             give_is_test_mode() ? 'sandbox' : 'live'
         );
     }
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

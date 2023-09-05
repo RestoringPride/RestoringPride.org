@@ -76,6 +76,7 @@ function tb_show(caption, url, imageGroup) {//function called when the user clic
 	   		baseURL = url;
 	   }
 
+<<<<<<< HEAD
 	   var urlString = /\.jpg$|\.jpeg$|\.png$|\.gif$|\.bmp$|\.webp$/;
 	   var urlType = baseURL.toLowerCase().match(urlString);
 
@@ -86,6 +87,12 @@ function tb_show(caption, url, imageGroup) {//function called when the user clic
 			urlType == '.bmp' ||
 			urlType == '.webp'
 		){//code to show images
+=======
+	   var urlString = /\.jpg$|\.jpeg$|\.png$|\.gif$|\.bmp$/;
+	   var urlType = baseURL.toLowerCase().match(urlString);
+
+		if(urlType == '.jpg' || urlType == '.jpeg' || urlType == '.png' || urlType == '.gif' || urlType == '.bmp'){//code to show images
+>>>>>>> fb785cbb (Initial commit)
 
 			TB_PrevCaption = "";
 			TB_PrevURL = "";

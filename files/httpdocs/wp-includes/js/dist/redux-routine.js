@@ -726,11 +726,17 @@ function isGenerator(object) {
 
 // EXTERNAL MODULE: ./node_modules/rungen/dist/index.js
 var dist = __webpack_require__(2290);
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/is-promise/index.mjs
 function isPromise(obj) {
   return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
 }
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/redux-routine/node_modules/is-plain-object/dist/is-plain-object.mjs
 /*!
  * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
@@ -767,6 +773,8 @@ function isPlainObject(o) {
 
 
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/redux-routine/build-module/is-action.js
 /**
  * External dependencies
@@ -783,7 +791,11 @@ function isPlainObject(o) {
  */
 
 function isAction(object) {
+<<<<<<< HEAD
   return isPlainObject(object) && typeof object.type === 'string';
+=======
+  return (0,external_lodash_namespaceObject.isPlainObject)(object) && (0,external_lodash_namespaceObject.isString)(object.type);
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Returns true if the given object quacks like an action and has a specific
@@ -807,6 +819,10 @@ function isActionOfType(object, expectedType) {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -821,6 +837,7 @@ function isActionOfType(object, expectedType) {
 function createRuntime() {
   let controls = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   let dispatch = arguments.length > 1 ? arguments[1] : undefined;
+<<<<<<< HEAD
   const rungenControls = Object.entries(controls).map(_ref => {
     let [actionType, control] = _ref;
     return (value, next, iterate, yieldNext, yieldError) => {
@@ -839,6 +856,23 @@ function createRuntime() {
 
       return true;
     };
+=======
+  const rungenControls = (0,external_lodash_namespaceObject.map)(controls, (control, actionType) => (value, next, iterate, yieldNext, yieldError) => {
+    if (!isActionOfType(value, actionType)) {
+      return false;
+    }
+
+    const routine = control(value);
+
+    if (isPromise(routine)) {
+      // Async control routine awaits resolution.
+      routine.then(yieldNext, yieldError);
+    } else {
+      yieldNext(routine);
+    }
+
+    return true;
+>>>>>>> fb785cbb (Initial commit)
   });
 
   const unhandledActionControl = (value, next) => {

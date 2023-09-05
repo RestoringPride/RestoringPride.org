@@ -298,7 +298,11 @@ class Yoast_Notification_Center {
 	 */
 	public function add_notification( Yoast_Notification $notification ) {
 
+<<<<<<< HEAD
 		$callback = [ $this, __FUNCTION__ ];
+=======
+		$callback = [ $this, __METHOD__ ];
+>>>>>>> fb785cbb (Initial commit)
 		$args     = func_get_args();
 		if ( $this->queue_transaction( $callback, $args ) ) {
 			return;
@@ -405,7 +409,11 @@ class Yoast_Notification_Center {
 	 */
 	public function remove_notification( Yoast_Notification $notification, $resolve = true ) {
 
+<<<<<<< HEAD
 		$callback = [ $this, __FUNCTION__ ];
+=======
+		$callback = [ $this, __METHOD__ ];
+>>>>>>> fb785cbb (Initial commit)
 		$args     = func_get_args();
 		if ( $this->queue_transaction( $callback, $args ) ) {
 			return;

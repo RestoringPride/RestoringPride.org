@@ -10,7 +10,11 @@ wpcf7_include_module_file( 'sendinblue/contact-form-properties.php' );
 wpcf7_include_module_file( 'sendinblue/doi.php' );
 
 
+<<<<<<< HEAD
 add_action( 'wpcf7_init', 'wpcf7_sendinblue_register_service', 10, 0 );
+=======
+add_action( 'wpcf7_init', 'wpcf7_sendinblue_register_service', 1, 0 );
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Registers the Sendinblue service.

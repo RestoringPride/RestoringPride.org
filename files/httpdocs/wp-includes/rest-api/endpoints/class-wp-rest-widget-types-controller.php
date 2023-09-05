@@ -85,9 +85,15 @@ class WP_REST_Widget_Types_Controller extends WP_REST_Controller {
 					'form_data' => array(
 						'description'       => __( 'Serialized widget form data to encode into instance settings.' ),
 						'type'              => 'string',
+<<<<<<< HEAD
 						'sanitize_callback' => static function( $form_data ) {
 							$array = array();
 							wp_parse_str( $form_data, $array );
+=======
+						'sanitize_callback' => static function( $string ) {
+							$array = array();
+							wp_parse_str( $string, $array );
+>>>>>>> fb785cbb (Initial commit)
 							return $array;
 						},
 					),
@@ -335,9 +341,13 @@ class WP_REST_Widget_Types_Controller extends WP_REST_Controller {
 
 		$response = rest_ensure_response( $data );
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $widget_type ) );
 		}
+=======
+		$response->add_links( $this->prepare_links( $widget_type ) );
+>>>>>>> fb785cbb (Initial commit)
 
 		/**
 		 * Filters the REST API response for a widget type.
@@ -529,7 +539,11 @@ class WP_REST_Widget_Types_Controller extends WP_REST_Controller {
 
 		if ( ! empty( $widget_object->widget_options['show_instance_in_rest'] ) ) {
 			// Use new stdClass so that JSON result is {} and not [].
+<<<<<<< HEAD
 			$response['instance']['raw'] = empty( $instance ) ? new stdClass() : $instance;
+=======
+			$response['instance']['raw'] = empty( $instance ) ? new stdClass : $instance;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return rest_ensure_response( $response );

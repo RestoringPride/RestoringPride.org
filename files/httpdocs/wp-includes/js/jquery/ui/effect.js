@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Effects 1.13.2
+=======
+ * jQuery UI Effects 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -53,8 +57,11 @@ var jQuery = $;
  * Date: Sun May 10 09:02:36 2020 +0200
  */
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	var stepHooks = "backgroundColor borderBottomColor borderLeftColor borderRightColor " +
 		"borderTopColor color columnRuleColor outlineColor textDecorationColor textEmphasisColor",
 
@@ -753,6 +760,10 @@ colors = jQuery.Color.names = {
 	_default: "#ffffff"
 };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 var dataSpace = "ui-effects-",
 	dataSpaceStyle = "ui-effects-style",
 	dataSpaceAnimated = "ui-effects-animated";
@@ -813,7 +824,11 @@ function getElementStyles( elem ) {
 			}
 		}
 
+<<<<<<< HEAD
 	// Support: Opera, IE <9
+=======
+		// Support: Opera, IE <9
+>>>>>>> fb785cbb (Initial commit)
 	} else {
 		for ( key in style ) {
 			if ( typeof style[ key ] === "string" ) {
@@ -1120,7 +1135,11 @@ if ( $.uiBackCompat !== false ) {
 }
 
 $.extend( $.effects, {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 
 	define: function( name, mode, effect ) {
 		if ( !effect ) {
@@ -1202,6 +1221,7 @@ $.extend( $.effects, {
 		var y, x;
 
 		switch ( origin[ 0 ] ) {
+<<<<<<< HEAD
 		case "top":
 			y = 0;
 			break;
@@ -1227,6 +1247,33 @@ $.extend( $.effects, {
 			break;
 		default:
 			x = origin[ 1 ] / original.width;
+=======
+			case "top":
+				y = 0;
+				break;
+			case "middle":
+				y = 0.5;
+				break;
+			case "bottom":
+				y = 1;
+				break;
+			default:
+				y = origin[ 0 ] / original.height;
+		}
+
+		switch ( origin[ 1 ] ) {
+			case "left":
+				x = 0;
+				break;
+			case "center":
+				x = 0.5;
+				break;
+			case "right":
+				x = 1;
+				break;
+			default:
+				x = origin[ 1 ] / original.width;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return {
@@ -1251,8 +1298,13 @@ $.extend( $.effects, {
 			marginLeft: element.css( "marginLeft" ),
 			marginRight: element.css( "marginRight" )
 		} )
+<<<<<<< HEAD
 		.outerWidth( element.outerWidth() )
 		.outerHeight( element.outerHeight() );
+=======
+			.outerWidth( element.outerWidth() )
+			.outerHeight( element.outerHeight() );
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( /^(static|relative)/.test( cssPosition ) ) {
 			cssPosition = "absolute";
@@ -1273,9 +1325,15 @@ $.extend( $.effects, {
 				marginRight: element.css( "marginRight" ),
 				"float": element.css( "float" )
 			} )
+<<<<<<< HEAD
 			.outerWidth( element.outerWidth() )
 			.outerHeight( element.outerHeight() )
 			.addClass( "ui-effects-placeholder" );
+=======
+				.outerWidth( element.outerWidth() )
+				.outerHeight( element.outerHeight() )
+				.addClass( "ui-effects-placeholder" );
+>>>>>>> fb785cbb (Initial commit)
 
 			element.data( dataSpace + "placeholder", placeholder );
 		}
@@ -1291,7 +1349,11 @@ $.extend( $.effects, {
 
 	removePlaceholder: function( element ) {
 		var dataKey = dataSpace + "placeholder",
+<<<<<<< HEAD
 				placeholder = element.data( dataKey );
+=======
+			placeholder = element.data( dataKey );
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( placeholder ) {
 			placeholder.remove();
@@ -1363,8 +1425,13 @@ function _normalizeArguments( effect, options, speed, callback ) {
 	speed = speed || options.duration;
 	effect.duration = $.fx.off ? 0 :
 		typeof speed === "number" ? speed :
+<<<<<<< HEAD
 		speed in $.fx.speeds ? $.fx.speeds[ speed ] :
 		$.fx.speeds._default;
+=======
+			speed in $.fx.speeds ? $.fx.speeds[ speed ] :
+				$.fx.speeds._default;
+>>>>>>> fb785cbb (Initial commit)
 
 	effect.complete = callback || options.complete;
 
@@ -1421,7 +1488,11 @@ $.fn.extend( {
 
 				// See $.uiBackCompat inside of run() for removal of defaultMode in 1.14
 				if ( defaultMode && ( normalizedMode === "show" ||
+<<<<<<< HEAD
 						( normalizedMode === defaultMode && normalizedMode === "hide" ) ) ) {
+=======
+					( normalizedMode === defaultMode && normalizedMode === "hide" ) ) ) {
+>>>>>>> fb785cbb (Initial commit)
 					el.show();
 				}
 
@@ -1599,6 +1670,7 @@ $.fn.extend( {
 } );
 
 function parseClip( str, element ) {
+<<<<<<< HEAD
 		var outerWidth = element.outerWidth(),
 			outerHeight = element.outerHeight(),
 			clipRegex = /^rect\((-?\d*\.?\d*px|-?\d+%|auto),?\s*(-?\d*\.?\d*px|-?\d+%|auto),?\s*(-?\d*\.?\d*px|-?\d+%|auto),?\s*(-?\d*\.?\d*px|-?\d+%|auto)\)$/,
@@ -1610,6 +1682,19 @@ function parseClip( str, element ) {
 			bottom: values[ 3 ] === "auto" ? outerHeight : parseFloat( values[ 3 ] ),
 			left: parseFloat( values[ 4 ] ) || 0
 		};
+=======
+	var outerWidth = element.outerWidth(),
+		outerHeight = element.outerHeight(),
+		clipRegex = /^rect\((-?\d*\.?\d*px|-?\d+%|auto),?\s*(-?\d*\.?\d*px|-?\d+%|auto),?\s*(-?\d*\.?\d*px|-?\d+%|auto),?\s*(-?\d*\.?\d*px|-?\d+%|auto)\)$/,
+		values = clipRegex.exec( str ) || [ "", 0, outerWidth, outerHeight, 0 ];
+
+	return {
+		top: parseFloat( values[ 1 ] ) || 0,
+		right: values[ 2 ] === "auto" ? outerWidth : parseFloat( values[ 2 ] ),
+		bottom: values[ 3 ] === "auto" ? outerHeight : parseFloat( values[ 3 ] ),
+		left: parseFloat( values[ 4 ] ) || 0
+	};
+>>>>>>> fb785cbb (Initial commit)
 }
 
 $.fx.step.clip = function( fx ) {

@@ -1,5 +1,6 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
+<<<<<<< HEAD
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 4470:
@@ -48,6 +49,10 @@ module.exports = window["ReactDOM"];
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
+=======
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+>>>>>>> fb785cbb (Initial commit)
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
@@ -80,8 +85,11 @@ module.exports = window["ReactDOM"];
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+<<<<<<< HEAD
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
+=======
+>>>>>>> fb785cbb (Initial commit)
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
@@ -99,6 +107,7 @@ __webpack_require__.d(__webpack_exports__, {
   "createContext": function() { return /* reexport */ external_React_namespaceObject.createContext; },
   "createElement": function() { return /* reexport */ external_React_namespaceObject.createElement; },
   "createInterpolateElement": function() { return /* reexport */ create_interpolate_element; },
+<<<<<<< HEAD
   "createPortal": function() { return /* reexport */ external_ReactDOM_.createPortal; },
   "createRef": function() { return /* reexport */ external_React_namespaceObject.createRef; },
   "createRoot": function() { return /* reexport */ client/* createRoot */.s; },
@@ -107,10 +116,17 @@ __webpack_require__.d(__webpack_exports__, {
   "forwardRef": function() { return /* reexport */ external_React_namespaceObject.forwardRef; },
   "hydrate": function() { return /* reexport */ external_ReactDOM_.hydrate; },
   "hydrateRoot": function() { return /* reexport */ client/* hydrateRoot */.a; },
+=======
+  "createPortal": function() { return /* reexport */ external_ReactDOM_namespaceObject.createPortal; },
+  "createRef": function() { return /* reexport */ external_React_namespaceObject.createRef; },
+  "findDOMNode": function() { return /* reexport */ external_ReactDOM_namespaceObject.findDOMNode; },
+  "forwardRef": function() { return /* reexport */ external_React_namespaceObject.forwardRef; },
+>>>>>>> fb785cbb (Initial commit)
   "isEmptyElement": function() { return /* reexport */ isEmptyElement; },
   "isValidElement": function() { return /* reexport */ external_React_namespaceObject.isValidElement; },
   "lazy": function() { return /* reexport */ external_React_namespaceObject.lazy; },
   "memo": function() { return /* reexport */ external_React_namespaceObject.memo; },
+<<<<<<< HEAD
   "render": function() { return /* reexport */ external_ReactDOM_.render; },
   "renderToString": function() { return /* reexport */ serialize; },
   "startTransition": function() { return /* reexport */ external_React_namespaceObject.startTransition; },
@@ -124,13 +140,28 @@ __webpack_require__.d(__webpack_exports__, {
   "useId": function() { return /* reexport */ external_React_namespaceObject.useId; },
   "useImperativeHandle": function() { return /* reexport */ external_React_namespaceObject.useImperativeHandle; },
   "useInsertionEffect": function() { return /* reexport */ external_React_namespaceObject.useInsertionEffect; },
+=======
+  "render": function() { return /* reexport */ external_ReactDOM_namespaceObject.render; },
+  "renderToString": function() { return /* reexport */ serialize; },
+  "switchChildrenNodeName": function() { return /* reexport */ switchChildrenNodeName; },
+  "unmountComponentAtNode": function() { return /* reexport */ external_ReactDOM_namespaceObject.unmountComponentAtNode; },
+  "useCallback": function() { return /* reexport */ external_React_namespaceObject.useCallback; },
+  "useContext": function() { return /* reexport */ external_React_namespaceObject.useContext; },
+  "useDebugValue": function() { return /* reexport */ external_React_namespaceObject.useDebugValue; },
+  "useEffect": function() { return /* reexport */ external_React_namespaceObject.useEffect; },
+  "useImperativeHandle": function() { return /* reexport */ external_React_namespaceObject.useImperativeHandle; },
+>>>>>>> fb785cbb (Initial commit)
   "useLayoutEffect": function() { return /* reexport */ external_React_namespaceObject.useLayoutEffect; },
   "useMemo": function() { return /* reexport */ external_React_namespaceObject.useMemo; },
   "useReducer": function() { return /* reexport */ external_React_namespaceObject.useReducer; },
   "useRef": function() { return /* reexport */ external_React_namespaceObject.useRef; },
+<<<<<<< HEAD
   "useState": function() { return /* reexport */ external_React_namespaceObject.useState; },
   "useSyncExternalStore": function() { return /* reexport */ external_React_namespaceObject.useSyncExternalStore; },
   "useTransition": function() { return /* reexport */ external_React_namespaceObject.useTransition; }
+=======
+  "useState": function() { return /* reexport */ external_React_namespaceObject.useState; }
+>>>>>>> fb785cbb (Initial commit)
 });
 
 ;// CONCATENATED MODULE: external "React"
@@ -152,7 +183,11 @@ let indoc, offset, output, stack;
  * There are four references extracted using this tokenizer:
  *
  * match: Full match of the tag (i.e. <strong>, </strong>, <br/>)
+<<<<<<< HEAD
  * isClosing: The closing slash, if it exists.
+=======
+ * isClosing: The closing slash, it it exists.
+>>>>>>> fb785cbb (Initial commit)
  * name: The name portion of the tag (strong, br) (if )
  * isSelfClosed: The slash on a self closing tag, if it exists.
  *
@@ -469,12 +504,21 @@ function closeOuterElement(endOffset) {
 
 /* harmony default export */ var create_interpolate_element = (createInterpolateElement);
 
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/element/build-module/react.js
 /**
  * External dependencies
  */
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Object containing a React element.
  *
@@ -598,31 +642,40 @@ function closeOuterElement(endOffset) {
 
 
 /**
+<<<<<<< HEAD
  * @see https://reactjs.org/docs/hooks-reference.html#usedeferredvalue
  */
 
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @see https://reactjs.org/docs/hooks-reference.html#useeffect
  */
 
 
 /**
+<<<<<<< HEAD
  * @see https://reactjs.org/docs/hooks-reference.html#useid
  */
 
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @see https://reactjs.org/docs/hooks-reference.html#useimperativehandle
  */
 
 
 /**
+<<<<<<< HEAD
  * @see https://reactjs.org/docs/hooks-reference.html#useinsertioneffect
  */
 
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @see https://reactjs.org/docs/hooks-reference.html#uselayouteffect
  */
 
@@ -648,6 +701,7 @@ function closeOuterElement(endOffset) {
 
 
 /**
+<<<<<<< HEAD
  * @see https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore
  */
 
@@ -663,6 +717,8 @@ function closeOuterElement(endOffset) {
 
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @see https://reactjs.org/docs/react-api.html#reactlazy
  */
 
@@ -709,7 +765,11 @@ function concatChildren() {
 
 function switchChildrenNodeName(children, nodeName) {
   return children && external_React_namespaceObject.Children.map(children, (elt, index) => {
+<<<<<<< HEAD
     if (typeof (elt === null || elt === void 0 ? void 0 : elt.valueOf()) === 'string') {
+=======
+    if ((0,external_lodash_namespaceObject.isString)(elt)) {
+>>>>>>> fb785cbb (Initial commit)
       return (0,external_React_namespaceObject.createElement)(nodeName, {
         key: index
       }, elt);
@@ -726,16 +786,24 @@ function switchChildrenNodeName(children, nodeName) {
   });
 }
 
+<<<<<<< HEAD
 // EXTERNAL MODULE: external "ReactDOM"
 var external_ReactDOM_ = __webpack_require__(1850);
 // EXTERNAL MODULE: ./node_modules/react-dom/client.js
 var client = __webpack_require__(4470);
+=======
+;// CONCATENATED MODULE: external "ReactDOM"
+var external_ReactDOM_namespaceObject = window["ReactDOM"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/element/build-module/react-platform.js
 /**
  * External dependencies
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Creates a portal into which a component can be rendered.
  *
@@ -755,6 +823,7 @@ var client = __webpack_require__(4470);
 
 
 /**
+<<<<<<< HEAD
  * Forces React to flush any updates inside the provided callback synchronously.
  *
  * @param {Function} callback Callback to run synchronously.
@@ -762,6 +831,8 @@ var client = __webpack_require__(4470);
 
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Renders a given element into the target DOM node.
  *
  * @param {import('./react').WPElement} element Element to render.
@@ -770,6 +841,7 @@ var client = __webpack_require__(4470);
 
 
 /**
+<<<<<<< HEAD
  * Hydrates a given element into the target DOM node.
  *
  * @param {import('./react').WPElement} element Element to hydrate.
@@ -792,6 +864,8 @@ var client = __webpack_require__(4470);
 
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Removes any mounted element from the target DOM node.
  *
  * @param {Element} target DOM node in which element is to be removed
@@ -801,17 +875,34 @@ var client = __webpack_require__(4470);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/element/build-module/utils.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Checks if the provided WP element is empty.
  *
  * @param {*} element WP element to check.
  * @return {boolean} True when an element is considered empty.
  */
+<<<<<<< HEAD
 const isEmptyElement = element => {
   if (typeof element === 'number') {
     return false;
   }
 
   if (typeof (element === null || element === void 0 ? void 0 : element.valueOf()) === 'string' || Array.isArray(element)) {
+=======
+
+const isEmptyElement = element => {
+  if ((0,external_lodash_namespaceObject.isNumber)(element)) {
+    return false;
+  }
+
+  if ((0,external_lodash_namespaceObject.isString)(element) || (0,external_lodash_namespaceObject.isArray)(element)) {
+>>>>>>> fb785cbb (Initial commit)
     return !element.length;
   }
 
@@ -854,6 +945,7 @@ const Platform = {
 
 /* harmony default export */ var platform = (Platform);
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/element/node_modules/is-plain-object/dist/is-plain-object.mjs
 /*!
  * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
@@ -1228,12 +1320,18 @@ function paramCase(input, options) {
     return dotCase(input, __assign({ delimiter: "-" }, options));
 }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","escapeHtml"]
 var external_wp_escapeHtml_namespaceObject = window["wp"]["escapeHtml"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/element/build-module/raw-html.js
 /**
  * Internal dependencies
  */
+<<<<<<< HEAD
+=======
+ // Disable reason: JSDoc linter doesn't seem to parse the union (`&`) correctly.
+>>>>>>> fb785cbb (Initial commit)
 
 /** @typedef {{children: string} & import('react').ComponentPropsWithoutRef<'div'>} RawHTMLProps */
 
@@ -1304,7 +1402,10 @@ function RawHTML(_ref) {
  * External dependencies
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
@@ -1497,7 +1598,11 @@ function getNormalAttributeName(attribute) {
   if (CASE_SENSITIVE_SVG_ATTRIBUTES[attributeLowerCase]) {
     return CASE_SENSITIVE_SVG_ATTRIBUTES[attributeLowerCase];
   } else if (SVG_ATTRIBUTE_WITH_DASHES_LIST[attributeLowerCase]) {
+<<<<<<< HEAD
     return paramCase(SVG_ATTRIBUTE_WITH_DASHES_LIST[attributeLowerCase]);
+=======
+    return (0,external_lodash_namespaceObject.kebabCase)(SVG_ATTRIBUTE_WITH_DASHES_LIST[attributeLowerCase]);
+>>>>>>> fb785cbb (Initial commit)
   } else if (SVG_ATTRIBUTES_WITH_COLONS[attributeLowerCase]) {
     return SVG_ATTRIBUTES_WITH_COLONS[attributeLowerCase];
   }
@@ -1518,15 +1623,26 @@ function getNormalAttributeName(attribute) {
 
 
 function getNormalStylePropertyName(property) {
+<<<<<<< HEAD
   if (property.startsWith('--')) {
+=======
+  if ((0,external_lodash_namespaceObject.startsWith)(property, '--')) {
+>>>>>>> fb785cbb (Initial commit)
     return property;
   }
 
   if (hasPrefix(property, ['ms', 'O', 'Moz', 'Webkit'])) {
+<<<<<<< HEAD
     return '-' + paramCase(property);
   }
 
   return paramCase(property);
+=======
+    return '-' + (0,external_lodash_namespaceObject.kebabCase)(property);
+  }
+
+  return (0,external_lodash_namespaceObject.kebabCase)(property);
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Returns the normal form of the style property value for HTML. Appends a
@@ -1593,7 +1709,11 @@ function renderElement(element, context) {
         children,
         ...wrapperProps
       } = props;
+<<<<<<< HEAD
       return renderNativeComponent(!Object.keys(wrapperProps).length ? null : 'div', { ...wrapperProps,
+=======
+      return renderNativeComponent((0,external_lodash_namespaceObject.isEmpty)(wrapperProps) ? null : 'div', { ...wrapperProps,
+>>>>>>> fb785cbb (Initial commit)
         dangerouslySetInnerHTML: {
           __html: children
         }
@@ -1646,11 +1766,15 @@ function renderNativeComponent(type, props, context) {
     // place of children. Ensure to omit so it is not assigned as attribute
     // as well.
     content = renderChildren(props.value, context, legacyContext);
+<<<<<<< HEAD
     const {
       value,
       ...restProps
     } = props;
     props = restProps;
+=======
+    props = (0,external_lodash_namespaceObject.omit)(props, 'value');
+>>>>>>> fb785cbb (Initial commit)
   } else if (props.dangerouslySetInnerHTML && typeof props.dangerouslySetInnerHTML.__html === 'string') {
     // Dangerous content is left unescaped.
     content = props.dangerouslySetInnerHTML.__html;
@@ -1715,7 +1839,11 @@ function renderComponent(Component, props, context) {
 function renderChildren(children, context) {
   let legacyContext = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
   let result = '';
+<<<<<<< HEAD
   children = Array.isArray(children) ? children : [children];
+=======
+  children = (0,external_lodash_namespaceObject.castArray)(children);
+>>>>>>> fb785cbb (Initial commit)
 
   for (let i = 0; i < children.length; i++) {
     const child = children[i];
@@ -1792,7 +1920,11 @@ function renderAttributes(props) {
 
 function renderStyle(style) {
   // Only generate from object, e.g. tolerate string value.
+<<<<<<< HEAD
   if (!isPlainObject(style)) {
+=======
+  if (!(0,external_lodash_namespaceObject.isPlainObject)(style)) {
+>>>>>>> fb785cbb (Initial commit)
     return style;
   }
 
@@ -1829,7 +1961,10 @@ function renderStyle(style) {
 
 
 
+<<<<<<< HEAD
 }();
+=======
+>>>>>>> fb785cbb (Initial commit)
 (window.wp = window.wp || {}).element = __webpack_exports__;
 /******/ })()
 ;

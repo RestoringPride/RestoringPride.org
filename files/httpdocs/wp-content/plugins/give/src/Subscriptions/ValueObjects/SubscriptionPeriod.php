@@ -25,6 +25,7 @@ class SubscriptionPeriod extends Enum {
     const QUARTER = 'quarter';
     const MONTH = 'month';
     const YEAR = 'year';
+<<<<<<< HEAD
 
     /**
      * @since 2.24.0
@@ -53,4 +54,6 @@ class SubscriptionPeriod extends Enum {
     {
         return self::labels()[ $this->getValue() ][$frequency > 1];
     }
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

@@ -316,6 +316,7 @@ module.exports = EquivalentKeyMap;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 5619:
 /***/ (function(module) {
 
@@ -396,6 +397,8 @@ module.exports = function equal(a, b) {
 
 /***/ }),
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /***/ 9756:
 /***/ (function(module) {
 
@@ -646,6 +649,7 @@ __webpack_require__.d(__webpack_exports__, {
   "__experimentalFetchUrlData": function() { return /* reexport */ _experimental_fetch_url_data; },
   "__experimentalUseEntityRecord": function() { return /* reexport */ __experimentalUseEntityRecord; },
   "__experimentalUseEntityRecords": function() { return /* reexport */ __experimentalUseEntityRecords; },
+<<<<<<< HEAD
   "__experimentalUseResourcePermissions": function() { return /* reexport */ __experimentalUseResourcePermissions; },
   "store": function() { return /* binding */ store; },
   "useEntityBlockEditor": function() { return /* reexport */ useEntityBlockEditor; },
@@ -654,6 +658,12 @@ __webpack_require__.d(__webpack_exports__, {
   "useEntityRecord": function() { return /* reexport */ useEntityRecord; },
   "useEntityRecords": function() { return /* reexport */ useEntityRecords; },
   "useResourcePermissions": function() { return /* reexport */ useResourcePermissions; }
+=======
+  "store": function() { return /* binding */ store; },
+  "useEntityBlockEditor": function() { return /* reexport */ useEntityBlockEditor; },
+  "useEntityId": function() { return /* reexport */ useEntityId; },
+  "useEntityProp": function() { return /* reexport */ useEntityProp; }
+>>>>>>> fb785cbb (Initial commit)
 });
 
 // NAMESPACE OBJECT: ./node_modules/@wordpress/core-data/build-module/actions.js
@@ -761,6 +771,7 @@ __webpack_require__.d(resolvers_namespaceObject, {
 
 ;// CONCATENATED MODULE: external ["wp","data"]
 var external_wp_data_namespaceObject = window["wp"]["data"];
+<<<<<<< HEAD
 // EXTERNAL MODULE: ./node_modules/fast-deep-equal/es6/index.js
 var es6 = __webpack_require__(5619);
 var es6_default = /*#__PURE__*/__webpack_require__.n(es6);
@@ -768,6 +779,10 @@ var es6_default = /*#__PURE__*/__webpack_require__.n(es6);
 var external_lodash_namespaceObject = window["lodash"];
 ;// CONCATENATED MODULE: external ["wp","compose"]
 var external_wp_compose_namespaceObject = window["wp"]["compose"];
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","isShallowEqual"]
 var external_wp_isShallowEqual_namespaceObject = window["wp"]["isShallowEqual"];
 var external_wp_isShallowEqual_default = /*#__PURE__*/__webpack_require__.n(external_wp_isShallowEqual_namespaceObject);
@@ -836,7 +851,11 @@ function conservativeMapItem(item, nextItem) {
   const result = {};
 
   for (const key in nextItem) {
+<<<<<<< HEAD
     if (es6_default()(item[key], nextItem[key])) {
+=======
+    if ((0,external_lodash_namespaceObject.isEqual)(item[key], nextItem[key])) {
+>>>>>>> fb785cbb (Initial commit)
       result[key] = item[key];
     } else {
       hasChanges = true;
@@ -896,6 +915,7 @@ const onSubKey = actionProperty => reducer => function () {
 };
 /* harmony default export */ var on_sub_key = (onSubKey);
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -1257,12 +1277,18 @@ function pascalCase(input, options) {
     return noCase(input, __assign({ delimiter: "", transform: pascalCaseTransform }, options));
 }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","apiFetch"]
 var external_wp_apiFetch_namespaceObject = window["wp"]["apiFetch"];
 var external_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_wp_apiFetch_namespaceObject);
 ;// CONCATENATED MODULE: external ["wp","i18n"]
 var external_wp_i18n_namespaceObject = window["wp"]["i18n"];
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/node_modules/uuid/dist/esm-browser/rng.js
+=======
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/rng.js
+>>>>>>> fb785cbb (Initial commit)
 // Unique ID creation requires a high quality random # generator. In the browser we therefore
 // require the crypto API and do not support built-in fallback to lower quality random number
 // generators (like Math.random()).
@@ -1282,9 +1308,15 @@ function rng() {
 
   return getRandomValues(rnds8);
 }
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/node_modules/uuid/dist/esm-browser/regex.js
 /* harmony default export */ var regex = (/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/node_modules/uuid/dist/esm-browser/validate.js
+=======
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/regex.js
+/* harmony default export */ var regex = (/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i);
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/validate.js
+>>>>>>> fb785cbb (Initial commit)
 
 
 function validate(uuid) {
@@ -1292,7 +1324,11 @@ function validate(uuid) {
 }
 
 /* harmony default export */ var esm_browser_validate = (validate);
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/node_modules/uuid/dist/esm-browser/stringify.js
+=======
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/stringify.js
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Convert array of 16 byte values to UUID string format of the form:
@@ -1323,7 +1359,11 @@ function stringify(arr) {
 }
 
 /* harmony default export */ var esm_browser_stringify = (stringify);
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/node_modules/uuid/dist/esm-browser/v4.js
+=======
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/v4.js
+>>>>>>> fb785cbb (Initial commit)
 
 
 
@@ -1355,6 +1395,13 @@ var external_wp_deprecated_namespaceObject = window["wp"]["deprecated"];
 var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external_wp_deprecated_namespaceObject);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/queried-data/actions.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Returns an action object used in signalling that items have been received.
  *
  * @param {Array}   items Items received.
@@ -1362,10 +1409,18 @@ var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external
  *
  * @return {Object} Action object.
  */
+<<<<<<< HEAD
 function receiveItems(items, edits) {
   return {
     type: 'RECEIVE_ITEMS',
     items: Array.isArray(items) ? items : [items],
+=======
+
+function receiveItems(items, edits) {
+  return {
+    type: 'RECEIVE_ITEMS',
+    items: (0,external_lodash_namespaceObject.castArray)(items),
+>>>>>>> fb785cbb (Initial commit)
     persistedEdits: edits
   };
 }
@@ -1384,7 +1439,11 @@ function removeItems(kind, name, records) {
   let invalidateCache = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
   return {
     type: 'REMOVE_ITEMS',
+<<<<<<< HEAD
     itemIds: Array.isArray(records) ? records : [records],
+=======
+    itemIds: (0,external_lodash_namespaceObject.castArray)(records),
+>>>>>>> fb785cbb (Initial commit)
     kind,
     name,
     invalidateCache
@@ -1411,9 +1470,20 @@ function receiveQueriedItems(items) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/batch/default-processor.js
 /**
+<<<<<<< HEAD
  * WordPress dependencies
  */
 
+=======
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Maximum number of requests to place in a single batch request. Obtained by
  * sending a preflight OPTIONS request to /batch/v1/.
@@ -1422,6 +1492,7 @@ function receiveQueriedItems(items) {
  */
 
 let maxItems = null;
+<<<<<<< HEAD
 
 function chunk(arr, chunkSize) {
   const tmp = [...arr];
@@ -1433,17 +1504,26 @@ function chunk(arr, chunkSize) {
 
   return cache;
 }
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Default batch processor. Sends its input requests to /batch/v1.
  *
  * @param {Array} requests List of API requests to perform at once.
  *
  * @return {Promise} Promise that resolves to a list of objects containing
+<<<<<<< HEAD
  *                   either `output` (if that request was successful) or `error`
  *                   (if not ).
  */
 
 
+=======
+ *                   either `output` (if that request was succesful) or `error`
+ *                   (if not ).
+ */
+
+>>>>>>> fb785cbb (Initial commit)
 async function defaultProcessor(requests) {
   if (maxItems === null) {
     const preflightResponse = await external_wp_apiFetch_default()({
@@ -1455,7 +1535,11 @@ async function defaultProcessor(requests) {
 
   const results = []; // @ts-ignore We would have crashed or never gotten to this point if we hadn't received the maxItems count.
 
+<<<<<<< HEAD
   for (const batchRequests of chunk(requests, maxItems)) {
+=======
+  for (const batchRequests of (0,external_lodash_namespaceObject.chunk)(requests, maxItems)) {
+>>>>>>> fb785cbb (Initial commit)
     const batchResponse = await external_wp_apiFetch_default()({
       path: '/batch/v1',
       method: 'POST',
@@ -1498,9 +1582,20 @@ async function defaultProcessor(requests) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/batch/create-batch.js
 /**
+<<<<<<< HEAD
  * Internal dependencies
  */
 
+=======
+ * External dependencies
+ */
+
+/**
+ * Internal dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Creates a batch, which can be used to combine multiple API requests into one
  * API request using the WordPress batch processing API (/v1/batch).
@@ -1582,7 +1677,11 @@ function createBatch() {
         pending.delete(id);
       });
 
+<<<<<<< HEAD
       if (typeof inputOrThunk === 'function') {
+=======
+      if ((0,external_lodash_namespaceObject.isFunction)(inputOrThunk)) {
+>>>>>>> fb785cbb (Initial commit)
         return Promise.resolve(inputOrThunk(add)).finally(() => {
           pending.delete(id);
         });
@@ -1634,8 +1733,18 @@ function createBatch() {
       }
 
       let isSuccess = true;
+<<<<<<< HEAD
       results.forEach((result, key) => {
         const queueItem = queue[key];
+=======
+
+      for (const pair of (0,external_lodash_namespaceObject.zip)(results, queue)) {
+        /** @type {{error?: unknown, output?: unknown}} */
+        const result = pair[0];
+        /** @type {{resolve: (value: any) => void; reject: (error: any) => void} | undefined} */
+
+        const queueItem = pair[1];
+>>>>>>> fb785cbb (Initial commit)
 
         if (result !== null && result !== void 0 && result.error) {
           queueItem === null || queueItem === void 0 ? void 0 : queueItem.reject(result.error);
@@ -1645,7 +1754,12 @@ function createBatch() {
 
           queueItem === null || queueItem === void 0 ? void 0 : queueItem.resolve((_result$output = result === null || result === void 0 ? void 0 : result.output) !== null && _result$output !== void 0 ? _result$output : result);
         }
+<<<<<<< HEAD
       });
+=======
+      }
+
+>>>>>>> fb785cbb (Initial commit)
       queue = [];
       return isSuccess;
     }
@@ -1720,9 +1834,12 @@ const STORE_NAME = 'core';
 
 /**
  * Returns an action object used in signalling that authors have been received.
+<<<<<<< HEAD
  * Ignored from documentation as it's internal to the data store.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string}       queryID Query ID.
  * @param {Array|Object} users   Users received.
@@ -1733,15 +1850,22 @@ const STORE_NAME = 'core';
 function receiveUserQuery(queryID, users) {
   return {
     type: 'RECEIVE_USER_QUERY',
+<<<<<<< HEAD
     users: Array.isArray(users) ? users : [users],
+=======
+    users: (0,external_lodash_namespaceObject.castArray)(users),
+>>>>>>> fb785cbb (Initial commit)
     queryID
   };
 }
 /**
  * Returns an action used in signalling that the current user has been received.
+<<<<<<< HEAD
  * Ignored from documentation as it's internal to the data store.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {Object} currentUser Current user object.
  *
@@ -1787,7 +1911,11 @@ function receiveEntityRecords(kind, name, records, query) {
   // Auto drafts should not have titles, but some plugins rely on them so we can't filter this
   // on the server.
   if (kind === 'postType') {
+<<<<<<< HEAD
     records = (Array.isArray(records) ? records : [records]).map(record => record.status === 'auto-draft' ? { ...record,
+=======
+    records = (0,external_lodash_namespaceObject.castArray)(records).map(record => record.status === 'auto-draft' ? { ...record,
+>>>>>>> fb785cbb (Initial commit)
       title: ''
     } : record);
   }
@@ -1808,9 +1936,12 @@ function receiveEntityRecords(kind, name, records, query) {
 }
 /**
  * Returns an action object used in signalling that the current theme has been received.
+<<<<<<< HEAD
  * Ignored from documentation as it's internal to the data store.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {Object} currentTheme The current theme.
  *
@@ -1825,9 +1956,12 @@ function receiveCurrentTheme(currentTheme) {
 }
 /**
  * Returns an action object used in signalling that the current global styles id has been received.
+<<<<<<< HEAD
  * Ignored from documentation as it's internal to the data store.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string} currentGlobalStylesId The current global styles id.
  *
@@ -1842,9 +1976,12 @@ function __experimentalReceiveCurrentGlobalStylesId(currentGlobalStylesId) {
 }
 /**
  * Returns an action object used in signalling that the theme base global styles have been received
+<<<<<<< HEAD
  * Ignored from documentation as it's internal to the data store.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string} stylesheet   The theme's identifier
  * @param {Object} globalStyles The global styles object.
@@ -1861,9 +1998,12 @@ function __experimentalReceiveThemeBaseGlobalStyles(stylesheet, globalStyles) {
 }
 /**
  * Returns an action object used in signalling that the theme global styles variations have been received.
+<<<<<<< HEAD
  * Ignored from documentation as it's internal to the data store.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string} stylesheet The theme's identifier
  * @param {Array}  variations The global styles variations.
@@ -1897,9 +2037,12 @@ function receiveThemeSupports() {
 /**
  * Returns an action object used in signalling that the preview data for
  * a given URl has been received.
+<<<<<<< HEAD
  * Ignored from documentation as it's internal to the data store.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string} url     URL to preview the embed for.
  * @param {*}      preview Preview data.
@@ -1940,7 +2083,14 @@ const deleteEntityRecord = function (kind, name, recordId, query) {
       dispatch
     } = _ref;
     const configs = await dispatch(getOrLoadEntitiesConfig(kind));
+<<<<<<< HEAD
     const entityConfig = configs.find(config => config.kind === kind && config.name === name);
+=======
+    const entityConfig = (0,external_lodash_namespaceObject.find)(configs, {
+      kind,
+      name
+    });
+>>>>>>> fb785cbb (Initial commit)
     let error;
     let deletedRecord = false;
 
@@ -2041,7 +2191,11 @@ const editEntityRecord = function (kind, name, recordId, edits) {
         const value = mergedEdits[key] ? { ...editedRecordValue,
           ...edits[key]
         } : edits[key];
+<<<<<<< HEAD
         acc[key] = es6_default()(recordValue, value) ? undefined : value;
+=======
+        acc[key] = (0,external_lodash_namespaceObject.isEqual)(recordValue, value) ? undefined : value;
+>>>>>>> fb785cbb (Initial commit)
         return acc;
       }, {}),
       transientEdits
@@ -2148,7 +2302,14 @@ const saveEntityRecord = function (kind, name, record) {
       dispatch
     } = _ref5;
     const configs = await dispatch(getOrLoadEntitiesConfig(kind));
+<<<<<<< HEAD
     const entityConfig = configs.find(config => config.kind === kind && config.name === name);
+=======
+    const entityConfig = (0,external_lodash_namespaceObject.find)(configs, {
+      kind,
+      name
+    });
+>>>>>>> fb785cbb (Initial commit)
 
     if (!entityConfig || entityConfig !== null && entityConfig !== void 0 && entityConfig.__experimentalNoFetch) {
       return;
@@ -2359,7 +2520,14 @@ const saveEditedEntityRecord = (kind, name, recordId, options) => async _ref7 =>
   }
 
   const configs = await dispatch(getOrLoadEntitiesConfig(kind));
+<<<<<<< HEAD
   const entityConfig = configs.find(config => config.kind === kind && config.name === name);
+=======
+  const entityConfig = (0,external_lodash_namespaceObject.find)(configs, {
+    kind,
+    name
+  });
+>>>>>>> fb785cbb (Initial commit)
 
   if (!entityConfig) {
     return;
@@ -2424,9 +2592,12 @@ function receiveUploadPermissions(hasUploadPermissions) {
 /**
  * Returns an action object used in signalling that the current user has
  * permission to perform an action on a REST resource.
+<<<<<<< HEAD
  * Ignored from documentation as it's internal to the data store.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string}  key       A key that represents the action and REST resource.
  * @param {boolean} isAllowed Whether or not the user can perform the action.
@@ -2444,9 +2615,12 @@ function receiveUserPermission(key, isAllowed) {
 /**
  * Returns an action object used in signalling that the autosaves for a
  * post have been received.
+<<<<<<< HEAD
  * Ignored from documentation as it's internal to the data store.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {number}       postId    The id of the post that is parent to the autosave.
  * @param {Array|Object} autosaves An array of autosaves or singular autosave object.
@@ -2458,7 +2632,11 @@ function receiveAutosaves(postId, autosaves) {
   return {
     type: 'RECEIVE_AUTOSAVES',
     postId,
+<<<<<<< HEAD
     autosaves: Array.isArray(autosaves) ? autosaves : [autosaves]
+=======
+    autosaves: (0,external_lodash_namespaceObject.castArray)(autosaves)
+>>>>>>> fb785cbb (Initial commit)
   };
 }
 
@@ -2467,7 +2645,10 @@ function receiveAutosaves(postId, autosaves) {
  * External dependencies
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
@@ -2483,8 +2664,13 @@ const DEFAULT_ENTITY_KEY = 'id';
 const POST_RAW_ATTRIBUTES = ['title', 'excerpt', 'content'];
 const rootEntitiesConfig = [{
   label: (0,external_wp_i18n_namespaceObject.__)('Base'),
+<<<<<<< HEAD
   kind: 'root',
   name: '__unstableBase',
+=======
+  name: '__unstableBase',
+  kind: 'root',
+>>>>>>> fb785cbb (Initial commit)
   baseURL: '/',
   baseURLParams: {
     _fields: ['description', 'gmt_offset', 'home', 'name', 'site_icon', 'site_icon_url', 'site_logo', 'timezone_string', 'url'].join(',')
@@ -2505,7 +2691,12 @@ const rootEntitiesConfig = [{
   baseURL: '/wp/v2/types',
   baseURLParams: {
     context: 'edit'
+<<<<<<< HEAD
   }
+=======
+  },
+  rawAttributes: POST_RAW_ATTRIBUTES
+>>>>>>> fb785cbb (Initial commit)
 }, {
   name: 'media',
   kind: 'root',
@@ -2530,9 +2721,12 @@ const rootEntitiesConfig = [{
   name: 'sidebar',
   kind: 'root',
   baseURL: '/wp/v2/sidebars',
+<<<<<<< HEAD
   baseURLParams: {
     context: 'edit'
   },
+=======
+>>>>>>> fb785cbb (Initial commit)
   plural: 'sidebars',
   transientEdits: {
     blocks: true
@@ -2595,7 +2789,11 @@ const rootEntitiesConfig = [{
   },
   plural: 'menuItems',
   label: (0,external_wp_i18n_namespaceObject.__)('Menu Item'),
+<<<<<<< HEAD
   rawAttributes: ['title']
+=======
+  rawAttributes: ['title', 'content']
+>>>>>>> fb785cbb (Initial commit)
 }, {
   name: 'menuLocation',
   kind: 'root',
@@ -2682,10 +2880,16 @@ async function loadPostTypeEntities() {
   const postTypes = await external_wp_apiFetch_default()({
     path: '/wp/v2/types?context=view'
   });
+<<<<<<< HEAD
   return Object.entries(postTypes !== null && postTypes !== void 0 ? postTypes : {}).map(_ref => {
     var _postType$rest_namesp;
 
     let [name, postType] = _ref;
+=======
+  return (0,external_lodash_namespaceObject.map)(postTypes, (postType, name) => {
+    var _postType$rest_namesp;
+
+>>>>>>> fb785cbb (Initial commit)
     const isTemplate = ['wp_template', 'wp_template_part'].includes(name);
     const namespace = (_postType$rest_namesp = postType === null || postType === void 0 ? void 0 : postType.rest_namespace) !== null && _postType$rest_namesp !== void 0 ? _postType$rest_namesp : 'wp/v2';
     return {
@@ -2705,9 +2909,15 @@ async function loadPostTypeEntities() {
       },
       rawAttributes: POST_RAW_ATTRIBUTES,
       getTitle: record => {
+<<<<<<< HEAD
         var _record$title2, _record$slug;
 
         return (record === null || record === void 0 ? void 0 : (_record$title2 = record.title) === null || _record$title2 === void 0 ? void 0 : _record$title2.rendered) || (record === null || record === void 0 ? void 0 : record.title) || (isTemplate ? capitalCase((_record$slug = record.slug) !== null && _record$slug !== void 0 ? _record$slug : '') : String(record.id));
+=======
+        var _record$title2;
+
+        return (record === null || record === void 0 ? void 0 : (_record$title2 = record.title) === null || _record$title2 === void 0 ? void 0 : _record$title2.rendered) || (record === null || record === void 0 ? void 0 : record.title) || (isTemplate ? (0,external_lodash_namespaceObject.startCase)(record.slug) : String(record.id));
+>>>>>>> fb785cbb (Initial commit)
       },
       __unstablePrePersist: isTemplate ? undefined : prePersistPostType,
       __unstable_rest_base: postType.rest_base
@@ -2725,10 +2935,16 @@ async function loadTaxonomyEntities() {
   const taxonomies = await external_wp_apiFetch_default()({
     path: '/wp/v2/taxonomies?context=view'
   });
+<<<<<<< HEAD
   return Object.entries(taxonomies !== null && taxonomies !== void 0 ? taxonomies : {}).map(_ref2 => {
     var _taxonomy$rest_namesp;
 
     let [name, taxonomy] = _ref2;
+=======
+  return (0,external_lodash_namespaceObject.map)(taxonomies, (taxonomy, name) => {
+    var _taxonomy$rest_namesp;
+
+>>>>>>> fb785cbb (Initial commit)
     const namespace = (_taxonomy$rest_namesp = taxonomy === null || taxonomy === void 0 ? void 0 : taxonomy.rest_namespace) !== null && _taxonomy$rest_namesp !== void 0 ? _taxonomy$rest_namesp : 'wp/v2';
     return {
       kind: 'taxonomy',
@@ -2765,10 +2981,20 @@ async function loadTaxonomyEntities() {
 const getMethodName = function (kind, name) {
   let prefix = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'get';
   let usePlural = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+<<<<<<< HEAD
   const entityConfig = rootEntitiesConfig.find(config => config.kind === kind && config.name === name);
   const kindPrefix = kind === 'root' ? '' : pascalCase(kind);
   const nameSuffix = pascalCase(name) + (usePlural ? 's' : '');
   const suffix = usePlural && 'plural' in entityConfig && entityConfig !== null && entityConfig !== void 0 && entityConfig.plural ? pascalCase(entityConfig.plural) : nameSuffix;
+=======
+  const entityConfig = (0,external_lodash_namespaceObject.find)(rootEntitiesConfig, {
+    kind,
+    name
+  });
+  const kindPrefix = kind === 'root' ? '' : (0,external_lodash_namespaceObject.upperFirst)((0,external_lodash_namespaceObject.camelCase)(kind));
+  const nameSuffix = (0,external_lodash_namespaceObject.upperFirst)((0,external_lodash_namespaceObject.camelCase)(name)) + (usePlural ? 's' : '');
+  const suffix = usePlural && entityConfig !== null && entityConfig !== void 0 && entityConfig.plural ? (0,external_lodash_namespaceObject.upperFirst)((0,external_lodash_namespaceObject.camelCase)(entityConfig.plural)) : nameSuffix;
+>>>>>>> fb785cbb (Initial commit)
   return `${prefix}${kindPrefix}${suffix}`;
 };
 /**
@@ -2779,18 +3005,32 @@ const getMethodName = function (kind, name) {
  * @return {(thunkArgs: object) => Promise<Array>} Entities
  */
 
+<<<<<<< HEAD
 const getOrLoadEntitiesConfig = kind => async _ref3 => {
   let {
     select,
     dispatch
   } = _ref3;
+=======
+const getOrLoadEntitiesConfig = kind => async _ref => {
+  let {
+    select,
+    dispatch
+  } = _ref;
+>>>>>>> fb785cbb (Initial commit)
   let configs = select.getEntitiesConfig(kind);
 
   if (configs && configs.length !== 0) {
     return configs;
   }
 
+<<<<<<< HEAD
   const loader = additionalEntityConfigLoaders.find(l => l.kind === kind);
+=======
+  const loader = (0,external_lodash_namespaceObject.find)(additionalEntityConfigLoaders, {
+    kind
+  });
+>>>>>>> fb785cbb (Initial commit)
 
   if (!loader) {
     return [];
@@ -2825,6 +3065,13 @@ function getNormalizedCommaSeparable(value) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/utils/with-weak-map-cache.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Given a function, returns an enhanced function which caches the result and
  * tracks in WeakMap. The result is only cached if the original function is
  * passed a valid object-like argument (requirement for WeakMap key).
@@ -2833,6 +3080,10 @@ function getNormalizedCommaSeparable(value) {
  *
  * @return {Function} Enhanced caching function.
  */
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 function withWeakMapCache(fn) {
   const cache = new WeakMap();
   return key => {
@@ -2845,7 +3096,11 @@ function withWeakMapCache(fn) {
       // will return false for invalid key. Since `set` will throw,
       // ensure that key is valid before setting into cache.
 
+<<<<<<< HEAD
       if (key !== null && typeof key === 'object') {
+=======
+      if ((0,external_lodash_namespaceObject.isObjectLike)(key)) {
+>>>>>>> fb785cbb (Initial commit)
         cache.set(key, value);
       }
     }
@@ -2978,7 +3233,10 @@ function getQueryParts(query) {
  */
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -3037,6 +3295,7 @@ function getMergedItemIds(itemIds, nextItemIds, page, perPage) {
   return mergedItemIds;
 }
 /**
+<<<<<<< HEAD
  * Helper function to filter out entities with certain IDs.
  * Entities are keyed by their ID.
  *
@@ -3059,6 +3318,8 @@ function removeEntitiesById(entities, ids) {
   }));
 }
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Reducer tracking items state, keyed by ID. Items are assumed to be normal,
  * where identifiers are common across all queries.
  *
@@ -3068,7 +3329,10 @@ function removeEntitiesById(entities, ids) {
  * @return {Object} Next state.
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 function items() {
   let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   let action = arguments.length > 1 ? arguments[1] : undefined;
@@ -3092,7 +3356,11 @@ function items() {
       }
 
     case 'REMOVE_ITEMS':
+<<<<<<< HEAD
       return (0,external_lodash_namespaceObject.mapValues)(state, contextState => removeEntitiesById(contextState, action.itemIds));
+=======
+      return (0,external_lodash_namespaceObject.mapValues)(state, contextState => (0,external_lodash_namespaceObject.omit)(contextState, action.itemIds));
+>>>>>>> fb785cbb (Initial commit)
   }
 
   return state;
@@ -3146,7 +3414,11 @@ function itemIsComplete() {
       }
 
     case 'REMOVE_ITEMS':
+<<<<<<< HEAD
       return (0,external_lodash_namespaceObject.mapValues)(state, contextState => removeEntitiesById(contextState, action.itemIds));
+=======
+      return (0,external_lodash_namespaceObject.mapValues)(state, contextState => (0,external_lodash_namespaceObject.omit)(contextState, action.itemIds));
+>>>>>>> fb785cbb (Initial commit)
   }
 
   return state;
@@ -3161,7 +3433,11 @@ function itemIsComplete() {
  * @return {Object} Next state.
  */
 
+<<<<<<< HEAD
 const receiveQueries = (0,external_wp_compose_namespaceObject.compose)([// Limit to matching action type so we don't attempt to replace action on
+=======
+const receiveQueries = (0,external_lodash_namespaceObject.flowRight)([// Limit to matching action type so we don't attempt to replace action on
+>>>>>>> fb785cbb (Initial commit)
 // an unhandled action.
 if_matching_action(action => 'query' in action), // Inject query parts into action for use both in `onSubKey` and reducer.
 replace_action(action => {
@@ -3191,7 +3467,11 @@ on_sub_key('stableKey')])(function () {
     return state;
   }
 
+<<<<<<< HEAD
   return getMergedItemIds(state || [], action.items.map(item => item[key]), page, perPage);
+=======
+  return getMergedItemIds(state || [], (0,external_lodash_namespaceObject.map)(action.items, key), page, perPage);
+>>>>>>> fb785cbb (Initial commit)
 });
 /**
  * Reducer tracking queries state.
@@ -3217,7 +3497,11 @@ const queries = function () {
       }, {});
       return (0,external_lodash_namespaceObject.mapValues)(state, contextQueries => {
         return (0,external_lodash_namespaceObject.mapValues)(contextQueries, queryItems => {
+<<<<<<< HEAD
           return queryItems.filter(queryId => {
+=======
+          return (0,external_lodash_namespaceObject.filter)(queryItems, queryId => {
+>>>>>>> fb785cbb (Initial commit)
             return !removedItems[queryId];
           });
         });
@@ -3239,14 +3523,20 @@ const queries = function () {
  * External dependencies
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -3301,6 +3591,7 @@ function users() {
     case 'RECEIVE_USER_QUERY':
       return {
         byId: { ...state.byId,
+<<<<<<< HEAD
           // Key users by their ID.
           ...action.users.reduce((newUsers, user) => ({ ...newUsers,
             [user.id]: user
@@ -3308,6 +3599,12 @@ function users() {
         },
         queries: { ...state.queries,
           [action.queryID]: action.users.map(user => user.id)
+=======
+          ...(0,external_lodash_namespaceObject.keyBy)(action.users, 'id')
+        },
+        queries: { ...state.queries,
+          [action.queryID]: (0,external_lodash_namespaceObject.map)(action.users, user => user.id)
+>>>>>>> fb785cbb (Initial commit)
         }
       };
   }
@@ -3451,7 +3748,11 @@ function themeGlobalStyleVariations() {
  */
 
 function entity(entityConfig) {
+<<<<<<< HEAD
   return (0,external_wp_compose_namespaceObject.compose)([// Limit to matching action type so we don't attempt to replace action on
+=======
+  return (0,external_lodash_namespaceObject.flowRight)([// Limit to matching action type so we don't attempt to replace action on
+>>>>>>> fb785cbb (Initial commit)
   // an unhandled action.
   if_matching_action(action => action.name && action.kind && action.name === entityConfig.name && action.kind === entityConfig.kind), // Inject the entity config into the action.
   replace_action(action => {
@@ -3491,9 +3792,15 @@ function entity(entityConfig) {
               if ( // Edits are the "raw" attribute values, but records may have
               // objects with more properties, so we use `get` here for the
               // comparison.
+<<<<<<< HEAD
               !es6_default()(edits[key], (0,external_lodash_namespaceObject.get)(record[key], 'raw', record[key])) && ( // Sometimes the server alters the sent value which means
               // we need to also remove the edits before the api request.
               !action.persistedEdits || !es6_default()(edits[key], action.persistedEdits[key]))) {
+=======
+              !(0,external_lodash_namespaceObject.isEqual)(edits[key], (0,external_lodash_namespaceObject.get)(record[key], 'raw', record[key])) && ( // Sometimes the server alters the sent value which means
+              // we need to also remove the edits before the api request.
+              !action.persistedEdits || !(0,external_lodash_namespaceObject.isEqual)(edits[key], action.persistedEdits[key]))) {
+>>>>>>> fb785cbb (Initial commit)
                 acc[key] = edits[key];
               }
 
@@ -3885,6 +4192,7 @@ function blockPatternCategories() {
   blockPatternCategories
 }));
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/rememo/rememo.js
 
 
@@ -3920,17 +4228,37 @@ function blockPatternCategories() {
  * @property {CacheNode?} [head] Cache head.
  * @property {*[]} [lastDependants] Dependants from previous invocation.
  */
+=======
+;// CONCATENATED MODULE: ./node_modules/rememo/es/rememo.js
+
+
+var LEAF_KEY, hasWeakMap;
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Arbitrary value used as key for referencing cache object in WeakMap tree.
  *
+<<<<<<< HEAD
  * @type {{}}
  */
 var LEAF_KEY = {};
+=======
+ * @type {Object}
+ */
+LEAF_KEY = {};
+
+/**
+ * Whether environment supports WeakMap.
+ *
+ * @type {boolean}
+ */
+hasWeakMap = typeof WeakMap !== 'undefined';
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Returns the first argument as the sole entry in an array.
  *
+<<<<<<< HEAD
  * @template T
  *
  * @param {T} value Value to return.
@@ -3939,6 +4267,14 @@ var LEAF_KEY = {};
  */
 function arrayOf(value) {
 	return [value];
+=======
+ * @param {*} value Value to return.
+ *
+ * @return {Array} Value returned as entry in array.
+ */
+function arrayOf( value ) {
+	return [ value ];
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -3949,19 +4285,32 @@ function arrayOf(value) {
  *
  * @return {boolean} Whether value is object-like.
  */
+<<<<<<< HEAD
 function isObjectLike(value) {
 	return !!value && 'object' === typeof value;
+=======
+function isObjectLike( value ) {
+	return !! value && 'object' === typeof value;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
  * Creates and returns a new cache object.
  *
+<<<<<<< HEAD
  * @return {Cache} Cache object.
  */
 function createCache() {
 	/** @type {Cache} */
 	var cache = {
 		clear: function () {
+=======
+ * @return {Object} Cache object.
+ */
+function createCache() {
+	var cache = {
+		clear: function() {
+>>>>>>> fb785cbb (Initial commit)
 			cache.head = null;
 		},
 	};
@@ -3973,12 +4322,18 @@ function createCache() {
  * Returns true if entries within the two arrays are strictly equal by
  * reference from a starting index.
  *
+<<<<<<< HEAD
  * @param {*[]} a First array.
  * @param {*[]} b Second array.
+=======
+ * @param {Array}  a         First array.
+ * @param {Array}  b         Second array.
+>>>>>>> fb785cbb (Initial commit)
  * @param {number} fromIndex Index from which to start comparison.
  *
  * @return {boolean} Whether arrays are shallowly equal.
  */
+<<<<<<< HEAD
 function isShallowEqual(a, b, fromIndex) {
 	var i;
 
@@ -3988,6 +4343,17 @@ function isShallowEqual(a, b, fromIndex) {
 
 	for (i = fromIndex; i < a.length; i++) {
 		if (a[i] !== b[i]) {
+=======
+function isShallowEqual( a, b, fromIndex ) {
+	var i;
+
+	if ( a.length !== b.length ) {
+		return false;
+	}
+
+	for ( i = fromIndex; i < a.length; i++ ) {
+		if ( a[ i ] !== b[ i ] ) {
+>>>>>>> fb785cbb (Initial commit)
 			return false;
 		}
 	}
@@ -4003,6 +4369,7 @@ function isShallowEqual(a, b, fromIndex) {
  * dependant references remain the same. If getDependants returns a different
  * reference(s), the cache is cleared and the selector value regenerated.
  *
+<<<<<<< HEAD
  * @template {(...args: *[]) => *} S
  *
  * @param {S} selector Selector function.
@@ -4015,6 +4382,33 @@ function isShallowEqual(a, b, fromIndex) {
 
 	/** @type {GetDependants} */
 	var normalizedGetDependants = getDependants ? getDependants : arrayOf;
+=======
+ * @param {Function} selector      Selector function.
+ * @param {Function} getDependants Dependant getter returning an immutable
+ *                                 reference or array of reference used in
+ *                                 cache bust consideration.
+ *
+ * @return {Function} Memoized selector.
+ */
+/* harmony default export */ function rememo(selector, getDependants ) {
+	var rootCache, getCache;
+
+	// Use object source as dependant if getter not provided
+	if ( ! getDependants ) {
+		getDependants = arrayOf;
+	}
+
+	/**
+	 * Returns the root cache. If WeakMap is supported, this is assigned to the
+	 * root WeakMap cache set, otherwise it is a shared instance of the default
+	 * cache object.
+	 *
+	 * @return {(WeakMap|Object)} Root cache object.
+	 */
+	function getRootCache() {
+		return rootCache;
+	}
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Returns the cache for a given dependants array. When possible, a WeakMap
@@ -4030,6 +4424,7 @@ function isShallowEqual(a, b, fromIndex) {
 	 *
 	 * @see isObjectLike
 	 *
+<<<<<<< HEAD
 	 * @param {*[]} dependants Selector dependants.
 	 *
 	 * @return {Cache} Cache object.
@@ -4047,11 +4442,28 @@ function isShallowEqual(a, b, fromIndex) {
 
 			// Can only compose WeakMap from object-like key.
 			if (!isObjectLike(dependant)) {
+=======
+	 * @param {Array} dependants Selector dependants.
+	 *
+	 * @return {Object} Cache object.
+	 */
+	function getWeakMapCache( dependants ) {
+		var caches = rootCache,
+			isUniqueByDependants = true,
+			i, dependant, map, cache;
+
+		for ( i = 0; i < dependants.length; i++ ) {
+			dependant = dependants[ i ];
+
+			// Can only compose WeakMap from object-like key.
+			if ( ! isObjectLike( dependant ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				isUniqueByDependants = false;
 				break;
 			}
 
 			// Does current segment of cache already have a WeakMap?
+<<<<<<< HEAD
 			if (caches.has(dependant)) {
 				// Traverse into nested WeakMap.
 				caches = caches.get(dependant);
@@ -4059,12 +4471,22 @@ function isShallowEqual(a, b, fromIndex) {
 				// Create, set, and traverse into a new one.
 				map = new WeakMap();
 				caches.set(dependant, map);
+=======
+			if ( caches.has( dependant ) ) {
+				// Traverse into nested WeakMap.
+				caches = caches.get( dependant );
+			} else {
+				// Create, set, and traverse into a new one.
+				map = new WeakMap();
+				caches.set( dependant, map );
+>>>>>>> fb785cbb (Initial commit)
 				caches = map;
 			}
 		}
 
 		// We use an arbitrary (but consistent) object as key for the last item
 		// in the WeakMap to serve as our running cache.
+<<<<<<< HEAD
 		if (!caches.has(LEAF_KEY)) {
 			cache = createCache();
 			cache.isUniqueByDependants = isUniqueByDependants;
@@ -4074,18 +4496,40 @@ function isShallowEqual(a, b, fromIndex) {
 		return caches.get(LEAF_KEY);
 	}
 
+=======
+		if ( ! caches.has( LEAF_KEY ) ) {
+			cache = createCache();
+			cache.isUniqueByDependants = isUniqueByDependants;
+			caches.set( LEAF_KEY, cache );
+		}
+
+		return caches.get( LEAF_KEY );
+	}
+
+	// Assign cache handler by availability of WeakMap
+	getCache = hasWeakMap ? getWeakMapCache : getRootCache;
+
+>>>>>>> fb785cbb (Initial commit)
 	/**
 	 * Resets root memoization cache.
 	 */
 	function clear() {
+<<<<<<< HEAD
 		rootCache = new WeakMap();
 	}
 
 	/* eslint-disable jsdoc/check-param-names */
+=======
+		rootCache = hasWeakMap ? new WeakMap() : createCache();
+	}
+
+	// eslint-disable-next-line jsdoc/check-param-names
+>>>>>>> fb785cbb (Initial commit)
 	/**
 	 * The augmented selector call, considering first whether dependants have
 	 * changed before passing it to underlying memoize function.
 	 *
+<<<<<<< HEAD
 	 * @param {*}    source    Source object for derivation.
 	 * @param {...*} extraArgs Additional arguments to pass to selector.
 	 *
@@ -4117,6 +4561,31 @@ function isShallowEqual(a, b, fromIndex) {
 				cache.lastDependants &&
 				!isShallowEqual(dependants, cache.lastDependants, 0)
 			) {
+=======
+	 * @param {Object} source    Source object for derivation.
+	 * @param {...*}   extraArgs Additional arguments to pass to selector.
+	 *
+	 * @return {*} Selector result.
+	 */
+	function callSelector( /* source, ...extraArgs */ ) {
+		var len = arguments.length,
+			cache, node, i, args, dependants;
+
+		// Create copy of arguments (avoid leaking deoptimization).
+		args = new Array( len );
+		for ( i = 0; i < len; i++ ) {
+			args[ i ] = arguments[ i ];
+		}
+
+		dependants = getDependants.apply( null, args );
+		cache = getCache( dependants );
+
+		// If not guaranteed uniqueness by dependants (primitive type or lack
+		// of WeakMap support), shallow compare against last dependants and, if
+		// references have changed, destroy cache to recalculate result.
+		if ( ! cache.isUniqueByDependants ) {
+			if ( cache.lastDependants && ! isShallowEqual( dependants, cache.lastDependants, 0 ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				cache.clear();
 			}
 
@@ -4124,9 +4593,15 @@ function isShallowEqual(a, b, fromIndex) {
 		}
 
 		node = cache.head;
+<<<<<<< HEAD
 		while (node) {
 			// Check whether node arguments match arguments
 			if (!isShallowEqual(node.args, args, 1)) {
+=======
+		while ( node ) {
+			// Check whether node arguments match arguments
+			if ( ! isShallowEqual( node.args, args, 1 ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				node = node.next;
 				continue;
 			}
@@ -4134,16 +4609,27 @@ function isShallowEqual(a, b, fromIndex) {
 			// At this point we can assume we've found a match
 
 			// Surface matched node to head if not already
+<<<<<<< HEAD
 			if (node !== cache.head) {
 				// Adjust siblings to point to each other.
 				/** @type {CacheNode} */ (node.prev).next = node.next;
 				if (node.next) {
+=======
+			if ( node !== cache.head ) {
+				// Adjust siblings to point to each other.
+				node.prev.next = node.next;
+				if ( node.next ) {
+>>>>>>> fb785cbb (Initial commit)
 					node.next.prev = node.prev;
 				}
 
 				node.next = cache.head;
 				node.prev = null;
+<<<<<<< HEAD
 				/** @type {CacheNode} */ (cache.head).prev = node;
+=======
+				cache.head.prev = node;
+>>>>>>> fb785cbb (Initial commit)
 				cache.head = node;
 			}
 
@@ -4153,6 +4639,7 @@ function isShallowEqual(a, b, fromIndex) {
 
 		// No cached value found. Continue to insertion phase:
 
+<<<<<<< HEAD
 		node = /** @type {CacheNode} */ ({
 			// Generate the result from original function
 			val: selector.apply(null, args),
@@ -4160,13 +4647,26 @@ function isShallowEqual(a, b, fromIndex) {
 
 		// Avoid including the source object in the cache.
 		args[0] = null;
+=======
+		node = {
+			// Generate the result from original function
+			val: selector.apply( null, args ),
+		};
+
+		// Avoid including the source object in the cache.
+		args[ 0 ] = null;
+>>>>>>> fb785cbb (Initial commit)
 		node.args = args;
 
 		// Don't need to check whether node is already head, since it would
 		// have been returned above already if it was
 
 		// Shift existing head down list
+<<<<<<< HEAD
 		if (cache.head) {
+=======
+		if ( cache.head ) {
+>>>>>>> fb785cbb (Initial commit)
 			cache.head.prev = node;
 			node.next = cache.head;
 		}
@@ -4176,11 +4676,19 @@ function isShallowEqual(a, b, fromIndex) {
 		return node.val;
 	}
 
+<<<<<<< HEAD
 	callSelector.getDependants = normalizedGetDependants;
 	callSelector.clear = clear;
 	clear();
 
 	return /** @type {S & EnhancedSelector} */ (callSelector);
+=======
+	callSelector.getDependants = getDependants;
+	callSelector.clear = clear;
+	clear();
+
+	return callSelector;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 // EXTERNAL MODULE: ./node_modules/equivalent-key-map/equivalent-key-map.js
@@ -4352,7 +4860,10 @@ function isRawAttribute(entity, attribute) {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Shared reference to an empty object for cases where it is important to avoid
  * returning a new object reference on every invocation, as in a connected or
@@ -4360,15 +4871,26 @@ function isRawAttribute(entity, attribute) {
  * This should be used as a last resort, since the normalized data should be
  * maintained by the reducer result in state.
  */
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 const EMPTY_OBJECT = {};
 /**
  * Returns true if a request is in progress for embed preview data, or false
  * otherwise.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  * @param  url   URL the preview would be for.
  *
  * @return Whether a request is in progress for an embed preview.
+=======
+ * @param {Object} state Data state.
+ * @param {string} url   URL the preview would be for.
+ *
+ * @return {boolean} Whether a request is in progress for an embed preview.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const isRequestingEmbedPreview = (0,external_wp_data_namespaceObject.createRegistrySelector)(select => (state, url) => {
@@ -4379,10 +4901,17 @@ const isRequestingEmbedPreview = (0,external_wp_data_namespaceObject.createRegis
  *
  * @deprecated since 11.3. Callers should use `select( 'core' ).getUsers({ who: 'authors' })` instead.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  * @param  query Optional object of query parameters to
  *               include with request.
  * @return Authors list.
+=======
+ * @param {Object}           state Data state.
+ * @param {Object|undefined} query Optional object of query parameters to
+ *                                 include with request.
+ * @return {Array} Authors list.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getAuthors(state, query) {
@@ -4396,9 +4925,15 @@ function getAuthors(state, query) {
 /**
  * Returns the current user.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  *
  * @return Current user object.
+=======
+ * @param {Object} state Data state.
+ *
+ * @return {Object} Current user object.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getCurrentUser(state) {
@@ -4407,6 +4942,7 @@ function getCurrentUser(state) {
 /**
  * Returns all the users returned by a query ID.
  *
+<<<<<<< HEAD
  * @param  state   Data state.
  * @param  queryID Query ID.
  *
@@ -4418,15 +4954,33 @@ const getUserQueryResults = rememo((state, queryID) => {
 
   const queryResults = (_state$users$queries$ = state.users.queries[queryID]) !== null && _state$users$queries$ !== void 0 ? _state$users$queries$ : [];
   return queryResults.map(id => state.users.byId[id]);
+=======
+ * @param {Object} state   Data state.
+ * @param {string} queryID Query ID.
+ *
+ * @return {Array} Users list.
+ */
+
+const getUserQueryResults = rememo((state, queryID) => {
+  const queryResults = state.users.queries[queryID];
+  return (0,external_lodash_namespaceObject.map)(queryResults, id => state.users.byId[id]);
+>>>>>>> fb785cbb (Initial commit)
 }, (state, queryID) => [state.users.queries[queryID], state.users.byId]);
 /**
  * Returns the loaded entities for the given kind.
  *
  * @deprecated since WordPress 6.0. Use getEntitiesConfig instead
+<<<<<<< HEAD
  * @param  state Data state.
  * @param  kind  Entity kind.
  *
  * @return Array of entities with config matching kind.
+=======
+ * @param {Object} state Data state.
+ * @param {string} kind  Entity kind.
+ *
+ * @return {Array<Object>} Array of entities with config matching kind.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getEntitiesByKind(state, kind) {
@@ -4439,6 +4993,7 @@ function getEntitiesByKind(state, kind) {
 /**
  * Returns the loaded entities for the given kind.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  * @param  kind  Entity kind.
  *
@@ -4447,16 +5002,36 @@ function getEntitiesByKind(state, kind) {
 
 function getEntitiesConfig(state, kind) {
   return state.entities.config.filter(entity => entity.kind === kind);
+=======
+ * @param {Object} state Data state.
+ * @param {string} kind  Entity kind.
+ *
+ * @return {Array<Object>} Array of entities with config matching kind.
+ */
+
+function getEntitiesConfig(state, kind) {
+  return (0,external_lodash_namespaceObject.filter)(state.entities.config, {
+    kind
+  });
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Returns the entity config given its kind and name.
  *
  * @deprecated since WordPress 6.0. Use getEntityConfig instead
+<<<<<<< HEAD
  * @param  state Data state.
  * @param  kind  Entity kind.
  * @param  name  Entity name.
  *
  * @return Entity config
+=======
+ * @param {Object} state Data state.
+ * @param {string} kind  Entity kind.
+ * @param {string} name  Entity name.
+ *
+ * @return {Object} Entity config
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getEntity(state, kind, name) {
@@ -4469,6 +5044,7 @@ function getEntity(state, kind, name) {
 /**
  * Returns the entity config given its kind and name.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  * @param  kind  Entity kind.
  * @param  name  Entity name.
@@ -4507,10 +5083,27 @@ function getEntityConfig(state, kind, name) {
  */
 
 /**
+=======
+ * @param {Object} state Data state.
+ * @param {string} kind  Entity kind.
+ * @param {string} name  Entity name.
+ *
+ * @return {Object} Entity config
+ */
+
+function getEntityConfig(state, kind, name) {
+  return (0,external_lodash_namespaceObject.find)(state.entities.config, {
+    kind,
+    name
+  });
+}
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Returns the Entity's record object by key. Returns `null` if the value is not
  * yet received, undefined if the value entity is known to not exist, or the
  * entity object if it exists and is received.
  *
+<<<<<<< HEAD
  * @param  state State tree
  * @param  kind  Entity kind.
  * @param  name  Entity name.
@@ -4520,6 +5113,17 @@ function getEntityConfig(state, kind, name) {
  *
  * @return Record.
  */
+=======
+ * @param {Object}  state State tree
+ * @param {string}  kind  Entity kind.
+ * @param {string}  name  Entity name.
+ * @param {number}  key   Record's key
+ * @param {?Object} query Optional query.
+ *
+ * @return {Object|undefined} Record.
+ */
+
+>>>>>>> fb785cbb (Initial commit)
 const getEntityRecord = rememo((state, kind, name, key, query) => {
   var _query$context, _queriedState$items$c;
 
@@ -4569,12 +5173,21 @@ const getEntityRecord = rememo((state, kind, name, key, query) => {
 /**
  * Returns the Entity's record object by key. Doesn't trigger a resolver nor requests the entity records from the API if the entity record isn't available in the local state.
  *
+<<<<<<< HEAD
  * @param  state State tree
  * @param  kind  Entity kind.
  * @param  name  Entity name.
  * @param  key   Record's key
  *
  * @return Record.
+=======
+ * @param {Object} state State tree
+ * @param {string} kind  Entity kind.
+ * @param {string} name  Entity name.
+ * @param {number} key   Record's key
+ *
+ * @return {Object|null} Record.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function __experimentalGetEntityRecordNoResolver(state, kind, name, key) {
@@ -4584,12 +5197,21 @@ function __experimentalGetEntityRecordNoResolver(state, kind, name, key) {
  * Returns the entity's record object by key,
  * with its attributes mapped to their raw values.
  *
+<<<<<<< HEAD
  * @param  state State tree.
  * @param  kind  Entity kind.
  * @param  name  Entity name.
  * @param  key   Record's key.
  *
  * @return Object with the entity's raw attributes.
+=======
+ * @param {Object} state State tree.
+ * @param {string} kind  Entity kind.
+ * @param {string} name  Entity name.
+ * @param {number} key   Record's key.
+ *
+ * @return {Object?} Object with the entity's raw attributes.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const getRawEntityRecord = rememo((state, kind, name, key) => {
@@ -4616,18 +5238,28 @@ const getRawEntityRecord = rememo((state, kind, name, key) => {
  * Returns true if records have been received for the given set of parameters,
  * or false otherwise.
  *
+<<<<<<< HEAD
  * @param  state State tree
  * @param  kind  Entity kind.
  * @param  name  Entity name.
  * @param  query Optional terms query.
  *
  * @return  Whether entity records have been received.
+=======
+ * @param {Object}  state State tree
+ * @param {string}  kind  Entity kind.
+ * @param {string}  name  Entity name.
+ * @param {?Object} query Optional terms query.
+ *
+ * @return {boolean} Whether entity records have been received.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function hasEntityRecords(state, kind, name, query) {
   return Array.isArray(getEntityRecords(state, kind, name, query));
 }
 /**
+<<<<<<< HEAD
  * GetEntityRecord is declared as a *callable interface* with
  * two signatures to work around the fact that TypeScript doesn't
  * allow currying generic functions.
@@ -4648,6 +5280,19 @@ function hasEntityRecords(state, kind, name, query) {
  * @return Records.
  */
 const getEntityRecords = (state, kind, name, query) => {
+=======
+ * Returns the Entity's records.
+ *
+ * @param {Object}  state State tree
+ * @param {string}  kind  Entity kind.
+ * @param {string}  name  Entity name.
+ * @param {?Object} query Optional terms query.
+ *
+ * @return {?Array} Records.
+ */
+
+function getEntityRecords(state, kind, name, query) {
+>>>>>>> fb785cbb (Initial commit)
   // Queried data state is prepopulated for all known entities. If this is not
   // assigned for the given parameters, then it is known to not exist.
   const queriedState = (0,external_lodash_namespaceObject.get)(state.entities.records, [kind, name, 'queriedData']);
@@ -4657,6 +5302,7 @@ const getEntityRecords = (state, kind, name, query) => {
   }
 
   return getQueriedItems(queriedState, query);
+<<<<<<< HEAD
 };
 
 /**
@@ -4666,6 +5312,17 @@ const getEntityRecords = (state, kind, name, query) => {
  *
  * @return The list of updated records
  */
+=======
+}
+/**
+ * Returns the  list of dirty entity records.
+ *
+ * @param {Object} state State tree.
+ *
+ * @return {[{ title: string, key: string, name: string, kind: string }]} The list of updated records
+ */
+
+>>>>>>> fb785cbb (Initial commit)
 const __experimentalGetDirtyEntityRecords = rememo(state => {
   const {
     entities: {
@@ -4688,7 +5345,11 @@ const __experimentalGetDirtyEntityRecords = rememo(state => {
           dirtyRecords.push({
             // We avoid using primaryKey because it's transformed into a string
             // when it's used as an object key.
+<<<<<<< HEAD
             key: entityRecord ? entityRecord[entityConfig.key || DEFAULT_ENTITY_KEY] : undefined,
+=======
+            key: entityRecord[entityConfig.key || DEFAULT_ENTITY_KEY],
+>>>>>>> fb785cbb (Initial commit)
             title: (entityConfig === null || entityConfig === void 0 ? void 0 : (_entityConfig$getTitl = entityConfig.getTitle) === null || _entityConfig$getTitl === void 0 ? void 0 : _entityConfig$getTitl.call(entityConfig, entityRecord)) || '',
             name,
             kind
@@ -4702,9 +5363,15 @@ const __experimentalGetDirtyEntityRecords = rememo(state => {
 /**
  * Returns the list of entities currently being saved.
  *
+<<<<<<< HEAD
  * @param  state State tree.
  *
  * @return The list of records being saved.
+=======
+ * @param {Object} state State tree.
+ *
+ * @return {[{ title: string, key: string, name: string, kind: string }]} The list of records being saved.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const __experimentalGetEntitiesBeingSaved = rememo(state => {
@@ -4727,7 +5394,11 @@ const __experimentalGetEntitiesBeingSaved = rememo(state => {
           recordsBeingSaved.push({
             // We avoid using primaryKey because it's transformed into a string
             // when it's used as an object key.
+<<<<<<< HEAD
             key: entityRecord ? entityRecord[entityConfig.key || DEFAULT_ENTITY_KEY] : undefined,
+=======
+            key: entityRecord[entityConfig.key || DEFAULT_ENTITY_KEY],
+>>>>>>> fb785cbb (Initial commit)
             title: (entityConfig === null || entityConfig === void 0 ? void 0 : (_entityConfig$getTitl2 = entityConfig.getTitle) === null || _entityConfig$getTitl2 === void 0 ? void 0 : _entityConfig$getTitl2.call(entityConfig, entityRecord)) || '',
             name,
             kind
@@ -4741,12 +5412,21 @@ const __experimentalGetEntitiesBeingSaved = rememo(state => {
 /**
  * Returns the specified entity record's edits.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  kind     Entity kind.
  * @param  name     Entity name.
  * @param  recordId Record ID.
  *
  * @return The entity record's edits.
+=======
+ * @param {Object} state    State tree.
+ * @param {string} kind     Entity kind.
+ * @param {string} name     Entity name.
+ * @param {number} recordId Record ID.
+ *
+ * @return {Object?} The entity record's edits.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getEntityRecordEdits(state, kind, name, recordId) {
@@ -4759,12 +5439,21 @@ function getEntityRecordEdits(state, kind, name, recordId) {
  * are not considered for change detection.
  * They are defined in the entity's config.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  kind     Entity kind.
  * @param  name     Entity name.
  * @param  recordId Record ID.
  *
  * @return The entity record's non transient edits.
+=======
+ * @param {Object} state    State tree.
+ * @param {string} kind     Entity kind.
+ * @param {string} name     Entity name.
+ * @param {number} recordId Record ID.
+ *
+ * @return {Object?} The entity record's non transient edits.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const getEntityRecordNonTransientEdits = rememo((state, kind, name, recordId) => {
@@ -4789,12 +5478,21 @@ const getEntityRecordNonTransientEdits = rememo((state, kind, name, recordId) =>
  * Returns true if the specified entity record has edits,
  * and false otherwise.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  kind     Entity kind.
  * @param  name     Entity name.
  * @param  recordId Record ID.
  *
  * @return Whether the entity record has edits or not.
+=======
+ * @param {Object}        state    State tree.
+ * @param {string}        kind     Entity kind.
+ * @param {string}        name     Entity name.
+ * @param {number|string} recordId Record ID.
+ *
+ * @return {boolean} Whether the entity record has edits or not.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function hasEditsForEntityRecord(state, kind, name, recordId) {
@@ -4803,12 +5501,21 @@ function hasEditsForEntityRecord(state, kind, name, recordId) {
 /**
  * Returns the specified entity record, merged with its edits.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  kind     Entity kind.
  * @param  name     Entity name.
  * @param  recordId Record ID.
  *
  * @return The entity record, merged with its edits.
+=======
+ * @param {Object}        state    State tree.
+ * @param {string}        kind     Entity kind.
+ * @param {string}        name     Entity name.
+ * @param {number|string} recordId Record ID.
+ *
+ * @return {Object?} The entity record, merged with its edits.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const getEditedEntityRecord = rememo((state, kind, name, recordId) => ({ ...getRawEntityRecord(state, kind, name, recordId),
@@ -4822,12 +5529,21 @@ const getEditedEntityRecord = rememo((state, kind, name, recordId) => ({ ...getR
 /**
  * Returns true if the specified entity record is autosaving, and false otherwise.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  kind     Entity kind.
  * @param  name     Entity name.
  * @param  recordId Record ID.
  *
  * @return Whether the entity record is autosaving or not.
+=======
+ * @param {Object} state    State tree.
+ * @param {string} kind     Entity kind.
+ * @param {string} name     Entity name.
+ * @param {number} recordId Record ID.
+ *
+ * @return {boolean} Whether the entity record is autosaving or not.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function isAutosavingEntityRecord(state, kind, name, recordId) {
@@ -4840,12 +5556,21 @@ function isAutosavingEntityRecord(state, kind, name, recordId) {
 /**
  * Returns true if the specified entity record is saving, and false otherwise.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  kind     Entity kind.
  * @param  name     Entity name.
  * @param  recordId Record ID.
  *
  * @return Whether the entity record is saving or not.
+=======
+ * @param {Object}        state    State tree.
+ * @param {string}        kind     Entity kind.
+ * @param {string}        name     Entity name.
+ * @param {number|string} recordId Record ID.
+ *
+ * @return {boolean} Whether the entity record is saving or not.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function isSavingEntityRecord(state, kind, name, recordId) {
@@ -4854,12 +5579,21 @@ function isSavingEntityRecord(state, kind, name, recordId) {
 /**
  * Returns true if the specified entity record is deleting, and false otherwise.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  kind     Entity kind.
  * @param  name     Entity name.
  * @param  recordId Record ID.
  *
  * @return Whether the entity record is deleting or not.
+=======
+ * @param {Object} state    State tree.
+ * @param {string} kind     Entity kind.
+ * @param {string} name     Entity name.
+ * @param {number} recordId Record ID.
+ *
+ * @return {boolean} Whether the entity record is deleting or not.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function isDeletingEntityRecord(state, kind, name, recordId) {
@@ -4868,12 +5602,21 @@ function isDeletingEntityRecord(state, kind, name, recordId) {
 /**
  * Returns the specified entity record's last save error.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  kind     Entity kind.
  * @param  name     Entity name.
  * @param  recordId Record ID.
  *
  * @return The entity record's save error.
+=======
+ * @param {Object} state    State tree.
+ * @param {string} kind     Entity kind.
+ * @param {string} name     Entity name.
+ * @param {number} recordId Record ID.
+ *
+ * @return {Object?} The entity record's save error.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getLastEntitySaveError(state, kind, name, recordId) {
@@ -4882,12 +5625,21 @@ function getLastEntitySaveError(state, kind, name, recordId) {
 /**
  * Returns the specified entity record's last delete error.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  kind     Entity kind.
  * @param  name     Entity name.
  * @param  recordId Record ID.
  *
  * @return The entity record's save error.
+=======
+ * @param {Object} state    State tree.
+ * @param {string} kind     Entity kind.
+ * @param {string} name     Entity name.
+ * @param {number} recordId Record ID.
+ *
+ * @return {Object?} The entity record's save error.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getLastEntityDeleteError(state, kind, name, recordId) {
@@ -4900,9 +5652,15 @@ function getLastEntityDeleteError(state, kind, name, recordId) {
  * of the history stack we are at. 0 is the
  * last edit, -1 is the second last, and so on.
  *
+<<<<<<< HEAD
  * @param  state State tree.
  *
  * @return The current undo offset.
+=======
+ * @param {Object} state State tree.
+ *
+ * @return {number} The current undo offset.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getCurrentUndoOffset(state) {
@@ -4912,9 +5670,15 @@ function getCurrentUndoOffset(state) {
  * Returns the previous edit from the current undo offset
  * for the entity records edits history, if any.
  *
+<<<<<<< HEAD
  * @param  state State tree.
  *
  * @return The edit.
+=======
+ * @param {Object} state State tree.
+ *
+ * @return {Object?} The edit.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 
@@ -4925,9 +5689,15 @@ function getUndoEdit(state) {
  * Returns the next edit from the current undo offset
  * for the entity records edits history, if any.
  *
+<<<<<<< HEAD
  * @param  state State tree.
  *
  * @return The edit.
+=======
+ * @param {Object} state State tree.
+ *
+ * @return {Object?} The edit.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getRedoEdit(state) {
@@ -4937,9 +5707,15 @@ function getRedoEdit(state) {
  * Returns true if there is a previous edit from the current undo offset
  * for the entity records edits history, and false otherwise.
  *
+<<<<<<< HEAD
  * @param  state State tree.
  *
  * @return Whether there is a previous edit or not.
+=======
+ * @param {Object} state State tree.
+ *
+ * @return {boolean} Whether there is a previous edit or not.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function hasUndo(state) {
@@ -4949,9 +5725,15 @@ function hasUndo(state) {
  * Returns true if there is a next edit from the current undo offset
  * for the entity records edits history, and false otherwise.
  *
+<<<<<<< HEAD
  * @param  state State tree.
  *
  * @return Whether there is a next edit or not.
+=======
+ * @param {Object} state State tree.
+ *
+ * @return {boolean} Whether there is a next edit or not.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function hasRedo(state) {
@@ -4960,9 +5742,15 @@ function hasRedo(state) {
 /**
  * Return the current theme.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  *
  * @return The current theme.
+=======
+ * @param {Object} state Data state.
+ *
+ * @return {Object} The current theme.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getCurrentTheme(state) {
@@ -4971,9 +5759,15 @@ function getCurrentTheme(state) {
 /**
  * Return the ID of the current global styles object.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  *
  * @return The current global styles ID.
+=======
+ * @param {Object} state Data state.
+ *
+ * @return {string} The current global styles ID.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function __experimentalGetCurrentGlobalStylesId(state) {
@@ -4982,9 +5776,15 @@ function __experimentalGetCurrentGlobalStylesId(state) {
 /**
  * Return theme supports data in the index.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  *
  * @return Index data.
+=======
+ * @param {Object} state Data state.
+ *
+ * @return {*} Index data.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getThemeSupports(state) {
@@ -4995,10 +5795,17 @@ function getThemeSupports(state) {
 /**
  * Returns the embed preview for the given URL.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  * @param  url   Embedded URL.
  *
  * @return Undefined if the preview has not been fetched, otherwise, the preview fetched from the embed preview API.
+=======
+ * @param {Object} state Data state.
+ * @param {string} url   Embedded URL.
+ *
+ * @return {*} Undefined if the preview has not been fetched, otherwise, the preview fetched from the embed preview API.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getEmbedPreview(state, url) {
@@ -5011,10 +5818,17 @@ function getEmbedPreview(state, url) {
  * We need to be able to determine if a URL is embeddable or not, based on what we
  * get back from the oEmbed preview API.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  * @param  url   Embedded URL.
  *
  * @return Is the preview for the URL an oEmbed link fallback.
+=======
+ * @param {Object} state Data state.
+ * @param {string} url   Embedded URL.
+ *
+ * @return {boolean} Is the preview for the URL an oEmbed link fallback.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function isPreviewEmbedFallback(state, url) {
@@ -5036,17 +5850,30 @@ function isPreviewEmbedFallback(state, url) {
  *
  * https://developer.wordpress.org/rest-api/reference/
  *
+<<<<<<< HEAD
  * @param  state    Data state.
  * @param  action   Action to check. One of: 'create', 'read', 'update', 'delete'.
  * @param  resource REST resource to check, e.g. 'media' or 'posts'.
  * @param  id       Optional ID of the rest resource to check.
  *
  * @return Whether or not the user can perform the action,
+=======
+ * @param {Object}  state    Data state.
+ * @param {string}  action   Action to check. One of: 'create', 'read', 'update', 'delete'.
+ * @param {string}  resource REST resource to check, e.g. 'media' or 'posts'.
+ * @param {string=} id       Optional ID of the rest resource to check.
+ *
+ * @return {boolean|undefined} Whether or not the user can perform the action,
+>>>>>>> fb785cbb (Initial commit)
  *                             or `undefined` if the OPTIONS request is still being made.
  */
 
 function canUser(state, action, resource, id) {
+<<<<<<< HEAD
   const key = [action, resource, id].filter(Boolean).join('/');
+=======
+  const key = (0,external_lodash_namespaceObject.compact)([action, resource, id]).join('/');
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_lodash_namespaceObject.get)(state, ['userPermissions', key]);
 }
 /**
@@ -5057,11 +5884,19 @@ function canUser(state, action, resource, id) {
  *
  * https://developer.wordpress.org/rest-api/reference/
  *
+<<<<<<< HEAD
  * @param  state    Data state.
  * @param  kind     Entity kind.
  * @param  name     Entity name.
  * @param  recordId Record's id.
  * @return Whether or not the user can edit,
+=======
+ * @param {Object} state    Data state.
+ * @param {string} kind     Entity kind.
+ * @param {string} name     Entity name.
+ * @param {string} recordId Record's id.
+ * @return {boolean|undefined} Whether or not the user can edit,
+>>>>>>> fb785cbb (Initial commit)
  * or `undefined` if the OPTIONS request is still being made.
  */
 
@@ -5081,11 +5916,19 @@ function canUserEditEntityRecord(state, kind, name, recordId) {
  * May return multiple autosaves since the backend stores one autosave per
  * author for each post.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  postType The type of the parent post.
  * @param  postId   The id of the parent post.
  *
  * @return An array of autosaves for the post, or undefined if there is none.
+=======
+ * @param {Object} state    State tree.
+ * @param {string} postType The type of the parent post.
+ * @param {number} postId   The id of the parent post.
+ *
+ * @return {?Array} An array of autosaves for the post, or undefined if there is none.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getAutosaves(state, postType, postId) {
@@ -5094,12 +5937,21 @@ function getAutosaves(state, postType, postId) {
 /**
  * Returns the autosave for the post and author.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  postType The type of the parent post.
  * @param  postId   The id of the parent post.
  * @param  authorId The id of the author.
  *
  * @return The autosave for the post and author.
+=======
+ * @param {Object} state    State tree.
+ * @param {string} postType The type of the parent post.
+ * @param {number} postId   The id of the parent post.
+ * @param {number} authorId The id of the author.
+ *
+ * @return {?Object} The autosave for the post and author.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getAutosave(state, postType, postId, authorId) {
@@ -5108,16 +5960,30 @@ function getAutosave(state, postType, postId, authorId) {
   }
 
   const autosaves = state.autosaves[postId];
+<<<<<<< HEAD
   return autosaves === null || autosaves === void 0 ? void 0 : autosaves.find(autosave => autosave.author === authorId);
+=======
+  return (0,external_lodash_namespaceObject.find)(autosaves, {
+    author: authorId
+  });
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Returns true if the REST request for autosaves has completed.
  *
+<<<<<<< HEAD
  * @param  state    State tree.
  * @param  postType The type of the parent post.
  * @param  postId   The id of the parent post.
  *
  * @return True if the REST request was completed. False otherwise.
+=======
+ * @param {Object} state    State tree.
+ * @param {string} postType The type of the parent post.
+ * @param {number} postId   The id of the parent post.
+ *
+ * @return {boolean} True if the REST request was completed. False otherwise.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const hasFetchedAutosaves = (0,external_wp_data_namespaceObject.createRegistrySelector)(select => (state, postType, postId) => {
@@ -5137,6 +6003,7 @@ const hasFetchedAutosaves = (0,external_wp_data_namespaceObject.createRegistrySe
  * );
  * ```
  *
+<<<<<<< HEAD
  * @param  state Editor state.
  *
  * @return A value whose reference will change only when an edit occurs.
@@ -5151,25 +6018,56 @@ state => [], state => [state.undo.length, state.undo.offset, state.undo.flattene
  * @param  link  Link.
  *
  * @return The template record.
+=======
+ * @param {Object} state Editor state.
+ *
+ * @return {*} A value whose reference will change only when an edit occurs.
+ */
+
+const getReferenceByDistinctEdits = rememo(() => [], state => [state.undo.length, state.undo.offset, state.undo.flattenedUndo]);
+/**
+ * Retrieve the frontend template used for a given link.
+ *
+ * @param {Object} state Editor state.
+ * @param {string} link  Link.
+ *
+ * @return {Object?} The template record.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function __experimentalGetTemplateForLink(state, link) {
   const records = getEntityRecords(state, 'postType', 'wp_template', {
     'find-template': link
   });
+<<<<<<< HEAD
 
   if (records !== null && records !== void 0 && records.length) {
     return getEditedEntityRecord(state, 'postType', 'wp_template', records[0].id);
   }
 
   return null;
+=======
+  const template = records !== null && records !== void 0 && records.length ? records[0] : null;
+
+  if (template) {
+    return getEditedEntityRecord(state, 'postType', 'wp_template', template.id);
+  }
+
+  return template;
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Retrieve the current theme's base global styles
  *
+<<<<<<< HEAD
  * @param  state Editor state.
  *
  * @return The Global Styles object.
+=======
+ * @param {Object} state Editor state.
+ *
+ * @return {Object|null} The Global Styles object.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function __experimentalGetCurrentThemeBaseGlobalStyles(state) {
@@ -5184,9 +6082,15 @@ function __experimentalGetCurrentThemeBaseGlobalStyles(state) {
 /**
  * Return the ID of the current global styles object.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  *
  * @return The current global styles ID.
+=======
+ * @param {Object} state Data state.
+ *
+ * @return {string|null} The current global styles ID.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function __experimentalGetCurrentThemeGlobalStylesVariations(state) {
@@ -5201,9 +6105,15 @@ function __experimentalGetCurrentThemeGlobalStylesVariations(state) {
 /**
  * Retrieve the list of registered block patterns.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  *
  * @return Block pattern list.
+=======
+ * @param {Object} state Data state.
+ *
+ * @return {Array} Block pattern list.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getBlockPatterns(state) {
@@ -5212,15 +6122,22 @@ function getBlockPatterns(state) {
 /**
  * Retrieve the list of registered block pattern categories.
  *
+<<<<<<< HEAD
  * @param  state Data state.
  *
  * @return Block pattern category list.
+=======
+ * @param {Object} state Data state.
+ *
+ * @return {Array} Block pattern category list.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getBlockPatternCategories(state) {
   return state.blockPatternCategories;
 }
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/camel-case/dist.es2015/index.js
 
 
@@ -5239,6 +6156,8 @@ function camelCase(input, options) {
     return pascalCase(input, __assign({ transform: camelCaseTransform }, options));
 }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/utils/forward-resolver.js
 /**
  * Higher-order function which forward the resolution to another resolver with the same arguments.
@@ -5317,8 +6236,12 @@ const resolvers_getCurrentUser = () => async _ref2 => {
  * @param {string}           name  Entity name.
  * @param {number|string}    key   Record's key
  * @param {Object|undefined} query Optional object of query parameters to
+<<<<<<< HEAD
  *                                 include with request. If requesting specific
  *                                 fields, fields must always include the ID.
+=======
+ *                                 include with request.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const resolvers_getEntityRecord = function (kind, name) {
@@ -5330,7 +6253,14 @@ const resolvers_getEntityRecord = function (kind, name) {
       dispatch
     } = _ref3;
     const configs = await dispatch(getOrLoadEntitiesConfig(kind));
+<<<<<<< HEAD
     const entityConfig = configs.find(config => config.name === name && config.kind === kind);
+=======
+    const entityConfig = (0,external_lodash_namespaceObject.find)(configs, {
+      kind,
+      name
+    });
+>>>>>>> fb785cbb (Initial commit)
 
     if (!entityConfig || entityConfig !== null && entityConfig !== void 0 && entityConfig.__experimentalNoFetch) {
       return;
@@ -5346,7 +6276,11 @@ const resolvers_getEntityRecord = function (kind, name) {
         // records are stored by ID reference. Thus, fields must always include
         // the ID.
         query = { ...query,
+<<<<<<< HEAD
           _fields: [...new Set([...(get_normalized_comma_separable(query._fields) || []), entityConfig.key || DEFAULT_ENTITY_KEY])].join()
+=======
+          _fields: (0,external_lodash_namespaceObject.uniq)([...(get_normalized_comma_separable(query._fields) || []), entityConfig.key || DEFAULT_ENTITY_KEY]).join()
+>>>>>>> fb785cbb (Initial commit)
         };
       } // Disable reason: While true that an early return could leave `path`
       // unused, it's important that path is derived using the query prior to
@@ -5398,8 +6332,12 @@ const resolvers_getEditedEntityRecord = forward_resolver('getEntityRecord');
  *
  * @param {string}  kind  Entity kind.
  * @param {string}  name  Entity name.
+<<<<<<< HEAD
  * @param {Object?} query Query Object. If requesting specific fields, fields
  *                        must always include the ID.
+=======
+ * @param {Object?} query Query Object.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const resolvers_getEntityRecords = function (kind, name) {
@@ -5409,7 +6347,14 @@ const resolvers_getEntityRecords = function (kind, name) {
       dispatch
     } = _ref4;
     const configs = await dispatch(getOrLoadEntitiesConfig(kind));
+<<<<<<< HEAD
     const entityConfig = configs.find(config => config.name === name && config.kind === kind);
+=======
+    const entityConfig = (0,external_lodash_namespaceObject.find)(configs, {
+      kind,
+      name
+    });
+>>>>>>> fb785cbb (Initial commit)
 
     if (!entityConfig || entityConfig !== null && entityConfig !== void 0 && entityConfig.__experimentalNoFetch) {
       return;
@@ -5427,7 +6372,11 @@ const resolvers_getEntityRecords = function (kind, name) {
         // records are stored by ID reference. Thus, fields must always include
         // the ID.
         query = { ...query,
+<<<<<<< HEAD
           _fields: [...new Set([...(get_normalized_comma_separable(query._fields) || []), entityConfig.key || DEFAULT_ENTITY_KEY])].join()
+=======
+          _fields: (0,external_lodash_namespaceObject.uniq)([...(get_normalized_comma_separable(query._fields) || []), entityConfig.key || DEFAULT_ENTITY_KEY]).join()
+>>>>>>> fb785cbb (Initial commit)
         };
       }
 
@@ -5526,6 +6475,7 @@ const resolvers_getEmbedPreview = url => async _ref6 => {
  * Checks whether the current user can perform the given action on the given
  * REST resource.
  *
+<<<<<<< HEAD
  * @param {string}  requestedAction Action to check. One of: 'create', 'read', 'update',
  *                                  'delete'.
  * @param {string}  resource        REST resource to check, e.g. 'media' or 'posts'.
@@ -5562,11 +6512,42 @@ const resolvers_canUser = (requestedAction, resource, id) => async _ref7 => {
     }
   }
 
+=======
+ * @param {string}  action   Action to check. One of: 'create', 'read', 'update',
+ *                           'delete'.
+ * @param {string}  resource REST resource to check, e.g. 'media' or 'posts'.
+ * @param {?string} id       ID of the rest resource to check.
+ */
+
+const resolvers_canUser = (action, resource, id) => async _ref7 => {
+  var _response$headers;
+
+  let {
+    dispatch
+  } = _ref7;
+  const methods = {
+    create: 'POST',
+    read: 'GET',
+    update: 'PUT',
+    delete: 'DELETE'
+  };
+  const method = methods[action];
+
+  if (!method) {
+    throw new Error(`'${action}' is not a valid action.`);
+  }
+
+  const path = id ? `/wp/v2/${resource}/${id}` : `/wp/v2/${resource}`;
+>>>>>>> fb785cbb (Initial commit)
   let response;
 
   try {
     response = await external_wp_apiFetch_default()({
+<<<<<<< HEAD
       path: `/wp/v2/${resourcePath}`,
+=======
+      path,
+>>>>>>> fb785cbb (Initial commit)
       method: 'OPTIONS',
       parse: false
     });
@@ -5580,6 +6561,7 @@ const resolvers_canUser = (requestedAction, resource, id) => async _ref7 => {
 
 
   const allowHeader = (_response$headers = response.headers) === null || _response$headers === void 0 ? void 0 : _response$headers.get('allow');
+<<<<<<< HEAD
   const allowedMethods = (allowHeader === null || allowHeader === void 0 ? void 0 : allowHeader.allow) || allowHeader || '';
   const permissions = {};
   const methods = {
@@ -5596,6 +6578,11 @@ const resolvers_canUser = (requestedAction, resource, id) => async _ref7 => {
   for (const action of retrievedActions) {
     dispatch.receiveUserPermission(`${action}/${resourcePath}`, permissions[action]);
   }
+=======
+  const key = (0,external_lodash_namespaceObject.compact)([action, resource, id]).join('/');
+  const isAllowed = (0,external_lodash_namespaceObject.includes)(allowHeader, method);
+  dispatch.receiveUserPermission(key, isAllowed);
+>>>>>>> fb785cbb (Initial commit)
 };
 /**
  * Checks whether the current user can perform the given action on the given
@@ -5611,7 +6598,14 @@ const resolvers_canUserEditEntityRecord = (kind, name, recordId) => async _ref8 
     dispatch
   } = _ref8;
   const configs = await dispatch(getOrLoadEntitiesConfig(kind));
+<<<<<<< HEAD
   const entityConfig = configs.find(config => config.name === name && config.kind === kind);
+=======
+  const entityConfig = (0,external_lodash_namespaceObject.find)(configs, {
+    kind,
+    name
+  });
+>>>>>>> fb785cbb (Initial commit)
 
   if (!entityConfig) {
     return;
@@ -5633,11 +6627,18 @@ const resolvers_getAutosaves = (postType, postId) => async _ref9 => {
     resolveSelect
   } = _ref9;
   const {
+<<<<<<< HEAD
     rest_base: restBase,
     rest_namespace: restNamespace = 'wp/v2'
   } = await resolveSelect.getPostType(postType);
   const autosaves = await external_wp_apiFetch_default()({
     path: `/${restNamespace}/${restBase}/${postId}/autosaves?context=edit`
+=======
+    rest_base: restBase
+  } = await resolveSelect.getPostType(postType);
+  const autosaves = await external_wp_apiFetch_default()({
+    path: `/wp/v2/${restBase}/${postId}/autosaves?context=edit`
+>>>>>>> fb785cbb (Initial commit)
   });
 
   if (autosaves && autosaves.length) {
@@ -5706,8 +6707,11 @@ resolvers_experimentalGetTemplateForLink.shouldInvalidate = action => {
 };
 
 const resolvers_experimentalGetCurrentGlobalStylesId = () => async _ref13 => {
+<<<<<<< HEAD
   var _activeThemes$, _activeThemes$$_links, _activeThemes$$_links2, _activeThemes$$_links3;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
   let {
     dispatch,
     resolveSelect
@@ -5715,7 +6719,11 @@ const resolvers_experimentalGetCurrentGlobalStylesId = () => async _ref13 => {
   const activeThemes = await resolveSelect.getEntityRecords('root', 'theme', {
     status: 'active'
   });
+<<<<<<< HEAD
   const globalStylesURL = activeThemes === null || activeThemes === void 0 ? void 0 : (_activeThemes$ = activeThemes[0]) === null || _activeThemes$ === void 0 ? void 0 : (_activeThemes$$_links = _activeThemes$._links) === null || _activeThemes$$_links === void 0 ? void 0 : (_activeThemes$$_links2 = _activeThemes$$_links['wp:user-global-styles']) === null || _activeThemes$$_links2 === void 0 ? void 0 : (_activeThemes$$_links3 = _activeThemes$$_links2[0]) === null || _activeThemes$$_links3 === void 0 ? void 0 : _activeThemes$$_links3.href;
+=======
+  const globalStylesURL = (0,external_lodash_namespaceObject.get)(activeThemes, [0, '_links', 'wp:user-global-styles', 0, 'href']);
+>>>>>>> fb785cbb (Initial commit)
 
   if (globalStylesURL) {
     const globalStylesObject = await external_wp_apiFetch_default()({
@@ -5756,19 +6764,41 @@ const resolvers_getBlockPatterns = () => async _ref16 => {
   const restPatterns = await external_wp_apiFetch_default()({
     path: '/wp/v2/block-patterns/patterns'
   });
+<<<<<<< HEAD
   const patterns = restPatterns === null || restPatterns === void 0 ? void 0 : restPatterns.map(pattern => Object.fromEntries(Object.entries(pattern).map(_ref17 => {
     let [key, value] = _ref17;
     return [camelCase(key), value];
   })));
+=======
+  const patterns = (0,external_lodash_namespaceObject.map)(restPatterns, pattern => (0,external_lodash_namespaceObject.mapKeys)(pattern, (value, key) => {
+    switch (key) {
+      case 'block_types':
+        return 'blockTypes';
+
+      case 'viewport_width':
+        return 'viewportWidth';
+
+      default:
+        return key;
+    }
+  }));
+>>>>>>> fb785cbb (Initial commit)
   dispatch({
     type: 'RECEIVE_BLOCK_PATTERNS',
     patterns
   });
 };
+<<<<<<< HEAD
 const resolvers_getBlockPatternCategories = () => async _ref18 => {
   let {
     dispatch
   } = _ref18;
+=======
+const resolvers_getBlockPatternCategories = () => async _ref17 => {
+  let {
+    dispatch
+  } = _ref17;
+>>>>>>> fb785cbb (Initial commit)
   const categories = await external_wp_apiFetch_default()({
     path: '/wp/v2/block-patterns/categories'
   });
@@ -6295,6 +7325,286 @@ function useEntityBlockEditor(kind, name) {
   return [blocks !== null && blocks !== void 0 ? blocks : EMPTY_ARRAY, onInput, onChange];
 }
 
+<<<<<<< HEAD
+=======
+// EXTERNAL MODULE: ./node_modules/memize/index.js
+var memize = __webpack_require__(9756);
+var memize_default = /*#__PURE__*/__webpack_require__.n(memize);
+;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/memoize.js
+/**
+ * External dependencies
+ */
+ // re-export due to restrictive esModuleInterop setting
+
+/* harmony default export */ var memoize = ((memize_default()));
+
+;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/constants.js
+/* eslint-disable-next-line no-shadow */
+let Status;
+
+(function (Status) {
+  Status["Idle"] = "IDLE";
+  Status["Resolving"] = "RESOLVING";
+  Status["Error"] = "ERROR";
+  Status["Success"] = "SUCCESS";
+})(Status || (Status = {}));
+
+;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/use-query-select.js
+/**
+ * WordPress dependencies
+ */
+
+/**
+ * Internal dependencies
+ */
+
+
+
+const META_SELECTORS = ['getIsResolving', 'hasStartedResolution', 'hasFinishedResolution', 'isResolving', 'getCachedResolvers'];
+
+/**
+ * Like useSelect, but the selectors return objects containing
+ * both the original data AND the resolution info.
+ *
+ * @param {Function} mapQuerySelect see useSelect
+ * @param {Array}    deps           see useSelect
+ *
+ * @example
+ * ```js
+ * import { useQuerySelect } from '@wordpress/data';
+ * import { store as coreDataStore } from '@wordpress/core-data';
+ *
+ * function PageTitleDisplay( { id } ) {
+ *   const { data: page, isResolving } = useQuerySelect( ( query ) => {
+ *     return query( coreDataStore ).getEntityRecord( 'postType', 'page', id )
+ *   }, [ id ] );
+ *
+ *   if ( isResolving ) {
+ *     return 'Loading...';
+ *   }
+ *
+ *   return page.title;
+ * }
+ *
+ * // Rendered in the application:
+ * // <PageTitleDisplay id={ 10 } />
+ * ```
+ *
+ * In the above example, when `PageTitleDisplay` is rendered into an
+ * application, the page and the resolution details will be retrieved from
+ * the store state using the `mapSelect` callback on `useQuerySelect`.
+ *
+ * If the id prop changes then any page in the state for that id is
+ * retrieved. If the id prop doesn't change and other props are passed in
+ * that do change, the title will not change because the dependency is just
+ * the id.
+ * @see useSelect
+ *
+ * @return {QuerySelectResponse} Queried data.
+ */
+function __experimentalUseQuerySelect(mapQuerySelect, deps) {
+  return (0,external_wp_data_namespaceObject.useSelect)((select, registry) => {
+    const resolve = store => enrichSelectors(select(store));
+
+    return mapQuerySelect(resolve, registry);
+  }, deps);
+}
+
+/**
+ * Transform simple selectors into ones that return an object with the
+ * original return value AND the resolution info.
+ *
+ * @param {Object} selectors Selectors to enrich
+ * @return {EnrichedSelectors} Enriched selectors
+ */
+const enrichSelectors = memoize(selectors => {
+  const resolvers = {};
+
+  for (const selectorName in selectors) {
+    if (META_SELECTORS.includes(selectorName)) {
+      continue;
+    }
+
+    Object.defineProperty(resolvers, selectorName, {
+      get: () => function () {
+        const {
+          getIsResolving,
+          hasFinishedResolution
+        } = selectors;
+
+        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        const isResolving = !!getIsResolving(selectorName, args);
+        const hasResolved = !isResolving && hasFinishedResolution(selectorName, args);
+        const data = selectors[selectorName](...args);
+        let status;
+
+        if (isResolving) {
+          status = Status.Resolving;
+        } else if (hasResolved) {
+          if (data) {
+            status = Status.Success;
+          } else {
+            status = Status.Error;
+          }
+        } else {
+          status = Status.Idle;
+        }
+
+        return {
+          data,
+          status,
+          isResolving,
+          hasResolved
+        };
+      }
+    });
+  }
+
+  return resolvers;
+});
+
+;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/use-entity-record.js
+/**
+ * Internal dependencies
+ */
+
+
+
+/**
+ * Resolves the specified entity record.
+ *
+ * @param  kind                   Kind of the requested entity.
+ * @param  name                   Name of the requested  entity.
+ * @param  recordId               Record ID of the requested entity.
+ * @param  options                Hook options.
+ * @param  [options.enabled=true] Whether to run the query or short-circuit and return null. Defaults to true.
+ * @example
+ * ```js
+ * import { useEntityRecord } from '@wordpress/core-data';
+ *
+ * function PageTitleDisplay( { id } ) {
+ *   const { record, isResolving } = useEntityRecord( 'postType', 'page', id );
+ *
+ *   if ( isResolving ) {
+ *     return 'Loading...';
+ *   }
+ *
+ *   return record.title;
+ * }
+ *
+ * // Rendered in the application:
+ * // <PageTitleDisplay id={ 1 } />
+ * ```
+ *
+ * In the above example, when `PageTitleDisplay` is rendered into an
+ * application, the page and the resolution details will be retrieved from
+ * the store state using `getEntityRecord()`, or resolved if missing.
+ *
+ * @return {EntityRecordResolution<RecordType>} Entity record data.
+ * @template RecordType
+ */
+function __experimentalUseEntityRecord(kind, name, recordId) {
+  let options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {
+    enabled: true
+  };
+  const {
+    data: record,
+    ...rest
+  } = __experimentalUseQuerySelect(query => {
+    if (!options.enabled) {
+      return null;
+    }
+
+    return query(store).getEntityRecord(kind, name, recordId);
+  }, [kind, name, recordId, options.enabled]);
+  return {
+    record,
+    ...rest
+  };
+}
+
+;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/use-entity-records.js
+/**
+ * WordPress dependencies
+ */
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+/**
+ * Resolves the specified entity records.
+ *
+ * @param  kind      Kind of the requested entities.
+ * @param  name      Name of the requested entities.
+ * @param  queryArgs HTTP query for the requested entities.
+ * @param  options   Hook options.
+ * @example
+ * ```js
+ * import { useEntityRecord } from '@wordpress/core-data';
+ *
+ * function PageTitlesList() {
+ *   const { records, isResolving } = useEntityRecords( 'postType', 'page' );
+ *
+ *   if ( isResolving ) {
+ *     return 'Loading...';
+ *   }
+ *
+ *   return (
+ *     <ul>
+ *       {records.map(( page ) => (
+ *         <li>{ page.title }</li>
+ *       ))}
+ *     </ul>
+ *   );
+ * }
+ *
+ * // Rendered in the application:
+ * // <PageTitlesList />
+ * ```
+ *
+ * In the above example, when `PageTitlesList` is rendered into an
+ * application, the list of records and the resolution details will be retrieved from
+ * the store state using `getEntityRecords()`, or resolved if missing.
+ *
+ * @return Entity records data.
+ * @template RecordType
+ */
+function __experimentalUseEntityRecords(kind, name) {
+  let queryArgs = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  let options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {
+    enabled: true
+  };
+  // Serialize queryArgs to a string that can be safely used as a React dep.
+  // We can't just pass queryArgs as one of the deps, because if it is passed
+  // as an object literal, then it will be a different object on each call even
+  // if the values remain the same.
+  const queryAsString = (0,external_wp_url_namespaceObject.addQueryArgs)('', queryArgs);
+  const {
+    data: records,
+    ...rest
+  } = __experimentalUseQuerySelect(query => {
+    if (!options.enabled) {
+      return {
+        data: []
+      };
+    }
+
+    return query(store).getEntityRecords(kind, name, queryArgs);
+  }, [kind, name, queryAsString, options.enabled]);
+  return {
+    records,
+    ...rest
+  };
+}
+
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","htmlEntities"]
 var external_wp_htmlEntities_namespaceObject = window["wp"]["htmlEntities"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/fetch/__experimental-fetch-link-suggestions.js
@@ -6590,6 +7900,7 @@ const fetchUrlData = async function (url) {
 
 
 
+<<<<<<< HEAD
 // EXTERNAL MODULE: ./node_modules/memize/index.js
 var memize = __webpack_require__(9756);
 var memize_default = /*#__PURE__*/__webpack_require__.n(memize);
@@ -7122,6 +8433,8 @@ function __experimentalUseResourcePermissions(resource, id) {
 
 
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/index.js
 /**
  * WordPress dependencies
@@ -7206,6 +8519,11 @@ const storeConfig = () => ({
  * Store definition for the code data namespace.
  *
  * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+<<<<<<< HEAD
+=======
+ *
+ * @type {Object}
+>>>>>>> fb785cbb (Initial commit)
  */
 
 
@@ -7217,6 +8535,10 @@ const store = (0,external_wp_data_namespaceObject.createReduxStore)(STORE_NAME, 
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 }();
 (window.wp = window.wp || {}).coreData = __webpack_exports__;
 /******/ })()

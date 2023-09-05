@@ -34,6 +34,7 @@ class WPSEO_Taxonomy {
 	private $analysis_readability;
 
 	/**
+<<<<<<< HEAD
 	 * Holds the metabox inclusive language analysis instance.
 	 *
 	 * @var WPSEO_Metabox_Analysis_Inclusive_Language
@@ -41,6 +42,8 @@ class WPSEO_Taxonomy {
 	private $analysis_inclusive_language;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Class constructor.
 	 */
 	public function __construct() {
@@ -53,9 +56,14 @@ class WPSEO_Taxonomy {
 		if ( self::is_term_overview( $GLOBALS['pagenow'] ) ) {
 			new WPSEO_Taxonomy_Columns();
 		}
+<<<<<<< HEAD
 		$this->analysis_seo                = new WPSEO_Metabox_Analysis_SEO();
 		$this->analysis_readability        = new WPSEO_Metabox_Analysis_Readability();
 		$this->analysis_inclusive_language = new WPSEO_Metabox_Analysis_Inclusive_Language();
+=======
+		$this->analysis_seo         = new WPSEO_Metabox_Analysis_SEO();
+		$this->analysis_readability = new WPSEO_Metabox_Analysis_Readability();
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -176,7 +184,10 @@ class WPSEO_Taxonomy {
 				'metabox'          => $this->localize_term_scraper_script(),
 				'userLanguageCode' => WPSEO_Language_Utils::get_language( \get_user_locale() ),
 				'isTerm'           => true,
+<<<<<<< HEAD
 				'postId'           => $tag_id,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			];
 			$asset_manager->localize_script( 'term-edit', 'wpseoScriptData', $script_data );
 			$asset_manager->enqueue_user_language_script();
@@ -234,10 +245,13 @@ class WPSEO_Taxonomy {
 			return true;
 		}
 
+<<<<<<< HEAD
 		if ( $key === 'wpseo_inclusive_language_score' && ! $this->analysis_inclusive_language->is_enabled() ) {
 			return true;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return false;
 	}
 

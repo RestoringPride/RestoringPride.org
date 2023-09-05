@@ -2,8 +2,11 @@
 
 namespace Give\PaymentGateways\DataTransferObjects;
 
+<<<<<<< HEAD
 use Give\Donations\Properties\BillingAddress;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Class GiveInsertPaymentData
  *
@@ -11,7 +14,11 @@ use Give\Donations\Properties\BillingAddress;
  *
  * @since 2.18.0
  */
+<<<<<<< HEAD
 final class GiveInsertPaymentData
+=======
+class GiveInsertPaymentData
+>>>>>>> fb785cbb (Initial commit)
 {
     /**
      * @var float
@@ -53,10 +60,13 @@ final class GiveInsertPaymentData
      * @var string
      */
     public $paymentGateway;
+<<<<<<< HEAD
     /**
      * @var int
      */
     public $donorId;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
     /**
      * Convert data from array into DTO
@@ -69,7 +79,10 @@ final class GiveInsertPaymentData
     {
         $self = new static();
 
+<<<<<<< HEAD
         $self->donorId = $array['donorId'];
+=======
+>>>>>>> fb785cbb (Initial commit)
         $self->price = $array['price'];
         $self->priceId = $array['priceId'];
         $self->formTitle = $array['formTitle'];
@@ -98,6 +111,7 @@ final class GiveInsertPaymentData
             'user_email' => $this->donorEmail,
             'purchase_key' => $this->purchaseKey,
             'currency' => $this->currency,
+<<<<<<< HEAD
             'user_info' => [
                 'id' => $this->userInfo['id'],
                 'title' => $this->userInfo['title'],
@@ -139,4 +153,10 @@ final class GiveInsertPaymentData
 
         return $address;
     }
+=======
+            'user_info' => $this->userInfo,
+            'status' => 'pending',
+        ];
+    }
+>>>>>>> fb785cbb (Initial commit)
 }

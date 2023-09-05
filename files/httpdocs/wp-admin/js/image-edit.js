@@ -11,7 +11,11 @@
 	var __ = wp.i18n.__;
 
 	/**
+<<<<<<< HEAD
 	 * Contains all the methods to initialize and control the image editor.
+=======
+	 * Contains all the methods to initialise and control the image editor.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @namespace imageEdit
 	 */
@@ -636,7 +640,11 @@
 				btn.removeClass( 'button-activated' );
 				spin.removeClass( 'is-active' );
 			} );
+<<<<<<< HEAD
 			// Initialize the Image Editor now that everything is ready.
+=======
+			// Initialise the Image Editor now that everything is ready.
+>>>>>>> fb785cbb (Initial commit)
 			imageEdit.init( postid );
 		} );
 

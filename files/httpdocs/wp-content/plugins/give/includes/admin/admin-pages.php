@@ -27,8 +27,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return void
  */
+<<<<<<< HEAD
 function give_add_donations_subpage() {
     global $give_payments_page;
+=======
+function give_add_options_links() {
+    global $give_settings_page, $give_payments_page, $give_reports_page, $give_donors_page, $give_tools_page;
+>>>>>>> fb785cbb (Initial commit)
 
     // Payments
     /* @var WP_Post_Type $give_payment */
@@ -41,6 +46,7 @@ function give_add_donations_subpage() {
     	'give-payment-history',
     	'give_payment_history_page'
     );
+<<<<<<< HEAD
 }
 
 add_action( 'admin_menu', 'give_add_donations_subpage', 20 );
@@ -48,6 +54,10 @@ add_action( 'admin_menu', 'give_add_donations_subpage', 20 );
 function give_add_donors_subpage() {
     global $give_donors_page;
 
+=======
+
+    // Donors
+>>>>>>> fb785cbb (Initial commit)
     $give_donors_page = add_submenu_page(
         'edit.php?post_type=give_forms',
         esc_html__('Donors', 'give'),
@@ -56,6 +66,7 @@ function give_add_donors_subpage() {
         'give-donors',
         'give_donors_page'
     );
+<<<<<<< HEAD
 }
 
 add_action('admin_menu', 'give_add_donors_subpage', 30);
@@ -99,6 +110,39 @@ function give_add_tools_subpage()
 
 add_action('admin_menu', 'give_add_tools_subpage', 60);
 
+=======
+
+	// Settings
+	$give_settings_page = add_submenu_page(
+		'edit.php?post_type=give_forms',
+		esc_html__( 'GiveWP Settings', 'give' ),
+		esc_html__( 'Settings', 'give' ),
+		'manage_give_settings',
+		'give-settings',
+		[
+			Give()->give_settings,
+			'output',
+		]
+	);
+
+	// Tools.
+	$give_tools_page = add_submenu_page(
+		'edit.php?post_type=give_forms',
+		esc_html__( 'GiveWP Tools', 'give' ),
+		esc_html__( 'Tools', 'give' ),
+		'manage_give_settings',
+		'give-tools',
+		[
+			Give()->give_settings,
+			'output',
+		]
+	);
+}
+
+add_action( 'admin_menu', 'give_add_options_links', 10 );
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  *  Determines whether the current admin page is a Give admin page.
  *

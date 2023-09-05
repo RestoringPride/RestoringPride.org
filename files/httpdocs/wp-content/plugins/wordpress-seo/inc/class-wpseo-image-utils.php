@@ -174,8 +174,13 @@ class WPSEO_Image_Utils {
 	/**
 	 * Find the right version of an image based on size.
 	 *
+<<<<<<< HEAD
 	 * @param int          $attachment_id Attachment ID.
 	 * @param string|array $size     Size name, or array of width and height in pixels (e.g [800,400]).
+=======
+	 * @param int    $attachment_id Attachment ID.
+	 * @param string $size          Size name.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @return array|false Returns an array with image data on success, false on failure.
 	 */
@@ -189,6 +194,7 @@ class WPSEO_Image_Utils {
 			$image = image_get_intermediate_size( $attachment_id, $size );
 		}
 
+<<<<<<< HEAD
 		if ( ! is_array( $image ) ) {
 			$image_src = wp_get_attachment_image_src( $attachment_id, $size );
 			if ( is_array( $image_src ) && isset( $image_src[1] ) && isset( $image_src[2] ) ) {
@@ -200,13 +206,19 @@ class WPSEO_Image_Utils {
 			}
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( ! $image ) {
 			return false;
 		}
 
+<<<<<<< HEAD
 		if ( ! isset( $image['size'] ) ) {
 			$image['size'] = $size;
 		}
+=======
+		$image['size'] = $size;
+>>>>>>> fb785cbb (Initial commit)
 
 		return self::get_data( $image, $attachment_id );
 	}
@@ -285,6 +297,7 @@ class WPSEO_Image_Utils {
 			return $image['filesize'];
 		}
 
+<<<<<<< HEAD
 		if ( ! isset( $image['path'] ) ) {
 			return 0;
 		}
@@ -295,6 +308,12 @@ class WPSEO_Image_Utils {
 		}
 
 		return file_exists( $image['path'] ) ? (int) filesize( $image['path'] ) : 0;
+=======
+		// If the file size for the file is over our limit, we're going to go for a smaller version.
+		// @todo Save the filesize to the image metadata.
+		// phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged -- If file size doesn't properly return, we'll not fail.
+		return @filesize( self::get_absolute_path( $image['path'] ) );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**

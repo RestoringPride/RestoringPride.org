@@ -260,6 +260,7 @@ function wpcf7_init_uploads() {
 	if ( is_dir( $dir ) and is_writable( $dir ) ) {
 		$htaccess_file = path_join( $dir, '.htaccess' );
 
+<<<<<<< HEAD
 		if ( file_exists( $htaccess_file ) ) {
 			list( $first_line_comment ) = (array) file(
 				$htaccess_file,
@@ -282,6 +283,11 @@ function wpcf7_init_uploads() {
 			fwrite( $handle, "    Deny from all\n" );
 			fwrite( $handle, "</IfModule>\n" );
 
+=======
+		if ( ! file_exists( $htaccess_file )
+		and $handle = @fopen( $htaccess_file, 'w' ) ) {
+			fwrite( $handle, "Deny from all\n" );
+>>>>>>> fb785cbb (Initial commit)
 			fclose( $handle );
 		}
 	}

@@ -14,8 +14,11 @@ class Call
      * @param mixed $args
      *
      * @return mixed
+<<<<<<< HEAD
      *
      * @deprecated 2.23.0 Instantiate and invoke the class directly or use the (new Class())() syntax. This gives better tracking in the IDE.
+=======
+>>>>>>> fb785cbb (Initial commit)
      */
     public static function invoke(string $class, ...$args)
     {

@@ -9,7 +9,10 @@
 	"textdomain": "default",
 	"usesContext": [ "queryId", "query" ],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"reusable": false,
 		"html": false,
 		"color": {
@@ -22,12 +25,19 @@
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true,
+<<<<<<< HEAD
 			"__experimentalFontFamily": true,
 			"__experimentalFontWeight": true,
 			"__experimentalFontStyle": true,
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
+=======
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}

@@ -90,7 +90,11 @@ if ( isset( $_REQUEST['action'] ) && 'update-site' === $_REQUEST['action'] ) {
 	$old_home_parsed = parse_url( $old_home_url );
 
 	if ( $old_home_parsed['host'] === $existing_details->domain && $old_home_parsed['path'] === $existing_details->path ) {
+<<<<<<< HEAD
 		$new_home_url = untrailingslashit( sanitize_url( $blog_data['scheme'] . '://' . $new_details->domain . $new_details->path ) );
+=======
+		$new_home_url = untrailingslashit( esc_url_raw( $blog_data['scheme'] . '://' . $new_details->domain . $new_details->path ) );
+>>>>>>> fb785cbb (Initial commit)
 		update_option( 'home', $new_home_url );
 	}
 
@@ -98,7 +102,11 @@ if ( isset( $_REQUEST['action'] ) && 'update-site' === $_REQUEST['action'] ) {
 	$old_site_parsed = parse_url( $old_site_url );
 
 	if ( $old_site_parsed['host'] === $existing_details->domain && $old_site_parsed['path'] === $existing_details->path ) {
+<<<<<<< HEAD
 		$new_site_url = untrailingslashit( sanitize_url( $blog_data['scheme'] . '://' . $new_details->domain . $new_details->path ) );
+=======
+		$new_site_url = untrailingslashit( esc_url_raw( $blog_data['scheme'] . '://' . $new_details->domain . $new_details->path ) );
+>>>>>>> fb785cbb (Initial commit)
 		update_option( 'siteurl', $new_site_url );
 	}
 
@@ -147,7 +155,11 @@ network_edit_site_nav(
 
 if ( ! empty( $messages ) ) {
 	foreach ( $messages as $msg ) {
+<<<<<<< HEAD
 		echo '<div id="message" class="notice notice-success is-dismissible"><p>' . $msg . '</p></div>';
+=======
+		echo '<div id="message" class="updated notice is-dismissible"><p>' . $msg . '</p></div>';
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 ?>
@@ -194,6 +206,7 @@ if ( ! empty( $messages ) ) {
 			<th scope="row"><?php _e( 'Attributes' ); ?></th>
 			<td>
 			<fieldset>
+<<<<<<< HEAD
 			<legend class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
@@ -203,6 +216,12 @@ if ( ! empty( $messages ) ) {
 			<?php foreach ( $attribute_fields as $field_key => $field_label ) : ?>
 				<label><input type="checkbox" name="blog[<?php echo $field_key; ?>]" value="1" <?php checked( (bool) $details->$field_key, true ); ?> <?php disabled( ! in_array( (int) $details->$field_key, array( 0, 1 ), true ) ); ?> />
 				<?php echo $field_label; ?></label><br />
+=======
+			<legend class="screen-reader-text"><?php _e( 'Set site attributes' ); ?></legend>
+			<?php foreach ( $attribute_fields as $field_key => $field_label ) : ?>
+				<label><input type="checkbox" name="blog[<?php echo $field_key; ?>]" value="1" <?php checked( (bool) $details->$field_key, true ); ?> <?php disabled( ! in_array( (int) $details->$field_key, array( 0, 1 ), true ) ); ?> />
+				<?php echo $field_label; ?></label><br/>
+>>>>>>> fb785cbb (Initial commit)
 			<?php endforeach; ?>
 			<fieldset>
 			</td>

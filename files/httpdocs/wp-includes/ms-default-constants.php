@@ -143,6 +143,7 @@ function ms_subdomain_constants() {
 			'<code>wp-config.php</code>',
 			'<code>is_subdomain_install()</code>'
 		);
+<<<<<<< HEAD
 
 		if ( $subdomain_error_warn ) {
 			trigger_error(
@@ -158,6 +159,13 @@ function ms_subdomain_constants() {
 			_deprecated_argument( 'define()', '3.0.0', $vhost_deprecated );
 		}
 
+=======
+		if ( $subdomain_error_warn ) {
+			trigger_error( __( '<strong>Conflicting values for the constants VHOST and SUBDOMAIN_INSTALL.</strong> The value of SUBDOMAIN_INSTALL will be assumed to be your subdomain configuration setting.' ) . ' ' . $vhost_deprecated, E_USER_WARNING );
+		} else {
+			_deprecated_argument( 'define()', '3.0.0', $vhost_deprecated );
+		}
+>>>>>>> fb785cbb (Initial commit)
 		return;
 	}
 

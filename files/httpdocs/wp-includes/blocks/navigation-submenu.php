@@ -98,6 +98,7 @@ function block_core_navigation_submenu_build_css_font_sizes( $context ) {
 		$font_sizes['css_classes'][] = sprintf( 'has-%s-font-size', $context['fontSize'] );
 	} elseif ( $has_custom_font_size ) {
 		// Add the custom font size inline style.
+<<<<<<< HEAD
 		$font_sizes['inline_styles'] = sprintf(
 			'font-size: %s;',
 			wp_get_typography_font_size_value(
@@ -106,6 +107,9 @@ function block_core_navigation_submenu_build_css_font_sizes( $context ) {
 				)
 			)
 		);
+=======
+		$font_sizes['inline_styles'] = sprintf( 'font-size: %s;', $context['style']['typography']['fontSize'] );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	return $font_sizes;
@@ -155,7 +159,11 @@ function render_block_core_navigation_submenu( $attributes, $content, $block ) {
 
 	$css_classes = trim( implode( ' ', $classes ) );
 	$has_submenu = count( $block->inner_blocks ) > 0;
+<<<<<<< HEAD
 	$is_active   = ! empty( $attributes['id'] ) && ( get_queried_object_id() === (int) $attributes['id'] );
+=======
+	$is_active   = ! empty( $attributes['id'] ) && ( get_the_ID() === $attributes['id'] );
+>>>>>>> fb785cbb (Initial commit)
 
 	$show_submenu_indicators = isset( $block->context['showSubmenuIcon'] ) && $block->context['showSubmenuIcon'];
 	$open_on_click           = isset( $block->context['openSubmenusOnClick'] ) && $block->context['openSubmenusOnClick'];
@@ -190,6 +198,7 @@ function render_block_core_navigation_submenu( $attributes, $content, $block ) {
 	if ( ! $open_on_click ) {
 		$item_url = isset( $attributes['url'] ) ? $attributes['url'] : '';
 		// Start appending HTML attributes to anchor tag.
+<<<<<<< HEAD
 		$html .= '<a class="wp-block-navigation-item__content"';
 
 		// The href attribute on a and area elements is not required;
@@ -200,6 +209,9 @@ function render_block_core_navigation_submenu( $attributes, $content, $block ) {
 		if ( ! empty( $item_url ) ) {
 			$html .= ' href="' . esc_url( $item_url ) . '"';
 		}
+=======
+		$html .= '<a class="wp-block-navigation-item__content" href="' . esc_url( $item_url ) . '"';
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( $is_active ) {
 			$html .= ' aria-current="page"';
@@ -255,6 +267,7 @@ function render_block_core_navigation_submenu( $attributes, $content, $block ) {
 			$inner_blocks_html .= $inner_block->render();
 		}
 
+<<<<<<< HEAD
 		if ( strpos( $inner_blocks_html, 'current-menu-item' ) ) {
 			$tag_processor = new WP_HTML_Tag_Processor( $html );
 			while ( $tag_processor->next_tag( array( 'class_name' => 'wp-block-navigation-item__content' ) ) ) {
@@ -263,6 +276,8 @@ function render_block_core_navigation_submenu( $attributes, $content, $block ) {
 			$html = $tag_processor->get_updated_html();
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$html .= sprintf(
 			'<ul class="wp-block-navigation__submenu-container">%s</ul>',
 			$inner_blocks_html

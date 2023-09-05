@@ -13,16 +13,25 @@
  * @since 2.1.0
  * @since 4.6.0 Moved to its own file from wp-includes/locale.php.
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Locale {
 	/**
 	 * Stores the translated strings for the full weekday names.
 	 *
 	 * @since 2.1.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
 	 */
 	public $weekday = array();
+=======
+	 * @var string[]
+	 */
+	public $weekday;
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Stores the translated strings for the one character weekday names.
@@ -33,46 +42,76 @@ class WP_Locale {
 	 * @see WP_Locale::init() for how to handle the hack.
 	 *
 	 * @since 2.1.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
 	 */
 	public $weekday_initial = array();
+=======
+	 * @var string[]
+	 */
+	public $weekday_initial;
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Stores the translated strings for the abbreviated weekday names.
 	 *
 	 * @since 2.1.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
 	 */
 	public $weekday_abbrev = array();
+=======
+	 * @var string[]
+	 */
+	public $weekday_abbrev;
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Stores the translated strings for the full month names.
 	 *
 	 * @since 2.1.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
 	 */
 	public $month = array();
+=======
+	 * @var string[]
+	 */
+	public $month;
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Stores the translated strings for the month names in genitive case, if the locale specifies.
 	 *
 	 * @since 4.4.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
 	 */
 	public $month_genitive = array();
+=======
+	 * @var string[]
+	 */
+	public $month_genitive;
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Stores the translated strings for the abbreviated month names.
 	 *
 	 * @since 2.1.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
 	 */
 	public $month_abbrev = array();
+=======
+	 * @var string[]
+	 */
+	public $month_abbrev;
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * Stores the translated strings for 'am' and 'pm'.
@@ -80,10 +119,16 @@ class WP_Locale {
 	 * Also the capitalized versions.
 	 *
 	 * @since 2.1.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
 	 */
 	public $meridiem = array();
+=======
+	 * @var string[]
+	 */
+	public $meridiem;
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * The text direction of the locale language.
@@ -99,10 +144,16 @@ class WP_Locale {
 	 * The thousands separator and decimal point values used for localizing numbers.
 	 *
 	 * @since 2.3.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var array
 	 */
 	public $number_format = array();
+=======
+	 * @var array
+	 */
+	public $number_format;
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * The separator string used for localizing list item separator.
@@ -113,6 +164,7 @@ class WP_Locale {
 	public $list_item_separator;
 
 	/**
+<<<<<<< HEAD
 	 * The word count type of the locale language.
 	 *
 	 * Default is 'words'.
@@ -123,6 +175,8 @@ class WP_Locale {
 	public $word_count_type;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Constructor which calls helper methods to set up object variables.
 	 *
 	 * @since 2.1.0
@@ -142,6 +196,10 @@ class WP_Locale {
 	 * @since 2.1.0
 	 *
 	 * @global string $text_direction
+<<<<<<< HEAD
+=======
+	 * @global string $wp_version     The WordPress version string.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function init() {
 		// The weekdays.
@@ -235,7 +293,11 @@ class WP_Locale {
 
 		$this->number_format['decimal_point'] = ( 'number_format_decimal_point' === $decimal_point ) ? '.' : $decimal_point;
 
+<<<<<<< HEAD
 		/* translators: Used between list items, there is a space after the comma. */
+=======
+		/* translators: used between list items, there is a space after the comma */
+>>>>>>> fb785cbb (Initial commit)
 		$this->list_item_separator = __( ', ' );
 
 		// Set text direction.
@@ -246,9 +308,12 @@ class WP_Locale {
 		} elseif ( 'rtl' === _x( 'ltr', 'text direction' ) ) {
 			$this->text_direction = 'rtl';
 		}
+<<<<<<< HEAD
 
 		// Set the word count type.
 		$this->word_count_type = $this->get_word_count_type();
+=======
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -409,6 +474,7 @@ class WP_Locale {
 	public function get_list_item_separator() {
 		return $this->list_item_separator;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Retrieves the localized word count type.
@@ -435,4 +501,6 @@ class WP_Locale {
 
 		return $word_count_type;
 	}
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

@@ -17,7 +17,10 @@
  *
  * @see SimplePie_Sanitize
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_SimplePie_Sanitize_KSES extends SimplePie_Sanitize {
 
 	/**

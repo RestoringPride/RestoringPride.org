@@ -1,4 +1,5 @@
 /******/ (function() { // webpackBootstrap
+<<<<<<< HEAD
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 3159:
@@ -245,6 +246,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
+=======
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+>>>>>>> fb785cbb (Initial commit)
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
@@ -259,6 +265,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 		};
 /******/ 	}();
 /******/ 	
+<<<<<<< HEAD
 /******/ 	/* webpack/runtime/global */
 /******/ 	!function() {
 /******/ 		__webpack_require__.g = (function() {
@@ -271,6 +278,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 		})();
 /******/ 	}();
 /******/ 	
+=======
+>>>>>>> fb785cbb (Initial commit)
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	!function() {
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
@@ -289,9 +298,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+<<<<<<< HEAD
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 !function() {
 "use strict";
+=======
+>>>>>>> fb785cbb (Initial commit)
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
@@ -300,6 +312,7 @@ __webpack_require__.d(__webpack_exports__, {
   "createQueue": function() { return /* binding */ createQueue; }
 });
 
+<<<<<<< HEAD
 // EXTERNAL MODULE: ./node_modules/requestidlecallback/index.js
 var requestidlecallback = __webpack_require__(3159);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/priority-queue/build-module/request-idle-callback.js
@@ -308,13 +321,20 @@ var requestidlecallback = __webpack_require__(3159);
  */
 
 /**
+=======
+;// CONCATENATED MODULE: ./node_modules/@wordpress/priority-queue/build-module/request-idle-callback.js
+/**
+>>>>>>> fb785cbb (Initial commit)
  * @typedef {( timeOrDeadline: IdleDeadline | number ) => void} Callback
  */
 
 /**
  * @return {(callback: Callback) => void} RequestIdleCallback
  */
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 function createRequestIdleCallback() {
   if (typeof window === 'undefined') {
     return callback => {
@@ -322,7 +342,11 @@ function createRequestIdleCallback() {
     };
   }
 
+<<<<<<< HEAD
   return window.requestIdleCallback;
+=======
+  return window.requestIdleCallback || window.requestAnimationFrame;
+>>>>>>> fb785cbb (Initial commit)
 }
 /* harmony default export */ var request_idle_callback = (createRequestIdleCallback());
 
@@ -366,10 +390,16 @@ function createRequestIdleCallback() {
  *
  * @typedef {Object} WPPriorityQueue
  *
+<<<<<<< HEAD
  * @property {WPPriorityQueueAdd}   add    Add callback to queue for context.
  * @property {WPPriorityQueueFlush} flush  Flush queue for context.
  * @property {WPPriorityQueueFlush} cancel Clear queue for context.
  * @property {WPPriorityQueueReset} reset  Reset queue.
+=======
+ * @property {WPPriorityQueueAdd}   add   Add callback to queue for context.
+ * @property {WPPriorityQueueFlush} flush Flush queue for context.
+ * @property {WPPriorityQueueReset} reset Reset queue.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 /**
@@ -396,12 +426,21 @@ function createRequestIdleCallback() {
  */
 
 const createQueue = () => {
+<<<<<<< HEAD
   /** @type {Map<WPPriorityQueueContext, WPPriorityQueueCallback>} */
   const waitingList = new Map();
+=======
+  /** @type {WPPriorityQueueContext[]} */
+  let waitingList = [];
+  /** @type {WeakMap<WPPriorityQueueContext,WPPriorityQueueCallback>} */
+
+  let elementsMap = new WeakMap();
+>>>>>>> fb785cbb (Initial commit)
   let isRunning = false;
   /**
    * Callback to process as much queue as time permits.
    *
+<<<<<<< HEAD
    * Map Iteration follows the original insertion order. This means that here
    * we can iterate the queue and know that the first contexts which were
    * added will be run first. On the other hand, if anyone adds a new callback
@@ -412,11 +451,14 @@ const createQueue = () => {
    * the callback it adds will appear at the end of the iteration and will be
    * run only after all other existing contexts have finished executing.
    *
+=======
+>>>>>>> fb785cbb (Initial commit)
    * @param {IdleDeadline|number} deadline Idle callback deadline object, or
    *                                       animation frame timestamp.
    */
 
   const runWaitingList = deadline => {
+<<<<<<< HEAD
     for (const [nextElement, callback] of waitingList) {
       waitingList.delete(nextElement);
       callback();
@@ -430,17 +472,42 @@ const createQueue = () => {
       isRunning = false;
       return;
     }
+=======
+    const hasTimeRemaining = typeof deadline === 'number' ? () => false : () => deadline.timeRemaining() > 0;
+
+    do {
+      if (waitingList.length === 0) {
+        isRunning = false;
+        return;
+      }
+
+      const nextElement =
+      /** @type {WPPriorityQueueContext} */
+      waitingList.shift();
+      const callback =
+      /** @type {WPPriorityQueueCallback} */
+      elementsMap.get(nextElement); // If errors with undefined callbacks are encountered double check that all of your useSelect calls
+      // have all dependecies set correctly in second parameter. Missing dependencies can cause unexpected
+      // loops and race conditions in the queue.
+
+      callback();
+      elementsMap.delete(nextElement);
+    } while (hasTimeRemaining());
+>>>>>>> fb785cbb (Initial commit)
 
     request_idle_callback(runWaitingList);
   };
   /**
    * Add a callback to the queue for a given context.
    *
+<<<<<<< HEAD
    * If errors with undefined callbacks are encountered double check that
    * all of your useSelect calls have the right dependencies set correctly
    * in their second parameter. Missing dependencies can cause unexpected
    * loops and race conditions in the queue.
    *
+=======
+>>>>>>> fb785cbb (Initial commit)
    * @type {WPPriorityQueueAdd}
    *
    * @param {WPPriorityQueueContext}  element Context object.
@@ -449,7 +516,15 @@ const createQueue = () => {
 
 
   const add = (element, item) => {
+<<<<<<< HEAD
     waitingList.set(element, item);
+=======
+    if (!elementsMap.has(element)) {
+      waitingList.push(element);
+    }
+
+    elementsMap.set(element, item);
+>>>>>>> fb785cbb (Initial commit)
 
     if (!isRunning) {
       isRunning = true;
@@ -469,6 +544,7 @@ const createQueue = () => {
 
 
   const flush = element => {
+<<<<<<< HEAD
     const callback = waitingList.get(element);
 
     if (undefined === callback) {
@@ -476,10 +552,23 @@ const createQueue = () => {
     }
 
     waitingList.delete(element);
+=======
+    if (!elementsMap.has(element)) {
+      return false;
+    }
+
+    const index = waitingList.indexOf(element);
+    waitingList.splice(index, 1);
+    const callback =
+    /** @type {WPPriorityQueueCallback} */
+    elementsMap.get(element);
+    elementsMap.delete(element);
+>>>>>>> fb785cbb (Initial commit)
     callback();
     return true;
   };
   /**
+<<<<<<< HEAD
    * Clears the queue for a given context, cancelling the callbacks without
    * executing them. Returns `true` if there were scheduled callbacks to cancel,
    * or `false` if there was is no queue for the given context.
@@ -496,6 +585,8 @@ const createQueue = () => {
     return waitingList.delete(element);
   };
   /**
+=======
+>>>>>>> fb785cbb (Initial commit)
    * Reset the queue without running the pending callbacks.
    *
    * @type {WPPriorityQueueReset}
@@ -503,19 +594,30 @@ const createQueue = () => {
 
 
   const reset = () => {
+<<<<<<< HEAD
     waitingList.clear();
+=======
+    waitingList = [];
+    elementsMap = new WeakMap();
+>>>>>>> fb785cbb (Initial commit)
     isRunning = false;
   };
 
   return {
     add,
     flush,
+<<<<<<< HEAD
     cancel,
+=======
+>>>>>>> fb785cbb (Initial commit)
     reset
   };
 };
 
+<<<<<<< HEAD
 }();
+=======
+>>>>>>> fb785cbb (Initial commit)
 (window.wp = window.wp || {}).priorityQueue = __webpack_exports__;
 /******/ })()
 ;

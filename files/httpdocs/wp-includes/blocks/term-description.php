@@ -23,6 +23,7 @@ function render_block_core_term_description( $attributes ) {
 		return '';
 	}
 
+<<<<<<< HEAD
 	$classes = array();
 	if ( isset( $attributes['textAlign'] ) ) {
 		$classes[] = 'has-text-align-' . $attributes['textAlign'];
@@ -31,6 +32,12 @@ function render_block_core_term_description( $attributes ) {
 		$classes[] = 'has-link-color';
 	}
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) );
+=======
+	$extra_attributes   = ( isset( $attributes['textAlign'] ) )
+		? array( 'class' => 'has-text-align-' . $attributes['textAlign'] )
+		: array();
+	$wrapper_attributes = get_block_wrapper_attributes( $extra_attributes );
+>>>>>>> fb785cbb (Initial commit)
 
 	return '<div ' . $wrapper_attributes . '>' . $term_description . '</div>';
 }

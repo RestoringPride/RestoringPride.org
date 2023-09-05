@@ -153,6 +153,7 @@ function get_allowed_block_types( $block_editor_context ) {
  */
 function get_default_block_editor_settings() {
 	// Media settings.
+<<<<<<< HEAD
 
 	// wp_max_upload_size() can be expensive, so only call it when relevant for the current user.
 	$max_upload_size = 0;
@@ -161,6 +162,11 @@ function get_default_block_editor_settings() {
 		if ( ! $max_upload_size ) {
 			$max_upload_size = 0;
 		}
+=======
+	$max_upload_size = wp_max_upload_size();
+	if ( ! $max_upload_size ) {
+		$max_upload_size = 0;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/** This filter is documented in wp-admin/includes/media.php */
@@ -197,6 +203,7 @@ function get_default_block_editor_settings() {
 	// These styles are used if the "no theme styles" options is triggered or on
 	// themes without their own editor styles.
 	$default_editor_styles_file = ABSPATH . WPINC . '/css/dist/block-editor/default-editor-styles.css';
+<<<<<<< HEAD
 
 	static $default_editor_styles_file_contents = false;
 	if ( ! $default_editor_styles_file_contents && file_exists( $default_editor_styles_file ) ) {
@@ -208,6 +215,14 @@ function get_default_block_editor_settings() {
 		$default_editor_styles = array(
 			array( 'css' => $default_editor_styles_file_contents ),
 		);
+=======
+	if ( file_exists( $default_editor_styles_file ) ) {
+		$default_editor_styles = array(
+			array( 'css' => file_get_contents( $default_editor_styles_file ) ),
+		);
+	} else {
+		$default_editor_styles = array();
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	$editor_settings = array(
@@ -216,6 +231,15 @@ function get_default_block_editor_settings() {
 		'allowedMimeTypes'                 => get_allowed_mime_types(),
 		'defaultEditorStyles'              => $default_editor_styles,
 		'blockCategories'                  => get_default_block_categories(),
+<<<<<<< HEAD
+=======
+		'disableCustomColors'              => get_theme_support( 'disable-custom-colors' ),
+		'disableCustomFontSizes'           => get_theme_support( 'disable-custom-font-sizes' ),
+		'disableCustomGradients'           => get_theme_support( 'disable-custom-gradients' ),
+		'enableCustomLineHeight'           => get_theme_support( 'custom-line-height' ),
+		'enableCustomSpacing'              => get_theme_support( 'custom-spacing' ),
+		'enableCustomUnits'                => get_theme_support( 'custom-units' ),
+>>>>>>> fb785cbb (Initial commit)
 		'isRTL'                            => is_rtl(),
 		'imageDefaultSize'                 => $image_default_size,
 		'imageDimensions'                  => $image_dimensions,
@@ -226,9 +250,26 @@ function get_default_block_editor_settings() {
 		'__unstableGalleryWithImageBlocks' => true,
 	);
 
+<<<<<<< HEAD
 	$theme_settings = get_classic_theme_supports_block_editor_settings();
 	foreach ( $theme_settings as $key => $value ) {
 		$editor_settings[ $key ] = $value;
+=======
+	// Theme settings.
+	$color_palette = current( (array) get_theme_support( 'editor-color-palette' ) );
+	if ( false !== $color_palette ) {
+		$editor_settings['colors'] = $color_palette;
+	}
+
+	$font_sizes = current( (array) get_theme_support( 'editor-font-sizes' ) );
+	if ( false !== $font_sizes ) {
+		$editor_settings['fontSizes'] = $font_sizes;
+	}
+
+	$gradient_presets = current( (array) get_theme_support( 'editor-gradient-presets' ) );
+	if ( false !== $gradient_presets ) {
+		$editor_settings['gradients'] = $gradient_presets;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	return $editor_settings;
@@ -296,6 +337,7 @@ function get_legacy_widget_block_editor_settings() {
  * }
  */
 function _wp_get_iframed_editor_assets() {
+<<<<<<< HEAD
 	global $pagenow, $editor_styles;
 
 	$script_handles = array(
@@ -309,6 +351,18 @@ function _wp_get_iframed_editor_assets() {
 		current_theme_supports( 'wp-block-styles' ) &&
 		( ! is_array( $editor_styles ) || count( $editor_styles ) === 0 )
 	) {
+=======
+	global $pagenow;
+
+	$script_handles = array();
+	$style_handles  = array(
+		'wp-block-editor',
+		'wp-block-library',
+		'wp-edit-blocks',
+	);
+
+	if ( current_theme_supports( 'wp-block-styles' ) ) {
+>>>>>>> fb785cbb (Initial commit)
 		$style_handles[] = 'wp-block-library-theme';
 	}
 
@@ -320,6 +374,7 @@ function _wp_get_iframed_editor_assets() {
 	$block_registry = WP_Block_Type_Registry::get_instance();
 
 	foreach ( $block_registry->get_all_registered() as $block_type ) {
+<<<<<<< HEAD
 		$style_handles = array_merge(
 			$style_handles,
 			$block_type->style_handles,
@@ -330,6 +385,19 @@ function _wp_get_iframed_editor_assets() {
 			$script_handles,
 			$block_type->script_handles
 		);
+=======
+		if ( ! empty( $block_type->style ) ) {
+			$style_handles[] = $block_type->style;
+		}
+
+		if ( ! empty( $block_type->editor_style ) ) {
+			$style_handles[] = $block_type->editor_style;
+		}
+
+		if ( ! empty( $block_type->script ) ) {
+			$script_handles[] = $block_type->script;
+		}
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	$style_handles = array_unique( $style_handles );
@@ -402,7 +470,11 @@ function get_block_editor_settings( array $custom_settings, $block_editor_contex
 		}
 	}
 
+<<<<<<< HEAD
 	if ( wp_theme_has_theme_json() ) {
+=======
+	if ( WP_Theme_JSON_Resolver::theme_has_support() ) {
+>>>>>>> fb785cbb (Initial commit)
 		$block_classes = array(
 			'css'            => 'styles',
 			'__unstableType' => 'theme',
@@ -413,6 +485,7 @@ function get_block_editor_settings( array $custom_settings, $block_editor_contex
 			$block_classes['css'] = $actual_css;
 			$global_styles[]      = $block_classes;
 		}
+<<<<<<< HEAD
 
 		/*
 		 * Add the custom CSS as a separate stylesheet so any invalid CSS
@@ -435,6 +508,8 @@ function get_block_editor_settings( array $custom_settings, $block_editor_contex
 			$block_classes['css'] = $actual_css;
 			$global_styles[]      = $block_classes;
 		}
+=======
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	$editor_settings['styles'] = array_merge( $global_styles, get_block_editor_theme_styles() );
@@ -492,6 +567,7 @@ function get_block_editor_settings( array $custom_settings, $block_editor_contex
 		$editor_settings['enableCustomSpacing'] = $editor_settings['__experimentalFeatures']['spacing']['padding'];
 		unset( $editor_settings['__experimentalFeatures']['spacing']['padding'] );
 	}
+<<<<<<< HEAD
 	if ( isset( $editor_settings['__experimentalFeatures']['spacing']['customSpacingSize'] ) ) {
 		$editor_settings['disableCustomSpacingSizes'] = ! $editor_settings['__experimentalFeatures']['spacing']['customSpacingSize'];
 		unset( $editor_settings['__experimentalFeatures']['spacing']['customSpacingSize'] );
@@ -511,6 +587,11 @@ function get_block_editor_settings( array $custom_settings, $block_editor_contex
 	$editor_settings['__unstableIsBlockBasedTheme']      = wp_is_block_theme();
 	$editor_settings['localAutosaveInterval']            = 15;
 	$editor_settings['disableLayoutStyles']              = current_theme_supports( 'disable-layout-styles' );
+=======
+
+	$editor_settings['__unstableResolvedAssets']         = _wp_get_iframed_editor_assets();
+	$editor_settings['localAutosaveInterval']            = 15;
+>>>>>>> fb785cbb (Initial commit)
 	$editor_settings['__experimentalDiscussionSettings'] = array(
 		'commentOrder'         => get_option( 'comment_order' ),
 		'commentsPerPage'      => get_option( 'comments_per_page' ),
@@ -567,7 +648,11 @@ function get_block_editor_settings( array $custom_settings, $block_editor_contex
  * @global WP_Scripts $wp_scripts The WP_Scripts object for printing scripts.
  * @global WP_Styles  $wp_styles  The WP_Styles object for printing styles.
  *
+<<<<<<< HEAD
  * @param (string|string[])[]     $preload_paths        List of paths to preload.
+=======
+ * @param string[]                $preload_paths        List of paths to preload.
+>>>>>>> fb785cbb (Initial commit)
  * @param WP_Block_Editor_Context $block_editor_context The current block editor context.
  */
 function block_editor_rest_api_preload( array $preload_paths, $block_editor_context ) {
@@ -578,7 +663,11 @@ function block_editor_rest_api_preload( array $preload_paths, $block_editor_cont
 	 *
 	 * @since 5.8.0
 	 *
+<<<<<<< HEAD
 	 * @param (string|string[])[]     $preload_paths        Array of paths to preload.
+=======
+	 * @param string[]                $preload_paths        Array of paths to preload.
+>>>>>>> fb785cbb (Initial commit)
 	 * @param WP_Block_Editor_Context $block_editor_context The current block editor context.
 	 */
 	$preload_paths = apply_filters( 'block_editor_rest_api_preload_paths', $preload_paths, $block_editor_context );
@@ -594,8 +683,13 @@ function block_editor_rest_api_preload( array $preload_paths, $block_editor_cont
 		 * @since 5.0.0
 		 * @deprecated 5.8.0 Use the {@see 'block_editor_rest_api_preload_paths'} filter instead.
 		 *
+<<<<<<< HEAD
 		 * @param (string|string[])[] $preload_paths Array of paths to preload.
 		 * @param WP_Post             $selected_post Post being edited.
+=======
+		 * @param string[] $preload_paths Array of paths to preload.
+		 * @param WP_Post  $selected_post Post being edited.
+>>>>>>> fb785cbb (Initial commit)
 		 */
 		$preload_paths = apply_filters_deprecated( 'block_editor_preload_paths', array( $preload_paths, $selected_post ), '5.8.0', 'block_editor_rest_api_preload_paths' );
 	}
@@ -690,6 +784,7 @@ function get_block_editor_theme_styles() {
 
 	return $styles;
 }
+<<<<<<< HEAD
 
 /**
  * Returns the classic theme supports settings for block editor.
@@ -727,3 +822,5 @@ function get_classic_theme_supports_block_editor_settings() {
 
 	return $theme_settings;
 }
+=======
+>>>>>>> fb785cbb (Initial commit)

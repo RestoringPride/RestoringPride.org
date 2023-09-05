@@ -34,7 +34,11 @@ function render_block_core_legacy_widget( $attributes ) {
 
 	if ( isset( $attributes['instance']['encoded'], $attributes['instance']['hash'] ) ) {
 		$serialized_instance = base64_decode( $attributes['instance']['encoded'] );
+<<<<<<< HEAD
 		if ( ! hash_equals( wp_hash( $serialized_instance ), (string) $attributes['instance']['hash'] ) ) {
+=======
+		if ( wp_hash( $serialized_instance ) !== $attributes['instance']['hash'] ) {
+>>>>>>> fb785cbb (Initial commit)
 			return '';
 		}
 		$instance = unserialize( $serialized_instance );

@@ -19,7 +19,10 @@
  *
  * @since 3.1.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Tax_Query {
 
 	/**
@@ -123,7 +126,11 @@ class WP_Tax_Query {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Ensures the 'tax_query' argument passed to the class constructor is well-formed.
+=======
+	 * Ensure the 'tax_query' argument passed to the class constructor is well-formed.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Ensures that each query-level clause has a 'relation' key, and that
 	 * each first-order clause contains all the necessary keys from `$defaults`.
@@ -197,7 +204,11 @@ class WP_Tax_Query {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Sanitizes a 'relation' operator.
+=======
+	 * Sanitize a 'relation' operator.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 4.1.0
 	 *
@@ -213,7 +224,11 @@ class WP_Tax_Query {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Determines whether a clause is first-order.
+=======
+	 * Determine whether a clause is first-order.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * A "first-order" clause is one that contains any of the first-order
 	 * clause keys ('terms', 'taxonomy', 'include_children', 'field',
@@ -252,7 +267,11 @@ class WP_Tax_Query {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Generates SQL clauses to be appended to a main query.
+=======
+	 * Generate SQL clauses to be appended to a main query.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Called by the public WP_Tax_Query::get_sql(), this method
 	 * is abstracted out to maintain parity with the other Query classes.
@@ -282,7 +301,11 @@ class WP_Tax_Query {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Generates SQL clauses for a single query array.
+=======
+	 * Generate SQL clauses for a single query array.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * If nested subqueries are found, this method recurses the tree to
 	 * produce the properly nested SQL.
@@ -366,7 +389,11 @@ class WP_Tax_Query {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Generates SQL JOIN and WHERE clauses for a "first-order" query clause.
+=======
+	 * Generate SQL JOIN and WHERE clauses for a "first-order" query clause.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 4.1.0
 	 *
@@ -484,7 +511,11 @@ class WP_Tax_Query {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Identifies an existing table alias that is compatible with the current query clause.
+=======
+	 * Identify an existing table alias that is compatible with the current query clause.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * We avoid unnecessary table joins by allowing each clause to look for
 	 * an existing table alias that is compatible with the query that it
@@ -589,6 +620,11 @@ class WP_Tax_Query {
 	 *
 	 * @since 3.2.0
 	 *
+<<<<<<< HEAD
+=======
+	 * @global wpdb $wpdb The WordPress database abstraction object.
+	 *
+>>>>>>> fb785cbb (Initial commit)
 	 * @param array  $query           The single query. Passed by reference.
 	 * @param string $resulting_field The resulting field. Accepts 'slug', 'name', 'term_taxonomy_id',
 	 *                                or 'term_id'. Default 'term_id'.

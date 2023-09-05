@@ -30,8 +30,13 @@ function render_block_core_calendar( $attributes ) {
 	if ( isset( $attributes['month'] ) && isset( $attributes['year'] ) ) {
 		$permalink_structure = get_option( 'permalink_structure' );
 		if (
+<<<<<<< HEAD
 			str_contains( $permalink_structure, '%monthnum%' ) &&
 			str_contains( $permalink_structure, '%year%' )
+=======
+			strpos( $permalink_structure, '%monthnum%' ) !== false &&
+			strpos( $permalink_structure, '%year%' ) !== false
+>>>>>>> fb785cbb (Initial commit)
 		) {
 			// phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
 			$monthnum = $attributes['month'];
@@ -40,6 +45,7 @@ function render_block_core_calendar( $attributes ) {
 		}
 	}
 
+<<<<<<< HEAD
 	$color_block_styles = array();
 
 	// Text color.
@@ -63,11 +69,17 @@ function render_block_core_calendar( $attributes ) {
 	$calendar = str_replace( '<table', '<table' . $inline_styles, get_calendar( true, false ) );
 	$calendar = str_replace( 'class="wp-calendar-table', 'class="wp-calendar-table' . $classnames, $calendar );
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	$wrapper_attributes = get_block_wrapper_attributes();
 	$output             = sprintf(
 		'<div %1$s>%2$s</div>',
 		$wrapper_attributes,
+<<<<<<< HEAD
 		$calendar
+=======
+		get_calendar( true, false )
+>>>>>>> fb785cbb (Initial commit)
 	);
 
 	// phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited

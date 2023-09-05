@@ -53,7 +53,11 @@ endif;
 
 if ( ! function_exists( 'wp_get_current_user' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Retrieves the current user object.
+=======
+	 * Retrieve the current user object.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Will set the current user, if the current user is not set. The current user
 	 * will be set to the logged-in person. If no user is logged-in, then it will
@@ -73,7 +77,11 @@ endif;
 
 if ( ! function_exists( 'get_userdata' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Retrieves user info by user ID.
+=======
+	 * Retrieve user info by user ID.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 0.71
 	 *
@@ -87,10 +95,18 @@ endif;
 
 if ( ! function_exists( 'get_user_by' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Retrieves user info by a given field.
 	 *
 	 * @since 2.8.0
 	 * @since 4.4.0 Added 'ID' as an alias of 'id' for the `$field` parameter.
+=======
+	 * Retrieve user info by a given field
+	 *
+	 * @since 2.8.0
+	 * @since 4.4.0 Added 'ID' as an alias of 'id' for the `$field` parameter.
+	 * @since 5.8.0 Returns the global `$current_user` if it's the user being fetched.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @global WP_User $current_user The current user object which holds the user data.
 	 *
@@ -99,13 +115,26 @@ if ( ! function_exists( 'get_user_by' ) ) :
 	 * @return WP_User|false WP_User object on success, false on failure.
 	 */
 	function get_user_by( $field, $value ) {
+<<<<<<< HEAD
+=======
+		global $current_user;
+
+>>>>>>> fb785cbb (Initial commit)
 		$userdata = WP_User::get_data_by( $field, $value );
 
 		if ( ! $userdata ) {
 			return false;
 		}
 
+<<<<<<< HEAD
 		$user = new WP_User();
+=======
+		if ( $current_user instanceof WP_User && $current_user->ID === (int) $userdata->ID ) {
+			return $current_user;
+		}
+
+		$user = new WP_User;
+>>>>>>> fb785cbb (Initial commit)
 		$user->init( $userdata );
 
 		return $user;
@@ -114,7 +143,11 @@ endif;
 
 if ( ! function_exists( 'cache_users' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Retrieves info for user lists to prevent multiple queries by get_userdata().
+=======
+	 * Retrieve info for user lists to prevent multiple queries by get_userdata()
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.0.0
 	 *
@@ -125,8 +158,11 @@ if ( ! function_exists( 'cache_users' ) ) :
 	function cache_users( $user_ids ) {
 		global $wpdb;
 
+<<<<<<< HEAD
 		update_meta_cache( 'user', $user_ids );
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$clean = _get_non_cached_ids( $user_ids, 'users' );
 
 		if ( empty( $clean ) ) {
@@ -137,9 +173,18 @@ if ( ! function_exists( 'cache_users' ) ) :
 
 		$users = $wpdb->get_results( "SELECT * FROM $wpdb->users WHERE ID IN ($list)" );
 
+<<<<<<< HEAD
 		foreach ( $users as $user ) {
 			update_user_caches( $user );
 		}
+=======
+		$ids = array();
+		foreach ( $users as $user ) {
+			update_user_caches( $user );
+			$ids[] = $user->ID;
+		}
+		update_meta_cache( 'user', $ids );
+>>>>>>> fb785cbb (Initial commit)
 	}
 endif;
 
@@ -300,7 +345,11 @@ if ( ! function_exists( 'wp_mail' ) ) :
 							if ( false !== $bracket_pos ) {
 								// Text before the bracketed email is the "From" name.
 								if ( $bracket_pos > 0 ) {
+<<<<<<< HEAD
 									$from_name = substr( $content, 0, $bracket_pos );
+=======
+									$from_name = substr( $content, 0, $bracket_pos - 1 );
+>>>>>>> fb785cbb (Initial commit)
 									$from_name = str_replace( '"', '', $from_name );
 									$from_name = trim( $from_name );
 								}
@@ -353,8 +402,11 @@ if ( ! function_exists( 'wp_mail' ) ) :
 		$phpmailer->clearAttachments();
 		$phpmailer->clearCustomHeaders();
 		$phpmailer->clearReplyTos();
+<<<<<<< HEAD
 		$phpmailer->Body    = '';
 		$phpmailer->AltBody = '';
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 		// Set "From" name and email.
 
@@ -463,7 +515,11 @@ if ( ! function_exists( 'wp_mail' ) ) :
 
 		// Set Content-Type and charset.
 
+<<<<<<< HEAD
 		// If we don't have a Content-Type from the input headers.
+=======
+		// If we don't have a content-type from the input headers.
+>>>>>>> fb785cbb (Initial commit)
 		if ( ! isset( $content_type ) ) {
 			$content_type = 'text/plain';
 		}
@@ -517,11 +573,17 @@ if ( ! function_exists( 'wp_mail' ) ) :
 		}
 
 		if ( ! empty( $attachments ) ) {
+<<<<<<< HEAD
 			foreach ( $attachments as $filename => $attachment ) {
 				$filename = is_string( $filename ) ? $filename : '';
 
 				try {
 					$phpmailer->addAttachment( $attachment, $filename );
+=======
+			foreach ( $attachments as $attachment ) {
+				try {
+					$phpmailer->addAttachment( $attachment );
+>>>>>>> fb785cbb (Initial commit)
 				} catch ( PHPMailer\PHPMailer\Exception $e ) {
 					continue;
 				}
@@ -585,7 +647,11 @@ endif;
 
 if ( ! function_exists( 'wp_authenticate' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Authenticates a user, confirming the login credentials are valid.
+=======
+	 * Authenticate a user, confirming the login credentials are valid.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.5.0
 	 * @since 4.5.0 `$username` now accepts an email address.
@@ -611,14 +677,22 @@ if ( ! function_exists( 'wp_authenticate' ) ) :
 		 * @param null|WP_User|WP_Error $user     WP_User if the user is authenticated.
 		 *                                        WP_Error or null otherwise.
 		 * @param string                $username Username or email address.
+<<<<<<< HEAD
 		 * @param string                $password User password.
+=======
+		 * @param string                $password User password
+>>>>>>> fb785cbb (Initial commit)
 		 */
 		$user = apply_filters( 'authenticate', null, $username, $password );
 
 		if ( null == $user ) {
 			// TODO: What should the error message be? (Or would these even happen?)
 			// Only needed if all authentication handlers fail to return anything.
+<<<<<<< HEAD
 			$user = new WP_Error( 'authentication_failed', __( '<strong>Error:</strong> Invalid username, email address or incorrect password.' ) );
+=======
+			$user = new WP_Error( 'authentication_failed', __( '<strong>Error</strong>: Invalid username, email address or incorrect password.' ) );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		$ignore_codes = array( 'empty_username', 'empty_password' );
@@ -645,7 +719,11 @@ endif;
 
 if ( ! function_exists( 'wp_logout' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Logs the current user out.
+=======
+	 * Log the current user out.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.5.0
 	 */
@@ -892,7 +970,10 @@ if ( ! function_exists( 'wp_parse_auth_cookie' ) ) :
 	 * Parses a cookie into its components.
 	 *
 	 * @since 2.7.0
+<<<<<<< HEAD
 	 * @since 4.0.0 The `$token` element was added to the return value.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param string $cookie Authentication cookie.
 	 * @param string $scheme Optional. The cookie scheme to use: 'auth', 'secure_auth', or 'logged_in'.
@@ -1070,6 +1151,7 @@ if ( ! function_exists( 'wp_set_auth_cookie' ) ) :
 		 * Allows preventing auth cookies from actually being sent to the client.
 		 *
 		 * @since 4.7.4
+<<<<<<< HEAD
 		 * @since 6.2.0 The `$expire`, `$expiration`, `$user_id`, `$scheme`, and `$token` parameters were added.
 		 *
 		 * @param bool   $send       Whether to send auth cookies to the client. Default true.
@@ -1083,6 +1165,12 @@ if ( ! function_exists( 'wp_set_auth_cookie' ) ) :
 		 * @param string $token      User's session token to use for this cookie. Empty string when clearing cookies.
 		 */
 		if ( ! apply_filters( 'send_auth_cookies', true, $expire, $expiration, $user_id, $scheme, $token ) ) {
+=======
+		 *
+		 * @param bool $send Whether to send auth cookies to the client.
+		 */
+		if ( ! apply_filters( 'send_auth_cookies', true ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			return;
 		}
 
@@ -1110,7 +1198,11 @@ if ( ! function_exists( 'wp_clear_auth_cookie' ) ) :
 		do_action( 'clear_auth_cookie' );
 
 		/** This filter is documented in wp-includes/pluggable.php */
+<<<<<<< HEAD
 		if ( ! apply_filters( 'send_auth_cookies', true, 0, 0, 0, '', '' ) ) {
+=======
+		if ( ! apply_filters( 'send_auth_cookies', true ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			return;
 		}
 
@@ -1247,7 +1339,11 @@ if ( ! function_exists( 'check_admin_referer' ) ) :
 	 * Ensures intent by verifying that a user was referred from another admin page with the correct security nonce.
 	 *
 	 * This function ensures the user intends to perform a given action, which helps protect against clickjacking style
+<<<<<<< HEAD
 	 * attacks. It verifies intent, not authorization, therefore it does not verify the user's capabilities. This should
+=======
+	 * attacks. It verifies intent, not authorisation, therefore it does not verify the user's capabilities. This should
+>>>>>>> fb785cbb (Initial commit)
 	 * be performed with `current_user_can()` or similar.
 	 *
 	 * If the nonce value is invalid, the function will exit with an "Are You Sure?" style message.
@@ -1300,13 +1396,21 @@ if ( ! function_exists( 'check_ajax_referer' ) ) :
 	 * @param false|string $query_arg Optional. Key to check for the nonce in `$_REQUEST` (since 2.5). If false,
 	 *                                `$_REQUEST` values will be evaluated for '_ajax_nonce', and '_wpnonce'
 	 *                                (in that order). Default false.
+<<<<<<< HEAD
 	 * @param bool         $stop      Optional. Whether to stop early when the nonce cannot be verified.
+=======
+	 * @param bool         $die       Optional. Whether to die early when the nonce cannot be verified.
+>>>>>>> fb785cbb (Initial commit)
 	 *                                Default true.
 	 * @return int|false 1 if the nonce is valid and generated between 0-12 hours ago,
 	 *                   2 if the nonce is valid and generated between 12-24 hours ago.
 	 *                   False if the nonce is invalid.
 	 */
+<<<<<<< HEAD
 	function check_ajax_referer( $action = -1, $query_arg = false, $stop = true ) {
+=======
+	function check_ajax_referer( $action = -1, $query_arg = false, $die = true ) {
+>>>>>>> fb785cbb (Initial commit)
 		if ( -1 == $action ) {
 			_doing_it_wrong( __FUNCTION__, __( 'You should specify an action to be verified by using the first parameter.' ), '4.7.0' );
 		}
@@ -1334,7 +1438,11 @@ if ( ! function_exists( 'check_ajax_referer' ) ) :
 		 */
 		do_action( 'check_ajax_referer', $action, $result );
 
+<<<<<<< HEAD
 		if ( $stop && false === $result ) {
+=======
+		if ( $die && false === $result ) {
+>>>>>>> fb785cbb (Initial commit)
 			if ( wp_doing_ajax() ) {
 				wp_die( -1, 403 );
 			} else {
@@ -1357,7 +1465,11 @@ if ( ! function_exists( 'wp_redirect' ) ) :
 	 *     exit;
 	 *
 	 * Exiting can also be selectively manipulated by using wp_redirect() as a conditional
+<<<<<<< HEAD
 	 * in conjunction with the {@see 'wp_redirect'} and {@see 'wp_redirect_status'} filters:
+=======
+	 * in conjunction with the {@see 'wp_redirect'} and {@see 'wp_redirect_location'} filters:
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 *     if ( wp_redirect( $url ) ) {
 	 *         exit;
@@ -1372,7 +1484,11 @@ if ( ! function_exists( 'wp_redirect' ) ) :
 	 * @param string $location      The path or URL to redirect to.
 	 * @param int    $status        Optional. HTTP response status code to use. Default '302' (Moved Temporarily).
 	 * @param string $x_redirect_by Optional. The application doing the redirect. Default 'WordPress'.
+<<<<<<< HEAD
 	 * @return bool False if the redirect was canceled, true otherwise.
+=======
+	 * @return bool False if the redirect was cancelled, true otherwise.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wp_redirect( $location, $status = 302, $x_redirect_by = 'WordPress' ) {
 		global $is_IIS;
@@ -1468,7 +1584,11 @@ if ( ! function_exists( 'wp_sanitize_redirect' ) ) :
 	}
 
 	/**
+<<<<<<< HEAD
 	 * URL encodes UTF-8 characters in a URL.
+=======
+	 * URL encode UTF-8 characters in a URL.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @ignore
 	 * @since 4.2.0
@@ -1503,7 +1623,11 @@ if ( ! function_exists( 'wp_safe_redirect' ) ) :
 	 *     exit;
 	 *
 	 * Exiting can also be selectively manipulated by using wp_safe_redirect() as a conditional
+<<<<<<< HEAD
 	 * in conjunction with the {@see 'wp_redirect'} and {@see 'wp_redirect_status'} filters:
+=======
+	 * in conjunction with the {@see 'wp_redirect'} and {@see 'wp_redirect_location'} filters:
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 *     if ( wp_safe_redirect( $url ) ) {
 	 *         exit;
@@ -1515,7 +1639,11 @@ if ( ! function_exists( 'wp_safe_redirect' ) ) :
 	 * @param string $location      The path or URL to redirect to.
 	 * @param int    $status        Optional. HTTP response status code to use. Default '302' (Moved Temporarily).
 	 * @param string $x_redirect_by Optional. The application doing the redirect. Default 'WordPress'.
+<<<<<<< HEAD
 	 * @return bool False if the redirect was canceled, true otherwise.
+=======
+	 * @return bool False if the redirect was cancelled, true otherwise.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wp_safe_redirect( $location, $status = 302, $x_redirect_by = 'WordPress' ) {
 
@@ -1530,9 +1658,13 @@ if ( ! function_exists( 'wp_safe_redirect' ) ) :
 		 * @param string $fallback_url The fallback URL to use by default.
 		 * @param int    $status       The HTTP response status code to use.
 		 */
+<<<<<<< HEAD
 		$fallback_url = apply_filters( 'wp_safe_redirect_fallback', admin_url(), $status );
 
 		$location = wp_validate_redirect( $location, $fallback_url );
+=======
+		$location = wp_validate_redirect( $location, apply_filters( 'wp_safe_redirect_fallback', admin_url(), $status ) );
+>>>>>>> fb785cbb (Initial commit)
 
 		return wp_redirect( $location, $status, $x_redirect_by );
 	}
@@ -1546,6 +1678,7 @@ if ( ! function_exists( 'wp_validate_redirect' ) ) :
 	 * path. A plugin can therefore set or remove allowed host(s) to or from the
 	 * list.
 	 *
+<<<<<<< HEAD
 	 * If the host is not allowed, then the redirect is to $fallback_url supplied.
 	 *
 	 * @since 2.8.1
@@ -1555,6 +1688,17 @@ if ( ! function_exists( 'wp_validate_redirect' ) ) :
 	 * @return string Redirect-sanitized URL.
 	 */
 	function wp_validate_redirect( $location, $fallback_url = '' ) {
+=======
+	 * If the host is not allowed, then the redirect is to $default supplied
+	 *
+	 * @since 2.8.1
+	 *
+	 * @param string $location The redirect to validate
+	 * @param string $default  The value to return if $location is not allowed
+	 * @return string redirect-sanitized URL
+	 */
+	function wp_validate_redirect( $location, $default = '' ) {
+>>>>>>> fb785cbb (Initial commit)
 		$location = wp_sanitize_redirect( trim( $location, " \t\n\r\0\x08\x0B" ) );
 		// Browsers will assume 'http' is your protocol, and will obey a redirect to a URL starting with '//'.
 		if ( '//' === substr( $location, 0, 2 ) ) {
@@ -1570,12 +1714,20 @@ if ( ! function_exists( 'wp_validate_redirect' ) ) :
 
 		// Give up if malformed URL.
 		if ( false === $lp ) {
+<<<<<<< HEAD
 			return $fallback_url;
+=======
+			return $default;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		// Allow only 'http' and 'https' schemes. No 'data:', etc.
 		if ( isset( $lp['scheme'] ) && ! ( 'http' === $lp['scheme'] || 'https' === $lp['scheme'] ) ) {
+<<<<<<< HEAD
 			return $fallback_url;
+=======
+			return $default;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		if ( ! isset( $lp['host'] ) && ! empty( $lp['path'] ) && '/' !== $lp['path'][0] ) {
@@ -1590,13 +1742,21 @@ if ( ! function_exists( 'wp_validate_redirect' ) ) :
 		// Reject if certain components are set but host is not.
 		// This catches URLs like https:host.com for which parse_url() does not set the host field.
 		if ( ! isset( $lp['host'] ) && ( isset( $lp['scheme'] ) || isset( $lp['user'] ) || isset( $lp['pass'] ) || isset( $lp['port'] ) ) ) {
+<<<<<<< HEAD
 			return $fallback_url;
+=======
+			return $default;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		// Reject malformed components parse_url() can return on odd inputs.
 		foreach ( array( 'user', 'pass', 'host' ) as $component ) {
 			if ( isset( $lp[ $component ] ) && strpbrk( $lp[ $component ], ':/?#@' ) ) {
+<<<<<<< HEAD
 				return $fallback_url;
+=======
+				return $default;
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
@@ -1613,7 +1773,11 @@ if ( ! function_exists( 'wp_validate_redirect' ) ) :
 		$allowed_hosts = (array) apply_filters( 'allowed_redirect_hosts', array( $wpp['host'] ), isset( $lp['host'] ) ? $lp['host'] : '' );
 
 		if ( isset( $lp['host'] ) && ( ! in_array( $lp['host'], $allowed_hosts, true ) && strtolower( $wpp['host'] ) !== $lp['host'] ) ) {
+<<<<<<< HEAD
 			$location = $fallback_url;
+=======
+			$location = $default;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return $location;
@@ -1622,12 +1786,20 @@ endif;
 
 if ( ! function_exists( 'wp_notify_postauthor' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Notifies an author (and/or others) of a comment/trackback/pingback on a post.
+=======
+	 * Notify an author (and/or others) of a comment/trackback/pingback on a post.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 1.0.0
 	 *
 	 * @param int|WP_Comment $comment_id Comment ID or WP_Comment object.
+<<<<<<< HEAD
 	 * @param string         $deprecated Not used.
+=======
+	 * @param string         $deprecated Not used
+>>>>>>> fb785cbb (Initial commit)
 	 * @return bool True on completion. False if no email addresses were specified.
 	 */
 	function wp_notify_postauthor( $comment_id, $deprecated = null ) {
@@ -1875,7 +2047,11 @@ if ( ! function_exists( 'wp_notify_moderator' ) ) :
 		 * @since 4.4.0
 		 *
 		 * @param bool $maybe_notify Whether to notify blog moderator.
+<<<<<<< HEAD
 		 * @param int  $comment_id   The ID of the comment for the notification.
+=======
+		 * @param int  $comment_ID   The id of the comment for the notification.
+>>>>>>> fb785cbb (Initial commit)
 		 */
 		$maybe_notify = apply_filters( 'notify_moderator', $maybe_notify, $comment_id );
 
@@ -2035,7 +2211,11 @@ endif;
 
 if ( ! function_exists( 'wp_password_change_notification' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Notifies the blog admin of a user changing password, normally via email.
+=======
+	 * Notify the blog admin of a user changing password, normally via email.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.7.0
 	 *
@@ -2089,7 +2269,11 @@ endif;
 
 if ( ! function_exists( 'wp_new_user_notification' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Emails login credentials to a newly-registered user.
+=======
+	 * Email login credentials to a newly-registered user.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * A new user registration notification is also sent to admin email.
 	 *
@@ -2119,6 +2303,7 @@ if ( ! function_exists( 'wp_new_user_notification' ) ) :
 		// We want to reverse this for the plain text arena of emails.
 		$blogname = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
 
+<<<<<<< HEAD
 		/**
 		 * Filters whether the admin is notified of a new user registration.
 		 *
@@ -2130,6 +2315,9 @@ if ( ! function_exists( 'wp_new_user_notification' ) ) :
 		$send_notification_to_admin = apply_filters( 'wp_send_new_user_notification_to_admin', true, $user );
 
 		if ( 'user' !== $notify && true === $send_notification_to_admin ) {
+=======
+		if ( 'user' !== $notify ) {
+>>>>>>> fb785cbb (Initial commit)
 			$switched_locale = switch_to_locale( get_locale() );
 
 			/* translators: %s: Site title. */
@@ -2177,6 +2365,7 @@ if ( ! function_exists( 'wp_new_user_notification' ) ) :
 			}
 		}
 
+<<<<<<< HEAD
 		/**
 		 * Filters whether the user is notified of their new user registration.
 		 *
@@ -2189,6 +2378,10 @@ if ( ! function_exists( 'wp_new_user_notification' ) ) :
 
 		// `$deprecated` was pre-4.3 `$plaintext_pass`. An empty `$plaintext_pass` didn't sent a user notification.
 		if ( 'admin' === $notify || true !== $send_notification_to_user || ( empty( $deprecated ) && empty( $notify ) ) ) {
+=======
+		// `$deprecated` was pre-4.3 `$plaintext_pass`. An empty `$plaintext_pass` didn't sent a user notification.
+		if ( 'admin' === $notify || ( empty( $deprecated ) && empty( $notify ) ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			return;
 		}
 
@@ -2197,7 +2390,11 @@ if ( ! function_exists( 'wp_new_user_notification' ) ) :
 			return;
 		}
 
+<<<<<<< HEAD
 		$switched_locale = switch_to_user_locale( $user_id );
+=======
+		$switched_locale = switch_to_locale( get_user_locale( $user ) );
+>>>>>>> fb785cbb (Initial commit)
 
 		/* translators: %s: User login. */
 		$message  = sprintf( __( 'Username: %s' ), $user->user_login ) . "\r\n\r\n";
@@ -2253,22 +2450,36 @@ if ( ! function_exists( 'wp_nonce_tick' ) ) :
 	 * updated, e.g. by autosave.
 	 *
 	 * @since 2.5.0
+<<<<<<< HEAD
 	 * @since 6.1.0 Added `$action` argument.
 	 *
 	 * @param string|int $action Optional. The nonce action. Default -1.
 	 * @return float Float value rounded up to the next highest integer.
 	 */
 	function wp_nonce_tick( $action = -1 ) {
+=======
+	 *
+	 * @return float Float value rounded up to the next highest integer.
+	 */
+	function wp_nonce_tick() {
+>>>>>>> fb785cbb (Initial commit)
 		/**
 		 * Filters the lifespan of nonces in seconds.
 		 *
 		 * @since 2.5.0
+<<<<<<< HEAD
 		 * @since 6.1.0 Added `$action` argument to allow for more targeted filters.
 		 *
 		 * @param int        $lifespan Lifespan of nonces in seconds. Default 86,400 seconds, or one day.
 		 * @param string|int $action   The nonce action, or -1 if none was provided.
 		 */
 		$nonce_life = apply_filters( 'nonce_life', DAY_IN_SECONDS, $action );
+=======
+		 *
+		 * @param int $lifespan Lifespan of nonces in seconds. Default 86,400 seconds, or one day.
+		 */
+		$nonce_life = apply_filters( 'nonce_life', DAY_IN_SECONDS );
+>>>>>>> fb785cbb (Initial commit)
 
 		return ceil( time() / ( $nonce_life / 2 ) );
 	}
@@ -2298,8 +2509,13 @@ if ( ! function_exists( 'wp_verify_nonce' ) ) :
 			 *
 			 * @since 3.5.0
 			 *
+<<<<<<< HEAD
 			 * @param int        $uid    ID of the nonce-owning user.
 			 * @param string|int $action The nonce action, or -1 if none was provided.
+=======
+			 * @param int    $uid    ID of the nonce-owning user.
+			 * @param string $action The nonce action.
+>>>>>>> fb785cbb (Initial commit)
 			 */
 			$uid = apply_filters( 'nonce_user_logged_out', $uid, $action );
 		}
@@ -2309,7 +2525,11 @@ if ( ! function_exists( 'wp_verify_nonce' ) ) :
 		}
 
 		$token = wp_get_session_token();
+<<<<<<< HEAD
 		$i     = wp_nonce_tick( $action );
+=======
+		$i     = wp_nonce_tick();
+>>>>>>> fb785cbb (Initial commit)
 
 		// Nonce generated 0-12 hours ago.
 		$expected = substr( wp_hash( $i . '|' . $action . '|' . $uid . '|' . $token, 'nonce' ), -12, 10 );
@@ -2346,7 +2566,11 @@ if ( ! function_exists( 'wp_create_nonce' ) ) :
 	 * and window of time.
 	 *
 	 * @since 2.0.3
+<<<<<<< HEAD
 	 * @since 4.0.0 Session tokens were integrated with nonce creation.
+=======
+	 * @since 4.0.0 Session tokens were integrated with nonce creation
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param string|int $action Scalar value to add context to the nonce.
 	 * @return string The token.
@@ -2359,8 +2583,13 @@ if ( ! function_exists( 'wp_create_nonce' ) ) :
 			$uid = apply_filters( 'nonce_user_logged_out', $uid, $action );
 		}
 
+<<<<<<< HEAD
 		$token = wp_get_session_token( $action );
 		$i     = wp_nonce_tick( $action );
+=======
+		$token = wp_get_session_token();
+		$i     = wp_nonce_tick();
+>>>>>>> fb785cbb (Initial commit)
 
 		return substr( wp_hash( $i . '|' . $action . '|' . $uid . '|' . $token, 'nonce' ), -12, 10 );
 	}
@@ -2396,7 +2625,11 @@ if ( ! function_exists( 'wp_salt' ) ) :
 	 *
 	 * @link https://api.wordpress.org/secret-key/1.1/salt/ Create secrets for wp-config.php
 	 *
+<<<<<<< HEAD
 	 * @param string $scheme Authentication scheme (auth, secure_auth, logged_in, nonce).
+=======
+	 * @param string $scheme Authentication scheme (auth, secure_auth, logged_in, nonce)
+>>>>>>> fb785cbb (Initial commit)
 	 * @return string Salt value
 	 */
 	function wp_salt( $scheme = 'auth' ) {
@@ -2416,6 +2649,7 @@ if ( ! function_exists( 'wp_salt' ) ) :
 
 		static $duplicated_keys;
 		if ( null === $duplicated_keys ) {
+<<<<<<< HEAD
 			$duplicated_keys = array(
 				'put your unique phrase here'       => true,
 				/*
@@ -2425,6 +2659,9 @@ if ( ! function_exists( 'wp_salt' ) ) :
 				 */
 				__( 'put your unique phrase here' ) => true,
 			);
+=======
+			$duplicated_keys = array( 'put your unique phrase here' => true );
+>>>>>>> fb785cbb (Initial commit)
 			foreach ( array( 'AUTH', 'SECURE_AUTH', 'LOGGED_IN', 'NONCE', 'SECRET' ) as $first ) {
 				foreach ( array( 'KEY', 'SALT' ) as $second ) {
 					if ( ! defined( "{$first}_{$second}" ) ) {
@@ -2480,6 +2717,7 @@ endif;
 
 if ( ! function_exists( 'wp_hash' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Gets hash of given string.
 	 *
 	 * @since 2.0.3
@@ -2487,6 +2725,15 @@ if ( ! function_exists( 'wp_hash' ) ) :
 	 * @param string $data   Plain text to hash.
 	 * @param string $scheme Authentication scheme (auth, secure_auth, logged_in, nonce).
 	 * @return string Hash of $data.
+=======
+	 * Get hash of given string.
+	 *
+	 * @since 2.0.3
+	 *
+	 * @param string $data   Plain text to hash
+	 * @param string $scheme Authentication scheme (auth, secure_auth, logged_in, nonce)
+	 * @return string Hash of $data
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wp_hash( $data, $scheme = 'auth' ) {
 		$salt = wp_salt( $scheme );
@@ -2497,7 +2744,11 @@ endif;
 
 if ( ! function_exists( 'wp_hash_password' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Creates a hash (encrypt) of a plain text password.
+=======
+	 * Create a hash (encrypt) of a plain text password.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * For integration with other applications, this function can be overwritten to
 	 * instead use the other package password checking algorithm.
@@ -2506,8 +2757,13 @@ if ( ! function_exists( 'wp_hash_password' ) ) :
 	 *
 	 * @global PasswordHash $wp_hasher PHPass object
 	 *
+<<<<<<< HEAD
 	 * @param string $password Plain text user password to hash.
 	 * @return string The hash string of the password.
+=======
+	 * @param string $password Plain text user password to hash
+	 * @return string The hash string of the password
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wp_hash_password( $password ) {
 		global $wp_hasher;
@@ -2537,6 +2793,7 @@ if ( ! function_exists( 'wp_check_password' ) ) :
 	 * @since 2.5.0
 	 *
 	 * @global PasswordHash $wp_hasher PHPass object used for checking the password
+<<<<<<< HEAD
 	 *                                 against the $hash + $password.
 	 * @uses PasswordHash::CheckPassword
 	 *
@@ -2544,6 +2801,15 @@ if ( ! function_exists( 'wp_check_password' ) ) :
 	 * @param string     $hash     Hash of the user's password to check against.
 	 * @param string|int $user_id  Optional. User ID.
 	 * @return bool False, if the $password does not match the hashed password.
+=======
+	 *                                 against the $hash + $password
+	 * @uses PasswordHash::CheckPassword
+	 *
+	 * @param string     $password Plaintext user's password
+	 * @param string     $hash     Hash of the user's password to check against.
+	 * @param string|int $user_id  Optional. User ID.
+	 * @return bool False, if the $password does not match the hashed password
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wp_check_password( $password, $hash, $user_id = '' ) {
 		global $wp_hasher;
@@ -2632,6 +2898,7 @@ endif;
 
 if ( ! function_exists( 'wp_rand' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Generates a random non-negative number.
 	 *
 	 * @since 2.6.2
@@ -2647,12 +2914,27 @@ if ( ! function_exists( 'wp_rand' ) ) :
 	 * @return int A random non-negative number between min and max.
 	 */
 	function wp_rand( $min = null, $max = null ) {
+=======
+	 * Generates a random number.
+	 *
+	 * @since 2.6.2
+	 * @since 4.4.0 Uses PHP7 random_int() or the random_compat library if available.
+	 *
+	 * @global string $rnd_value
+	 *
+	 * @param int $min Lower limit for the generated number
+	 * @param int $max Upper limit for the generated number
+	 * @return int A random number between min and max
+	 */
+	function wp_rand( $min = 0, $max = 0 ) {
+>>>>>>> fb785cbb (Initial commit)
 		global $rnd_value;
 
 		// Some misconfigured 32-bit environments (Entropy PHP, for example)
 		// truncate integers larger than PHP_INT_MAX to PHP_INT_MAX rather than overflowing them to floats.
 		$max_random_number = 3000000000 === 2147483647 ? (float) '4294967295' : 4294967295; // 4294967295 = 0xffffffff
 
+<<<<<<< HEAD
 		if ( null === $min ) {
 			$min = 0;
 		}
@@ -2661,6 +2943,8 @@ if ( ! function_exists( 'wp_rand' ) ) :
 			$max = $max_random_number;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		// We only handle ints, floats are truncated to their integer value.
 		$min = (int) $min;
 		$max = (int) $max;
@@ -2669,9 +2953,16 @@ if ( ! function_exists( 'wp_rand' ) ) :
 		static $use_random_int_functionality = true;
 		if ( $use_random_int_functionality ) {
 			try {
+<<<<<<< HEAD
 				// wp_rand() can accept arguments in either order, PHP cannot.
 				$_max = max( $min, $max );
 				$_min = min( $min, $max );
+=======
+				$_max = ( 0 != $max ) ? $max : $max_random_number;
+				// wp_rand() can accept arguments in either order, PHP cannot.
+				$_max = max( $min, $_max );
+				$_min = min( $min, $_max );
+>>>>>>> fb785cbb (Initial commit)
 				$val  = random_int( $_min, $_max );
 				if ( false !== $val ) {
 					return absint( $val );
@@ -2711,7 +3002,13 @@ if ( ! function_exists( 'wp_rand' ) ) :
 		$value = abs( hexdec( $value ) );
 
 		// Reduce the value to be within the min - max range.
+<<<<<<< HEAD
 		$value = $min + ( $max - $min + 1 ) * $value / ( $max_random_number + 1 );
+=======
+		if ( 0 != $max ) {
+			$value = $min + ( $max - $min + 1 ) * $value / ( $max_random_number + 1 );
+		}
+>>>>>>> fb785cbb (Initial commit)
 
 		return abs( (int) $value );
 	}
@@ -2732,8 +3029,13 @@ if ( ! function_exists( 'wp_set_password' ) ) :
 	 *
 	 * @global wpdb $wpdb WordPress database abstraction object.
 	 *
+<<<<<<< HEAD
 	 * @param string $password The plaintext new user password.
 	 * @param int    $user_id  User ID.
+=======
+	 * @param string $password The plaintext new user password
+	 * @param int    $user_id  User ID
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wp_set_password( $password, $user_id ) {
 		global $wpdb;
@@ -2749,6 +3051,7 @@ if ( ! function_exists( 'wp_set_password' ) ) :
 		);
 
 		clean_user_cache( $user_id );
+<<<<<<< HEAD
 
 		/**
 		 * Fires after the user password is set.
@@ -2759,16 +3062,23 @@ if ( ! function_exists( 'wp_set_password' ) ) :
 		 * @param int    $user_id  The ID of the user whose password was just set.
 		 */
 		do_action( 'wp_set_password', $password, $user_id );
+=======
+>>>>>>> fb785cbb (Initial commit)
 	}
 endif;
 
 if ( ! function_exists( 'get_avatar' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Retrieves the avatar `<img>` tag for a user, email address, MD5 hash, comment, or post.
+=======
+	 * Retrieve the avatar `<img>` tag for a user, email address, MD5 hash, comment, or post.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.5.0
 	 * @since 4.2.0 Optional `$args` parameter added.
 	 *
+<<<<<<< HEAD
 	 * @param mixed  $id_or_email   The Gravatar to retrieve. Accepts a user_id, gravatar md5 hash,
 	 *                              user email, WP_User object, WP_Post object, or WP_Comment object.
 	 * @param int    $size          Optional. Height and width of the avatar image file in pixels. Default 96.
@@ -2779,6 +3089,18 @@ if ( ! function_exists( 'get_avatar' ) ) :
 	 *                              or 'gravatar_default' (the Gravatar logo). Default is the value of the
 	 *                              'avatar_default' option, with a fallback of 'mystery'.
 	 * @param string $alt           Optional. Alternative text to use in img tag. Default empty.
+=======
+	 * @param mixed  $id_or_email The Gravatar to retrieve. Accepts a user_id, gravatar md5 hash,
+	 *                            user email, WP_User object, WP_Post object, or WP_Comment object.
+	 * @param int    $size        Optional. Height and width of the avatar image file in pixels. Default 96.
+	 * @param string $default     Optional. URL for the default image or a default type. Accepts '404'
+	 *                            (return a 404 instead of a default image), 'retro' (8bit), 'monsterid'
+	 *                            (monster), 'wavatar' (cartoon face), 'indenticon' (the "quilt"),
+	 *                            'mystery', 'mm', or 'mysteryman' (The Oyster Man), 'blank' (transparent GIF),
+	 *                            or 'gravatar_default' (the Gravatar logo). Default is the value of the
+	 *                            'avatar_default' option, with a fallback of 'mystery'.
+	 * @param string $alt         Optional. Alternative text to use in img tag. Default empty.
+>>>>>>> fb785cbb (Initial commit)
 	 * @param array  $args {
 	 *     Optional. Extra arguments to retrieve the avatar.
 	 *
@@ -2799,7 +3121,11 @@ if ( ! function_exists( 'get_avatar' ) ) :
 	 * }
 	 * @return string|false `<img>` tag for the user's avatar. False on failure.
 	 */
+<<<<<<< HEAD
 	function get_avatar( $id_or_email, $size = 96, $default_value = '', $alt = '', $args = null ) {
+=======
+	function get_avatar( $id_or_email, $size = 96, $default = '', $alt = '', $args = null ) {
+>>>>>>> fb785cbb (Initial commit)
 		$defaults = array(
 			// get_avatar_data() args.
 			'size'          => 96,
@@ -2814,7 +3140,10 @@ if ( ! function_exists( 'get_avatar' ) ) :
 			'force_display' => false,
 			'loading'       => null,
 			'extra_attr'    => '',
+<<<<<<< HEAD
 			'decoding'      => 'async',
+=======
+>>>>>>> fb785cbb (Initial commit)
 		);
 
 		if ( wp_lazy_loading_enabled( 'img', 'get_avatar' ) ) {
@@ -2826,7 +3155,11 @@ if ( ! function_exists( 'get_avatar' ) ) :
 		}
 
 		$args['size']    = (int) $size;
+<<<<<<< HEAD
 		$args['default'] = $default_value;
+=======
+		$args['default'] = $default;
+>>>>>>> fb785cbb (Initial commit)
 		$args['alt']     = $alt;
 
 		$args = wp_parse_args( $args, $defaults );
@@ -2890,16 +3223,25 @@ if ( ! function_exists( 'get_avatar' ) ) :
 			}
 		}
 
+<<<<<<< HEAD
 		// Add `loading` and `decoding` attributes.
 		$extra_attr = $args['extra_attr'];
 
 		if ( in_array( $args['loading'], array( 'lazy', 'eager' ), true )
 			&& ! preg_match( '/\bloading\s*=/', $extra_attr )
 		) {
+=======
+		// Add `loading` attribute.
+		$extra_attr = $args['extra_attr'];
+		$loading    = $args['loading'];
+
+		if ( in_array( $loading, array( 'lazy', 'eager' ), true ) && ! preg_match( '/\bloading\s*=/', $extra_attr ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			if ( ! empty( $extra_attr ) ) {
 				$extra_attr .= ' ';
 			}
 
+<<<<<<< HEAD
 			$extra_attr .= "loading='{$args['loading']}'";
 		}
 
@@ -2911,6 +3253,9 @@ if ( ! function_exists( 'get_avatar' ) ) :
 			}
 
 			$extra_attr .= "decoding='{$args['decoding']}'";
+=======
+			$extra_attr .= "loading='{$loading}'";
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		$avatar = sprintf(
@@ -2930,6 +3275,7 @@ if ( ! function_exists( 'get_avatar' ) ) :
 		 * @since 2.5.0
 		 * @since 4.2.0 The `$args` parameter was added.
 		 *
+<<<<<<< HEAD
 		 * @param string $avatar        HTML for the user's avatar.
 		 * @param mixed  $id_or_email   The avatar to retrieve. Accepts a user_id, Gravatar MD5 hash,
 		 *                              user email, WP_User object, WP_Post object, or WP_Comment object.
@@ -2938,6 +3284,16 @@ if ( ! function_exists( 'get_avatar' ) ) :
 		 *                              'wavatar', 'indenticon', 'mystery', 'mm', 'mysteryman', 'blank', or 'gravatar_default'.
 		 * @param string $alt           Alternative text to use in the avatar image tag.
 		 * @param array  $args          Arguments passed to get_avatar_data(), after processing.
+=======
+		 * @param string $avatar      HTML for the user's avatar.
+		 * @param mixed  $id_or_email The avatar to retrieve. Accepts a user_id, Gravatar MD5 hash,
+		 *                            user email, WP_User object, WP_Post object, or WP_Comment object.
+		 * @param int    $size        Square avatar width and height in pixels to retrieve.
+		 * @param string $default     URL for the default image or a default type. Accepts '404', 'retro', 'monsterid',
+		 *                            'wavatar', 'indenticon', 'mystery', 'mm', 'mysteryman', 'blank', or 'gravatar_default'.
+		 * @param string $alt         Alternative text to use in the avatar image tag.
+		 * @param array  $args        Arguments passed to get_avatar_data(), after processing.
+>>>>>>> fb785cbb (Initial commit)
 		 */
 		return apply_filters( 'get_avatar', $avatar, $id_or_email, $args['size'], $args['default'], $args['alt'], $args );
 	}
@@ -2957,8 +3313,13 @@ if ( ! function_exists( 'wp_text_diff' ) ) :
 	 * @uses Text_Diff
 	 * @uses WP_Text_Diff_Renderer_Table
 	 *
+<<<<<<< HEAD
 	 * @param string       $left_string  "old" (left) version of string.
 	 * @param string       $right_string "new" (right) version of string.
+=======
+	 * @param string       $left_string  "old" (left) version of string
+	 * @param string       $right_string "new" (right) version of string
+>>>>>>> fb785cbb (Initial commit)
 	 * @param string|array $args {
 	 *     Associative array of options to pass to WP_Text_Diff_Renderer_Table().
 	 *

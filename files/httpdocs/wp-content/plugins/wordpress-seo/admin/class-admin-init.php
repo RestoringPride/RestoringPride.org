@@ -36,13 +36,26 @@ class WPSEO_Admin_Init {
 
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_dismissible' ] );
 		add_action( 'admin_init', [ $this, 'unsupported_php_notice' ], 15 );
+<<<<<<< HEAD
 		add_action( 'admin_init', [ $this, 'remove_translations_notification' ], 15 );
+=======
+>>>>>>> fb785cbb (Initial commit)
 		add_action( 'admin_init', [ $this->asset_manager, 'register_assets' ] );
 		add_action( 'admin_init', [ $this, 'show_hook_deprecation_warnings' ] );
 		add_action( 'admin_init', [ 'WPSEO_Plugin_Conflict', 'hook_check_for_plugin_conflicts' ] );
 		add_action( 'admin_notices', [ $this, 'permalink_settings_notice' ] );
 		add_action( 'post_submitbox_misc_actions', [ $this, 'add_publish_box_section' ] );
 
+<<<<<<< HEAD
+=======
+		/*
+		 * The `admin_notices` hook fires on single site admin pages vs.
+		 * `network_admin_notices` which fires on multisite admin pages and
+		 * `user_admin_notices` which fires on multisite user admin pagss.
+		 */
+		add_action( 'admin_notices', [ $this, 'search_engines_discouraged_notice' ] );
+
+>>>>>>> fb785cbb (Initial commit)
 		$this->load_meta_boxes();
 		$this->load_taxonomy_class();
 		$this->load_admin_page_class();
@@ -59,6 +72,7 @@ class WPSEO_Admin_Init {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Removes any notification for incomplete translations.
 	 *
 	 * @return void
@@ -69,6 +83,8 @@ class WPSEO_Admin_Init {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Creates an unsupported PHP version notification in the notification center.
 	 *
 	 * @return void
@@ -168,6 +184,7 @@ class WPSEO_Admin_Init {
 			// For backwards compatabilty, this still needs a global, for now...
 			$GLOBALS['wpseo_admin_pages'] = new WPSEO_Admin_Pages();
 
+<<<<<<< HEAD
 			$page = null;
 
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reason: We are not processing form information.
@@ -178,6 +195,12 @@ class WPSEO_Admin_Init {
 
 			// Only register the yoast i18n when the page is a Yoast SEO page.
 			if ( $page !== null && WPSEO_Utils::is_yoast_seo_free_page( $page ) ) {
+=======
+			$page = filter_input( INPUT_GET, 'page' );
+			// Only register the yoast i18n when the page is a Yoast SEO page.
+			if ( WPSEO_Utils::is_yoast_seo_free_page( $page ) ) {
+				$this->register_i18n_promo_class();
+>>>>>>> fb785cbb (Initial commit)
 				if ( $page !== 'wpseo_titles' ) {
 					$this->register_premium_upsell_admin_block();
 				}
@@ -206,6 +229,50 @@ class WPSEO_Admin_Init {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Registers the promotion class for our GlotPress instance, then creates a notification with the i18n promo.
+	 *
+	 * @link https://github.com/Yoast/i18n-module
+	 */
+	private function register_i18n_promo_class() {
+		// BC, because an older version of the i18n-module didn't have this class.
+		$i18n_module = new Yoast_I18n_WordPressOrg_v3(
+			[
+				'textdomain'  => 'wordpress-seo',
+				'plugin_name' => 'Yoast SEO',
+				'hook'        => 'wpseo_admin_promo_footer',
+			],
+			false
+		);
+
+		$message = $i18n_module->get_promo_message();
+
+		if ( $message !== '' ) {
+			$message .= $i18n_module->get_dismiss_i18n_message_button();
+		}
+
+		$notification_center = Yoast_Notification_Center::get();
+
+		$notification = new Yoast_Notification(
+			$message,
+			[
+				'type' => Yoast_Notification::WARNING,
+				'id'   => 'i18nModuleTranslationAssistance',
+			]
+		);
+
+		if ( $message ) {
+			$notification_center->add_notification( $notification );
+
+			return;
+		}
+
+		$notification_center->remove_notification( $notification );
+	}
+
+	/**
+>>>>>>> fb785cbb (Initial commit)
 	 * See if we should start our XML Sitemaps Admin class.
 	 */
 	private function load_xml_sitemaps_admin() {
@@ -215,6 +282,18 @@ class WPSEO_Admin_Init {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Checks whether search engines are discouraged from indexing the site.
+	 *
+	 * @return bool Whether search engines are discouraged from indexing the site.
+	 */
+	private function are_search_engines_discouraged() {
+		return (string) get_option( 'blog_public' ) === '0';
+	}
+
+	/**
+>>>>>>> fb785cbb (Initial commit)
 	 * Shows deprecation warnings to the user if a plugin has registered a filter we have deprecated.
 	 */
 	public function show_hook_deprecation_warnings() {
@@ -312,6 +391,56 @@ class WPSEO_Admin_Init {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Determines whether and where the "search engines discouraged" admin notice should be displayed.
+	 *
+	 * @return bool Whether the "search engines discouraged" admin notice should be displayed.
+	 */
+	private function should_display_search_engines_discouraged_notice() {
+		$discouraged_pages = [
+			'index.php',
+			'plugins.php',
+			'update-core.php',
+		];
+
+		return (
+			$this->are_search_engines_discouraged()
+			&& WPSEO_Capability_Utils::current_user_can( 'manage_options' )
+			&& WPSEO_Options::get( 'ignore_search_engines_discouraged_notice', false ) === false
+			&& (
+				$this->on_wpseo_admin_page()
+				|| in_array( $this->pagenow, $discouraged_pages, true )
+			)
+		);
+	}
+
+	/**
+	 * Displays an admin notice when WordPress is set to discourage search engines from indexing the site.
+	 *
+	 * @return void
+	 */
+	public function search_engines_discouraged_notice() {
+		if ( ! $this->should_display_search_engines_discouraged_notice() ) {
+			return;
+		}
+
+		printf(
+			'<div id="robotsmessage" class="notice notice-error"><p><strong>%1$s</strong> %2$s <button type="button" id="robotsmessage-dismiss-button" class="button-link hide-if-no-js" data-nonce="%3$s">%4$s</button></p></div>',
+			esc_html__( 'Huge SEO Issue: You\'re blocking access to robots.', 'wordpress-seo' ),
+			sprintf(
+				/* translators: 1: Link start tag to the WordPress Reading Settings page, 2: Link closing tag. */
+				esc_html__( 'If you want search engines to show this site in their results, you must %1$sgo to your Reading Settings%2$s and uncheck the box for Search Engine Visibility.', 'wordpress-seo' ),
+				'<a href="' . esc_url( admin_url( 'options-reading.php' ) ) . '">',
+				'</a>'
+			),
+			esc_js( wp_create_nonce( 'wpseo-ignore' ) ),
+			esc_html__( 'I don\'t want this site to show in the search results.', 'wordpress-seo' )
+		);
+	}
+
+	/**
+>>>>>>> fb785cbb (Initial commit)
 	 * Adds a custom Yoast section within the Classic Editor publish box.
 	 *
 	 * @param \WP_Post $post The current post object.
@@ -331,4 +460,71 @@ class WPSEO_Admin_Init {
 			do_action( 'wpseo_publishbox_misc_actions', $post );
 		}
 	}
+<<<<<<< HEAD
+=======
+
+	/* ********************* DEPRECATED METHODS ********************* */
+
+	/**
+	 * Notify about the default tagline if the user hasn't changed it.
+	 *
+	 * @deprecated 13.2
+	 * @codeCoverageIgnore
+	 */
+	public function tagline_notice() {
+		_deprecated_function( __METHOD__, 'WPSEO 13.2' );
+	}
+
+	/**
+	 * Returns whether or not the site has the default tagline.
+	 *
+	 * @deprecated 13.2
+	 * @codeCoverageIgnore
+	 *
+	 * @return bool
+	 */
+	public function has_default_tagline() {
+		_deprecated_function( __METHOD__, 'WPSEO 13.2' );
+
+		$blog_description         = get_bloginfo( 'description' );
+		$default_blog_description = 'Just another WordPress site';
+
+		// We are using the WordPress internal translation.
+		$translated_blog_description = __( 'Just another WordPress site', 'default' );
+
+		return $translated_blog_description === $blog_description || $default_blog_description === $blog_description;
+	}
+
+	/**
+	 * Shows an alert when the permalink doesn't contain %postname%.
+	 *
+	 * @deprecated 13.2
+	 * @codeCoverageIgnore
+	 */
+	public function permalink_notice() {
+		_deprecated_function( __METHOD__, 'WPSEO 13.2' );
+	}
+
+	/**
+	 * Add an alert if the blog is not publicly visible.
+	 *
+	 * @deprecated 14.1
+	 * @codeCoverageIgnore
+	 */
+	public function blog_public_notice() {
+		_deprecated_function( __METHOD__, 'WPSEO 14.1' );
+	}
+
+	/**
+	 * Handles the notifiers for the dashboard page.
+	 *
+	 * @deprecated 14.1
+	 * @codeCoverageIgnore
+	 *
+	 * @return void
+	 */
+	public function handle_notifications() {
+		_deprecated_function( __METHOD__, 'WPSEO 14.1' );
+	}
+>>>>>>> fb785cbb (Initial commit)
 }

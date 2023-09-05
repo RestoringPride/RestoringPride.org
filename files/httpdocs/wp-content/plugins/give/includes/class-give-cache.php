@@ -338,8 +338,13 @@ class Give_Cache {
 				"SELECT option_name, option_value
 						FROM {$wpdb->options}
 						Where option_name
+<<<<<<< HEAD
 						LIKE '%s'",
 				'%give_cache%'
+=======
+						LIKE '%%%s%%'",
+				'give_cache'
+>>>>>>> fb785cbb (Initial commit)
 			),
 			ARRAY_A
 		);
@@ -397,8 +402,13 @@ class Give_Cache {
 					"SELECT {$field_names }
 						FROM {$wpdb->options}
 						Where option_name
+<<<<<<< HEAD
 						LIKE '%s'",
 					"%give_cache_{$option_name}%"
+=======
+						LIKE '%%%s%%'",
+					"give_cache_{$option_name}"
+>>>>>>> fb785cbb (Initial commit)
 				),
 				ARRAY_A
 			);
@@ -408,8 +418,13 @@ class Give_Cache {
 					"SELECT *
 						FROM {$wpdb->options}
 						Where option_name
+<<<<<<< HEAD
 						LIKE '%s'",
 					"%give_cache_{$option_name}%"
+=======
+						LIKE '%%%s%%'",
+					"give_cache_{$option_name}"
+>>>>>>> fb785cbb (Initial commit)
 				),
 				1
 			);

@@ -27,6 +27,7 @@ trait EnumInteractsWithQueryBuilder
 
         return $columns;
     }
+<<<<<<< HEAD
 
     /**
      * @since 2.24.0
@@ -52,4 +53,6 @@ trait EnumInteractsWithQueryBuilder
 
         return $columns;
     }
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

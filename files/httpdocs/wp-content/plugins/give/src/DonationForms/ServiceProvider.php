@@ -2,7 +2,10 @@
 
 namespace Give\DonationForms;
 
+<<<<<<< HEAD
 use Give\DonationForms\ListTable\DonationFormsListTable;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\DonationForms\Repositories\DonationFormsRepository;
 use Give\Helpers\Hooks;
 use Give\ServiceProviders\ServiceProvider as ServiceProviderInterface;
@@ -17,6 +20,7 @@ class ServiceProvider implements ServiceProviderInterface
      */
     public function register()
     {
+<<<<<<< HEAD
         give()->singleton('donationForms', DonationFormsRepository::class);
         give()->singleton(DonationFormsListTable::class, function() {
             $listTable = new DonationFormsListTable();
@@ -24,6 +28,9 @@ class ServiceProvider implements ServiceProviderInterface
 
             return $listTable;
         });
+=======
+        give()->singleton('donationFormsRepository', DonationFormsRepository::class);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -36,7 +43,11 @@ class ServiceProvider implements ServiceProviderInterface
         // only register new admin page if user hasn't chosen to use the old one
         if(empty($showLegacy))
         {
+<<<<<<< HEAD
             Hooks::addAction('admin_menu', DonationFormsAdminPage::class, 'register', 0);
+=======
+            Hooks::addAction('admin_menu', DonationFormsAdminPage::class, 'register');
+>>>>>>> fb785cbb (Initial commit)
             Hooks::addAction('admin_menu', DonationFormsAdminPage::class, 'highlightAllFormsMenuItem');
 
             if (DonationFormsAdminPage::isShowing()) {

@@ -5,7 +5,10 @@
  * @package WordPress
  * @since 2.1.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Ajax_Response {
 	/**
 	 * Store XML responses to send.

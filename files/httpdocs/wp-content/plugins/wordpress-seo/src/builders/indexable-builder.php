@@ -2,7 +2,10 @@
 
 namespace Yoast\WP\SEO\Builders;
 
+<<<<<<< HEAD
 use Yoast\WP\SEO\Exceptions\Indexable\Not_Built_Exception;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Exceptions\Indexable\Source_Exception;
 use Yoast\WP\SEO\Helpers\Indexable_Helper;
 use Yoast\WP\SEO\Models\Indexable;
@@ -301,6 +304,7 @@ class Indexable_Builder {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Build and author indexable from an author id if it does not exist yet, or if the author indexable needs to be upgraded.
 	 *
 	 * @param int $author_id The author id.
@@ -327,6 +331,8 @@ class Indexable_Builder {
 	// phpcs:disable Squiz.Commenting.FunctionCommentThrowTag.Missing -- Exceptions are handled by the catch statement in the method.
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Rebuilds an Indexable from scratch.
 	 *
 	 * @param Indexable  $indexable The Indexable to (re)build.
@@ -342,9 +348,12 @@ class Indexable_Builder {
 		$indexable = $this->ensure_indexable( $indexable, $defaults );
 
 		try {
+<<<<<<< HEAD
 			if ( $indexable->object_id === 0 ) {
 				throw Not_Built_Exception::invalid_object_id( $indexable->object_id );
 			}
+=======
+>>>>>>> fb785cbb (Initial commit)
 			switch ( $indexable->object_type ) {
 
 				case 'post':
@@ -354,19 +363,39 @@ class Indexable_Builder {
 						return $indexable;
 					}
 
+<<<<<<< HEAD
 					// Save indexable, to make sure it can be queried when building related objects like the author indexable and hierarchy.
 					$indexable = $this->save_indexable( $indexable, $indexable_before );
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 					// Always rebuild the primary term.
 					$this->primary_term_builder->build( $indexable->object_id );
 
 					// Always rebuild the hierarchy; this needs the primary term to run correctly.
 					$this->hierarchy_builder->build( $indexable );
 
+<<<<<<< HEAD
 					$this->maybe_build_author_indexable( $indexable->author_id );
 
 					// The indexable is already saved, so return early.
 					return $indexable;
+=======
+					// Rebuild the author indexable only when necessary.
+					$author_indexable = $this->indexable_repository->find_by_id_and_type(
+						$indexable->author_id,
+						'user',
+						false
+					);
+					if ( ! $author_indexable || $this->version_manager->indexable_needs_upgrade( $author_indexable ) ) {
+						$author_defaults = [
+							'object_type' => 'user',
+							'object_id'   => $indexable->author_id,
+						];
+						$this->build( $author_indexable, $author_defaults );
+					}
+					break;
+>>>>>>> fb785cbb (Initial commit)
 
 				case 'user':
 					$indexable = $this->author_builder->build( $indexable->object_id, $indexable );
@@ -374,6 +403,7 @@ class Indexable_Builder {
 
 				case 'term':
 					$indexable = $this->term_builder->build( $indexable->object_id, $indexable );
+<<<<<<< HEAD
 
 					// Save indexable, to make sure it can be queried when building hierarchy.
 					$indexable = $this->save_indexable( $indexable, $indexable_before );
@@ -382,6 +412,10 @@ class Indexable_Builder {
 
 					// The indexable is already saved, so return early.
 					return $indexable;
+=======
+					$this->hierarchy_builder->build( $indexable );
+					break;
+>>>>>>> fb785cbb (Initial commit)
 
 				case 'home-page':
 					$indexable = $this->home_page_builder->build( $indexable );
@@ -409,6 +443,7 @@ class Indexable_Builder {
 			 *
 			 * @var Indexable $indexable
 			 */
+<<<<<<< HEAD
 			$indexable = $this->ensure_indexable(
 				$indexable,
 				[
@@ -420,15 +455,31 @@ class Indexable_Builder {
 			);
 			// If we already had an existing indexable, mark it as unindexed. We cannot rely on its validity anymore.
 			$indexable->post_status = 'unindexed';
+=======
+			$indexable = $this->indexable_repository
+				->query()
+				->create(
+					[
+						'object_id'   => $indexable->object_id,
+						'object_type' => $indexable->object_type,
+						'post_status' => 'unindexed',
+						'version'     => 0,
+					]
+				);
+>>>>>>> fb785cbb (Initial commit)
 			// Make sure that the indexing process doesn't get stuck in a loop on this broken indexable.
 			$indexable = $this->version_manager->set_latest( $indexable );
 
 			return $this->save_indexable( $indexable, $indexable_before );
 		}
+<<<<<<< HEAD
 		catch ( Not_Built_Exception $exception ) {
 			return false;
 		}
 	}
 
 	// phpcs:enable
+=======
+	}
+>>>>>>> fb785cbb (Initial commit)
 }

@@ -22,7 +22,10 @@ _deprecated_file(
  *
  * @see SimplePie_Cache
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Feed_Cache extends SimplePie_Cache {
 
 	/**

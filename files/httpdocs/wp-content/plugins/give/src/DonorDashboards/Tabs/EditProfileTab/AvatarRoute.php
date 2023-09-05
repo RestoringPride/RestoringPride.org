@@ -31,7 +31,11 @@ class AvatarRoute extends RouteAbstract
     /**
      * @inheritDoc
      *
+<<<<<<< HEAD
      * @return array|WP_REST_Response
+=======
+     * @return array
+>>>>>>> fb785cbb (Initial commit)
      */
     public function handleRequest(WP_REST_Request $request)
     {
@@ -94,6 +98,7 @@ class AvatarRoute extends RouteAbstract
                 ];
             }
         }
+<<<<<<< HEAD
 
         return new WP_REST_Response(
             [
@@ -104,6 +109,8 @@ class AvatarRoute extends RouteAbstract
                 ],
             ]
         );
+=======
+>>>>>>> fb785cbb (Initial commit)
     }
 
 }

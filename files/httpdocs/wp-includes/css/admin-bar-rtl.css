@@ -16,7 +16,10 @@ html {
 	font-size: 13px;
 	font-weight: 400;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+<<<<<<< HEAD
 	font-style: normal;
+=======
+>>>>>>> fb785cbb (Initial commit)
 	line-height: 2.46153846;
 	border-radius: 0;
 	box-sizing: content-box;
@@ -720,7 +723,15 @@ html:lang(he-il) .rtl #wpadminbar * {
 #wpadminbar .screen-reader-shortcut {
 	position: absolute;
 	top: -1000em;
+<<<<<<< HEAD
 	right: 6px;
+=======
+}
+
+#wpadminbar .screen-reader-shortcut:focus {
+	right: 6px;
+	top: 7px;
+>>>>>>> fb785cbb (Initial commit)
 	height: auto;
 	width: auto;
 	display: block;
@@ -732,11 +743,14 @@ html:lang(he-il) .rtl #wpadminbar * {
 	z-index: 100000;
 	line-height: normal;
 	text-decoration: none;
+<<<<<<< HEAD
 }
 
 #wpadminbar .screen-reader-shortcut:focus {
 	top: 7px;
 	background: #f0f0f1;
+=======
+>>>>>>> fb785cbb (Initial commit)
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 }
 

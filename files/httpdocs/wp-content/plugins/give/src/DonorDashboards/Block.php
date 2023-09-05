@@ -42,12 +42,16 @@ class Block
     /**
      * Returns Donor Profile block markup
      *
+<<<<<<< HEAD
      * @since 2.22.1 Add script for iframe onload event to activate gutenberg edit mode.
      *             Gutenberg block edit mode activates when focus set to block container.
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.10.0
      **/
     public function renderCallback($attributes)
     {
+<<<<<<< HEAD
         $output =  $this->donorDashboard->getOutput($attributes);
 
         if( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
@@ -62,6 +66,9 @@ class Block
         }
 
         return $output;
+=======
+        return $this->donorDashboard->getOutput($attributes);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**

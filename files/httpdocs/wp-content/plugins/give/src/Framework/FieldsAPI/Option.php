@@ -18,12 +18,19 @@ class Option implements JsonSerializable
     protected $value;
 
     /**
+<<<<<<< HEAD
      * @since 2.23.1 Make constructor final to avoid unsafe usage of `new static()`.
      *
      * @param string  $value
      * @param ?string $label
      */
     final public function __construct($value, $label = null)
+=======
+     * @param string  $value
+     * @param ?string $label
+     */
+    public function __construct($value, $label = null)
+>>>>>>> fb785cbb (Initial commit)
     {
         $this->value = $value;
         $this->label = $label;

@@ -63,6 +63,11 @@ __webpack_require__.d(selectors_namespaceObject, {
 
 ;// CONCATENATED MODULE: external ["wp","data"]
 var external_wp_data_namespaceObject = window["wp"]["data"];
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/notices/build-module/store/utils/on-sub-key.js
 /**
  * Higher-order reducer creator which creates a combined reducer object, keyed
@@ -99,9 +104,20 @@ const onSubKey = actionProperty => reducer => function () {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/notices/build-module/store/reducer.js
 /**
+<<<<<<< HEAD
  * Internal dependencies
  */
 
+=======
+ * External dependencies
+ */
+
+/**
+ * Internal dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Reducer returning the next notices state. The notices state is an object
  * where each key is a context, its value an array of notice objects.
@@ -119,6 +135,7 @@ const notices = on_sub_key('context')(function () {
   switch (action.type) {
     case 'CREATE_NOTICE':
       // Avoid duplicates on ID.
+<<<<<<< HEAD
       return [...state.filter(_ref => {
         let {
           id
@@ -132,6 +149,15 @@ const notices = on_sub_key('context')(function () {
           id
         } = _ref2;
         return id !== action.id;
+=======
+      return [...(0,external_lodash_namespaceObject.reject)(state, {
+        id: action.notice.id
+      }), action.notice];
+
+    case 'REMOVE_NOTICE':
+      return (0,external_lodash_namespaceObject.reject)(state, {
+        id: action.id
+>>>>>>> fb785cbb (Initial commit)
       });
   }
 
@@ -158,9 +184,20 @@ const DEFAULT_STATUS = 'info';
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/notices/build-module/store/actions.js
 /**
+<<<<<<< HEAD
  * Internal dependencies
  */
 
+=======
+ * External dependencies
+ */
+
+/**
+ * Internal dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * @typedef {Object} WPNoticeAction Object describing a user action option associated with a notice.
  *
@@ -172,7 +209,10 @@ const DEFAULT_STATUS = 'info';
  *
  */
 
+<<<<<<< HEAD
 let uniqueId = 0;
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Returns an action object used in signalling that a notice is to be created.
  *
@@ -194,6 +234,7 @@ let uniqueId = 0;
  *                                                             readers.
  * @param {Array<WPNoticeAction>} [options.actions]            User actions to be
  *                                                             presented with notice.
+<<<<<<< HEAD
  * @param {string}                [options.icon]               An icon displayed with the notice.
  *                                                             Only used when type is set to `snackbar`.
  * @param {boolean}               [options.explicitDismiss]    Whether the notice includes
@@ -222,6 +263,15 @@ let uniqueId = 0;
  * };
  * ```
  *
+=======
+ * @param {Object}                [options.icon]               An icon displayed with the notice.
+ * @param {boolean}               [options.explicitDismiss]    Whether the notice includes
+ *                                                             an explict dismiss button and
+ *                                                             can't be dismissed by clicking
+ *                                                             the body of the notice.
+ * @param {Function}              [options.onDismiss]          Called when the notice is dismissed.
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return {Object} Action object.
  */
 
@@ -233,7 +283,11 @@ function createNotice() {
     speak = true,
     isDismissible = true,
     context = DEFAULT_CONTEXT,
+<<<<<<< HEAD
     id = `${context}${++uniqueId}`,
+=======
+    id = (0,external_lodash_namespaceObject.uniqueId)(context),
+>>>>>>> fb785cbb (Initial commit)
     actions = [],
     type = 'default',
     __unstableHTML,
@@ -272,6 +326,7 @@ function createNotice() {
  * @param {string} content   Notice message.
  * @param {Object} [options] Optional notice options.
  *
+<<<<<<< HEAD
  * @example
  * ```js
  * import { __ } from '@wordpress/i18n';
@@ -296,6 +351,8 @@ function createNotice() {
  * };
  * ```
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @return {Object} Action object.
  */
 
@@ -311,6 +368,7 @@ function createSuccessNotice(content, options) {
  * @param {string} content   Notice message.
  * @param {Object} [options] Optional notice options.
  *
+<<<<<<< HEAD
  * @example
  * ```js
  * import { __ } from '@wordpress/i18n';
@@ -334,6 +392,8 @@ function createSuccessNotice(content, options) {
  * };
  *```
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @return {Object} Action object.
  */
 
@@ -349,6 +409,7 @@ function createInfoNotice(content, options) {
  * @param {string} content   Notice message.
  * @param {Object} [options] Optional notice options.
  *
+<<<<<<< HEAD
  * @example
  * ```js
  * import { __ } from '@wordpress/i18n';
@@ -375,6 +436,8 @@ function createInfoNotice(content, options) {
  * };
  * ```
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @return {Object} Action object.
  */
 
@@ -390,6 +453,7 @@ function createErrorNotice(content, options) {
  * @param {string} content   Notice message.
  * @param {Object} [options] Optional notice options.
  *
+<<<<<<< HEAD
  * @example
  * ```js
  * import { __ } from '@wordpress/i18n';
@@ -417,6 +481,8 @@ function createErrorNotice(content, options) {
  * };
  * ```
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @return {Object} Action object.
  */
 
@@ -430,6 +496,7 @@ function createWarningNotice(content, options) {
  * @param {string} [context='global'] Optional context (grouping) in which the notice is
  *                                    intended to appear. Defaults to default context.
  *
+<<<<<<< HEAD
  * @example
  * ```js
  * import { __ } from '@wordpress/i18n';
@@ -462,6 +529,8 @@ function createWarningNotice(content, options) {
  *};
  * ```
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @return {Object} Action object.
  */
 
@@ -525,6 +594,7 @@ const DEFAULT_NOTICES = [];
  * @param {Object}  state   Notices state.
  * @param {?string} context Optional grouping context.
  *
+<<<<<<< HEAD
  * @example
  *
  *```js
@@ -543,6 +613,8 @@ const DEFAULT_NOTICES = [];
  * };
  *```
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @return {WPNotice[]} Array of notices.
  */
 

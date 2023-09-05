@@ -20,6 +20,7 @@ echo '<h3>' . esc_html( sprintf( __( 'Single %s settings', 'wordpress-seo' ), $w
 require __DIR__ . '/post_type/post-type.php';
 
 /**
+<<<<<<< HEAD
  * WARNING: This hook is intended for internal use only.
  * Don't use it in your code as it will be removed shortly.
  */
@@ -41,6 +42,14 @@ do_action_deprecated(
 	'',
 	'This action is going away with no replacement. If you want to add settings that interact with Yoast SEO, please create your own settings page.'
 );
+=======
+ * Allow adding custom fields to the admin meta page, just before the archive settings - Content Types tab.
+ *
+ * @param Yoast_Form $yform The Yoast_Form object.
+ * @param string     $name  The post type name.
+ */
+do_action( 'Yoast\WP\SEO\admin_post_types_beforearchive', $yform, $wpseo_post_type->name );
+>>>>>>> fb785cbb (Initial commit)
 
 if ( $wpseo_post_type->name === 'product' && YoastSEO()->helpers->woocommerce->is_active() ) {
 	require __DIR__ . '/post_type/woocommerce-shop-page.php';
@@ -99,6 +108,7 @@ if ( WPSEO_Post_Type::has_archive( $wpseo_post_type ) ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * WARNING: This hook is intended for internal use only.
 	 * Don't use it in your code as it will be removed shortly.
 	 */
@@ -121,3 +131,27 @@ if ( WPSEO_Post_Type::has_archive( $wpseo_post_type ) ) {
 		'This action is going away with no replacement. If you want to add settings that interact with Yoast SEO, please create your own settings page.'
 	);
 }
+=======
+	 * Allow adding custom fields to the admin meta page at the end of the archive settings for a post type - Content Types tab.
+	 *
+	 * @param Yoast_Form $yform The Yoast_Form object.
+	 * @param string     $name  The post type name.
+	 */
+	do_action( 'Yoast\WP\SEO\admin_post_types_archive', $yform, $wpseo_post_type->name );
+}
+
+/**
+ * Allow adding a custom checkboxes to the admin meta page - Post Types tab.
+ *
+ * @deprecated 16.3 Use the {@see 'Yoast\WP\SEO\admin_post_types_beforearchive'} action instead.
+ *
+ * @param Yoast_Form $yform The Yoast_Form object.
+ * @param string     $name  The post type name.
+ */
+do_action_deprecated(
+	'wpseo_admin_page_meta_post_types',
+	[ $yform, $wpseo_post_type->name ],
+	'16.3',
+	'Yoast\WP\SEO\admin_post_types_beforearchive'
+);
+>>>>>>> fb785cbb (Initial commit)

@@ -13,7 +13,10 @@
 	},
 	"usesContext": [ "postId", "postType" ],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"html": false,
 		"color": {
 			"gradients": true,
@@ -23,10 +26,13 @@
 				"text": true
 			}
 		},
+<<<<<<< HEAD
 		"spacing": {
 			"margin": true,
 			"padding": true
 		},
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true,

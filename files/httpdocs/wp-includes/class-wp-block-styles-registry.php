@@ -12,7 +12,10 @@
  *
  * @since 5.3.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 final class WP_Block_Styles_Registry {
 	/**
 	 * Registered block styles, as `$block_name => $block_style_name => $block_style_properties` multidimensional arrays.
@@ -35,6 +38,7 @@ final class WP_Block_Styles_Registry {
 	/**
 	 * Registers a block style for the given block type.
 	 *
+<<<<<<< HEAD
 	 * If the block styles are present in a standalone stylesheet, register it and pass
 	 * its handle as the `style_handle` argument. If the block styles should be inline,
 	 * use the `inline_style` argument. Usually, one of them would be used to pass CSS
@@ -57,6 +61,14 @@ final class WP_Block_Styles_Registry {
 	 *                                enqueued in places where block styles are needed.
 	 *     @type bool   $is_default   Whether this is the default style for the block type.
 	 * }
+=======
+	 * @since 5.3.0
+	 *
+	 * @param string $block_name       Block type name including namespace.
+	 * @param array  $style_properties Array containing the properties of the style name, label,
+	 *                                 is_default, style_handle (name of the stylesheet to be enqueued),
+	 *                                 inline_style (string containing the CSS to be added).
+>>>>>>> fb785cbb (Initial commit)
 	 * @return bool True if the block style was registered with success and false otherwise.
 	 */
 	public function register( $block_name, $style_properties ) {

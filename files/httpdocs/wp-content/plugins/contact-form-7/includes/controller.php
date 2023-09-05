@@ -42,12 +42,22 @@ add_action(
 		}
 
 		$assets = wp_parse_args( $assets, array(
+<<<<<<< HEAD
 			'dependencies' => array(),
 			'version' => WPCF7_VERSION,
+=======
+			'src' => wpcf7_plugin_url( 'includes/js/index.js' ),
+			'dependencies' => array(
+				'wp-polyfill',
+			),
+			'version' => WPCF7_VERSION,
+			'in_footer' => ( 'header' !== wpcf7_load_js() ),
+>>>>>>> fb785cbb (Initial commit)
 		) );
 
 		wp_register_script(
 			'contact-form-7',
+<<<<<<< HEAD
 			wpcf7_plugin_url( 'includes/js/index.js' ),
 			array_merge(
 				$assets['dependencies'],
@@ -55,6 +65,12 @@ add_action(
 			),
 			$assets['version'],
 			true
+=======
+			$assets['src'],
+			$assets['dependencies'],
+			$assets['version'],
+			$assets['in_footer']
+>>>>>>> fb785cbb (Initial commit)
 		);
 
 		wp_register_script(
@@ -80,7 +96,11 @@ add_action(
 		wp_register_style(
 			'contact-form-7-rtl',
 			wpcf7_plugin_url( 'includes/css/styles-rtl.css' ),
+<<<<<<< HEAD
 			array( 'contact-form-7' ),
+=======
+			array(),
+>>>>>>> fb785cbb (Initial commit)
 			WPCF7_VERSION,
 			'all'
 		);
@@ -111,7 +131,11 @@ function wpcf7_enqueue_scripts() {
 
 	$wpcf7 = array(
 		'api' => array(
+<<<<<<< HEAD
 			'root' => sanitize_url( get_rest_url() ),
+=======
+			'root' => esc_url_raw( get_rest_url() ),
+>>>>>>> fb785cbb (Initial commit)
 			'namespace' => 'contact-form-7/v1',
 		),
 	);

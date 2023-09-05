@@ -15,6 +15,7 @@
  * Retrieves the value of a query variable in the WP_Query class.
  *
  * @since 1.5.0
+<<<<<<< HEAD
  * @since 3.9.0 The `$default_value` argument was introduced.
  *
  * @global WP_Query $wp_query WordPress Query object.
@@ -27,6 +28,19 @@
 function get_query_var( $query_var, $default_value = '' ) {
 	global $wp_query;
 	return $wp_query->get( $query_var, $default_value );
+=======
+ * @since 3.9.0 The `$default` argument was introduced.
+ *
+ * @global WP_Query $wp_query WordPress Query object.
+ *
+ * @param string $var       The variable key to retrieve.
+ * @param mixed  $default   Optional. Value to return if the query variable is not set. Default empty.
+ * @return mixed Contents of the query variable.
+ */
+function get_query_var( $var, $default = '' ) {
+	global $wp_query;
+	return $wp_query->get( $var, $default );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -68,12 +82,21 @@ function get_queried_object_id() {
  *
  * @global WP_Query $wp_query WordPress Query object.
  *
+<<<<<<< HEAD
  * @param string $query_var Query variable key.
  * @param mixed  $value     Query variable value.
  */
 function set_query_var( $query_var, $value ) {
 	global $wp_query;
 	$wp_query->set( $query_var, $value );
+=======
+ * @param string $var   Query variable key.
+ * @param mixed  $value Query variable value.
+ */
+function set_query_var( $var, $value ) {
+	global $wp_query;
+	$wp_query->set( $var, $value );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -902,11 +925,14 @@ function is_embed() {
 function is_main_query() {
 	global $wp_query;
 
+<<<<<<< HEAD
 	if ( ! isset( $wp_query ) ) {
 		_doing_it_wrong( __FUNCTION__, __( 'Conditional query tags do not work before the query is run. Before then, they always return false.' ), '6.1.0' );
 		return false;
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	if ( 'pre_get_posts' === current_filter() ) {
 		_doing_it_wrong(
 			__FUNCTION__,
@@ -940,11 +966,14 @@ function is_main_query() {
  */
 function have_posts() {
 	global $wp_query;
+<<<<<<< HEAD
 
 	if ( ! isset( $wp_query ) ) {
 		return false;
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	return $wp_query->have_posts();
 }
 
@@ -963,11 +992,14 @@ function have_posts() {
  */
 function in_the_loop() {
 	global $wp_query;
+<<<<<<< HEAD
 
 	if ( ! isset( $wp_query ) ) {
 		return false;
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	return $wp_query->in_the_loop;
 }
 
@@ -980,11 +1012,14 @@ function in_the_loop() {
  */
 function rewind_posts() {
 	global $wp_query;
+<<<<<<< HEAD
 
 	if ( ! isset( $wp_query ) ) {
 		return;
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	$wp_query->rewind_posts();
 }
 
@@ -997,11 +1032,14 @@ function rewind_posts() {
  */
 function the_post() {
 	global $wp_query;
+<<<<<<< HEAD
 
 	if ( ! isset( $wp_query ) ) {
 		return;
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	$wp_query->the_post();
 }
 
@@ -1020,11 +1058,14 @@ function the_post() {
  */
 function have_comments() {
 	global $wp_query;
+<<<<<<< HEAD
 
 	if ( ! isset( $wp_query ) ) {
 		return false;
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	return $wp_query->have_comments();
 }
 
@@ -1034,6 +1075,7 @@ function have_comments() {
  * @since 2.2.0
  *
  * @global WP_Query $wp_query WordPress Query object.
+<<<<<<< HEAD
  */
 function the_comment() {
 	global $wp_query;
@@ -1043,6 +1085,14 @@ function the_comment() {
 	}
 
 	$wp_query->the_comment();
+=======
+ *
+ * @return null
+ */
+function the_comment() {
+	global $wp_query;
+	return $wp_query->the_comment();
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1151,6 +1201,7 @@ function _find_post_by_old_slug( $post_type ) {
 		$query .= $wpdb->prepare( ' AND DAYOFMONTH(post_date) = %d', get_query_var( 'day' ) );
 	}
 
+<<<<<<< HEAD
 	$key          = md5( $query );
 	$last_changed = wp_cache_get_last_changed( 'posts' );
 	$cache_key    = "find_post_by_old_slug:$key:$last_changed";
@@ -1161,6 +1212,9 @@ function _find_post_by_old_slug( $post_type ) {
 		$id = (int) $wpdb->get_var( $query );
 		wp_cache_set( $cache_key, $id, 'posts' );
 	}
+=======
+	$id = (int) $wpdb->get_var( $query );
+>>>>>>> fb785cbb (Initial commit)
 
 	return $id;
 }
@@ -1193,6 +1247,7 @@ function _find_post_by_old_date( $post_type ) {
 
 	$id = 0;
 	if ( $date_query ) {
+<<<<<<< HEAD
 		$query        = $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta AS pm_date, $wpdb->posts WHERE ID = post_id AND post_type = %s AND meta_key = '_wp_old_date' AND post_name = %s" . $date_query, $post_type, get_query_var( 'name' ) );
 		$key          = md5( $query );
 		$last_changed = wp_cache_get_last_changed( 'posts' );
@@ -1207,6 +1262,13 @@ function _find_post_by_old_date( $post_type ) {
 				$id = (int) $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts, $wpdb->postmeta AS pm_slug, $wpdb->postmeta AS pm_date WHERE ID = pm_slug.post_id AND ID = pm_date.post_id AND post_type = %s AND pm_slug.meta_key = '_wp_old_slug' AND pm_slug.meta_value = %s AND pm_date.meta_key = '_wp_old_date'" . $date_query, $post_type, get_query_var( 'name' ) ) );
 			}
 			wp_cache_set( $cache_key, $id, 'posts' );
+=======
+		$id = (int) $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta AS pm_date, $wpdb->posts WHERE ID = post_id AND post_type = %s AND meta_key = '_wp_old_date' AND post_name = %s" . $date_query, $post_type, get_query_var( 'name' ) ) );
+
+		if ( ! $id ) {
+			// Check to see if an old slug matches the old date.
+			$id = (int) $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts, $wpdb->postmeta AS pm_slug, $wpdb->postmeta AS pm_date WHERE ID = pm_slug.post_id AND ID = pm_date.post_id AND post_type = %s AND pm_slug.meta_key = '_wp_old_slug' AND pm_slug.meta_value = %s AND pm_date.meta_key = '_wp_old_date'" . $date_query, $post_type, get_query_var( 'name' ) ) );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 

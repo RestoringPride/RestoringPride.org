@@ -38,6 +38,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	protected $readability_analysis;
 
 	/**
+<<<<<<< HEAD
 	 * Helper to determine whether or not the inclusive language analysis is enabled.
 	 *
 	 * @var WPSEO_Metabox_Analysis_Inclusive_Language
@@ -45,6 +46,8 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	protected $inclusive_language_analysis;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * The metabox editor object.
 	 *
 	 * @var WPSEO_Metabox_Editor
@@ -78,7 +81,10 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	public function __construct() {
 		if ( $this->is_internet_explorer() ) {
 			add_action( 'add_meta_boxes', [ $this, 'internet_explorer_metabox' ] );
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			return;
 		}
 
@@ -100,9 +106,14 @@ class WPSEO_Metabox extends WPSEO_Meta {
 			new Input_Helper()
 		);
 
+<<<<<<< HEAD
 		$this->seo_analysis                = new WPSEO_Metabox_Analysis_SEO();
 		$this->readability_analysis        = new WPSEO_Metabox_Analysis_Readability();
 		$this->inclusive_language_analysis = new WPSEO_Metabox_Analysis_Inclusive_Language();
+=======
+		$this->seo_analysis         = new WPSEO_Metabox_Analysis_SEO();
+		$this->readability_analysis = new WPSEO_Metabox_Analysis_Readability();
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -433,10 +444,13 @@ class WPSEO_Metabox extends WPSEO_Meta {
 			$tabs[] = new WPSEO_Metabox_Section_Readability();
 		}
 
+<<<<<<< HEAD
 		if ( $this->inclusive_language_analysis->is_enabled() ) {
 			$tabs[] = new WPSEO_Metabox_Section_Inclusive_Language();
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( $this->is_advanced_metadata_enabled ) {
 			$tabs[] = new WPSEO_Metabox_Section_React(
 				'schema',
@@ -611,6 +625,10 @@ class WPSEO_Metabox extends WPSEO_Meta {
 
 					$options_count = count( $meta_field_def['options'] );
 
+<<<<<<< HEAD
+=======
+					// This select now uses Select2.
+>>>>>>> fb785cbb (Initial commit)
 					$content .= '<select multiple="multiple" size="' . esc_attr( $options_count ) . '" name="' . $esc_form_key . '[]" id="' . $esc_form_key . '" class="yoast' . $class . '"' . $aria_describedby . '>';
 					foreach ( $meta_field_def['options'] as $val => $option ) {
 						$selected = '';
@@ -829,10 +847,13 @@ class WPSEO_Metabox extends WPSEO_Meta {
 			return true;
 		}
 
+<<<<<<< HEAD
 		if ( $key === 'inclusive_language_score' && ! $this->inclusive_language_analysis->is_enabled() ) {
 			return true;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return false;
 	}
 
@@ -873,6 +894,10 @@ class WPSEO_Metabox extends WPSEO_Meta {
 
 		$asset_manager->enqueue_style( 'metabox-css' );
 		$asset_manager->enqueue_style( 'scoring' );
+<<<<<<< HEAD
+=======
+		$asset_manager->enqueue_style( 'select2' );
+>>>>>>> fb785cbb (Initial commit)
 		$asset_manager->enqueue_style( 'monorepo' );
 
 		$is_block_editor  = WP_Screen::get()->is_block_editor();
@@ -923,7 +948,10 @@ class WPSEO_Metabox extends WPSEO_Meta {
 			'userLanguageCode'           => WPSEO_Language_Utils::get_language( \get_user_locale() ),
 			'isPost'                     => true,
 			'isBlockEditor'              => $is_block_editor,
+<<<<<<< HEAD
 			'postId'                     => $post_id,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			'postStatus'                 => get_post_status( $post_id ),
 			'analysis'                   => [
 				'plugins' => $plugins_script_data,
@@ -1119,6 +1147,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 			return $custom_replace_vars;
 		}
 
+<<<<<<< HEAD
 		$meta = YoastSEO()->meta->for_post( $post->ID );
 
 		if ( ! $meta ) {
@@ -1136,17 +1165,22 @@ class WPSEO_Metabox extends WPSEO_Meta {
 
 		preg_match_all( '/%%cf_([A-Za-z0-9_]+)%%/', $replace_vars_fields, $matches );
 		$fields_to_include = $matches[1];
+=======
+>>>>>>> fb785cbb (Initial commit)
 		foreach ( $custom_fields as $custom_field_name => $custom_field ) {
 			// Skip private custom fields.
 			if ( substr( $custom_field_name, 0, 1 ) === '_' ) {
 				continue;
 			}
 
+<<<<<<< HEAD
 			// Skip custom fields that are not used, new ones will be fetched dynamically.
 			if ( ! in_array( $custom_field_name, $fields_to_include, true ) ) {
 				continue;
 			}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			// Skip custom field values that are serialized.
 			if ( is_serialized( $custom_field[0] ) ) {
 				continue;

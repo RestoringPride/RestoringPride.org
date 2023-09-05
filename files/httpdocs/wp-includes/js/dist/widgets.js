@@ -5,9 +5,15 @@
 /***/ (function(module, exports) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+<<<<<<< HEAD
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
 	http://jedwatson.github.io/classnames
+=======
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+>>>>>>> fb785cbb (Initial commit)
 */
 /* global define */
 
@@ -15,7 +21,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	'use strict';
 
 	var hasOwn = {}.hasOwnProperty;
+<<<<<<< HEAD
 	var nativeCodeString = '[native code]';
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 	function classNames() {
 		var classes = [];
@@ -36,6 +45,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 					}
 				}
 			} else if (argType === 'object') {
+<<<<<<< HEAD
 				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
 					classes.push(arg.toString());
 					continue;
@@ -45,6 +55,16 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 					if (hasOwn.call(arg, key) && arg[key]) {
 						classes.push(key);
 					}
+=======
+				if (arg.toString === Object.prototype.toString) {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				} else {
+					classes.push(arg.toString());
+>>>>>>> fb785cbb (Initial commit)
 				}
 			}
 		}
@@ -253,7 +273,10 @@ function WidgetTypeSelector(_ref) {
   }
 
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.SelectControl, {
+<<<<<<< HEAD
     __nextHasNoMarginBottom: true,
+=======
+>>>>>>> fb785cbb (Initial commit)
     label: (0,external_wp_i18n_namespaceObject.__)('Select a legacy widget to display:'),
     value: selectedId !== null && selectedId !== void 0 ? selectedId : '',
     options: [{
@@ -297,11 +320,23 @@ function InspectorCard(_ref) {
 var external_wp_notices_namespaceObject = window["wp"]["notices"];
 ;// CONCATENATED MODULE: external ["wp","compose"]
 var external_wp_compose_namespaceObject = window["wp"]["compose"];
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","apiFetch"]
 var external_wp_apiFetch_namespaceObject = window["wp"]["apiFetch"];
 var external_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_wp_apiFetch_namespaceObject);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/blocks/legacy-widget/edit/control.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -350,7 +385,11 @@ class Control {
     // a fake but unique number.
 
     this.number = ++lastNumber;
+<<<<<<< HEAD
     this.handleFormChange = (0,external_wp_compose_namespaceObject.debounce)(this.handleFormChange.bind(this), 200);
+=======
+    this.handleFormChange = (0,external_lodash_namespaceObject.debounce)(this.handleFormChange.bind(this), 200);
+>>>>>>> fb785cbb (Initial commit)
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.initDOM();
     this.bindEvents();
@@ -832,11 +871,16 @@ function Form(_ref) {
       className: "wp-block-legacy-widget__edit-form-title"
     }, title), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Popover, {
       focusOnMount: false,
+<<<<<<< HEAD
       placement: "right",
       offset: 32,
       resize: false,
       flip: false,
       shift: true
+=======
+      position: "middle right",
+      __unstableForceXAlignment: true
+>>>>>>> fb785cbb (Initial commit)
     }, (0,external_wp_element_namespaceObject.createElement)("div", {
       ref: ref,
       className: "wp-block-legacy-widget__edit-form",
@@ -916,6 +960,7 @@ function Preview(_ref) {
 
 
     function setHeight() {
+<<<<<<< HEAD
       var _iframe$contentDocume, _iframe$contentDocume2, _iframe$contentDocume3, _iframe$contentDocume4;
 
       // Pick the maximum of these two values to account for margin collapsing.
@@ -925,6 +970,11 @@ function Preview(_ref) {
       // can be seen.
 
       iframe.style.height = `${height !== 0 ? height : 100}px`;
+=======
+      // Pick the maximum of these two values to account for margin collapsing.
+      const height = Math.max(iframe.contentDocument.documentElement.offsetHeight, iframe.contentDocument.body.offsetHeight);
+      iframe.style.height = `${height}px`;
+>>>>>>> fb785cbb (Initial commit)
     }
 
     const {
@@ -1079,7 +1129,11 @@ function Empty(_ref) {
       icon: library_brush
     }),
     label: (0,external_wp_i18n_namespaceObject.__)('Legacy Widget')
+<<<<<<< HEAD
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Flex, null, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.FlexBlock, null, (0,external_wp_element_namespaceObject.createElement)(WidgetTypeSelector, {
+=======
+  }, (0,external_wp_element_namespaceObject.createElement)(WidgetTypeSelector, {
+>>>>>>> fb785cbb (Initial commit)
     selectedId: id !== null && id !== void 0 ? id : idBase,
     onSelect: _ref2 => {
       let {
@@ -1107,7 +1161,11 @@ function Empty(_ref) {
         });
       }
     }
+<<<<<<< HEAD
   }))));
+=======
+  }));
+>>>>>>> fb785cbb (Initial commit)
 }
 
 function NotEmpty(_ref3) {
@@ -1127,7 +1185,11 @@ function NotEmpty(_ref3) {
   const {
     record: widgetType,
     hasResolved: hasResolvedWidgetType
+<<<<<<< HEAD
   } = (0,external_wp_coreData_namespaceObject.useEntityRecord)('root', 'widgetType', widgetTypeId);
+=======
+  } = (0,external_wp_coreData_namespaceObject.__experimentalUseEntityRecord)('root', 'widgetType', widgetTypeId);
+>>>>>>> fb785cbb (Initial commit)
   const isNavigationMode = (0,external_wp_data_namespaceObject.useSelect)(select => select(external_wp_blockEditor_namespaceObject.store).isNavigationMode(), []);
   const setInstance = (0,external_wp_element_namespaceObject.useCallback)(nextInstance => {
     setAttributes({
@@ -1808,12 +1870,18 @@ function registerLegacyWidgetVariations(settings) {
  * Note that for the block to be useful, any scripts required by a widget must
  * be loaded into the page.
  *
+<<<<<<< HEAD
  * @param {Object} supports Block support settings.
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @see https://developer.wordpress.org/block-editor/how-to-guides/widgets/legacy-widget-block/
  */
 
 function registerLegacyWidgetBlock() {
+<<<<<<< HEAD
   let supports = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+=======
+>>>>>>> fb785cbb (Initial commit)
   const {
     metadata,
     settings,
@@ -1822,11 +1890,15 @@ function registerLegacyWidgetBlock() {
   (0,external_wp_blocks_namespaceObject.registerBlockType)({
     name,
     ...metadata
+<<<<<<< HEAD
   }, { ...settings,
     supports: { ...settings.supports,
       ...supports
     }
   });
+=======
+  }, settings);
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Registers the Widget Group block.

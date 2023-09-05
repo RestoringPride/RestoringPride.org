@@ -11,7 +11,10 @@ if ( ! class_exists( 'Translation_Entry', false ) ) :
 	/**
 	 * Translation_Entry class encapsulates a translatable string.
 	 */
+<<<<<<< HEAD
 	#[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 	class Translation_Entry {
 
 		/**
@@ -87,10 +90,17 @@ if ( ! class_exists( 'Translation_Entry', false ) ) :
 		/**
 		 * Generates a unique key for this entry.
 		 *
+<<<<<<< HEAD
 		 * @return string|false The key or false if the entry is null.
 		 */
 		public function key() {
 			if ( null === $this->singular ) {
+=======
+		 * @return string|false The key or false if the entry is empty.
+		 */
+		public function key() {
+			if ( null === $this->singular || '' === $this->singular ) {
+>>>>>>> fb785cbb (Initial commit)
 				return false;
 			}
 

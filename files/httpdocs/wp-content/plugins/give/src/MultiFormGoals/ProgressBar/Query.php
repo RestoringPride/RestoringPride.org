@@ -2,8 +2,11 @@
 
 namespace Give\MultiFormGoals\ProgressBar;
 
+<<<<<<< HEAD
 use wpdb;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Get the Total, Count, and Average of the payment totals for published donations of a given set of forms.
  */
@@ -14,11 +17,14 @@ class Query
     protected $formIDs;
 
     /**
+<<<<<<< HEAD
      * @var wpdb
      */
     protected $wpdb;
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @var array $formIDs
      */
     public function __construct($formIDs)

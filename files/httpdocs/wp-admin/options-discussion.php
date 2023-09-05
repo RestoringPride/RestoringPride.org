@@ -29,8 +29,13 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+<<<<<<< HEAD
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/settings-discussion-screen/">Documentation on Discussion Settings</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+=======
+	'<p>' . __( '<a href="https://wordpress.org/support/article/settings-discussion-screen/">Documentation on Discussion Settings</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://wordpress.org/support/">Support</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 );
 
 require_once ABSPATH . 'wp-admin/admin-header.php';
@@ -45,12 +50,16 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 <table class="form-table" role="presentation">
 <tr>
 <th scope="row"><?php _e( 'Default post settings' ); ?></th>
+<<<<<<< HEAD
 <td><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Default post settings' );
 	?>
 </span></legend>
+=======
+<td><fieldset><legend class="screen-reader-text"><span><?php _e( 'Default post settings' ); ?></span></legend>
+>>>>>>> fb785cbb (Initial commit)
 <label for="default_pingback_flag">
 <input name="default_pingback_flag" type="checkbox" id="default_pingback_flag" value="1" <?php checked( '1', get_option( 'default_pingback_flag' ) ); ?> />
 <?php _e( 'Attempt to notify any blogs linked to from the post' ); ?></label>
@@ -68,12 +77,16 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 </tr>
 <tr>
 <th scope="row"><?php _e( 'Other comment settings' ); ?></th>
+<<<<<<< HEAD
 <td><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Other comment settings' );
 	?>
 </span></legend>
+=======
+<td><fieldset><legend class="screen-reader-text"><span><?php _e( 'Other comment settings' ); ?></span></legend>
+>>>>>>> fb785cbb (Initial commit)
 <label for="require_name_email"><input type="checkbox" name="require_name_email" id="require_name_email" value="1" <?php checked( '1', get_option( 'require_name_email' ) ); ?> /> <?php _e( 'Comment author must fill out name and email' ); ?></label>
 <br />
 <label for="comment_registration">
@@ -81,8 +94,12 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 <?php _e( 'Users must be registered and logged in to comment' ); ?>
 <?php
 if ( ! get_option( 'users_can_register' ) && is_multisite() ) {
+<<<<<<< HEAD
 	echo ' ' . __( '(Signup has been disabled. Only members of this site can comment.)' );
 }
+=======
+	echo ' ' . __( '(Signup has been disabled. Only members of this site can comment.)' );}
+>>>>>>> fb785cbb (Initial commit)
 ?>
 </label>
 <br />
@@ -176,12 +193,16 @@ printf( __( 'Comments should be displayed with the %s comments at the top of eac
 </tr>
 <tr>
 <th scope="row"><?php _e( 'Email me whenever' ); ?></th>
+<<<<<<< HEAD
 <td><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Email me whenever' );
 	?>
 </span></legend>
+=======
+<td><fieldset><legend class="screen-reader-text"><span><?php _e( 'Email me whenever' ); ?></span></legend>
+>>>>>>> fb785cbb (Initial commit)
 <label for="comments_notify">
 <input name="comments_notify" type="checkbox" id="comments_notify" value="1" <?php checked( '1', get_option( 'comments_notify' ) ); ?> />
 <?php _e( 'Anyone posts a comment' ); ?> </label>
@@ -193,12 +214,16 @@ printf( __( 'Comments should be displayed with the %s comments at the top of eac
 </tr>
 <tr>
 <th scope="row"><?php _e( 'Before a comment appears' ); ?></th>
+<<<<<<< HEAD
 <td><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Before a comment appears' );
 	?>
 </span></legend>
+=======
+<td><fieldset><legend class="screen-reader-text"><span><?php _e( 'Before a comment appears' ); ?></span></legend>
+>>>>>>> fb785cbb (Initial commit)
 <label for="comment_moderation">
 <input name="comment_moderation" type="checkbox" id="comment_moderation" value="1" <?php checked( '1', get_option( 'comment_moderation' ) ); ?> />
 <?php _e( 'Comment must be manually approved' ); ?> </label>
@@ -208,12 +233,16 @@ printf( __( 'Comments should be displayed with the %s comments at the top of eac
 </tr>
 <tr>
 <th scope="row"><?php _e( 'Comment Moderation' ); ?></th>
+<<<<<<< HEAD
 <td><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Comment Moderation' );
 	?>
 </span></legend>
+=======
+<td><fieldset><legend class="screen-reader-text"><span><?php _e( 'Comment Moderation' ); ?></span></legend>
+>>>>>>> fb785cbb (Initial commit)
 <p><label for="comment_max_links">
 <?php
 printf(
@@ -232,12 +261,16 @@ printf(
 </tr>
 <tr>
 <th scope="row"><?php _e( 'Disallowed Comment Keys' ); ?></th>
+<<<<<<< HEAD
 <td><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Disallowed Comment Keys' );
 	?>
 </span></legend>
+=======
+<td><fieldset><legend class="screen-reader-text"><span><?php _e( 'Disallowed Comment Keys' ); ?></span></legend>
+>>>>>>> fb785cbb (Initial commit)
 <p><label for="disallowed_keys"><?php _e( 'When a comment contains any of these words in its content, author name, URL, email, IP address, or browser&#8217;s user agent string, it will be put in the Trash. One word or IP address per line. It will match inside words, so &#8220;press&#8221; will match &#8220;WordPress&#8221;.' ); ?></label></p>
 <p>
 <textarea name="disallowed_keys" rows="10" cols="50" id="disallowed_keys" class="large-text code"><?php echo esc_textarea( get_option( 'disallowed_keys' ) ); ?></textarea>
@@ -273,12 +306,16 @@ if ( ! $show_avatars ) {
 </tr>
 <tr class="avatar-settings<?php echo $show_avatars_class; ?>">
 <th scope="row"><?php _e( 'Maximum Rating' ); ?></th>
+<<<<<<< HEAD
 <td><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Maximum Rating' );
 	?>
 </span></legend>
+=======
+<td><fieldset><legend class="screen-reader-text"><span><?php _e( 'Maximum Rating' ); ?></span></legend>
+>>>>>>> fb785cbb (Initial commit)
 
 <?php
 $ratings = array(
@@ -301,12 +338,16 @@ endforeach;
 </tr>
 <tr class="avatar-settings<?php echo $show_avatars_class; ?>">
 <th scope="row"><?php _e( 'Default Avatar' ); ?></th>
+<<<<<<< HEAD
 <td class="defaultavatarpicker"><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Default Avatar' );
 	?>
 </span></legend>
+=======
+<td class="defaultavatarpicker"><fieldset><legend class="screen-reader-text"><span><?php _e( 'Default Avatar' ); ?></span></legend>
+>>>>>>> fb785cbb (Initial commit)
 
 <p>
 <?php _e( 'For users without a custom avatar of their own, you can either display a generic logo or a generated one based on their email address.' ); ?><br />
@@ -321,7 +362,10 @@ $avatar_defaults = array(
 	'wavatar'          => __( 'Wavatar (Generated)' ),
 	'monsterid'        => __( 'MonsterID (Generated)' ),
 	'retro'            => __( 'Retro (Generated)' ),
+<<<<<<< HEAD
 	'robohash'         => __( 'RoboHash (Generated)' ),
+=======
+>>>>>>> fb785cbb (Initial commit)
 );
 /**
  * Filters the default avatars.

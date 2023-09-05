@@ -31,7 +31,10 @@
 	},
 	"supports": {
 		"align": [ "wide", "full" ],
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"html": false,
 		"color": {
 			"gradients": true,
@@ -43,8 +46,12 @@
 			}
 		},
 		"spacing": {
+<<<<<<< HEAD
 			"margin": true,
 			"padding": true
+=======
+			"margin": true
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"typography": {
 			"fontSize": true,
@@ -53,7 +60,10 @@
 			"__experimentalFontWeight": true,
 			"__experimentalFontStyle": true,
 			"__experimentalTextTransform": true,
+<<<<<<< HEAD
 			"__experimentalTextDecoration": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalLetterSpacing": true,
 			"__experimentalDefaultControls": {
 				"fontSize": true,

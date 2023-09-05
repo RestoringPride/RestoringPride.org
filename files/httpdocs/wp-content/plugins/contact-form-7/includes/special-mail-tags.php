@@ -50,7 +50,11 @@ function wpcf7_special_mail_tag( $output, $name, $html, $mail_tag = null ) {
 
 	if ( '_url' == $name ) {
 		if ( $url = $submission->get_meta( 'url' ) ) {
+<<<<<<< HEAD
 			return $url;
+=======
+			return esc_url( $url );
+>>>>>>> fb785cbb (Initial commit)
 		} else {
 			return '';
 		}

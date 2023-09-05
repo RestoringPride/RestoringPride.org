@@ -96,6 +96,7 @@ trait CRUD
     }
 
     /**
+<<<<<<< HEAD
      * Get a single column's value from the first result of a query.
      *
      * @since 2.24.0
@@ -111,6 +112,8 @@ trait CRUD
     }
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.19.0
      *
      * @return string

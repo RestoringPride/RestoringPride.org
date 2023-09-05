@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Accordion 1.13.2
+=======
+ * jQuery UI Accordion 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -37,7 +41,11 @@
 "use strict";
 
 return $.widget( "ui.accordion", {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	options: {
 		active: 0,
 		animate: {},
@@ -204,6 +212,7 @@ return $.widget( "ui.accordion", {
 			toFocus = false;
 
 		switch ( event.keyCode ) {
+<<<<<<< HEAD
 		case keyCode.RIGHT:
 		case keyCode.DOWN:
 			toFocus = this.headers[ ( currentIndex + 1 ) % length ];
@@ -222,6 +231,26 @@ return $.widget( "ui.accordion", {
 		case keyCode.END:
 			toFocus = this.headers[ length - 1 ];
 			break;
+=======
+			case keyCode.RIGHT:
+			case keyCode.DOWN:
+				toFocus = this.headers[ ( currentIndex + 1 ) % length ];
+				break;
+			case keyCode.LEFT:
+			case keyCode.UP:
+				toFocus = this.headers[ ( currentIndex - 1 + length ) % length ];
+				break;
+			case keyCode.SPACE:
+			case keyCode.ENTER:
+				this._eventHandler( event );
+				break;
+			case keyCode.HOME:
+				toFocus = this.headers[ 0 ];
+				break;
+			case keyCode.END:
+				toFocus = this.headers[ length - 1 ];
+				break;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		if ( toFocus ) {
@@ -244,6 +273,7 @@ return $.widget( "ui.accordion", {
 
 		// Was collapsed or no panel
 		if ( ( options.active === false && options.collapsible === true ) ||
+<<<<<<< HEAD
 				!this.headers.length ) {
 			options.active = false;
 			this.active = $();
@@ -253,6 +283,17 @@ return $.widget( "ui.accordion", {
 			this._activate( 0 );
 
 		// was active, but active panel is gone
+=======
+			!this.headers.length ) {
+			options.active = false;
+			this.active = $();
+
+			// active false only when collapsible is true
+		} else if ( options.active === false ) {
+			this._activate( 0 );
+
+			// was active, but active panel is gone
+>>>>>>> fb785cbb (Initial commit)
 		} else if ( this.active.length && !$.contains( this.element[ 0 ], this.active[ 0 ] ) ) {
 
 			// all remaining panel are disabled
@@ -260,12 +301,20 @@ return $.widget( "ui.accordion", {
 				options.active = false;
 				this.active = $();
 
+<<<<<<< HEAD
 			// activate previous panel
+=======
+				// activate previous panel
+>>>>>>> fb785cbb (Initial commit)
 			} else {
 				this._activate( Math.max( 0, options.active - 1 ) );
 			}
 
+<<<<<<< HEAD
 		// was active, active panel still exists
+=======
+			// was active, active panel still exists
+>>>>>>> fb785cbb (Initial commit)
 		} else {
 
 			// make sure active index is correct
@@ -322,6 +371,7 @@ return $.widget( "ui.accordion", {
 				panel.attr( "aria-labelledby", headerId );
 			} )
 			.next()
+<<<<<<< HEAD
 				.attr( "role", "tabpanel" );
 
 		this.headers
@@ -336,6 +386,22 @@ return $.widget( "ui.accordion", {
 						"aria-hidden": "true"
 					} )
 					.hide();
+=======
+			.attr( "role", "tabpanel" );
+
+		this.headers
+			.not( this.active )
+			.attr( {
+				"aria-selected": "false",
+				"aria-expanded": "false",
+				tabIndex: -1
+			} )
+			.next()
+			.attr( {
+				"aria-hidden": "true"
+			} )
+			.hide();
+>>>>>>> fb785cbb (Initial commit)
 
 		// Make sure at least one header is in the tab order
 		if ( !this.active.length ) {
@@ -347,9 +413,15 @@ return $.widget( "ui.accordion", {
 				tabIndex: 0
 			} )
 				.next()
+<<<<<<< HEAD
 					.attr( {
 						"aria-hidden": "false"
 					} );
+=======
+				.attr( {
+					"aria-hidden": "false"
+				} );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		this._createIcons();
@@ -454,11 +526,19 @@ return $.widget( "ui.accordion", {
 
 		if (
 
+<<<<<<< HEAD
 				// click on active header, but not collapsible
 				( clickedIsActive && !options.collapsible ) ||
 
 				// allow canceling activation
 				( this._trigger( "beforeActivate", event, eventData ) === false ) ) {
+=======
+			// click on active header, but not collapsible
+			( clickedIsActive && !options.collapsible ) ||
+
+			// allow canceling activation
+			( this._trigger( "beforeActivate", event, eventData ) === false ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			return;
 		}
 
@@ -534,11 +614,19 @@ return $.widget( "ui.accordion", {
 		toShow
 			.attr( "aria-hidden", "false" )
 			.prev()
+<<<<<<< HEAD
 				.attr( {
 					"aria-selected": "true",
 					"aria-expanded": "true",
 					tabIndex: 0
 				} );
+=======
+			.attr( {
+				"aria-selected": "true",
+				"aria-expanded": "true",
+				tabIndex: 0
+			} );
+>>>>>>> fb785cbb (Initial commit)
 	},
 
 	_animate: function( toShow, toHide, data ) {

@@ -24,6 +24,7 @@
  *
  * @see wp_readonly()
  *
+<<<<<<< HEAD
  * @param mixed $readonly_value One of the values to compare.
  * @param mixed $current        Optional. The other value to compare if not just true.
  *                              Default true.
@@ -34,4 +35,16 @@
 function readonly( $readonly_value, $current = true, $display = true ) {
 	_deprecated_function( __FUNCTION__, '5.9.0', 'wp_readonly()' );
 	return wp_readonly( $readonly_value, $current, $display );
+=======
+ * @param mixed $readonly One of the values to compare.
+ * @param mixed $current  Optional. The other value to compare if not just true.
+ *                        Default true.
+ * @param bool  $echo     Optional. Whether to echo or just return the string.
+ *                        Default true.
+ * @return string HTML attribute or empty string.
+ */
+function readonly( $readonly, $current = true, $echo = true ) {
+	_deprecated_function( __FUNCTION__, '5.9.0', 'wp_readonly()' );
+	return wp_readonly( $readonly, $current, $echo );
+>>>>>>> fb785cbb (Initial commit)
 }

@@ -12,7 +12,10 @@
  *
  * @since 4.4.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_REST_Server {
 
 	/**
@@ -193,7 +196,11 @@ class WP_REST_Server {
 	 * Converts an error to a response object.
 	 *
 	 * This iterates over all error codes and messages to change it into a flat
+<<<<<<< HEAD
 	 * array. This enables simpler client behavior, as it is represented as a
+=======
+	 * array. This enables simpler client behaviour, as it is represented as a
+>>>>>>> fb785cbb (Initial commit)
 	 * list in JSON rather than an object/map.
 	 *
 	 * @since 4.4.0
@@ -232,6 +239,7 @@ class WP_REST_Server {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Gets the encoding options passed to {@see wp_json_encode}.
 	 *
 	 * @since 6.1.0
@@ -259,6 +267,8 @@ class WP_REST_Server {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Handles serving a REST API request.
 	 *
 	 * Matches the current server URI to a route and runs the first matching
@@ -312,7 +322,11 @@ class WP_REST_Server {
 
 		$api_root = get_rest_url();
 		if ( ! empty( $api_root ) ) {
+<<<<<<< HEAD
 			$this->send_header( 'Link', '<' . sanitize_url( $api_root ) . '>; rel="https://api.w.org/"' );
+=======
+			$this->send_header( 'Link', '<' . esc_url_raw( $api_root ) . '>; rel="https://api.w.org/"' );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		/*
@@ -521,7 +535,11 @@ class WP_REST_Server {
 				return null;
 			}
 
+<<<<<<< HEAD
 			$result = wp_json_encode( $result, $this->get_json_encode_options( $request ) );
+=======
+			$result = wp_json_encode( $result );
+>>>>>>> fb785cbb (Initial commit)
 
 			$json_error_message = $this->get_json_last_error();
 
@@ -534,7 +552,11 @@ class WP_REST_Server {
 				);
 
 				$result = $this->error_to_response( $json_error_obj );
+<<<<<<< HEAD
 				$result = wp_json_encode( $result->data, $this->get_json_encode_options( $request ) );
+=======
+				$result = wp_json_encode( $result->data );
+>>>>>>> fb785cbb (Initial commit)
 			}
 
 			if ( $jsonp_callback ) {
@@ -553,7 +575,11 @@ class WP_REST_Server {
 	 * Converts a response to data to send.
 	 *
 	 * @since 4.4.0
+<<<<<<< HEAD
 	 * @since 5.4.0 The `$embed` parameter can now contain a list of link relations to include.
+=======
+	 * @since 5.4.0 The $embed parameter can now contain a list of link relations to include.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param WP_REST_Response $response Response object.
 	 * @param bool|string[]    $embed    Whether to embed all links, a filtered list of link relations, or no links.
@@ -677,7 +703,11 @@ class WP_REST_Server {
 	 * Embeds the links from the data into the request.
 	 *
 	 * @since 4.4.0
+<<<<<<< HEAD
 	 * @since 5.4.0 The `$embed` parameter can now contain a list of link relations to include.
+=======
+	 * @since 5.4.0 The $embed parameter can now contain a list of link relations to include.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param array         $data  Data from the request.
 	 * @param bool|string[] $embed Whether to embed all links or a filtered list of link relations.
@@ -759,7 +789,11 @@ class WP_REST_Server {
 	 * data instead.
 	 *
 	 * @since 4.4.0
+<<<<<<< HEAD
 	 * @since 6.0.0 The `$embed` parameter can now contain a list of link relations to include.
+=======
+	 * @since 6.0.0 The $embed parameter can now contain a list of link relations to include
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param WP_REST_Response $response Response object.
 	 * @param bool|string[]    $embed    Whether to embed all links, a filtered list of link relations, or no links.
@@ -797,6 +831,7 @@ class WP_REST_Server {
 	 *
 	 * @since 4.4.0
 	 *
+<<<<<<< HEAD
 	 * @param string $route_namespace Namespace.
 	 * @param string $route           The REST route.
 	 * @param array  $route_args      Route arguments.
@@ -810,13 +845,32 @@ class WP_REST_Server {
 			$this->register_route(
 				$route_namespace,
 				'/' . $route_namespace,
+=======
+	 * @param string $namespace  Namespace.
+	 * @param string $route      The REST route.
+	 * @param array  $route_args Route arguments.
+	 * @param bool   $override   Optional. Whether the route should be overridden if it already exists.
+	 *                           Default false.
+	 */
+	public function register_route( $namespace, $route, $route_args, $override = false ) {
+		if ( ! isset( $this->namespaces[ $namespace ] ) ) {
+			$this->namespaces[ $namespace ] = array();
+
+			$this->register_route(
+				$namespace,
+				'/' . $namespace,
+>>>>>>> fb785cbb (Initial commit)
 				array(
 					array(
 						'methods'  => self::READABLE,
 						'callback' => array( $this, 'get_namespace_index' ),
 						'args'     => array(
 							'namespace' => array(
+<<<<<<< HEAD
 								'default' => $route_namespace,
+=======
+								'default' => $namespace,
+>>>>>>> fb785cbb (Initial commit)
 							),
 							'context'   => array(
 								'default' => 'view',
@@ -828,9 +882,14 @@ class WP_REST_Server {
 		}
 
 		// Associative to avoid double-registration.
+<<<<<<< HEAD
 		$this->namespaces[ $route_namespace ][ $route ] = true;
 
 		$route_args['namespace'] = $route_namespace;
+=======
+		$this->namespaces[ $namespace ][ $route ] = true;
+		$route_args['namespace']                  = $namespace;
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( $override || empty( $this->endpoints[ $route ] ) ) {
 			$this->endpoints[ $route ] = $route_args;
@@ -855,6 +914,7 @@ class WP_REST_Server {
 	 * used as the delimiter with preg_match()
 	 *
 	 * @since 4.4.0
+<<<<<<< HEAD
 	 * @since 5.4.0 Added `$route_namespace` parameter.
 	 *
 	 * @param string $route_namespace Optionally, only return routes in the given namespace.
@@ -866,6 +926,19 @@ class WP_REST_Server {
 
 		if ( $route_namespace ) {
 			$endpoints = wp_list_filter( $endpoints, array( 'namespace' => $route_namespace ) );
+=======
+	 * @since 5.4.0 Add $namespace parameter.
+	 *
+	 * @param string $namespace Optionally, only return routes in the given namespace.
+	 * @return array `'/path/regex' => array( $callback, $bitmask )` or
+	 *               `'/path/regex' => array( array( $callback, $bitmask ), ...)`.
+	 */
+	public function get_routes( $namespace = '' ) {
+		$endpoints = $this->endpoints;
+
+		if ( $namespace ) {
+			$endpoints = wp_list_filter( $endpoints, array( 'namespace' => $namespace ) );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		/**
@@ -984,6 +1057,7 @@ class WP_REST_Server {
 		$result = apply_filters( 'rest_pre_dispatch', null, $this, $request );
 
 		if ( ! empty( $result ) ) {
+<<<<<<< HEAD
 
 			// Normalize to either WP_Error or WP_REST_Response...
 			$result = rest_ensure_response( $result );
@@ -993,6 +1067,8 @@ class WP_REST_Server {
 				$result = $this->error_to_response( $result );
 			}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			return $result;
 		}
 
@@ -1346,8 +1422,11 @@ class WP_REST_Server {
 		$site_icon_id = get_option( 'site_icon', 0 );
 
 		$this->add_image_to_index( $response, $site_icon_id, 'site_icon' );
+<<<<<<< HEAD
 
 		$response->data['site_icon_url'] = get_site_icon_url();
+=======
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -1523,11 +1602,14 @@ class WP_REST_Server {
 				$endpoint_data['args'] = array();
 
 				foreach ( $callback['args'] as $key => $opts ) {
+<<<<<<< HEAD
 					if ( is_string( $opts ) ) {
 						$opts = array( $opts => 0 );
 					} elseif ( ! is_array( $opts ) ) {
 						$opts = array();
 					}
+=======
+>>>>>>> fb785cbb (Initial commit)
 					$arg_data             = array_intersect_key( $opts, $allowed_schema_keywords );
 					$arg_data['required'] = ! empty( $opts['required'] );
 

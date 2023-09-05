@@ -8,6 +8,7 @@
 	"keywords": [ "menu", "navigation" ],
 	"textdomain": "default",
 	"attributes": {
+<<<<<<< HEAD
 		"parentPageID": {
 			"type": "integer",
 			"default": 0
@@ -15,6 +16,10 @@
 		"isNested": {
 			"type": "boolean",
 			"default": false
+=======
+		"__unstableMaxPages": {
+			"type": "number"
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"usesContext": [
@@ -33,6 +38,7 @@
 		"openSubmenusOnClick"
 	],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
 		"reusable": false,
 		"html": false,
@@ -49,6 +55,10 @@
 				"fontSize": true
 			}
 		}
+=======
+		"reusable": false,
+		"html": false
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-page-list-editor",
 	"style": "wp-block-page-list"

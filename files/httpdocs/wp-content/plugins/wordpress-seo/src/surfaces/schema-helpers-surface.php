@@ -2,7 +2,10 @@
 
 namespace Yoast\WP\SEO\Surfaces;
 
+<<<<<<< HEAD
 use Yoast\WP\SEO\Exceptions\Forbidden_Property_Mutation_Exception;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Helpers\Schema;
 use YoastSEO_Vendor\Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -58,13 +61,18 @@ class Schema_Helpers_Surface {
 	 *
 	 * @param string $helper The helper to get.
 	 *
+<<<<<<< HEAD
 	 * @return bool Whether the helper exists.
+=======
+	 * @return bool The helper class.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function __isset( $helper ) {
 		return $this->container->has( $this->get_helper_class( $helper ) );
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Prevents setting dynamic properties and unsetting declared properties
 	 * from an inaccessible context.
 	 *
@@ -94,6 +102,8 @@ class Schema_Helpers_Surface {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Get the class name from a helper slug
 	 *
 	 * @param string $helper The name of the helper.

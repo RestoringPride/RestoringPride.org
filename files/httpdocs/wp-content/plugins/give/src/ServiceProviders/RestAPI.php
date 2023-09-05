@@ -2,6 +2,7 @@
 
 namespace Give\ServiceProviders;
 
+<<<<<<< HEAD
 use Give\DonationForms\Endpoints\FormActions;
 use Give\DonationForms\Endpoints\ListDonationForms;
 use Give\DonationForms\Endpoints\SwitchDonationFormView;
@@ -14,6 +15,17 @@ use Give\Donors\Endpoints\SwitchDonorView;
 use Give\Subscriptions\Endpoints\ListSubscriptions;
 use Give\Subscriptions\Endpoints\SubscriptionActions;
 use Give\Subscriptions\Endpoints\SwitchSubscriptionView;
+=======
+use Give\DonationForms\Endpoints\ListForms;
+use Give\Donations\Endpoints\DonationActions;
+use Give\Donations\Endpoints\ListDonations;
+use Give\Donors\Endpoints\SwitchDonorView;
+use Give\Donations\Endpoints\SwitchDonationView;
+use Give\DonationForms\Endpoints\SwitchDonationFormView;
+use Give\Donors\Endpoints\DeleteDonor;
+use Give\Donors\Endpoints\ListDonors;
+use Give\DonationForms\Endpoints\FormActions;
+>>>>>>> fb785cbb (Initial commit)
 use Give\API\Endpoints\Logs\FlushLogs;
 use Give\API\Endpoints\Logs\GetLogs;
 use Give\API\Endpoints\Migrations\GetMigrations;
@@ -50,6 +62,7 @@ class RestAPI implements ServiceProvider
         TotalRefunds::class,
         GetLogs::class,
         FlushLogs::class,
+<<<<<<< HEAD
         ListDonationForms::class,
         ListDonors::class,
         ListDonations::class,
@@ -60,6 +73,15 @@ class RestAPI implements ServiceProvider
         SwitchSubscriptionView::class,
         DonationActions::class,
         SubscriptionActions::class,
+=======
+        ListForms::class,
+        ListDonors::class,
+        ListDonations::class,
+        SwitchDonorView::class,
+        SwitchDonationView::class,
+        SwitchDonationFormView::class,
+        DonationActions::class,
+>>>>>>> fb785cbb (Initial commit)
         DeleteDonor::class,
         FormActions::class,
         GetMigrations::class,

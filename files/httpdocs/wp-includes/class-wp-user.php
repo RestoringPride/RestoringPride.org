@@ -36,7 +36,10 @@
  * @property string $syntax_highlighting
  * @property string $use_ssl
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_User {
 	/**
 	 * User data container.
@@ -156,7 +159,11 @@ class WP_User {
 		if ( $data ) {
 			$this->init( $data, $site_id );
 		} else {
+<<<<<<< HEAD
 			$this->data = new stdClass();
+=======
+			$this->data = new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 

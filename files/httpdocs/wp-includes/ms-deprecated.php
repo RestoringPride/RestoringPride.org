@@ -179,8 +179,11 @@ function validate_email( $email, $check_domain = true) {
  * @deprecated 3.0.0 Use wp_get_sites()
  * @see wp_get_sites()
  *
+<<<<<<< HEAD
  * @global wpdb $wpdb WordPress database abstraction object.
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @param int    $start      Optional. Offset for retrieving the blog list. Default 0.
  * @param int    $num        Optional. Number of blogs to list. Default 10.
  * @param string $deprecated Unused.
@@ -336,6 +339,7 @@ function wpmu_admin_redirect_add_updated_param( $url = '' ) {
  * @deprecated 3.6.0 Use get_user_by()
  * @see get_user_by()
  *
+<<<<<<< HEAD
  * @param string $email_or_login Either an email address or a login.
  * @return int
  */
@@ -348,6 +352,20 @@ function get_user_id_from_string( $email_or_login ) {
 		return $email_or_login;
 	else
 		$user = get_user_by( 'login', $email_or_login );
+=======
+ * @param string $string Either an email address or a login.
+ * @return int
+ */
+function get_user_id_from_string( $string ) {
+	_deprecated_function( __FUNCTION__, '3.6.0', 'get_user_by()' );
+
+	if ( is_email( $string ) )
+		$user = get_user_by( 'email', $string );
+	elseif ( is_numeric( $string ) )
+		return $string;
+	else
+		$user = get_user_by( 'login', $string );
+>>>>>>> fb785cbb (Initial commit)
 
 	if ( $user )
 		return $user->ID;
@@ -380,7 +398,11 @@ function get_blogaddress_by_domain( $domain, $path ) {
 			$url = 'http://' . $domain . $path;
 		}
 	}
+<<<<<<< HEAD
 	return sanitize_url( $url );
+=======
+	return esc_url_raw( $url );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -403,7 +425,11 @@ function create_empty_blog( $domain, $path, $weblog_title, $site_id = 1 ) {
 
 	// Check if the domain has been used already. We should return an error message.
 	if ( domain_exists($domain, $path, $site_id) )
+<<<<<<< HEAD
 		return __( '<strong>Error:</strong> Site URL you&#8217;ve entered is already taken.' );
+=======
+		return __( '<strong>Error</strong>: Site URL you&#8217;ve entered is already taken.' );
+>>>>>>> fb785cbb (Initial commit)
 
 	/*
 	 * Need to back up wpdb table names, and create a new wp_blogs entry for new blog.
@@ -412,7 +438,11 @@ function create_empty_blog( $domain, $path, $weblog_title, $site_id = 1 ) {
 	 */
 
 	if ( ! $blog_id = insert_blog($domain, $path, $site_id) )
+<<<<<<< HEAD
 		return __( '<strong>Error:</strong> There was a problem creating site entry.' );
+=======
+		return __( '<strong>Error</strong>: There was a problem creating site entry.' );
+>>>>>>> fb785cbb (Initial commit)
 
 	switch_to_blog($blog_id);
 	install_blog($blog_id);
@@ -732,6 +762,7 @@ function update_user_status( $id, $pref, $value, $deprecated = null ) {
 
 	return $value;
 }
+<<<<<<< HEAD
 
 /**
  * Maintains a canonical list of terms by syncing terms created for each blog with the global terms table.
@@ -749,3 +780,5 @@ function global_terms( $term_id, $deprecated = '' ) {
 
 	return $term_id;
 }
+=======
+>>>>>>> fb785cbb (Initial commit)

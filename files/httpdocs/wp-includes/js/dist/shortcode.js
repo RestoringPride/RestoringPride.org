@@ -230,13 +230,34 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 !function() {
 "use strict";
+<<<<<<< HEAD
 /* unused harmony exports next, replace, string, regexp, attrs, fromMatch */
 /* harmony import */ var memize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9756);
 /* harmony import */ var memize__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(memize__WEBPACK_IMPORTED_MODULE_0__);
+=======
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": function() { return /* binding */ build_module; }
+});
+
+// UNUSED EXPORTS: attrs, fromMatch, next, regexp, replace, string
+
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+// EXTERNAL MODULE: ./node_modules/memize/index.js
+var memize = __webpack_require__(9756);
+var memize_default = /*#__PURE__*/__webpack_require__.n(memize);
+;// CONCATENATED MODULE: ./node_modules/@wordpress/shortcode/build-module/index.js
+>>>>>>> fb785cbb (Initial commit)
 /**
  * External dependencies
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Shortcode attributes object.
  *
@@ -273,7 +294,11 @@ var __webpack_exports__ = {};
  * @param {string} text  Text to search.
  * @param {number} index Index to start search from.
  *
+<<<<<<< HEAD
  * @return {WPShortcodeMatch | undefined} Matched information.
+=======
+ * @return {?WPShortcodeMatch} Matched information.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function next(tag, text) {
@@ -395,7 +420,11 @@ function regexp(tag) {
  * @return {WPShortcodeAttrs} Parsed shortcode attributes.
  */
 
+<<<<<<< HEAD
 const attrs = memize__WEBPACK_IMPORTED_MODULE_0___default()(text => {
+=======
+const attrs = memize_default()(text => {
+>>>>>>> fb785cbb (Initial commit)
   const named = {};
   const numeric = []; // This regular expression is reused from `shortcode_parse_atts()` in
   // `wp-includes/shortcodes.php`.
@@ -481,6 +510,7 @@ function fromMatch(match) {
  * @return {WPShortcode} Shortcode instance.
  */
 
+<<<<<<< HEAD
 const shortcode = Object.assign(function (options) {
   const {
     tag,
@@ -493,6 +523,11 @@ const shortcode = Object.assign(function (options) {
     type,
     content
   }); // Ensure we have a correctly formatted `attrs` object.
+=======
+const shortcode = (0,external_lodash_namespaceObject.extend)(function (options) {
+  (0,external_lodash_namespaceObject.extend)(this, (0,external_lodash_namespaceObject.pick)(options || {}, 'tag', 'attrs', 'type', 'content'));
+  const attributes = this.attrs; // Ensure we have a correctly formatted `attrs` object.
+>>>>>>> fb785cbb (Initial commit)
 
   this.attrs = {
     named: {},
@@ -501,6 +536,7 @@ const shortcode = Object.assign(function (options) {
 
   if (!attributes) {
     return;
+<<<<<<< HEAD
   }
 
   const attributeTypes = ['named', 'numeric']; // Parse a string of attributes.
@@ -512,6 +548,17 @@ const shortcode = Object.assign(function (options) {
   } else {
     Object.entries(attributes).forEach(_ref => {
       let [key, value] = _ref;
+=======
+  } // Parse a string of attributes.
+
+
+  if ((0,external_lodash_namespaceObject.isString)(attributes)) {
+    this.attrs = attrs(attributes); // Identify a correctly formatted `attrs` object.
+  } else if ((0,external_lodash_namespaceObject.isEqual)(Object.keys(attributes), ['named', 'numeric'])) {
+    this.attrs = attributes; // Handle a flat object of attributes.
+  } else {
+    (0,external_lodash_namespaceObject.forEach)(attributes, (value, key) => {
+>>>>>>> fb785cbb (Initial commit)
       this.set(key, value);
     });
   }
@@ -523,7 +570,11 @@ const shortcode = Object.assign(function (options) {
   attrs,
   fromMatch
 });
+<<<<<<< HEAD
 Object.assign(shortcode.prototype, {
+=======
+(0,external_lodash_namespaceObject.extend)(shortcode.prototype, {
+>>>>>>> fb785cbb (Initial commit)
   /**
    * Get a shortcode attribute.
    *
@@ -535,7 +586,11 @@ Object.assign(shortcode.prototype, {
    * @return {string} Attribute value.
    */
   get(attr) {
+<<<<<<< HEAD
     return this.attrs[typeof attr === 'number' ? 'numeric' : 'named'][attr];
+=======
+    return this.attrs[(0,external_lodash_namespaceObject.isNumber)(attr) ? 'numeric' : 'named'][attr];
+>>>>>>> fb785cbb (Initial commit)
   },
 
   /**
@@ -550,7 +605,11 @@ Object.assign(shortcode.prototype, {
    * @return {WPShortcode} Shortcode instance.
    */
   set(attr, value) {
+<<<<<<< HEAD
     this.attrs[typeof attr === 'number' ? 'numeric' : 'named'][attr] = value;
+=======
+    this.attrs[(0,external_lodash_namespaceObject.isNumber)(attr) ? 'numeric' : 'named'][attr] = value;
+>>>>>>> fb785cbb (Initial commit)
     return this;
   },
 
@@ -561,15 +620,23 @@ Object.assign(shortcode.prototype, {
    */
   string() {
     let text = '[' + this.tag;
+<<<<<<< HEAD
     this.attrs.numeric.forEach(value => {
+=======
+    (0,external_lodash_namespaceObject.forEach)(this.attrs.numeric, value => {
+>>>>>>> fb785cbb (Initial commit)
       if (/\s/.test(value)) {
         text += ' "' + value + '"';
       } else {
         text += ' ' + value;
       }
     });
+<<<<<<< HEAD
     Object.entries(this.attrs.named).forEach(_ref2 => {
       let [name, value] = _ref2;
+=======
+    (0,external_lodash_namespaceObject.forEach)(this.attrs.named, (value, name) => {
+>>>>>>> fb785cbb (Initial commit)
       text += ' ' + name + '="' + value + '"';
     }); // If the tag is marked as `single` or `self-closing`, close the tag and
     // ignore any additional content.
@@ -592,7 +659,11 @@ Object.assign(shortcode.prototype, {
   }
 
 });
+<<<<<<< HEAD
 /* harmony default export */ __webpack_exports__["default"] = (shortcode);
+=======
+/* harmony default export */ var build_module = (shortcode);
+>>>>>>> fb785cbb (Initial commit)
 
 }();
 (window.wp = window.wp || {}).shortcode = __webpack_exports__["default"];

@@ -2,7 +2,10 @@
 
 namespace Give\PaymentGateways\Stripe\Admin;
 
+<<<<<<< HEAD
 use Give\Framework\Http\ConnectServer\Client\ConnectClient;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\PaymentGateways\Stripe\Repositories\AccountDetail;
 use Give\PaymentGateways\Stripe\Repositories\Settings;
 use Give_Admin_Settings;
@@ -24,7 +27,11 @@ use function give_stripe_is_premium_active;
  * Class AccountManagerSettingField
  *
  * @package Give\PaymentGateways\Stripe\Admin
+<<<<<<< HEAD
  * @since   2.13.0
+=======
+ * @since 2.13.0
+>>>>>>> fb785cbb (Initial commit)
  */
 class AccountManagerSettingField
 {
@@ -49,6 +56,7 @@ class AccountManagerSettingField
     private $settings;
 
     /**
+<<<<<<< HEAD
      * @since 2.25.0
      *
      * @var ConnectClient
@@ -60,10 +68,16 @@ class AccountManagerSettingField
      *
      * @since 2.25.0 Use 'ConnectClient' class
      * @since      2.13.0
+=======
+     * AccountManagerSettingField constructor.
+     *
+     * @since 2.13.0
+>>>>>>> fb785cbb (Initial commit)
      *
      * @param AccountDetail $accountDetailRepository
      * @param Settings      $settings
      */
+<<<<<<< HEAD
     public function __construct(
         AccountDetail $accountDetailRepository,
         Settings $settings,
@@ -72,6 +86,12 @@ class AccountManagerSettingField
         $this->accountDetailRepository = $accountDetailRepository;
         $this->settings = $settings;
         $this->connectClient = $connectClient;
+=======
+    public function __construct(AccountDetail $accountDetailRepository, Settings $settings)
+    {
+        $this->accountDetailRepository = $accountDetailRepository;
+        $this->settings = $settings;
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -232,7 +252,11 @@ class AccountManagerSettingField
                      *
                      * @since 2.7.0
                      *
+<<<<<<< HEAD
                      * @param array $stripeAccounts All Stripe accounts.
+=======
+                     * @param array $this- >stripeAccounts  All Stripe accounts.
+>>>>>>> fb785cbb (Initial commit)
                      *
                      */
                     do_action('give_stripe_premium_manual_api_fields', $this->stripeAccounts);
@@ -305,8 +329,12 @@ class AccountManagerSettingField
                 <span class="give-stripe-label"><?php
                     esc_html_e('Account name:', 'give'); ?></span>
                 <span class="give-stripe-connect-data-field">
+<<<<<<< HEAD
                     <?php
                     echo esc_html($accountName); ?>
+=======
+                    <?php echo esc_html($accountName); ?>
+>>>>>>> fb785cbb (Initial commit)
                 </span>
             </div>
 
@@ -338,8 +366,12 @@ class AccountManagerSettingField
 
             <div class="give-stripe-account-fieldset give-stripe-connection-method">
                 <span class="give-stripe-label">
+<<<<<<< HEAD
                     <?php
                     esc_html_e('Connection Method:', 'give'); ?>
+=======
+                    <?php esc_html_e('Connection Method:', 'give'); ?>
+>>>>>>> fb785cbb (Initial commit)
                 </span>
                 <div class="give-stripe-connect-data-field">
                     <?php
@@ -349,8 +381,12 @@ class AccountManagerSettingField
 
             <div class="give-stripe-account-fieldset give-stripe-statement-descriptor">
                 <span class="give-stripe-label">
+<<<<<<< HEAD
                     <?php
                     esc_html_e('Statement Descriptor:', 'give'); ?>
+=======
+                    <?php esc_html_e('Statement Descriptor:', 'give'); ?>
+>>>>>>> fb785cbb (Initial commit)
                     <?php
                     echo sprintf(
                         '<a href="%s" target="_blank">%s</a>',
@@ -360,7 +396,11 @@ class AccountManagerSettingField
                                     'This is the text that appears on your donor\'s bank statements. This is typically the name of your website or organization. Click on this icon to read more about Stripe statement text requirements.',
                                     'give'
                                 ),
+<<<<<<< HEAD
                                 'size' => 'medium',
+=======
+                                'size' => 'medium'
+>>>>>>> fb785cbb (Initial commit)
                             ]
                         )
                     );
@@ -368,6 +408,7 @@ class AccountManagerSettingField
                 </span>
                 <div
                     class="give-stripe-connect-data-field"
+<<<<<<< HEAD
                     data-action-url="<?php
                     echo $editStatementDescriptorUrl; ?>"
                 >
@@ -384,6 +425,19 @@ class AccountManagerSettingField
                         </span>
                     <?php
                     endif; ?>
+=======
+                    data-action-url="<?php echo $editStatementDescriptorUrl; ?>"
+                >
+                    <?php echo $stripeAccount['statement_descriptor']; ?>
+                    <?php if ($this->isGlobalSettingPage()): ?>
+                        <span class="give-stripe-edit-statement-descriptor">
+                            <a class="give-stripe-edit-statement-descriptor-btn" href="#">
+                                <span class="dashicons dashicons-edit-page"></span>
+                                <?php esc_html_e('Edit', 'give'); ?>
+                            </a>
+                        </span>
+                    <?php endif; ?>
+>>>>>>> fb785cbb (Initial commit)
                 </div>
             </div>
 
@@ -425,6 +479,7 @@ class AccountManagerSettingField
                         1 === count($this->stripeAccounts)
                     ) :?>
                         <span class="give-stripe-account-disconnect">
+<<<<<<< HEAD
                             <a class="give-stripe-disconnect-account-btn" href="<?php
                             echo $disconnectUrl; ?>">
                                 <span class="dashicons dashicons-editor-unlink"></span>
@@ -434,6 +489,14 @@ class AccountManagerSettingField
                         </span>
                     <?php
                     endif; ?>
+=======
+                            <a class="give-stripe-disconnect-account-btn" href="<?php echo $disconnectUrl; ?>">
+                                <span class="dashicons dashicons-editor-unlink"></span>
+                                <?php esc_html_e('Disconnect', 'give'); ?>
+                            </a>
+                        </span>
+                    <?php endif; ?>
+>>>>>>> fb785cbb (Initial commit)
                 </div>
             </div>
 
@@ -596,8 +659,12 @@ class AccountManagerSettingField
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.25.0 Use 'ConnectClient' class
      * @since      2.13.0
+=======
+     * @since 2.13.0
+>>>>>>> fb785cbb (Initial commit)
      * @return string
      */
     public function getStripeConnectButtonMarkup()
@@ -622,7 +689,11 @@ class AccountManagerSettingField
                 'website_url' => get_bloginfo('url'),
                 'give_stripe_connected' => '0',
             ],
+<<<<<<< HEAD
             esc_url_raw($this->connectClient->getApiUrl('stripe/connect.php'))
+=======
+            esc_url_raw('https://connect.givewp.com/stripe/connect.php')
+>>>>>>> fb785cbb (Initial commit)
         );
 
         $stripeSvgIcon = '<svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">

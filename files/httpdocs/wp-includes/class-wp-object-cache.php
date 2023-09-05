@@ -21,7 +21,10 @@
  *
  * @since 2.0.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Object_Cache {
 
 	/**
@@ -52,7 +55,11 @@ class WP_Object_Cache {
 	 * List of global cache groups.
 	 *
 	 * @since 3.0.0
+<<<<<<< HEAD
 	 * @var string[]
+=======
+	 * @var array
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	protected $global_groups = array();
 
@@ -131,6 +138,7 @@ class WP_Object_Cache {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Serves as a utility function to determine whether a key is valid.
 	 *
 	 * @since 6.1.0
@@ -168,6 +176,8 @@ class WP_Object_Cache {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Serves as a utility function to determine whether a key exists in the cache.
 	 *
 	 * @since 3.4.0
@@ -201,10 +211,13 @@ class WP_Object_Cache {
 			return false;
 		}
 
+<<<<<<< HEAD
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -258,10 +271,13 @@ class WP_Object_Cache {
 	 * @return bool True if contents were replaced, false if original value does not exist.
 	 */
 	public function replace( $key, $data, $group = 'default', $expire = 0 ) {
+<<<<<<< HEAD
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -291,12 +307,16 @@ class WP_Object_Cache {
 	 * more for cache plugins which use files.
 	 *
 	 * @since 2.0.0
+<<<<<<< HEAD
 	 * @since 6.1.0 Returns false if cache key is invalid.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param int|string $key    What to call the contents in the cache.
 	 * @param mixed      $data   The contents to store in the cache.
 	 * @param string     $group  Optional. Where to group the cache contents. Default 'default'.
 	 * @param int        $expire Optional. Not used.
+<<<<<<< HEAD
 	 * @return bool True if contents were set, false if key is invalid.
 	 */
 	public function set( $key, $data, $group = 'default', $expire = 0 ) {
@@ -304,6 +324,11 @@ class WP_Object_Cache {
 			return false;
 		}
 
+=======
+	 * @return true Always returns true.
+	 */
+	public function set( $key, $data, $group = 'default', $expire = 0 ) {
+>>>>>>> fb785cbb (Initial commit)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -361,10 +386,13 @@ class WP_Object_Cache {
 	 * @return mixed|false The cache contents on success, false on failure to retrieve contents.
 	 */
 	public function get( $key, $group = 'default', $force = false, &$found = null ) {
+<<<<<<< HEAD
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -423,10 +451,13 @@ class WP_Object_Cache {
 	 * @return bool True on success, false if the contents were not deleted.
 	 */
 	public function delete( $key, $group = 'default', $deprecated = false ) {
+<<<<<<< HEAD
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -475,10 +506,13 @@ class WP_Object_Cache {
 	 * @return int|false The item's new value on success, false on failure.
 	 */
 	public function incr( $key, $offset = 1, $group = 'default' ) {
+<<<<<<< HEAD
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -518,10 +552,13 @@ class WP_Object_Cache {
 	 * @return int|false The item's new value on success, false on failure.
 	 */
 	public function decr( $key, $offset = 1, $group = 'default' ) {
+<<<<<<< HEAD
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -563,6 +600,7 @@ class WP_Object_Cache {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Removes all cache items in a group.
 	 *
 	 * @since 6.1.0
@@ -577,6 +615,8 @@ class WP_Object_Cache {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Sets the list of global cache groups.
 	 *
 	 * @since 3.0.0

@@ -8,8 +8,13 @@
 /**
  * Renders the `core/cover` block on server.
  *
+<<<<<<< HEAD
  * @param array  $attributes The block attributes.
  * @param string $content    The block rendered content.
+=======
+ * @param array $attributes The block attributes.
+ * @param array $content    The block rendered content.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return string Returns the cover block markup, if useFeaturedImage is true.
  */
@@ -25,7 +30,11 @@ function render_block_core_cover( $attributes, $content ) {
 		);
 
 		if ( isset( $attributes['focalPoint'] ) ) {
+<<<<<<< HEAD
 			$object_position              = round( $attributes['focalPoint']['x'] * 100 ) . '% ' . round( $attributes['focalPoint']['y'] * 100 ) . '%';
+=======
+			$object_position              = round( $attributes['focalPoint']['x'] * 100 ) . '%' . ' ' . round( $attributes['focalPoint']['y'] * 100 ) . '%';
+>>>>>>> fb785cbb (Initial commit)
 			$attr['data-object-position'] = $object_position;
 			$attr['style']                = 'object-position: ' . $object_position;
 		}
@@ -46,6 +55,7 @@ function render_block_core_cover( $attributes, $content ) {
 			update_post_thumbnail_cache();
 		}
 		$current_featured_image = get_the_post_thumbnail_url();
+<<<<<<< HEAD
 
 		$styles = 'background-image:url(' . esc_url( $current_featured_image ) . '); ';
 
@@ -59,6 +69,11 @@ function render_block_core_cover( $attributes, $content ) {
 		$content = preg_replace(
 			'/class=\".*?\"/',
 			'${0} style="' . $styles . '"',
+=======
+		$content                = preg_replace(
+			'/class=\".*?\"/',
+			'${0} style="background-image:url(' . esc_url( $current_featured_image ) . ')"',
+>>>>>>> fb785cbb (Initial commit)
 			$content,
 			1
 		);

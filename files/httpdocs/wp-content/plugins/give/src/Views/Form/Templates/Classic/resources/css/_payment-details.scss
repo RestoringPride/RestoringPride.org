@@ -294,10 +294,13 @@ $gatewayFontSize: 1rem;
             grid-column: span 12;
         }
 
+<<<<<<< HEAD
         + fieldset {
             margin-top: 1rem;
         }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
         @media screen and (min-width: $desktopMinWidth) {
             > .form-row-responsive {
                 &.form-row-one-third {

@@ -9,9 +9,12 @@
 	"keywords": [ "link" ],
 	"textdomain": "default",
 	"attributes": {
+<<<<<<< HEAD
 		"textAlign": {
 			"type": "string"
 		},
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"url": {
 			"type": "string",
 			"source": "attribute",
@@ -59,7 +62,11 @@
 	},
 	"supports": {
 		"anchor": true,
+<<<<<<< HEAD
 		"align": false,
+=======
+		"align": true,
+>>>>>>> fb785cbb (Initial commit)
 		"alignWide": false,
 		"color": {
 			"__experimentalSkipSerialization": true,
@@ -71,6 +78,7 @@
 		},
 		"typography": {
 			"fontSize": true,
+<<<<<<< HEAD
 			"lineHeight": true,
 			"__experimentalFontFamily": true,
 			"__experimentalFontWeight": true,
@@ -78,12 +86,18 @@
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
+=======
+			"__experimentalFontFamily": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
 		},
 		"reusable": false,
+<<<<<<< HEAD
 		"shadow": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"spacing": {
 			"__experimentalSkipSerialization": true,
 			"padding": [ "horizontal", "vertical" ],
@@ -98,7 +112,11 @@
 				"radius": true
 			}
 		},
+<<<<<<< HEAD
 		"__experimentalSelector": ".wp-block-button .wp-block-button__link"
+=======
+		"__experimentalSelector": ".wp-block-button__link"
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"styles": [
 		{ "name": "fill", "label": "Fill", "isDefault": true },

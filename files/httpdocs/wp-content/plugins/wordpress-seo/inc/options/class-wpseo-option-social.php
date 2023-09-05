@@ -45,7 +45,10 @@ class WPSEO_Option_Social extends WPSEO_Option {
 		'youtube_url'           => '',
 		'wikipedia_url'         => '',
 		'other_social_urls'     => [],
+<<<<<<< HEAD
 		'mastodon_url'          => '',
+=======
+>>>>>>> fb785cbb (Initial commit)
 	];
 
 	/**
@@ -70,8 +73,13 @@ class WPSEO_Option_Social extends WPSEO_Option {
 	 * @var array
 	 */
 	public static $twitter_card_types = [
+<<<<<<< HEAD
 		'summary_large_image' => '',
 		// 'summary'             => '',
+=======
+		'summary'             => '',
+		'summary_large_image' => '',
+>>>>>>> fb785cbb (Initial commit)
 		// 'photo'               => '',
 		// 'gallery'             => '',
 		// 'app'                 => '',
@@ -107,6 +115,10 @@ class WPSEO_Option_Social extends WPSEO_Option {
 	 * @return void
 	 */
 	public function translate_defaults() {
+<<<<<<< HEAD
+=======
+		self::$twitter_card_types['summary']             = __( 'Summary', 'wordpress-seo' );
+>>>>>>> fb785cbb (Initial commit)
 		self::$twitter_card_types['summary_large_image'] = __( 'Summary with large image', 'wordpress-seo' );
 	}
 
@@ -152,7 +164,10 @@ class WPSEO_Option_Social extends WPSEO_Option {
 				case 'og_frontpage_image':
 				case 'youtube_url':
 				case 'wikipedia_url':
+<<<<<<< HEAD
 				case 'mastodon_url':
+=======
+>>>>>>> fb785cbb (Initial commit)
 					$this->validate_url( $key, $dirty, $old, $clean );
 					break;
 

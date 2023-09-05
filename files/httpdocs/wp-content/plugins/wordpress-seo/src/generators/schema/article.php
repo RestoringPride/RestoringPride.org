@@ -203,6 +203,7 @@ class Article extends Abstract_Schema_Piece {
 		// Strip pre/code blocks and their content.
 		$post_content = \preg_replace( '@<(pre|code)[^>]*?>.*?</\\1>@si', '', $post_content );
 
+<<<<<<< HEAD
 		// Add space between tags that don't have it.
 		$post_content = \preg_replace( '@><@', '> <', $post_content );
 
@@ -232,5 +233,11 @@ class Article extends Abstract_Schema_Piece {
 		$post_content = \preg_replace( '@&[a-z0-9]+;@i', ' ', \htmlentities( $post_content ) );
 
 		return \str_word_count( $post_content, 0, $characters );
+=======
+		// Strips all other tags.
+		$post_content = \wp_strip_all_tags( $post_content );
+
+		return \str_word_count( $post_content, 0 );
+>>>>>>> fb785cbb (Initial commit)
 	}
 }

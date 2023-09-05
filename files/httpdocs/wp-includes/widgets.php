@@ -10,7 +10,11 @@
  * This functionality was found in a plugin before the WordPress 2.2 release, which
  * included it in the core from that point on.
  *
+<<<<<<< HEAD
  * @link https://wordpress.org/documentation/article/manage-wordpress-widgets/
+=======
+ * @link https://wordpress.org/support/article/wordpress-widgets/
+>>>>>>> fb785cbb (Initial commit)
  * @link https://developer.wordpress.org/themes/functionality/widgets/
  *
  * @package WordPress
@@ -1578,7 +1582,11 @@ function wp_widget_rss_output( $rss, $args = array() ) {
 
 	if ( is_wp_error( $rss ) ) {
 		if ( is_admin() || current_user_can( 'manage_options' ) ) {
+<<<<<<< HEAD
 			echo '<p><strong>' . __( 'RSS Error:' ) . '</strong> ' . esc_html( $rss->get_error_message() ) . '</p>';
+=======
+			echo '<p><strong>' . __( 'RSS Error:' ) . '</strong> ' . $rss->get_error_message() . '</p>';
+>>>>>>> fb785cbb (Initial commit)
 		}
 		return;
 	}
@@ -1701,7 +1709,11 @@ function wp_widget_rss_form( $args, $inputs = null ) {
 	$args['show_date']    = isset( $args['show_date'] ) ? (int) $args['show_date'] : (int) $inputs['show_date'];
 
 	if ( ! empty( $args['error'] ) ) {
+<<<<<<< HEAD
 		echo '<p class="widget-error"><strong>' . __( 'RSS Error:' ) . '</strong> ' . esc_html( $args['error'] ) . '</p>';
+=======
+		echo '<p class="widget-error"><strong>' . __( 'RSS Error:' ) . '</strong> ' . $args['error'] . '</p>';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	$esc_number = esc_attr( $args['number'] );
@@ -1767,7 +1779,11 @@ function wp_widget_rss_process( $widget_rss, $check_feed = true ) {
 	if ( $items < 1 || 20 < $items ) {
 		$items = 10;
 	}
+<<<<<<< HEAD
 	$url          = sanitize_url( strip_tags( $widget_rss['url'] ) );
+=======
+	$url          = esc_url_raw( strip_tags( $widget_rss['url'] ) );
+>>>>>>> fb785cbb (Initial commit)
 	$title        = isset( $widget_rss['title'] ) ? trim( strip_tags( $widget_rss['title'] ) ) : '';
 	$show_summary = isset( $widget_rss['show_summary'] ) ? (int) $widget_rss['show_summary'] : 0;
 	$show_author  = isset( $widget_rss['show_author'] ) ? (int) $widget_rss['show_author'] : 0;
@@ -2105,6 +2121,7 @@ function wp_check_widget_editor_deps() {
 		}
 	}
 }
+<<<<<<< HEAD
 
 /**
  * Registers the previous theme's sidebars for the block themes.
@@ -2131,3 +2148,5 @@ function _wp_block_theme_register_classic_sidebars() {
 		$wp_registered_sidebars[ $sidebar['id'] ] = $sidebar;
 	}
 }
+=======
+>>>>>>> fb785cbb (Initial commit)

@@ -18,6 +18,7 @@
 
 ignore_user_abort( true );
 
+<<<<<<< HEAD
 if ( ! headers_sent() ) {
 	header( 'Expires: Wed, 11 Jan 1984 05:00:00 GMT' );
 	header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
@@ -28,6 +29,16 @@ if ( PHP_VERSION_ID >= 70016 && function_exists( 'fastcgi_finish_request' ) ) {
 	fastcgi_finish_request();
 } elseif ( function_exists( 'litespeed_finish_request' ) ) {
 	litespeed_finish_request();
+=======
+/* Don't make the request block till we finish, if possible. */
+if ( function_exists( 'fastcgi_finish_request' ) && version_compare( phpversion(), '7.0.16', '>=' ) ) {
+	if ( ! headers_sent() ) {
+		header( 'Expires: Wed, 11 Jan 1984 05:00:00 GMT' );
+		header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
+	}
+
+	fastcgi_finish_request();
+>>>>>>> fb785cbb (Initial commit)
 }
 
 if ( ! empty( $_POST ) || defined( 'DOING_AJAX' ) || defined( 'DOING_CRON' ) ) {
@@ -35,7 +46,11 @@ if ( ! empty( $_POST ) || defined( 'DOING_AJAX' ) || defined( 'DOING_CRON' ) ) {
 }
 
 /**
+<<<<<<< HEAD
  * Tell WordPress the cron task is running.
+=======
+ * Tell WordPress we are doing the cron task.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @var bool
  */
@@ -123,6 +138,7 @@ foreach ( $crons as $timestamp => $cronhooks ) {
 			$schedule = $v['schedule'];
 
 			if ( $schedule ) {
+<<<<<<< HEAD
 				$result = wp_reschedule_event( $timestamp, $schedule, $hook, $v['args'], true );
 
 				if ( is_wp_error( $result ) ) {
@@ -175,6 +191,12 @@ foreach ( $crons as $timestamp => $cronhooks ) {
 				 */
 				do_action( 'cron_unschedule_event_error', $result, $hook, $v );
 			}
+=======
+				wp_reschedule_event( $timestamp, $schedule, $hook, $v['args'] );
+			}
+
+			wp_unschedule_event( $timestamp, $hook, $v['args'] );
+>>>>>>> fb785cbb (Initial commit)
 
 			/**
 			 * Fires scheduled events.

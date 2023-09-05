@@ -1,6 +1,7 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+<<<<<<< HEAD
 /***/ 5619:
 /***/ (function(module) {
 
@@ -81,6 +82,8 @@ module.exports = function equal(a, b) {
 
 /***/ }),
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /***/ 9756:
 /***/ (function(module) {
 
@@ -249,6 +252,7 @@ module.exports = memize;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 4793:
 /***/ (function(module) {
 
@@ -682,6 +686,8 @@ module.exports.remove = removeAccents;
 
 /***/ }),
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /***/ 7308:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5926,6 +5932,7 @@ __webpack_require__.d(__webpack_exports__, {
   "getBlockDefaultClassName": function() { return /* reexport */ getBlockDefaultClassName; },
   "getBlockFromExample": function() { return /* reexport */ getBlockFromExample; },
   "getBlockMenuDefaultClassName": function() { return /* reexport */ getBlockMenuDefaultClassName; },
+<<<<<<< HEAD
   "getBlockSupport": function() { return /* reexport */ getBlockSupport; },
   "getBlockTransforms": function() { return /* reexport */ getBlockTransforms; },
   "getBlockType": function() { return /* reexport */ getBlockType; },
@@ -5936,17 +5943,37 @@ __webpack_require__.d(__webpack_exports__, {
   "getDefaultBlockName": function() { return /* reexport */ getDefaultBlockName; },
   "getFreeformContentHandlerName": function() { return /* reexport */ getFreeformContentHandlerName; },
   "getGroupingBlockName": function() { return /* reexport */ getGroupingBlockName; },
+=======
+  "getBlockSupport": function() { return /* reexport */ registration_getBlockSupport; },
+  "getBlockTransforms": function() { return /* reexport */ getBlockTransforms; },
+  "getBlockType": function() { return /* reexport */ registration_getBlockType; },
+  "getBlockTypes": function() { return /* reexport */ registration_getBlockTypes; },
+  "getBlockVariations": function() { return /* reexport */ registration_getBlockVariations; },
+  "getCategories": function() { return /* reexport */ categories_getCategories; },
+  "getChildBlockNames": function() { return /* reexport */ registration_getChildBlockNames; },
+  "getDefaultBlockName": function() { return /* reexport */ registration_getDefaultBlockName; },
+  "getFreeformContentHandlerName": function() { return /* reexport */ getFreeformContentHandlerName; },
+  "getGroupingBlockName": function() { return /* reexport */ registration_getGroupingBlockName; },
+>>>>>>> fb785cbb (Initial commit)
   "getPhrasingContentSchema": function() { return /* reexport */ deprecatedGetPhrasingContentSchema; },
   "getPossibleBlockTransformations": function() { return /* reexport */ getPossibleBlockTransformations; },
   "getSaveContent": function() { return /* reexport */ getSaveContent; },
   "getSaveElement": function() { return /* reexport */ getSaveElement; },
   "getUnregisteredTypeHandlerName": function() { return /* reexport */ getUnregisteredTypeHandlerName; },
+<<<<<<< HEAD
   "hasBlockSupport": function() { return /* reexport */ hasBlockSupport; },
   "hasChildBlocks": function() { return /* reexport */ hasChildBlocks; },
   "hasChildBlocksWithInserterSupport": function() { return /* reexport */ hasChildBlocksWithInserterSupport; },
   "isReusableBlock": function() { return /* reexport */ isReusableBlock; },
   "isTemplatePart": function() { return /* reexport */ isTemplatePart; },
   "isUnmodifiedBlock": function() { return /* reexport */ isUnmodifiedBlock; },
+=======
+  "hasBlockSupport": function() { return /* reexport */ registration_hasBlockSupport; },
+  "hasChildBlocks": function() { return /* reexport */ registration_hasChildBlocks; },
+  "hasChildBlocksWithInserterSupport": function() { return /* reexport */ registration_hasChildBlocksWithInserterSupport; },
+  "isReusableBlock": function() { return /* reexport */ isReusableBlock; },
+  "isTemplatePart": function() { return /* reexport */ isTemplatePart; },
+>>>>>>> fb785cbb (Initial commit)
   "isUnmodifiedDefaultBlock": function() { return /* reexport */ isUnmodifiedDefaultBlock; },
   "isValidBlockContent": function() { return /* reexport */ isValidBlockContent; },
   "isValidIcon": function() { return /* reexport */ isValidIcon; },
@@ -5960,7 +5987,11 @@ __webpack_require__.d(__webpack_exports__, {
   "registerBlockStyle": function() { return /* reexport */ registerBlockStyle; },
   "registerBlockType": function() { return /* reexport */ registerBlockType; },
   "registerBlockVariation": function() { return /* reexport */ registerBlockVariation; },
+<<<<<<< HEAD
   "serialize": function() { return /* reexport */ serialize; },
+=======
+  "serialize": function() { return /* reexport */ serializer_serialize; },
+>>>>>>> fb785cbb (Initial commit)
   "serializeRawBlock": function() { return /* reexport */ serializeRawBlock; },
   "setCategories": function() { return /* reexport */ categories_setCategories; },
   "setDefaultBlockName": function() { return /* reexport */ setDefaultBlockName; },
@@ -5984,6 +6015,7 @@ var selectors_namespaceObject = {};
 __webpack_require__.r(selectors_namespaceObject);
 __webpack_require__.d(selectors_namespaceObject, {
   "__experimentalGetUnprocessedBlockTypes": function() { return __experimentalGetUnprocessedBlockTypes; },
+<<<<<<< HEAD
   "__experimentalHasContentRoleAttribute": function() { return __experimentalHasContentRoleAttribute; },
   "getActiveBlockVariation": function() { return getActiveBlockVariation; },
   "getBlockStyles": function() { return getBlockStyles; },
@@ -6002,6 +6034,25 @@ __webpack_require__.d(selectors_namespaceObject, {
   "hasBlockSupport": function() { return selectors_hasBlockSupport; },
   "hasChildBlocks": function() { return selectors_hasChildBlocks; },
   "hasChildBlocksWithInserterSupport": function() { return selectors_hasChildBlocksWithInserterSupport; },
+=======
+  "getActiveBlockVariation": function() { return getActiveBlockVariation; },
+  "getBlockStyles": function() { return getBlockStyles; },
+  "getBlockSupport": function() { return getBlockSupport; },
+  "getBlockType": function() { return getBlockType; },
+  "getBlockTypes": function() { return getBlockTypes; },
+  "getBlockVariations": function() { return getBlockVariations; },
+  "getCategories": function() { return getCategories; },
+  "getChildBlockNames": function() { return getChildBlockNames; },
+  "getCollections": function() { return getCollections; },
+  "getDefaultBlockName": function() { return getDefaultBlockName; },
+  "getDefaultBlockVariation": function() { return getDefaultBlockVariation; },
+  "getFreeformFallbackBlockName": function() { return getFreeformFallbackBlockName; },
+  "getGroupingBlockName": function() { return getGroupingBlockName; },
+  "getUnregisteredFallbackBlockName": function() { return getUnregisteredFallbackBlockName; },
+  "hasBlockSupport": function() { return hasBlockSupport; },
+  "hasChildBlocks": function() { return hasChildBlocks; },
+  "hasChildBlocksWithInserterSupport": function() { return hasChildBlocksWithInserterSupport; },
+>>>>>>> fb785cbb (Initial commit)
   "isMatchingSearchTerm": function() { return isMatchingSearchTerm; }
 });
 
@@ -6033,6 +6084,895 @@ var external_wp_data_namespaceObject = window["wp"]["data"];
 var external_lodash_namespaceObject = window["lodash"];
 ;// CONCATENATED MODULE: external ["wp","i18n"]
 var external_wp_i18n_namespaceObject = window["wp"]["i18n"];
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/store/reducer.js
+/**
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+
+/**
+ * @typedef {Object} WPBlockCategory
+ *
+ * @property {string} slug  Unique category slug.
+ * @property {string} title Category label, for display in user interface.
+ */
+
+/**
+ * Default set of categories.
+ *
+ * @type {WPBlockCategory[]}
+ */
+
+const DEFAULT_CATEGORIES = [{
+  slug: 'text',
+  title: (0,external_wp_i18n_namespaceObject.__)('Text')
+}, {
+  slug: 'media',
+  title: (0,external_wp_i18n_namespaceObject.__)('Media')
+}, {
+  slug: 'design',
+  title: (0,external_wp_i18n_namespaceObject.__)('Design')
+}, {
+  slug: 'widgets',
+  title: (0,external_wp_i18n_namespaceObject.__)('Widgets')
+}, {
+  slug: 'theme',
+  title: (0,external_wp_i18n_namespaceObject.__)('Theme')
+}, {
+  slug: 'embed',
+  title: (0,external_wp_i18n_namespaceObject.__)('Embeds')
+}, {
+  slug: 'reusable',
+  title: (0,external_wp_i18n_namespaceObject.__)('Reusable blocks')
+}];
+/**
+ * Reducer managing the unprocessed block types in a form passed when registering the by block.
+ * It's for internal use only. It allows recomputing the processed block types on-demand after block type filters
+ * get added or removed.
+ *
+ * @param {Object} state  Current state.
+ * @param {Object} action Dispatched action.
+ *
+ * @return {Object} Updated state.
+ */
+
+function unprocessedBlockTypes() {
+  let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  let action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case 'ADD_UNPROCESSED_BLOCK_TYPE':
+      return { ...state,
+        [action.blockType.name]: action.blockType
+      };
+
+    case 'REMOVE_BLOCK_TYPES':
+      return (0,external_lodash_namespaceObject.omit)(state, action.names);
+  }
+
+  return state;
+}
+/**
+ * Reducer managing the processed block types with all filters applied.
+ * The state is derived from the `unprocessedBlockTypes` reducer.
+ *
+ * @param {Object} state  Current state.
+ * @param {Object} action Dispatched action.
+ *
+ * @return {Object} Updated state.
+ */
+
+function blockTypes() {
+  let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  let action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case 'ADD_BLOCK_TYPES':
+      return { ...state,
+        ...(0,external_lodash_namespaceObject.keyBy)(action.blockTypes, 'name')
+      };
+
+    case 'REMOVE_BLOCK_TYPES':
+      return (0,external_lodash_namespaceObject.omit)(state, action.names);
+  }
+
+  return state;
+}
+/**
+ * Reducer managing the block style variations.
+ *
+ * @param {Object} state  Current state.
+ * @param {Object} action Dispatched action.
+ *
+ * @return {Object} Updated state.
+ */
+
+function blockStyles() {
+  let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  let action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case 'ADD_BLOCK_TYPES':
+      return { ...state,
+        ...(0,external_lodash_namespaceObject.mapValues)((0,external_lodash_namespaceObject.keyBy)(action.blockTypes, 'name'), blockType => {
+          return (0,external_lodash_namespaceObject.uniqBy)([...(0,external_lodash_namespaceObject.get)(blockType, ['styles'], []).map(style => ({ ...style,
+            source: 'block'
+          })), ...(0,external_lodash_namespaceObject.get)(state, [blockType.name], []).filter(_ref => {
+            let {
+              source
+            } = _ref;
+            return 'block' !== source;
+          })], style => style.name);
+        })
+      };
+
+    case 'ADD_BLOCK_STYLES':
+      return { ...state,
+        [action.blockName]: (0,external_lodash_namespaceObject.uniqBy)([...(0,external_lodash_namespaceObject.get)(state, [action.blockName], []), ...action.styles], style => style.name)
+      };
+
+    case 'REMOVE_BLOCK_STYLES':
+      return { ...state,
+        [action.blockName]: (0,external_lodash_namespaceObject.filter)((0,external_lodash_namespaceObject.get)(state, [action.blockName], []), style => action.styleNames.indexOf(style.name) === -1)
+      };
+  }
+
+  return state;
+}
+/**
+ * Reducer managing the block variations.
+ *
+ * @param {Object} state  Current state.
+ * @param {Object} action Dispatched action.
+ *
+ * @return {Object} Updated state.
+ */
+
+function blockVariations() {
+  let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  let action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case 'ADD_BLOCK_TYPES':
+      return { ...state,
+        ...(0,external_lodash_namespaceObject.mapValues)((0,external_lodash_namespaceObject.keyBy)(action.blockTypes, 'name'), blockType => {
+          return (0,external_lodash_namespaceObject.uniqBy)([...(0,external_lodash_namespaceObject.get)(blockType, ['variations'], []).map(variation => ({ ...variation,
+            source: 'block'
+          })), ...(0,external_lodash_namespaceObject.get)(state, [blockType.name], []).filter(_ref2 => {
+            let {
+              source
+            } = _ref2;
+            return 'block' !== source;
+          })], variation => variation.name);
+        })
+      };
+
+    case 'ADD_BLOCK_VARIATIONS':
+      return { ...state,
+        [action.blockName]: (0,external_lodash_namespaceObject.uniqBy)([...(0,external_lodash_namespaceObject.get)(state, [action.blockName], []), ...action.variations], variation => variation.name)
+      };
+
+    case 'REMOVE_BLOCK_VARIATIONS':
+      return { ...state,
+        [action.blockName]: (0,external_lodash_namespaceObject.filter)((0,external_lodash_namespaceObject.get)(state, [action.blockName], []), variation => action.variationNames.indexOf(variation.name) === -1)
+      };
+  }
+
+  return state;
+}
+/**
+ * Higher-order Reducer creating a reducer keeping track of given block name.
+ *
+ * @param {string} setActionType Action type.
+ *
+ * @return {Function} Reducer.
+ */
+
+function createBlockNameSetterReducer(setActionType) {
+  return function () {
+    let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+    let action = arguments.length > 1 ? arguments[1] : undefined;
+
+    switch (action.type) {
+      case 'REMOVE_BLOCK_TYPES':
+        if (action.names.indexOf(state) !== -1) {
+          return null;
+        }
+
+        return state;
+
+      case setActionType:
+        return action.name || null;
+    }
+
+    return state;
+  };
+}
+const defaultBlockName = createBlockNameSetterReducer('SET_DEFAULT_BLOCK_NAME');
+const freeformFallbackBlockName = createBlockNameSetterReducer('SET_FREEFORM_FALLBACK_BLOCK_NAME');
+const unregisteredFallbackBlockName = createBlockNameSetterReducer('SET_UNREGISTERED_FALLBACK_BLOCK_NAME');
+const groupingBlockName = createBlockNameSetterReducer('SET_GROUPING_BLOCK_NAME');
+/**
+ * Reducer managing the categories
+ *
+ * @param {WPBlockCategory[]} state  Current state.
+ * @param {Object}            action Dispatched action.
+ *
+ * @return {WPBlockCategory[]} Updated state.
+ */
+
+function categories() {
+  let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : DEFAULT_CATEGORIES;
+  let action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case 'SET_CATEGORIES':
+      return action.categories || [];
+
+    case 'UPDATE_CATEGORY':
+      {
+        if (!action.category || (0,external_lodash_namespaceObject.isEmpty)(action.category)) {
+          return state;
+        }
+
+        const categoryToChange = (0,external_lodash_namespaceObject.find)(state, ['slug', action.slug]);
+
+        if (categoryToChange) {
+          return (0,external_lodash_namespaceObject.map)(state, category => {
+            if (category.slug === action.slug) {
+              return { ...category,
+                ...action.category
+              };
+            }
+
+            return category;
+          });
+        }
+      }
+  }
+
+  return state;
+}
+function collections() {
+  let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  let action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case 'ADD_BLOCK_COLLECTION':
+      return { ...state,
+        [action.namespace]: {
+          title: action.title,
+          icon: action.icon
+        }
+      };
+
+    case 'REMOVE_BLOCK_COLLECTION':
+      return (0,external_lodash_namespaceObject.omit)(state, action.namespace);
+  }
+
+  return state;
+}
+/* harmony default export */ var reducer = ((0,external_wp_data_namespaceObject.combineReducers)({
+  unprocessedBlockTypes,
+  blockTypes,
+  blockStyles,
+  blockVariations,
+  defaultBlockName,
+  freeformFallbackBlockName,
+  unregisteredFallbackBlockName,
+  groupingBlockName,
+  categories,
+  collections
+}));
+
+;// CONCATENATED MODULE: ./node_modules/rememo/es/rememo.js
+
+
+var LEAF_KEY, hasWeakMap;
+
+/**
+ * Arbitrary value used as key for referencing cache object in WeakMap tree.
+ *
+ * @type {Object}
+ */
+LEAF_KEY = {};
+
+/**
+ * Whether environment supports WeakMap.
+ *
+ * @type {boolean}
+ */
+hasWeakMap = typeof WeakMap !== 'undefined';
+
+/**
+ * Returns the first argument as the sole entry in an array.
+ *
+ * @param {*} value Value to return.
+ *
+ * @return {Array} Value returned as entry in array.
+ */
+function arrayOf( value ) {
+	return [ value ];
+}
+
+/**
+ * Returns true if the value passed is object-like, or false otherwise. A value
+ * is object-like if it can support property assignment, e.g. object or array.
+ *
+ * @param {*} value Value to test.
+ *
+ * @return {boolean} Whether value is object-like.
+ */
+function isObjectLike( value ) {
+	return !! value && 'object' === typeof value;
+}
+
+/**
+ * Creates and returns a new cache object.
+ *
+ * @return {Object} Cache object.
+ */
+function createCache() {
+	var cache = {
+		clear: function() {
+			cache.head = null;
+		},
+	};
+
+	return cache;
+}
+
+/**
+ * Returns true if entries within the two arrays are strictly equal by
+ * reference from a starting index.
+ *
+ * @param {Array}  a         First array.
+ * @param {Array}  b         Second array.
+ * @param {number} fromIndex Index from which to start comparison.
+ *
+ * @return {boolean} Whether arrays are shallowly equal.
+ */
+function isShallowEqual( a, b, fromIndex ) {
+	var i;
+
+	if ( a.length !== b.length ) {
+		return false;
+	}
+
+	for ( i = fromIndex; i < a.length; i++ ) {
+		if ( a[ i ] !== b[ i ] ) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+/**
+ * Returns a memoized selector function. The getDependants function argument is
+ * called before the memoized selector and is expected to return an immutable
+ * reference or array of references on which the selector depends for computing
+ * its own return value. The memoize cache is preserved only as long as those
+ * dependant references remain the same. If getDependants returns a different
+ * reference(s), the cache is cleared and the selector value regenerated.
+ *
+ * @param {Function} selector      Selector function.
+ * @param {Function} getDependants Dependant getter returning an immutable
+ *                                 reference or array of reference used in
+ *                                 cache bust consideration.
+ *
+ * @return {Function} Memoized selector.
+ */
+/* harmony default export */ function rememo(selector, getDependants ) {
+	var rootCache, getCache;
+
+	// Use object source as dependant if getter not provided
+	if ( ! getDependants ) {
+		getDependants = arrayOf;
+	}
+
+	/**
+	 * Returns the root cache. If WeakMap is supported, this is assigned to the
+	 * root WeakMap cache set, otherwise it is a shared instance of the default
+	 * cache object.
+	 *
+	 * @return {(WeakMap|Object)} Root cache object.
+	 */
+	function getRootCache() {
+		return rootCache;
+	}
+
+	/**
+	 * Returns the cache for a given dependants array. When possible, a WeakMap
+	 * will be used to create a unique cache for each set of dependants. This
+	 * is feasible due to the nature of WeakMap in allowing garbage collection
+	 * to occur on entries where the key object is no longer referenced. Since
+	 * WeakMap requires the key to be an object, this is only possible when the
+	 * dependant is object-like. The root cache is created as a hierarchy where
+	 * each top-level key is the first entry in a dependants set, the value a
+	 * WeakMap where each key is the next dependant, and so on. This continues
+	 * so long as the dependants are object-like. If no dependants are object-
+	 * like, then the cache is shared across all invocations.
+	 *
+	 * @see isObjectLike
+	 *
+	 * @param {Array} dependants Selector dependants.
+	 *
+	 * @return {Object} Cache object.
+	 */
+	function getWeakMapCache( dependants ) {
+		var caches = rootCache,
+			isUniqueByDependants = true,
+			i, dependant, map, cache;
+
+		for ( i = 0; i < dependants.length; i++ ) {
+			dependant = dependants[ i ];
+
+			// Can only compose WeakMap from object-like key.
+			if ( ! isObjectLike( dependant ) ) {
+				isUniqueByDependants = false;
+				break;
+			}
+
+			// Does current segment of cache already have a WeakMap?
+			if ( caches.has( dependant ) ) {
+				// Traverse into nested WeakMap.
+				caches = caches.get( dependant );
+			} else {
+				// Create, set, and traverse into a new one.
+				map = new WeakMap();
+				caches.set( dependant, map );
+				caches = map;
+			}
+		}
+
+		// We use an arbitrary (but consistent) object as key for the last item
+		// in the WeakMap to serve as our running cache.
+		if ( ! caches.has( LEAF_KEY ) ) {
+			cache = createCache();
+			cache.isUniqueByDependants = isUniqueByDependants;
+			caches.set( LEAF_KEY, cache );
+		}
+
+		return caches.get( LEAF_KEY );
+	}
+
+	// Assign cache handler by availability of WeakMap
+	getCache = hasWeakMap ? getWeakMapCache : getRootCache;
+
+	/**
+	 * Resets root memoization cache.
+	 */
+	function clear() {
+		rootCache = hasWeakMap ? new WeakMap() : createCache();
+	}
+
+	// eslint-disable-next-line jsdoc/check-param-names
+	/**
+	 * The augmented selector call, considering first whether dependants have
+	 * changed before passing it to underlying memoize function.
+	 *
+	 * @param {Object} source    Source object for derivation.
+	 * @param {...*}   extraArgs Additional arguments to pass to selector.
+	 *
+	 * @return {*} Selector result.
+	 */
+	function callSelector( /* source, ...extraArgs */ ) {
+		var len = arguments.length,
+			cache, node, i, args, dependants;
+
+		// Create copy of arguments (avoid leaking deoptimization).
+		args = new Array( len );
+		for ( i = 0; i < len; i++ ) {
+			args[ i ] = arguments[ i ];
+		}
+
+		dependants = getDependants.apply( null, args );
+		cache = getCache( dependants );
+
+		// If not guaranteed uniqueness by dependants (primitive type or lack
+		// of WeakMap support), shallow compare against last dependants and, if
+		// references have changed, destroy cache to recalculate result.
+		if ( ! cache.isUniqueByDependants ) {
+			if ( cache.lastDependants && ! isShallowEqual( dependants, cache.lastDependants, 0 ) ) {
+				cache.clear();
+			}
+
+			cache.lastDependants = dependants;
+		}
+
+		node = cache.head;
+		while ( node ) {
+			// Check whether node arguments match arguments
+			if ( ! isShallowEqual( node.args, args, 1 ) ) {
+				node = node.next;
+				continue;
+			}
+
+			// At this point we can assume we've found a match
+
+			// Surface matched node to head if not already
+			if ( node !== cache.head ) {
+				// Adjust siblings to point to each other.
+				node.prev.next = node.next;
+				if ( node.next ) {
+					node.next.prev = node.prev;
+				}
+
+				node.next = cache.head;
+				node.prev = null;
+				cache.head.prev = node;
+				cache.head = node;
+			}
+
+			// Return immediately
+			return node.val;
+		}
+
+		// No cached value found. Continue to insertion phase:
+
+		node = {
+			// Generate the result from original function
+			val: selector.apply( null, args ),
+		};
+
+		// Avoid including the source object in the cache.
+		args[ 0 ] = null;
+		node.args = args;
+
+		// Don't need to check whether node is already head, since it would
+		// have been returned above already if it was
+
+		// Shift existing head down list
+		if ( cache.head ) {
+			cache.head.prev = node;
+			node.next = cache.head;
+		}
+
+		cache.head = node;
+
+		return node.val;
+	}
+
+	callSelector.getDependants = getDependants;
+	callSelector.clear = clear;
+	clear();
+
+	return callSelector;
+}
+
+;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/store/selectors.js
+/**
+ * External dependencies
+ */
+
+
+/** @typedef {import('../api/registration').WPBlockVariation} WPBlockVariation */
+
+/** @typedef {import('../api/registration').WPBlockVariationScope} WPBlockVariationScope */
+
+/** @typedef {import('./reducer').WPBlockCategory} WPBlockCategory */
+
+/**
+ * Given a block name or block type object, returns the corresponding
+ * normalized block type object.
+ *
+ * @param {Object}          state      Blocks state.
+ * @param {(string|Object)} nameOrType Block name or type object
+ *
+ * @return {Object} Block type object.
+ */
+
+const getNormalizedBlockType = (state, nameOrType) => 'string' === typeof nameOrType ? getBlockType(state, nameOrType) : nameOrType;
+/**
+ * Returns all the unprocessed block types as passed during the registration.
+ *
+ * @param {Object} state Data state.
+ *
+ * @return {Array} Unprocessed block types.
+ */
+
+
+function __experimentalGetUnprocessedBlockTypes(state) {
+  return state.unprocessedBlockTypes;
+}
+/**
+ * Returns all the available block types.
+ *
+ * @param {Object} state Data state.
+ *
+ * @return {Array} Block Types.
+ */
+
+const getBlockTypes = rememo(state => Object.values(state.blockTypes), state => [state.blockTypes]);
+/**
+ * Returns a block type by name.
+ *
+ * @param {Object} state Data state.
+ * @param {string} name  Block type name.
+ *
+ * @return {Object?} Block Type.
+ */
+
+function getBlockType(state, name) {
+  return state.blockTypes[name];
+}
+/**
+ * Returns block styles by block name.
+ *
+ * @param {Object} state Data state.
+ * @param {string} name  Block type name.
+ *
+ * @return {Array?} Block Styles.
+ */
+
+function getBlockStyles(state, name) {
+  return state.blockStyles[name];
+}
+/**
+ * Returns block variations by block name.
+ *
+ * @param {Object}                state     Data state.
+ * @param {string}                blockName Block type name.
+ * @param {WPBlockVariationScope} [scope]   Block variation scope name.
+ *
+ * @return {(WPBlockVariation[]|void)} Block variations.
+ */
+
+const getBlockVariations = rememo((state, blockName, scope) => {
+  const variations = state.blockVariations[blockName];
+
+  if (!variations || !scope) {
+    return variations;
+  }
+
+  return variations.filter(variation => {
+    // For backward compatibility reasons, variation's scope defaults to
+    // `block` and `inserter` when not set.
+    return (variation.scope || ['block', 'inserter']).includes(scope);
+  });
+}, (state, blockName) => [state.blockVariations[blockName]]);
+/**
+ * Returns the active block variation for a given block based on its attributes.
+ * Variations are determined by their `isActive` property.
+ * Which is either an array of block attribute keys or a function.
+ *
+ * In case of an array of block attribute keys, the `attributes` are compared
+ * to the variation's attributes using strict equality check.
+ *
+ * In case of function type, the function should accept a block's attributes
+ * and the variation's attributes and determines if a variation is active.
+ * A function that accepts a block's attributes and the variation's attributes and determines if a variation is active.
+ *
+ * @param {Object}                state      Data state.
+ * @param {string}                blockName  Name of block (example: “core/columns”).
+ * @param {Object}                attributes Block attributes used to determine active variation.
+ * @param {WPBlockVariationScope} [scope]    Block variation scope name.
+ *
+ * @return {(WPBlockVariation|undefined)} Active block variation.
+ */
+
+function getActiveBlockVariation(state, blockName, attributes, scope) {
+  const variations = getBlockVariations(state, blockName, scope);
+  const match = variations === null || variations === void 0 ? void 0 : variations.find(variation => {
+    var _variation$isActive;
+
+    if (Array.isArray(variation.isActive)) {
+      const blockType = getBlockType(state, blockName);
+      const attributeKeys = Object.keys((blockType === null || blockType === void 0 ? void 0 : blockType.attributes) || {});
+      const definedAttributes = variation.isActive.filter(attribute => attributeKeys.includes(attribute));
+
+      if (definedAttributes.length === 0) {
+        return false;
+      }
+
+      return definedAttributes.every(attribute => attributes[attribute] === variation.attributes[attribute]);
+    }
+
+    return (_variation$isActive = variation.isActive) === null || _variation$isActive === void 0 ? void 0 : _variation$isActive.call(variation, attributes, variation.attributes);
+  });
+  return match;
+}
+/**
+ * Returns the default block variation for the given block type.
+ * When there are multiple variations annotated as the default one,
+ * the last added item is picked. This simplifies registering overrides.
+ * When there is no default variation set, it returns the first item.
+ *
+ * @param {Object}                state     Data state.
+ * @param {string}                blockName Block type name.
+ * @param {WPBlockVariationScope} [scope]   Block variation scope name.
+ *
+ * @return {?WPBlockVariation} The default block variation.
+ */
+
+function getDefaultBlockVariation(state, blockName, scope) {
+  const variations = getBlockVariations(state, blockName, scope);
+  return (0,external_lodash_namespaceObject.findLast)(variations, 'isDefault') || (0,external_lodash_namespaceObject.first)(variations);
+}
+/**
+ * Returns all the available categories.
+ *
+ * @param {Object} state Data state.
+ *
+ * @return {WPBlockCategory[]} Categories list.
+ */
+
+function getCategories(state) {
+  return state.categories;
+}
+/**
+ * Returns all the available collections.
+ *
+ * @param {Object} state Data state.
+ *
+ * @return {Object} Collections list.
+ */
+
+function getCollections(state) {
+  return state.collections;
+}
+/**
+ * Returns the name of the default block name.
+ *
+ * @param {Object} state Data state.
+ *
+ * @return {string?} Default block name.
+ */
+
+function getDefaultBlockName(state) {
+  return state.defaultBlockName;
+}
+/**
+ * Returns the name of the block for handling non-block content.
+ *
+ * @param {Object} state Data state.
+ *
+ * @return {string?} Name of the block for handling non-block content.
+ */
+
+function getFreeformFallbackBlockName(state) {
+  return state.freeformFallbackBlockName;
+}
+/**
+ * Returns the name of the block for handling unregistered blocks.
+ *
+ * @param {Object} state Data state.
+ *
+ * @return {string?} Name of the block for handling unregistered blocks.
+ */
+
+function getUnregisteredFallbackBlockName(state) {
+  return state.unregisteredFallbackBlockName;
+}
+/**
+ * Returns the name of the block for handling unregistered blocks.
+ *
+ * @param {Object} state Data state.
+ *
+ * @return {string?} Name of the block for handling unregistered blocks.
+ */
+
+function getGroupingBlockName(state) {
+  return state.groupingBlockName;
+}
+/**
+ * Returns an array with the child blocks of a given block.
+ *
+ * @param {Object} state     Data state.
+ * @param {string} blockName Block type name.
+ *
+ * @return {Array} Array of child block names.
+ */
+
+const getChildBlockNames = rememo((state, blockName) => {
+  return (0,external_lodash_namespaceObject.map)((0,external_lodash_namespaceObject.filter)(state.blockTypes, blockType => {
+    return (0,external_lodash_namespaceObject.includes)(blockType.parent, blockName);
+  }), _ref => {
+    let {
+      name
+    } = _ref;
+    return name;
+  });
+}, state => [state.blockTypes]);
+/**
+ * Returns the block support value for a feature, if defined.
+ *
+ * @param {Object}          state           Data state.
+ * @param {(string|Object)} nameOrType      Block name or type object
+ * @param {Array|string}    feature         Feature to retrieve
+ * @param {*}               defaultSupports Default value to return if not
+ *                                          explicitly defined
+ *
+ * @return {?*} Block support value
+ */
+
+const getBlockSupport = (state, nameOrType, feature, defaultSupports) => {
+  const blockType = getNormalizedBlockType(state, nameOrType);
+
+  if (!(blockType !== null && blockType !== void 0 && blockType.supports)) {
+    return defaultSupports;
+  }
+
+  return (0,external_lodash_namespaceObject.get)(blockType.supports, feature, defaultSupports);
+};
+/**
+ * Returns true if the block defines support for a feature, or false otherwise.
+ *
+ * @param {Object}          state           Data state.
+ * @param {(string|Object)} nameOrType      Block name or type object.
+ * @param {string}          feature         Feature to test.
+ * @param {boolean}         defaultSupports Whether feature is supported by
+ *                                          default if not explicitly defined.
+ *
+ * @return {boolean} Whether block supports feature.
+ */
+
+function hasBlockSupport(state, nameOrType, feature, defaultSupports) {
+  return !!getBlockSupport(state, nameOrType, feature, defaultSupports);
+}
+/**
+ * Returns true if the block type by the given name or object value matches a
+ * search term, or false otherwise.
+ *
+ * @param {Object}          state      Blocks state.
+ * @param {(string|Object)} nameOrType Block name or type object.
+ * @param {string}          searchTerm Search term by which to filter.
+ *
+ * @return {Object[]} Whether block type matches search term.
+ */
+
+function isMatchingSearchTerm(state, nameOrType, searchTerm) {
+  const blockType = getNormalizedBlockType(state, nameOrType);
+  const getNormalizedSearchTerm = (0,external_lodash_namespaceObject.flow)([// Disregard diacritics.
+  //  Input: "média"
+  external_lodash_namespaceObject.deburr, // Lowercase.
+  //  Input: "MEDIA"
+  term => term.toLowerCase(), // Strip leading and trailing whitespace.
+  //  Input: " media "
+  term => term.trim()]);
+  const normalizedSearchTerm = getNormalizedSearchTerm(searchTerm);
+  const isSearchMatch = (0,external_lodash_namespaceObject.flow)([getNormalizedSearchTerm, normalizedCandidate => (0,external_lodash_namespaceObject.includes)(normalizedCandidate, normalizedSearchTerm)]);
+  return isSearchMatch(blockType.title) || (0,external_lodash_namespaceObject.some)(blockType.keywords, isSearchMatch) || isSearchMatch(blockType.category) || isSearchMatch(blockType.description);
+}
+/**
+ * Returns a boolean indicating if a block has child blocks or not.
+ *
+ * @param {Object} state     Data state.
+ * @param {string} blockName Block type name.
+ *
+ * @return {boolean} True if a block contains child blocks and false otherwise.
+ */
+
+const hasChildBlocks = (state, blockName) => {
+  return getChildBlockNames(state, blockName).length > 0;
+};
+/**
+ * Returns a boolean indicating if a block has at least one child block with inserter support.
+ *
+ * @param {Object} state     Data state.
+ * @param {string} blockName Block type name.
+ *
+ * @return {boolean} True if a block contains at least one child blocks with inserter support
+ *                   and false otherwise.
+ */
+
+const hasChildBlocksWithInserterSupport = (state, blockName) => {
+  return (0,external_lodash_namespaceObject.some)(getChildBlockNames(state, blockName), childBlockName => {
+    return hasBlockSupport(state, childBlockName, 'inserter', true);
+  });
+};
+
+;// CONCATENATED MODULE: external ["wp","hooks"]
+var external_wp_hooks_namespaceObject = window["wp"]["hooks"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/colord/index.mjs
 var r={grad:.9,turn:360,rad:360/(2*Math.PI)},t=function(r){return"string"==typeof r?r.length>0:"number"==typeof r},n=function(r,t,n){return void 0===t&&(t=0),void 0===n&&(n=Math.pow(10,t)),Math.round(n*r)/n+0},e=function(r,t,n){return void 0===t&&(t=0),void 0===n&&(n=1),r>n?n:r>t?r:t},u=function(r){return(r=isFinite(r)?r%360:0)>0?r:r+360},a=function(r){return{r:e(r.r,0,255),g:e(r.g,0,255),b:e(r.b,0,255),a:e(r.a)}},o=function(r){return{r:n(r.r),g:n(r.g),b:n(r.b),a:n(r.a,3)}},i=/^#([0-9a-f]{3,8})$/i,s=function(r){var t=r.toString(16);return t.length<2?"0"+t:t},h=function(r){var t=r.r,n=r.g,e=r.b,u=r.a,a=Math.max(t,n,e),o=a-Math.min(t,n,e),i=o?a===t?(n-e)/o:a===n?2+(e-t)/o:4+(t-n)/o:0;return{h:60*(i<0?i+6:i),s:a?o/a*100:0,v:a/255*100,a:u}},b=function(r){var t=r.h,n=r.s,e=r.v,u=r.a;t=t/360*6,n/=100,e/=100;var a=Math.floor(t),o=e*(1-n),i=e*(1-(t-a)*n),s=e*(1-(1-t+a)*n),h=a%6;return{r:255*[e,i,o,o,s,e][h],g:255*[s,e,e,i,o,o][h],b:255*[o,o,s,e,e,i][h],a:u}},g=function(r){return{h:u(r.h),s:e(r.s,0,100),l:e(r.l,0,100),a:e(r.a)}},d=function(r){return{h:n(r.h),s:n(r.s),l:n(r.l),a:n(r.a,3)}},f=function(r){return b((n=(t=r).s,{h:t.h,s:(n*=((e=t.l)<50?e:100-e)/100)>0?2*n/(e+n)*100:0,v:e+n,a:t.a}));var t,n,e},c=function(r){return{h:(t=h(r)).h,s:(u=(200-(n=t.s))*(e=t.v)/100)>0&&u<200?n*e/100/(u<=100?u:200-u)*100:0,l:u/2,a:t.a};var t,n,e,u},l=/^hsla?\(\s*([+-]?\d*\.?\d+)(deg|rad|grad|turn)?\s*,\s*([+-]?\d*\.?\d+)%\s*,\s*([+-]?\d*\.?\d+)%\s*(?:,\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i,p=/^hsla?\(\s*([+-]?\d*\.?\d+)(deg|rad|grad|turn)?\s+([+-]?\d*\.?\d+)%\s+([+-]?\d*\.?\d+)%\s*(?:\/\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i,v=/^rgba?\(\s*([+-]?\d*\.?\d+)(%)?\s*,\s*([+-]?\d*\.?\d+)(%)?\s*,\s*([+-]?\d*\.?\d+)(%)?\s*(?:,\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i,m=/^rgba?\(\s*([+-]?\d*\.?\d+)(%)?\s+([+-]?\d*\.?\d+)(%)?\s+([+-]?\d*\.?\d+)(%)?\s*(?:\/\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i,y={string:[[function(r){var t=i.exec(r);return t?(r=t[1]).length<=4?{r:parseInt(r[0]+r[0],16),g:parseInt(r[1]+r[1],16),b:parseInt(r[2]+r[2],16),a:4===r.length?n(parseInt(r[3]+r[3],16)/255,2):1}:6===r.length||8===r.length?{r:parseInt(r.substr(0,2),16),g:parseInt(r.substr(2,2),16),b:parseInt(r.substr(4,2),16),a:8===r.length?n(parseInt(r.substr(6,2),16)/255,2):1}:null:null},"hex"],[function(r){var t=v.exec(r)||m.exec(r);return t?t[2]!==t[4]||t[4]!==t[6]?null:a({r:Number(t[1])/(t[2]?100/255:1),g:Number(t[3])/(t[4]?100/255:1),b:Number(t[5])/(t[6]?100/255:1),a:void 0===t[7]?1:Number(t[7])/(t[8]?100:1)}):null},"rgb"],[function(t){var n=l.exec(t)||p.exec(t);if(!n)return null;var e,u,a=g({h:(e=n[1],u=n[2],void 0===u&&(u="deg"),Number(e)*(r[u]||1)),s:Number(n[3]),l:Number(n[4]),a:void 0===n[5]?1:Number(n[5])/(n[6]?100:1)});return f(a)},"hsl"]],object:[[function(r){var n=r.r,e=r.g,u=r.b,o=r.a,i=void 0===o?1:o;return t(n)&&t(e)&&t(u)?a({r:Number(n),g:Number(e),b:Number(u),a:Number(i)}):null},"rgb"],[function(r){var n=r.h,e=r.s,u=r.l,a=r.a,o=void 0===a?1:a;if(!t(n)||!t(e)||!t(u))return null;var i=g({h:Number(n),s:Number(e),l:Number(u),a:Number(o)});return f(i)},"hsl"],[function(r){var n=r.h,a=r.s,o=r.v,i=r.a,s=void 0===i?1:i;if(!t(n)||!t(a)||!t(o))return null;var h=function(r){return{h:u(r.h),s:e(r.s,0,100),v:e(r.v,0,100),a:e(r.a)}}({h:Number(n),s:Number(a),v:Number(o),a:Number(s)});return b(h)},"hsv"]]},N=function(r,t){for(var n=0;n<t.length;n++){var e=t[n][0](r);if(e)return[e,t[n][1]]}return[null,void 0]},x=function(r){return"string"==typeof r?N(r.trim(),y.string):"object"==typeof r&&null!==r?N(r,y.object):[null,void 0]},I=function(r){return x(r)[1]},M=function(r,t){var n=c(r);return{h:n.h,s:e(n.s+100*t,0,100),l:n.l,a:n.a}},H=function(r){return(299*r.r+587*r.g+114*r.b)/1e3/255},$=function(r,t){var n=c(r);return{h:n.h,s:n.s,l:e(n.l+100*t,0,100),a:n.a}},j=function(){function r(r){this.parsed=x(r)[0],this.rgba=this.parsed||{r:0,g:0,b:0,a:1}}return r.prototype.isValid=function(){return null!==this.parsed},r.prototype.brightness=function(){return n(H(this.rgba),2)},r.prototype.isDark=function(){return H(this.rgba)<.5},r.prototype.isLight=function(){return H(this.rgba)>=.5},r.prototype.toHex=function(){return r=o(this.rgba),t=r.r,e=r.g,u=r.b,i=(a=r.a)<1?s(n(255*a)):"","#"+s(t)+s(e)+s(u)+i;var r,t,e,u,a,i},r.prototype.toRgb=function(){return o(this.rgba)},r.prototype.toRgbString=function(){return r=o(this.rgba),t=r.r,n=r.g,e=r.b,(u=r.a)<1?"rgba("+t+", "+n+", "+e+", "+u+")":"rgb("+t+", "+n+", "+e+")";var r,t,n,e,u},r.prototype.toHsl=function(){return d(c(this.rgba))},r.prototype.toHslString=function(){return r=d(c(this.rgba)),t=r.h,n=r.s,e=r.l,(u=r.a)<1?"hsla("+t+", "+n+"%, "+e+"%, "+u+")":"hsl("+t+", "+n+"%, "+e+"%)";var r,t,n,e,u},r.prototype.toHsv=function(){return r=h(this.rgba),{h:n(r.h),s:n(r.s),v:n(r.v),a:n(r.a,3)};var r},r.prototype.invert=function(){return w({r:255-(r=this.rgba).r,g:255-r.g,b:255-r.b,a:r.a});var r},r.prototype.saturate=function(r){return void 0===r&&(r=.1),w(M(this.rgba,r))},r.prototype.desaturate=function(r){return void 0===r&&(r=.1),w(M(this.rgba,-r))},r.prototype.grayscale=function(){return w(M(this.rgba,-1))},r.prototype.lighten=function(r){return void 0===r&&(r=.1),w($(this.rgba,r))},r.prototype.darken=function(r){return void 0===r&&(r=.1),w($(this.rgba,-r))},r.prototype.rotate=function(r){return void 0===r&&(r=15),this.hue(this.hue()+r)},r.prototype.alpha=function(r){return"number"==typeof r?w({r:(t=this.rgba).r,g:t.g,b:t.b,a:r}):n(this.rgba.a,3);var t},r.prototype.hue=function(r){var t=c(this.rgba);return"number"==typeof r?w({h:r,s:t.s,l:t.l,a:t.a}):n(t.h)},r.prototype.isEqual=function(r){return this.toHex()===w(r).toHex()},r}(),w=function(r){return r instanceof j?r:new j(r)},S=[],k=function(r){r.forEach(function(r){S.indexOf(r)<0&&(r(j,y),S.push(r))})},E=function(){return new j({r:255*Math.random(),g:255*Math.random(),b:255*Math.random()})};
 
@@ -6063,12 +7003,17 @@ const __EXPERIMENTAL_STYLE_PROPERTY = {
   },
   background: {
     value: ['color', 'gradient'],
+<<<<<<< HEAD
     support: ['color', 'gradients'],
     useEngine: true
+=======
+    support: ['color', 'gradients']
+>>>>>>> fb785cbb (Initial commit)
   },
   backgroundColor: {
     value: ['color', 'background'],
     support: ['color', 'background'],
+<<<<<<< HEAD
     requiresOptOut: true,
     useEngine: true
   },
@@ -6076,6 +7021,13 @@ const __EXPERIMENTAL_STYLE_PROPERTY = {
     value: ['border', 'color'],
     support: ['__experimentalBorder', 'color'],
     useEngine: true
+=======
+    requiresOptOut: true
+  },
+  borderColor: {
+    value: ['border', 'color'],
+    support: ['__experimentalBorder', 'color']
+>>>>>>> fb785cbb (Initial commit)
   },
   borderRadius: {
     value: ['border', 'radius'],
@@ -6085,6 +7037,7 @@ const __EXPERIMENTAL_STYLE_PROPERTY = {
       borderTopRightRadius: 'topRight',
       borderBottomLeftRadius: 'bottomLeft',
       borderBottomRightRadius: 'bottomRight'
+<<<<<<< HEAD
     },
     useEngine: true
   },
@@ -6157,12 +7110,27 @@ const __EXPERIMENTAL_STYLE_PROPERTY = {
     value: ['border', 'left', 'width'],
     support: ['__experimentalBorder', 'width'],
     useEngine: true
+=======
+    }
+  },
+  borderStyle: {
+    value: ['border', 'style'],
+    support: ['__experimentalBorder', 'style']
+  },
+  borderWidth: {
+    value: ['border', 'width'],
+    support: ['__experimentalBorder', 'width']
+>>>>>>> fb785cbb (Initial commit)
   },
   color: {
     value: ['color', 'text'],
     support: ['color', 'text'],
+<<<<<<< HEAD
     requiresOptOut: true,
     useEngine: true
+=======
+    requiresOptOut: true
+>>>>>>> fb785cbb (Initial commit)
   },
   filter: {
     value: ['filter', 'duotone'],
@@ -6172,6 +7140,7 @@ const __EXPERIMENTAL_STYLE_PROPERTY = {
     value: ['elements', 'link', 'color', 'text'],
     support: ['color', 'link']
   },
+<<<<<<< HEAD
   buttonColor: {
     value: ['elements', 'button', 'color', 'text'],
     support: ['color', 'button']
@@ -6204,6 +7173,27 @@ const __EXPERIMENTAL_STYLE_PROPERTY = {
     value: ['typography', 'lineHeight'],
     support: ['typography', 'lineHeight'],
     useEngine: true
+=======
+  fontFamily: {
+    value: ['typography', 'fontFamily'],
+    support: ['typography', '__experimentalFontFamily']
+  },
+  fontSize: {
+    value: ['typography', 'fontSize'],
+    support: ['typography', 'fontSize']
+  },
+  fontStyle: {
+    value: ['typography', 'fontStyle'],
+    support: ['typography', '__experimentalFontStyle']
+  },
+  fontWeight: {
+    value: ['typography', 'fontWeight'],
+    support: ['typography', '__experimentalFontWeight']
+  },
+  lineHeight: {
+    value: ['typography', 'lineHeight'],
+    support: ['typography', 'lineHeight']
+>>>>>>> fb785cbb (Initial commit)
   },
   margin: {
     value: ['spacing', 'margin'],
@@ -6216,11 +7206,14 @@ const __EXPERIMENTAL_STYLE_PROPERTY = {
     },
     useEngine: true
   },
+<<<<<<< HEAD
   minHeight: {
     value: ['dimensions', 'minHeight'],
     support: ['dimensions', 'minHeight'],
     useEngine: true
   },
+=======
+>>>>>>> fb785cbb (Initial commit)
   padding: {
     value: ['spacing', 'padding'],
     support: ['spacing', 'padding'],
@@ -6234,6 +7227,7 @@ const __EXPERIMENTAL_STYLE_PROPERTY = {
   },
   textDecoration: {
     value: ['typography', 'textDecoration'],
+<<<<<<< HEAD
     support: ['typography', '__experimentalTextDecoration'],
     useEngine: true
   },
@@ -6257,26 +7251,49 @@ const __EXPERIMENTAL_STYLE_PROPERTY = {
       '--wp--style--root--padding-left': 'left'
     },
     rootOnly: true
+=======
+    support: ['typography', '__experimentalTextDecoration']
+  },
+  textTransform: {
+    value: ['typography', 'textTransform'],
+    support: ['typography', '__experimentalTextTransform']
+  },
+  letterSpacing: {
+    value: ['typography', 'letterSpacing'],
+    support: ['typography', '__experimentalLetterSpacing']
+  },
+  '--wp--style--block-gap': {
+    value: ['spacing', 'blockGap'],
+    support: ['spacing', 'blockGap']
+>>>>>>> fb785cbb (Initial commit)
   }
 };
 const __EXPERIMENTAL_ELEMENTS = {
   link: 'a',
+<<<<<<< HEAD
   heading: 'h1, h2, h3, h4, h5, h6',
+=======
+>>>>>>> fb785cbb (Initial commit)
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
   h4: 'h4',
   h5: 'h5',
+<<<<<<< HEAD
   h6: 'h6',
   button: '.wp-element-button, .wp-block-button__link',
   caption: '.wp-element-caption, .wp-block-audio figcaption, .wp-block-embed figcaption, .wp-block-gallery figcaption, .wp-block-image figcaption, .wp-block-table figcaption, .wp-block-video figcaption',
   cite: 'cite'
+=======
+  h6: 'h6'
+>>>>>>> fb785cbb (Initial commit)
 };
 const __EXPERIMENTAL_PATHS_WITH_MERGE = {
   'color.duotone': true,
   'color.gradients': true,
   'color.palette': true,
   'typography.fontFamilies': true,
+<<<<<<< HEAD
   'typography.fontSizes': true,
   'spacing.spacingSizes': true
 };
@@ -6640,6 +7657,11 @@ function camelCase(input, options) {
     return pascalCase(input, __assign({ transform: camelCaseTransform }, options));
 }
 
+=======
+  'typography.fontSizes': true
+};
+
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/registration.js
 /* eslint no-console: [ 'error', { allow: [ 'error', 'warn' ] } ] */
 
@@ -6784,10 +7806,13 @@ const i18nBlockSchema = {
  */
 
 const serverSideBlockDefinitions = {};
+<<<<<<< HEAD
 
 function isObject(object) {
   return object !== null && typeof object === 'object';
 }
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Sets the server side block definition of blocks.
  *
@@ -6795,7 +7820,10 @@ function isObject(object) {
  */
 // eslint-disable-next-line camelcase
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 function unstable__bootstrapServerSideBlockDefinitions(definitions) {
   for (const blockName of Object.keys(definitions)) {
     // Don't overwrite if already set. It covers the case when metadata
@@ -6819,6 +7847,7 @@ function unstable__bootstrapServerSideBlockDefinitions(definitions) {
       continue;
     }
 
+<<<<<<< HEAD
     serverSideBlockDefinitions[blockName] = Object.fromEntries(Object.entries(definitions[blockName]).filter(_ref => {
       let [, value] = _ref;
       return value !== null && value !== undefined;
@@ -6826,6 +7855,9 @@ function unstable__bootstrapServerSideBlockDefinitions(definitions) {
       let [key, value] = _ref2;
       return [camelCase(key), value];
     }));
+=======
+    serverSideBlockDefinitions[blockName] = (0,external_lodash_namespaceObject.mapKeys)((0,external_lodash_namespaceObject.pickBy)(definitions[blockName], value => !(0,external_lodash_namespaceObject.isNil)(value)), (value, key) => (0,external_lodash_namespaceObject.camelCase)(key));
+>>>>>>> fb785cbb (Initial commit)
   }
 }
 /**
@@ -6837,6 +7869,7 @@ function unstable__bootstrapServerSideBlockDefinitions(definitions) {
  * @return {Object} Block settings.
  */
 
+<<<<<<< HEAD
 function getBlockSettingsFromMetadata(_ref3) {
   let {
     textdomain,
@@ -6847,6 +7880,15 @@ function getBlockSettingsFromMetadata(_ref3) {
     let [key] = _ref4;
     return allowedFields.includes(key);
   }));
+=======
+function getBlockSettingsFromMetadata(_ref) {
+  let {
+    textdomain,
+    ...metadata
+  } = _ref;
+  const allowedFields = ['apiVersion', 'title', 'category', 'parent', 'ancestor', 'icon', 'description', 'keywords', 'attributes', 'providesContext', 'usesContext', 'supports', 'styles', 'example', 'variations'];
+  const settings = (0,external_lodash_namespaceObject.pick)(metadata, allowedFields);
+>>>>>>> fb785cbb (Initial commit)
 
   if (textdomain) {
     Object.keys(i18nBlockSchema).forEach(key => {
@@ -6865,6 +7907,7 @@ function getBlockSettingsFromMetadata(_ref3) {
  * behavior. Once registered, the block is made available as an option to any
  * editor interface where blocks are implemented.
  *
+<<<<<<< HEAD
  * For more in-depth information on registering a custom block see the [Create a block tutorial](docs/how-to-guides/block-tutorial/README.md)
  *
  * @param {string|Object} blockNameOrMetadata Block type name or its metadata.
@@ -6883,12 +7926,22 @@ function getBlockSettingsFromMetadata(_ref3) {
  * ```
  *
  * @return {WPBlockType | undefined} The block, if it has been successfully registered;
+=======
+ * @param {string|Object} blockNameOrMetadata Block type name or its metadata.
+ * @param {Object}        settings            Block settings.
+ *
+ * @return {?WPBlockType} The block, if it has been successfully registered;
+>>>>>>> fb785cbb (Initial commit)
  *                    otherwise `undefined`.
  */
 
 
 function registerBlockType(blockNameOrMetadata, settings) {
+<<<<<<< HEAD
   const name = isObject(blockNameOrMetadata) ? blockNameOrMetadata.name : blockNameOrMetadata;
+=======
+  const name = (0,external_lodash_namespaceObject.isObject)(blockNameOrMetadata) ? blockNameOrMetadata.name : blockNameOrMetadata;
+>>>>>>> fb785cbb (Initial commit)
 
   if (typeof name !== 'string') {
     console.error('Block names must be strings.');
@@ -6905,7 +7958,11 @@ function registerBlockType(blockNameOrMetadata, settings) {
     return;
   }
 
+<<<<<<< HEAD
   if (isObject(blockNameOrMetadata)) {
+=======
+  if ((0,external_lodash_namespaceObject.isObject)(blockNameOrMetadata)) {
+>>>>>>> fb785cbb (Initial commit)
     unstable__bootstrapServerSideBlockDefinitions({
       [name]: getBlockSettingsFromMetadata(blockNameOrMetadata)
     });
@@ -6941,16 +7998,28 @@ function registerBlockType(blockNameOrMetadata, settings) {
  */
 
 function translateBlockSettingUsingI18nSchema(i18nSchema, settingValue, textdomain) {
+<<<<<<< HEAD
   if (typeof i18nSchema === 'string' && typeof settingValue === 'string') {
+=======
+  if ((0,external_lodash_namespaceObject.isString)(i18nSchema) && (0,external_lodash_namespaceObject.isString)(settingValue)) {
+>>>>>>> fb785cbb (Initial commit)
     // eslint-disable-next-line @wordpress/i18n-no-variables, @wordpress/i18n-text-domain
     return (0,external_wp_i18n_namespaceObject._x)(settingValue, i18nSchema, textdomain);
   }
 
+<<<<<<< HEAD
   if (Array.isArray(i18nSchema) && i18nSchema.length && Array.isArray(settingValue)) {
     return settingValue.map(value => translateBlockSettingUsingI18nSchema(i18nSchema[0], value, textdomain));
   }
 
   if (isObject(i18nSchema) && Object.entries(i18nSchema).length && isObject(settingValue)) {
+=======
+  if ((0,external_lodash_namespaceObject.isArray)(i18nSchema) && !(0,external_lodash_namespaceObject.isEmpty)(i18nSchema) && (0,external_lodash_namespaceObject.isArray)(settingValue)) {
+    return settingValue.map(value => translateBlockSettingUsingI18nSchema(i18nSchema[0], value, textdomain));
+  }
+
+  if ((0,external_lodash_namespaceObject.isObject)(i18nSchema) && !(0,external_lodash_namespaceObject.isEmpty)(i18nSchema) && (0,external_lodash_namespaceObject.isObject)(settingValue)) {
+>>>>>>> fb785cbb (Initial commit)
     return Object.keys(settingValue).reduce((accumulator, key) => {
       if (!i18nSchema[key]) {
         accumulator[key] = settingValue[key];
@@ -6971,6 +8040,7 @@ function translateBlockSettingUsingI18nSchema(i18nSchema, settingValue, textdoma
  * @param {Object} settings        The block collection settings.
  * @param {string} settings.title  The title to display in the block inserter.
  * @param {Object} [settings.icon] The icon to display in the block inserter.
+<<<<<<< HEAD
  *
  * @example
  * ```js
@@ -6997,6 +8067,16 @@ function registerBlockCollection(namespace, _ref5) {
     title,
     icon
   } = _ref5;
+=======
+ */
+
+
+function registerBlockCollection(namespace, _ref2) {
+  let {
+    title,
+    icon
+  } = _ref2;
+>>>>>>> fb785cbb (Initial commit)
   (0,external_wp_data_namespaceObject.dispatch)(store).addBlockCollection(namespace, title, icon);
 }
 /**
@@ -7004,12 +8084,15 @@ function registerBlockCollection(namespace, _ref5) {
  *
  * @param {string} namespace The namespace to group blocks by in the inserter; corresponds to the block namespace
  *
+<<<<<<< HEAD
  * @example
  * ```js
  * import { unregisterBlockCollection } from '@wordpress/blocks';
  *
  * unregisterBlockCollection( 'my-collection' );
  * ```
+=======
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function unregisterBlockCollection(namespace) {
@@ -7020,6 +8103,7 @@ function unregisterBlockCollection(namespace) {
  *
  * @param {string} name Block name.
  *
+<<<<<<< HEAD
  * @example
  * ```js
  * import { __ } from '@wordpress/i18n';
@@ -7039,6 +8123,9 @@ function unregisterBlockCollection(namespace) {
  * ```
  *
  * @return {WPBlockType | undefined} The previous block value, if it has been successfully
+=======
+ * @return {?WPBlockType} The previous block value, if it has been successfully
+>>>>>>> fb785cbb (Initial commit)
  *                    unregistered; otherwise `undefined`.
  */
 
@@ -7078,7 +8165,11 @@ function getFreeformContentHandlerName() {
  * @return {?string} Block name.
  */
 
+<<<<<<< HEAD
 function getGroupingBlockName() {
+=======
+function registration_getGroupingBlockName() {
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_wp_data_namespaceObject.select)(store).getGroupingBlockName();
 }
 /**
@@ -7104,6 +8195,7 @@ function getUnregisteredTypeHandlerName() {
  * Assigns the default block name.
  *
  * @param {string} name Block name.
+<<<<<<< HEAD
  *
  * @example
  * ```js
@@ -7118,6 +8210,8 @@ function getUnregisteredTypeHandlerName() {
  *     );
  * };
  * ```
+=======
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function setDefaultBlockName(name) {
@@ -7127,6 +8221,7 @@ function setDefaultBlockName(name) {
  * Assigns name of block for handling block grouping interactions.
  *
  * @param {string} name Block name.
+<<<<<<< HEAD
  *
  * @example
  * ```js
@@ -7141,6 +8236,8 @@ function setDefaultBlockName(name) {
  *     );
  * };
  * ```
+=======
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function setGroupingBlockName(name) {
@@ -7152,7 +8249,11 @@ function setGroupingBlockName(name) {
  * @return {?string} Block name.
  */
 
+<<<<<<< HEAD
 function getDefaultBlockName() {
+=======
+function registration_getDefaultBlockName() {
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_wp_data_namespaceObject.select)(store).getDefaultBlockName();
 }
 /**
@@ -7163,7 +8264,11 @@ function getDefaultBlockName() {
  * @return {?Object} Block type.
  */
 
+<<<<<<< HEAD
 function getBlockType(name) {
+=======
+function registration_getBlockType(name) {
+>>>>>>> fb785cbb (Initial commit)
   var _select;
 
   return (_select = (0,external_wp_data_namespaceObject.select)(store)) === null || _select === void 0 ? void 0 : _select.getBlockType(name);
@@ -7174,7 +8279,11 @@ function getBlockType(name) {
  * @return {Array} Block settings.
  */
 
+<<<<<<< HEAD
 function getBlockTypes() {
+=======
+function registration_getBlockTypes() {
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_wp_data_namespaceObject.select)(store).getBlockTypes();
 }
 /**
@@ -7188,7 +8297,11 @@ function getBlockTypes() {
  * @return {?*} Block support value
  */
 
+<<<<<<< HEAD
 function getBlockSupport(nameOrType, feature, defaultSupports) {
+=======
+function registration_getBlockSupport(nameOrType, feature, defaultSupports) {
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_wp_data_namespaceObject.select)(store).getBlockSupport(nameOrType, feature, defaultSupports);
 }
 /**
@@ -7202,7 +8315,11 @@ function getBlockSupport(nameOrType, feature, defaultSupports) {
  * @return {boolean} Whether block supports feature.
  */
 
+<<<<<<< HEAD
 function hasBlockSupport(nameOrType, feature, defaultSupports) {
+=======
+function registration_hasBlockSupport(nameOrType, feature, defaultSupports) {
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_wp_data_namespaceObject.select)(store).hasBlockSupport(nameOrType, feature, defaultSupports);
 }
 /**
@@ -7229,7 +8346,11 @@ function isReusableBlock(blockOrType) {
  */
 
 function isTemplatePart(blockOrType) {
+<<<<<<< HEAD
   return (blockOrType === null || blockOrType === void 0 ? void 0 : blockOrType.name) === 'core/template-part';
+=======
+  return blockOrType.name === 'core/template-part';
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Returns an array with the child blocks of a given block.
@@ -7239,7 +8360,11 @@ function isTemplatePart(blockOrType) {
  * @return {Array} Array of child block names.
  */
 
+<<<<<<< HEAD
 const getChildBlockNames = blockName => {
+=======
+const registration_getChildBlockNames = blockName => {
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_wp_data_namespaceObject.select)(store).getChildBlockNames(blockName);
 };
 /**
@@ -7250,7 +8375,11 @@ const getChildBlockNames = blockName => {
  * @return {boolean} True if a block contains child blocks and false otherwise.
  */
 
+<<<<<<< HEAD
 const hasChildBlocks = blockName => {
+=======
+const registration_hasChildBlocks = blockName => {
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_wp_data_namespaceObject.select)(store).hasChildBlocks(blockName);
 };
 /**
@@ -7262,6 +8391,7 @@ const hasChildBlocks = blockName => {
  *                   and false otherwise.
  */
 
+<<<<<<< HEAD
 const hasChildBlocksWithInserterSupport = blockName => {
   return (0,external_wp_data_namespaceObject.select)(store).hasChildBlocksWithInserterSupport(blockName);
 };
@@ -7295,12 +8425,23 @@ const hasChildBlocksWithInserterSupport = blockName => {
  *     );
  * };
  * ```
+=======
+const registration_hasChildBlocksWithInserterSupport = blockName => {
+  return (0,external_wp_data_namespaceObject.select)(store).hasChildBlocksWithInserterSupport(blockName);
+};
+/**
+ * Registers a new block style variation for the given block.
+ *
+ * @param {string} blockName      Name of block (example: “core/latest-posts”).
+ * @param {Object} styleVariation Object containing `name` which is the class name applied to the block and `label` which identifies the variation to the user.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const registerBlockStyle = (blockName, styleVariation) => {
   (0,external_wp_data_namespaceObject.dispatch)(store).addBlockStyles(blockName, styleVariation);
 };
 /**
+<<<<<<< HEAD
  * Unregisters a block style for the given block.
  *
  * @param {string} blockName          Name of block (example: “core/latest-posts”).
@@ -7324,6 +8465,12 @@ const registerBlockStyle = (blockName, styleVariation) => {
  *     );
  * };
  * ```
+=======
+ * Unregisters a block style variation for the given block.
+ *
+ * @param {string} blockName          Name of block (example: “core/latest-posts”).
+ * @param {string} styleVariationName Name of class applied to the block.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const unregisterBlockStyle = (blockName, styleVariationName) => {
@@ -7331,9 +8478,12 @@ const unregisterBlockStyle = (blockName, styleVariationName) => {
 };
 /**
  * Returns an array with the variations of a given block type.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage is via useSelect from @wordpress/data.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string}                blockName Name of block (example: “core/columns”).
  * @param {WPBlockVariationScope} [scope]   Block variation scope name.
@@ -7341,12 +8491,17 @@ const unregisterBlockStyle = (blockName, styleVariationName) => {
  * @return {(WPBlockVariation[]|void)} Block variations.
  */
 
+<<<<<<< HEAD
 const getBlockVariations = (blockName, scope) => {
+=======
+const registration_getBlockVariations = (blockName, scope) => {
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_wp_data_namespaceObject.select)(store).getBlockVariations(blockName, scope);
 };
 /**
  * Registers a new block variation for the given block type.
  *
+<<<<<<< HEAD
  * For more information on block variations see [the official documentation ](/docs/reference-guides/block-api/block-variations.md)
  *
  * @param {string}           blockName Name of the block (example: “core/columns”).
@@ -7374,6 +8529,10 @@ const getBlockVariations = (blockName, scope) => {
  *     );
  * };
  * ```
+=======
+ * @param {string}           blockName Name of the block (example: “core/columns”).
+ * @param {WPBlockVariation} variation Object describing a block variation.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const registerBlockVariation = (blockName, variation) => {
@@ -7384,6 +8543,7 @@ const registerBlockVariation = (blockName, variation) => {
  *
  * @param {string} blockName     Name of the block (example: “core/columns”).
  * @param {string} variationName Name of the variation defined for the block.
+<<<<<<< HEAD
  *
  * @example
  * ```js
@@ -7403,13 +8563,19 @@ const registerBlockVariation = (blockName, variation) => {
  *     );
  * };
  * ```
+=======
+>>>>>>> fb785cbb (Initial commit)
  */
 
 const unregisterBlockVariation = (blockName, variationName) => {
   (0,external_wp_data_namespaceObject.dispatch)(store).removeBlockVariations(blockName, variationName);
 };
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/node_modules/uuid/dist/esm-browser/rng.js
+=======
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/rng.js
+>>>>>>> fb785cbb (Initial commit)
 // Unique ID creation requires a high quality random # generator. In the browser we therefore
 // require the crypto API and do not support built-in fallback to lower quality random number
 // generators (like Math.random()).
@@ -7429,9 +8595,15 @@ function rng() {
 
   return getRandomValues(rnds8);
 }
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/node_modules/uuid/dist/esm-browser/regex.js
 /* harmony default export */ var regex = (/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/node_modules/uuid/dist/esm-browser/validate.js
+=======
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/regex.js
+/* harmony default export */ var regex = (/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i);
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/validate.js
+>>>>>>> fb785cbb (Initial commit)
 
 
 function validate(uuid) {
@@ -7439,7 +8611,11 @@ function validate(uuid) {
 }
 
 /* harmony default export */ var esm_browser_validate = (validate);
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/node_modules/uuid/dist/esm-browser/stringify.js
+=======
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/stringify.js
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Convert array of 16 byte values to UUID string format of the form:
@@ -7470,7 +8646,11 @@ function stringify(arr) {
 }
 
 /* harmony default export */ var esm_browser_stringify = (stringify);
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/node_modules/uuid/dist/esm-browser/v4.js
+=======
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/v4.js
+>>>>>>> fb785cbb (Initial commit)
 
 
 
@@ -7495,13 +8675,20 @@ function v4(options, buf, offset) {
 }
 
 /* harmony default export */ var esm_browser_v4 = (v4);
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: external ["wp","hooks"]
 var external_wp_hooks_namespaceObject = window["wp"]["hooks"];
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/factory.js
 /**
  * External dependencies
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
@@ -7620,14 +8807,22 @@ function cloneBlock(block) {
  */
 
 const isPossibleTransformForSource = (transform, direction, blocks) => {
+<<<<<<< HEAD
   if (!blocks.length) {
+=======
+  if ((0,external_lodash_namespaceObject.isEmpty)(blocks)) {
+>>>>>>> fb785cbb (Initial commit)
     return false;
   } // If multiple blocks are selected, only multi block transforms
   // or wildcard transforms are allowed.
 
 
   const isMultiBlock = blocks.length > 1;
+<<<<<<< HEAD
   const firstBlockName = blocks[0].name;
+=======
+  const firstBlockName = (0,external_lodash_namespaceObject.first)(blocks).name;
+>>>>>>> fb785cbb (Initial commit)
   const isValidForMultiBlocks = isWildcardBlockTransform(transform) || !isMultiBlock || transform.isMultiBlock;
 
   if (!isValidForMultiBlocks) {
@@ -7636,7 +8831,13 @@ const isPossibleTransformForSource = (transform, direction, blocks) => {
   // for a block selection of multiple blocks of different types.
 
 
+<<<<<<< HEAD
   if (!isWildcardBlockTransform(transform) && !blocks.every(block => block.name === firstBlockName)) {
+=======
+  if (!isWildcardBlockTransform(transform) && !(0,external_lodash_namespaceObject.every)(blocks, {
+    name: firstBlockName
+  })) {
+>>>>>>> fb785cbb (Initial commit)
     return false;
   } // Only consider 'block' type transforms as valid.
 
@@ -7649,7 +8850,11 @@ const isPossibleTransformForSource = (transform, direction, blocks) => {
   // only if this is a transform 'from'.
 
 
+<<<<<<< HEAD
   const sourceBlock = blocks[0];
+=======
+  const sourceBlock = (0,external_lodash_namespaceObject.first)(blocks);
+>>>>>>> fb785cbb (Initial commit)
   const hasMatchingName = direction !== 'from' || transform.blocks.indexOf(sourceBlock.name) !== -1 || isWildcardBlockTransform(transform);
 
   if (!hasMatchingName) {
@@ -7658,13 +8863,27 @@ const isPossibleTransformForSource = (transform, direction, blocks) => {
   // a Grouping block.
 
 
+<<<<<<< HEAD
   if (!isMultiBlock && direction === 'from' && isContainerGroupBlock(sourceBlock.name) && isContainerGroupBlock(transform.blockName)) {
+=======
+  if (!isMultiBlock && isContainerGroupBlock(sourceBlock.name) && isContainerGroupBlock(transform.blockName)) {
+>>>>>>> fb785cbb (Initial commit)
     return false;
   } // If the transform has a `isMatch` function specified, check that it returns true.
 
 
+<<<<<<< HEAD
   if (!maybeCheckTransformIsMatch(transform, blocks)) {
     return false;
+=======
+  if ((0,external_lodash_namespaceObject.isFunction)(transform.isMatch)) {
+    const attributes = transform.isMultiBlock ? blocks.map(block => block.attributes) : sourceBlock.attributes;
+    const block = transform.isMultiBlock ? blocks : sourceBlock;
+
+    if (!transform.isMatch(attributes, block)) {
+      return false;
+    }
+>>>>>>> fb785cbb (Initial commit)
   }
 
   if (transform.usingMobileTransformations && isWildcardBlockTransform(transform) && !isContainerGroupBlock(sourceBlock.name)) {
@@ -7684,6 +8903,7 @@ const isPossibleTransformForSource = (transform, direction, blocks) => {
 
 
 const getBlockTypesForPossibleFromTransforms = blocks => {
+<<<<<<< HEAD
   if (!blocks.length) {
     return [];
   }
@@ -7691,6 +8911,15 @@ const getBlockTypesForPossibleFromTransforms = blocks => {
   const allBlockTypes = getBlockTypes(); // filter all blocks to find those with a 'from' transform.
 
   const blockTypesWithPossibleFromTransforms = allBlockTypes.filter(blockType => {
+=======
+  if ((0,external_lodash_namespaceObject.isEmpty)(blocks)) {
+    return [];
+  }
+
+  const allBlockTypes = registration_getBlockTypes(); // filter all blocks to find those with a 'from' transform.
+
+  const blockTypesWithPossibleFromTransforms = (0,external_lodash_namespaceObject.filter)(allBlockTypes, blockType => {
+>>>>>>> fb785cbb (Initial commit)
     const fromTransforms = getBlockTransforms('from', blockType.name);
     return !!findTransform(fromTransforms, transform => {
       return isPossibleTransformForSource(transform, 'from', blocks);
@@ -7709,6 +8938,7 @@ const getBlockTypesForPossibleFromTransforms = blocks => {
 
 
 const getBlockTypesForPossibleToTransforms = blocks => {
+<<<<<<< HEAD
   if (!blocks.length) {
     return [];
   }
@@ -7724,6 +8954,23 @@ const getBlockTypesForPossibleToTransforms = blocks => {
   const blockNames = possibleTransforms.map(transformation => transformation.blocks).flat(); // Map block names to block types.
 
   return blockNames.map(name => name === '*' ? name : getBlockType(name));
+=======
+  if ((0,external_lodash_namespaceObject.isEmpty)(blocks)) {
+    return [];
+  }
+
+  const sourceBlock = (0,external_lodash_namespaceObject.first)(blocks);
+  const blockType = registration_getBlockType(sourceBlock.name);
+  const transformsTo = blockType ? getBlockTransforms('to', blockType.name) : []; // filter all 'to' transforms to find those that are possible.
+
+  const possibleTransforms = (0,external_lodash_namespaceObject.filter)(transformsTo, transform => {
+    return transform && isPossibleTransformForSource(transform, 'to', blocks);
+  }); // Build a list of block names using the possible 'to' transforms.
+
+  const blockNames = (0,external_lodash_namespaceObject.flatMap)(possibleTransforms, transformation => transformation.blocks); // Map block names to block types.
+
+  return blockNames.map(name => name === '*' ? name : registration_getBlockType(name));
+>>>>>>> fb785cbb (Initial commit)
 };
 /**
  * Determines whether transform is a "block" type
@@ -7747,7 +8994,11 @@ const isWildcardBlockTransform = t => t && t.type === 'block' && Array.isArray(t
  * @return {boolean} whether or not the Block is the container Block type
  */
 
+<<<<<<< HEAD
 const isContainerGroupBlock = name => name === getGroupingBlockName();
+=======
+const isContainerGroupBlock = name => name === registration_getGroupingBlockName();
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Returns an array of block types that the set of blocks received as argument
  * can be transformed into.
@@ -7758,13 +9009,21 @@ const isContainerGroupBlock = name => name === getGroupingBlockName();
  */
 
 function getPossibleBlockTransformations(blocks) {
+<<<<<<< HEAD
   if (!blocks.length) {
+=======
+  if ((0,external_lodash_namespaceObject.isEmpty)(blocks)) {
+>>>>>>> fb785cbb (Initial commit)
     return [];
   }
 
   const blockTypesForFromTransforms = getBlockTypesForPossibleFromTransforms(blocks);
   const blockTypesForToTransforms = getBlockTypesForPossibleToTransforms(blocks);
+<<<<<<< HEAD
   return [...new Set([...blockTypesForFromTransforms, ...blockTypesForToTransforms])];
+=======
+  return (0,external_lodash_namespaceObject.uniq)([...blockTypesForFromTransforms, ...blockTypesForToTransforms]);
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Given an array of transforms, returns the highest-priority transform where
@@ -7810,12 +9069,20 @@ function findTransform(transforms, predicate) {
 function getBlockTransforms(direction, blockTypeOrName) {
   // When retrieving transforms for all block types, recurse into self.
   if (blockTypeOrName === undefined) {
+<<<<<<< HEAD
     return getBlockTypes().map(_ref => {
+=======
+    return (0,external_lodash_namespaceObject.flatMap)(registration_getBlockTypes(), _ref => {
+>>>>>>> fb785cbb (Initial commit)
       let {
         name
       } = _ref;
       return getBlockTransforms(direction, name);
+<<<<<<< HEAD
     }).flat();
+=======
+    });
+>>>>>>> fb785cbb (Initial commit)
   } // Validate that block type exists and has array of direction.
 
 
@@ -7830,7 +9097,11 @@ function getBlockTransforms(direction, blockTypeOrName) {
   }
 
   const usingMobileTransformations = transforms.supportedMobileTransforms && Array.isArray(transforms.supportedMobileTransforms);
+<<<<<<< HEAD
   const filteredTransforms = usingMobileTransformations ? transforms[direction].filter(t => {
+=======
+  const filteredTransforms = usingMobileTransformations ? (0,external_lodash_namespaceObject.filter)(transforms[direction], t => {
+>>>>>>> fb785cbb (Initial commit)
     if (t.type === 'raw') {
       return true;
     }
@@ -7843,7 +9114,11 @@ function getBlockTransforms(direction, blockTypeOrName) {
       return true;
     }
 
+<<<<<<< HEAD
     return t.blocks.every(transformBlockName => transforms.supportedMobileTransforms.includes(transformBlockName));
+=======
+    return (0,external_lodash_namespaceObject.every)(t.blocks, transformBlockName => transforms.supportedMobileTransforms.includes(transformBlockName));
+>>>>>>> fb785cbb (Initial commit)
   }) : transforms[direction]; // Map transforms to normal form.
 
   return filteredTransforms.map(transform => ({ ...transform,
@@ -7852,6 +9127,7 @@ function getBlockTransforms(direction, blockTypeOrName) {
   }));
 }
 /**
+<<<<<<< HEAD
  * Checks that a given transforms isMatch method passes for given source blocks.
  *
  * @param {Object} transform A transform object.
@@ -7871,6 +9147,8 @@ function maybeCheckTransformIsMatch(transform, blocks) {
   return transform.isMatch(attributes, block);
 }
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Switch one or more blocks into one or more blocks of the new block type.
  *
  * @param {Array|Object} blocks Blocks array or block object.
@@ -7879,9 +9157,14 @@ function maybeCheckTransformIsMatch(transform, blocks) {
  * @return {?Array} Array of blocks or null.
  */
 
+<<<<<<< HEAD
 
 function switchToBlockType(blocks, name) {
   const blocksArray = Array.isArray(blocks) ? blocks : [blocks];
+=======
+function switchToBlockType(blocks, name) {
+  const blocksArray = (0,external_lodash_namespaceObject.castArray)(blocks);
+>>>>>>> fb785cbb (Initial commit)
   const isMultiBlock = blocksArray.length > 1;
   const firstBlock = blocksArray[0];
   const sourceName = firstBlock.name; // Find the right transformation by giving priority to the "to"
@@ -7889,7 +9172,11 @@ function switchToBlockType(blocks, name) {
 
   const transformationsFrom = getBlockTransforms('from', name);
   const transformationsTo = getBlockTransforms('to', sourceName);
+<<<<<<< HEAD
   const transformation = findTransform(transformationsTo, t => t.type === 'block' && t.blocks.indexOf(name) !== -1 && (!isMultiBlock || t.isMultiBlock) && maybeCheckTransformIsMatch(t, blocksArray)) || findTransform(transformationsFrom, t => t.type === 'block' && (isWildcardBlockTransform(t) || t.blocks.indexOf(sourceName) !== -1) && (!isMultiBlock || t.isMultiBlock) && maybeCheckTransformIsMatch(t, blocksArray)); // Stop if there is no valid transformation.
+=======
+  const transformation = findTransform(transformationsTo, t => t.type === 'block' && (isWildcardBlockTransform(t) || t.blocks.indexOf(name) !== -1) && (!isMultiBlock || t.isMultiBlock)) || findTransform(transformationsFrom, t => t.type === 'block' && (isWildcardBlockTransform(t) || t.blocks.indexOf(sourceName) !== -1) && (!isMultiBlock || t.isMultiBlock)); // Stop if there is no valid transformation.
+>>>>>>> fb785cbb (Initial commit)
 
   if (!transformation) {
     return null;
@@ -7898,12 +9185,20 @@ function switchToBlockType(blocks, name) {
   let transformationResults;
 
   if (transformation.isMultiBlock) {
+<<<<<<< HEAD
     if ('__experimentalConvert' in transformation) {
+=======
+    if ((0,external_lodash_namespaceObject.has)(transformation, '__experimentalConvert')) {
+>>>>>>> fb785cbb (Initial commit)
       transformationResults = transformation.__experimentalConvert(blocksArray);
     } else {
       transformationResults = transformation.transform(blocksArray.map(currentBlock => currentBlock.attributes), blocksArray.map(currentBlock => currentBlock.innerBlocks));
     }
+<<<<<<< HEAD
   } else if ('__experimentalConvert' in transformation) {
+=======
+  } else if ((0,external_lodash_namespaceObject.has)(transformation, '__experimentalConvert')) {
+>>>>>>> fb785cbb (Initial commit)
     transformationResults = transformation.__experimentalConvert(firstBlock);
   } else {
     transformationResults = transformation.transform(firstBlock.attributes, firstBlock.innerBlocks);
@@ -7911,12 +9206,17 @@ function switchToBlockType(blocks, name) {
   // of objects.
 
 
+<<<<<<< HEAD
   if (transformationResults === null || typeof transformationResults !== 'object') {
+=======
+  if (!(0,external_lodash_namespaceObject.isObjectLike)(transformationResults)) {
+>>>>>>> fb785cbb (Initial commit)
     return null;
   } // If the transformation function returned a single object, we want to work
   // with an array instead.
 
 
+<<<<<<< HEAD
   transformationResults = Array.isArray(transformationResults) ? transformationResults : [transformationResults]; // Ensure that every block object returned by the transformation has a
   // valid block type.
 
@@ -7931,6 +9231,16 @@ function switchToBlockType(blocks, name) {
   }
 
   const hasSwitchedBlock = transformationResults.some(result => result.name === name); // Ensure that at least one block object returned by the transformation has
+=======
+  transformationResults = (0,external_lodash_namespaceObject.castArray)(transformationResults); // Ensure that every block object returned by the transformation has a
+  // valid block type.
+
+  if (transformationResults.some(result => !registration_getBlockType(result.name))) {
+    return null;
+  }
+
+  const hasSwitchedBlock = name === '*' || (0,external_lodash_namespaceObject.some)(transformationResults, result => result.name === name); // Ensure that at least one block object returned by the transformation has
+>>>>>>> fb785cbb (Initial commit)
   // the expected "destination" block type.
 
   if (!hasSwitchedBlock) {
@@ -7962,9 +9272,13 @@ function switchToBlockType(blocks, name) {
  */
 
 const getBlockFromExample = (name, example) => {
+<<<<<<< HEAD
   var _example$innerBlocks;
 
   return createBlock(name, example.attributes, ((_example$innerBlocks = example.innerBlocks) !== null && _example$innerBlocks !== void 0 ? _example$innerBlocks : []).map(innerBlock => getBlockFromExample(innerBlock.name, innerBlock)));
+=======
+  return createBlock(name, example.attributes, (0,external_lodash_namespaceObject.map)(example.innerBlocks, innerBlock => getBlockFromExample(innerBlock.name, innerBlock)));
+>>>>>>> fb785cbb (Initial commit)
 };
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/utils.js
@@ -7974,6 +9288,10 @@ const getBlockFromExample = (name, example) => {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
@@ -7998,11 +9316,17 @@ k([names, a11y]);
 
 const ICON_COLORS = ['#191e23', '#f8f9f9'];
 /**
+<<<<<<< HEAD
  * Determines whether the block's attributes are equal to the default attributes
+=======
+ * Determines whether the block is a default block
+ * and its attributes are equal to the default attributes
+>>>>>>> fb785cbb (Initial commit)
  * which means the block is unmodified.
  *
  * @param {WPBlock} block Block Object
  *
+<<<<<<< HEAD
  * @return {boolean} Whether the block is an unmodified block.
  */
 
@@ -8030,6 +9354,27 @@ function isUnmodifiedBlock(block) {
 
 function isUnmodifiedDefaultBlock(block) {
   return block.name === getDefaultBlockName() && isUnmodifiedBlock(block);
+=======
+ * @return {boolean} Whether the block is an unmodified default block
+ */
+
+function isUnmodifiedDefaultBlock(block) {
+  const defaultBlockName = registration_getDefaultBlockName();
+
+  if (block.name !== defaultBlockName) {
+    return false;
+  } // Cache a created default block if no cache exists or the default block
+  // name changed.
+
+
+  if (!isUnmodifiedDefaultBlock.block || isUnmodifiedDefaultBlock.block.name !== defaultBlockName) {
+    isUnmodifiedDefaultBlock.block = createBlock(defaultBlockName);
+  }
+
+  const newDefaultBlock = isUnmodifiedDefaultBlock.block;
+  const blockType = registration_getBlockType(defaultBlockName);
+  return (0,external_lodash_namespaceObject.every)(blockType === null || blockType === void 0 ? void 0 : blockType.attributes, (value, key) => newDefaultBlock.attributes[key] === block.attributes[key]);
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Function that checks if the parameter is a valid icon.
@@ -8040,7 +9385,11 @@ function isUnmodifiedDefaultBlock(block) {
  */
 
 function isValidIcon(icon) {
+<<<<<<< HEAD
   return !!icon && (typeof icon === 'string' || (0,external_wp_element_namespaceObject.isValidElement)(icon) || typeof icon === 'function' || icon instanceof external_wp_element_namespaceObject.Component);
+=======
+  return !!icon && ((0,external_lodash_namespaceObject.isString)(icon) || (0,external_wp_element_namespaceObject.isValidElement)(icon) || (0,external_lodash_namespaceObject.isFunction)(icon) || icon instanceof external_wp_element_namespaceObject.Component);
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Function that receives an icon as set by the blocks during the registration
@@ -8063,6 +9412,7 @@ function normalizeIconObject(icon) {
     };
   }
 
+<<<<<<< HEAD
   if ('background' in icon) {
     const colordBgColor = w(icon.background);
 
@@ -8071,6 +9421,12 @@ function normalizeIconObject(icon) {
     const maxContrast = Math.max(...ICON_COLORS.map(getColorContrast));
     return { ...icon,
       foreground: icon.foreground ? icon.foreground : ICON_COLORS.find(iconColor => getColorContrast(iconColor) === maxContrast),
+=======
+  if ((0,external_lodash_namespaceObject.has)(icon, ['background'])) {
+    const colordBgColor = w(icon.background);
+    return { ...icon,
+      foreground: icon.foreground ? icon.foreground : (0,external_lodash_namespaceObject.maxBy)(ICON_COLORS, iconColor => colordBgColor.contrast(iconColor)),
+>>>>>>> fb785cbb (Initial commit)
       shadowColor: colordBgColor.alpha(0.3).toRgbString()
     };
   }
@@ -8088,8 +9444,13 @@ function normalizeIconObject(icon) {
  */
 
 function normalizeBlockType(blockTypeOrName) {
+<<<<<<< HEAD
   if (typeof blockTypeOrName === 'string') {
     return getBlockType(blockTypeOrName);
+=======
+  if ((0,external_lodash_namespaceObject.isString)(blockTypeOrName)) {
+    return registration_getBlockType(blockTypeOrName);
+>>>>>>> fb785cbb (Initial commit)
   }
 
   return blockTypeOrName;
@@ -8127,7 +9488,11 @@ function getBlockLabel(blockType, attributes) {
  * than the visual label and includes the block title and the value of the
  * `getLabel` function if it's specified.
  *
+<<<<<<< HEAD
  * @param {?Object} blockType              The block type.
+=======
+ * @param {Object}  blockType              The block type.
+>>>>>>> fb785cbb (Initial commit)
  * @param {Object}  attributes             The values of the block's attributes.
  * @param {?number} position               The position of the block in the block list.
  * @param {string}  [direction='vertical'] The direction of the block layout.
@@ -8190,14 +9555,22 @@ function getAccessibleBlockLabel(blockType, attributes, position) {
 
 function __experimentalSanitizeBlockAttributes(name, attributes) {
   // Get the type definition associated with a registered block.
+<<<<<<< HEAD
   const blockType = getBlockType(name);
+=======
+  const blockType = registration_getBlockType(name);
+>>>>>>> fb785cbb (Initial commit)
 
   if (undefined === blockType) {
     throw new Error(`Block type '${name}' is not registered.`);
   }
 
+<<<<<<< HEAD
   return Object.entries(blockType.attributes).reduce((accumulator, _ref) => {
     let [key, schema] = _ref;
+=======
+  return (0,external_lodash_namespaceObject.reduce)(blockType.attributes, (accumulator, schema, key) => {
+>>>>>>> fb785cbb (Initial commit)
     const value = attributes[key];
 
     if (undefined !== value) {
@@ -8231,7 +9604,11 @@ function __experimentalSanitizeBlockAttributes(name, attributes) {
 function __experimentalGetBlockAttributesNamesByRole(name, role) {
   var _getBlockType;
 
+<<<<<<< HEAD
   const attributes = (_getBlockType = getBlockType(name)) === null || _getBlockType === void 0 ? void 0 : _getBlockType.attributes;
+=======
+  const attributes = (_getBlockType = registration_getBlockType(name)) === null || _getBlockType === void 0 ? void 0 : _getBlockType.attributes;
+>>>>>>> fb785cbb (Initial commit)
   if (!attributes) return [];
   const attributesNames = Object.keys(attributes);
   if (!role) return attributesNames;
@@ -8241,6 +9618,7 @@ function __experimentalGetBlockAttributesNamesByRole(name, role) {
     return ((_attributes$attribute = attributes[attributeName]) === null || _attributes$attribute === void 0 ? void 0 : _attributes$attribute.__experimentalRole) === role;
   });
 }
+<<<<<<< HEAD
 /**
  * Return a new object with the specified keys omitted.
  *
@@ -9705,6 +11083,9 @@ function isPlainObject(o) {
 ;// CONCATENATED MODULE: external ["wp","deprecated"]
 var external_wp_deprecated_namespaceObject = window["wp"]["deprecated"];
 var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external_wp_deprecated_namespaceObject);
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/store/actions.js
 /**
  * External dependencies
@@ -9715,7 +11096,10 @@ var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external
  */
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -9724,10 +11108,13 @@ var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external
 
 /** @typedef {import('../api/registration').WPBlockVariation} WPBlockVariation */
 
+<<<<<<< HEAD
 /** @typedef {import('../api/registration').WPBlockType} WPBlockType */
 
 /** @typedef {import('./reducer').WPBlockCategory} WPBlockCategory */
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 const {
   error,
   warn
@@ -9745,6 +11132,7 @@ const LEGACY_CATEGORY_MAPPING = {
   layout: 'design'
 };
 /**
+<<<<<<< HEAD
  * Whether the argument is a function.
  *
  * @param {*} maybeFunc The argument to check.
@@ -9755,6 +11143,8 @@ function isFunction(maybeFunc) {
   return typeof maybeFunc === 'function';
 }
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Takes the unprocessed block type data and applies all the existing filters for the registered block type.
  * Next, it validates all the settings and performs additional processing to the block type definition.
  *
@@ -9762,10 +11152,16 @@ function isFunction(maybeFunc) {
  * @param {Object}      thunkArgs        Argument object for the thunk middleware.
  * @param {Function}    thunkArgs.select Function to select from the store.
  *
+<<<<<<< HEAD
  * @return {WPBlockType | undefined} The block, if it has been successfully registered; otherwise `undefined`.
  */
 
 
+=======
+ * @return {?WPBlockType} The block, if it has been successfully registered; otherwise `undefined`.
+ */
+
+>>>>>>> fb785cbb (Initial commit)
 const processBlockType = (blockType, _ref) => {
   let {
     select
@@ -9774,6 +11170,7 @@ const processBlockType = (blockType, _ref) => {
     name
   } = blockType;
   const settings = (0,external_wp_hooks_namespaceObject.applyFilters)('blocks.registerBlockType', { ...blockType
+<<<<<<< HEAD
   }, name, null);
 
   if (settings.description && typeof settings.description !== 'string') {
@@ -9784,11 +11181,18 @@ const processBlockType = (blockType, _ref) => {
 
   if (settings.deprecated) {
     settings.deprecated = settings.deprecated.map(deprecation => Object.fromEntries(Object.entries( // Only keep valid deprecation keys.
+=======
+  }, name);
+
+  if (settings.deprecated) {
+    settings.deprecated = settings.deprecated.map(deprecation => (0,external_lodash_namespaceObject.pick)( // Only keep valid deprecation keys.
+>>>>>>> fb785cbb (Initial commit)
     (0,external_wp_hooks_namespaceObject.applyFilters)('blocks.registerBlockType', // Merge deprecation keys with pre-filter settings
     // so that filters that depend on specific keys being
     // present don't fail.
     { // Omit deprecation keys here so that deprecations
       // can opt out of specific keys like "supports".
+<<<<<<< HEAD
       ...omit(blockType, DEPRECATED_ENTRY_KEYS),
       ...deprecation
     }, name, deprecation)).filter(_ref2 => {
@@ -9798,16 +11202,32 @@ const processBlockType = (blockType, _ref) => {
   }
 
   if (!isPlainObject(settings)) {
+=======
+      ...(0,external_lodash_namespaceObject.omit)(blockType, DEPRECATED_ENTRY_KEYS),
+      ...deprecation
+    }, name), DEPRECATED_ENTRY_KEYS));
+  }
+
+  if (!(0,external_lodash_namespaceObject.isPlainObject)(settings)) {
+>>>>>>> fb785cbb (Initial commit)
     error('Block settings must be a valid object.');
     return;
   }
 
+<<<<<<< HEAD
   if (!isFunction(settings.save)) {
+=======
+  if (!(0,external_lodash_namespaceObject.isFunction)(settings.save)) {
+>>>>>>> fb785cbb (Initial commit)
     error('The "save" property must be a valid function.');
     return;
   }
 
+<<<<<<< HEAD
   if ('edit' in settings && !isFunction(settings.edit)) {
+=======
+  if ('edit' in settings && !(0,external_lodash_namespaceObject.isFunction)(settings.edit)) {
+>>>>>>> fb785cbb (Initial commit)
     error('The "edit" property must be a valid function.');
     return;
   } // Canonicalize legacy categories to equivalent fallback.
@@ -9817,11 +11237,16 @@ const processBlockType = (blockType, _ref) => {
     settings.category = LEGACY_CATEGORY_MAPPING[settings.category];
   }
 
+<<<<<<< HEAD
   if ('category' in settings && !select.getCategories().some(_ref3 => {
     let {
       slug
     } = _ref3;
     return slug === settings.category;
+=======
+  if ('category' in settings && !(0,external_lodash_namespaceObject.some)(select.getCategories(), {
+    slug: settings.category
+>>>>>>> fb785cbb (Initial commit)
   })) {
     warn('The block "' + name + '" is registered with an invalid category "' + settings.category + '".');
     delete settings.category;
@@ -9848,12 +11273,17 @@ const processBlockType = (blockType, _ref) => {
 };
 /**
  * Returns an action object used in signalling that block types have been added.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through registerBlockType from @wordpress/blocks.
  *
  * @ignore
  *
  * @param {WPBlockType|WPBlockType[]} blockTypes Object or array of objects representing blocks to added.
  *
+=======
+ *
+ * @param {Array|Object} blockTypes Block types received.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return {Object} Action object.
  */
@@ -9862,7 +11292,11 @@ const processBlockType = (blockType, _ref) => {
 function addBlockTypes(blockTypes) {
   return {
     type: 'ADD_BLOCK_TYPES',
+<<<<<<< HEAD
     blockTypes: Array.isArray(blockTypes) ? blockTypes : [blockTypes]
+=======
+    blockTypes: (0,external_lodash_namespaceObject.castArray)(blockTypes)
+>>>>>>> fb785cbb (Initial commit)
   };
 }
 /**
@@ -9871,11 +11305,19 @@ function addBlockTypes(blockTypes) {
  * @param {WPBlockType} blockType Unprocessed block type settings.
  */
 
+<<<<<<< HEAD
 const __experimentalRegisterBlockType = blockType => _ref4 => {
   let {
     dispatch,
     select
   } = _ref4;
+=======
+const __experimentalRegisterBlockType = blockType => _ref2 => {
+  let {
+    dispatch,
+    select
+  } = _ref2;
+>>>>>>> fb785cbb (Initial commit)
   dispatch({
     type: 'ADD_UNPROCESSED_BLOCK_TYPE',
     blockType
@@ -9905,11 +11347,19 @@ const __experimentalRegisterBlockType = blockType => _ref4 => {
  * In this scenario some filters would not get applied for all blocks because they are registered too late.
  */
 
+<<<<<<< HEAD
 const __experimentalReapplyBlockTypeFilters = () => _ref5 => {
   let {
     dispatch,
     select
   } = _ref5;
+=======
+const __experimentalReapplyBlockTypeFilters = () => _ref3 => {
+  let {
+    dispatch,
+    select
+  } = _ref3;
+>>>>>>> fb785cbb (Initial commit)
 
   const unprocessedBlockTypes = select.__experimentalGetUnprocessedBlockTypes();
 
@@ -9933,12 +11383,17 @@ const __experimentalReapplyBlockTypeFilters = () => _ref5 => {
 };
 /**
  * Returns an action object used to remove a registered block type.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through unregisterBlockType from @wordpress/blocks.
  *
  * @ignore
  *
  * @param {string|string[]} names Block name or array of block names to be removed.
  *
+=======
+ *
+ * @param {string|Array} names Block name.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return {Object} Action object.
  */
@@ -9946,17 +11401,27 @@ const __experimentalReapplyBlockTypeFilters = () => _ref5 => {
 function removeBlockTypes(names) {
   return {
     type: 'REMOVE_BLOCK_TYPES',
+<<<<<<< HEAD
     names: Array.isArray(names) ? names : [names]
+=======
+    names: (0,external_lodash_namespaceObject.castArray)(names)
+>>>>>>> fb785cbb (Initial commit)
   };
 }
 /**
  * Returns an action object used in signalling that new block styles have been added.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through registerBlockStyle from @wordpress/blocks.
  *
  * @param {string}       blockName Block name.
  * @param {Array|Object} styles    Block style object or array of block style objects.
  *
  * @ignore
+=======
+ *
+ * @param {string}       blockName Block name.
+ * @param {Array|Object} styles    Block styles.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return {Object} Action object.
  */
@@ -9964,18 +11429,28 @@ function removeBlockTypes(names) {
 function addBlockStyles(blockName, styles) {
   return {
     type: 'ADD_BLOCK_STYLES',
+<<<<<<< HEAD
     styles: Array.isArray(styles) ? styles : [styles],
+=======
+    styles: (0,external_lodash_namespaceObject.castArray)(styles),
+>>>>>>> fb785cbb (Initial commit)
     blockName
   };
 }
 /**
  * Returns an action object used in signalling that block styles have been removed.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through unregisterBlockStyle from @wordpress/blocks.
  *
  * @ignore
  *
  * @param {string}       blockName  Block name.
  * @param {Array|string} styleNames Block style names or array of block style names.
+=======
+ *
+ * @param {string}       blockName  Block name.
+ * @param {Array|string} styleNames Block style names.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return {Object} Action object.
  */
@@ -9983,15 +11458,22 @@ function addBlockStyles(blockName, styles) {
 function removeBlockStyles(blockName, styleNames) {
   return {
     type: 'REMOVE_BLOCK_STYLES',
+<<<<<<< HEAD
     styleNames: Array.isArray(styleNames) ? styleNames : [styleNames],
+=======
+    styleNames: (0,external_lodash_namespaceObject.castArray)(styleNames),
+>>>>>>> fb785cbb (Initial commit)
     blockName
   };
 }
 /**
  * Returns an action object used in signalling that new block variations have been added.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through registerBlockVariation from @wordpress/blocks.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string}                              blockName  Block name.
  * @param {WPBlockVariation|WPBlockVariation[]} variations Block variations.
@@ -10002,15 +11484,22 @@ function removeBlockStyles(blockName, styleNames) {
 function addBlockVariations(blockName, variations) {
   return {
     type: 'ADD_BLOCK_VARIATIONS',
+<<<<<<< HEAD
     variations: Array.isArray(variations) ? variations : [variations],
+=======
+    variations: (0,external_lodash_namespaceObject.castArray)(variations),
+>>>>>>> fb785cbb (Initial commit)
     blockName
   };
 }
 /**
  * Returns an action object used in signalling that block variations have been removed.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through unregisterBlockVariation from @wordpress/blocks.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string}          blockName      Block name.
  * @param {string|string[]} variationNames Block variation names.
@@ -10021,15 +11510,22 @@ function addBlockVariations(blockName, variations) {
 function removeBlockVariations(blockName, variationNames) {
   return {
     type: 'REMOVE_BLOCK_VARIATIONS',
+<<<<<<< HEAD
     variationNames: Array.isArray(variationNames) ? variationNames : [variationNames],
+=======
+    variationNames: (0,external_lodash_namespaceObject.castArray)(variationNames),
+>>>>>>> fb785cbb (Initial commit)
     blockName
   };
 }
 /**
  * Returns an action object used to set the default block name.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through setDefaultBlockName from @wordpress/blocks.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string} name Block name.
  *
@@ -10045,9 +11541,12 @@ function actions_setDefaultBlockName(name) {
 /**
  * Returns an action object used to set the name of the block used as a fallback
  * for non-block content.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through setFreeformContentHandlerName from @wordpress/blocks.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string} name Block name.
  *
@@ -10063,9 +11562,12 @@ function setFreeformFallbackBlockName(name) {
 /**
  * Returns an action object used to set the name of the block used as a fallback
  * for unregistered blocks.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through setUnregisteredTypeHandlerName from @wordpress/blocks.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string} name Block name.
  *
@@ -10082,9 +11584,12 @@ function setUnregisteredFallbackBlockName(name) {
  * Returns an action object used to set the name of the block used
  * when grouping other blocks
  * eg: in "Group/Ungroup" interactions
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through setGroupingBlockName from @wordpress/blocks.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string} name Block name.
  *
@@ -10099,11 +11604,16 @@ function actions_setGroupingBlockName(name) {
 }
 /**
  * Returns an action object used to set block categories.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through setCategories from @wordpress/blocks.
  *
  * @ignore
  *
  * @param {WPBlockCategory[]} categories Block categories.
+=======
+ *
+ * @param {Object[]} categories Block categories.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return {Object} Action object.
  */
@@ -10116,9 +11626,12 @@ function setCategories(categories) {
 }
 /**
  * Returns an action object used to update a category.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through updateCategory from @wordpress/blocks.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string} slug     Block category slug.
  * @param {Object} category Object containing the category properties that should be updated.
@@ -10135,9 +11648,12 @@ function updateCategory(slug, category) {
 }
 /**
  * Returns an action object used to add block collections
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through registerBlockCollection from @wordpress/blocks.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string} namespace The namespace of the blocks to put in the collection
  * @param {string} title     The title to display in the block inserter
@@ -10156,9 +11672,12 @@ function addBlockCollection(namespace, title, icon) {
 }
 /**
  * Returns an action object used to remove block collections
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage for this action through unregisterBlockCollection from @wordpress/blocks.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {string} namespace The namespace of the blocks to put in the collection
  *
@@ -10264,12 +11783,23 @@ function serializeRawBlock(rawBlock) {
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -10342,7 +11872,11 @@ function getInnerBlocksProps() {
     innerBlocks
   } = innerBlocksPropsProvider; // Value is an array of blocks, so defer to block serializer.
 
+<<<<<<< HEAD
   const html = serialize(innerBlocks, {
+=======
+  const html = serializer_serialize(innerBlocks, {
+>>>>>>> fb785cbb (Initial commit)
     isInnerBlocks: true
   }); // Use special-cased raw HTML tag to avoid default escaping.
 
@@ -10386,7 +11920,11 @@ function getSaveElement(blockTypeOrName, attributes) {
     innerBlocks
   });
 
+<<<<<<< HEAD
   if (element !== null && typeof element === 'object' && (0,external_wp_hooks_namespaceObject.hasFilter)('blocks.getSaveContent.extraProps') && !(blockType.apiVersion > 1)) {
+=======
+  if ((0,external_lodash_namespaceObject.isObject)(element) && (0,external_wp_hooks_namespaceObject.hasFilter)('blocks.getSaveContent.extraProps') && !(blockType.apiVersion > 1)) {
+>>>>>>> fb785cbb (Initial commit)
     /**
      * Filters the props applied to the block save result element.
      *
@@ -10445,10 +11983,14 @@ function getSaveContent(blockTypeOrName, attributes, innerBlocks) {
  */
 
 function getCommentAttributes(blockType, attributes) {
+<<<<<<< HEAD
   var _blockType$attributes;
 
   return Object.entries((_blockType$attributes = blockType.attributes) !== null && _blockType$attributes !== void 0 ? _blockType$attributes : {}).reduce((accumulator, _ref) => {
     let [key, attributeSchema] = _ref;
+=======
+  return (0,external_lodash_namespaceObject.reduce)(blockType.attributes, (accumulator, attributeSchema, key) => {
+>>>>>>> fb785cbb (Initial commit)
     const value = attributes[key]; // Ignore undefined values.
 
     if (undefined === value) {
@@ -10524,9 +12066,15 @@ function getBlockInnerHTML(block) {
  */
 
 function getCommentDelimitedContent(rawBlockName, attributes, content) {
+<<<<<<< HEAD
   const serializedAttributes = attributes && Object.entries(attributes).length ? serializeAttributes(attributes) + ' ' : ''; // Strip core blocks of their namespace prefix.
 
   const blockName = rawBlockName !== null && rawBlockName !== void 0 && rawBlockName.startsWith('core/') ? rawBlockName.slice(5) : rawBlockName; // @todo make the `wp:` prefix potentially configurable.
+=======
+  const serializedAttributes = !(0,external_lodash_namespaceObject.isEmpty)(attributes) ? serializeAttributes(attributes) + ' ' : ''; // Strip core blocks of their namespace prefix.
+
+  const blockName = (0,external_lodash_namespaceObject.startsWith)(rawBlockName, 'core/') ? rawBlockName.slice(5) : rawBlockName; // @todo make the `wp:` prefix potentially configurable.
+>>>>>>> fb785cbb (Initial commit)
 
   if (!content) {
     return `<!-- wp:${blockName} ${serializedAttributes}/-->`;
@@ -10538,8 +12086,13 @@ function getCommentDelimitedContent(rawBlockName, attributes, content) {
  * Returns the content of a block, including comment delimiters, determining
  * serialized attributes and content form from the current state of the block.
  *
+<<<<<<< HEAD
  * @param {WPBlock}                     block   Block instance.
  * @param {WPBlockSerializationOptions} options Serialization options.
+=======
+ * @param {WPBlock}                      block   Block instance.
+ * @param {WPBlockSerializationOptions}  options Serialization options.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return {string} Serialized block.
  */
@@ -10560,12 +12113,16 @@ function serializeBlock(block) {
     return saveContent;
   }
 
+<<<<<<< HEAD
   const blockType = getBlockType(blockName);
 
   if (!blockType) {
     return saveContent;
   }
 
+=======
+  const blockType = registration_getBlockType(blockName);
+>>>>>>> fb785cbb (Initial commit)
   const saveAttributes = getCommentAttributes(blockType, block.attributes);
   return getCommentDelimitedContent(blockName, saveAttributes, saveContent);
 }
@@ -10576,7 +12133,11 @@ function __unstableSerializeAndClean(blocks) {
     blocks = [];
   }
 
+<<<<<<< HEAD
   let content = serialize(blocks); // For compatibility, treat a post consisting of a
+=======
+  let content = serializer_serialize(blocks); // For compatibility, treat a post consisting of a
+>>>>>>> fb785cbb (Initial commit)
   // single freeform block as legacy content and apply
   // pre-block-editor removep'd content formatting.
 
@@ -10595,9 +12156,14 @@ function __unstableSerializeAndClean(blocks) {
  * @return {string} The post content.
  */
 
+<<<<<<< HEAD
 function serialize(blocks, options) {
   const blocksArray = Array.isArray(blocks) ? blocks : [blocks];
   return blocksArray.map(block => serializeBlock(block, options)).join('\n\n');
+=======
+function serializer_serialize(blocks, options) {
+  return (0,external_lodash_namespaceObject.castArray)(blocks).map(block => serializeBlock(block, options)).join('\n\n');
+>>>>>>> fb785cbb (Initial commit)
 }
 
 ;// CONCATENATED MODULE: ./node_modules/simple-html-tokenizer/dist/es6/index.js
@@ -11501,9 +13067,15 @@ function tokenize(input, options) {
 
 
 
+<<<<<<< HEAD
 // EXTERNAL MODULE: ./node_modules/fast-deep-equal/es6/index.js
 var es6 = __webpack_require__(5619);
 var es6_default = /*#__PURE__*/__webpack_require__.n(es6);
+=======
+;// CONCATENATED MODULE: external ["wp","deprecated"]
+var external_wp_deprecated_namespaceObject = window["wp"]["deprecated"];
+var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external_wp_deprecated_namespaceObject);
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","htmlEntities"]
 var external_wp_htmlEntities_namespaceObject = window["wp"]["htmlEntities"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/validation/logger.js
@@ -11614,14 +13186,20 @@ function createQueuedLogger() {
 
 /** @typedef {import('./logger').LoggerItem} LoggerItem */
 
+<<<<<<< HEAD
 const identity = x => x;
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Globally matches any consecutive whitespace
  *
  * @type {RegExp}
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 const REGEXP_WHITESPACE = /[\t\n\r\v\f ]+/g;
 /**
  * Matches a string containing only whitespace
@@ -11688,7 +13266,11 @@ const MEANINGFUL_ATTRIBUTES = [...BOOLEAN_ATTRIBUTES, ...ENUMERATED_ATTRIBUTES];
  * @type {Array}
  */
 
+<<<<<<< HEAD
 const TEXT_NORMALIZATIONS = [identity, getTextWithCollapsedWhitespace];
+=======
+const TEXT_NORMALIZATIONS = [external_lodash_namespaceObject.identity, getTextWithCollapsedWhitespace];
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Regular expression matching a named character reference. In lieu of bundling
  * a full set of references, the pattern covers the minimal necessary to test
@@ -11766,7 +13348,11 @@ class DecodeEntityParser {
    *
    * @param {string} entity Entity fragment discovered in HTML.
    *
+<<<<<<< HEAD
    * @return {string | undefined} Entity substitute value.
+=======
+   * @return {?string} Entity substitute value.
+>>>>>>> fb785cbb (Initial commit)
    */
   parse(entity) {
     if (isValidCharacterReference(entity)) {
@@ -11818,7 +13404,11 @@ function getTextWithCollapsedWhitespace(text) {
 function getMeaningfulAttributePairs(token) {
   return token.attributes.filter(pair => {
     const [key, value] = pair;
+<<<<<<< HEAD
     return value || key.indexOf('data-') === 0 || MEANINGFUL_ATTRIBUTES.includes(key);
+=======
+    return value || key.indexOf('data-') === 0 || (0,external_lodash_namespaceObject.includes)(MEANINGFUL_ATTRIBUTES, key);
+>>>>>>> fb785cbb (Initial commit)
   });
 }
 /**
@@ -11909,7 +13499,11 @@ function getStyleProperties(text) {
     const value = valueParts.join(':');
     return [key.trim(), getNormalizedStyleValue(value.trim())];
   });
+<<<<<<< HEAD
   return Object.fromEntries(pairs);
+=======
+  return (0,external_lodash_namespaceObject.fromPairs)(pairs);
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Attribute-specific equality handlers
@@ -11921,6 +13515,7 @@ const isEqualAttributesOfName = {
   class: (actual, expected) => {
     // Class matches if members are the same, even if out of order or
     // superfluous whitespace between.
+<<<<<<< HEAD
     const [actualPieces, expectedPieces] = [actual, expected].map(getTextPiecesSplitOnWhitespace);
     const actualDiff = actualPieces.filter(c => !expectedPieces.includes(c));
     const expectedDiff = expectedPieces.filter(c => !actualPieces.includes(c));
@@ -11932,6 +13527,16 @@ const isEqualAttributesOfName = {
   // For each boolean attribute, mere presence of attribute in both is enough
   // to assume equivalence.
   ...Object.fromEntries(BOOLEAN_ATTRIBUTES.map(attribute => [attribute, () => true]))
+=======
+    return !(0,external_lodash_namespaceObject.xor)(...[actual, expected].map(getTextPiecesSplitOnWhitespace)).length;
+  },
+  style: (actual, expected) => {
+    return (0,external_lodash_namespaceObject.isEqual)(...[actual, expected].map(getStyleProperties));
+  },
+  // For each boolean attribute, mere presence of attribute in both is enough
+  // to assume equivalence.
+  ...(0,external_lodash_namespaceObject.fromPairs)(BOOLEAN_ATTRIBUTES.map(attribute => [attribute, external_lodash_namespaceObject.stubTrue]))
+>>>>>>> fb785cbb (Initial commit)
 };
 /**
  * Given two sets of attribute tuples, returns true if the attribute sets are
@@ -12022,7 +13627,11 @@ const isEqualTokensOfType = {
  *
  * @param {Object[]} tokens Set of tokens to search.
  *
+<<<<<<< HEAD
  * @return {Object | undefined} Next non-whitespace token.
+=======
+ * @return {Object} Next non-whitespace token.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function getNextNonWhitespaceToken(tokens) {
@@ -12290,6 +13899,15 @@ function convertLegacyBlockNameAndAttributes(name, attributes) {
     }
 
     name = 'core/embed';
+<<<<<<< HEAD
+=======
+  } // Convert 'core/query-loop' blocks in existing content to 'core/post-template'.
+  // TODO: Remove this check when WordPress 5.9 is released.
+
+
+  if (name === 'core/query-loop') {
+    name = 'core/post-template';
+>>>>>>> fb785cbb (Initial commit)
   } // Convert Post Comment blocks in existing content to Comment blocks.
   // TODO: Remove these checks when WordPress 6.0 is released.
 
@@ -12306,6 +13924,7 @@ function convertLegacyBlockNameAndAttributes(name, attributes) {
     name = 'core/comment-date';
   }
 
+<<<<<<< HEAD
   if (name === 'core/comments-query-loop') {
     name = 'core/comments';
     const {
@@ -12324,6 +13943,8 @@ function convertLegacyBlockNameAndAttributes(name, attributes) {
     newAttributes.legacy = true;
   }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
   return [name, newAttributes];
 }
 
@@ -12555,6 +14176,7 @@ function matchers_html(selector, multilineTag) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/node.js
 /**
+<<<<<<< HEAD
  * WordPress dependencies
  */
 
@@ -12563,6 +14185,11 @@ function matchers_html(selector, multilineTag) {
  */
 
 
+=======
+ * Internal dependencies
+ */
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * A representation of a single node within a block's rich text value. If
  * representing a text node, the value is simply a string of the node value.
@@ -12585,11 +14212,14 @@ function matchers_html(selector, multilineTag) {
  */
 
 function isNodeOfType(node, type) {
+<<<<<<< HEAD
   external_wp_deprecated_default()('wp.blocks.node.isNodeOfType', {
     since: '6.1',
     version: '6.3',
     link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
+=======
+>>>>>>> fb785cbb (Initial commit)
   return node && node.type === type;
 }
 /**
@@ -12629,6 +14259,7 @@ function getNamedNodeMapAsObject(nodeMap) {
  */
 
 function fromDOM(domNode) {
+<<<<<<< HEAD
   external_wp_deprecated_default()('wp.blocks.node.fromDOM', {
     since: '6.1',
     version: '6.3',
@@ -12636,6 +14267,8 @@ function fromDOM(domNode) {
     link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
 
+=======
+>>>>>>> fb785cbb (Initial commit)
   if (domNode.nodeType === domNode.TEXT_NODE) {
     return domNode.nodeValue;
   }
@@ -12660,12 +14293,15 @@ function fromDOM(domNode) {
  */
 
 function toHTML(node) {
+<<<<<<< HEAD
   external_wp_deprecated_default()('wp.blocks.node.toHTML', {
     since: '6.1',
     version: '6.3',
     alternative: 'wp.richText.toHTMLString',
     link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
+=======
+>>>>>>> fb785cbb (Initial commit)
   return children_toHTML([node]);
 }
 /**
@@ -12678,12 +14314,15 @@ function toHTML(node) {
  */
 
 function node_matcher(selector) {
+<<<<<<< HEAD
   external_wp_deprecated_default()('wp.blocks.node.matcher', {
     since: '6.1',
     version: '6.3',
     alternative: 'html source',
     link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
+=======
+>>>>>>> fb785cbb (Initial commit)
   return domNode => {
     let match = domNode;
 
@@ -12719,6 +14358,13 @@ function node_matcher(selector) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/children.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -12760,6 +14406,7 @@ function getSerializeCapableElement(children) {
  */
 
 function getChildrenArray(children) {
+<<<<<<< HEAD
   external_wp_deprecated_default()('wp.blocks.children.getChildrenArray', {
     since: '6.1',
     version: '6.3',
@@ -12768,6 +14415,11 @@ function getChildrenArray(children) {
   // is merely an implementation detail that currently serves to be true, but
   // should not be mistaken as being a guarantee on the external API.
 
+=======
+  // The fact that block children are compatible with the element serializer
+  // is merely an implementation detail that currently serves to be true, but
+  // should not be mistaken as being a guarantee on the external API.
+>>>>>>> fb785cbb (Initial commit)
   return children;
 }
 /**
@@ -12781,6 +14433,7 @@ function getChildrenArray(children) {
 
 
 function concat() {
+<<<<<<< HEAD
   external_wp_deprecated_default()('wp.blocks.children.concat', {
     since: '6.1',
     version: '6.3',
@@ -12795,6 +14448,12 @@ function concat() {
 
   for (let i = 0; i < blockNodes.length; i++) {
     const blockNode = Array.isArray(blockNodes[i]) ? blockNodes[i] : [blockNodes[i]];
+=======
+  const result = [];
+
+  for (let i = 0; i < arguments.length; i++) {
+    const blockNode = (0,external_lodash_namespaceObject.castArray)(i < 0 || arguments.length <= i ? undefined : arguments[i]);
+>>>>>>> fb785cbb (Initial commit)
 
     for (let j = 0; j < blockNode.length; j++) {
       const child = blockNode[j];
@@ -12820,12 +14479,15 @@ function concat() {
  */
 
 function children_fromDOM(domNodes) {
+<<<<<<< HEAD
   external_wp_deprecated_default()('wp.blocks.children.fromDOM', {
     since: '6.1',
     version: '6.3',
     alternative: 'wp.richText.create',
     link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
+=======
+>>>>>>> fb785cbb (Initial commit)
   const result = [];
 
   for (let i = 0; i < domNodes.length; i++) {
@@ -12846,12 +14508,15 @@ function children_fromDOM(domNodes) {
  */
 
 function children_toHTML(children) {
+<<<<<<< HEAD
   external_wp_deprecated_default()('wp.blocks.children.toHTML', {
     since: '6.1',
     version: '6.3',
     alternative: 'wp.richText.toHTMLString',
     link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
+=======
+>>>>>>> fb785cbb (Initial commit)
   const element = getSerializeCapableElement(children);
   return (0,external_wp_element_namespaceObject.renderToString)(element);
 }
@@ -12865,12 +14530,15 @@ function children_toHTML(children) {
  */
 
 function children_matcher(selector) {
+<<<<<<< HEAD
   external_wp_deprecated_default()('wp.blocks.children.matcher', {
     since: '6.1',
     version: '6.3',
     alternative: 'html source',
     link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
+=======
+>>>>>>> fb785cbb (Initial commit)
   return domNode => {
     let match = domNode;
 
@@ -12917,7 +14585,10 @@ function children_matcher(selector) {
  */
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -12936,7 +14607,11 @@ function children_matcher(selector) {
  * @return {Function} Enhanced hpq matcher.
  */
 
+<<<<<<< HEAD
 const toBooleanAttributeMatcher = matcher => (0,external_wp_compose_namespaceObject.pipe)([matcher, // Expected values from `attr( 'disabled' )`:
+=======
+const toBooleanAttributeMatcher = matcher => (0,external_lodash_namespaceObject.flow)([matcher, // Expected values from `attr( 'disabled' )`:
+>>>>>>> fb785cbb (Initial commit)
 //
 // <input>
 // - Value:       `undefined`
@@ -13005,16 +14680,27 @@ function isOfTypes(value, types) {
  * commentAttributes returns the attribute value depending on its source
  * definition of the given attribute key.
  *
+<<<<<<< HEAD
  * @param {string} attributeKey      Attribute key.
  * @param {Object} attributeSchema   Attribute's schema.
  * @param {Node}   innerDOM          Parsed DOM of block's inner HTML.
  * @param {Object} commentAttributes Block's comment attributes.
  * @param {string} innerHTML         Raw HTML from block node's innerHTML property.
+=======
+ * @param {string}      attributeKey      Attribute key.
+ * @param {Object}      attributeSchema   Attribute's schema.
+ * @param {string|Node} innerHTML         Block's raw content.
+ * @param {Object}      commentAttributes Block's comment attributes.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return {*} Attribute value.
  */
 
+<<<<<<< HEAD
 function getBlockAttribute(attributeKey, attributeSchema, innerDOM, commentAttributes, innerHTML) {
+=======
+function getBlockAttribute(attributeKey, attributeSchema, innerHTML, commentAttributes) {
+>>>>>>> fb785cbb (Initial commit)
   let value;
 
   switch (attributeSchema.source) {
@@ -13023,11 +14709,14 @@ function getBlockAttribute(attributeKey, attributeSchema, innerDOM, commentAttri
     case undefined:
       value = commentAttributes ? commentAttributes[attributeKey] : undefined;
       break;
+<<<<<<< HEAD
     // raw source means that it's the original raw block content.
 
     case 'raw':
       value = innerHTML;
       break;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
     case 'attribute':
     case 'property':
@@ -13037,7 +14726,11 @@ function getBlockAttribute(attributeKey, attributeSchema, innerDOM, commentAttri
     case 'node':
     case 'query':
     case 'tag':
+<<<<<<< HEAD
       value = parseWithAttributeSchema(innerDOM, attributeSchema);
+=======
+      value = parseWithAttributeSchema(innerHTML, attributeSchema);
+>>>>>>> fb785cbb (Initial commit)
       break;
   }
 
@@ -13066,7 +14759,11 @@ function getBlockAttribute(attributeKey, attributeSchema, innerDOM, commentAttri
  */
 
 function isValidByType(value, type) {
+<<<<<<< HEAD
   return type === undefined || isOfTypes(value, Array.isArray(type) ? type : [type]);
+=======
+  return type === undefined || isOfTypes(value, (0,external_lodash_namespaceObject.castArray)(type));
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Returns true if value is valid per the given block attribute schema enum
@@ -13119,7 +14816,11 @@ const matcherFromSource = memize_default()(sourceConfig => {
       return query(sourceConfig.selector, subMatchers);
 
     case 'tag':
+<<<<<<< HEAD
       return (0,external_wp_compose_namespaceObject.pipe)([prop(sourceConfig.selector, 'nodeName'), nodeName => nodeName ? nodeName.toLowerCase() : undefined]);
+=======
+      return (0,external_lodash_namespaceObject.flow)([prop(sourceConfig.selector, 'nodeName'), nodeName => nodeName ? nodeName.toLowerCase() : undefined]);
+>>>>>>> fb785cbb (Initial commit)
 
     default:
       // eslint-disable-next-line no-console
@@ -13165,17 +14866,32 @@ function getBlockAttributes(blockTypeOrName, innerHTML) {
   let attributes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
   const doc = parseHtml(innerHTML);
   const blockType = normalizeBlockType(blockTypeOrName);
+<<<<<<< HEAD
   const blockAttributes = (0,external_lodash_namespaceObject.mapValues)(blockType.attributes, (schema, key) => getBlockAttribute(key, schema, doc, attributes, innerHTML));
+=======
+  const blockAttributes = (0,external_lodash_namespaceObject.mapValues)(blockType.attributes, (schema, key) => getBlockAttribute(key, schema, doc, attributes));
+>>>>>>> fb785cbb (Initial commit)
   return (0,external_wp_hooks_namespaceObject.applyFilters)('blocks.getBlockAttributes', blockAttributes, blockType, innerHTML, attributes);
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/parser/fix-custom-classname.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Internal dependencies
  */
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 const CLASS_ATTR_SCHEMA = {
   type: 'string',
   source: 'attribute',
@@ -13209,11 +14925,16 @@ function getHTMLRootElementClasses(innerHTML) {
  */
 
 function fixCustomClassname(blockAttributes, blockType, innerHTML) {
+<<<<<<< HEAD
   if (hasBlockSupport(blockType, 'customClassName', true)) {
+=======
+  if (registration_hasBlockSupport(blockType, 'customClassName', true)) {
+>>>>>>> fb785cbb (Initial commit)
     // To determine difference, serialize block given the known set of
     // attributes, with the exception of `className`. This will determine
     // the default set of classes. From there, any difference in innerHTML
     // can be considered as custom classes.
+<<<<<<< HEAD
     const {
       className: omittedClassName,
       ...attributesSansClassName
@@ -13222,6 +14943,13 @@ function fixCustomClassname(blockAttributes, blockType, innerHTML) {
     const defaultClasses = getHTMLRootElementClasses(serialized);
     const actualClasses = getHTMLRootElementClasses(innerHTML);
     const customClasses = actualClasses.filter(className => !defaultClasses.includes(className));
+=======
+    const attributesSansClassName = (0,external_lodash_namespaceObject.omit)(blockAttributes, ['className']);
+    const serialized = getSaveContent(blockType, attributesSansClassName);
+    const defaultClasses = getHTMLRootElementClasses(serialized);
+    const actualClasses = getHTMLRootElementClasses(innerHTML);
+    const customClasses = (0,external_lodash_namespaceObject.difference)(actualClasses, defaultClasses);
+>>>>>>> fb785cbb (Initial commit)
 
     if (customClasses.length) {
       blockAttributes.className = customClasses.join(' ');
@@ -13259,6 +14987,13 @@ function applyBuiltInValidationFixes(block, blockType) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/parser/apply-block-deprecated-versions.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Internal dependencies
  */
 
@@ -13267,6 +15002,7 @@ function applyBuiltInValidationFixes(block, blockType) {
 
 
 /**
+<<<<<<< HEAD
  * Function that takes no arguments and always returns false.
  *
  * @return {boolean} Always returns false.
@@ -13276,6 +15012,8 @@ function stubFalse() {
   return false;
 }
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Given a block object, returns a new copy of the block with any applicable
  * deprecated migrations applied, or the original block if it was both valid
  * and no eligible migrations exist.
@@ -13289,7 +15027,10 @@ function stubFalse() {
  * @return {import(".").WPBlock} Migrated block object.
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 function applyBlockDeprecatedVersions(block, rawBlock, blockType) {
   const parsedAttributes = rawBlock.attrs;
   const {
@@ -13311,7 +15052,11 @@ function applyBlockDeprecatedVersions(block, rawBlock, blockType) {
     // defining `isEligible` on its deprecation. If the block is both valid
     // and does not opt to migrate, skip.
     const {
+<<<<<<< HEAD
       isEligible = stubFalse
+=======
+      isEligible = external_lodash_namespaceObject.stubFalse
+>>>>>>> fb785cbb (Initial commit)
     } = deprecatedDefinitions[i];
 
     if (block.isValid && !isEligible(parsedAttributes, block.innerBlocks)) {
@@ -13321,7 +15066,11 @@ function applyBlockDeprecatedVersions(block, rawBlock, blockType) {
     // and must be explicitly provided.
 
 
+<<<<<<< HEAD
     const deprecatedBlockType = Object.assign(omit(blockType, DEPRECATED_ENTRY_KEYS), deprecatedDefinitions[i]);
+=======
+    const deprecatedBlockType = Object.assign((0,external_lodash_namespaceObject.omit)(blockType, DEPRECATED_ENTRY_KEYS), deprecatedDefinitions[i]);
+>>>>>>> fb785cbb (Initial commit)
     let migratedBlock = { ...block,
       attributes: getBlockAttributes(deprecatedBlockType, block.originalContent, parsedAttributes)
     }; // Ignore the deprecation if it produces a block which is not valid.
@@ -13348,6 +15097,7 @@ function applyBlockDeprecatedVersions(block, rawBlock, blockType) {
     } = deprecatedBlockType;
 
     if (migrate) {
+<<<<<<< HEAD
       let migrated = migrate(migratedAttributes, block.innerBlocks);
 
       if (!Array.isArray(migrated)) {
@@ -13355,6 +15105,9 @@ function applyBlockDeprecatedVersions(block, rawBlock, blockType) {
       }
 
       [migratedAttributes = parsedAttributes, migratedInnerBlocks = block.innerBlocks] = migrated;
+=======
+      [migratedAttributes = parsedAttributes, migratedInnerBlocks = block.innerBlocks] = (0,external_lodash_namespaceObject.castArray)(migrate(migratedAttributes, block.innerBlocks));
+>>>>>>> fb785cbb (Initial commit)
     }
 
     block = { ...block,
@@ -13418,8 +15171,12 @@ function applyBlockDeprecatedVersions(block, rawBlock, blockType) {
 
 /**
  * @typedef  {Object}  ParseOptions
+<<<<<<< HEAD
  * @property {boolean?} __unstableSkipMigrationLogs If a block is migrated from a deprecated version, skip logging the migration details.
  * @property {boolean?} __unstableSkipAutop         Whether to skip autop when processing freeform content.
+=======
+ * @property {boolean} __unstableSkipMigrationLogs If a block is migrated from a deprecated version, skip logging the migration details.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 /**
@@ -13443,14 +15200,22 @@ function convertLegacyBlocks(rawBlock) {
  * Normalize the raw block by applying the fallback block name if none given,
  * sanitize the parsed HTML...
  *
+<<<<<<< HEAD
  * @param {WPRawBlock}    rawBlock The raw block object.
  * @param {ParseOptions?} options  Extra options for handling block parsing.
+=======
+ * @param {WPRawBlock} rawBlock The raw block object.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return {WPRawBlock} The normalized block object.
  */
 
 
+<<<<<<< HEAD
 function normalizeRawBlock(rawBlock, options) {
+=======
+function normalizeRawBlock(rawBlock) {
+>>>>>>> fb785cbb (Initial commit)
   const fallbackBlockName = getFreeformContentHandlerName(); // If the grammar parsing don't produce any block name, use the freeform block.
 
   const rawBlockName = rawBlock.blockName || getFreeformContentHandlerName();
@@ -13460,7 +15225,11 @@ function normalizeRawBlock(rawBlock, options) {
   // automatic paragraphs, so preserve them. Assumes wpautop is idempotent,
   // meaning there are no negative consequences to repeated autop calls.
 
+<<<<<<< HEAD
   if (rawBlockName === fallbackBlockName && !(options !== null && options !== void 0 && options.__unstableSkipAutop)) {
+=======
+  if (rawBlockName === fallbackBlockName) {
+>>>>>>> fb785cbb (Initial commit)
     rawInnerHTML = (0,external_wp_autop_namespaceObject.autop)(rawInnerHTML).trim();
   }
 
@@ -13542,22 +15311,38 @@ function applyBlockValidation(unvalidatedBlock, blockType) {
  * @param {WPRawBlock}   rawBlock The raw block object.
  * @param {ParseOptions} options  Extra options for handling block parsing.
  *
+<<<<<<< HEAD
  * @return {WPBlock | undefined} Fully parsed block.
+=======
+ * @return {WPBlock} Fully parsed block.
+>>>>>>> fb785cbb (Initial commit)
  */
 
 
 function parseRawBlock(rawBlock, options) {
+<<<<<<< HEAD
   let normalizedBlock = normalizeRawBlock(rawBlock, options); // During the lifecycle of the project, we renamed some old blocks
+=======
+  let normalizedBlock = normalizeRawBlock(rawBlock); // During the lifecycle of the project, we renamed some old blocks
+>>>>>>> fb785cbb (Initial commit)
   // and transformed others to new blocks. To avoid breaking existing content,
   // we added this function to properly parse the old content.
 
   normalizedBlock = convertLegacyBlocks(normalizedBlock); // Try finding the type for known block name.
 
+<<<<<<< HEAD
   let blockType = getBlockType(normalizedBlock.blockName); // If not blockType is found for the specified name, fallback to the "unregistedBlockType".
 
   if (!blockType) {
     normalizedBlock = createMissingBlockType(normalizedBlock);
     blockType = getBlockType(normalizedBlock.blockName);
+=======
+  let blockType = registration_getBlockType(normalizedBlock.blockName); // If not blockType is found for the specified name, fallback to the "unregistedBlockType".
+
+  if (!blockType) {
+    normalizedBlock = createMissingBlockType(normalizedBlock);
+    blockType = registration_getBlockType(normalizedBlock.blockName);
+>>>>>>> fb785cbb (Initial commit)
   } // If it's an empty freeform block or there's no blockType (no missing block handler)
   // Then, just ignore the block.
   // It might be a good idea to throw a warning here.
@@ -13651,6 +15436,7 @@ function parser_parse(content, options) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/raw-handling/get-raw-transforms.js
 /**
+<<<<<<< HEAD
  * Internal dependencies
  */
 
@@ -13660,6 +15446,19 @@ function getRawTransforms() {
       type
     } = _ref;
     return type === 'raw';
+=======
+ * External dependencies
+ */
+
+/**
+ * Internal dependencies
+ */
+
+
+function getRawTransforms() {
+  return (0,external_lodash_namespaceObject.filter)(getBlockTransforms('from'), {
+    type: 'raw'
+>>>>>>> fb785cbb (Initial commit)
   }).map(transform => {
     return transform.isMatch ? transform : { ...transform,
       isMatch: node => transform.selector && node.matches(transform.selector)
@@ -13679,14 +15478,22 @@ function getRawTransforms() {
  * top-level tag. The HTML should be filtered to not have any text between
  * top-level tags and formatted in a way that blocks can handle the HTML.
  *
+<<<<<<< HEAD
  * @param {string}   html    HTML to convert.
  * @param {Function} handler The handler calling htmlToBlocks: either rawHandler
  *                           or pasteHandler.
+=======
+ * @param {string} html HTML to convert.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return {Array} An array of blocks.
  */
 
+<<<<<<< HEAD
 function htmlToBlocks(html, handler) {
+=======
+function htmlToBlocks(html) {
+>>>>>>> fb785cbb (Initial commit)
   const doc = document.implementation.createHTMLDocument('');
   doc.body.innerHTML = html;
   return Array.from(doc.body.children).flatMap(node => {
@@ -13708,7 +15515,11 @@ function htmlToBlocks(html, handler) {
     } = rawTransform;
 
     if (transform) {
+<<<<<<< HEAD
       return transform(node, handler);
+=======
+      return transform(node);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     return createBlock(blockName, getBlockAttributes(blockName, node.outerHTML));
@@ -13785,8 +15596,14 @@ function normaliseBlocks(HTML) {
  */
 
 /**
+<<<<<<< HEAD
  * Looks for `<!--nextpage-->` and `<!--more-->` comments and
  * replaces them with a custom element representing a future block.
+=======
+ * Looks for `<!--nextpage-->` and `<!--more-->` comments, as well as the
+ * `<!--more Some text-->` variant and its `<!--noteaser-->` companion,
+ * and replaces them with a custom element representing a future block.
+>>>>>>> fb785cbb (Initial commit)
  *
  * The custom element is a way to bypass the rest of the `raw-handling`
  * transforms, which would eliminate other kinds of node with which to carry
@@ -13811,6 +15628,7 @@ function specialCommentConverter(node, doc) {
   }
 
   if (node.nodeValue.indexOf('more') === 0) {
+<<<<<<< HEAD
     moreCommentConverter(node, doc);
   }
 }
@@ -13868,6 +15686,28 @@ function moreCommentConverter(node, doc) {
     [childNodes.slice(0, nodeIndex).reduce(paragraphBuilder, null), moreBlock, childNodes.slice(nodeIndex + 1).reduce(paragraphBuilder, null)].forEach(element => element && wrapperNode.insertBefore(element, node.parentNode)); // Remove the old parent paragraph
 
     (0,external_wp_dom_namespaceObject.remove)(node.parentNode);
+=======
+    // Grab any custom text in the comment.
+    const customText = node.nodeValue.slice(4).trim();
+    /*
+     * When a `<!--more-->` comment is found, we need to look for any
+     * `<!--noteaser-->` sibling, but it may not be a direct sibling
+     * (whitespace typically lies in between)
+     */
+
+    let sibling = node;
+    let noTeaser = false;
+
+    while (sibling = sibling.nextSibling) {
+      if (sibling.nodeType === sibling.COMMENT_NODE && sibling.nodeValue === 'noteaser') {
+        noTeaser = true;
+        (0,external_wp_dom_namespaceObject.remove)(sibling);
+        break;
+      }
+    }
+
+    (0,external_wp_dom_namespaceObject.replace)(node, createMore(customText, noTeaser, doc));
+>>>>>>> fb785cbb (Initial commit)
   }
 }
 
@@ -13974,9 +15814,20 @@ function blockquoteNormaliser(node) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/raw-handling/figure-content-reducer.js
 /**
+<<<<<<< HEAD
  * WordPress dependencies
  */
 
+=======
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Whether or not the given node is figure content.
  *
@@ -13987,8 +15838,11 @@ function blockquoteNormaliser(node) {
  */
 
 function isFigureContent(node, schema) {
+<<<<<<< HEAD
   var _schema$figure$childr, _schema$figure;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
   const tag = node.nodeName.toLowerCase(); // We are looking for tags that can be a child of the figure tag, excluding
   // `figcaption` and any phrasing content.
 
@@ -13996,7 +15850,11 @@ function isFigureContent(node, schema) {
     return false;
   }
 
+<<<<<<< HEAD
   return tag in ((_schema$figure$childr = schema === null || schema === void 0 ? void 0 : (_schema$figure = schema.figure) === null || _schema$figure === void 0 ? void 0 : _schema$figure.children) !== null && _schema$figure$childr !== void 0 ? _schema$figure$childr : {});
+=======
+  return (0,external_lodash_namespaceObject.has)(schema, ['figure', 'children', tag]);
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Whether or not the given node can have an anchor.
@@ -14009,10 +15867,15 @@ function isFigureContent(node, schema) {
 
 
 function canHaveAnchor(node, schema) {
+<<<<<<< HEAD
   var _schema$figure$childr2, _schema$figure2, _schema$figure2$child, _schema$figure2$child2;
 
   const tag = node.nodeName.toLowerCase();
   return tag in ((_schema$figure$childr2 = schema === null || schema === void 0 ? void 0 : (_schema$figure2 = schema.figure) === null || _schema$figure2 === void 0 ? void 0 : (_schema$figure2$child = _schema$figure2.children) === null || _schema$figure2$child === void 0 ? void 0 : (_schema$figure2$child2 = _schema$figure2$child.a) === null || _schema$figure2$child2 === void 0 ? void 0 : _schema$figure2$child2.children) !== null && _schema$figure$childr2 !== void 0 ? _schema$figure$childr2 : {});
+=======
+  const tag = node.nodeName.toLowerCase();
+  return (0,external_lodash_namespaceObject.has)(schema, ['figure', 'children', 'a', 'children', tag]);
+>>>>>>> fb785cbb (Initial commit)
 }
 /**
  * Wraps the given element in a figure element.
@@ -14074,9 +15937,20 @@ function figureContentReducer(node, doc, schema) {
 var external_wp_shortcode_namespaceObject = window["wp"]["shortcode"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/raw-handling/shortcode-converter.js
 /**
+<<<<<<< HEAD
  * WordPress dependencies
  */
 
+=======
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -14086,27 +15960,42 @@ var external_wp_shortcode_namespaceObject = window["wp"]["shortcode"];
 
 
 
+<<<<<<< HEAD
 const castArray = maybeArray => Array.isArray(maybeArray) ? maybeArray : [maybeArray];
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 function segmentHTMLToShortcodeBlock(HTML) {
   let lastIndex = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   let excludedBlockNames = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
   // Get all matches.
   const transformsFrom = getBlockTransforms('from');
+<<<<<<< HEAD
   const transformation = findTransform(transformsFrom, transform => excludedBlockNames.indexOf(transform.blockName) === -1 && transform.type === 'shortcode' && castArray(transform.tag).some(tag => (0,external_wp_shortcode_namespaceObject.regexp)(tag).test(HTML)));
+=======
+  const transformation = findTransform(transformsFrom, transform => excludedBlockNames.indexOf(transform.blockName) === -1 && transform.type === 'shortcode' && (0,external_lodash_namespaceObject.some)((0,external_lodash_namespaceObject.castArray)(transform.tag), tag => (0,external_wp_shortcode_namespaceObject.regexp)(tag).test(HTML)));
+>>>>>>> fb785cbb (Initial commit)
 
   if (!transformation) {
     return [HTML];
   }
 
+<<<<<<< HEAD
   const transformTags = castArray(transformation.tag);
   const transformTag = transformTags.find(tag => (0,external_wp_shortcode_namespaceObject.regexp)(tag).test(HTML));
+=======
+  const transformTags = (0,external_lodash_namespaceObject.castArray)(transformation.tag);
+  const transformTag = (0,external_lodash_namespaceObject.find)(transformTags, tag => (0,external_wp_shortcode_namespaceObject.regexp)(tag).test(HTML));
+>>>>>>> fb785cbb (Initial commit)
   let match;
   const previousIndex = lastIndex;
 
   if (match = (0,external_wp_shortcode_namespaceObject.next)(transformTag, HTML, lastIndex)) {
+<<<<<<< HEAD
     var _match$shortcode$cont;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
     lastIndex = match.index + match.content.length;
     const beforeHTML = HTML.substr(0, match.index);
     const afterHTML = HTML.substr(lastIndex); // If the shortcode content does not contain HTML and the shortcode is
@@ -14114,7 +16003,11 @@ function segmentHTMLToShortcodeBlock(HTML) {
     // consider the shortcode as inline text, and thus skip conversion for
     // this segment.
 
+<<<<<<< HEAD
     if (!((_match$shortcode$cont = match.shortcode.content) !== null && _match$shortcode$cont !== void 0 && _match$shortcode$cont.includes('<')) && !(/(\n|<p>)\s*$/.test(beforeHTML) && /^\s*(\n|<\/p>)/.test(afterHTML))) {
+=======
+    if (!(0,external_lodash_namespaceObject.includes)(match.shortcode.content || '', '<') && !(/(\n|<p>)\s*$/.test(beforeHTML) && /^\s*(\n|<\/p>)/.test(afterHTML))) {
+>>>>>>> fb785cbb (Initial commit)
       return segmentHTMLToShortcodeBlock(HTML, lastIndex);
     } // If a transformation's `isMatch` predicate fails for the inbound
     // shortcode, try again by excluding the current block type.
@@ -14130,6 +16023,7 @@ function segmentHTMLToShortcodeBlock(HTML) {
       return segmentHTMLToShortcodeBlock(HTML, previousIndex, [...excludedBlockNames, transformation.blockName]);
     }
 
+<<<<<<< HEAD
     let blocks = [];
 
     if (typeof transformation.transform === 'function') {
@@ -14172,6 +16066,21 @@ function segmentHTMLToShortcodeBlock(HTML) {
     }
 
     return [...segmentHTMLToShortcodeBlock(beforeHTML), ...blocks, ...segmentHTMLToShortcodeBlock(afterHTML)];
+=======
+    const attributes = (0,external_lodash_namespaceObject.mapValues)((0,external_lodash_namespaceObject.pickBy)(transformation.attributes, schema => schema.shortcode), // Passing all of `match` as second argument is intentionally broad
+    // but shouldn't be too relied upon.
+    //
+    // See: https://github.com/WordPress/gutenberg/pull/3610#discussion_r152546926
+    schema => schema.shortcode(match.shortcode.attrs, match));
+    const transformationBlockType = { ...registration_getBlockType(transformation.blockName),
+      attributes: transformation.attributes
+    };
+    let block = createBlock(transformation.blockName, getBlockAttributes(transformationBlockType, match.shortcode.content, attributes));
+    block.originalContent = match.shortcode.content; // Applying the built-in fixes can enhance the attributes with missing content like "className".
+
+    block = applyBuiltInValidationFixes(block, transformationBlockType);
+    return [...segmentHTMLToShortcodeBlock(beforeHTML), block, ...segmentHTMLToShortcodeBlock(afterHTML)];
+>>>>>>> fb785cbb (Initial commit)
   }
 
   return [HTML];
@@ -14207,8 +16116,13 @@ function getBlockContentSchemaFromTransforms(transforms, context) {
       blockName,
       schema
     } = _ref;
+<<<<<<< HEAD
     const hasAnchorSupport = hasBlockSupport(blockName, 'anchor');
     schema = typeof schema === 'function' ? schema(schemaArgs) : schema; // If the block does not has anchor support and the transform does not
+=======
+    const hasAnchorSupport = registration_hasBlockSupport(blockName, 'anchor');
+    schema = (0,external_lodash_namespaceObject.isFunction)(schema) ? schema(schemaArgs) : schema; // If the block does not has anchor support and the transform does not
+>>>>>>> fb785cbb (Initial commit)
     // provides an isMatch we can return the schema right away.
 
     if (!hasAnchorSupport && !isMatch) {
@@ -14357,10 +16271,21 @@ function getSibling(node, which) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/raw-handling/index.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -14405,7 +16330,11 @@ function rawHandler(_ref) {
 
   const pieces = shortcode_converter(HTML);
   const blockContentSchema = getBlockContentSchema();
+<<<<<<< HEAD
   return pieces.map(piece => {
+=======
+  return (0,external_lodash_namespaceObject.compact)((0,external_lodash_namespaceObject.flatMap)(pieces, piece => {
+>>>>>>> fb785cbb (Initial commit)
     // Already a block from shortcode.
     if (typeof piece !== 'string') {
       return piece;
@@ -14422,8 +16351,13 @@ function rawHandler(_ref) {
     blockquoteNormaliser];
     piece = deepFilterHTML(piece, filters, blockContentSchema);
     piece = normaliseBlocks(piece);
+<<<<<<< HEAD
     return htmlToBlocks(piece, rawHandler);
   }).flat().filter(Boolean);
+=======
+    return htmlToBlocks(piece);
+  }));
+>>>>>>> fb785cbb (Initial commit)
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/raw-handling/comment-remover.js
@@ -14446,9 +16380,20 @@ function commentRemover(node) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/raw-handling/is-inline-content.js
 /**
+<<<<<<< HEAD
  * WordPress dependencies
  */
 
+=======
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Checks if the given node should be considered inline content, optionally
  * depending on a context tag.
@@ -14470,7 +16415,11 @@ function isInline(node, contextTag) {
 
   const tag = node.nodeName.toLowerCase();
   const inlineAllowedTagGroups = [['ul', 'li', 'ol'], ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']];
+<<<<<<< HEAD
   return inlineAllowedTagGroups.some(tagGroup => [tag, contextTag].filter(t => !tagGroup.includes(t)).length === 0);
+=======
+  return inlineAllowedTagGroups.some(tagGroup => (0,external_lodash_namespaceObject.difference)([tag, contextTag], tagGroup).length === 0);
+>>>>>>> fb785cbb (Initial commit)
 }
 
 function deepCheck(nodes, contextTag) {
@@ -14490,9 +16439,20 @@ function isInlineContent(HTML, contextTag) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/raw-handling/phrasing-content-reducer.js
 /**
+<<<<<<< HEAD
  * WordPress dependencies
  */
 
+=======
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 function phrasingContentReducer(node, doc) {
   // In jsdom-jscore, 'node.style' can be null.
   // TODO: Explore fixing this by patching jsdom-jscore.
@@ -14516,7 +16476,11 @@ function phrasingContentReducer(node, doc) {
     // fallback.
 
 
+<<<<<<< HEAD
     if (textDecorationLine === 'line-through' || textDecoration.includes('line-through')) {
+=======
+    if (textDecorationLine === 'line-through' || (0,external_lodash_namespaceObject.includes)(textDecoration, 'line-through')) {
+>>>>>>> fb785cbb (Initial commit)
       (0,external_wp_dom_namespaceObject.wrap)(doc.createElement('s'), node);
     }
 
@@ -14747,10 +16711,13 @@ const converter = new (showdown_default()).Converter({
 function slackMarkdownVariantCorrector(text) {
   return text.replace(/((?:^|\n)```)([^\n`]+)(```(?:$|\n))/, (match, p1, p2, p3) => `${p1}\n${p2}\n${p3}`);
 }
+<<<<<<< HEAD
 
 function bulletsToAsterisks(text) {
   return text.replace(/(^|\n)•( +)/g, '$1*$2');
 }
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Converts a piece of text into HTML based on any Markdown present.
  * Also decodes any encoded HTML.
@@ -14762,7 +16729,11 @@ function bulletsToAsterisks(text) {
 
 
 function markdownConverter(text) {
+<<<<<<< HEAD
   return converter.makeHtml(slackMarkdownVariantCorrector(bulletsToAsterisks(text)));
+=======
+  return converter.makeHtml(slackMarkdownVariantCorrector(text));
+>>>>>>> fb785cbb (Initial commit)
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/raw-handling/iframe-remover.js
@@ -14788,6 +16759,7 @@ function iframeRemover(node) {
 function googleDocsUIdRemover(node) {
   if (!node.id || node.id.indexOf('docs-internal-guid-') !== 0) {
     return;
+<<<<<<< HEAD
   } // Google Docs sometimes wraps the content in a B tag. We don't want to keep
   // this.
 
@@ -14797,6 +16769,11 @@ function googleDocsUIdRemover(node) {
   } else {
     node.removeAttribute('id');
   }
+=======
+  }
+
+  (0,external_wp_dom_namespaceObject.unwrap)(node);
+>>>>>>> fb785cbb (Initial commit)
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/raw-handling/html-formatting-remover.js
@@ -14912,6 +16889,7 @@ function emptyParagraphRemover(node) {
   node.parentNode.removeChild(node);
 }
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/raw-handling/slack-paragraph-corrector.js
 /**
  * Replaces Slack paragraph markup with a double line break (later converted to
@@ -14941,6 +16919,18 @@ function slackParagraphCorrector(node) {
  * WordPress dependencies
  */
 
+=======
+;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/raw-handling/paste-handler.js
+/**
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -14969,7 +16959,10 @@ function slackParagraphCorrector(node) {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Browser dependencies
  */
@@ -14987,7 +16980,11 @@ const {
  */
 
 function filterInlineHTML(HTML, preserveWhiteSpace) {
+<<<<<<< HEAD
   HTML = deepFilterHTML(HTML, [headRemover, googleDocsUIdRemover, phrasingContentReducer, commentRemover]);
+=======
+  HTML = deepFilterHTML(HTML, [googleDocsUIdRemover, phrasingContentReducer, commentRemover]);
+>>>>>>> fb785cbb (Initial commit)
   HTML = (0,external_wp_dom_namespaceObject.removeInvalidHTML)(HTML, (0,external_wp_dom_namespaceObject.getPhrasingContentSchema)('paste'), {
     inline: true
   });
@@ -15073,12 +17070,19 @@ function pasteHandler(_ref) {
 
   if (mode === 'INLINE') {
     return filterInlineHTML(HTML, preserveWhiteSpace);
+<<<<<<< HEAD
   } // Must be run before checking if it's inline content.
 
 
   HTML = deepFilterHTML(HTML, [slackParagraphCorrector]); // An array of HTML strings and block objects. The blocks replace matched
   // shortcodes.
 
+=======
+  } // An array of HTML strings and block objects. The blocks replace matched
+  // shortcodes.
+
+
+>>>>>>> fb785cbb (Initial commit)
   const pieces = shortcode_converter(HTML); // The call to shortcodeConverter will always return more than one element
   // if shortcodes are matched. The reason is when shortcodes are matched
   // empty HTML strings are included.
@@ -15091,7 +17095,11 @@ function pasteHandler(_ref) {
 
   const phrasingContentSchema = (0,external_wp_dom_namespaceObject.getPhrasingContentSchema)('paste');
   const blockContentSchema = getBlockContentSchema('paste');
+<<<<<<< HEAD
   const blocks = pieces.map(piece => {
+=======
+  const blocks = (0,external_lodash_namespaceObject.compact)((0,external_lodash_namespaceObject.flatMap)(pieces, piece => {
+>>>>>>> fb785cbb (Initial commit)
     // Already a block from shortcode.
     if (typeof piece !== 'string') {
       return piece;
@@ -15108,6 +17116,7 @@ function pasteHandler(_ref) {
     piece = deepFilterHTML(piece, [htmlFormattingRemover, brRemover, emptyParagraphRemover], blockContentSchema); // Allows us to ask for this information when we get a report.
 
     paste_handler_console.log('Processed HTML piece:\n\n', piece);
+<<<<<<< HEAD
     return htmlToBlocks(piece, pasteHandler);
   }).flat().filter(Boolean); // If we're allowed to return inline content, and there is only one
   // inlineable block, and the original plain text content does not have any
@@ -15120,6 +17129,19 @@ function pasteHandler(_ref) {
 
     if (trimmedPlainText !== '' && trimmedPlainText.indexOf('\n') === -1) {
       return (0,external_wp_dom_namespaceObject.removeInvalidHTML)(getBlockInnerHTML(blocks[0]), phrasingContentSchema).replace(trimRegex, '');
+=======
+    return htmlToBlocks(piece);
+  })); // If we're allowed to return inline content, and there is only one
+  // inlineable block, and the original plain text content does not have any
+  // line breaks, then treat it as inline paste.
+
+  if (mode === 'AUTO' && blocks.length === 1 && registration_hasBlockSupport(blocks[0].name, '__unstablePasteTextInline', false)) {
+    // Don't catch line breaks at the start or end.
+    const trimmedPlainText = plainText.replace(/^[\n]+|[\n]+$/g, '');
+
+    if (trimmedPlainText !== '' && trimmedPlainText.indexOf('\n') === -1) {
+      return (0,external_wp_dom_namespaceObject.removeInvalidHTML)(getBlockInnerHTML(blocks[0]), phrasingContentSchema);
+>>>>>>> fb785cbb (Initial commit)
     }
   }
 
@@ -15140,9 +17162,12 @@ function pasteHandler(_ref) {
 
 /**
  * Returns all the block categories.
+<<<<<<< HEAD
  * Ignored from documentation as the recommended usage is via useSelect from @wordpress/data.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return {WPBlockCategory[]} Block categories.
  */
@@ -15154,6 +17179,7 @@ function categories_getCategories() {
  * Sets the block categories.
  *
  * @param {WPBlockCategory[]} categories Block categories.
+<<<<<<< HEAD
  *
  * @example
  * ```js
@@ -15184,6 +17210,8 @@ function categories_getCategories() {
  *     );
  * };
  * ```
+=======
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function categories_setCategories(categories) {
@@ -15195,6 +17223,7 @@ function categories_setCategories(categories) {
  * @param {string}          slug     Block category slug.
  * @param {WPBlockCategory} category Object containing the category properties
  *                                   that should be updated.
+<<<<<<< HEAD
  *
  * @example
  * ```js
@@ -15214,6 +17243,8 @@ function categories_setCategories(categories) {
  * )    ;
  * };
  * ```
+=======
+>>>>>>> fb785cbb (Initial commit)
  */
 
 function categories_updateCategory(slug, category) {
@@ -15222,9 +17253,20 @@ function categories_updateCategory(slug, category) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/api/templates.js
 /**
+<<<<<<< HEAD
  * WordPress dependencies
  */
 
+=======
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -15244,7 +17286,11 @@ function categories_updateCategory(slug, category) {
 function doBlocksMatchTemplate() {
   let blocks = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   let template = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+<<<<<<< HEAD
   return blocks.length === template.length && template.every((_ref, index) => {
+=======
+  return blocks.length === template.length && (0,external_lodash_namespaceObject.every)(template, (_ref, index) => {
+>>>>>>> fb785cbb (Initial commit)
     let [name,, innerBlocksTemplate] = _ref;
     const block = blocks[index];
     return name === block.name && doBlocksMatchTemplate(block.innerBlocks, innerBlocksTemplate);
@@ -15273,9 +17319,13 @@ function synchronizeBlocksWithTemplate() {
     return blocks;
   }
 
+<<<<<<< HEAD
   return template.map((_ref2, index) => {
     var _blockType$attributes;
 
+=======
+  return (0,external_lodash_namespaceObject.map)(template, (_ref2, index) => {
+>>>>>>> fb785cbb (Initial commit)
     let [name, attributes, innerBlocksTemplate] = _ref2;
     const block = blocks[index];
 
@@ -15289,6 +17339,7 @@ function synchronizeBlocksWithTemplate() {
     // before creating the blocks.
 
 
+<<<<<<< HEAD
     const blockType = getBlockType(name);
 
     const isHTMLAttribute = attributeDefinition => (attributeDefinition === null || attributeDefinition === void 0 ? void 0 : attributeDefinition.source) === 'html';
@@ -15308,6 +17359,22 @@ function synchronizeBlocksWithTemplate() {
 
     const normalizeAttribute = (definition, value) => {
       if (isHTMLAttribute(definition) && Array.isArray(value)) {
+=======
+    const blockType = registration_getBlockType(name);
+
+    const isHTMLAttribute = attributeDefinition => (0,external_lodash_namespaceObject.get)(attributeDefinition, ['source']) === 'html';
+
+    const isQueryAttribute = attributeDefinition => (0,external_lodash_namespaceObject.get)(attributeDefinition, ['source']) === 'query';
+
+    const normalizeAttributes = (schema, values) => {
+      return (0,external_lodash_namespaceObject.mapValues)(values, (value, key) => {
+        return normalizeAttribute(schema[key], value);
+      });
+    };
+
+    const normalizeAttribute = (definition, value) => {
+      if (isHTMLAttribute(definition) && (0,external_lodash_namespaceObject.isArray)(value)) {
+>>>>>>> fb785cbb (Initial commit)
         // Introduce a deprecated call at this point
         // When we're confident that "children" format should be removed from the templates.
         return (0,external_wp_element_namespaceObject.renderToString)(value);
@@ -15322,11 +17389,19 @@ function synchronizeBlocksWithTemplate() {
       return value;
     };
 
+<<<<<<< HEAD
     const normalizedAttributes = normalizeAttributes((_blockType$attributes = blockType === null || blockType === void 0 ? void 0 : blockType.attributes) !== null && _blockType$attributes !== void 0 ? _blockType$attributes : {}, attributes);
     let [blockName, blockAttributes] = convertLegacyBlockNameAndAttributes(name, normalizedAttributes); // If a Block is undefined at this point, use the core/missing block as
     // a placeholder for a better user experience.
 
     if (undefined === getBlockType(blockName)) {
+=======
+    const normalizedAttributes = normalizeAttributes((0,external_lodash_namespaceObject.get)(blockType, ['attributes'], {}), attributes);
+    let [blockName, blockAttributes] = convertLegacyBlockNameAndAttributes(name, normalizedAttributes); // If a Block is undefined at this point, use the core/missing block as
+    // a placeholder for a better user experience.
+
+    if (undefined === registration_getBlockType(blockName)) {
+>>>>>>> fb785cbb (Initial commit)
       blockAttributes = {
         originalName: name,
         originalContent: '',
@@ -15431,15 +17506,96 @@ function synchronizeBlocksWithTemplate() {
 
 
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/deprecated.js
+=======
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+function _extends() {
+  _extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+;// CONCATENATED MODULE: external ["wp","compose"]
+var external_wp_compose_namespaceObject = window["wp"]["compose"];
+;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/block-content-provider/index.js
+
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
 
+<<<<<<< HEAD
+=======
+
+/**
+ * Internal dependencies
+ */
+
+
+const {
+  Consumer,
+  Provider
+} = (0,external_wp_element_namespaceObject.createContext)(() => {});
+/**
+ * An internal block component used in block content serialization to inject
+ * nested block content within the `save` implementation of the ancestor
+ * component in which it is nested. The component provides a pre-bound
+ * `BlockContent` component via context, which is used by the developer-facing
+ * `InnerBlocks.Content` component to render block content.
+ *
+ * @example
+ *
+ * ```jsx
+ * <BlockContentProvider innerBlocks={ innerBlocks }>
+ * 	{ blockSaveElement }
+ * </BlockContentProvider>
+ * ```
+ *
+ * @param {Object}    props             Component props.
+ * @param {WPElement} props.children    Block save result.
+ * @param {Array}     props.innerBlocks Block(s) to serialize.
+ *
+ * @return {WPComponent} Element with BlockContent injected via context.
+ */
+
+const BlockContentProvider = _ref => {
+  let {
+    children,
+    innerBlocks
+  } = _ref;
+
+  const BlockContent = () => {
+    // Value is an array of blocks, so defer to block serializer.
+    const html = serialize(innerBlocks, {
+      isInnerBlocks: true
+    }); // Use special-cased raw HTML tag to avoid default escaping
+
+    return createElement(RawHTML, null, html);
+  };
+
+  return createElement(Provider, {
+    value: BlockContent
+  }, children);
+};
+>>>>>>> fb785cbb (Initial commit)
 /**
  * A Higher Order Component used to inject BlockContent using context to the
  * wrapped component.
  *
+<<<<<<< HEAD
  * @deprecated
  *
  * @param {WPComponent} OriginalComponent The component to enhance.
@@ -15452,6 +17608,18 @@ function withBlockContentContext(OriginalComponent) {
   });
   return OriginalComponent;
 }
+=======
+ * @return {WPComponent} Enhanced component with injected BlockContent as prop.
+ */
+
+
+const withBlockContentContext = (0,external_wp_compose_namespaceObject.createHigherOrderComponent)(OriginalComponent => {
+  return props => (0,external_wp_element_namespaceObject.createElement)(Consumer, null, context => (0,external_wp_element_namespaceObject.createElement)(OriginalComponent, _extends({}, props, {
+    BlockContent: context
+  })));
+}, 'withBlockContentContext');
+/* harmony default export */ var block_content_provider = ((/* unused pure expression or super */ null && (BlockContentProvider)));
+>>>>>>> fb785cbb (Initial commit)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/blocks/build-module/index.js
 // A "block" is the abstract term used to describe units of markup that,

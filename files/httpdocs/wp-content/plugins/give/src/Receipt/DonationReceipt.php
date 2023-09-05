@@ -2,7 +2,10 @@
 
 namespace Give\Receipt;
 
+<<<<<<< HEAD
 use Give\Donations\ValueObjects\DonationStatus;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
 use Give_Payment;
 
@@ -93,17 +96,26 @@ class DonationReceipt extends Receipt
     /**
      * Add donation section.
      *
+<<<<<<< HEAD
      * @since 2.24.0 Add notice for donations with the "processing" status
      * @since      2.7.0
+=======
+     * @since 2.7.0
+>>>>>>> fb785cbb (Initial commit)
      */
     private function addDonationSection()
     {
         $donationSection = $this->addSection([
+<<<<<<< HEAD
             'id' => self::DONATIONSECTIONID,
+=======
+            'id'    => self::DONATIONSECTIONID,
+>>>>>>> fb785cbb (Initial commit)
             'label' => esc_html__('Donation Details', 'give'),
         ]);
 
         $donationSection->addLineItem([
+<<<<<<< HEAD
             'id' => 'paymentStatus',
             'label' => esc_html__('Payment Status', 'give'),
             'value' => give_get_payment_statuses()[$this->donation->post_status],
@@ -122,11 +134,21 @@ class DonationReceipt extends Receipt
 
         $donationSection->addLineItem([
             'id' => 'paymentMethod',
+=======
+            'id'    => 'paymentStatus',
+            'label' => esc_html__('Payment Status', 'give'),
+            'value' => give_get_payment_statuses()[ $this->donation->post_status ],
+        ]);
+
+        $donationSection->addLineItem([
+            'id'    => 'paymentMethod',
+>>>>>>> fb785cbb (Initial commit)
             'label' => esc_html__('Payment Method', 'give'),
             'value' => give_get_gateway_checkout_label($this->donation->gateway),
         ]);
 
         $donationSection->addLineItem([
+<<<<<<< HEAD
             'id' => 'amount',
             'label' => esc_html__('Donation Amount', 'give'),
             'value' => give_currency_filter(
@@ -134,6 +156,15 @@ class DonationReceipt extends Receipt
                 [
                     'currency_code' => $this->donation->currency,
                     'form_id' => $this->donation->form_id,
+=======
+            'id'    => 'amount',
+            'label' => esc_html__('Donation Amount', 'give'),
+            'value' => give_currency_filter(
+                give_format_amount($this->donation->total, [ 'donation_id' => $this->donation->ID ]),
+                [
+                    'currency_code'   => $this->donation->currency,
+                    'form_id'         => $this->donation->form_id,
+>>>>>>> fb785cbb (Initial commit)
                     'decode_currency' => true,
                 ]
             ),
@@ -143,10 +174,17 @@ class DonationReceipt extends Receipt
             'id'    => 'totalAmount',
             'label' => esc_html__('Donation Total', 'give'),
             'value' => give_currency_filter(
+<<<<<<< HEAD
                 give_format_amount($this->donation->total, ['donation_id' => $this->donation->ID]),
                 [
                     'currency_code' => $this->donation->currency,
                     'form_id' => $this->donation->form_id,
+=======
+                give_format_amount($this->donation->total, [ 'donation_id' => $this->donation->ID ]),
+                [
+                    'currency_code'   => $this->donation->currency,
+                    'form_id'         => $this->donation->form_id,
+>>>>>>> fb785cbb (Initial commit)
                     'decode_currency' => true,
                 ]
             ),
@@ -174,12 +212,21 @@ class DonationReceipt extends Receipt
         $address   = give_get_donation_address($this->donationId);
         $formatted = sprintf(
             '%1$s%7$s%2$s%3$s, %4$s%5$s%7$s%6$s',
+<<<<<<< HEAD
             $address['line1'],
             ! empty($address['line2']) ? $address['line2'] . "\r\n" : '',
             $address['city'],
             $address['state'],
             $address['zip'],
             $address['country'],
+=======
+            $address[ 'line1' ],
+            ! empty($address[ 'line2' ]) ? $address[ 'line2' ] . "\r\n" : '',
+            $address[ 'city' ],
+            $address[ 'state' ],
+            $address[ 'zip' ],
+            $address[ 'country' ],
+>>>>>>> fb785cbb (Initial commit)
             "\r\n"
         );
 

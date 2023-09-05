@@ -7,8 +7,11 @@ use Give\Helpers\Hooks;
 use Give\ServiceProviders\ServiceProvider as ServiceProviderInterface;
 use Give\Subscriptions\LegacyListeners\DispatchGiveSubscriptionPostCreate;
 use Give\Subscriptions\LegacyListeners\DispatchGiveSubscriptionPreCreate;
+<<<<<<< HEAD
 use Give\Subscriptions\ListTable\SubscriptionsListTable;
 use Give\Subscriptions\Migrations\AddPaymentModeToSubscriptionTable;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Subscriptions\Migrations\CreateSubscriptionTables;
 use Give\Subscriptions\Repositories\SubscriptionRepository;
 
@@ -20,12 +23,15 @@ class ServiceProvider implements ServiceProviderInterface
     public function register()
     {
         give()->singleton('subscriptions', SubscriptionRepository::class);
+<<<<<<< HEAD
         give()->singleton(SubscriptionsListTable::class, function() {
             $listTable = new SubscriptionsListTable();
             Hooks::doAction('givewp_subscriptions_list_table', $listTable);
 
             return $listTable;
         });
+=======
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -34,6 +40,7 @@ class ServiceProvider implements ServiceProviderInterface
     public function boot()
     {
         $this->bootLegacyListeners();
+<<<<<<< HEAD
         $this->registerMigrations();
 
         $userId = get_current_user_id();
@@ -44,6 +51,10 @@ class ServiceProvider implements ServiceProviderInterface
         } elseif (SubscriptionsAdminPage::isShowing()) {
             Hooks::addAction('admin_head', SubscriptionsAdminPage::class, 'renderReactSwitch');
         }
+=======
+
+        give(MigrationsRegister::class)->addMigration(CreateSubscriptionTables::class);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -56,6 +67,7 @@ class ServiceProvider implements ServiceProviderInterface
         Hooks::addAction('givewp_subscription_creating', DispatchGiveSubscriptionPreCreate::class);
         Hooks::addAction('givewp_subscription_created', DispatchGiveSubscriptionPostCreate::class);
     }
+<<<<<<< HEAD
 
     /**
      * Registers database migrations with the MigrationsRunner
@@ -71,4 +83,6 @@ class ServiceProvider implements ServiceProviderInterface
             AddPaymentModeToSubscriptionTable::class,
         ]);
     }
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

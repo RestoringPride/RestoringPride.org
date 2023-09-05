@@ -1,6 +1,10 @@
 /*
  * imgAreaSelect jQuery plugin
+<<<<<<< HEAD
  * version 0.9.10-wp-6.2
+=======
+ * version 0.9.10-wp
+>>>>>>> fb785cbb (Initial commit)
  *
  * Copyright (c) 2008-2013 Michal Wojciechowski (odyniec.net)
  *
@@ -20,7 +24,11 @@
 var abs = Math.abs,
     max = Math.max,
     min = Math.min,
+<<<<<<< HEAD
     floor = Math.floor;
+=======
+    round = Math.round;
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Create a new HTML div element
@@ -230,12 +238,21 @@ $.imgAreaSelect = function (img, options) {
     function getSelection(noScale) {
         var sx = noScale || scaleX, sy = noScale || scaleY;
 
+<<<<<<< HEAD
         return { x1: floor(selection.x1 * sx),
             y1: floor(selection.y1 * sy),
             x2: floor(selection.x2 * sx),
             y2: floor(selection.y2 * sy),
             width: floor(selection.x2 * sx) - floor(selection.x1 * sx),
             height: floor(selection.y2 * sy) - floor(selection.y1 * sy) };
+=======
+        return { x1: round(selection.x1 * sx),
+            y1: round(selection.y1 * sy),
+            x2: round(selection.x2 * sx),
+            y2: round(selection.y2 * sy),
+            width: round(selection.x2 * sx) - round(selection.x1 * sx),
+            height: round(selection.y2 * sy) - round(selection.y1 * sy) };
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -257,10 +274,17 @@ $.imgAreaSelect = function (img, options) {
         var sx = noScale || scaleX, sy = noScale || scaleY;
 
         selection = {
+<<<<<<< HEAD
             x1: floor(x1 / sx || 0),
             y1: floor(y1 / sy || 0),
             x2: floor(x2 / sx || 0),
             y2: floor(y2 / sy || 0)
+=======
+            x1: round(x1 / sx || 0),
+            y1: round(y1 / sy || 0),
+            x2: round(x2 / sx || 0),
+            y2: round(y2 / sy || 0)
+>>>>>>> fb785cbb (Initial commit)
         };
 
         selection.width = selection.x2 - selection.x1;
@@ -283,7 +307,11 @@ $.imgAreaSelect = function (img, options) {
          * Get image offset. The .offset() method returns float values, so they
          * need to be rounded.
          */
+<<<<<<< HEAD
         imgOfs = { left: floor($img.offset().left), top: floor($img.offset().top) };
+=======
+        imgOfs = { left: round($img.offset().left), top: round($img.offset().top) };
+>>>>>>> fb785cbb (Initial commit)
 
         /* Get image dimensions */
         imgWidth = $img.innerWidth();
@@ -293,10 +321,17 @@ $.imgAreaSelect = function (img, options) {
         imgOfs.left += ($img.outerWidth() - imgWidth) >> 1;
 
         /* Set minimum and maximum selection area dimensions */
+<<<<<<< HEAD
         minWidth = floor(options.minWidth / scaleX) || 0;
         minHeight = floor(options.minHeight / scaleY) || 0;
         maxWidth = floor(min(options.maxWidth / scaleX || 1<<24, imgWidth));
         maxHeight = floor(min(options.maxHeight / scaleY || 1<<24, imgHeight));
+=======
+        minWidth = round(options.minWidth / scaleX) || 0;
+        minHeight = round(options.minHeight / scaleY) || 0;
+        maxWidth = round(min(options.maxWidth / scaleX || 1<<24, imgWidth));
+        maxHeight = round(min(options.maxHeight / scaleY || 1<<24, imgHeight));
+>>>>>>> fb785cbb (Initial commit)
 
         /*
          * Workaround for jQuery 1.3.2 incorrect offset calculation, originally
@@ -311,8 +346,13 @@ $.imgAreaSelect = function (img, options) {
 
         /* Determine parent element offset */
         parOfs = /absolute|relative/.test($parent.css('position')) ?
+<<<<<<< HEAD
             { left: floor($parent.offset().left) - $parent.scrollLeft(),
                 top: floor($parent.offset().top) - $parent.scrollTop() } :
+=======
+            { left: round($parent.offset().left) - $parent.scrollLeft(),
+                top: round($parent.offset().top) - $parent.scrollTop() } :
+>>>>>>> fb785cbb (Initial commit)
             position == 'fixed' ?
                 { left: $(document).scrollLeft(), top: $(document).scrollTop() } :
                 { left: 0, top: 0 };
@@ -430,6 +470,7 @@ $.imgAreaSelect = function (img, options) {
     function doUpdate(resetKeyPress) {
         adjust();
         update(resetKeyPress);
+<<<<<<< HEAD
         updateSelectionRelativeToParentElement();
     }
 
@@ -437,6 +478,8 @@ $.imgAreaSelect = function (img, options) {
      * Set the correct values of x1, y1, x2, and y2.
      */
     function updateSelectionRelativeToParentElement() {
+=======
+>>>>>>> fb785cbb (Initial commit)
         x1 = viewX(selection.x1); y1 = viewY(selection.y1);
         x2 = viewX(selection.x2); y2 = viewY(selection.y2);
     }
@@ -578,16 +621,28 @@ $.imgAreaSelect = function (img, options) {
             if (xFirst) {
                 x2 = max(left, min(left + imgWidth,
                     x1 + abs(y2 - y1) * aspectRatio * (x2 > x1 || -1)));
+<<<<<<< HEAD
                 y2 = floor(max(top, min(top + imgHeight,
                     y1 + abs(x2 - x1) / aspectRatio * (y2 > y1 || -1))));
                 x2 = floor(x2);
+=======
+                y2 = round(max(top, min(top + imgHeight,
+                    y1 + abs(x2 - x1) / aspectRatio * (y2 > y1 || -1))));
+                x2 = round(x2);
+>>>>>>> fb785cbb (Initial commit)
             }
             else {
                 y2 = max(top, min(top + imgHeight,
                     y1 + abs(x2 - x1) / aspectRatio * (y2 > y1 || -1)));
+<<<<<<< HEAD
                 x2 = floor(max(left, min(left + imgWidth,
                     x1 + abs(y2 - y1) * aspectRatio * (x2 > x1 || -1))));
                 y2 = floor(y2);
+=======
+                x2 = round(max(left, min(left + imgWidth,
+                    x1 + abs(y2 - y1) * aspectRatio * (x2 > x1 || -1))));
+                y2 = round(y2);
+>>>>>>> fb785cbb (Initial commit)
             }
     }
 
@@ -597,6 +652,7 @@ $.imgAreaSelect = function (img, options) {
      */
     function doResize() {
         /*
+<<<<<<< HEAD
          * Make sure x1, x2, y1, y2 are initialized to avoid the following calculation
          * getting incorrect results.
          */
@@ -605,6 +661,8 @@ $.imgAreaSelect = function (img, options) {
         }
 
         /*
+=======
+>>>>>>> fb785cbb (Initial commit)
          * Make sure the top left corner of the selection area stays within
          * image boundaries (it might not if the image source was dynamically
          * changed).

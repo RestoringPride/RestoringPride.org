@@ -283,7 +283,11 @@ class WPCF7_Service_OAuth2 extends WPCF7_Service {
 			$this->authorization_endpoint
 		);
 
+<<<<<<< HEAD
 		if ( wp_redirect( sanitize_url( $endpoint ) ) ) {
+=======
+		if ( wp_redirect( esc_url_raw( $endpoint ) ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			exit();
 		}
 	}
@@ -320,7 +324,11 @@ class WPCF7_Service_OAuth2 extends WPCF7_Service {
 			),
 		);
 
+<<<<<<< HEAD
 		$response = wp_remote_post( sanitize_url( $endpoint ), $request );
+=======
+		$response = wp_remote_post( esc_url_raw( $endpoint ), $request );
+>>>>>>> fb785cbb (Initial commit)
 		$response_code = (int) wp_remote_retrieve_response_code( $response );
 		$response_body = wp_remote_retrieve_body( $response );
 		$response_body = json_decode( $response_body, true );
@@ -367,7 +375,11 @@ class WPCF7_Service_OAuth2 extends WPCF7_Service {
 			),
 		);
 
+<<<<<<< HEAD
 		$response = wp_remote_post( sanitize_url( $endpoint ), $request );
+=======
+		$response = wp_remote_post( esc_url_raw( $endpoint ), $request );
+>>>>>>> fb785cbb (Initial commit)
 		$response_code = (int) wp_remote_retrieve_response_code( $response );
 		$response_body = wp_remote_retrieve_body( $response );
 		$response_body = json_decode( $response_body, true );
@@ -409,7 +421,11 @@ class WPCF7_Service_OAuth2 extends WPCF7_Service {
 			)
 		);
 
+<<<<<<< HEAD
 		$response = wp_remote_request( sanitize_url( $url ), $request );
+=======
+		$response = wp_remote_request( esc_url_raw( $url ), $request );
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( 401 === wp_remote_retrieve_response_code( $response )
 		and ! $refreshed ) {

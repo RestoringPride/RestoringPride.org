@@ -12,7 +12,10 @@
  *
  * @since 5.0.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 final class WP_Block_Type_Registry {
 	/**
 	 * Registered block types, as `$name => $instance` pairs.

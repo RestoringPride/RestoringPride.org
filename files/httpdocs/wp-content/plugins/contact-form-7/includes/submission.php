@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /**
  * Class representing contact form submission.
  */
@@ -7,6 +8,10 @@ class WPCF7_Submission {
 
 	use WPCF7_PocketHolder;
 
+=======
+class WPCF7_Submission {
+
+>>>>>>> fb785cbb (Initial commit)
 	private static $instance;
 
 	private $contact_form;
@@ -25,9 +30,12 @@ class WPCF7_Submission {
 	private $result_props = array();
 
 
+<<<<<<< HEAD
 	/**
 	 * Returns the singleton instance of this class.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public static function get_instance( $contact_form = null, $args = '' ) {
 		if ( $contact_form instanceof WPCF7_ContactForm ) {
 			if ( empty( self::$instance ) ) {
@@ -47,17 +55,23 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Returns true if this submission is created via WP REST API.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public static function is_restful() {
 		return defined( 'REST_REQUEST' ) && REST_REQUEST;
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Constructor.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function __construct( WPCF7_ContactForm $contact_form, $args = '' ) {
 		$args = wp_parse_args( $args, array(
 			'skip_mail' => false,
@@ -68,6 +82,7 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * The main logic of submission.
 	 */
@@ -135,16 +150,81 @@ class WPCF7_Submission {
 	/**
 	 * Returns the current status property.
 	 */
+=======
+	private function proceed() {
+		$contact_form = $this->contact_form;
+
+		switch_to_locale( $contact_form->locale() );
+
+		$this->setup_meta_data();
+		$this->setup_posted_data();
+
+		if ( $this->is( 'init' ) and ! $this->validate() ) {
+			$this->set_status( 'validation_failed' );
+			$this->set_response( $contact_form->message( 'validation_error' ) );
+		}
+
+		if ( $this->is( 'init' ) and ! $this->accepted() ) {
+			$this->set_status( 'acceptance_missing' );
+			$this->set_response( $contact_form->message( 'accept_terms' ) );
+		}
+
+		if ( $this->is( 'init' ) and $this->spam() ) {
+			$this->set_status( 'spam' );
+			$this->set_response( $contact_form->message( 'spam' ) );
+		}
+
+		if ( $this->is( 'init' ) and ! $this->unship_uploaded_files() ) {
+			$this->set_status( 'validation_failed' );
+			$this->set_response( $contact_form->message( 'validation_error' ) );
+		}
+
+		if ( $this->is( 'init' ) ) {
+			$abort = ! $this->before_send_mail();
+
+			if ( $abort ) {
+				if ( $this->is( 'init' ) ) {
+					$this->set_status( 'aborted' );
+				}
+
+				if ( '' === $this->get_response() ) {
+					$this->set_response( $contact_form->filter_message(
+						__( "Sending mail has been aborted.", 'contact-form-7' ) )
+					);
+				}
+			} elseif ( $this->mail() ) {
+				$this->set_status( 'mail_sent' );
+				$this->set_response( $contact_form->message( 'mail_sent_ok' ) );
+
+				do_action( 'wpcf7_mail_sent', $contact_form );
+			} else {
+				$this->set_status( 'mail_failed' );
+				$this->set_response( $contact_form->message( 'mail_sent_ng' ) );
+
+				do_action( 'wpcf7_mail_failed', $contact_form );
+			}
+		}
+
+		restore_previous_locale();
+
+		$this->remove_uploaded_files();
+	}
+
+
+>>>>>>> fb785cbb (Initial commit)
 	public function get_status() {
 		return $this->status;
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Sets the status property.
 	 *
 	 * @param string $status The status.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function set_status( $status ) {
 		if ( preg_match( '/^[a-z][0-9a-z_]+$/', $status ) ) {
 			$this->status = $status;
@@ -155,6 +235,7 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Returns true if the specified status is identical to the current
 	 * status property.
@@ -163,6 +244,10 @@ class WPCF7_Submission {
 	 */
 	public function is( $status ) {
 		return $this->status === $status;
+=======
+	public function is( $status ) {
+		return $this->status == $status;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 
@@ -214,37 +299,47 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Retrieves the response property.
 	 *
 	 * @return string The current response property value.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function get_response() {
 		return $this->response;
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Sets the response property.
 	 *
 	 * @param string $response New response property value.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function set_response( $response ) {
 		$this->response = $response;
 		return true;
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Retrieves the contact form property.
 	 *
 	 * @return WPCF7_ContactForm A contact form object.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function get_contact_form() {
 		return $this->contact_form;
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Search an invalid field by field name.
 	 *
@@ -252,6 +347,8 @@ class WPCF7_Submission {
 	 * @return array|bool An associative array of validation error
 	 *                    or false when no invalid field.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function get_invalid_field( $name ) {
 		if ( isset( $this->invalid_fields[$name] ) ) {
 			return $this->invalid_fields[$name];
@@ -261,16 +358,20 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Retrieves all invalid fields.
 	 *
 	 * @return array Invalid fields.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function get_invalid_fields() {
 		return $this->invalid_fields;
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Retrieves meta information.
 	 *
@@ -278,6 +379,8 @@ class WPCF7_Submission {
 	 * @return string|null The meta information of the given name if it exists,
 	 *                     null otherwise.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function get_meta( $name ) {
 		if ( isset( $this->meta[$name] ) ) {
 			return $this->meta[$name];
@@ -285,9 +388,12 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Collects meta information about this submission.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function setup_meta_data() {
 		$timestamp = time();
 
@@ -327,6 +433,7 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Retrieves user input data through this submission.
 	 *
@@ -334,6 +441,8 @@ class WPCF7_Submission {
 	 * @return string|array|null The user input of the field, or array of all
 	 *                           fields values if no field name specified.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function get_posted_data( $name = '' ) {
 		if ( ! empty( $name ) ) {
 			if ( isset( $this->posted_data[$name] ) ) {
@@ -347,6 +456,7 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Retrieves a user input string value through the specified field.
 	 *
@@ -354,6 +464,8 @@ class WPCF7_Submission {
 	 * @return string The user input. If the input is an array,
 	 *                the first item in the array.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function get_posted_string( $name ) {
 		$data = $this->get_posted_data( $name );
 		$data = wpcf7_array_flatten( $data );
@@ -367,9 +479,12 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Constructs posted data property based on user input values.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function setup_posted_data() {
 		$posted_data = array_filter( (array) $_POST, function( $key ) {
 			return '_' !== substr( $key, 0, 1 );
@@ -449,8 +564,12 @@ class WPCF7_Submission {
 			}
 
 			$value = apply_filters( "wpcf7_posted_data_{$type}", $value,
+<<<<<<< HEAD
 				$value_orig, $tag
 			);
+=======
+				$value_orig, $tag );
+>>>>>>> fb785cbb (Initial commit)
 
 			$posted_data[$name] = $value;
 
@@ -468,9 +587,12 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Sanitizes user input data.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function sanitize_posted_data( $value ) {
 		if ( is_array( $value ) ) {
 			$value = array_map( array( $this, 'sanitize_posted_data' ), $value );
@@ -572,9 +694,12 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Retrieves the remote IP address of this submission.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function get_remote_ip_addr() {
 		$ip_addr = '';
 
@@ -587,9 +712,12 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Retrieves the request URL of this submission.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function get_request_url() {
 		$home_url = untrailingslashit( home_url() );
 
@@ -599,7 +727,11 @@ class WPCF7_Submission {
 
 			if ( $referer
 			and 0 === strpos( $referer, $home_url ) ) {
+<<<<<<< HEAD
 				return sanitize_url( $referer );
+=======
+				return esc_url_raw( $referer );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
@@ -610,11 +742,14 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Runs user input validation.
 	 *
 	 * @return bool True if no invalid field is found.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function validate() {
 		if ( $this->invalid_fields ) {
 			return false;
@@ -648,41 +783,53 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Returns true if user consent is obtained.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function accepted() {
 		return apply_filters( 'wpcf7_acceptance', true, $this );
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Adds user consent data to this submission.
 	 *
 	 * @param string $name Field name.
 	 * @param string $conditions Conditions of consent.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function add_consent( $name, $conditions ) {
 		$this->consent[$name] = $conditions;
 		return true;
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Collects user consent data.
 	 *
 	 * @return array User consent data.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function collect_consent() {
 		return (array) $this->consent;
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Executes spam protections.
 	 *
 	 * @return bool True if spam captured.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function spam() {
 		$spam = false;
 
@@ -724,11 +871,14 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Adds a spam log.
 	 *
 	 * @link https://contactform7.com/2019/05/31/why-is-this-message-marked-spam/
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function add_spam_log( $args = '' ) {
 		$args = wp_parse_args( $args, array(
 			'agent' => '',
@@ -739,19 +889,25 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Retrieves the spam logging data.
 	 *
 	 * @return array Spam logging data.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function get_spam_log() {
 		return $this->spam_log;
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Verifies that a correct security nonce was used.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function verify_nonce() {
 		if ( ! $this->contact_form->nonce_is_active() or ! is_user_logged_in() ) {
 			return true;
@@ -763,9 +919,14 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Function called just before sending email.
 	 */
+=======
+	/* Mail */
+
+>>>>>>> fb785cbb (Initial commit)
 	private function before_send_mail() {
 		$abort = false;
 
@@ -779,9 +940,12 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Sends emails based on user input values and contact form email templates.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function mail() {
 		$contact_form = $this->contact_form;
 
@@ -818,20 +982,26 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Retrieves files uploaded through this submission.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function uploaded_files() {
 		return $this->uploaded_files;
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Adds a file to the uploaded files array.
 	 *
 	 * @param string $name Field name.
 	 * @param string|array $file_path File path or array of file paths.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function add_uploaded_file( $name, $file_path ) {
 		if ( ! wpcf7_is_name( $name ) ) {
 			return false;
@@ -856,9 +1026,12 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Removes uploaded files.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function remove_uploaded_files() {
 		foreach ( (array) $this->uploaded_files as $file_path ) {
 			$paths = (array) $file_path;
@@ -877,11 +1050,14 @@ class WPCF7_Submission {
 	}
 
 
+<<<<<<< HEAD
 	/**
 	 * Moves uploaded files to the tmp directory and validates them.
 	 *
 	 * @return bool True if no invalid file is found.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private function unship_uploaded_files() {
 		$result = new WPCF7_Validation();
 

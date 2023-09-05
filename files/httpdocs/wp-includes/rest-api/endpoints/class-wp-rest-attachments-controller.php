@@ -97,7 +97,11 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 
 		// Filter query clauses to include filenames.
 		if ( isset( $query_args['s'] ) ) {
+<<<<<<< HEAD
 			add_filter( 'wp_allow_query_attachment_by_filename', '__return_true' );
+=======
+			add_filter( 'posts_clauses', '_filter_query_attachment_filenames' );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return $query_args;
@@ -766,7 +770,11 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 
 			// Ensure empty details is an empty object.
 			if ( empty( $data['media_details'] ) ) {
+<<<<<<< HEAD
 				$data['media_details'] = new stdClass();
+=======
+				$data['media_details'] = new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 			} elseif ( ! empty( $data['media_details']['sizes'] ) ) {
 
 				foreach ( $data['media_details']['sizes'] as $size => &$size_data ) {
@@ -797,7 +805,11 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 					);
 				}
 			} else {
+<<<<<<< HEAD
 				$data['media_details']['sizes'] = new stdClass();
+=======
+				$data['media_details']['sizes'] = new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 

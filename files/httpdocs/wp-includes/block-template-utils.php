@@ -130,8 +130,13 @@ function get_default_block_template_types() {
 			'description' => __( 'Displays a single post or page.' ),
 		),
 		'single'         => array(
+<<<<<<< HEAD
 			'title'       => _x( 'Single', 'Template name' ),
 			'description' => __( 'The default template for displaying any single post or attachment.' ),
+=======
+			'title'       => _x( 'Single Post', 'Template name' ),
+			'description' => __( 'Displays a single post.' ),
+>>>>>>> fb785cbb (Initial commit)
 		),
 		'page'           => array(
 			'title'       => _x( 'Page', 'Template name' ),
@@ -139,7 +144,11 @@ function get_default_block_template_types() {
 		),
 		'archive'        => array(
 			'title'       => _x( 'Archive', 'Template name' ),
+<<<<<<< HEAD
 			'description' => __( 'Displays posts by a category, tag, author, or date.' ),
+=======
+			'description' => __( 'Displays post categories, tags, and other archives.' ),
+>>>>>>> fb785cbb (Initial commit)
 		),
 		'author'         => array(
 			'title'       => _x( 'Author', 'Template name' ),
@@ -147,7 +156,11 @@ function get_default_block_template_types() {
 		),
 		'category'       => array(
 			'title'       => _x( 'Category', 'Template name' ),
+<<<<<<< HEAD
 			'description' => __( 'Displays latest posts from a single post category.' ),
+=======
+			'description' => __( 'Displays latest posts in single post category.' ),
+>>>>>>> fb785cbb (Initial commit)
 		),
 		'taxonomy'       => array(
 			'title'       => _x( 'Taxonomy', 'Template name' ),
@@ -197,6 +210,10 @@ function get_default_block_template_types() {
  * @access private
  *
  * @param string $type Template part area name.
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return string Input if supported, else the uncategorized value.
  */
 function _filter_block_template_part_area( $type ) {
@@ -249,6 +266,10 @@ function _get_block_templates_paths( $base_directory ) {
  *
  * @param string $template_type 'wp_template' or 'wp_template_part'.
  * @param string $slug          Template slug.
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return array|null Template.
  */
 function _get_block_template_file( $template_type, $slug ) {
@@ -293,6 +314,10 @@ function _get_block_template_file( $template_type, $slug ) {
  * @access private
  *
  * @param string $template_type 'wp_template' or 'wp_template_part'.
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return array Template.
  */
 function _get_block_templates_files( $template_type ) {
@@ -347,11 +372,19 @@ function _get_block_templates_files( $template_type ) {
  * @return array Template item.
  */
 function _add_block_template_info( $template_item ) {
+<<<<<<< HEAD
 	if ( ! wp_theme_has_theme_json() ) {
 		return $template_item;
 	}
 
 	$theme_data = WP_Theme_JSON_Resolver::get_theme_data( array(), array( 'with_supports' => false ) )->get_custom_templates();
+=======
+	if ( ! WP_Theme_JSON_Resolver::theme_has_support() ) {
+		return $template_item;
+	}
+
+	$theme_data = WP_Theme_JSON_Resolver::get_theme_data()->get_custom_templates();
+>>>>>>> fb785cbb (Initial commit)
 	if ( isset( $theme_data[ $template_item['slug'] ] ) ) {
 		$template_item['title']     = $theme_data[ $template_item['slug'] ]['title'];
 		$template_item['postTypes'] = $theme_data[ $template_item['slug'] ]['postTypes'];
@@ -367,11 +400,20 @@ function _add_block_template_info( $template_item ) {
  * @access private
  *
  * @param array $template_info Template to add information to (requires 'type' and 'slug' fields).
+<<<<<<< HEAD
  * @return array Template info.
  */
 function _add_block_template_part_area_info( $template_info ) {
 	if ( wp_theme_has_theme_json() ) {
 		$theme_data = WP_Theme_JSON_Resolver::get_theme_data( array(), array( 'with_supports' => false ) )->get_template_parts();
+=======
+ *
+ * @return array Template info.
+ */
+function _add_block_template_part_area_info( $template_info ) {
+	if ( WP_Theme_JSON_Resolver::theme_has_support() ) {
+		$theme_data = WP_Theme_JSON_Resolver::get_theme_data()->get_template_parts();
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	if ( isset( $theme_data[ $template_info['slug'] ]['area'] ) ) {
@@ -392,6 +434,10 @@ function _add_block_template_part_area_info( $template_info ) {
  * @access private
  *
  * @param array $blocks array of blocks.
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return array block references to the passed blocks and their inner blocks.
  */
 function _flatten_blocks( &$blocks ) {
@@ -424,6 +470,10 @@ function _flatten_blocks( &$blocks ) {
  * @access private
  *
  * @param string $template_content serialized wp_template content.
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return string Updated 'wp_template' content.
  */
 function _inject_theme_attribute_in_block_template_content( $template_content ) {
@@ -437,7 +487,11 @@ function _inject_theme_attribute_in_block_template_content( $template_content ) 
 			'core/template-part' === $block['blockName'] &&
 			! isset( $block['attrs']['theme'] )
 		) {
+<<<<<<< HEAD
 			$block['attrs']['theme'] = get_stylesheet();
+=======
+			$block['attrs']['theme'] = wp_get_theme()->get_stylesheet();
+>>>>>>> fb785cbb (Initial commit)
 			$has_updated_content     = true;
 		}
 	}
@@ -487,23 +541,39 @@ function _remove_theme_attribute_in_block_template_content( $template_content ) 
 }
 
 /**
+<<<<<<< HEAD
  * Builds a unified template object based on a theme file.
+=======
+ * Build a unified template object based on a theme file.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.9.0
  * @access private
  *
  * @param array  $template_file Theme file.
  * @param string $template_type 'wp_template' or 'wp_template_part'.
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return WP_Block_Template Template.
  */
 function _build_block_template_result_from_file( $template_file, $template_type ) {
 	$default_template_types = get_default_block_template_types();
 	$template_content       = file_get_contents( $template_file['path'] );
+<<<<<<< HEAD
 	$theme                  = get_stylesheet();
 
 	$template                 = new WP_Block_Template();
 	$template->id             = $theme . '//' . $template_file['slug'];
 	$template->theme          = ! empty( $template_file['theme'] ) ? $template_file['theme'] : $theme;
+=======
+	$theme                  = wp_get_theme()->get_stylesheet();
+
+	$template                 = new WP_Block_Template();
+	$template->id             = $theme . '//' . $template_file['slug'];
+	$template->theme          = $theme;
+>>>>>>> fb785cbb (Initial commit)
 	$template->content        = _inject_theme_attribute_in_block_template_content( $template_content );
 	$template->slug           = $template_file['slug'];
 	$template->source         = 'theme';
@@ -531,6 +601,7 @@ function _build_block_template_result_from_file( $template_file, $template_type 
 }
 
 /**
+<<<<<<< HEAD
  * Builds the title and description of a post-specific template based on the underlying referenced post.
  *
  * Mutates the underlying template object.
@@ -689,11 +760,18 @@ function _wp_build_title_and_description_for_taxonomy_block_template( $taxonomy,
 
 /**
  * Builds a unified template object based a post Object.
+=======
+ * Build a unified template object based a post Object.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.9.0
  * @access private
  *
  * @param WP_Post $post Template post.
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return WP_Block_Template|WP_Error Template.
  */
 function _build_block_template_result_from_post( $post ) {
@@ -709,11 +787,18 @@ function _build_block_template_result_from_post( $post ) {
 	}
 
 	$theme          = $terms[0]->name;
+<<<<<<< HEAD
 	$template_file  = _get_block_template_file( $post->post_type, $post->post_name );
 	$has_theme_file = get_stylesheet() === $theme && null !== $template_file;
 
 	$origin           = get_post_meta( $post->ID, 'origin', true );
 	$is_wp_suggestion = get_post_meta( $post->ID, 'is_wp_suggestion', true );
+=======
+	$has_theme_file = wp_get_theme()->get_stylesheet() === $theme &&
+		null !== _get_block_template_file( $post->post_type, $post->post_name );
+
+	$origin = get_post_meta( $post->ID, 'origin', true );
+>>>>>>> fb785cbb (Initial commit)
 
 	$template                 = new WP_Block_Template();
 	$template->wp_id          = $post->ID;
@@ -728,6 +813,7 @@ function _build_block_template_result_from_post( $post ) {
 	$template->title          = $post->post_title;
 	$template->status         = $post->post_status;
 	$template->has_theme_file = $has_theme_file;
+<<<<<<< HEAD
 	$template->is_custom      = empty( $is_wp_suggestion );
 	$template->author         = $post->post_author;
 
@@ -735,6 +821,11 @@ function _build_block_template_result_from_post( $post ) {
 		$template->post_types = $template_file['postTypes'];
 	}
 
+=======
+	$template->is_custom      = true;
+	$template->author         = $post->post_author;
+
+>>>>>>> fb785cbb (Initial commit)
 	if ( 'wp_template' === $post->post_type && isset( $default_template_types[ $template->slug ] ) ) {
 		$template->is_custom = false;
 	}
@@ -746,6 +837,7 @@ function _build_block_template_result_from_post( $post ) {
 		}
 	}
 
+<<<<<<< HEAD
 	// Check for a block template without a description and title or with a title equal to the slug.
 	if ( 'wp_template' === $post->post_type && empty( $template->description ) && ( empty( $template->title ) || $template->title === $template->slug ) ) {
 		$matches = array();
@@ -854,6 +946,8 @@ function _build_block_template_result_from_post( $post ) {
 		}
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	return $template;
 }
 
@@ -871,6 +965,10 @@ function _build_block_template_result_from_post( $post ) {
  *     @type string $post_type Post type to get the templates for.
  * }
  * @param string $template_type 'wp_template' or 'wp_template_part'.
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return array Templates.
  */
 function get_block_templates( $query = array(), $template_type = 'wp_template' ) {
@@ -907,7 +1005,11 @@ function get_block_templates( $query = array(), $template_type = 'wp_template' )
 			array(
 				'taxonomy' => 'wp_theme',
 				'field'    => 'name',
+<<<<<<< HEAD
 				'terms'    => get_stylesheet(),
+=======
+				'terms'    => wp_get_theme()->get_stylesheet(),
+>>>>>>> fb785cbb (Initial commit)
 			),
 		),
 	);
@@ -945,6 +1047,7 @@ function get_block_templates( $query = array(), $template_type = 'wp_template' )
 			continue;
 		}
 
+<<<<<<< HEAD
 		if (
 			$post_type &&
 			isset( $template->post_types ) &&
@@ -953,6 +1056,8 @@ function get_block_templates( $query = array(), $template_type = 'wp_template' )
 			continue;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$query_result[] = $template;
 	}
 
@@ -973,7 +1078,11 @@ function get_block_templates( $query = array(), $template_type = 'wp_template' )
 			}
 
 			$is_not_custom   = false === array_search(
+<<<<<<< HEAD
 				get_stylesheet() . '//' . $template_file['slug'],
+=======
+				wp_get_theme()->get_stylesheet() . '//' . $template_file['slug'],
+>>>>>>> fb785cbb (Initial commit)
 				wp_list_pluck( $query_result, 'id' ),
 				true
 			);
@@ -1013,11 +1122,19 @@ function get_block_templates( $query = array(), $template_type = 'wp_template' )
  * @param string $id            Template unique identifier (example: theme_slug//template_slug).
  * @param string $template_type Optional. Template type: `'wp_template'` or '`wp_template_part'`.
  *                              Default `'wp_template'`.
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return WP_Block_Template|null Template.
  */
 function get_block_template( $id, $template_type = 'wp_template' ) {
 	/**
+<<<<<<< HEAD
 	 * Filters the block template object before the query takes place.
+=======
+	 *Filters the block template object before the query takes place.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Return a non-null value to bypass the WordPress queries.
 	 *
@@ -1025,8 +1142,13 @@ function get_block_template( $id, $template_type = 'wp_template' ) {
 	 *
 	 * @param WP_Block_Template|null $block_template Return block template object to short-circuit the default query,
 	 *                                               or null to allow WP to run its normal queries.
+<<<<<<< HEAD
 	 * @param string                 $id             Template unique identifier (example: theme_slug//template_slug).
 	 * @param string                 $template_type  Template type: `'wp_template'` or '`wp_template_part'`.
+=======
+	 * @param string $id                             Template unique identifier (example: theme_slug//template_slug).
+	 * @param string $template_type                  Template type: `'wp_template'` or '`wp_template_part'`.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	$block_template = apply_filters( 'pre_get_block_template', null, $id, $template_type );
 	if ( ! is_null( $block_template ) ) {
@@ -1078,9 +1200,13 @@ function get_block_template( $id, $template_type = 'wp_template' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves a unified template object based on a theme file.
  *
  * This is a fallback of get_block_template(), used when no templates are found in the database.
+=======
+ * Retrieves a single unified template object using its id.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.9.0
  *
@@ -1091,9 +1217,15 @@ function get_block_template( $id, $template_type = 'wp_template' ) {
  */
 function get_block_file_template( $id, $template_type = 'wp_template' ) {
 	/**
+<<<<<<< HEAD
 	 * Filters the block template object before the theme file discovery takes place.
 	 *
 	 * Return a non-null value to bypass the WordPress theme file discovery.
+=======
+	 * Filters the block templates array before the query takes place.
+	 *
+	 * Return a non-null value to bypass the WordPress queries.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.9.0
 	 *
@@ -1114,7 +1246,11 @@ function get_block_file_template( $id, $template_type = 'wp_template' ) {
 	}
 	list( $theme, $slug ) = $parts;
 
+<<<<<<< HEAD
 	if ( get_stylesheet() !== $theme ) {
+=======
+	if ( wp_get_theme()->get_stylesheet() !== $theme ) {
+>>>>>>> fb785cbb (Initial commit)
 		/** This filter is documented in wp-includes/block-template-utils.php */
 		return apply_filters( 'get_block_file_template', null, $id, $template_type );
 	}
@@ -1128,7 +1264,11 @@ function get_block_file_template( $id, $template_type = 'wp_template' ) {
 	$block_template = _build_block_template_result_from_file( $template_file, $template_type );
 
 	/**
+<<<<<<< HEAD
 	 * Filters the block template object after it has been (potentially) fetched from the theme file.
+=======
+	 * Filters the array of queried block templates array after they've been fetched.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.9.0
 	 *
@@ -1140,11 +1280,19 @@ function get_block_file_template( $id, $template_type = 'wp_template' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Prints a block template part.
  *
  * @since 5.9.0
  *
  * @param string $part The block template part to print. Use "header" or "footer".
+=======
+ * Print a template-part.
+ *
+ * @since 5.9.0
+ *
+ * @param string $part The template-part to print. Use "header" or "footer".
+>>>>>>> fb785cbb (Initial commit)
  */
 function block_template_part( $part ) {
 	$template_part = get_block_template( get_stylesheet() . '//' . $part, 'wp_template_part' );
@@ -1155,7 +1303,11 @@ function block_template_part( $part ) {
 }
 
 /**
+<<<<<<< HEAD
  * Prints the header block template part.
+=======
+ * Print the header template-part.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.9.0
  */
@@ -1164,7 +1316,11 @@ function block_header_area() {
 }
 
 /**
+<<<<<<< HEAD
  * Prints the footer block template part.
+=======
+ * Print the footer template-part.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.9.0
  */
@@ -1173,7 +1329,11 @@ function block_footer_area() {
 }
 
 /**
+<<<<<<< HEAD
  * Determines whether a theme directory should be ignored during export.
+=======
+ * Filters theme directories that should be ignored during export.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 6.0.0
  *
@@ -1181,10 +1341,16 @@ function block_footer_area() {
  * @return Bool Whether this file is in an ignored directory.
  */
 function wp_is_theme_directory_ignored( $path ) {
+<<<<<<< HEAD
 	$directories_to_ignore = array( '.DS_Store', '.svn', '.git', '.hg', '.bzr', 'node_modules', 'vendor' );
 
 	foreach ( $directories_to_ignore as $directory ) {
 		if ( str_starts_with( $path, $directory ) ) {
+=======
+	$directories_to_ignore = array( '.svn', '.git', '.hg', '.bzr', 'node_modules', 'vendor' );
+	foreach ( $directories_to_ignore as $directory ) {
+		if ( strpos( $path, $directory ) === 0 ) {
+>>>>>>> fb785cbb (Initial commit)
 			return true;
 		}
 	}
@@ -1200,6 +1366,7 @@ function wp_is_theme_directory_ignored( $path ) {
  * @since 5.9.0
  * @since 6.0.0 Adds the whole theme to the export archive.
  *
+<<<<<<< HEAD
  * @global string $wp_version The WordPress version string.
  *
  * @return WP_Error|string Path of the ZIP file or error on failure.
@@ -1207,6 +1374,11 @@ function wp_is_theme_directory_ignored( $path ) {
 function wp_generate_block_templates_export_file() {
 	global $wp_version;
 
+=======
+ * @return WP_Error|string Path of the ZIP file or error on failure.
+ */
+function wp_generate_block_templates_export_file() {
+>>>>>>> fb785cbb (Initial commit)
 	if ( ! class_exists( 'ZipArchive' ) ) {
 		return new WP_Error( 'missing_zip_package', __( 'Zip Export not supported.' ) );
 	}
@@ -1274,6 +1446,10 @@ function wp_generate_block_templates_export_file() {
 	$theme_json_raw = $tree->get_data();
 	// If a version is defined, add a schema.
 	if ( $theme_json_raw['version'] ) {
+<<<<<<< HEAD
+=======
+		global $wp_version;
+>>>>>>> fb785cbb (Initial commit)
 		$theme_json_version = 'wp/' . substr( $wp_version, 0, 3 );
 		$schema             = array( '$schema' => 'https://schemas.wp.org/' . $theme_json_version . '/theme.json' );
 		$theme_json_raw     = array_merge( $schema, $theme_json_raw );
@@ -1296,6 +1472,7 @@ function wp_generate_block_templates_export_file() {
 
 	return $filename;
 }
+<<<<<<< HEAD
 
 /**
  * Gets the template hierarchy for the given template slug to be created.
@@ -1390,3 +1567,5 @@ function get_template_hierarchy( $slug, $is_custom = false, $template_prefix = '
 	$template_hierarchy[] = 'index';
 	return $template_hierarchy;
 }
+=======
+>>>>>>> fb785cbb (Initial commit)

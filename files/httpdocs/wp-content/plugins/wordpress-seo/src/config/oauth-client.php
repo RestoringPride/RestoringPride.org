@@ -205,7 +205,11 @@ abstract class OAuth_Client {
 	/**
 	 * Clears the stored token from storage.
 	 *
+<<<<<<< HEAD
 	 * @return bool The stored token.
+=======
+	 * @return boolean The stored token.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @throws Failed_Storage_Exception Exception thrown if clearing of the token fails.
 	 */
@@ -302,7 +306,11 @@ abstract class OAuth_Client {
 
 			throw new Authentication_Failed_Exception( $exception );
 		} finally {
+<<<<<<< HEAD
 			\delete_transient( $lock_name );
+=======
+			delete_transient( $lock_name );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 }

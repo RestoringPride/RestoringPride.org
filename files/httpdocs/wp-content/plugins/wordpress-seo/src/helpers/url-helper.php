@@ -234,6 +234,7 @@ class Url_Helper {
 		$current_url .= '://';
 
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- We know this is scary.
+<<<<<<< HEAD
 		$suffix = ( $with_request_uri && isset( $_SERVER['REQUEST_URI'] ) ) ? $_SERVER['REQUEST_URI'] : '';
 
 		if ( isset( $_SERVER['SERVER_NAME'] ) && ! empty( $_SERVER['SERVER_NAME'] ) ) {
@@ -257,6 +258,17 @@ class Url_Helper {
 		else {
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- We know this is scary.
 			$current_url .= $server_name . $suffix;
+=======
+		$suffix = ( $with_request_uri ) ? $_SERVER['REQUEST_URI'] : '';
+
+		if ( isset( $_SERVER['SERVER_PORT'] ) && $_SERVER['SERVER_PORT'] !== '80' && $_SERVER['SERVER_PORT'] !== '443' ) {
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- We know this is scary.
+			$current_url .= $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $suffix;
+		}
+		else {
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- We know this is scary.
+			$current_url .= $_SERVER['SERVER_NAME'] . $suffix;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return $current_url;

@@ -779,10 +779,17 @@ class GIVE_CLI_COMMAND {
 
 		$stat_option_names = $wpdb->get_results(
 			$wpdb->prepare(
+<<<<<<< HEAD
 				"SELECT option_name FROM {$wpdb->options} where (option_name LIKE '%s' OR option_name LIKE '%s')",
 				array(
 					'%_transient_give_stats_%',
 					'%give_cache%',
+=======
+				"SELECT option_name FROM {$wpdb->options} where (option_name LIKE '%%%s%%' OR option_name LIKE '%%%s%%')",
+				array(
+					'_transient_give_stats_',
+					'give_cache',
+>>>>>>> fb785cbb (Initial commit)
 				)
 			),
 			ARRAY_A

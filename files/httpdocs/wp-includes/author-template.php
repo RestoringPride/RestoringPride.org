@@ -155,7 +155,11 @@ function the_modified_author() {
  * @global WP_User $authordata The current author's data.
  *
  * @param string    $field   Optional. The user field to retrieve. Default empty.
+<<<<<<< HEAD
  * @param int|false $user_id Optional. User ID. Defaults to the current post author.
+=======
+ * @param int|false $user_id Optional. User ID.
+>>>>>>> fb785cbb (Initial commit)
  * @return string The author's field from the current author's DB object, otherwise an empty string.
  */
 function get_the_author_meta( $field = '', $user_id = false ) {
@@ -196,7 +200,11 @@ function get_the_author_meta( $field = '', $user_id = false ) {
  *
  * @param string    $field   Selects the field of the users record. See get_the_author_meta()
  *                           for the list of possible fields.
+<<<<<<< HEAD
  * @param int|false $user_id Optional. User ID. Defaults to the current post author.
+=======
+ * @param int|false $user_id Optional. User ID.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @see get_the_author_meta()
  */
@@ -450,6 +458,7 @@ function wp_list_authors( $args = '' ) {
 		'include'       => '',
 	);
 
+<<<<<<< HEAD
 	$parsed_args = wp_parse_args( $args, $defaults );
 
 	$return = '';
@@ -497,11 +506,30 @@ function wp_list_authors( $args = '' ) {
 		$posts = isset( $post_counts[ $author_id ] ) ? $post_counts[ $author_id ] : 0;
 
 		if ( ! $posts && $parsed_args['hide_empty'] ) {
+=======
+	$args = wp_parse_args( $args, $defaults );
+
+	$return = '';
+
+	$query_args           = wp_array_slice_assoc( $args, array( 'orderby', 'order', 'number', 'exclude', 'include' ) );
+	$query_args['fields'] = 'ids';
+	$authors              = get_users( $query_args );
+
+	$author_count = array();
+	foreach ( (array) $wpdb->get_results( "SELECT DISTINCT post_author, COUNT(ID) AS count FROM $wpdb->posts WHERE " . get_private_posts_cap_sql( 'post' ) . ' GROUP BY post_author' ) as $row ) {
+		$author_count[ $row->post_author ] = $row->count;
+	}
+	foreach ( $authors as $author_id ) {
+		$posts = isset( $author_count[ $author_id ] ) ? $author_count[ $author_id ] : 0;
+
+		if ( ! $posts && $args['hide_empty'] ) {
+>>>>>>> fb785cbb (Initial commit)
 			continue;
 		}
 
 		$author = get_userdata( $author_id );
 
+<<<<<<< HEAD
 		if ( $parsed_args['exclude_admin'] && 'admin' === $author->display_name ) {
 			continue;
 		}
@@ -513,17 +541,33 @@ function wp_list_authors( $args = '' ) {
 				$author->first_name,
 				$author->last_name
 			);
+=======
+		if ( $args['exclude_admin'] && 'admin' === $author->display_name ) {
+			continue;
+		}
+
+		if ( $args['show_fullname'] && $author->first_name && $author->last_name ) {
+			$name = "$author->first_name $author->last_name";
+>>>>>>> fb785cbb (Initial commit)
 		} else {
 			$name = $author->display_name;
 		}
 
+<<<<<<< HEAD
 		if ( ! $parsed_args['html'] ) {
+=======
+		if ( ! $args['html'] ) {
+>>>>>>> fb785cbb (Initial commit)
 			$return .= $name . ', ';
 
 			continue; // No need to go further to process HTML.
 		}
 
+<<<<<<< HEAD
 		if ( 'list' === $parsed_args['style'] ) {
+=======
+		if ( 'list' === $args['style'] ) {
+>>>>>>> fb785cbb (Initial commit)
 			$return .= '<li>';
 		}
 
@@ -535,6 +579,7 @@ function wp_list_authors( $args = '' ) {
 			$name
 		);
 
+<<<<<<< HEAD
 		if ( ! empty( $parsed_args['feed_image'] ) || ! empty( $parsed_args['feed'] ) ) {
 			$link .= ' ';
 			if ( empty( $parsed_args['feed_image'] ) ) {
@@ -547,34 +592,69 @@ function wp_list_authors( $args = '' ) {
 			if ( ! empty( $parsed_args['feed'] ) ) {
 				$alt  = ' alt="' . esc_attr( $parsed_args['feed'] ) . '"';
 				$name = $parsed_args['feed'];
+=======
+		if ( ! empty( $args['feed_image'] ) || ! empty( $args['feed'] ) ) {
+			$link .= ' ';
+			if ( empty( $args['feed_image'] ) ) {
+				$link .= '(';
+			}
+
+			$link .= '<a href="' . get_author_feed_link( $author->ID, $args['feed_type'] ) . '"';
+
+			$alt = '';
+			if ( ! empty( $args['feed'] ) ) {
+				$alt  = ' alt="' . esc_attr( $args['feed'] ) . '"';
+				$name = $args['feed'];
+>>>>>>> fb785cbb (Initial commit)
 			}
 
 			$link .= '>';
 
+<<<<<<< HEAD
 			if ( ! empty( $parsed_args['feed_image'] ) ) {
 				$link .= '<img src="' . esc_url( $parsed_args['feed_image'] ) . '" style="border: none;"' . $alt . ' />';
+=======
+			if ( ! empty( $args['feed_image'] ) ) {
+				$link .= '<img src="' . esc_url( $args['feed_image'] ) . '" style="border: none;"' . $alt . ' />';
+>>>>>>> fb785cbb (Initial commit)
 			} else {
 				$link .= $name;
 			}
 
 			$link .= '</a>';
 
+<<<<<<< HEAD
 			if ( empty( $parsed_args['feed_image'] ) ) {
+=======
+			if ( empty( $args['feed_image'] ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				$link .= ')';
 			}
 		}
 
+<<<<<<< HEAD
 		if ( $parsed_args['optioncount'] ) {
+=======
+		if ( $args['optioncount'] ) {
+>>>>>>> fb785cbb (Initial commit)
 			$link .= ' (' . $posts . ')';
 		}
 
 		$return .= $link;
+<<<<<<< HEAD
 		$return .= ( 'list' === $parsed_args['style'] ) ? '</li>' : ', ';
+=======
+		$return .= ( 'list' === $args['style'] ) ? '</li>' : ', ';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	$return = rtrim( $return, ', ' );
 
+<<<<<<< HEAD
 	if ( $parsed_args['echo'] ) {
+=======
+	if ( $args['echo'] ) {
+>>>>>>> fb785cbb (Initial commit)
 		echo $return;
 	} else {
 		return $return;

@@ -63,7 +63,10 @@ class WPCF7_FormTagsManager {
 
 	private $tag_types = array();
 	private $scanned_tags = null; // Tags scanned at the last time of scan()
+<<<<<<< HEAD
 	private $placeholders = array();
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 	private function __construct() {}
 
@@ -255,6 +258,7 @@ class WPCF7_FormTagsManager {
 
 
 	/**
+<<<<<<< HEAD
 	 * Replace all form-tags in the given text with placeholders.
 	 */
 	public function replace_with_placeholders( $content ) {
@@ -319,6 +323,8 @@ class WPCF7_FormTagsManager {
 
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Replaces all form-tags in the text content.
 	 *
 	 * @param string $content The text content including form-tags.
@@ -472,12 +478,19 @@ class WPCF7_FormTagsManager {
 		}
 
 		$tag_type = $matches[2];
+<<<<<<< HEAD
 		$tag_basetype = trim( $tag_type, '*' );
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$attr = $this->parse_atts( $matches[3] );
 
 		$scanned_tag = array(
 			'type' => $tag_type,
+<<<<<<< HEAD
 			'basetype' => $tag_basetype,
+=======
+			'basetype' => trim( $tag_type, '*' ),
+>>>>>>> fb785cbb (Initial commit)
 			'raw_name' => '',
 			'name' => '',
 			'options' => array(),
@@ -489,6 +502,7 @@ class WPCF7_FormTagsManager {
 			'content' => '',
 		);
 
+<<<<<<< HEAD
 		if ( $this->tag_type_supports( $tag_type, 'singular' ) ) {
 			$tags_in_same_basetype = $this->filter(
 				$this->scanned_tags,
@@ -517,6 +531,30 @@ class WPCF7_FormTagsManager {
 
 		if ( is_array( $attr ) ) {
 			$scanned_tag['options'] = (array) $attr['options'];
+=======
+		if ( $this->tag_type_supports( $tag_type, 'singular' )
+		and $this->filter( $this->scanned_tags, array( 'type' => $tag_type ) ) ) {
+			// Another tag in the same type already exists. Ignore this one.
+			return $matches[0];
+		}
+
+		if ( is_array( $attr ) ) {
+			if ( is_array( $attr['options'] ) ) {
+				if ( $this->tag_type_supports( $tag_type, 'name-attr' )
+				and ! empty( $attr['options'] ) ) {
+					$scanned_tag['raw_name'] = array_shift( $attr['options'] );
+
+					if ( ! wpcf7_is_name( $scanned_tag['raw_name'] ) ) {
+						return $matches[0]; // Invalid name is used. Ignore this tag.
+					}
+
+					$scanned_tag['name'] = strtr( $scanned_tag['raw_name'], '.', '_' );
+				}
+
+				$scanned_tag['options'] = (array) $attr['options'];
+			}
+
+>>>>>>> fb785cbb (Initial commit)
 			$scanned_tag['raw_values'] = (array) $attr['values'];
 
 			if ( WPCF7_USE_PIPE ) {
@@ -586,5 +624,9 @@ class WPCF7_FormTagsManager {
 
 		return $atts;
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> fb785cbb (Initial commit)
 }

@@ -717,11 +717,24 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 
 		$id = $user->ID;
 
+<<<<<<< HEAD
 		$owner_id = false;
 		if ( is_string( $request['email'] ) ) {
 			$owner_id = email_exists( $request['email'] );
 		}
 
+=======
+		if ( ! $user ) {
+			return new WP_Error(
+				'rest_user_invalid_id',
+				__( 'Invalid user ID.' ),
+				array( 'status' => 404 )
+			);
+		}
+
+		$owner_id = email_exists( $request['email'] );
+
+>>>>>>> fb785cbb (Initial commit)
 		if ( $owner_id && $owner_id !== $id ) {
 			return new WP_Error(
 				'rest_user_invalid_email',
@@ -1067,9 +1080,13 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 		// Wrap the data in a response object.
 		$response = rest_ensure_response( $data );
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $user ) );
 		}
+=======
+		$response->add_links( $this->prepare_links( $user ) );
+>>>>>>> fb785cbb (Initial commit)
 
 		/**
 		 * Filters user data returned from the REST API.
@@ -1113,7 +1130,11 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 	 * @return object User object.
 	 */
 	protected function prepare_item_for_database( $request ) {
+<<<<<<< HEAD
 		$prepared_user = new stdClass();
+=======
+		$prepared_user = new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 
 		$schema = $this->get_item_schema();
 

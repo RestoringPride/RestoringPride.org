@@ -7,13 +7,21 @@
  */
 
 /**
+<<<<<<< HEAD
  * Gets the generated classname from a given block name.
+=======
+ * Get the generated classname from a given block name.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.6.0
  *
  * @access private
  *
+<<<<<<< HEAD
  * @param string $block_name Block Name.
+=======
+ * @param  string $block_name Block Name.
+>>>>>>> fb785cbb (Initial commit)
  * @return string Generated classname.
  */
 function wp_get_block_default_classname( $block_name ) {
@@ -30,8 +38,13 @@ function wp_get_block_default_classname( $block_name ) {
 	 *
 	 * @since 5.6.0
 	 *
+<<<<<<< HEAD
 	 * @param string $class_name The current applied classname.
 	 * @param string $block_name The block name.
+=======
+	 * @param string     $class_name The current applied classname.
+	 * @param string     $block_name The block name.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	$classname = apply_filters( 'block_default_classname', $classname, $block_name );
 
@@ -39,13 +52,22 @@ function wp_get_block_default_classname( $block_name ) {
 }
 
 /**
+<<<<<<< HEAD
  * Adds the generated classnames to the output.
+=======
+ * Add the generated classnames to the output.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 5.6.0
  *
  * @access private
  *
+<<<<<<< HEAD
  * @param WP_Block_Type $block_type Block Type.
+=======
+ * @param  WP_Block_Type $block_type       Block Type.
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @return array Block CSS classes and inline styles.
  */
 function wp_apply_generated_classname_support( $block_type ) {

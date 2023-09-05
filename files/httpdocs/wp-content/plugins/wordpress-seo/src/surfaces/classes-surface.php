@@ -12,6 +12,7 @@ use YoastSEO_Vendor\Symfony\Component\DependencyInjection\ContainerInterface;
 class Classes_Surface {
 
 	/**
+<<<<<<< HEAD
 	 * The dependency injection container.
 	 *
 	 * @var ContainerInterface
@@ -19,6 +20,8 @@ class Classes_Surface {
 	public $container;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Loader constructor.
 	 *
 	 * @param ContainerInterface $container The dependency injection container.

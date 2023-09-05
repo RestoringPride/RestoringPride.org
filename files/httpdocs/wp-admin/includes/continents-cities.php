@@ -448,7 +448,10 @@ __( 'Istanbul', 'continents-cities' );
 __( 'Jersey', 'continents-cities' );
 __( 'Kaliningrad', 'continents-cities' );
 __( 'Kiev', 'continents-cities' );
+<<<<<<< HEAD
 __( 'Kyiv', 'continents-cities' );
+=======
+>>>>>>> fb785cbb (Initial commit)
 __( 'Kirov', 'continents-cities' );
 __( 'Lisbon', 'continents-cities' );
 __( 'Ljubljana', 'continents-cities' );
@@ -520,7 +523,10 @@ __( 'Guadalcanal', 'continents-cities' );
 __( 'Guam', 'continents-cities' );
 __( 'Honolulu', 'continents-cities' );
 __( 'Johnston', 'continents-cities' );
+<<<<<<< HEAD
 __( 'Kanton', 'continents-cities' );
+=======
+>>>>>>> fb785cbb (Initial commit)
 __( 'Kiritimati', 'continents-cities' );
 __( 'Kosrae', 'continents-cities' );
 __( 'Kwajalein', 'continents-cities' );

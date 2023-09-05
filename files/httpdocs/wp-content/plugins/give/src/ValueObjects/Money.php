@@ -5,12 +5,21 @@ namespace Give\ValueObjects;
 /**
  * Class Money
  *
+<<<<<<< HEAD
  * @since      2.9.0
  * @since      2.11.0 Refactored to make the minor amount the base.
  * @deprecated @since 2.20.0 Use Give\Framework\Support\ValueObjects\Money in framework instead
  *
  */
 final class Money
+=======
+ * @deprecated @since 2.20.0 Use Give\Framework\Support\ValueObjects\Money in framework instead
+ *
+ * @since 2.9.0
+ * @since 2.11.0 Refactored to make the minor amount the base.
+ */
+class Money
+>>>>>>> fb785cbb (Initial commit)
 {
     /**
      * The amount in smallest unit of currency.

@@ -414,12 +414,16 @@ function wp_print_theme_file_tree( $tree, $level = 2, $size = 1, $index = 1 ) {
 				aria-level="<?php echo esc_attr( $level ); ?>"
 				aria-setsize="<?php echo esc_attr( $size ); ?>"
 				aria-posinset="<?php echo esc_attr( $index ); ?>">
+<<<<<<< HEAD
 				<span class="folder-label"><?php echo esc_html( $label ); ?> <span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'folder' );
 					?>
 				</span><span aria-hidden="true" class="icon"></span></span>
+=======
+				<span class="folder-label"><?php echo esc_html( $label ); ?> <span class="screen-reader-text"><?php _e( 'folder' ); ?></span><span aria-hidden="true" class="icon"></span></span>
+>>>>>>> fb785cbb (Initial commit)
 				<ul role="group" class="tree-folder"><?php wp_print_theme_file_tree( $theme_file, $level + 1, $index, $size ); ?></ul>
 			</li>
 			<?php
@@ -516,12 +520,16 @@ function wp_print_plugin_file_tree( $tree, $label = '', $level = 2, $size = 1, $
 				aria-level="<?php echo esc_attr( $level ); ?>"
 				aria-setsize="<?php echo esc_attr( $size ); ?>"
 				aria-posinset="<?php echo esc_attr( $index ); ?>">
+<<<<<<< HEAD
 				<span class="folder-label"><?php echo esc_html( $label ); ?> <span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'folder' );
 					?>
 				</span><span aria-hidden="true" class="icon"></span></span>
+=======
+				<span class="folder-label"><?php echo esc_html( $label ); ?> <span class="screen-reader-text"><?php _e( 'folder' ); ?></span><span aria-hidden="true" class="icon"></span></span>
+>>>>>>> fb785cbb (Initial commit)
 				<ul role="group" class="tree-folder"><?php wp_print_plugin_file_tree( $plugin_file, '', $level + 1, $index, $size ); ?></ul>
 			</li>
 			<?php
@@ -673,17 +681,28 @@ function wp_doc_link_parse( $content ) {
 
 	$ignore_functions = array_unique( $ignore_functions );
 
+<<<<<<< HEAD
 	$output = array();
+=======
+	$out = array();
+>>>>>>> fb785cbb (Initial commit)
 
 	foreach ( $functions as $function ) {
 		if ( in_array( $function, $ignore_functions, true ) ) {
 			continue;
 		}
 
+<<<<<<< HEAD
 		$output[] = $function;
 	}
 
 	return $output;
+=======
+		$out[] = $function;
+	}
+
+	return $out;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1022,12 +1041,16 @@ function admin_color_scheme_picker( $user_id ) {
 	}
 	?>
 	<fieldset id="color-picker" class="scheme-list">
+<<<<<<< HEAD
 		<legend class="screen-reader-text"><span>
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Admin Color Scheme' );
 			?>
 		</span></legend>
+=======
+		<legend class="screen-reader-text"><span><?php _e( 'Admin Color Scheme' ); ?></span></legend>
+>>>>>>> fb785cbb (Initial commit)
 		<?php
 		wp_nonce_field( 'save-color-scheme', 'color-nonce', false );
 		foreach ( $_wp_admin_css_colors as $color => $color_info ) :
@@ -1271,6 +1294,7 @@ function wp_refresh_post_nonces( $response, $data, $screen_id ) {
 }
 
 /**
+<<<<<<< HEAD
  * Refresh nonces used with meta boxes in the block editor.
  *
  * @since 6.1.0
@@ -1306,6 +1330,8 @@ function wp_refresh_metabox_loader_nonces( $response, $data ) {
 }
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Adds the latest Heartbeat and REST-API nonce to the Heartbeat response.
  *
  * @since 5.0.0
@@ -1472,7 +1498,11 @@ function update_option_new_admin_email( $old_value, $value ) {
 	);
 	update_option( 'adminhash', $new_admin_email );
 
+<<<<<<< HEAD
 	$switched_locale = switch_to_user_locale( get_current_user_id() );
+=======
+	$switched_locale = switch_to_locale( get_user_locale() );
+>>>>>>> fb785cbb (Initial commit)
 
 	/* translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL: those are placeholders. */
 	$email_text = __(
@@ -1575,7 +1605,11 @@ function _wp_privacy_settings_filter_draft_page_titles( $title, $page ) {
  * @return array|false Array of PHP version data. False on failure.
  */
 function wp_check_php_version() {
+<<<<<<< HEAD
 	$version = PHP_VERSION;
+=======
+	$version = phpversion();
+>>>>>>> fb785cbb (Initial commit)
 	$key     = md5( $version );
 
 	$response = get_site_transient( 'php_check_' . $key );
@@ -1600,8 +1634,12 @@ function wp_check_php_version() {
 		 *  'recommended_version' - string - The PHP version recommended by WordPress.
 		 *  'is_supported' - boolean - Whether the PHP version is actively supported.
 		 *  'is_secure' - boolean - Whether the PHP version receives security updates.
+<<<<<<< HEAD
 		 *  'is_acceptable' - boolean - Whether the PHP version is still acceptable or warnings
 		 *                              should be shown and an update recommended.
+=======
+		 *  'is_acceptable' - boolean - Whether the PHP version is still acceptable for WordPress.
+>>>>>>> fb785cbb (Initial commit)
 		 */
 		$response = json_decode( wp_remote_retrieve_body( $response ), true );
 
@@ -1629,6 +1667,7 @@ function wp_check_php_version() {
 		$response['is_acceptable'] = (bool) apply_filters( 'wp_is_php_version_acceptable', true, $version );
 	}
 
+<<<<<<< HEAD
 	$response['is_lower_than_future_minimum'] = false;
 
 	// The minimum supported PHP version will be updated to 7.2. Check if the current version is lower.
@@ -1639,5 +1678,7 @@ function wp_check_php_version() {
 		$response['is_acceptable'] = false;
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	return $response;
 }

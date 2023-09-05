@@ -23,7 +23,11 @@
 		},
 		"smallestFontSize": {
 			"type": "string",
+<<<<<<< HEAD
 			"default": "8pt"
+=======
+			"default": "8pt" 
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"largestFontSize": {
 			"type": "string",
@@ -36,6 +40,7 @@
 	],
 	"supports": {
 		"html": false,
+<<<<<<< HEAD
 		"anchor": true,
 		"align": true,
 		"spacing": {
@@ -50,6 +55,9 @@
 			"__experimentalTextTransform": true,
 			"__experimentalLetterSpacing": true
 		}
+=======
+		"align": true
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-tag-cloud-editor"
 }

@@ -6,12 +6,17 @@ use Give\Framework\FieldsAPI\Contracts\Collection;
 
 trait RemoveNode
 {
+<<<<<<< HEAD
     /**
      * @since 2.10.2
      *
      * @return static
      */
     public function remove(string $name)
+=======
+
+    public function remove($name)
+>>>>>>> fb785cbb (Initial commit)
     {
         foreach ($this->nodes as $index => $node) {
             if ($node->getName() === $name) {
@@ -24,7 +29,11 @@ trait RemoveNode
             }
         }
 
+<<<<<<< HEAD
         // Maybe need to throw an exception if no node is removed.
+=======
+        // Maybe need to throw an exception of no node is removed.
+>>>>>>> fb785cbb (Initial commit)
         return $this;
     }
 }

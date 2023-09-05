@@ -272,9 +272,22 @@ class WP_REST_Taxonomies_Controller extends WP_REST_Controller {
 		// Wrap the data in a response object.
 		$response = rest_ensure_response( $data );
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $taxonomy ) );
 		}
+=======
+		$response->add_links(
+			array(
+				'collection'              => array(
+					'href' => rest_url( sprintf( '%s/%s', $this->namespace, $this->rest_base ) ),
+				),
+				'https://api.w.org/items' => array(
+					'href' => rest_url( rest_get_route_for_taxonomy_items( $taxonomy->name ) ),
+				),
+			)
+		);
+>>>>>>> fb785cbb (Initial commit)
 
 		/**
 		 * Filters a taxonomy returned from the REST API.
@@ -291,6 +304,7 @@ class WP_REST_Taxonomies_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Prepares links for the request.
 	 *
 	 * @since 6.1.0
@@ -310,6 +324,8 @@ class WP_REST_Taxonomies_Controller extends WP_REST_Controller {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Retrieves the taxonomy's schema, conforming to JSON Schema.
 	 *
 	 * @since 4.7.0
@@ -448,4 +464,8 @@ class WP_REST_Taxonomies_Controller extends WP_REST_Controller {
 		);
 		return $new_params;
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 }

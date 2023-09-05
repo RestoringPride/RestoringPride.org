@@ -2,8 +2,11 @@
 
 namespace Yoast\WP\SEO\Presentations;
 
+<<<<<<< HEAD
 use Yoast\WP\SEO\Helpers\Pagination_Helper;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Class Indexable_Post_Type_Archive_Presentation.
  *
@@ -14,6 +17,7 @@ class Indexable_Post_Type_Archive_Presentation extends Indexable_Presentation {
 	use Archive_Adjacent;
 
 	/**
+<<<<<<< HEAD
 	 * Holds the Pagination_Helper instance.
 	 *
 	 * @var Pagination_Helper
@@ -21,6 +25,8 @@ class Indexable_Post_Type_Archive_Presentation extends Indexable_Presentation {
 	protected $pagination;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Generates the canonical.
 	 *
 	 * @return string The canonical.

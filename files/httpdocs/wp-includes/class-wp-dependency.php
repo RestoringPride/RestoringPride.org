@@ -16,7 +16,10 @@
  * @access private
  * @since 2.6.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class _WP_Dependency {
 	/**
 	 * The handle name.
@@ -29,10 +32,15 @@ class _WP_Dependency {
 	/**
 	 * The handle source.
 	 *
+<<<<<<< HEAD
 	 * If source is set to false, the item is an alias of other items it depends on.
 	 *
 	 * @since 2.6.0
 	 * @var string|false
+=======
+	 * @since 2.6.0
+	 * @var string
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public $src;
 
@@ -128,7 +136,11 @@ class _WP_Dependency {
 	 * @param string $path   Optional. The full file path to the directory containing translation files.
 	 * @return bool False if $domain is not a string, true otherwise.
 	 */
+<<<<<<< HEAD
 	public function set_translations( $domain, $path = '' ) {
+=======
+	public function set_translations( $domain, $path = null ) {
+>>>>>>> fb785cbb (Initial commit)
 		if ( ! is_string( $domain ) ) {
 			return false;
 		}

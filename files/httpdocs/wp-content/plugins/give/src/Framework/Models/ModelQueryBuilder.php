@@ -5,7 +5,10 @@ namespace Give\Framework\Models;
 use Give\Framework\Database\DB;
 use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
 use Give\Framework\Models\Contracts\ModelCrud;
+<<<<<<< HEAD
 use Give\Framework\QueryBuilder\Clauses\RawSQL;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\QueryBuilder\QueryBuilder;
 
 /**
@@ -33,6 +36,7 @@ class ModelQueryBuilder extends QueryBuilder
     }
 
     /**
+<<<<<<< HEAD
      * Returns the number of rows returned by a query
      *
      * @since 2.24.0
@@ -52,6 +56,8 @@ class ModelQueryBuilder extends QueryBuilder
     }
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * Get row
      *
      * @since 2.19.6

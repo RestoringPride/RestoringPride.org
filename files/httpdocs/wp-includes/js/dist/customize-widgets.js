@@ -5,9 +5,15 @@
 /***/ (function(module, exports) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+<<<<<<< HEAD
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
 	http://jedwatson.github.io/classnames
+=======
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+>>>>>>> fb785cbb (Initial commit)
 */
 /* global define */
 
@@ -15,7 +21,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	'use strict';
 
 	var hasOwn = {}.hasOwnProperty;
+<<<<<<< HEAD
 	var nativeCodeString = '[native code]';
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 	function classNames() {
 		var classes = [];
@@ -36,6 +45,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 					}
 				}
 			} else if (argType === 'object') {
+<<<<<<< HEAD
 				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
 					classes.push(arg.toString());
 					continue;
@@ -45,6 +55,16 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 					if (hasOwn.call(arg, key) && arg[key]) {
 						classes.push(key);
 					}
+=======
+				if (arg.toString === Object.prototype.toString) {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				} else {
+					classes.push(arg.toString());
+>>>>>>> fb785cbb (Initial commit)
 				}
 			}
 		}
@@ -65,6 +85,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 }());
 
 
+<<<<<<< HEAD
 /***/ }),
 
 /***/ 5619:
@@ -145,6 +166,8 @@ module.exports = function equal(a, b) {
 };
 
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /***/ })
 
 /******/ 	});
@@ -249,7 +272,10 @@ __webpack_require__.d(store_actions_namespaceObject, {
   "disableComplementaryArea": function() { return disableComplementaryArea; },
   "enableComplementaryArea": function() { return enableComplementaryArea; },
   "pinItem": function() { return pinItem; },
+<<<<<<< HEAD
   "setDefaultComplementaryArea": function() { return setDefaultComplementaryArea; },
+=======
+>>>>>>> fb785cbb (Initial commit)
   "setFeatureDefaults": function() { return setFeatureDefaults; },
   "setFeatureValue": function() { return setFeatureValue; },
   "toggleFeature": function() { return toggleFeature; },
@@ -287,8 +313,11 @@ var external_wp_i18n_namespaceObject = window["wp"]["i18n"];
 var external_wp_blockEditor_namespaceObject = window["wp"]["blockEditor"];
 ;// CONCATENATED MODULE: external ["wp","compose"]
 var external_wp_compose_namespaceObject = window["wp"]["compose"];
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: external ["wp","hooks"]
 var external_wp_hooks_namespaceObject = window["wp"]["hooks"];
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/customize-widgets/build-module/components/error-boundary/index.js
 
 
@@ -301,7 +330,10 @@ var external_wp_hooks_namespaceObject = window["wp"]["hooks"];
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 function CopyButton(_ref) {
   let {
     text,
@@ -326,7 +358,10 @@ class ErrorBoundary extends external_wp_element_namespaceObject.Component {
     this.setState({
       error
     });
+<<<<<<< HEAD
     (0,external_wp_hooks_namespaceObject.doAction)('editor.ErrorBoundary.errorLogged', error);
+=======
+>>>>>>> fb785cbb (Initial commit)
   }
 
   render() {
@@ -349,6 +384,11 @@ class ErrorBoundary extends external_wp_element_namespaceObject.Component {
 
 }
 
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","coreData"]
 var external_wp_coreData_namespaceObject = window["wp"]["coreData"];
 ;// CONCATENATED MODULE: external ["wp","mediaUtils"]
@@ -358,12 +398,20 @@ function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
       for (var key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
           target[key] = source[key];
         }
       }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
     return target;
   };
   return _extends.apply(this, arguments);
@@ -700,7 +748,11 @@ function MoreMenuDropdown(_ref) {
     icon: more_vertical,
     label: label,
     popoverProps: {
+<<<<<<< HEAD
       placement: 'bottom-end',
+=======
+      position: 'bottom left',
+>>>>>>> fb785cbb (Initial commit)
       ...popoverProps,
       className: classnames_default()('interface-more-menu-dropdown__content', popoverProps === null || popoverProps === void 0 ? void 0 : popoverProps.className)
     },
@@ -725,7 +777,10 @@ function MoreMenuDropdown(_ref) {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","deprecated"]
 var external_wp_deprecated_namespaceObject = window["wp"]["deprecated"];
 var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external_wp_deprecated_namespaceObject);
@@ -736,6 +791,7 @@ var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external
 
 
 /**
+<<<<<<< HEAD
  * Set a default complementary area.
  *
  * @param {string} scope Complementary area scope.
@@ -750,6 +806,8 @@ const setDefaultComplementaryArea = (scope, area) => ({
   area
 });
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Enable the complementary area.
  *
  * @param {string} scope Complementary area scope.
@@ -758,8 +816,12 @@ const setDefaultComplementaryArea = (scope, area) => ({
 
 const enableComplementaryArea = (scope, area) => _ref => {
   let {
+<<<<<<< HEAD
     registry,
     dispatch
+=======
+    registry
+>>>>>>> fb785cbb (Initial commit)
   } = _ref;
 
   // Return early if there's no area.
@@ -767,6 +829,7 @@ const enableComplementaryArea = (scope, area) => _ref => {
     return;
   }
 
+<<<<<<< HEAD
   const isComplementaryAreaVisible = registry.select(external_wp_preferences_namespaceObject.store).get(scope, 'isComplementaryAreaVisible');
 
   if (!isComplementaryAreaVisible) {
@@ -778,6 +841,9 @@ const enableComplementaryArea = (scope, area) => _ref => {
     scope,
     area
   });
+=======
+  registry.dispatch(external_wp_preferences_namespaceObject.store).set(scope, 'complementaryArea', area);
+>>>>>>> fb785cbb (Initial commit)
 };
 /**
  * Disable the complementary area.
@@ -789,11 +855,15 @@ const disableComplementaryArea = scope => _ref2 => {
   let {
     registry
   } = _ref2;
+<<<<<<< HEAD
   const isComplementaryAreaVisible = registry.select(external_wp_preferences_namespaceObject.store).get(scope, 'isComplementaryAreaVisible');
 
   if (isComplementaryAreaVisible) {
     registry.dispatch(external_wp_preferences_namespaceObject.store).set(scope, 'isComplementaryAreaVisible', false);
   }
+=======
+  registry.dispatch(external_wp_preferences_namespaceObject.store).set(scope, 'complementaryArea', null);
+>>>>>>> fb785cbb (Initial commit)
 };
 /**
  * Pins an item.
@@ -923,6 +993,7 @@ function setFeatureDefaults(scope, defaults) {
  * @param {Object} state Global application state.
  * @param {string} scope Item scope.
  *
+<<<<<<< HEAD
  * @return {string | null | undefined} The complementary area that is active in the given scope.
  */
 
@@ -943,6 +1014,13 @@ const getActiveComplementaryArea = (0,external_wp_data_namespaceObject.createReg
   }
 
   return state === null || state === void 0 ? void 0 : (_state$complementaryA = state.complementaryAreas) === null || _state$complementaryA === void 0 ? void 0 : _state$complementaryA[scope];
+=======
+ * @return {string} The complementary area that is active in the given scope.
+ */
+
+const getActiveComplementaryArea = (0,external_wp_data_namespaceObject.createRegistrySelector)(select => (state, scope) => {
+  return select(external_wp_preferences_namespaceObject.store).get(scope, 'complementaryArea');
+>>>>>>> fb785cbb (Initial commit)
 });
 /**
  * Returns a boolean indicating if an item is pinned or not.
@@ -979,6 +1057,7 @@ const isFeatureActive = (0,external_wp_data_namespaceObject.createRegistrySelect
   return !!select(external_wp_preferences_namespaceObject.store).get(scope, featureName);
 });
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/interface/build-module/store/reducer.js
 /**
  * WordPress dependencies
@@ -1023,6 +1102,8 @@ function complementaryAreas() {
   complementaryAreas
 }));
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/interface/build-module/store/constants.js
 /**
  * The identifier for the data store.
@@ -1043,7 +1124,10 @@ const constants_STORE_NAME = 'core/interface';
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Store definition for the interface namespace.
  *
@@ -1053,7 +1137,11 @@ const constants_STORE_NAME = 'core/interface';
  */
 
 const store_store = (0,external_wp_data_namespaceObject.createReduxStore)(constants_STORE_NAME, {
+<<<<<<< HEAD
   reducer: store_reducer,
+=======
+  reducer: () => {},
+>>>>>>> fb785cbb (Initial commit)
   actions: store_actions_namespaceObject,
   selectors: store_selectors_namespaceObject
 }); // Once we build a more generic persistence plugin that works across types of stores
@@ -1096,15 +1184,19 @@ const textFormattingShortcuts = [{
   description: (0,external_wp_i18n_namespaceObject.__)('Remove a link.')
 }, {
   keyCombination: {
+<<<<<<< HEAD
     character: '[['
   },
   description: (0,external_wp_i18n_namespaceObject.__)('Insert a link to a post or page.')
 }, {
   keyCombination: {
+=======
+>>>>>>> fb785cbb (Initial commit)
     modifier: 'primary',
     character: 'u'
   },
   description: (0,external_wp_i18n_namespaceObject.__)('Underline the selected text.')
+<<<<<<< HEAD
 }, {
   keyCombination: {
     modifier: 'access',
@@ -1117,17 +1209,30 @@ const textFormattingShortcuts = [{
     character: 'x'
   },
   description: (0,external_wp_i18n_namespaceObject.__)('Make the selected text inline code.')
+=======
+>>>>>>> fb785cbb (Initial commit)
 }];
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/customize-widgets/build-module/components/keyboard-shortcut-help-modal/shortcut.js
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 function KeyCombination(_ref) {
   let {
     keyCombination,
@@ -1138,7 +1243,11 @@ function KeyCombination(_ref) {
   return (0,external_wp_element_namespaceObject.createElement)("kbd", {
     className: "customize-widgets-keyboard-shortcut-help-modal__shortcut-key-combination",
     "aria-label": forceAriaLabel || ariaLabel
+<<<<<<< HEAD
   }, (Array.isArray(shortcut) ? shortcut : [shortcut]).map((character, index) => {
+=======
+  }, (0,external_lodash_namespaceObject.castArray)(shortcut).map((character, index) => {
+>>>>>>> fb785cbb (Initial commit)
     if (character === '+') {
       return (0,external_wp_element_namespaceObject.createElement)(external_wp_element_namespaceObject.Fragment, {
         key: index
@@ -1230,6 +1339,10 @@ function DynamicShortcut(_ref) {
  * External dependencies
  */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * WordPress dependencies
  */
@@ -1263,7 +1376,11 @@ const ShortcutList = _ref => {
     }, shortcuts.map((shortcut, index) => (0,external_wp_element_namespaceObject.createElement)("li", {
       className: "customize-widgets-keyboard-shortcut-help-modal__shortcut",
       key: index
+<<<<<<< HEAD
     }, typeof shortcut === 'string' ? (0,external_wp_element_namespaceObject.createElement)(dynamic_shortcut, {
+=======
+    }, (0,external_lodash_namespaceObject.isString)(shortcut) ? (0,external_wp_element_namespaceObject.createElement)(dynamic_shortcut, {
+>>>>>>> fb785cbb (Initial commit)
       name: shortcut
     }) : (0,external_wp_element_namespaceObject.createElement)(keyboard_shortcut_help_modal_shortcut, shortcut))))
     /* eslint-enable jsx-a11y/no-redundant-roles */
@@ -1327,6 +1444,10 @@ function KeyboardShortcutHelpModal(_ref4) {
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Modal, {
     className: "customize-widgets-keyboard-shortcut-help-modal",
     title: (0,external_wp_i18n_namespaceObject.__)('Keyboard shortcuts'),
+<<<<<<< HEAD
+=======
+    closeLabel: (0,external_wp_i18n_namespaceObject.__)('Close'),
+>>>>>>> fb785cbb (Initial commit)
     onRequestClose: toggleModal
   }, (0,external_wp_element_namespaceObject.createElement)(ShortcutSection, {
     className: "customize-widgets-keyboard-shortcut-help-modal__main-shortcuts",
@@ -1460,7 +1581,10 @@ function Header(_ref) {
     isFixedToolbarActive
   } = _ref;
   const [[hasUndo, hasRedo], setUndoRedo] = (0,external_wp_element_namespaceObject.useState)([sidebar.hasUndo(), sidebar.hasRedo()]);
+<<<<<<< HEAD
   const shortcut = (0,external_wp_keycodes_namespaceObject.isAppleOS)() ? external_wp_keycodes_namespaceObject.displayShortcut.primaryShift('z') : external_wp_keycodes_namespaceObject.displayShortcut.primary('y');
+=======
+>>>>>>> fb785cbb (Initial commit)
   (0,external_wp_element_namespaceObject.useEffect)(() => {
     return sidebar.subscribeHistory(() => {
       setUndoRedo([sidebar.hasUndo(), sidebar.hasRedo()]);
@@ -1490,7 +1614,11 @@ function Header(_ref) {
     /* translators: button label text should, if possible, be under 16 characters. */
     ,
     label: (0,external_wp_i18n_namespaceObject.__)('Redo'),
+<<<<<<< HEAD
     shortcut: shortcut // If there are no undo levels we don't want to actually disable this
+=======
+    shortcut: external_wp_keycodes_namespaceObject.displayShortcut.primaryShift('z') // If there are no undo levels we don't want to actually disable this
+>>>>>>> fb785cbb (Initial commit)
     // button, because it will remove focus for keyboard users.
     // See: https://github.com/WordPress/gutenberg/issues/3486
     ,
@@ -1547,9 +1675,12 @@ function useInserter(inserter) {
   }, [setIsInserterOpened])];
 }
 
+<<<<<<< HEAD
 // EXTERNAL MODULE: ./node_modules/fast-deep-equal/es6/index.js
 var es6 = __webpack_require__(5619);
 var es6_default = /*#__PURE__*/__webpack_require__.n(es6);
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","isShallowEqual"]
 var external_wp_isShallowEqual_namespaceObject = window["wp"]["isShallowEqual"];
 var external_wp_isShallowEqual_default = /*#__PURE__*/__webpack_require__.n(external_wp_isShallowEqual_namespaceObject);
@@ -1562,6 +1693,14 @@ var external_wp_isShallowEqual_default = /*#__PURE__*/__webpack_require__.n(exte
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Convert settingId to widgetId.
  *
  * @param {string} settingId The setting id.
@@ -1631,12 +1770,16 @@ function blockToWidget(block) {
     };
   }
 
+<<<<<<< HEAD
   const {
     form,
     rendered,
     ...restExistingWidget
   } = existingWidget || {};
   return { ...restExistingWidget,
+=======
+  return { ...(0,external_lodash_namespaceObject.omit)(existingWidget, ['form', 'rendered']),
+>>>>>>> fb785cbb (Initial commit)
     ...widget
   };
 }
@@ -1667,11 +1810,15 @@ function widgetToBlock(_ref) {
   } = instance;
 
   if (idBase === 'block') {
+<<<<<<< HEAD
     var _raw$content;
 
     const parsedBlocks = (0,external_wp_blocks_namespaceObject.parse)((_raw$content = raw.content) !== null && _raw$content !== void 0 ? _raw$content : '', {
       __unstableSkipAutop: true
     });
+=======
+    const parsedBlocks = (0,external_wp_blocks_namespaceObject.parse)(raw.content);
+>>>>>>> fb785cbb (Initial commit)
     block = parsedBlocks.length ? parsedBlocks[0] : (0,external_wp_blocks_namespaceObject.createBlock)('core/paragraph', {});
   } else if (number) {
     // Widget that extends WP_Widget.
@@ -1756,7 +1903,11 @@ function useSidebarBlockEditor(sidebar) {
           const prevWidget = sidebar.getWidget(widgetId); // Bail out updates by returning the previous widgets.
           // Deep equality is necessary until the block editor's internals changes.
 
+<<<<<<< HEAD
           if (es6_default()(nextBlock, prevBlock) && prevWidget) {
+=======
+          if ((0,external_lodash_namespaceObject.isEqual)(nextBlock, prevBlock) && prevWidget) {
+>>>>>>> fb785cbb (Initial commit)
             return prevWidget;
           }
 
@@ -1896,6 +2047,7 @@ function useBlocksFocusControl(blocks) {
   }, [focusedWidgetIdRef, selectBlock]);
 }
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: external ["wp","privateApis"]
 var external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/customize-widgets/build-module/private-apis.js
@@ -1908,6 +2060,8 @@ const {
   unlock
 } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I know using unstable features means my plugin or theme will inevitably break on the next WordPress release.', '@wordpress/customize-widgets');
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/customize-widgets/build-module/components/sidebar-block-editor/sidebar-editor-provider.js
 
 
@@ -1921,10 +2075,13 @@ const {
 
 
 
+<<<<<<< HEAD
 
 const {
   ExperimentalBlockEditorProvider
 } = unlock(external_wp_blockEditor_namespaceObject.privateApis);
+=======
+>>>>>>> fb785cbb (Initial commit)
 function SidebarEditorProvider(_ref) {
   let {
     sidebar,
@@ -1933,7 +2090,11 @@ function SidebarEditorProvider(_ref) {
   } = _ref;
   const [blocks, onInput, onChange] = useSidebarBlockEditor(sidebar);
   useBlocksFocusControl(blocks);
+<<<<<<< HEAD
   return (0,external_wp_element_namespaceObject.createElement)(ExperimentalBlockEditorProvider, {
+=======
+  return (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.BlockEditorProvider, {
+>>>>>>> fb785cbb (Initial commit)
     value: blocks,
     onInput: onInput,
     onChange: onChange,
@@ -2003,7 +2164,10 @@ function WelcomeGuide(_ref) {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 function KeyboardShortcuts(_ref) {
   let {
     undo,
@@ -2047,6 +2211,7 @@ function KeyboardShortcutsRegister() {
       keyCombination: {
         modifier: 'primaryShift',
         character: 'z'
+<<<<<<< HEAD
       },
       // Disable on Apple OS because it conflicts with the browser's
       // history shortcut. It's a fine alias for both Windows and Linux.
@@ -2056,6 +2221,9 @@ function KeyboardShortcutsRegister() {
         modifier: 'primary',
         character: 'y'
       }]
+=======
+      }
+>>>>>>> fb785cbb (Initial commit)
     });
     registerShortcut({
       name: 'core/customize-widgets/save',
@@ -2113,6 +2281,13 @@ function BlockAppender(props) {
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -2121,6 +2296,10 @@ function BlockAppender(props) {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -2146,13 +2325,20 @@ function SidebarBlockEditor(_ref) {
     keepCaretInsideBlock,
     isWelcomeGuideActive
   } = (0,external_wp_data_namespaceObject.useSelect)(select => {
+<<<<<<< HEAD
     var _select$canUser;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
     const {
       get
     } = select(external_wp_preferences_namespaceObject.store);
     return {
+<<<<<<< HEAD
       hasUploadPermissions: (_select$canUser = select(external_wp_coreData_namespaceObject.store).canUser('create', 'media')) !== null && _select$canUser !== void 0 ? _select$canUser : true,
+=======
+      hasUploadPermissions: (0,external_lodash_namespaceObject.defaultTo)(select(external_wp_coreData_namespaceObject.store).canUser('create', 'media'), true),
+>>>>>>> fb785cbb (Initial commit)
       isFixedToolbarActive: !!get('core/customize-widgets', 'fixedToolbar'),
       keepCaretInsideBlock: !!get('core/customize-widgets', 'keepCaretInsideBlock'),
       isWelcomeGuideActive: !!get('core/customize-widgets', 'welcomeGuide')
@@ -3089,10 +3275,22 @@ function getSidebarControl() {
   };
 }
 
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: external ["wp","hooks"]
+var external_wp_hooks_namespaceObject = window["wp"]["hooks"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/customize-widgets/build-module/filters/move-to-sidebar.js
 
 
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -3100,6 +3298,10 @@ function getSidebarControl() {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -3134,7 +3336,11 @@ const withMoveToSidebarToolbarItem = (0,external_wp_compose_namespaceObject.crea
        */
       const oldSetting = activeSidebarControl.setting;
       const newSetting = newSidebarControl.setting;
+<<<<<<< HEAD
       oldSetting(oldSetting().filter(id => id !== widgetId));
+=======
+      oldSetting((0,external_lodash_namespaceObject.without)(oldSetting(), widgetId));
+>>>>>>> fb785cbb (Initial commit)
       newSetting([...newSetting(), widgetId]);
     } else {
       /**

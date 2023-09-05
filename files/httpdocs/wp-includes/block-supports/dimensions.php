@@ -29,7 +29,12 @@ function wp_register_dimensions_support( $block_type ) {
 		return;
 	}
 
+<<<<<<< HEAD
 	$has_dimensions_support = block_has_support( $block_type, array( 'dimensions' ), false );
+=======
+	$has_dimensions_support = block_has_support( $block_type, array( '__experimentalDimensions' ), false );
+	// Future block supports such as height & width will be added here.
+>>>>>>> fb785cbb (Initial commit)
 
 	if ( $has_dimensions_support ) {
 		$block_type->attributes['style'] = array(
@@ -43,7 +48,10 @@ function wp_register_dimensions_support( $block_type ) {
  * This will be applied to the block markup in the front-end.
  *
  * @since 5.9.0
+<<<<<<< HEAD
  * @since 6.2.0 Added `minHeight` support.
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @access private
  *
  * @param WP_Block_Type $block_type       Block Type.
@@ -51,6 +59,7 @@ function wp_register_dimensions_support( $block_type ) {
  * @return array Block dimensions CSS classes and inline styles.
  */
 function wp_apply_dimensions_support( $block_type, $block_attributes ) { // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
+<<<<<<< HEAD
 	if ( wp_should_skip_block_supports_serialization( $block_type, 'dimensions' ) ) {
 		return array();
 	}
@@ -76,6 +85,18 @@ function wp_apply_dimensions_support( $block_type, $block_attributes ) { // phpc
 	}
 
 	return $attributes;
+=======
+	if ( wp_should_skip_block_supports_serialization( $block_type, '__experimentalDimensions' ) ) {
+		return array();
+	}
+
+	$styles = array();
+
+	// Height support to be added in near future.
+	// Width support to be added in near future.
+
+	return empty( $styles ) ? array() : array( 'style' => implode( ' ', $styles ) );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 // Register the block support.

@@ -4,7 +4,11 @@
 	"name": "core/site-tagline",
 	"title": "Site Tagline",
 	"category": "theme",
+<<<<<<< HEAD
 	"description": "Describe in a few words what the site is about. The tagline can be used in search results or when sharing on social networks even if it’s not displayed in the theme design.",
+=======
+	"description": "Describe in a few words what the site is about. The tagline can be used in search results or when sharing on social networks even if it's not displayed in the theme design.",
+>>>>>>> fb785cbb (Initial commit)
 	"keywords": [ "description" ],
 	"textdomain": "default",
 	"attributes": {
@@ -13,7 +17,10 @@
 		}
 	},
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"align": [ "wide", "full" ],
 		"html": false,
 		"color": {
@@ -32,7 +39,10 @@
 			"lineHeight": true,
 			"__experimentalFontFamily": true,
 			"__experimentalTextTransform": true,
+<<<<<<< HEAD
 			"__experimentalTextDecoration": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalFontStyle": true,
 			"__experimentalFontWeight": true,
 			"__experimentalLetterSpacing": true,

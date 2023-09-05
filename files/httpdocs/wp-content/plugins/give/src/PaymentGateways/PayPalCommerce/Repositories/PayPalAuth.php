@@ -2,10 +2,15 @@
 
 namespace Give\PaymentGateways\PayPalCommerce\Repositories;
 
+<<<<<<< HEAD
 use Give\Framework\Exceptions\Primitives\Exception;
 use Give\Framework\Http\ConnectServer\Client\ConnectClient;
 use Give\Helpers\ArrayDataSet;
 use Give\Log\Log;
+=======
+use Give\ConnectClient\ConnectClient;
+use Give\Helpers\ArrayDataSet;
+>>>>>>> fb785cbb (Initial commit)
 use Give\PaymentGateways\PayPalCommerce\PayPalClient;
 
 class PayPalAuth
@@ -41,15 +46,24 @@ class PayPalAuth
     /**
      * Retrieves a token for the Client ID and Secret
      *
+<<<<<<< HEAD
      * @since 2.25.0 Validate paypal response.
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.9.0
      *
      * @param string $client_id
      * @param string $client_secret
      *
+<<<<<<< HEAD
      * @throws Exception
      */
     public function getTokenFromClientCredentials($client_id, $client_secret): array
+=======
+     * @return array
+     */
+    public function getTokenFromClientCredentials($client_id, $client_secret)
+>>>>>>> fb785cbb (Initial commit)
     {
         $auth = base64_encode("$client_id:$client_secret");
 
@@ -66,6 +80,7 @@ class PayPalAuth
             ]
         );
 
+<<<<<<< HEAD
         if (200 !== wp_remote_retrieve_response_code($request)) {
             give(Log::class)->http(
                 'PayPal Commerce: Error retrieving access token',
@@ -84,6 +99,9 @@ class PayPalAuth
         $this->validateAccessToken($decodedResponse);
 
         return ArrayDataSet::camelCaseKeys($decodedResponse);
+=======
+        return ArrayDataSet::camelCaseKeys(json_decode(wp_remote_retrieve_body($request), true));
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -208,6 +226,7 @@ class PayPalAuth
 
         return json_decode(wp_remote_retrieve_body($request), true);
     }
+<<<<<<< HEAD
 
     /**
      * Validate PayPal access token.
@@ -245,4 +264,6 @@ class PayPalAuth
             throw new Exception('PayPal Commerce: Error retrieving access token');
         }
     }
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

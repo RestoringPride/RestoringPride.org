@@ -126,6 +126,7 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get the post, if the ID is valid.
 	 *
 	 * @since 5.9.0
@@ -154,6 +155,8 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Checks if a given request has access to read a single global style.
 	 *
 	 * @since 5.9.0
@@ -268,10 +271,13 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 		}
 
 		$changes = $this->prepare_item_for_database( $request );
+<<<<<<< HEAD
 		if ( is_wp_error( $changes ) ) {
 			return $changes;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$result  = wp_update_post( wp_slash( (array) $changes ), true, false );
 		if ( is_wp_error( $result ) ) {
 			return $result;
@@ -294,10 +300,16 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 	 * Prepares a single global styles config for update.
 	 *
 	 * @since 5.9.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Added validation of styles.css property.
 	 *
 	 * @param WP_REST_Request $request Request object.
 	 * @return stdClass|WP_Error Prepared item on success. WP_Error on when the custom CSS is not valid.
+=======
+	 *
+	 * @param WP_REST_Request $request Request object.
+	 * @return stdClass Changes to pass to wp_update_post.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	protected function prepare_item_for_database( $request ) {
 		$changes     = new stdClass();
@@ -317,12 +329,15 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 		if ( isset( $request['styles'] ) || isset( $request['settings'] ) ) {
 			$config = array();
 			if ( isset( $request['styles'] ) ) {
+<<<<<<< HEAD
 				if ( isset( $request['styles']['css'] ) ) {
 					$css_validation_result = $this->validate_custom_css( $request['styles']['css'] );
 					if ( is_wp_error( $css_validation_result ) ) {
 						return $css_validation_result;
 					}
 				}
+=======
+>>>>>>> fb785cbb (Initial commit)
 				$config['styles'] = $request['styles'];
 			} elseif ( isset( $existing_config['styles'] ) ) {
 				$config['styles'] = $existing_config['styles'];
@@ -403,6 +418,7 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 		// Wrap the data in a response object.
 		$response = rest_ensure_response( $data );
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$links = $this->prepare_links( $post->ID );
 			$response->add_links( $links );
@@ -412,6 +428,15 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 				foreach ( $actions as $rel ) {
 					$response->add_link( $rel, $self );
 				}
+=======
+		$links = $this->prepare_links( $post->ID );
+		$response->add_links( $links );
+		if ( ! empty( $links['self']['href'] ) ) {
+			$actions = $this->get_available_actions();
+			$self    = $links['self']['href'];
+			foreach ( $actions as $rel ) {
+				$response->add_link( $rel, $self );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
@@ -419,6 +444,38 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Get the post, if the ID is valid.
+	 *
+	 * @since 5.9.0
+	 *
+	 * @param int $id Supplied ID.
+	 * @return WP_Post|WP_Error Post object if ID is valid, WP_Error otherwise.
+	 */
+	protected function get_post( $id ) {
+		$error = new WP_Error(
+			'rest_global_styles_not_found',
+			__( 'No global styles config exist with that id.' ),
+			array( 'status' => 404 )
+		);
+
+		$id = (int) $id;
+		if ( $id <= 0 ) {
+			return $error;
+		}
+
+		$post = get_post( $id );
+		if ( empty( $post ) || empty( $post->ID ) || $this->post_type !== $post->post_type ) {
+			return $error;
+		}
+
+		return $post;
+	}
+
+
+	/**
+>>>>>>> fb785cbb (Initial commit)
 	 * Prepares links for the request.
 	 *
 	 * @since 5.9.0
@@ -442,7 +499,10 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 	 * Get the link relations available for the post and current user.
 	 *
 	 * @since 5.9.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Added 'edit-css' action.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @return array List of link relations.
 	 */
@@ -454,10 +514,13 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 			$rels[] = 'https://api.w.org/action-publish';
 		}
 
+<<<<<<< HEAD
 		if ( current_user_can( 'edit_css' ) ) {
 			$rels[] = 'https://api.w.org/action-edit-css';
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return $rels;
 	}
 
@@ -580,7 +643,11 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 	 * @return WP_REST_Response|WP_Error
 	 */
 	public function get_theme_item( $request ) {
+<<<<<<< HEAD
 		if ( get_stylesheet() !== $request['stylesheet'] ) {
+=======
+		if ( wp_get_theme()->get_stylesheet() !== $request['stylesheet'] ) {
+>>>>>>> fb785cbb (Initial commit)
 			// This endpoint only supports the active theme for now.
 			return new WP_Error(
 				'rest_theme_not_found',
@@ -608,6 +675,7 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 
 		$response = rest_ensure_response( $data );
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$links = array(
 				'self' => array(
@@ -616,6 +684,15 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 			);
 			$response->add_links( $links );
 		}
+=======
+		$links = array(
+			'self' => array(
+				'href' => rest_url( sprintf( '%s/%s/themes/%s', $this->namespace, $this->rest_base, $request['stylesheet'] ) ),
+			),
+		);
+
+		$response->add_links( $links );
+>>>>>>> fb785cbb (Initial commit)
 
 		return $response;
 	}
@@ -654,7 +731,11 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 	 * @return WP_REST_Response|WP_Error
 	 */
 	public function get_theme_items( $request ) {
+<<<<<<< HEAD
 		if ( get_stylesheet() !== $request['stylesheet'] ) {
+=======
+		if ( wp_get_theme()->get_stylesheet() !== $request['stylesheet'] ) {
+>>>>>>> fb785cbb (Initial commit)
 			// This endpoint only supports the active theme for now.
 			return new WP_Error(
 				'rest_theme_not_found',
@@ -668,6 +749,7 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 
 		return $response;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Validate style.css as valid CSS.
@@ -689,4 +771,6 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Controller {
 		}
 		return true;
 	}
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

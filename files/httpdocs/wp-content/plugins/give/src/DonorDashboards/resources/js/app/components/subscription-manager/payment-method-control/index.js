@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import AuthorizeControl from './authorize-control';
+=======
+>>>>>>> fb785cbb (Initial commit)
 import StripeControl from './stripe-control';
 import CardControl from './card-control';
 
@@ -13,9 +16,13 @@ const PaymentMethodControl = (props) => {
         case 'stripe_google_pay': {
             return <StripeControl {...props} />;
         }
+<<<<<<< HEAD
         case 'authorize': {
             return <AuthorizeControl {...props} />;
         }
+=======
+        case 'authorize':
+>>>>>>> fb785cbb (Initial commit)
         case 'paypalpro': {
             return <CardControl {...props} />;
         }

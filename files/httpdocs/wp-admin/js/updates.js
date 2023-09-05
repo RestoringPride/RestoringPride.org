@@ -5,7 +5,11 @@
  * @output wp-admin/js/updates.js
  */
 
+<<<<<<< HEAD
 /* global pagenow, _wpThemeSettings */
+=======
+/* global pagenow */
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * @param {jQuery}  $                                        jQuery object.
@@ -1614,6 +1618,7 @@
 			} );
 		}
 
+<<<<<<< HEAD
 		// DecrementCount from update count.
 		if ( 'themes' === pagenow ) {
 		    var theme = _.find( _wpThemeSettings.themes, { id: response.slug } );
@@ -1622,6 +1627,8 @@
 		    }
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		wp.a11y.speak( _x( 'Deleted!', 'theme' ) );
 
 		$document.trigger( 'wp-theme-delete-success', response );
@@ -2543,7 +2550,11 @@
 
 			data = {
 				_ajax_nonce: wp.updates.ajaxNonce,
+<<<<<<< HEAD
 				s:           encodeURIComponent( event.target.value ),
+=======
+				s:           event.target.value,
+>>>>>>> fb785cbb (Initial commit)
 				tab:         'search',
 				type:        $( '#typeselector' ).val(),
 				pagenow:     pagenow
@@ -2620,7 +2631,11 @@
 		$pluginSearch.on( 'keyup input', _.debounce( function( event ) {
 			var data = {
 				_ajax_nonce:   wp.updates.ajaxNonce,
+<<<<<<< HEAD
 				s:             encodeURIComponent( event.target.value ),
+=======
+				s:             event.target.value,
+>>>>>>> fb785cbb (Initial commit)
 				pagenow:       pagenow,
 				plugin_status: 'all'
 			},
@@ -2662,7 +2677,11 @@
 					sprintf(
 						/* translators: %s: Search query. */
 						__( 'Search results for: %s' ),
+<<<<<<< HEAD
 						'<strong>' + _.escape( decodeURIComponent( data.s ) ) + '</strong>'
+=======
+						'<strong>' + _.escape( data.s ) + '</strong>'
+>>>>>>> fb785cbb (Initial commit)
 					) ),
 					$oldSubTitle = $( '.wrap .subtitle' );
 

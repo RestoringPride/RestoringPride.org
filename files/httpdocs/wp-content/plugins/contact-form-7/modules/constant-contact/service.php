@@ -195,7 +195,11 @@ class WPCF7_ConstantContact extends WPCF7_Service_OAuth2 {
 			$this->authorization_endpoint
 		);
 
+<<<<<<< HEAD
 		if ( wp_redirect( sanitize_url( $endpoint ) ) ) {
+=======
+		if ( wp_redirect( esc_url_raw( $endpoint ) ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			exit();
 		}
 	}
@@ -366,6 +370,7 @@ class WPCF7_ConstantContact extends WPCF7_Service_OAuth2 {
 	}
 
 	public function display( $action = '' ) {
+<<<<<<< HEAD
 		echo sprintf(
 			'<p>%s</p>',
 			esc_html( __( "The Constant Contact integration module allows you to send contact data collected through your contact forms to the Constant Contact API. You can create reliable email subscription services in a few easy steps.", 'contact-form-7' ) )
@@ -378,6 +383,18 @@ class WPCF7_ConstantContact extends WPCF7_Service_OAuth2 {
 				__( 'Constant Contact integration', 'contact-form-7' )
 			)
 		);
+=======
+		echo '<p>' . sprintf(
+			esc_html( __( 'The Constant Contact integration module allows you to send contact data collected through your contact forms to the Constant Contact API. You can create reliable email subscription services in a few easy steps. For details, see %s.', 'contact-form-7' ) ),
+			wpcf7_link(
+				__(
+					'https://contactform7.com/constant-contact-integration/',
+					'contact-form-7'
+				),
+				__( 'Constant Contact integration', 'contact-form-7' )
+			)
+		) . '</p>';
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( $this->is_active() ) {
 			echo sprintf(

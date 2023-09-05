@@ -41,6 +41,7 @@ if (!is_callable('sodium_crypto_stream_xchacha20_xor')) {
         return ParagonIE_Sodium_Compat::crypto_stream_xchacha20_xor($message, $nonce, $key, true);
     }
 }
+<<<<<<< HEAD
 if (!is_callable('sodium_crypto_stream_xchacha20_xor_ic')) {
     /**
      * @see ParagonIE_Sodium_Compat::crypto_stream_xchacha20_xor_ic()
@@ -57,3 +58,5 @@ if (!is_callable('sodium_crypto_stream_xchacha20_xor_ic')) {
         return ParagonIE_Sodium_Compat::crypto_stream_xchacha20_xor_ic($message, $nonce, $counter, $key, true);
     }
 }
+=======
+>>>>>>> fb785cbb (Initial commit)

@@ -2,7 +2,10 @@
 
 namespace Give\DonationForms;
 
+<<<<<<< HEAD
 use Give\DonationForms\ListTable\DonationFormsListTable;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Helpers\EnqueueScript;
 use WP_REST_Request;
 
@@ -15,6 +18,7 @@ class DonationFormsAdminPage
      * @var string
      */
     protected $apiRoot;
+<<<<<<< HEAD
     /**
      * @var string
      */
@@ -23,12 +27,17 @@ class DonationFormsAdminPage
      * @var string
      */
     protected $adminUrl;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
     public function __construct()
     {
         $this->apiRoot = esc_url_raw(rest_url('give-api/v2/admin/forms'));
+<<<<<<< HEAD
         $this->apiNonce = wp_create_nonce('wp_rest');
         $this->adminUrl = admin_url();
+=======
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -78,11 +87,17 @@ class DonationFormsAdminPage
     {
         $data =  [
             'apiRoot' => $this->apiRoot,
+<<<<<<< HEAD
             'apiNonce' => $this->apiNonce,
             'preload' => $this->preloadDonationForms(),
             'authors' => $this->getAuthors(),
             'table' => give(DonationFormsListTable::class)->toArray(),
             'adminUrl' => $this->adminUrl,
+=======
+            'apiNonce' => wp_create_nonce('wp_rest'),
+            'preload' => $this->preloadDonationForms(),
+            'authors' => $this->getAuthors(),
+>>>>>>> fb785cbb (Initial commit)
         ];
 
         EnqueueScript::make('give-admin-donation-forms', 'assets/dist/js/give-admin-donation-forms.js')

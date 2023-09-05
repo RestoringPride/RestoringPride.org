@@ -46,6 +46,7 @@ class IframeContentView
     protected $bodyClasses = ['give-form-templates'];
 
     /**
+<<<<<<< HEAD
      * Post ID.
      *
      * This will be use as parameter for 'the_title' filter.
@@ -56,6 +57,8 @@ class IframeContentView
     protected $postId;
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * Set document page title.
      *
      * @param string $title
@@ -70,7 +73,11 @@ class IframeContentView
     }
 
     /**
+<<<<<<< HEAD
      * Set document page body.
+=======
+     * Set document page title.
+>>>>>>> fb785cbb (Initial commit)
      *
      * @param string $body
      *
@@ -84,7 +91,11 @@ class IframeContentView
     }
 
     /**
+<<<<<<< HEAD
      * Set body classes.
+=======
+     * Set document page title.
+>>>>>>> fb785cbb (Initial commit)
      *
      * @param array $classes
      *
@@ -98,6 +109,7 @@ class IframeContentView
     }
 
     /**
+<<<<<<< HEAD
      * Set post ID.
      *
      * @param $postId
@@ -113,6 +125,8 @@ class IframeContentView
     }
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * Render view.
      *
      * Note: if you want to overwrite this function then do not forget to add action hook in footer and header.
@@ -131,7 +145,11 @@ class IframeContentView
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php
+<<<<<<< HEAD
                 echo apply_filters('the_title', $this->title, $this->postId); ?></title>
+=======
+                echo apply_filters('the_title', $this->title); ?></title>
+>>>>>>> fb785cbb (Initial commit)
             <?php
             /**
              * Fire the action hook in header

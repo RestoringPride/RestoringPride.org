@@ -3,7 +3,10 @@
 namespace Yoast\WP\SEO\Presentations;
 
 use Yoast\WP\SEO\Helpers\Author_Archive_Helper;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Helpers\Pagination_Helper;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Helpers\Post_Type_Helper;
 
 /**
@@ -30,6 +33,7 @@ class Indexable_Author_Archive_Presentation extends Indexable_Presentation {
 	protected $author_archive;
 
 	/**
+<<<<<<< HEAD
 	 * Holds the Pagination_Helper instance.
 	 *
 	 * @var Pagination_Helper
@@ -37,6 +41,8 @@ class Indexable_Author_Archive_Presentation extends Indexable_Presentation {
 	protected $pagination;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Indexable_Author_Archive_Presentation constructor.
 	 *
 	 * @codeCoverageIgnore

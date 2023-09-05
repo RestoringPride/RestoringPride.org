@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Progressbar 1.13.2
+=======
+ * jQuery UI Progressbar 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -37,7 +41,11 @@
 "use strict";
 
 return $.widget( "ui.progressbar", {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	options: {
 		classes: {
 			"ui-progressbar": "ui-corner-all",

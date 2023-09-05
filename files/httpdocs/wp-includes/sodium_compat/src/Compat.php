@@ -3155,6 +3155,7 @@ class ParagonIE_Sodium_Compat
     }
 
     /**
+<<<<<<< HEAD
      * DANGER! UNAUTHENTICATED ENCRYPTION!
      *
      * Unless you are following expert advice, do not use this feature.
@@ -3204,6 +3205,8 @@ class ParagonIE_Sodium_Compat
     }
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * Return a secure random key for use with crypto_stream_xchacha20
      *
      * @return string
@@ -3219,13 +3222,17 @@ class ParagonIE_Sodium_Compat
      * Cache-timing-safe implementation of hex2bin().
      *
      * @param string $string Hexadecimal string
+<<<<<<< HEAD
      * @param string $ignore List of characters to ignore; useful for whitespace
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @return string        Raw binary string
      * @throws SodiumException
      * @throws TypeError
      * @psalm-suppress TooFewArguments
      * @psalm-suppress MixedArgument
      */
+<<<<<<< HEAD
     public static function hex2bin($string, $ignore = '')
     {
         /* Type checks: */
@@ -3241,6 +3248,22 @@ class ParagonIE_Sodium_Compat
             return (string) call_user_func('\\Sodium\\hex2bin', $string, $ignore);
         }
         return ParagonIE_Sodium_Core_Util::hex2bin($string, $ignore);
+=======
+    public static function hex2bin($string)
+    {
+        /* Type checks: */
+        ParagonIE_Sodium_Core_Util::declareScalarType($string, 'string', 1);
+
+        if (self::useNewSodiumAPI()) {
+            if (is_callable('sodium_hex2bin')) {
+                return (string) sodium_hex2bin($string);
+            }
+        }
+        if (self::use_fallback('hex2bin')) {
+            return (string) call_user_func('\\Sodium\\hex2bin', $string);
+        }
+        return ParagonIE_Sodium_Core_Util::hex2bin($string);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**

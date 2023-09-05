@@ -401,10 +401,16 @@ class Front_End_Integration implements Integration_Interface {
 		/**
 		 * Filter 'wpseo_frontend_presenter_classes' - Allow filtering presenters in or out of the request.
 		 *
+<<<<<<< HEAD
 		 * @param array  $presenters List of presenters.
 		 * @param string $page_type  The current page type.
 		 */
 		$presenters = \apply_filters( 'wpseo_frontend_presenter_classes', $presenters, $page_type );
+=======
+		 * @api array List of presenters.
+		 */
+		$presenters = \apply_filters( 'wpseo_frontend_presenter_classes', $presenters );
+>>>>>>> fb785cbb (Initial commit)
 
 		return $presenters;
 	}
@@ -459,6 +465,7 @@ class Front_End_Integration implements Integration_Interface {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Whether the title presenter should be removed.
 	 *
 	 * @return bool True when the title presenter should be removed, false otherwise.
@@ -468,6 +475,8 @@ class Front_End_Integration implements Integration_Interface {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Checks if the Title presenter needs to be removed.
 	 *
 	 * @param string[] $presenters The presenters.
@@ -481,7 +490,11 @@ class Front_End_Integration implements Integration_Interface {
 		}
 
 		// Remove the title presenter if the theme is hardcoded to output a title tag so we don't have two title tags.
+<<<<<<< HEAD
 		if ( $this->should_title_presenter_be_removed() ) {
+=======
+		if ( ! \get_theme_support( 'title-tag' ) && ! $this->options->get( 'forcerewritetitle', false ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			$presenters = \array_diff( $presenters, [ 'Title' ] );
 		}
 

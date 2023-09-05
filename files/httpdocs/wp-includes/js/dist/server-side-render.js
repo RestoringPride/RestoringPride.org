@@ -1,5 +1,6 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
+<<<<<<< HEAD
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 5619:
@@ -106,6 +107,10 @@ module.exports = function equal(a, b) {
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
+=======
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+>>>>>>> fb785cbb (Initial commit)
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
@@ -139,8 +144,11 @@ module.exports = function equal(a, b) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+<<<<<<< HEAD
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -152,12 +160,20 @@ function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
       for (var key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
           target[key] = source[key];
         }
       }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
     return target;
   };
   return _extends.apply(this, arguments);
@@ -166,9 +182,17 @@ function _extends() {
 var external_wp_element_namespaceObject = window["wp"]["element"];
 ;// CONCATENATED MODULE: external ["wp","data"]
 var external_wp_data_namespaceObject = window["wp"]["data"];
+<<<<<<< HEAD
 // EXTERNAL MODULE: ./node_modules/fast-deep-equal/es6/index.js
 var es6 = __webpack_require__(5619);
 var es6_default = /*#__PURE__*/__webpack_require__.n(es6);
+=======
+;// CONCATENATED MODULE: external ["wp","deprecated"]
+var external_wp_deprecated_namespaceObject = window["wp"]["deprecated"];
+var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external_wp_deprecated_namespaceObject);
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","compose"]
 var external_wp_compose_namespaceObject = window["wp"]["compose"];
 ;// CONCATENATED MODULE: external ["wp","i18n"]
@@ -201,7 +225,10 @@ var external_wp_blocks_namespaceObject = window["wp"]["blocks"];
 
 
 
+<<<<<<< HEAD
 const EMPTY_OBJECT = {};
+=======
+>>>>>>> fb785cbb (Initial commit)
 function rendererPath(block) {
   let attributes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
   let urlQueryArgs = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
@@ -213,6 +240,7 @@ function rendererPath(block) {
     ...urlQueryArgs
   });
 }
+<<<<<<< HEAD
 function removeBlockSupportAttributes(attributes) {
   const {
     backgroundColor,
@@ -236,6 +264,8 @@ function removeBlockSupportAttributes(attributes) {
     style: restStyles
   };
 }
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 function DefaultEmptyResponsePlaceholder(_ref) {
   let {
@@ -289,7 +319,10 @@ function ServerSideRender(props) {
     className,
     httpMethod = 'GET',
     urlQueryArgs,
+<<<<<<< HEAD
     skipBlockSupportAttributes = false,
+=======
+>>>>>>> fb785cbb (Initial commit)
     EmptyResponsePlaceholder = DefaultEmptyResponsePlaceholder,
     ErrorResponsePlaceholder = DefaultErrorResponsePlaceholder,
     LoadingResponsePlaceholder = DefaultLoadingResponsePlaceholder
@@ -302,27 +335,41 @@ function ServerSideRender(props) {
   const [isLoading, setIsLoading] = (0,external_wp_element_namespaceObject.useState)(false);
 
   function fetchData() {
+<<<<<<< HEAD
     var _sanitizedAttributes, _sanitizedAttributes2;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
     if (!isMountedRef.current) {
       return;
     }
 
     setIsLoading(true);
 
+<<<<<<< HEAD
     let sanitizedAttributes = attributes && (0,external_wp_blocks_namespaceObject.__experimentalSanitizeBlockAttributes)(block, attributes);
 
     if (skipBlockSupportAttributes) {
       sanitizedAttributes = removeBlockSupportAttributes(sanitizedAttributes);
     } // If httpMethod is 'POST', send the attributes in the request body instead of the URL.
+=======
+    const sanitizedAttributes = attributes && (0,external_wp_blocks_namespaceObject.__experimentalSanitizeBlockAttributes)(block, attributes); // If httpMethod is 'POST', send the attributes in the request body instead of the URL.
+>>>>>>> fb785cbb (Initial commit)
     // This allows sending a larger attributes object than in a GET request, where the attributes are in the URL.
 
 
     const isPostRequest = 'POST' === httpMethod;
+<<<<<<< HEAD
     const urlAttributes = isPostRequest ? null : (_sanitizedAttributes = sanitizedAttributes) !== null && _sanitizedAttributes !== void 0 ? _sanitizedAttributes : null;
     const path = rendererPath(block, urlAttributes, urlQueryArgs);
     const data = isPostRequest ? {
       attributes: (_sanitizedAttributes2 = sanitizedAttributes) !== null && _sanitizedAttributes2 !== void 0 ? _sanitizedAttributes2 : null
+=======
+    const urlAttributes = isPostRequest ? null : sanitizedAttributes !== null && sanitizedAttributes !== void 0 ? sanitizedAttributes : null;
+    const path = rendererPath(block, urlAttributes, urlQueryArgs);
+    const data = isPostRequest ? {
+      attributes: sanitizedAttributes !== null && sanitizedAttributes !== void 0 ? sanitizedAttributes : null
+>>>>>>> fb785cbb (Initial commit)
     } : null; // Store the latest fetch request so that when we process it, we can
     // check if it is the current request, to avoid race conditions on slow networks.
 
@@ -360,7 +407,11 @@ function ServerSideRender(props) {
     // shows data as soon as possible.
     if (prevProps === undefined) {
       fetchData();
+<<<<<<< HEAD
     } else if (!es6_default()(prevProps, props)) {
+=======
+    } else if (!(0,external_lodash_namespaceObject.isEqual)(prevProps, props)) {
+>>>>>>> fb785cbb (Initial commit)
       debouncedFetchData();
     }
   });
@@ -416,6 +467,10 @@ function ServerSideRender(props) {
  */
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Internal dependencies
  */
@@ -425,7 +480,11 @@ function ServerSideRender(props) {
  * Constants
  */
 
+<<<<<<< HEAD
 const build_module_EMPTY_OBJECT = {};
+=======
+const EMPTY_OBJECT = {};
+>>>>>>> fb785cbb (Initial commit)
 const ExportedServerSideRender = (0,external_wp_data_namespaceObject.withSelect)(select => {
   // FIXME: @wordpress/server-side-render should not depend on @wordpress/editor.
   // It is used by blocks that can be loaded into a *non-post* block editor.
@@ -445,10 +504,17 @@ const ExportedServerSideRender = (0,external_wp_data_namespaceObject.withSelect)
     }
   }
 
+<<<<<<< HEAD
   return build_module_EMPTY_OBJECT;
 })(_ref => {
   let {
     urlQueryArgs = build_module_EMPTY_OBJECT,
+=======
+  return EMPTY_OBJECT;
+})(_ref => {
+  let {
+    urlQueryArgs = EMPTY_OBJECT,
+>>>>>>> fb785cbb (Initial commit)
     currentPostId,
     ...props
   } = _ref;
@@ -466,9 +532,28 @@ const ExportedServerSideRender = (0,external_wp_data_namespaceObject.withSelect)
     urlQueryArgs: newUrlQueryArgs
   }, props));
 });
+<<<<<<< HEAD
 /* harmony default export */ var build_module = (ExportedServerSideRender);
 
 }();
+=======
+
+if (window && window.wp && window.wp.components) {
+  window.wp.components.ServerSideRender = (0,external_wp_element_namespaceObject.forwardRef)((props, ref) => {
+    external_wp_deprecated_default()('wp.components.ServerSideRender', {
+      version: '6.2',
+      since: '5.3',
+      alternative: 'wp.serverSideRender'
+    });
+    return (0,external_wp_element_namespaceObject.createElement)(ExportedServerSideRender, _extends({}, props, {
+      ref: ref
+    }));
+  });
+}
+
+/* harmony default export */ var build_module = (ExportedServerSideRender);
+
+>>>>>>> fb785cbb (Initial commit)
 (window.wp = window.wp || {}).serverSideRender = __webpack_exports__["default"];
 /******/ })()
 ;

@@ -10,8 +10,11 @@ return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
     'Stripe\\' => array($vendorDir . '/stripe/stripe-php/lib'),
+<<<<<<< HEAD
     'StellarWP\\Validation\\' => array($vendorDir . '/stellarwp/validation/src'),
     'StellarWP\\ContainerContract\\' => array($vendorDir . '/stellarwp/container-contract/src'),
+=======
+>>>>>>> fb785cbb (Initial commit)
     'Sample\\' => array($vendorDir . '/paypal/paypal-checkout-sdk/samples'),
     'PayPalHttp\\' => array($vendorDir . '/paypal/paypalhttp/lib/PayPalHttp'),
     'PayPalCheckoutSdk\\' => array($vendorDir . '/paypal/paypal-checkout-sdk/lib/PayPalCheckoutSdk'),

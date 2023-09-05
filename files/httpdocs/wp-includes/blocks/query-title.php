@@ -17,15 +17,20 @@
 function render_block_core_query_title( $attributes ) {
 	$type       = isset( $attributes['type'] ) ? $attributes['type'] : null;
 	$is_archive = is_archive();
+<<<<<<< HEAD
 	$is_search  = is_search();
 	if ( ! $type ||
 		( 'archive' === $type && ! $is_archive ) ||
 		( 'search' === $type && ! $is_search )
 		) {
+=======
+	if ( ! $type || ( 'archive' === $type && ! $is_archive ) ) {
+>>>>>>> fb785cbb (Initial commit)
 		return '';
 	}
 	$title = '';
 	if ( $is_archive ) {
+<<<<<<< HEAD
 		$show_prefix = isset( $attributes['showPrefix'] ) ? $attributes['showPrefix'] : true;
 		if ( ! $show_prefix ) {
 			$filter_title = function( $title, $original_title ) {
@@ -50,6 +55,10 @@ function render_block_core_query_title( $attributes ) {
 		}
 	}
 
+=======
+		$title = get_the_archive_title();
+	}
+>>>>>>> fb785cbb (Initial commit)
 	$tag_name           = isset( $attributes['level'] ) ? 'h' . (int) $attributes['level'] : 'h1';
 	$align_class_name   = empty( $attributes['textAlign'] ) ? '' : "has-text-align-{$attributes['textAlign']}";
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $align_class_name ) );

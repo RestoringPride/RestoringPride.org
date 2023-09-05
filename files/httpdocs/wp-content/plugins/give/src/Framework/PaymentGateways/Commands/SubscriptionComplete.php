@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 namespace Give\Framework\PaymentGateways\Commands;
 
@@ -7,6 +8,13 @@ namespace Give\Framework\PaymentGateways\Commands;
  */
 class SubscriptionComplete implements GatewayCommand
 {
+=======
+namespace Give\Framework\PaymentGateways\Commands;
+/***
+ * @since 2.18.0
+ */
+class SubscriptionComplete implements GatewayCommand {
+>>>>>>> fb785cbb (Initial commit)
     /**
      * The Gateway Transaction / Charge Record ID
      *

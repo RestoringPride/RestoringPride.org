@@ -8,6 +8,10 @@
  * @deprecated 4.5.0 Moved to wp-includes/theme-compat/embed.php
  */
 
+<<<<<<< HEAD
 _deprecated_file( basename( __FILE__ ), '4.5.0', WPINC . '/theme-compat/embed.php' );
+=======
+_deprecated_file( basename( __FILE__ ), '4.5.0', 'wp-includes/theme-compat/embed.php' );
+>>>>>>> fb785cbb (Initial commit)
 
 require ABSPATH . WPINC . '/theme-compat/embed.php';

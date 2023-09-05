@@ -46,6 +46,7 @@ class WPSEO_Taxonomy_Metabox {
 	protected $readability_analysis;
 
 	/**
+<<<<<<< HEAD
 	 * Helper to determine whether or not the inclusive language analysis is enabled.
 	 *
 	 * @var WPSEO_Metabox_Analysis_Inclusive_Language
@@ -53,6 +54,8 @@ class WPSEO_Taxonomy_Metabox {
 	protected $inclusive_language_analysis;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * The constructor.
 	 *
 	 * @param string   $taxonomy The taxonomy.
@@ -63,9 +66,14 @@ class WPSEO_Taxonomy_Metabox {
 		$this->taxonomy          = $taxonomy;
 		$this->is_social_enabled = WPSEO_Options::get( 'opengraph', false ) || WPSEO_Options::get( 'twitter', false );
 
+<<<<<<< HEAD
 		$this->seo_analysis                = new WPSEO_Metabox_Analysis_SEO();
 		$this->readability_analysis        = new WPSEO_Metabox_Analysis_Readability();
 		$this->inclusive_language_analysis = new WPSEO_Metabox_Analysis_Inclusive_Language();
+=======
+		$this->seo_analysis         = new WPSEO_Metabox_Analysis_SEO();
+		$this->readability_analysis = new WPSEO_Metabox_Analysis_Readability();
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -148,10 +156,13 @@ class WPSEO_Taxonomy_Metabox {
 			$tabs[] = new WPSEO_Metabox_Section_Readability();
 		}
 
+<<<<<<< HEAD
 		if ( $this->inclusive_language_analysis->is_enabled() ) {
 			$tabs[] = new WPSEO_Metabox_Section_Inclusive_Language();
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( $this->is_social_enabled ) {
 			$tabs[] = new WPSEO_Metabox_Section_React(
 				'social',
@@ -163,6 +174,7 @@ class WPSEO_Taxonomy_Metabox {
 			);
 		}
 
+<<<<<<< HEAD
 		$tabs = array_merge( $tabs, $this->get_additional_tabs() );
 
 		return $tabs;
@@ -213,6 +225,8 @@ class WPSEO_Taxonomy_Metabox {
 			}
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return $tabs;
 	}
 

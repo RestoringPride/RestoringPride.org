@@ -6,9 +6,15 @@ namespace Give\PaymentGateways\Stripe\DataTransferObjects;
  * Class DisconnectStripeAccountDto
  * @package Give\PaymentGateways\Stripe\DataTransferObjects
  *
+<<<<<<< HEAD
  * @since   2.13.0
  */
 final class DisconnectStripeAccountDto
+=======
+ * @since 2.13.0
+ */
+class DisconnectStripeAccountDto
+>>>>>>> fb785cbb (Initial commit)
 {
     /**
      * @var array|string

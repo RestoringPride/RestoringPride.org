@@ -182,7 +182,11 @@ class getID3
 	public $option_md5_data          = false;
 
 	/**
+<<<<<<< HEAD
 	 * Use MD5 of source file if available - only FLAC and OptimFROG
+=======
+	 * Use MD5 of source file if availble - only FLAC and OptimFROG
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @var bool
 	 */
@@ -387,15 +391,22 @@ class getID3
 	 */
 	protected $startup_warning = '';
 
+<<<<<<< HEAD
 	const VERSION           = '1.9.22-202207161647';
+=======
+	const VERSION           = '1.9.21-202109171300';
+>>>>>>> fb785cbb (Initial commit)
 	const FREAD_BUFFER_SIZE = 32768;
 
 	const ATTACHMENTS_NONE   = false;
 	const ATTACHMENTS_INLINE = true;
 
+<<<<<<< HEAD
 	/**
 	 * @throws getid3_exception
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function __construct() {
 
 		// Check for PHP version
@@ -572,7 +583,11 @@ class getID3
 			$this->info['php_memory_limit'] = (($this->memory_limit > 0) ? $this->memory_limit : false);
 
 			// remote files not supported
+<<<<<<< HEAD
 			if (preg_match('#^(ht|f)tps?://#', $filename)) {
+=======
+			if (preg_match('#^(ht|f)tp://#', $filename)) {
+>>>>>>> fb785cbb (Initial commit)
 				throw new getid3_exception('Remote files are not supported - please copy the file locally first');
 			}
 
@@ -1058,6 +1073,7 @@ class getID3
 							'mime_type' => 'audio/x-monkeys-audio',
 						),
 
+<<<<<<< HEAD
 
 				// MOD  - audio       - MODule (SoundTracker)
 				'mod'  => array(
@@ -1068,6 +1084,17 @@ class getID3
 							'option'    => 'mod',
 							'mime_type' => 'audio/mod',
 						),
+=======
+// has been known to produce false matches in random files (e.g. JPEGs), leave out until more precise matching available
+//				// MOD  - audio       - MODule (assorted sub-formats)
+//				'mod'  => array(
+//							'pattern'   => '^.{1080}(M\\.K\\.|M!K!|FLT4|FLT8|[5-9]CHN|[1-3][0-9]CH)',
+//							'group'     => 'audio',
+//							'module'    => 'mod',
+//							'option'    => 'mod',
+//							'mime_type' => 'audio/mod',
+//						),
+>>>>>>> fb785cbb (Initial commit)
 
 				// MOD  - audio       - MODule (Impulse Tracker)
 				'it'   => array(
@@ -1098,7 +1125,11 @@ class getID3
 
 				// MPC  - audio       - Musepack / MPEGplus
 				'mpc'  => array(
+<<<<<<< HEAD
 							'pattern'   => '^(MPCK|MP\\+)',
+=======
+							'pattern'   => '^(MPCK|MP\\+|[\\x00\\x01\\x10\\x11\\x40\\x41\\x50\\x51\\x80\\x81\\x90\\x91\\xC0\\xC1\\xD0\\xD1][\\x20-\\x37][\\x00\\x20\\x40\\x60\\x80\\xA0\\xC0\\xE0])',
+>>>>>>> fb785cbb (Initial commit)
 							'group'     => 'audio',
 							'module'    => 'mpc',
 							'mime_type' => 'audio/x-musepack',
@@ -1555,6 +1586,7 @@ class getID3
 			$info = $GetFileFormatArray['mp3'];
 			$info['include'] = 'module.'.$info['group'].'.'.$info['module'].'.php';
 			return $info;
+<<<<<<< HEAD
 		} elseif (preg_match('#\\.mp[cp\\+]$#i', $filename) && preg_match('#[\x00\x01\x10\x11\x40\x41\x50\x51\x80\x81\x90\x91\xC0\xC1\xD0\xD1][\x20-37][\x00\x20\x40\x60\x80\xA0\xC0\xE0]#s', $filedata)) {
 			// old-format (SV4-SV6) Musepack header that has a very loose pattern match and could falsely match other data (e.g. corrupt mp3)
 			// only enable this pattern check if the filename ends in .mpc/mpp/mp+
@@ -1562,6 +1594,8 @@ class getID3
 			$info = $GetFileFormatArray['mpc'];
 			$info['include'] = 'module.'.$info['group'].'.'.$info['module'].'.php';
 			return $info;
+=======
+>>>>>>> fb785cbb (Initial commit)
 		} elseif (preg_match('#\\.cue$#i', $filename) && preg_match('#FILE "[^"]+" (BINARY|MOTOROLA|AIFF|WAVE|MP3)#', $filedata)) {
 			// there's not really a useful consistent "magic" at the beginning of .cue files to identify them
 			// so until I think of something better, just go by filename if all other format checks fail
@@ -2209,11 +2243,14 @@ abstract class getid3_handler
 			$this->data_string_position += $bytes;
 			return substr($this->data_string, $this->data_string_position - $bytes, $bytes);
 		}
+<<<<<<< HEAD
 		if ($bytes == 0) {
 			return '';
 		} elseif ($bytes < 0) {
 			throw new getid3_exception('cannot fread('.$bytes.' from '.$this->ftell().')', 10);
 		}
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$pos = $this->ftell() + $bytes;
 		if (!getid3_lib::intValueSupported($pos)) {
 			throw new getid3_exception('cannot fread('.$bytes.' from '.$this->ftell().') because beyond PHP filesystem limit', 10);

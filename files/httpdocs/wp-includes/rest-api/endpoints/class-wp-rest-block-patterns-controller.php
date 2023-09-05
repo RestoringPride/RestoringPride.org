@@ -25,6 +25,7 @@ class WP_REST_Block_Patterns_Controller extends WP_REST_Controller {
 	private $remote_patterns_loaded;
 
 	/**
+<<<<<<< HEAD
 	 * An array that maps old categories names to new ones.
 	 *
 	 * @since 6.2.0
@@ -37,6 +38,8 @@ class WP_REST_Block_Patterns_Controller extends WP_REST_Controller {
 	);
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Constructs the controller.
 	 *
 	 * @since 6.0.0
@@ -96,7 +99,10 @@ class WP_REST_Block_Patterns_Controller extends WP_REST_Controller {
 	 * Retrieves all block patterns.
 	 *
 	 * @since 6.0.0
+<<<<<<< HEAD
 	 * @since 6.2.0 Added migration for old core pattern categories to the new ones.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
 	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
@@ -114,14 +120,19 @@ class WP_REST_Block_Patterns_Controller extends WP_REST_Controller {
 		$response = array();
 		$patterns = WP_Block_Patterns_Registry::get_instance()->get_all_registered();
 		foreach ( $patterns as $pattern ) {
+<<<<<<< HEAD
 			$migrated_pattern = $this->migrate_pattern_categories( $pattern );
 			$prepared_pattern = $this->prepare_item_for_response( $migrated_pattern, $request );
+=======
+			$prepared_pattern = $this->prepare_item_for_response( $pattern, $request );
+>>>>>>> fb785cbb (Initial commit)
 			$response[]       = $this->prepare_response_for_collection( $prepared_pattern );
 		}
 		return rest_ensure_response( $response );
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Migrates old core pattern categories to the new categories.
 	 *
 	 * Core pattern categories are revamped. Migration is needed to ensure
@@ -152,6 +163,8 @@ class WP_REST_Block_Patterns_Controller extends WP_REST_Controller {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Prepare a raw block pattern before it gets output in a REST API response.
 	 *
 	 * @since 6.0.0
@@ -165,6 +178,7 @@ class WP_REST_Block_Patterns_Controller extends WP_REST_Controller {
 		$keys   = array(
 			'name'          => 'name',
 			'title'         => 'title',
+<<<<<<< HEAD
 			'content'       => 'content',
 			'description'   => 'description',
 			'viewportWidth' => 'viewport_width',
@@ -174,6 +188,15 @@ class WP_REST_Block_Patterns_Controller extends WP_REST_Controller {
 			'blockTypes'    => 'block_types',
 			'postTypes'     => 'post_types',
 			'templateTypes' => 'template_types',
+=======
+			'description'   => 'description',
+			'viewportWidth' => 'viewport_width',
+			'blockTypes'    => 'block_types',
+			'categories'    => 'categories',
+			'keywords'      => 'keywords',
+			'content'       => 'content',
+			'inserter'      => 'inserter',
+>>>>>>> fb785cbb (Initial commit)
 		);
 		$data   = array();
 		foreach ( $keys as $item_key => $rest_key ) {
@@ -213,12 +236,15 @@ class WP_REST_Block_Patterns_Controller extends WP_REST_Controller {
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
+<<<<<<< HEAD
 				'content'        => array(
 					'description' => __( 'The pattern content.' ),
 					'type'        => 'string',
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
+=======
+>>>>>>> fb785cbb (Initial commit)
 				'description'    => array(
 					'description' => __( 'The pattern detailed description.' ),
 					'type'        => 'string',
@@ -231,9 +257,15 @@ class WP_REST_Block_Patterns_Controller extends WP_REST_Controller {
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
+<<<<<<< HEAD
 				'inserter'       => array(
 					'description' => __( 'Determines whether the pattern is visible in inserter.' ),
 					'type'        => 'boolean',
+=======
+				'block_types'    => array(
+					'description' => __( 'Block types that the pattern is intended to be used with.' ),
+					'type'        => 'array',
+>>>>>>> fb785cbb (Initial commit)
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
@@ -249,6 +281,7 @@ class WP_REST_Block_Patterns_Controller extends WP_REST_Controller {
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
+<<<<<<< HEAD
 				'block_types'    => array(
 					'description' => __( 'Block types that the pattern is intended to be used with.' ),
 					'type'        => 'array',
@@ -264,6 +297,17 @@ class WP_REST_Block_Patterns_Controller extends WP_REST_Controller {
 				'template_types' => array(
 					'description' => __( 'An array of template types where the pattern fits.' ),
 					'type'        => 'array',
+=======
+				'content'        => array(
+					'description' => __( 'The pattern content.' ),
+					'type'        => 'string',
+					'readonly'    => true,
+					'context'     => array( 'view', 'edit', 'embed' ),
+				),
+				'inserter'       => array(
+					'description' => __( 'Determines whether the pattern is visible in inserter.' ),
+					'type'        => 'boolean',
+>>>>>>> fb785cbb (Initial commit)
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),

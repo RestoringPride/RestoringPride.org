@@ -1557,6 +1557,7 @@
 		});
 	});
 
+<<<<<<< HEAD
 	// Show bulk action.
 	$( document ).on( 'menu-item-added', function() {
 		if ( ! $( '.bulk-actions' ).is( ':visible' ) ) {
@@ -1572,4 +1573,6 @@
 		}
 	} );
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 })(jQuery);

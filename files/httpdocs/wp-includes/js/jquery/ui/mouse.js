@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Mouse 1.13.2
+=======
+ * jQuery UI Mouse 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -36,7 +40,11 @@ $( document ).on( "mouseup", function() {
 } );
 
 return $.widget( "ui.mouse", {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	options: {
 		cancel: "input, textarea, button, select, option",
 		distance: 1,
@@ -146,17 +154,28 @@ return $.widget( "ui.mouse", {
 
 			// IE mouseup check - mouseup happened when mouse was out of window
 			if ( $.ui.ie && ( !document.documentMode || document.documentMode < 9 ) &&
+<<<<<<< HEAD
 					!event.button ) {
 				return this._mouseUp( event );
 
 			// Iframe mouseup check - mouseup occurred in another document
+=======
+				!event.button ) {
+				return this._mouseUp( event );
+
+				// Iframe mouseup check - mouseup occurred in another document
+>>>>>>> fb785cbb (Initial commit)
 			} else if ( !event.which ) {
 
 				// Support: Safari <=8 - 9
 				// Safari sets which to 0 if you press any of the following keys
 				// during a drag (#14461)
 				if ( event.originalEvent.altKey || event.originalEvent.ctrlKey ||
+<<<<<<< HEAD
 						event.originalEvent.metaKey || event.originalEvent.shiftKey ) {
+=======
+					event.originalEvent.metaKey || event.originalEvent.shiftKey ) {
+>>>>>>> fb785cbb (Initial commit)
 					this.ignoreMissingWhich = true;
 				} else if ( !this.ignoreMissingWhich ) {
 					return this._mouseUp( event );

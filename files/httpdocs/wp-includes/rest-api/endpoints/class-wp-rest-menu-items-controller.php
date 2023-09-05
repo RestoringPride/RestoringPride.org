@@ -17,7 +17,11 @@
 class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 
 	/**
+<<<<<<< HEAD
 	 * Gets the nav menu item, if the ID is valid.
+=======
+	 * Get the nav menu item, if the ID is valid.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.9.0
 	 *
@@ -107,6 +111,10 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	 * @since 5.9.0
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
+<<<<<<< HEAD
+=======
+	 *
+>>>>>>> fb785cbb (Initial commit)
 	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
 	 */
 	public function create_item( $request ) {
@@ -198,6 +206,10 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	 * @since 5.9.0
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
+<<<<<<< HEAD
+=======
+	 *
+>>>>>>> fb785cbb (Initial commit)
 	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
 	 */
 	public function update_item( $request ) {
@@ -486,7 +498,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	 *
 	 * @since 5.9.0
 	 *
+<<<<<<< HEAD
 	 * @param WP_Post         $item    Post object.
+=======
+	 * @param WP_Post          $item   Post object.
+>>>>>>> fb785cbb (Initial commit)
 	 * @param WP_REST_Request $request Request object.
 	 * @return WP_REST_Response Response object.
 	 */
@@ -610,6 +626,7 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 		// Wrap the data in a response object.
 		$response = rest_ensure_response( $data );
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$links = $this->prepare_links( $item );
 			$response->add_links( $links );
@@ -622,6 +639,18 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 				foreach ( $actions as $rel ) {
 					$response->add_link( $rel, $self );
 				}
+=======
+		$links = $this->prepare_links( $item );
+		$response->add_links( $links );
+
+		if ( ! empty( $links['self']['href'] ) ) {
+			$actions = $this->get_available_actions( $item, $request );
+
+			$self = $links['self']['href'];
+
+			foreach ( $actions as $rel ) {
+				$response->add_link( $rel, $self );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 
@@ -676,7 +705,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Retrieves Link Description Objects that should be added to the Schema for the posts collection.
+=======
+	 * Retrieve Link Description Objects that should be added to the Schema for the posts collection.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 5.9.0
 	 *
@@ -745,7 +778,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 		);
 
 		$schema['properties']['type_label'] = array(
+<<<<<<< HEAD
 			'description' => __( 'The singular label used to describe this type of menu item.' ),
+=======
+			'description' => __( 'Name of type.' ),
+>>>>>>> fb785cbb (Initial commit)
 			'type'        => 'string',
 			'context'     => array( 'view', 'edit', 'embed' ),
 			'readonly'    => true,
@@ -842,6 +879,16 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 			),
 		);
 
+<<<<<<< HEAD
+=======
+		$schema['properties']['type_label'] = array(
+			'description' => __( 'The singular label used to describe this type of menu item.' ),
+			'context'     => array( 'view', 'edit', 'embed' ),
+			'type'        => 'string',
+			'readonly'    => true,
+		);
+
+>>>>>>> fb785cbb (Initial commit)
 		$schema['properties']['url'] = array(
 			'description' => __( 'The URL to which this menu item points.' ),
 			'type'        => 'string',
@@ -853,7 +900,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 						return true;
 					}
 
+<<<<<<< HEAD
 					if ( sanitize_url( $url ) ) {
+=======
+					if ( esc_url_raw( $url ) ) {
+>>>>>>> fb785cbb (Initial commit)
 						return true;
 					}
 
@@ -991,8 +1042,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 			}
 		}
 
+<<<<<<< HEAD
 		$query_args['update_menu_item_cache'] = true;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return $query_args;
 	}
 

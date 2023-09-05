@@ -12,7 +12,11 @@
  */
 define( 'XMLRPC_REQUEST', true );
 
+<<<<<<< HEAD
 // Discard unneeded cookies sent by some browser-embedded clients.
+=======
+// Some browser-embedded clients send cookies. We don't want them.
+>>>>>>> fb785cbb (Initial commit)
 $_COOKIE = array();
 
 // $HTTP_RAW_POST_DATA was deprecated in PHP 5.6 and removed in PHP 7.0.
@@ -81,7 +85,11 @@ $post_default_title = '';
  * @param string $class The name of the XML-RPC server class.
  */
 $wp_xmlrpc_server_class = apply_filters( 'wp_xmlrpc_server_class', 'wp_xmlrpc_server' );
+<<<<<<< HEAD
 $wp_xmlrpc_server       = new $wp_xmlrpc_server_class();
+=======
+$wp_xmlrpc_server       = new $wp_xmlrpc_server_class;
+>>>>>>> fb785cbb (Initial commit)
 
 // Fire off the request.
 $wp_xmlrpc_server->serve_request();

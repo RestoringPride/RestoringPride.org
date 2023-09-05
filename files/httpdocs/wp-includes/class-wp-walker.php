@@ -11,7 +11,10 @@
  * @package WordPress
  * @abstract
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class Walker {
 	/**
 	 * What the class handles.

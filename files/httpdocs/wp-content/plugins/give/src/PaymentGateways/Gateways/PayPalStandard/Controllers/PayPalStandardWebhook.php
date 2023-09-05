@@ -36,7 +36,11 @@ class PayPalStandardWebhook
         $eventData = file_get_contents('php://input');
         $eventData = wp_parse_args($eventData);
 
+<<<<<<< HEAD
         if ( ! $this->webhookValidator->verifyEventSignature($eventData)) {
+=======
+        if (!$this->webhookValidator->verifyEventSignature($eventData)) {
+>>>>>>> fb785cbb (Initial commit)
             exit();
         }
 
@@ -45,12 +49,20 @@ class PayPalStandardWebhook
 
         // ipn verification can be disabled in GiveWP (<=2.15.0).
         // This check will prevent anonymous requests from editing donation, if ipn verification disabled.
+<<<<<<< HEAD
         if ( ! $this->verifyDonationId($donationId)) {
+=======
+        if (!$this->verifyDonationId($donationId)) {
+>>>>>>> fb785cbb (Initial commit)
             Log::error(
                 'PayPal Standard IPN Error',
                 [
                     'Message' => 'Donation id (from IPN) does not exist.',
+<<<<<<< HEAD
                     'Event Data' => $eventData,
+=======
+                    'Event Data' => $eventData
+>>>>>>> fb785cbb (Initial commit)
                 ]
             );
             exit();
@@ -73,7 +85,11 @@ class PayPalStandardWebhook
     /**
      * @since 2.19.0
      *
+<<<<<<< HEAD
      * @param int   $donationId
+=======
+     * @param int $donationId
+>>>>>>> fb785cbb (Initial commit)
      *
      * @param array $eventData
      */
@@ -125,8 +141,13 @@ class PayPalStandardWebhook
      * @since 2.19.0
      *
      * @param string $txnType
+<<<<<<< HEAD
      * @param array  $eventData
      * @param int    $donationId
+=======
+     * @param array $eventData
+     * @param int $donationId
+>>>>>>> fb785cbb (Initial commit)
      *
      * @return void
      */
@@ -140,8 +161,14 @@ class PayPalStandardWebhook
              *
              * @since 1.0
              *
+<<<<<<< HEAD
              * @param array $eventData  Encoded data.
              * @param int   $donationId donation id.
+=======
+             * @param int $donationId donation id.
+             *
+             * @param array $eventData Encoded data.
+>>>>>>> fb785cbb (Initial commit)
              */
             do_action("give_paypal_{$txnType}", $eventData, $donationId);
         } else {
@@ -152,8 +179,14 @@ class PayPalStandardWebhook
              *
              * @since 1.0
              *
+<<<<<<< HEAD
              * @param array $eventData  Encoded data.
              * @param int   $donationId donation id.
+=======
+             * @param int $donationId donation id.
+             *
+             * @param array $eventData Encoded data.
+>>>>>>> fb785cbb (Initial commit)
              */
             do_action('give_paypal_web_accept', $eventData, $donationId);
         }

@@ -227,7 +227,11 @@ class WP_REST_Response extends WP_HTTP_Response {
 			return null;
 		}
 
+<<<<<<< HEAD
 		$error = new WP_Error();
+=======
+		$error = new WP_Error;
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( is_array( $this->get_data() ) ) {
 			$data = $this->get_data();

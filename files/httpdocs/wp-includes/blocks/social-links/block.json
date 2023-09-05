@@ -56,6 +56,7 @@
 				"type": "flex"
 			}
 		},
+<<<<<<< HEAD
 		"color": {
 			"enableContrastChecker": false,
 			"background": true,
@@ -69,6 +70,11 @@
 			"blockGap": [ "horizontal", "vertical" ],
 			"margin": true,
 			"padding": true,
+=======
+		"spacing": {
+			"blockGap": [ "horizontal", "vertical" ],
+			"margin": [ "top", "bottom" ],
+>>>>>>> fb785cbb (Initial commit)
 			"units": [ "px", "em", "rem", "vh", "vw" ],
 			"__experimentalDefaultControls": {
 				"blockGap": true

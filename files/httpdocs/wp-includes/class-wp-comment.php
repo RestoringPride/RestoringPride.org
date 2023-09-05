@@ -12,7 +12,10 @@
  *
  * @since 4.4.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 final class WP_Comment {
 
 	/**

@@ -6,7 +6,10 @@
  * @since 4.9.0
  */
 if ( ! class_exists( 'Plural_Forms', false ) ) :
+<<<<<<< HEAD
 	#[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 	class Plural_Forms {
 		/**
 		 * Operator characters.

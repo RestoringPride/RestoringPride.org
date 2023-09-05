@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Menu 1.13.2
+=======
+ * jQuery UI Menu 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -35,7 +39,11 @@
 "use strict";
 
 return $.widget( "ui.menu", {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	defaultElement: "<ul>",
 	delay: 300,
 	options: {
@@ -95,7 +103,11 @@ return $.widget( "ui.menu", {
 					if ( target.has( ".ui-menu" ).length ) {
 						this.expand( event );
 					} else if ( !this.element.is( ":focus" ) &&
+<<<<<<< HEAD
 							active.closest( ".ui-menu" ).length ) {
+=======
+						active.closest( ".ui-menu" ).length ) {
+>>>>>>> fb785cbb (Initial commit)
 
 						// Redirect focus to the menu
 						this.element.trigger( "focus", [ true ] );
@@ -162,7 +174,11 @@ return $.widget( "ui.menu", {
 
 		// If the mouse didn't actually move, but the page was scrolled, ignore the event (#9356)
 		if ( event.clientX === this.lastMousePosition.x &&
+<<<<<<< HEAD
 				event.clientY === this.lastMousePosition.y ) {
+=======
+			event.clientY === this.lastMousePosition.y ) {
+>>>>>>> fb785cbb (Initial commit)
 			return;
 		}
 
@@ -202,10 +218,17 @@ return $.widget( "ui.menu", {
 		this.element
 			.removeAttr( "aria-activedescendant" )
 			.find( ".ui-menu" ).addBack()
+<<<<<<< HEAD
 				.removeAttr( "role aria-labelledby aria-expanded aria-hidden aria-disabled " +
 					"tabIndex" )
 				.removeUniqueId()
 				.show();
+=======
+			.removeAttr( "role aria-labelledby aria-expanded aria-hidden aria-disabled " +
+				"tabIndex" )
+			.removeUniqueId()
+			.show();
+>>>>>>> fb785cbb (Initial commit)
 
 		submenus.children().each( function() {
 			var elem = $( this );
@@ -220,6 +243,7 @@ return $.widget( "ui.menu", {
 			preventDefault = true;
 
 		switch ( event.keyCode ) {
+<<<<<<< HEAD
 		case $.ui.keyCode.PAGE_UP:
 			this.previousPage( event );
 			break;
@@ -291,6 +315,79 @@ return $.widget( "ui.menu", {
 			} else {
 				delete this.previousFilter;
 			}
+=======
+			case $.ui.keyCode.PAGE_UP:
+				this.previousPage( event );
+				break;
+			case $.ui.keyCode.PAGE_DOWN:
+				this.nextPage( event );
+				break;
+			case $.ui.keyCode.HOME:
+				this._move( "first", "first", event );
+				break;
+			case $.ui.keyCode.END:
+				this._move( "last", "last", event );
+				break;
+			case $.ui.keyCode.UP:
+				this.previous( event );
+				break;
+			case $.ui.keyCode.DOWN:
+				this.next( event );
+				break;
+			case $.ui.keyCode.LEFT:
+				this.collapse( event );
+				break;
+			case $.ui.keyCode.RIGHT:
+				if ( this.active && !this.active.is( ".ui-state-disabled" ) ) {
+					this.expand( event );
+				}
+				break;
+			case $.ui.keyCode.ENTER:
+			case $.ui.keyCode.SPACE:
+				this._activate( event );
+				break;
+			case $.ui.keyCode.ESCAPE:
+				this.collapse( event );
+				break;
+			default:
+				preventDefault = false;
+				prev = this.previousFilter || "";
+				skip = false;
+
+				// Support number pad values
+				character = event.keyCode >= 96 && event.keyCode <= 105 ?
+					( event.keyCode - 96 ).toString() : String.fromCharCode( event.keyCode );
+
+				clearTimeout( this.filterTimer );
+
+				if ( character === prev ) {
+					skip = true;
+				} else {
+					character = prev + character;
+				}
+
+				match = this._filterMenuItems( character );
+				match = skip && match.index( this.active.next() ) !== -1 ?
+					this.active.nextAll( ".ui-menu-item" ) :
+					match;
+
+				// If no matches on the current filter, reset to the last character pressed
+				// to move down the menu to the first item that starts with that character
+				if ( !match.length ) {
+					character = String.fromCharCode( event.keyCode );
+					match = this._filterMenuItems( character );
+				}
+
+				if ( match.length ) {
+					this.focus( event, match );
+					this.previousFilter = character;
+					this.filterTimer = this._delay( function() {
+						delete this.previousFilter;
+					}, 1000 );
+				} else {
+					delete this.previousFilter;
+				}
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		if ( preventDefault ) {
@@ -353,11 +450,19 @@ return $.widget( "ui.menu", {
 		newItems = items.not( ".ui-menu-item, .ui-menu-divider" );
 		newWrappers = newItems.children()
 			.not( ".ui-menu" )
+<<<<<<< HEAD
 				.uniqueId()
 				.attr( {
 					tabIndex: -1,
 					role: this._itemRole()
 				} );
+=======
+			.uniqueId()
+			.attr( {
+				tabIndex: -1,
+				role: this._itemRole()
+			} );
+>>>>>>> fb785cbb (Initial commit)
 		this._addClass( newItems, "ui-menu-item" )
 			._addClass( newWrappers, "ui-menu-item-wrapper" );
 
@@ -413,8 +518,13 @@ return $.widget( "ui.menu", {
 		// Highlight active parent menu item, if any
 		activeParent = this.active
 			.parent()
+<<<<<<< HEAD
 				.closest( ".ui-menu-item" )
 					.children( ".ui-menu-item-wrapper" );
+=======
+			.closest( ".ui-menu-item" )
+			.children( ".ui-menu-item-wrapper" );
+>>>>>>> fb785cbb (Initial commit)
 		this._addClass( activeParent, null, "ui-state-active" );
 
 		if ( event && event.type === "keydown" ) {
@@ -695,6 +805,7 @@ return $.widget( "ui.menu", {
 		return this.activeMenu
 			.find( this.options.items )
 
+<<<<<<< HEAD
 				// Only match on items, not dividers or other content (#10571)
 				.filter( ".ui-menu-item" )
 					.filter( function() {
@@ -702,6 +813,15 @@ return $.widget( "ui.menu", {
 							String.prototype.trim.call(
 								$( this ).children( ".ui-menu-item-wrapper" ).text() ) );
 					} );
+=======
+			// Only match on items, not dividers or other content (#10571)
+			.filter( ".ui-menu-item" )
+			.filter( function() {
+				return regex.test(
+					String.prototype.trim.call(
+						$( this ).children( ".ui-menu-item-wrapper" ).text() ) );
+			} );
+>>>>>>> fb785cbb (Initial commit)
 	}
 } );
 

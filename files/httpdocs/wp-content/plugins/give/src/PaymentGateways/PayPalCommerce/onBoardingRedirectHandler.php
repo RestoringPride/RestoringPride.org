@@ -3,8 +3,11 @@
 namespace Give\PaymentGateways\PayPalCommerce;
 
 use Exception;
+<<<<<<< HEAD
 use Give\Framework\Exceptions\Primitives\Exception as GiveException;
 use Give\Log\Log;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\PaymentGateways\PayPalCommerce\Models\MerchantDetail;
 use Give\PaymentGateways\PayPalCommerce\Repositories\MerchantDetails;
 use Give\PaymentGateways\PayPalCommerce\Repositories\PayPalAuth;
@@ -96,7 +99,10 @@ class onBoardingRedirectHandler
     /**
      * Save PayPal merchant details
      *
+<<<<<<< HEAD
      * @since 2.25.0 Handle exception.
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.9.0
      *
      * @return MerchantDetail
@@ -114,6 +120,7 @@ class onBoardingRedirectHandler
 
         $payPalAccount = array_intersect_key($paypalGetData, array_flip($allowedPayPalData));
 
+<<<<<<< HEAD
         if (! array_key_exists('merchantIdInPayPal', $payPalAccount) || empty($payPalAccount['merchantIdInPayPal'])) {
             $errors[] = [
                 'type' => 'url',
@@ -121,6 +128,15 @@ class onBoardingRedirectHandler
                     'There was a problem with PayPal return url and we could not find valid merchant ID. Paypal return URL is:',
                     'give'
                 ) . "\n",
+=======
+        if ( ! array_key_exists('merchantIdInPayPal', $payPalAccount) || empty($payPalAccount['merchantIdInPayPal'])) {
+            $errors[] = [
+                'type' => 'url',
+                'message' => esc_html__(
+                                 'There was a problem with PayPal return url and we could not find valid merchant ID. Paypal return URL is:',
+                                 'give'
+                             ) . "\n",
+>>>>>>> fb785cbb (Initial commit)
                 'value' => urlencode($_SERVER['QUERY_STRING']),
             ];
 
@@ -133,6 +149,7 @@ class onBoardingRedirectHandler
         );
         $this->didWeGetValidSellerRestApiCredentials($restApiCredentials);
 
+<<<<<<< HEAD
         try {
             $tokenInfo = $this->payPalAuth->getTokenFromClientCredentials(
                 $restApiCredentials['client_id'],
@@ -156,6 +173,13 @@ class onBoardingRedirectHandler
             $this->merchantRepository->saveAccountErrors($errors);
             $this->redirectWhenOnBoardingFail();
         }
+=======
+        $tokenInfo = $this->payPalAuth->getTokenFromClientCredentials(
+            $restApiCredentials['client_id'],
+            $restApiCredentials['client_secret']
+        );
+        $this->settings->updateAccessToken($tokenInfo);
+>>>>>>> fb785cbb (Initial commit)
 
         $payPalAccount['clientId'] = $restApiCredentials['client_id'];
         $payPalAccount['clientSecret'] = $restApiCredentials['client_secret'];
@@ -167,10 +191,13 @@ class onBoardingRedirectHandler
         $merchantDetails = MerchantDetail::fromArray($payPalAccount);
         $this->merchantRepository->save($merchantDetails);
 
+<<<<<<< HEAD
         // Preserve the seller access token.
         // This is required to get the merchant rest api credentials.
         $this->settings->updateSellerAccessToken($this->settings->getAccessToken());
 
+=======
+>>>>>>> fb785cbb (Initial commit)
         $this->deleteTempOptions();
 
         return $merchantDetails;
@@ -203,7 +230,11 @@ class onBoardingRedirectHandler
      */
     private function setUpWebhook(MerchantDetail $merchant_details)
     {
+<<<<<<< HEAD
         if (! is_ssl()) {
+=======
+        if ( ! is_ssl()) {
+>>>>>>> fb785cbb (Initial commit)
             return;
         }
 
@@ -280,9 +311,15 @@ class onBoardingRedirectHandler
     private function isPayPalAccountDetailsSaved()
     {
         return isset($_GET['paypal-commerce-account-connected']) && Give_Admin_Settings::is_setting_page(
+<<<<<<< HEAD
             'gateways',
             'paypal'
         );
+=======
+                'gateways',
+                'paypal'
+            );
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -353,7 +390,11 @@ class onBoardingRedirectHandler
      *
      * @param string $merchantId
      * @param string $accessToken
+<<<<<<< HEAD
      * @param bool $usesCustomPayments
+=======
+     * @param bool   $usesCustomPayments
+>>>>>>> fb785cbb (Initial commit)
      *
      * @return true|string[]
      */
@@ -367,7 +408,11 @@ class onBoardingRedirectHandler
             'value' => wp_json_encode($onBoardedData),
         ];
 
+<<<<<<< HEAD
         if (! is_ssl()) {
+=======
+        if ( ! is_ssl()) {
+>>>>>>> fb785cbb (Initial commit)
             $errorMessages[] = esc_html__(
                 'A valid SSL certificate is required to accept donations and set up your PayPal account. Once a
 					certificate is installed and the site is using https, please disconnect and reconnect your account.',
@@ -385,6 +430,7 @@ class onBoardingRedirectHandler
             return $errorMessages;
         }
 
+<<<<<<< HEAD
         if (! $onBoardedData['payments_receivable']) {
             $errorMessages[] = esc_html__('Set up an account to receive payment from PayPal', 'give');
         }
@@ -394,6 +440,17 @@ class onBoardingRedirectHandler
         }
 
         if (! $usesCustomPayments) {
+=======
+        if ( ! $onBoardedData['payments_receivable']) {
+            $errorMessages[] = esc_html__('Set up an account to receive payment from PayPal', 'give');
+        }
+
+        if ( ! $onBoardedData['primary_email_confirmed']) {
+            $errorMessage[] = esc_html__('Confirm your primary email address', 'give');
+        }
+
+        if ( ! $usesCustomPayments) {
+>>>>>>> fb785cbb (Initial commit)
             return count($errorMessages) > 1 ? $errorMessages : true;
         }
 
@@ -430,11 +487,19 @@ class onBoardingRedirectHandler
             }
         }
 
+<<<<<<< HEAD
         if (! empty($invalidCapabilities)) {
             $errorMessages[] = esc_html__(
                 'Reach out to PayPal to resolve the following capabilities:',
                 'give'
             ) . ' ' . implode(', ', $invalidCapabilities);
+=======
+        if ( ! empty($invalidCapabilities)) {
+            $errorMessages[] = esc_html__(
+                                   'Reach out to PayPal to resolve the following capabilities:',
+                                   'give'
+                               ) . ' ' . implode(', ', $invalidCapabilities);
+>>>>>>> fb785cbb (Initial commit)
         }
 
         // If there were errors then redirect the user with notices

@@ -15,11 +15,14 @@ class Yoast_Admin_And_Dashboard_Conditional implements Conditional {
 	public function is_met() {
 		global $pagenow;
 
+<<<<<<< HEAD
 		// Bail out early if we're not on the front-end.
 		if ( ! \is_admin() ) {
 			return false;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		// Do not output on plugin / theme upgrade pages or when WordPress is upgrading.
 		if ( ( \defined( 'IFRAME_REQUEST' ) && \IFRAME_REQUEST ) || $this->on_upgrade_page() || \wp_installing() ) {
 			return false;

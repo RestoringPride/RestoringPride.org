@@ -20,7 +20,11 @@ if ( empty( $_REQUEST['tag_ID'] ) ) {
 		$sendback = add_query_arg( 'post_type', get_current_screen()->post_type, $sendback );
 	}
 
+<<<<<<< HEAD
 	wp_redirect( sanitize_url( $sendback ) );
+=======
+	wp_redirect( esc_url_raw( $sendback ) );
+>>>>>>> fb785cbb (Initial commit)
 	exit;
 }
 

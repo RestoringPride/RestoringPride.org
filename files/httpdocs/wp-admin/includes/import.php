@@ -7,7 +7,11 @@
  */
 
 /**
+<<<<<<< HEAD
  * Retrieves the list of importers.
+=======
+ * Retrieve list of importers.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
@@ -23,7 +27,11 @@ function get_importers() {
 }
 
 /**
+<<<<<<< HEAD
  * Sorts a multidimensional array by first member of each top level member.
+=======
+ * Sorts a multidimensional array by first member of each top level member
+>>>>>>> fb785cbb (Initial commit)
  *
  * Used by uasort() as a callback, should not be used directly.
  *
@@ -39,7 +47,11 @@ function _usort_by_first_member( $a, $b ) {
 }
 
 /**
+<<<<<<< HEAD
  * Registers importer for WordPress.
+=======
+ * Register importer for WordPress.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
@@ -73,11 +85,19 @@ function wp_import_cleanup( $id ) {
 }
 
 /**
+<<<<<<< HEAD
  * Handles importer uploading and adds attachment.
  *
  * @since 2.0.0
  *
  * @return array Uploaded file's details on success, error message on failure.
+=======
+ * Handle importer uploading and add attachment.
+ *
+ * @since 2.0.0
+ *
+ * @return array Uploaded file's details on success, error message on failure
+>>>>>>> fb785cbb (Initial commit)
  */
 function wp_import_handle_upload() {
 	if ( ! isset( $_FILES['import'] ) ) {

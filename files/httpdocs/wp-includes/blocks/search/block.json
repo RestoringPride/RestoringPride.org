@@ -38,15 +38,21 @@
 		"buttonUseIcon": {
 			"type": "boolean",
 			"default": false
+<<<<<<< HEAD
 		},
 		"query": {
 			"type": "object",
 			"default": {}
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"supports": {
 		"align": [ "left", "center", "right" ],
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"color": {
 			"gradients": true,
 			"__experimentalSkipSerialization": true,
@@ -55,6 +61,7 @@
 				"text": true
 			}
 		},
+<<<<<<< HEAD
 		"typography": {
 			"__experimentalSkipSerialization": true,
 			"__experimentalSelector": ".wp-block-search__label, .wp-block-search__input, .wp-block-search__button",
@@ -70,6 +77,8 @@
 				"fontSize": true
 			}
 		},
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"__experimentalBorder": {
 			"color": true,
 			"radius": true,

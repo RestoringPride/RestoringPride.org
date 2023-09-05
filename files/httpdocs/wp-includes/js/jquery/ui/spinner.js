@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * jQuery UI Spinner 1.13.2
+=======
+ * jQuery UI Spinner 1.13.1
+>>>>>>> fb785cbb (Initial commit)
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -47,7 +51,11 @@ function spinnerModifier( fn ) {
 }
 
 $.widget( "ui.spinner", {
+<<<<<<< HEAD
 	version: "1.13.2",
+=======
+	version: "1.13.1",
+>>>>>>> fb785cbb (Initial commit)
 	defaultElement: "<input>",
 	widgetEventPrefix: "spin",
 	options: {
@@ -234,10 +242,17 @@ $.widget( "ui.spinner", {
 			.wrap( "<span>" )
 			.parent()
 
+<<<<<<< HEAD
 				// Add buttons
 				.append(
 					"<a></a><a></a>"
 				);
+=======
+			// Add buttons
+			.append(
+				"<a></a><a></a>"
+			);
+>>>>>>> fb785cbb (Initial commit)
 	},
 
 	_draw: function() {
@@ -275,7 +290,11 @@ $.widget( "ui.spinner", {
 		// IE 6 doesn't understand height: 50% for the buttons
 		// unless the wrapper has an explicit height
 		if ( this.buttons.height() > Math.ceil( this.uiSpinner.height() * 0.5 ) &&
+<<<<<<< HEAD
 				this.uiSpinner.height() > 0 ) {
+=======
+			this.uiSpinner.height() > 0 ) {
+>>>>>>> fb785cbb (Initial commit)
 			this.uiSpinner.height( this.uiSpinner.height() );
 		}
 	},
@@ -285,6 +304,7 @@ $.widget( "ui.spinner", {
 			keyCode = $.ui.keyCode;
 
 		switch ( event.keyCode ) {
+<<<<<<< HEAD
 		case keyCode.UP:
 			this._repeat( null, 1, event );
 			return true;
@@ -297,6 +317,20 @@ $.widget( "ui.spinner", {
 		case keyCode.PAGE_DOWN:
 			this._repeat( null, -options.page, event );
 			return true;
+=======
+			case keyCode.UP:
+				this._repeat( null, 1, event );
+				return true;
+			case keyCode.DOWN:
+				this._repeat( null, -1, event );
+				return true;
+			case keyCode.PAGE_UP:
+				this._repeat( null, options.page, event );
+				return true;
+			case keyCode.PAGE_DOWN:
+				this._repeat( null, -options.page, event );
+				return true;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return false;
@@ -561,8 +595,13 @@ if ( $.uiBackCompat !== false ) {
 				.wrap( this._uiSpinnerHtml() )
 				.parent()
 
+<<<<<<< HEAD
 					// Add buttons
 					.append( this._buttonHtml() );
+=======
+				// Add buttons
+				.append( this._buttonHtml() );
+>>>>>>> fb785cbb (Initial commit)
 		},
 		_uiSpinnerHtml: function() {
 			return "<span>";

@@ -7,7 +7,11 @@
 	'use strict';
 
 	/**
+<<<<<<< HEAD
 	 * Initialize the WP_API.
+=======
+	 * Initialise the WP_API.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function WP_API() {
 		/** @namespace wp.api.models */

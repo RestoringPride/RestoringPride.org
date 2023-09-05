@@ -10,7 +10,11 @@ use ReflectionException;
  * Class ValueObject
  * @package Give\Log\ValueObjects
  *
+<<<<<<< HEAD
  * @since   2.10.0
+=======
+ * @since 2.10.0
+>>>>>>> fb785cbb (Initial commit)
  */
 abstract class Enum implements EnumInterface
 {
@@ -24,7 +28,11 @@ abstract class Enum implements EnumInterface
      *
      * @param mixed $value
      */
+<<<<<<< HEAD
     final public function __construct($value)
+=======
+    public function __construct($value)
+>>>>>>> fb785cbb (Initial commit)
     {
         if ($value instanceof static) {
             $value = $value->getValue();

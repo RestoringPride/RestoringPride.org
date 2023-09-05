@@ -61,8 +61,13 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+<<<<<<< HEAD
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/network-admin-settings-screen/">Documentation on Network Settings</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+=======
+	'<p>' . __( '<a href="https://wordpress.org/support/article/network-admin-settings-screen/">Documentation on Network Settings</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://wordpress.org/support/">Support</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 );
 
 if ( $_POST ) {
@@ -100,6 +105,10 @@ if ( $_POST ) {
 		'welcome_email',
 		'welcome_user_email',
 		'fileupload_maxk',
+<<<<<<< HEAD
+=======
+		'global_terms_enabled',
+>>>>>>> fb785cbb (Initial commit)
 		'illegal_names',
 		'limited_email_domains',
 		'banned_email_domains',
@@ -138,7 +147,11 @@ if ( $_POST ) {
 require_once ABSPATH . 'wp-admin/admin-header.php';
 
 if ( isset( $_GET['updated'] ) ) {
+<<<<<<< HEAD
 	?><div id="message" class="notice notice-success is-dismissible"><p><?php _e( 'Settings saved.' ); ?></p></div>
+=======
+	?><div id="message" class="updated notice is-dismissible"><p><?php _e( 'Settings saved.' ); ?></p></div>
+>>>>>>> fb785cbb (Initial commit)
 	<?php
 }
 ?>
@@ -167,7 +180,11 @@ if ( isset( $_GET['updated'] ) ) {
 					$new_admin_email = get_site_option( 'new_admin_email' );
 					if ( $new_admin_email && get_site_option( 'admin_email' ) !== $new_admin_email ) :
 						?>
+<<<<<<< HEAD
 						<div class="notice notice-warning is-dismissible inline">
+=======
+						<div class="updated inline">
+>>>>>>> fb785cbb (Initial commit)
 						<p>
 						<?php
 							printf(
@@ -199,12 +216,16 @@ if ( isset( $_GET['updated'] ) ) {
 				?>
 				<td>
 					<fieldset>
+<<<<<<< HEAD
 					<legend class="screen-reader-text">
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'New registrations settings' );
 						?>
 					</legend>
+=======
+					<legend class="screen-reader-text"><?php _e( 'New registrations settings' ); ?></legend>
+>>>>>>> fb785cbb (Initial commit)
 					<label><input name="registration" type="radio" id="registration1" value="none"<?php checked( $reg, 'none' ); ?> /> <?php _e( 'Registration is disabled' ); ?></label><br />
 					<label><input name="registration" type="radio" id="registration2" value="user"<?php checked( $reg, 'user' ); ?> /> <?php _e( 'User accounts may be registered' ); ?></label><br />
 					<label><input name="registration" type="radio" id="registration3" value="blog"<?php checked( $reg, 'blog' ); ?> /> <?php _e( 'Logged in users may register new sites' ); ?></label><br />
@@ -405,10 +426,14 @@ if ( isset( $_GET['updated'] ) ) {
 						?>
 					</label><br />
 					<p class="screen-reader-text" id="blog-upload-space-desc">
+<<<<<<< HEAD
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'Size in megabytes' );
 						?>
+=======
+						<?php _e( 'Size in megabytes' ); ?>
+>>>>>>> fb785cbb (Initial commit)
 					</p>
 				</td>
 			</tr>
@@ -434,10 +459,14 @@ if ( isset( $_GET['updated'] ) ) {
 						);
 						?>
 					<p class="screen-reader-text" id="fileupload-maxk-desc">
+<<<<<<< HEAD
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'Size in kilobytes' );
 						?>
+=======
+						<?php _e( 'Size in kilobytes' ); ?>
+>>>>>>> fb785cbb (Initial commit)
 					</p>
 				</td>
 			</tr>
@@ -504,10 +533,14 @@ if ( isset( $_GET['updated'] ) ) {
 					<th scope="row"><?php _e( 'Enable administration menus' ); ?></th>
 					<td>
 						<?php
+<<<<<<< HEAD
 						echo '<fieldset><legend class="screen-reader-text">' .
 							/* translators: Hidden accessibility text. */
 							__( 'Enable menus' ) .
 						'</legend>';
+=======
+						echo '<fieldset><legend class="screen-reader-text">' . __( 'Enable menus' ) . '</legend>';
+>>>>>>> fb785cbb (Initial commit)
 
 						foreach ( (array) $menu_items as $key => $val ) {
 							echo "<label><input type='checkbox' name='menu_items[" . $key . "]' value='1'" . ( isset( $menu_perms[ $key ] ) ? checked( $menu_perms[ $key ], '1', false ) : '' ) . ' /> ' . esc_html( $val ) . '</label><br/>';

@@ -22,6 +22,7 @@ function render_block_core_post_comments_form( $attributes, $content, $block ) {
 		return;
 	}
 
+<<<<<<< HEAD
 	$classes = array( 'comment-respond' ); // See comment further below.
 	if ( isset( $attributes['textAlign'] ) ) {
 		$classes[] = 'has-text-align-' . $attributes['textAlign'];
@@ -30,6 +31,14 @@ function render_block_core_post_comments_form( $attributes, $content, $block ) {
 		$classes[] = 'has-link-color';
 	}
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) );
+=======
+	$classes = 'comment-respond'; // See comment further below.
+	if ( isset( $attributes['textAlign'] ) ) {
+		$classes .= ' has-text-align-' . $attributes['textAlign'];
+	}
+
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classes ) );
+>>>>>>> fb785cbb (Initial commit)
 
 	add_filter( 'comment_form_defaults', 'post_comments_form_block_form_defaults' );
 
@@ -74,7 +83,11 @@ add_action( 'init', 'register_block_core_post_comments_form' );
  */
 function post_comments_form_block_form_defaults( $fields ) {
 	if ( wp_is_block_theme() ) {
+<<<<<<< HEAD
 		$fields['submit_button'] = '<input name="%1$s" type="submit" id="%2$s" class="wp-block-button__link ' . wp_theme_get_element_class_name( 'button' ) . '" value="%4$s" />';
+=======
+		$fields['submit_button'] = '<input name="%1$s" type="submit" id="%2$s" class="%3$s wp-block-button__link" value="%4$s" />';
+>>>>>>> fb785cbb (Initial commit)
 		$fields['submit_field']  = '<p class="form-submit wp-block-button">%1$s %2$s</p>';
 	}
 

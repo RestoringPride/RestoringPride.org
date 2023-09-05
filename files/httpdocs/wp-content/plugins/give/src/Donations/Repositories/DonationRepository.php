@@ -2,11 +2,18 @@
 
 namespace Give\Donations\Repositories;
 
+<<<<<<< HEAD
+=======
+use DateTimeInterface;
+>>>>>>> fb785cbb (Initial commit)
 use Give\Donations\Actions\GeneratePurchaseKey;
 use Give\Donations\Models\Donation;
 use Give\Donations\ValueObjects\DonationMetaKeys;
 use Give\Donations\ValueObjects\DonationMode;
+<<<<<<< HEAD
 use Give\Donations\ValueObjects\DonationStatus;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\Database\DB;
 use Give\Framework\Exceptions\Primitives\Exception;
 use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
@@ -48,7 +55,10 @@ class DonationRepository
         'amount',
         'donorId',
         'firstName',
+<<<<<<< HEAD
         'type',
+=======
+>>>>>>> fb785cbb (Initial commit)
         'email',
     ];
 
@@ -77,8 +87,14 @@ class DonationRepository
 
     /**
      * @since 2.21.0
+<<<<<<< HEAD
      */
     public function queryByGatewayTransactionId($gatewayTransactionId): ModelQueryBuilder
+=======
+     * @return ModelQueryBuilder
+     */
+    public function queryByGatewayTransactionId($gatewayTransactionId)
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->prepareQuery()
             ->where('post_type', 'give_payment')
@@ -158,7 +174,11 @@ class DonationRepository
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.23.0 retrieve the post_parent instead of relying on parentId property
+=======
+     *
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.21.0 replace actions with givewp_donation_creating and givewp_donation_created
      * @since 2.20.0 mutate model and return void
      * @since 2.19.6
@@ -174,8 +194,11 @@ class DonationRepository
 
         $dateCreated = Temporal::withoutMicroseconds($donation->createdAt ?: Temporal::getCurrentDateTime());
         $dateCreatedFormatted = Temporal::getFormattedDateTime($dateCreated);
+<<<<<<< HEAD
         $dateUpdated = $donation->updatedAt ?? $dateCreated;
         $dateUpdatedFormatted = Temporal::getFormattedDateTime($dateUpdated);
+=======
+>>>>>>> fb785cbb (Initial commit)
 
         DB::query('START TRANSACTION');
 
@@ -184,11 +207,19 @@ class DonationRepository
                 ->insert([
                     'post_date' => $dateCreatedFormatted,
                     'post_date_gmt' => get_gmt_from_date($dateCreatedFormatted),
+<<<<<<< HEAD
                     'post_modified' => $dateUpdatedFormatted,
                     'post_modified_gmt' => get_gmt_from_date($dateUpdatedFormatted),
                     'post_status' => $this->getPersistedDonationStatus($donation)->getValue(),
                     'post_type' => 'give_payment',
                     'post_parent' => $this->deriveLegacyDonationParentId($donation),
+=======
+                    'post_modified' => $dateCreatedFormatted,
+                    'post_modified_gmt' => get_gmt_from_date($dateCreatedFormatted),
+                    'post_status' => $donation->status->getValue(),
+                    'post_type' => 'give_payment',
+                    'post_parent' => $donation->parentId ?? 0
+>>>>>>> fb785cbb (Initial commit)
                 ]);
 
             $donationId = DB::last_insert_id();
@@ -216,7 +247,14 @@ class DonationRepository
         $donation->id = $donationId;
 
         $donation->createdAt = $dateCreated;
+<<<<<<< HEAD
         $donation->updatedAt = $dateUpdated;
+=======
+
+        if (!isset($donation->updatedAt)) {
+            $donation->updatedAt = $donation->createdAt;
+        }
+>>>>>>> fb785cbb (Initial commit)
 
         if (!isset($donation->formTitle)) {
             $donation->formTitle = $this->getFormTitle($donation->formId);
@@ -230,8 +268,11 @@ class DonationRepository
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.23.1 Use give_update_meta() method to update entries on give_donationmeta table
      * @since 2.23.0 retrieve the post_parent instead of relying on parentId property
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.21.0 replace actions with givewp_donation_updating and givewp_donation_updated
      * @since 2.20.0 return void
      * @since 2.19.6
@@ -245,8 +286,12 @@ class DonationRepository
 
         Hooks::doAction('givewp_donation_updating', $donation);
 
+<<<<<<< HEAD
         $now = Temporal::withoutMicroseconds(Temporal::getCurrentDateTime());
         $nowFormatted = Temporal::getFormattedDateTime($now);
+=======
+        $date = Temporal::getCurrentFormattedDateForDatabase();
+>>>>>>> fb785cbb (Initial commit)
 
         DB::query('START TRANSACTION');
 
@@ -254,6 +299,7 @@ class DonationRepository
             DB::table('posts')
                 ->where('ID', $donation->id)
                 ->update([
+<<<<<<< HEAD
                     'post_modified' => $nowFormatted,
                     'post_modified_gmt' => get_gmt_from_date($nowFormatted),
                     'post_status' => $this->getPersistedDonationStatus($donation)->getValue(),
@@ -263,6 +309,22 @@ class DonationRepository
 
             foreach ($this->getCoreDonationMetaForDatabase($donation) as $metaKey => $metaValue) {
                 give()->payment_meta->update_meta($donation->id, $metaKey, $metaValue);
+=======
+                    'post_modified' => $date,
+                    'post_modified_gmt' => get_gmt_from_date($date),
+                    'post_status' => $donation->status->getValue(),
+                    'post_type' => 'give_payment',
+                    'post_parent' => $donation->parentId ?? 0
+                ]);
+
+            foreach ($this->getCoreDonationMetaForDatabase($donation) as $metaKey => $metaValue) {
+                DB::table('give_donationmeta')
+                    ->where('donation_id', $donation->id)
+                    ->where('meta_key', $metaKey)
+                    ->update([
+                        'meta_value' => $metaValue,
+                    ]);
+>>>>>>> fb785cbb (Initial commit)
             }
         } catch (Exception $exception) {
             DB::query('ROLLBACK');
@@ -272,8 +334,11 @@ class DonationRepository
             throw new $exception('Failed updating a donation');
         }
 
+<<<<<<< HEAD
         $donation->updatedAt = $now;
 
+=======
+>>>>>>> fb785cbb (Initial commit)
         DB::query('COMMIT');
 
         Hooks::doAction('givewp_donation_updated', $donation);
@@ -365,6 +430,7 @@ class DonationRepository
             $meta[DonationMetaKeys::SUBSCRIPTION_ID] = $donation->subscriptionId;
         }
 
+<<<<<<< HEAD
         if ( $donation->type->isSubscription()) {
             $meta[DonationMetaKeys::SUBSCRIPTION_INITIAL_DONATION] = 1;
             $meta[DonationMetaKeys::IS_RECURRING] = 1;
@@ -374,10 +440,58 @@ class DonationRepository
             $meta[DonationMetaKeys::COMPANY] = $donation->company;
         }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
         return $meta;
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * In Legacy terms, the Initial Donation acts as the parent ID for subscription renewals.
+     * This function inserts those specific meta columns that accompany this concept.
+     *
+     * @since 2.19.6
+     *
+     * @throws Exception
+     */
+    public function updateLegacyDonationMetaAsInitialSubscriptionDonation($donationId): bool
+    {
+        DB::query('START TRANSACTION');
+
+        try {
+            DB::table('give_donationmeta')
+                ->insert(
+                    [
+                        'donation_id' => $donationId,
+                        'meta_key' => '_give_subscription_payment',
+                        'meta_value' => true,
+                    ]
+                );
+
+            DB::table('give_donationmeta')
+                ->insert(
+                    [
+                        'donation_id' => $donationId,
+                        'meta_key' => '_give_is_donation_recurring',
+                        'meta_value' => true,
+                    ]
+                );
+        } catch (Exception $exception) {
+            DB::query('ROLLBACK');
+
+            Log::error('Failed updating a donation as initial legacy subscription donation', compact('donationId'));
+
+            throw new $exception('Failed updating a donation as initial legacy subscription donation');
+        }
+
+        DB::query('COMMIT');
+
+        return true;
+    }
+
+    /**
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.19.6
      *
      * @return int|null
@@ -396,6 +510,33 @@ class DonationRepository
     /**
      * @since 2.19.6
      *
+<<<<<<< HEAD
+=======
+     * @return object[]
+     */
+    public function getNotesByDonationId(int $id): array
+    {
+        $notes = DB::table('give_comments')
+            ->select(
+                ['comment_content', 'note'],
+                ['comment_date', 'date']
+            )
+            ->where('comment_parent', $id)
+            ->where('comment_type', 'donation')
+            ->orderBy('comment_date', 'DESC')
+            ->getAll();
+
+        if (!$notes) {
+            return [];
+        }
+
+        return $notes;
+    }
+
+    /**
+     * @since 2.19.6
+     *
+>>>>>>> fb785cbb (Initial commit)
      * @return void
      */
     private function validateDonation(Donation $donation)
@@ -406,6 +547,7 @@ class DonationRepository
             }
         }
 
+<<<<<<< HEAD
         if ( $donation->subscriptionId && $donation->type->isSingle()) {
             throw new InvalidArgumentException('Subscription ID can only be set for recurring donations.');
         }
@@ -414,12 +556,15 @@ class DonationRepository
             throw new InvalidArgumentException('Subscription ID is required for recurring donations.');
         }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
         if (!$donation->donor) {
             throw new InvalidArgumentException("Invalid donorId, Donor does not exist");
         }
     }
 
     /**
+<<<<<<< HEAD
      * Provides the donation status with consideration for the donation type. If a donation is a renewal type and its
      * status is "complete", then the status will return "renewal". In the future, "renewal" will no longer be a valid
      * status, at which point this function will be unnecessary.
@@ -437,6 +582,8 @@ class DonationRepository
     }
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.19.6
      */
     private function getDefaultDonationMode(): DonationMode
@@ -447,6 +594,7 @@ class DonationRepository
     }
 
     /**
+<<<<<<< HEAD
      * We're moving away from using the parent_id column for donations, but we still need to support it for now as
      * legacy code still relies on it. It is only stored and should never be used in the model.
      *
@@ -458,6 +606,8 @@ class DonationRepository
     }
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.19.6
      */
     public function getFormTitle(int $formId): string
@@ -474,8 +624,11 @@ class DonationRepository
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.23.0 no longer retrieve the post_parent from the database as parentId is deprecated
      *
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @return ModelQueryBuilder<Donation>
      */
     public function prepareQuery(): ModelQueryBuilder
@@ -487,7 +640,12 @@ class DonationRepository
                 ['ID', 'id'],
                 ['post_date', 'createdAt'],
                 ['post_modified', 'updatedAt'],
+<<<<<<< HEAD
                 ['post_status', 'status']
+=======
+                ['post_status', 'status'],
+                ['post_parent', 'parentId']
+>>>>>>> fb785cbb (Initial commit)
             )
             ->attachMeta(
                 'give_donationmeta',
@@ -503,7 +661,11 @@ class DonationRepository
      */
     public function getTotalDonationCountByDonorId(int $donorId): int
     {
+<<<<<<< HEAD
         return DB::table('posts')
+=======
+        return (int)DB::table('posts')
+>>>>>>> fb785cbb (Initial commit)
             ->where('post_type', 'give_payment')
             ->whereIn('ID', function (QueryBuilder $builder) use ($donorId) {
                 $builder
@@ -533,7 +695,10 @@ class DonationRepository
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.23.1 Fixed order by property, see https://github.com/impress-org/givewp/pull/6559
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.21.2
      *
      * @return Donation|null
@@ -541,12 +706,19 @@ class DonationRepository
     public function getFirstDonation() {
         return $this->prepareQuery()
             ->limit(1)
+<<<<<<< HEAD
             ->orderBy('post_date', 'ASC')
+=======
+            ->orderBy('post_date', 'DESC')
+>>>>>>> fb785cbb (Initial commit)
             ->get();
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.23.1 Fixed order by property, see https://github.com/impress-org/givewp/pull/6559
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.21.2
      *
      * @return Donation|null
@@ -554,7 +726,11 @@ class DonationRepository
     public function getLatestDonation() {
         return $this->prepareQuery()
             ->limit(1)
+<<<<<<< HEAD
             ->orderBy('post_date', 'DESC')
+=======
+            ->orderBy('post_date', 'ASC')
+>>>>>>> fb785cbb (Initial commit)
             ->get();
     }
 }

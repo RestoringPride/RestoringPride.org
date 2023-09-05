@@ -29,12 +29,16 @@
 	},
 	"supports": {
 		"align": true,
+<<<<<<< HEAD
 		"anchor": true,
 		"html": false,
 		"spacing": {
 			"margin": true,
 			"padding": true
 		}
+=======
+		"html": false
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-latest-comments-editor",
 	"style": "wp-block-latest-comments"

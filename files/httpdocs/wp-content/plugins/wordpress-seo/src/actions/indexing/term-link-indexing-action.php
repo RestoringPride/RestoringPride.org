@@ -73,7 +73,11 @@ class Term_Link_Indexing_Action extends Abstract_Link_Indexing_Action {
 	 * @return string The prepared query string.
 	 */
 	protected function get_count_query() {
+<<<<<<< HEAD
 		$public_taxonomies = $this->taxonomy_helper->get_indexable_taxonomies();
+=======
+		$public_taxonomies = $this->taxonomy_helper->get_public_taxonomies();
+>>>>>>> fb785cbb (Initial commit)
 		$placeholders      = \implode( ', ', \array_fill( 0, \count( $public_taxonomies ), '%s' ) );
 		$indexable_table   = Model::get_table_name( 'Indexable' );
 
@@ -100,10 +104,16 @@ class Term_Link_Indexing_Action extends Abstract_Link_Indexing_Action {
 	 * @return string The prepared query string.
 	 */
 	protected function get_select_query( $limit = false ) {
+<<<<<<< HEAD
 		$public_taxonomies = $this->taxonomy_helper->get_indexable_taxonomies();
 
 		$indexable_table = Model::get_table_name( 'Indexable' );
 		$replacements    = $public_taxonomies;
+=======
+		$public_taxonomies = $this->taxonomy_helper->get_public_taxonomies();
+		$indexable_table   = Model::get_table_name( 'Indexable' );
+		$replacements      = $public_taxonomies;
+>>>>>>> fb785cbb (Initial commit)
 
 		$limit_query = '';
 		if ( $limit ) {

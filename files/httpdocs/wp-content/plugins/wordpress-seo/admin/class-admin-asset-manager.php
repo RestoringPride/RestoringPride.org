@@ -236,6 +236,7 @@ class WPSEO_Admin_Asset_Manager {
 			'classic-editor',
 			'post-edit',
 			'help-scout-beacon',
+<<<<<<< HEAD
 			'redirect-old-features-tab',
 		];
 		$additional_dependencies = [
@@ -244,11 +245,20 @@ class WPSEO_Admin_Asset_Manager {
 			'dashboard-widget'         => [ self::PREFIX . 'api-client' ],
 			'editor-modules'           => [ 'jquery' ],
 			'elementor'                => [
+=======
+		];
+		$additional_dependencies = [
+			'analysis-worker'    => [ self::PREFIX . 'analysis-package' ],
+			'api-client'         => [ 'wp-api' ],
+			'dashboard-widget'   => [ self::PREFIX . 'api-client' ],
+			'elementor'          => [
+>>>>>>> fb785cbb (Initial commit)
 				self::PREFIX . 'api-client',
 				self::PREFIX . 'externals-components',
 				self::PREFIX . 'externals-contexts',
 				self::PREFIX . 'externals-redux',
 			],
+<<<<<<< HEAD
 			'indexables-page'          => [
 				self::PREFIX . 'api-client',
 				self::PREFIX . 'externals-components',
@@ -272,30 +282,57 @@ class WPSEO_Admin_Asset_Manager {
 				self::PREFIX . 'externals-redux',
 			],
 			'post-edit'                => [
+=======
+			'indexation'         => [
+				'jquery-ui-core',
+				'jquery-ui-progressbar',
+			],
+			'post-edit'          => [
+>>>>>>> fb785cbb (Initial commit)
 				self::PREFIX . 'api-client',
 				self::PREFIX . 'block-editor',
 				self::PREFIX . 'externals-components',
 				self::PREFIX . 'externals-contexts',
 				self::PREFIX . 'externals-redux',
+<<<<<<< HEAD
 			],
 			'reindex-links'            => [
 				'jquery-ui-core',
 				'jquery-ui-progressbar',
 			],
 			'settings'                 => [
+=======
+				self::PREFIX . 'select2',
+			],
+			'reindex-links'      => [
+				'jquery-ui-core',
+				'jquery-ui-progressbar',
+			],
+			'settings'           => [
+>>>>>>> fb785cbb (Initial commit)
 				'jquery-ui-core',
 				'jquery-ui-progressbar',
 				self::PREFIX . 'api-client',
 				self::PREFIX . 'externals-components',
 				self::PREFIX . 'externals-contexts',
 				self::PREFIX . 'externals-redux',
+<<<<<<< HEAD
 			],
 			'term-edit'                => [
+=======
+				self::PREFIX . 'select2',
+			],
+			'term-edit'          => [
+>>>>>>> fb785cbb (Initial commit)
 				self::PREFIX . 'api-client',
 				self::PREFIX . 'classic-editor',
 				self::PREFIX . 'externals-components',
 				self::PREFIX . 'externals-contexts',
 				self::PREFIX . 'externals-redux',
+<<<<<<< HEAD
+=======
+				self::PREFIX . 'select2',
+>>>>>>> fb785cbb (Initial commit)
 			],
 		];
 
@@ -327,12 +364,20 @@ class WPSEO_Admin_Asset_Manager {
 				'header_scripts'  => $header_scripts,
 			]
 		);
+<<<<<<< HEAD
+=======
+		$select2_scripts  = $this->load_select2_scripts();
+>>>>>>> fb785cbb (Initial commit)
 		$renamed_scripts  = $this->load_renamed_scripts();
 
 		$scripts = array_merge(
 			$plugin_scripts,
 			$external_scripts,
 			$language_scripts,
+<<<<<<< HEAD
+=======
+			$select2_scripts,
+>>>>>>> fb785cbb (Initial commit)
 			$renamed_scripts
 		);
 
@@ -391,6 +436,33 @@ class WPSEO_Admin_Asset_Manager {
 			'version' => $scripts['workouts']['version'],
 		];
 
+<<<<<<< HEAD
+=======
+		$scripts['first-time-configuration'] = [
+			'name'    => 'first-time-configuration',
+			'src'     => 'first-time-configuration.js',
+			'deps'    => [
+				'lodash',
+				'wp-api-fetch',
+				'wp-a11y',
+				'wp-components',
+				'wp-compose',
+				'wp-data',
+				'wp-dom-ready',
+				'wp-element',
+				'wp-i18n',
+				self::PREFIX . 'api-client',
+				self::PREFIX . 'externals-components',
+				self::PREFIX . 'externals-contexts',
+				self::PREFIX . 'externals-redux',
+				self::PREFIX . 'analysis',
+				self::PREFIX . 'react-select',
+				self::PREFIX . 'yoast-components',
+			],
+			'version' => $scripts['first-time-configuration']['version'],
+		];
+
+>>>>>>> fb785cbb (Initial commit)
 		// Add the current language to every script that requires the analysis package.
 		foreach ( $scripts as $name => $script ) {
 			if ( substr( $name, -8 ) === 'language' ) {
@@ -462,6 +534,63 @@ class WPSEO_Admin_Asset_Manager {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Loads the select2 scripts.
+	 *
+	 * @return array {
+	 *     The scripts to be registered.
+	 *
+	 *     @type string   $name      The name of the asset.
+	 *     @type string   $src       The src of the asset.
+	 *     @type string[] $deps      The dependenies of the asset.
+	 *     @type bool     $in_footer Whether or not the asset should be in the footer.
+	 * }
+	 */
+	protected function load_select2_scripts() {
+		$scripts          = [];
+		$select2_language = 'en';
+		$user_locale      = \get_user_locale();
+		$language         = WPSEO_Language_Utils::get_language( $user_locale );
+
+		if ( file_exists( WPSEO_PATH . "js/dist/select2/i18n/{$user_locale}.js" ) ) {
+			$select2_language = $user_locale; // Chinese and some others use full locale.
+		}
+		elseif ( file_exists( WPSEO_PATH . "js/dist/select2/i18n/{$language}.js" ) ) {
+			$select2_language = $language;
+		}
+
+		$scripts['select2']              = [
+			'name'    => 'select2',
+			'src'     => false,
+			'deps'    => [
+				self::PREFIX . 'select2-translations',
+				self::PREFIX . 'select2-core',
+			],
+		];
+		$scripts['select2-core']         = [
+			'name'    => 'select2-core',
+			'src'     => 'select2/select2.full.min.js',
+			'deps'    => [
+				'jquery',
+			],
+			'version' => '4.0.13',
+		];
+		$scripts['select2-translations'] = [
+			'name'    => 'select2-translations',
+			'src'     => 'select2/i18n/' . $select2_language . '.js',
+			'deps'    => [
+				'jquery',
+				self::PREFIX . 'select2-core',
+			],
+			'version' => '4.0.13',
+		];
+
+		return $scripts;
+	}
+
+	/**
+>>>>>>> fb785cbb (Initial commit)
 	 * Loads the scripts that should be renamed for BC.
 	 *
 	 * @return array {
@@ -537,10 +666,13 @@ class WPSEO_Admin_Asset_Manager {
 				'src'  => 'notifications-' . $flat_version,
 			],
 			[
+<<<<<<< HEAD
 				'name' => 'notifications-new',
 				'src'  => 'notifications-new-' . $flat_version,
 			],
 			[
+=======
+>>>>>>> fb785cbb (Initial commit)
 				'name' => 'alert',
 				'src'  => 'alerts-' . $flat_version,
 			],
@@ -556,6 +688,10 @@ class WPSEO_Admin_Asset_Manager {
 				'name' => 'metabox-css',
 				'src'  => 'metabox-' . $flat_version,
 				'deps' => [
+<<<<<<< HEAD
+=======
+					self::PREFIX . 'select2',
+>>>>>>> fb785cbb (Initial commit)
 					self::PREFIX . 'admin-css',
 					'wp-components',
 				],
@@ -580,6 +716,16 @@ class WPSEO_Admin_Asset_Manager {
 				'src'  => 'metabox-primary-category-' . $flat_version,
 			],
 			[
+<<<<<<< HEAD
+=======
+				'name'    => 'select2',
+				'src'     => 'select2/select2',
+				'suffix'  => '.min',
+				'version' => '4.0.13',
+				'rtl'     => false,
+			],
+			[
+>>>>>>> fb785cbb (Initial commit)
 				'name' => 'admin-global',
 				'src'  => 'admin-global-' . $flat_version,
 			],
@@ -627,20 +773,26 @@ class WPSEO_Admin_Asset_Manager {
 				'src'  => 'tailwind-' . $flat_version,
 			],
 			[
+<<<<<<< HEAD
 				'name' => 'new-settings',
 				'src'  => 'new-settings-' . $flat_version,
 			],
 			[
+=======
+>>>>>>> fb785cbb (Initial commit)
 				'name' => 'workouts',
 				'src'  => 'workouts-' . $flat_version,
 				'deps' => [
 					self::PREFIX . 'monorepo',
 				],
 			],
+<<<<<<< HEAD
 			[
 				'name' => 'inside-editor',
 				'src'  => 'inside-editor-' . $flat_version,
 			],
+=======
+>>>>>>> fb785cbb (Initial commit)
 		];
 	}
 

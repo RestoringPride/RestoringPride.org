@@ -100,7 +100,10 @@
 	color: #2c3338;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 13px;
+<<<<<<< HEAD
 	line-height: 1.38461538;
+=======
+>>>>>>> fb785cbb (Initial commit)
 }
 
 .media-frame input[type="text"],
@@ -530,6 +533,7 @@
 	resize: vertical;
 }
 
+<<<<<<< HEAD
 .media-sidebar .alt-text textarea,
 .attachment-details .alt-text textarea,
 .compat-item .alt-text textarea,
@@ -537,6 +541,8 @@
 	height: 50px;
 }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 .compat-item {
 	float: left;
 	width: 100%;
@@ -2806,7 +2812,10 @@
 	.media-frame textarea,
 	.media-frame select {
 		font-size: 16px;
+<<<<<<< HEAD
 		line-height: 1.5;
+=======
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	.media-frame .media-toolbar input[type="search"] {

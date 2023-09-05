@@ -95,7 +95,11 @@ trait MetaQuery
             }
 
             // Set dynamic alias
+<<<<<<< HEAD
             $tableAlias = sprintf('%s_%s_%s', ($table instanceof RawSQL) ? $table->sql : $table, 'attach_meta', $columnAlias ?: $column);
+=======
+            $tableAlias = sprintf('%s_%s_%d', ($table instanceof RawSQL) ? $table->sql : $table, 'attach_meta', $i);
+>>>>>>> fb785cbb (Initial commit)
 
             // Check if we have meta columns that dev wants to group concat
             if ($concat) {

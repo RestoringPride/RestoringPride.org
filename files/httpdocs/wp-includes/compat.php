@@ -8,8 +8,13 @@
 
 // If gettext isn't available.
 if ( ! function_exists( '_' ) ) {
+<<<<<<< HEAD
 	function _( $message ) {
 		return $message;
+=======
+	function _( $string ) {
+		return $string;
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 
@@ -49,24 +54,41 @@ if ( ! function_exists( 'mb_substr' ) ) :
 	 *
 	 * @see _mb_substr()
 	 *
+<<<<<<< HEAD
 	 * @param string      $string   The string to extract the substring from.
 	 * @param int         $start    Position to being extraction from in `$string`.
 	 * @param int|null    $length   Optional. Maximum number of characters to extract from `$string`.
+=======
+	 * @param string      $str      The string to extract the substring from.
+	 * @param int         $start    Position to being extraction from in `$str`.
+	 * @param int|null    $length   Optional. Maximum number of characters to extract from `$str`.
+>>>>>>> fb785cbb (Initial commit)
 	 *                              Default null.
 	 * @param string|null $encoding Optional. Character encoding to use. Default null.
 	 * @return string Extracted substring.
 	 */
+<<<<<<< HEAD
 	function mb_substr( $string, $start, $length = null, $encoding = null ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.stringFound
 		return _mb_substr( $string, $start, $length, $encoding );
+=======
+	function mb_substr( $str, $start, $length = null, $encoding = null ) {
+		return _mb_substr( $str, $start, $length, $encoding );
+>>>>>>> fb785cbb (Initial commit)
 	}
 endif;
 
 /**
  * Internal compat function to mimic mb_substr().
  *
+<<<<<<< HEAD
  * Only understands UTF-8 and 8bit. All other character sets will be treated as 8bit.
  * For `$encoding === UTF-8`, the `$str` input is expected to be a valid UTF-8 byte
  * sequence. The behavior of this function for invalid inputs is undefined.
+=======
+ * Only understands UTF-8 and 8bit.  All other character sets will be treated as 8bit.
+ * For $encoding === UTF-8, the $str input is expected to be a valid UTF-8 byte sequence.
+ * The behavior of this function for invalid inputs is undefined.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @ignore
  * @since 3.2.0
@@ -116,7 +138,10 @@ function _mb_substr( $str, $start, $length = null, $encoding = null ) {
 
 	// Start with 1 element instead of 0 since the first thing we do is pop.
 	$chars = array( '' );
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	do {
 		// We had some string left over from the last round, but we counted it in that last round.
 		array_pop( $chars );
@@ -144,20 +169,34 @@ if ( ! function_exists( 'mb_strlen' ) ) :
 	 *
 	 * @see _mb_strlen()
 	 *
+<<<<<<< HEAD
 	 * @param string      $string   The string to retrieve the character length from.
 	 * @param string|null $encoding Optional. Character encoding to use. Default null.
 	 * @return int String length of `$string`.
 	 */
 	function mb_strlen( $string, $encoding = null ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.stringFound
 		return _mb_strlen( $string, $encoding );
+=======
+	 * @param string      $str      The string to retrieve the character length from.
+	 * @param string|null $encoding Optional. Character encoding to use. Default null.
+	 * @return int String length of `$str`.
+	 */
+	function mb_strlen( $str, $encoding = null ) {
+		return _mb_strlen( $str, $encoding );
+>>>>>>> fb785cbb (Initial commit)
 	}
 endif;
 
 /**
  * Internal compat function to mimic mb_strlen().
  *
+<<<<<<< HEAD
  * Only understands UTF-8 and 8bit. All other character sets will be treated as 8bit.
  * For `$encoding === UTF-8`, the `$str` input is expected to be a valid UTF-8 byte
+=======
+ * Only understands UTF-8 and 8bit.  All other character sets will be treated as 8bit.
+ * For $encoding === UTF-8, the `$str` input is expected to be a valid UTF-8 byte
+>>>>>>> fb785cbb (Initial commit)
  * sequence. The behavior of this function for invalid inputs is undefined.
  *
  * @ignore
@@ -200,7 +239,10 @@ function _mb_strlen( $str, $encoding = null ) {
 
 	// Start at 1 instead of 0 since the first thing we do is decrement.
 	$count = 1;
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	do {
 		// We had some string left over from the last round, but we counted it in that last round.
 		$count--;
@@ -237,6 +279,7 @@ if ( ! function_exists( 'hash_hmac' ) ) :
 	 *
 	 * @see _hash_hmac()
 	 *
+<<<<<<< HEAD
 	 * @param string $algo   Hash algorithm. Accepts 'md5' or 'sha1'.
 	 * @param string $data   Data to be hashed.
 	 * @param string $key    Secret key to use for generating the hash.
@@ -247,6 +290,18 @@ if ( ! function_exists( 'hash_hmac' ) ) :
 	 */
 	function hash_hmac( $algo, $data, $key, $binary = false ) {
 		return _hash_hmac( $algo, $data, $key, $binary );
+=======
+	 * @param string $algo       Hash algorithm. Accepts 'md5' or 'sha1'.
+	 * @param string $data       Data to be hashed.
+	 * @param string $key        Secret key to use for generating the hash.
+	 * @param bool   $raw_output Optional. Whether to output raw binary data (true),
+	 *                           or lowercase hexits (false). Default false.
+	 * @return string|false The hash in output determined by `$raw_output`. False if `$algo`
+	 *                      is unknown or invalid.
+	 */
+	function hash_hmac( $algo, $data, $key, $raw_output = false ) {
+		return _hash_hmac( $algo, $data, $key, $raw_output );
+>>>>>>> fb785cbb (Initial commit)
 	}
 endif;
 
@@ -256,6 +311,7 @@ endif;
  * @ignore
  * @since 3.2.0
  *
+<<<<<<< HEAD
  * @param string $algo   Hash algorithm. Accepts 'md5' or 'sha1'.
  * @param string $data   Data to be hashed.
  * @param string $key    Secret key to use for generating the hash.
@@ -265,6 +321,17 @@ endif;
  *                      False if `$algo` is unknown or invalid.
  */
 function _hash_hmac( $algo, $data, $key, $binary = false ) {
+=======
+ * @param string $algo       Hash algorithm. Accepts 'md5' or 'sha1'.
+ * @param string $data       Data to be hashed.
+ * @param string $key        Secret key to use for generating the hash.
+ * @param bool   $raw_output Optional. Whether to output raw binary data (true),
+ *                           or lowercase hexits (false). Default false.
+ * @return string|false The hash in output determined by `$raw_output`. False if `$algo`
+ *                      is unknown or invalid.
+ */
+function _hash_hmac( $algo, $data, $key, $raw_output = false ) {
+>>>>>>> fb785cbb (Initial commit)
 	$packs = array(
 		'md5'  => 'H32',
 		'sha1' => 'H40',
@@ -287,16 +354,26 @@ function _hash_hmac( $algo, $data, $key, $binary = false ) {
 
 	$hmac = $algo( $opad . pack( $pack, $algo( $ipad . $data ) ) );
 
+<<<<<<< HEAD
 	if ( $binary ) {
 		return pack( $pack, $hmac );
 	}
 
+=======
+	if ( $raw_output ) {
+		return pack( $pack, $hmac );
+	}
+>>>>>>> fb785cbb (Initial commit)
 	return $hmac;
 }
 
 if ( ! function_exists( 'hash_equals' ) ) :
 	/**
+<<<<<<< HEAD
 	 * Timing attack safe string comparison.
+=======
+	 * Timing attack safe string comparison
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Compares two strings using the same time whether they're equal or not.
 	 *
@@ -311,6 +388,7 @@ if ( ! function_exists( 'hash_equals' ) ) :
 	 *
 	 * @since 3.9.2
 	 *
+<<<<<<< HEAD
 	 * @param string $known_string Expected string.
 	 * @param string $user_string  Actual, user supplied, string.
 	 * @return bool Whether strings are equal.
@@ -327,6 +405,22 @@ if ( ! function_exists( 'hash_equals' ) ) :
 		// Do not attempt to "optimize" this.
 		for ( $i = 0; $i < $known_string_length; $i++ ) {
 			$result |= ord( $known_string[ $i ] ) ^ ord( $user_string[ $i ] );
+=======
+	 * @param string $a Expected string.
+	 * @param string $b Actual, user supplied, string.
+	 * @return bool Whether strings are equal.
+	 */
+	function hash_equals( $a, $b ) {
+		$a_length = strlen( $a );
+		if ( strlen( $b ) !== $a_length ) {
+			return false;
+		}
+		$result = 0;
+
+		// Do not attempt to "optimize" this.
+		for ( $i = 0; $i < $a_length; $i++ ) {
+			$result |= ord( $a[ $i ] ) ^ ord( $b[ $i ] );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return 0 === $result;
@@ -351,6 +445,7 @@ if ( ! function_exists( 'is_countable' ) ) {
 	 *
 	 * @since 4.9.6
 	 *
+<<<<<<< HEAD
 	 * @param mixed $value The value to check.
 	 * @return bool True if `$value` is countable, false otherwise.
 	 */
@@ -359,6 +454,16 @@ if ( ! function_exists( 'is_countable' ) ) {
 			|| $value instanceof Countable
 			|| $value instanceof SimpleXMLElement
 			|| $value instanceof ResourceBundle
+=======
+	 * @param mixed $var The value to check.
+	 * @return bool True if `$var` is countable, false otherwise.
+	 */
+	function is_countable( $var ) {
+		return ( is_array( $var )
+			|| $var instanceof Countable
+			|| $var instanceof SimpleXMLElement
+			|| $var instanceof ResourceBundle
+>>>>>>> fb785cbb (Initial commit)
 		);
 	}
 }
@@ -372,11 +477,19 @@ if ( ! function_exists( 'is_iterable' ) ) {
 	 *
 	 * @since 4.9.6
 	 *
+<<<<<<< HEAD
 	 * @param mixed $value The value to check.
 	 * @return bool True if `$value` is iterable, false otherwise.
 	 */
 	function is_iterable( $value ) {
 		return ( is_array( $value ) || $value instanceof Traversable );
+=======
+	 * @param mixed $var The value to check.
+	 * @return bool True if `$var` is iterable, false otherwise.
+	 */
+	function is_iterable( $var ) {
+		return ( is_array( $var ) || $var instanceof Traversable );
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 
@@ -389,12 +502,21 @@ if ( ! function_exists( 'array_key_first' ) ) {
 	 *
 	 * @since 5.9.0
 	 *
+<<<<<<< HEAD
 	 * @param array $array An array.
 	 * @return string|int|null The first key of array if the array
 	 *                         is not empty; `null` otherwise.
 	 */
 	function array_key_first( array $array ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.arrayFound
 		foreach ( $array as $key => $value ) {
+=======
+	 * @param array $arr An array.
+	 * @return string|int|null The first key of array if the array
+	 *                         is not empty; `null` otherwise.
+	 */
+	function array_key_first( array $arr ) {
+		foreach ( $arr as $key => $value ) {
+>>>>>>> fb785cbb (Initial commit)
 			return $key;
 		}
 	}
@@ -409,6 +531,7 @@ if ( ! function_exists( 'array_key_last' ) ) {
 	 *
 	 * @since 5.9.0
 	 *
+<<<<<<< HEAD
 	 * @param array $array An array.
 	 * @return string|int|null The last key of array if the array
 	 *.                        is not empty; `null` otherwise.
@@ -421,6 +544,18 @@ if ( ! function_exists( 'array_key_last' ) ) {
 		end( $array );
 
 		return key( $array );
+=======
+	 * @param array $arr An array.
+	 * @return string|int|null The last key of array if the array
+	 *.                        is not empty; `null` otherwise.
+	 */
+	function array_key_last( array $arr ) {
+		if ( empty( $arr ) ) {
+			return null;
+		}
+		end( $arr );
+		return key( $arr );
+>>>>>>> fb785cbb (Initial commit)
 	}
 }
 
@@ -459,7 +594,10 @@ if ( ! function_exists( 'str_starts_with' ) ) {
 		if ( '' === $needle ) {
 			return true;
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return 0 === strpos( $haystack, $needle );
 	}
 }
@@ -481,9 +619,13 @@ if ( ! function_exists( 'str_ends_with' ) ) {
 		if ( '' === $haystack && '' !== $needle ) {
 			return false;
 		}
+<<<<<<< HEAD
 
 		$len = strlen( $needle );
 
+=======
+		$len = strlen( $needle );
+>>>>>>> fb785cbb (Initial commit)
 		return 0 === substr_compare( $haystack, $needle, -$len, $len );
 	}
 }

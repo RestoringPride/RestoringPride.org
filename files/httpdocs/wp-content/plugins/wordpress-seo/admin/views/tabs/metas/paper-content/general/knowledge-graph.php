@@ -7,6 +7,7 @@
  * @uses    Yoast_Form $yform Form object.
  */
 
+<<<<<<< HEAD
 echo '<h3>', esc_html__( 'Website', 'wordpress-seo' ), '</h3>';
 echo '<p>', esc_html__( 'This name is shown for your site in the search results.', 'wordpress-seo' ), '</p>';
 $yform->textinput(
@@ -25,10 +26,14 @@ echo '<p style="margin-bottom: 2em;">', esc_html__( 'Use the alternate website n
 
 echo '<h3>', esc_html__( 'Organization or Person', 'wordpress-seo' ), '</h3>';
 echo '<p>', sprintf(
+=======
+echo sprintf(
+>>>>>>> fb785cbb (Initial commit)
 	/* translators: %1$s opens the link to the Yoast.com article about Google's Knowledge Graph, %2$s closes the link, */
 	esc_html__( 'This data is shown as metadata in your site. It is intended to appear in %1$sGoogle\'s Knowledge Graph%2$s. You can be either an organization, or a person.', 'wordpress-seo' ),
 	'<a href="' . esc_url( WPSEO_Shortlinker::get( 'https://yoa.st/1-p' ) ) . '" target="_blank" rel="noopener noreferrer">',
 	'</a>'
+<<<<<<< HEAD
 ), '</p>';
 
 /**
@@ -44,6 +49,9 @@ function fallback_to_site_logo() {
 
 	return $logo_id;
 }
+=======
+);
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Filter: 'wpseo_knowledge_graph_setting_msg' - Allows adding a message above these settings.
@@ -74,6 +82,7 @@ $yform->select( 'company_or_person', __( 'Organization or person', 'wordpress-se
 	 */
 	$yoast_seo_company_name = WPSEO_Options::get( 'company_name', '' );
 	$yoast_seo_company_logo = WPSEO_Options::get( 'company_logo', '' );
+<<<<<<< HEAD
 	$yoast_seo_person_logo  = WPSEO_Options::get( 'person_logo', '' );
 
 	$yoast_seo_site_name = ( WPSEO_Options::get( 'company_name', '' ) === '' ) ? get_bloginfo( 'name' ) : '';
@@ -84,12 +93,15 @@ $yform->select( 'company_or_person', __( 'Organization or person', 'wordpress-se
 		$yform->hidden( 'company_logo_fallback_id', 'company_logo_fallback_id', $fallback_logo );
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	if ( empty( $yoast_seo_company_name ) || empty( $yoast_seo_company_logo ) ) :
 		?>
 		<div id="knowledge-graph-company-warning"></div>
 		<?php
 	endif;
 
+<<<<<<< HEAD
 	$yform->textinput(
 		'company_name',
 		__( 'Organization name', 'wordpress-seo' ),
@@ -103,6 +115,9 @@ $yform->select( 'company_or_person', __( 'Organization or person', 'wordpress-se
 		__( 'Alternate organization name', 'wordpress-seo' )
 	);
 	echo '<p>', esc_html__( 'Use the alternate organization name for acronyms, or a shorter version of your organization\'s name.', 'wordpress-seo' ), '</p>';
+=======
+	$yform->textinput( 'company_name', __( 'Organization name', 'wordpress-seo' ), [ 'autocomplete' => 'organization' ] );
+>>>>>>> fb785cbb (Initial commit)
 	$yform->hidden( 'company_logo', 'company_logo' );
 	$yform->hidden( 'company_logo_id', 'company_logo_id' );
 	?>
@@ -113,6 +128,7 @@ $yform->select( 'company_or_person', __( 'Organization or person', 'wordpress-se
 	<h3><?php esc_html_e( 'Personal info', 'wordpress-seo' ); ?></h3>
 
 	<div id="wpseo-person-selector"></div>
+<<<<<<< HEAD
 	<?php
 
 	if ( empty( $yoast_seo_person_logo ) ) :
@@ -130,6 +146,11 @@ $yform->select( 'company_or_person', __( 'Organization or person', 'wordpress-se
 	if ( empty( $yoast_seo_person_logo ) && $fallback_logo ) {
 		$yform->hidden( 'person_logo_fallback_id', 'person_logo_fallback_id', $fallback_logo );
 	}
+=======
+	<div id="yoast-person-image-select"></div>
+	<?php
+	$yform->hidden( 'person_logo', 'person_logo' );
+>>>>>>> fb785cbb (Initial commit)
 	$yform->hidden( 'person_logo_id', 'person_logo_id' );
 	$yform->hidden( 'company_or_person_user_id', 'person_id' );
 	?>

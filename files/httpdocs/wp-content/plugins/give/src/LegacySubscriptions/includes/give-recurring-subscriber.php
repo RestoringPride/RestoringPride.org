@@ -98,7 +98,11 @@ class Give_Recurring_Subscriber extends Give_Donor {
 	 *
 	 * @param array $args
 	 *
+<<<<<<< HEAD
 	 * @return false|Give_Subscription
+=======
+	 * @return bool|object Give_Subscription
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function add_subscription( $args = [] ) {
 

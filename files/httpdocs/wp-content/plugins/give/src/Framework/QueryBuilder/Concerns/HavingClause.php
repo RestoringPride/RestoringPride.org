@@ -303,7 +303,11 @@ trait HavingClause
         }
 
         return DB::prepare(
+<<<<<<< HEAD
             "%1s %2s %3s %s",
+=======
+            "%1s %s %3s %s",
+>>>>>>> fb785cbb (Initial commit)
             $having->logicalOperator,
             $having->column,
             $having->comparisonOperator,

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # ListTablePage
 
 ## \<ListTablePage/\> Props
+=======
+#ListTablePage
+
+##\<ListTablePage/\> Props
+>>>>>>> fb785cbb (Initial commit)
 
 | Prop       | Type                                        | Required | Default             |
 |------------|---------------------------------------------|----------|---------------------|
@@ -18,6 +24,7 @@
 | filterSettings | Array\<FilterConfig\>                       | No       | [ ]     |
 | children | ReactNode                                   | No | null    |
 
+<<<<<<< HEAD
 ### data
 
 `data` is a plain JS object. It has one required property,
@@ -28,6 +35,19 @@ this should be returned from the `useSWR` hook.
 
 An array that determines how columns will be displayed. By default, the columns will be displayed in array order.
 
+=======
+
+### data
+`data` is a plain JS object. It has one required property,
+`data.items`, which is an array of objects where each object represents
+a row of data in the table. If you're using SWR, this
+should be returned from the `useSWR` hook.
+
+### columns
+An array that determines how columns will be displayed. By default, the columns will be displayed in array order.
+
+
+>>>>>>> fb785cbb (Initial commit)
 Each object in the array should contain the following properties:
 
 | Property    | Type                                         | Required? | Description                                                                                                                                             |
@@ -41,6 +61,7 @@ Each object in the array should contain the following properties:
 | alignColumn | String<br/>`'start'`, `'center'`, or `'end'` | No        | Alignment of the column's contents. If the `align` prop of `<ListTablePage/>` is set, will override it for this column only.                            |                                                                                   |                                                                                                                             |
 
 ### title
+<<<<<<< HEAD
 
 Will be used as the title displayed at the top of the page. Also used to generate a visually hidden table caption for
 accessibility. Should be translatable.
@@ -74,6 +95,28 @@ the root URL that this page will use for fetching data.
 
 An array that determines what inputs to display above the table. By default, the filters will be displayed in array
 order.
+=======
+Will be used as the title displayed at the top of the page. Also used to generate a visually hidden table caption for accessibility. Should be translatable.
+
+### singleName
+A lowercase string containing the term for a single table item. Will only be displayed if there's an error while updating the table. Should be translatable.
+
+### pluralName
+A lowercase string containing the term for multiple table items. Will only be displayed if there's an error while updating the table. Should be translatable.
+
+### error
+Whether to render the page in an error state. If you're using this without SWR, you can just treat `error` as a boolean. If you're using SWR, this
+should be returned from the `useSWR` hook.
+
+### isLoading
+Whether to show a loading overlay over the table contents. Row actions are not available while loading. If you're using SWR, this should be the same as `isValidating` returned from the `useSWR` hook.
+
+### apiSettings
+An object with two properties: `apiNonce`, the nonce used to authenticate with the Wordpress REST API, and `apiRoot`, the root URL that this page will use for fetching data.
+
+### filterSettings
+An array that determines what inputs to display above the table. By default, the filters will be displayed in array order.
+>>>>>>> fb785cbb (Initial commit)
 
 Each object in the array should contain the following properties:
 
@@ -84,10 +127,17 @@ Each object in the array should contain the following properties:
 | ariaLabel | String             | Yes                              | A description of the filter for screen readers.                                                                   |
 | inlineSize | String<br/>(CSS Length) | No                               | The inline size of the filter. Corresponds to the width in left-to-right languages. Accepts any valid CSS length. |
 | options  | Array              | For type `select` or `formselect` | What options to include for the `select`. An array of objects that look like `{value: 1, text: 'option 1'}`       |
+<<<<<<< HEAD
 | text | String             | No | Used as a placeholder value for `select` or `search` filters                                                      |
 
 ### rowActions
 
+=======
+ | text | String             | No | Used as a placeholder value for `select` or `search` filters                                                      |
+
+
+### rowActions
+>>>>>>> fb785cbb (Initial commit)
 A React functional component. Used to display markup that will show when hovering over a row. Takes the following props:
 
 | Prop      | Type                   | Description                                                                                                                                                                                                              |
@@ -97,12 +147,20 @@ A React functional component. Used to display markup that will show when hoverin
 | addRow    | Function               | Show an animation of an item being added to the table.  <br/> Takes a callback (for example, a fetch to an API that will create a new row), returns a function which executes the callback and shows the animation.      |
 | removeRow | Function               | Show an animation of an item being removed from the table.  <br/> Takes a callback (for example, a request to an API to that will delete a row), returns a function which executes the callback and shows the animation. |
 
+<<<<<<< HEAD
 ### bulkActions
 
 An array that determines what bulk actions display above the table. Will be displayed in array order.
 
 When a user selects a bulk action and one or more row checkboxes then clicks 'Apply', a confirmation modal will pop up.
 After clicking 'Confirm' in that modal, the action will be applied.
+=======
+
+### bulkActions
+An array that determines what bulk actions display above the table. Will be displayed in array order.
+
+When a user selects a bulk action and one or more row checkboxes then clicks 'Apply', a confirmation modal will pop up. After clicking 'Confirm' in that modal, the action will be applied.
+>>>>>>> fb785cbb (Initial commit)
 
 Each object in the array should contain the following properties:
 

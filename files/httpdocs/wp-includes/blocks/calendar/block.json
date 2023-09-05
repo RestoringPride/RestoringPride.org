@@ -16,6 +16,7 @@
 		}
 	},
 	"supports": {
+<<<<<<< HEAD
 		"align": true,
 		"anchor": true,
 		"color": {
@@ -39,6 +40,9 @@
 				"fontSize": true
 			}
 		}
+=======
+		"align": true
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"style": "wp-block-calendar"
 }

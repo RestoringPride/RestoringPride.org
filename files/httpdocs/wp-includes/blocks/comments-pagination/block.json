@@ -4,7 +4,11 @@
 	"name": "core/comments-pagination",
 	"title": "Comments Pagination",
 	"category": "theme",
+<<<<<<< HEAD
 	"parent": [ "core/comments" ],
+=======
+	"parent": [ "core/comments-query-loop" ],
+>>>>>>> fb785cbb (Initial commit)
 	"description": "Displays a paginated navigation to next/previous set of comments, when applicable.",
 	"textdomain": "default",
 	"attributes": {
@@ -17,7 +21,10 @@
 		"comments/paginationArrow": "paginationArrow"
 	},
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"align": true,
 		"reusable": false,
 		"html": false,
@@ -36,6 +43,7 @@
 			"default": {
 				"type": "flex"
 			}
+<<<<<<< HEAD
 		},
 		"typography": {
 			"fontSize": true,
@@ -49,6 +57,8 @@
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"editorStyle": "wp-block-comments-pagination-editor",

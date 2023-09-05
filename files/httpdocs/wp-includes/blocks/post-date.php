@@ -18,6 +18,7 @@ function render_block_core_post_date( $attributes, $content, $block ) {
 		return '';
 	}
 
+<<<<<<< HEAD
 	$post_ID = $block->context['postId'];
 
 	$classes = array();
@@ -37,6 +38,12 @@ function render_block_core_post_date( $attributes, $content, $block ) {
 		$unformatted_date = esc_attr( get_the_date( 'c', $post_ID ) );
 	}
 
+=======
+	$post_ID            = $block->context['postId'];
+	$align_class_name   = empty( $attributes['textAlign'] ) ? '' : "has-text-align-{$attributes['textAlign']}";
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $align_class_name ) );
+	$formatted_date     = get_the_date( empty( $attributes['format'] ) ? '' : $attributes['format'], $post_ID );
+>>>>>>> fb785cbb (Initial commit)
 	if ( isset( $attributes['isLink'] ) && $attributes['isLink'] ) {
 		$formatted_date = sprintf( '<a href="%1s">%2s</a>', get_the_permalink( $post_ID ), $formatted_date );
 	}
@@ -44,7 +51,11 @@ function render_block_core_post_date( $attributes, $content, $block ) {
 	return sprintf(
 		'<div %1$s><time datetime="%2$s">%3$s</time></div>',
 		$wrapper_attributes,
+<<<<<<< HEAD
 		$unformatted_date,
+=======
+		esc_attr( get_the_date( 'c', $post_ID ) ),
+>>>>>>> fb785cbb (Initial commit)
 		$formatted_date
 	);
 }

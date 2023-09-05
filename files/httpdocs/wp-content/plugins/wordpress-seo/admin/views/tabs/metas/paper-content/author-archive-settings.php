@@ -88,6 +88,7 @@ $editor->render();
 
 echo '</div>';
 
+<<<<<<< HEAD
 
 /**
  * WARNING: This hook is intended for internal use only.
@@ -110,5 +111,13 @@ do_action_deprecated(
 	'',
 	'This action is going away with no replacement. If you want to add settings that interact with Yoast SEO, please create your own settings page.'
 );
+=======
+/**
+ * Allow adding custom fields to the admin meta page - Author archives panel in the Archives tab.
+ *
+ * @param Yoast_Form $yform The Yoast_Form object.
+ */
+do_action( 'Yoast\WP\SEO\admin_author_archives_meta', $yform );
+>>>>>>> fb785cbb (Initial commit)
 ?>
 </div>

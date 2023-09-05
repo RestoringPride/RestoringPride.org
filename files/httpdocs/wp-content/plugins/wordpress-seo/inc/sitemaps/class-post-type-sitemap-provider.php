@@ -37,7 +37,11 @@ class WPSEO_Post_Type_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 	 * Set up object properties for data reuse.
 	 */
 	public function __construct() {
+<<<<<<< HEAD
 		add_action( 'save_post', [ $this, 'save_post' ] );
+=======
+		add_filter( 'save_post', [ $this, 'save_post' ] );
+>>>>>>> fb785cbb (Initial commit)
 
 		/**
 		 * Filter - Allows excluding images from the XML sitemap.
@@ -104,10 +108,13 @@ class WPSEO_Post_Type_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 
 			$total_count = $this->get_post_type_count( $post_type );
 
+<<<<<<< HEAD
 			if ( $total_count === 0 ) {
 				continue;
 			}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			$max_pages = 1;
 			if ( $total_count > $max_entries ) {
 				$max_pages = (int) ceil( $total_count / $max_entries );
@@ -418,6 +425,7 @@ class WPSEO_Post_Type_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 			];
 		}
 
+<<<<<<< HEAD
 		/**
 		 * Filters the first post type links.
 		 *
@@ -425,6 +433,9 @@ class WPSEO_Post_Type_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 		 * @param string $post_type The post type this archive is for.
 		 */
 		return apply_filters( 'wpseo_sitemap_post_type_first_links', $links, $post_type );
+=======
+		return $links;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**

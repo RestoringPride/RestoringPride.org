@@ -58,8 +58,13 @@ __webpack_require__.d(selectors_namespaceObject, {
   "isViewportMatch": function() { return isViewportMatch; }
 });
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: external ["wp","compose"]
 var external_wp_compose_namespaceObject = window["wp"]["compose"];
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","data"]
 var external_wp_data_namespaceObject = window["wp"]["data"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/viewport/build-module/store/reducer.js
@@ -91,9 +96,12 @@ function reducer() {
  * Returns an action object used in signalling that viewport queries have been
  * updated. Values are specified as an object of breakpoint query keys where
  * value represents whether query matches.
+<<<<<<< HEAD
  * Ignored from documentation as it is for internal use only.
  *
  * @ignore
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param {Object} values Breakpoint query matches.
  *
@@ -117,6 +125,7 @@ function setIsMatching(values) {
  * @example
  *
  * ```js
+<<<<<<< HEAD
  * import { store as viewportStore } from '@wordpress/viewport';
  * import { useSelect } from '@wordpress/data';
  * import { __ } from '@wordpress/i18n';
@@ -132,6 +141,10 @@ function setIsMatching(values) {
  *         <div>{ __( 'Not Mobile' ) }</div>
  *     );
  * };
+=======
+ * isViewportMatch( state, '< huge' );
+ * isViewPortMatch( state, 'medium' );
+>>>>>>> fb785cbb (Initial commit)
  * ```
  *
  * @return {boolean} Whether viewport matches query.
@@ -175,6 +188,13 @@ const store = (0,external_wp_data_namespaceObject.createReduxStore)(STORE_NAME, 
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/viewport/build-module/listener.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * WordPress dependencies
  */
 
@@ -190,6 +210,7 @@ const addDimensionsEventListener = (breakpoints, operators) => {
    * Callback invoked when media query state should be updated. Is invoked a
    * maximum of one time per call stack.
    */
+<<<<<<< HEAD
   const setIsMatching = (0,external_wp_compose_namespaceObject.debounce)(() => {
     const values = Object.fromEntries(queries.map(_ref => {
       let [key, query] = _ref;
@@ -197,6 +218,12 @@ const addDimensionsEventListener = (breakpoints, operators) => {
     }));
     (0,external_wp_data_namespaceObject.dispatch)(store).setIsMatching(values);
   }, 0, {
+=======
+  const setIsMatching = (0,external_lodash_namespaceObject.debounce)(() => {
+    const values = (0,external_lodash_namespaceObject.mapValues)(queries, query => query.matches);
+    (0,external_wp_data_namespaceObject.dispatch)(store).setIsMatching(values);
+  }, {
+>>>>>>> fb785cbb (Initial commit)
     leading: true
   });
   /**
@@ -209,6 +236,7 @@ const addDimensionsEventListener = (breakpoints, operators) => {
    * @type {Object<string,MediaQueryList>}
    */
 
+<<<<<<< HEAD
   const operatorEntries = Object.entries(operators);
   const queries = Object.entries(breakpoints).flatMap(_ref2 => {
     let [name, width] = _ref2;
@@ -219,6 +247,17 @@ const addDimensionsEventListener = (breakpoints, operators) => {
       return [`${operator} ${name}`, list];
     });
   });
+=======
+  const queries = (0,external_lodash_namespaceObject.reduce)(breakpoints, (result, width, name) => {
+    (0,external_lodash_namespaceObject.forEach)(operators, (condition, operator) => {
+      const list = window.matchMedia(`(${condition}: ${width}px)`);
+      list.addListener(setIsMatching);
+      const key = [operator, name].join(' ');
+      result[key] = list;
+    });
+    return result;
+  }, {});
+>>>>>>> fb785cbb (Initial commit)
   window.addEventListener('orientationchange', setIsMatching); // Set initial values.
 
   setIsMatching();
@@ -227,17 +266,30 @@ const addDimensionsEventListener = (breakpoints, operators) => {
 
 /* harmony default export */ var listener = (addDimensionsEventListener);
 
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: external ["wp","compose"]
+var external_wp_compose_namespaceObject = window["wp"]["compose"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
       for (var key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
           target[key] = source[key];
         }
       }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
     return target;
   };
   return _extends.apply(this, arguments);
@@ -249,9 +301,20 @@ var external_wp_element_namespaceObject = window["wp"]["element"];
 
 
 /**
+<<<<<<< HEAD
  * WordPress dependencies
  */
 
+=======
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Higher-order component creator, creating a new component which renders with
  * the given prop names, where the value passed to the underlying component is
@@ -277,10 +340,14 @@ var external_wp_element_namespaceObject = window["wp"]["element"];
  */
 
 const withViewportMatch = queries => {
+<<<<<<< HEAD
   const queryEntries = Object.entries(queries);
 
   const useViewPortQueriesResult = () => Object.fromEntries(queryEntries.map(_ref => {
     let [key, query] = _ref;
+=======
+  const useViewPortQueriesResult = () => (0,external_lodash_namespaceObject.mapValues)(queries, query => {
+>>>>>>> fb785cbb (Initial commit)
     let [operator, breakpointName] = query.split(' ');
 
     if (breakpointName === undefined) {
@@ -292,8 +359,13 @@ const withViewportMatch = queries => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
 
 
+<<<<<<< HEAD
     return [key, (0,external_wp_compose_namespaceObject.useViewportMatch)(breakpointName, operator)];
   }));
+=======
+    return (0,external_wp_compose_namespaceObject.useViewportMatch)(breakpointName, operator);
+  });
+>>>>>>> fb785cbb (Initial commit)
 
   return (0,external_wp_compose_namespaceObject.createHigherOrderComponent)(WrappedComponent => {
     return (0,external_wp_compose_namespaceObject.pure)(props => {

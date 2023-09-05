@@ -12,7 +12,10 @@
  * @since 5.5.0
  * @property array $attributes
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Block {
 
 	/**
@@ -196,8 +199,11 @@ class WP_Block {
 	 *
 	 * @since 5.5.0
 	 *
+<<<<<<< HEAD
 	 * @global WP_Post $post Global post object.
 	 *
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * @param array $options {
 	 *     Optional options object.
 	 *
@@ -262,6 +268,7 @@ class WP_Block {
 			$post = $global_post;
 		}
 
+<<<<<<< HEAD
 		if ( ( ! empty( $this->block_type->script_handles ) ) ) {
 			foreach ( $this->block_type->script_handles as $script_handle ) {
 				wp_enqueue_script( $script_handle );
@@ -278,6 +285,18 @@ class WP_Block {
 			foreach ( $this->block_type->style_handles as $style_handle ) {
 				wp_enqueue_style( $style_handle );
 			}
+=======
+		if ( ! empty( $this->block_type->script ) ) {
+			wp_enqueue_script( $this->block_type->script );
+		}
+
+		if ( ! empty( $this->block_type->view_script ) && empty( $this->block_type->render_callback ) ) {
+			wp_enqueue_script( $this->block_type->view_script );
+		}
+
+		if ( ! empty( $this->block_type->style ) ) {
+			wp_enqueue_style( $this->block_type->style );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		/**
@@ -286,7 +305,11 @@ class WP_Block {
 		 * @since 5.0.0
 		 * @since 5.9.0 The `$instance` parameter was added.
 		 *
+<<<<<<< HEAD
 		 * @param string   $block_content The block content.
+=======
+		 * @param string   $block_content The block content about to be appended.
+>>>>>>> fb785cbb (Initial commit)
 		 * @param array    $block         The full block, including name and attributes.
 		 * @param WP_Block $instance      The block instance.
 		 */
@@ -301,7 +324,11 @@ class WP_Block {
 		 * @since 5.7.0
 		 * @since 5.9.0 The `$instance` parameter was added.
 		 *
+<<<<<<< HEAD
 		 * @param string   $block_content The block content.
+=======
+		 * @param string   $block_content The block content about to be appended.
+>>>>>>> fb785cbb (Initial commit)
 		 * @param array    $block         The full block, including name and attributes.
 		 * @param WP_Block $instance      The block instance.
 		 */

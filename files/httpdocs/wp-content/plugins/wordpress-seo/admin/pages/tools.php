@@ -60,6 +60,7 @@ if ( $tool_page === '' ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * WARNING: This hook is intended for internal use only.
 	 * Don't use it in your code as it will be removed shortly.
 	 */
@@ -77,6 +78,11 @@ if ( $tool_page === '' ) {
 		'',
 		'This action is going away with no replacement. If you want to add settings that interact with Yoast SEO, please create your own settings page.'
 	);
+=======
+	 * Action: 'wpseo_tools_overview_list_items' - Hook to add additional tools to the overview.
+	 */
+	do_action( 'wpseo_tools_overview_list_items' );
+>>>>>>> fb785cbb (Initial commit)
 
 	echo '</ul>';
 }

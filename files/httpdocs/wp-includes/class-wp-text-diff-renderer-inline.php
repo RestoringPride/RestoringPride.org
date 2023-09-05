@@ -13,7 +13,10 @@
  * @since 2.6.0
  * @uses Text_Diff_Renderer_inline Extends
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Text_Diff_Renderer_inline extends Text_Diff_Renderer_inline {
 
 	/**
@@ -24,7 +27,11 @@ class WP_Text_Diff_Renderer_inline extends Text_Diff_Renderer_inline {
 	 * @param string $newlineEscape
 	 * @return string
 	 */
+<<<<<<< HEAD
 	public function _splitOnWords( $string, $newlineEscape = "\n" ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.stringFound
+=======
+	public function _splitOnWords( $string, $newlineEscape = "\n" ) {
+>>>>>>> fb785cbb (Initial commit)
 		$string = str_replace( "\0", '', $string );
 		$words  = preg_split( '/([^\w])/u', $string, -1, PREG_SPLIT_DELIM_CAPTURE );
 		$words  = str_replace( "\n", $newlineEscape, $words );

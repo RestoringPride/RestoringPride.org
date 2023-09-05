@@ -8,9 +8,15 @@ use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
  * Class MerchantDetail
  * @package Give\PaymentGateways\PayPalCommerce
  *
+<<<<<<< HEAD
  * @since   2.9.0
  */
 final class MerchantDetail
+=======
+ * @since 2.9.0
+ */
+class MerchantDetail
+>>>>>>> fb785cbb (Initial commit)
 {
     /**
      * PayPal merchant Id  (email address)
@@ -192,7 +198,10 @@ final class MerchantDetail
     /**
      * Get refresh token code.
      *
+<<<<<<< HEAD
      * @since 2.25.0 Set accessToken property.
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.9.0
      *
      * @param array $tokenDetails
@@ -202,6 +211,9 @@ final class MerchantDetail
     public function setTokenDetails($tokenDetails)
     {
         $this->tokenDetails = array_merge($this->tokenDetails, $tokenDetails);
+<<<<<<< HEAD
         $this->accessToken = $tokenDetails['accessToken'];
+=======
+>>>>>>> fb785cbb (Initial commit)
     }
 }

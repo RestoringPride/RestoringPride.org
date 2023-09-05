@@ -93,12 +93,20 @@ class WPSEO_Tracking implements WPSEO_WordPress_Integration {
 		 * needs to receive the same arguments as those used when originally
 		 * scheduling the event otherwise it will always return false.
 		 */
+<<<<<<< HEAD
 		if ( ! wp_next_scheduled( 'wpseo_send_tracking_data_after_core_update', [ true ] ) ) {
+=======
+		if ( ! wp_next_scheduled( 'wpseo_send_tracking_data_after_core_update', true ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			/*
 			 * Schedule sending of data tracking 6 hours after a WordPress core
 			 * update. Pass a `true` parameter for the callback `$force` argument.
 			 */
+<<<<<<< HEAD
 			wp_schedule_single_event( ( time() + ( HOUR_IN_SECONDS * 6 ) ), 'wpseo_send_tracking_data_after_core_update', [ true ] );
+=======
+			wp_schedule_single_event( ( time() + ( HOUR_IN_SECONDS * 6 ) ), 'wpseo_send_tracking_data_after_core_update', true );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 
@@ -106,7 +114,11 @@ class WPSEO_Tracking implements WPSEO_WordPress_Integration {
 	 * Sends the tracking data.
 	 *
 	 * @param bool $force Whether to send the tracking data ignoring the two
+<<<<<<< HEAD
 	 *                    weeks time threshold. Default false.
+=======
+	 *                    weeks time treshhold. Default false.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function send( $force = false ) {
 		if ( ! $this->should_send_tracking( $force ) ) {
@@ -188,7 +200,10 @@ class WPSEO_Tracking implements WPSEO_WordPress_Integration {
 		$collector->add_collection( new WPSEO_Tracking_Theme_Data() );
 		$collector->add_collection( new WPSEO_Tracking_Plugin_Data() );
 		$collector->add_collection( new WPSEO_Tracking_Settings_Data() );
+<<<<<<< HEAD
 		$collector->add_collection( new WPSEO_Tracking_Addon_Data() );
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 		return $collector;
 	}
@@ -222,7 +237,11 @@ class WPSEO_Tracking implements WPSEO_WordPress_Integration {
 			return false;
 		}
 
+<<<<<<< HEAD
 		if ( ! YoastSEO()->helpers->environment->is_production_mode() ) {
+=======
+		if ( wp_get_environment_type() !== 'production' ) {
+>>>>>>> fb785cbb (Initial commit)
 			return false;
 		}
 

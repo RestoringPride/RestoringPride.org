@@ -93,7 +93,11 @@ function find_core_auto_update() {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 
 	$auto_update = false;
+<<<<<<< HEAD
 	$upgrader    = new WP_Automatic_Updater();
+=======
+	$upgrader    = new WP_Automatic_Updater;
+>>>>>>> fb785cbb (Initial commit)
 	foreach ( $updates->updates as $update ) {
 		if ( 'autoupdate' !== $update->response ) {
 			continue;
@@ -220,8 +224,11 @@ function find_core_update( $version, $locale ) {
 }
 
 /**
+<<<<<<< HEAD
  * Returns core update footer message.
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @since 2.3.0
  *
  * @param string $msg
@@ -235,7 +242,11 @@ function core_update_footer( $msg = '' ) {
 
 	$cur = get_preferred_from_update_core();
 	if ( ! is_object( $cur ) ) {
+<<<<<<< HEAD
 		$cur = new stdClass();
+=======
+		$cur = new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	if ( ! isset( $cur->current ) ) {
@@ -277,8 +288,11 @@ function core_update_footer( $msg = '' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Returns core update notification message.
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @since 2.3.0
  *
  * @global string $pagenow The filename of the current screen.
@@ -374,8 +388,11 @@ function update_right_now_message() {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves plugins with updates available.
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @since 2.9.0
  *
  * @return array
@@ -395,8 +412,11 @@ function get_plugin_updates() {
 }
 
 /**
+<<<<<<< HEAD
  * Adds a callback to display update information for plugins with updates available.
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @since 2.9.0
  */
 function wp_plugin_update_rows() {
@@ -593,8 +613,11 @@ function wp_plugin_update_row( $file, $plugin_data ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves themes with updates available.
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @since 2.9.0
  *
  * @return array
@@ -616,8 +639,11 @@ function get_theme_updates() {
 }
 
 /**
+<<<<<<< HEAD
  * Adds a callback to display update information for themes with updates available.
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @since 3.1.0
  */
 function wp_theme_update_rows() {
@@ -813,8 +839,11 @@ function wp_theme_update_row( $theme_key, $theme ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays maintenance nag HTML message.
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @since 2.7.0
  *
  * @global int $upgrading
@@ -863,8 +892,11 @@ function maintenance_nag() {
 /**
  * Prints the JavaScript templates for update admin notices.
  *
+<<<<<<< HEAD
  * @since 4.6.0
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Template takes one argument with four values:
  *
  *     param {object} data {
@@ -875,6 +907,11 @@ function maintenance_nag() {
  *         @type string message   The notice's message.
  *         @type string type      The type of update the notice is for. Either 'plugin' or 'theme'.
  *     }
+<<<<<<< HEAD
+=======
+ *
+ * @since 4.6.0
+>>>>>>> fb785cbb (Initial commit)
  */
 function wp_print_admin_notice_templates() {
 	?>
@@ -924,12 +961,16 @@ function wp_print_admin_notice_templates() {
 							printf( __( '%s updates failed.' ), '{{ data.errors }}' );
 							?>
 						<# } #>
+<<<<<<< HEAD
 						<span class="screen-reader-text">
 							<?php
 							/* translators: Hidden accessibility text. */
 							_e( 'Show more details' );
 							?>
 						</span>
+=======
+						<span class="screen-reader-text"><?php _e( 'Show more details' ); ?></span>
+>>>>>>> fb785cbb (Initial commit)
 						<span class="toggle-indicator" aria-hidden="true"></span>
 					</button>
 				<# } #>
@@ -949,8 +990,11 @@ function wp_print_admin_notice_templates() {
 /**
  * Prints the JavaScript templates for update and deletion rows in list tables.
  *
+<<<<<<< HEAD
  * @since 4.6.0
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * The update template takes one argument with four values:
  *
  *     param {object} data {
@@ -972,6 +1016,11 @@ function wp_print_admin_notice_templates() {
  *         @type string name    Plugin name.
  *         @type string colspan The number of table columns this row spans.
  *     }
+<<<<<<< HEAD
+=======
+ *
+ * @since 4.6.0
+>>>>>>> fb785cbb (Initial commit)
  */
 function wp_print_update_row_templates() {
 	?>

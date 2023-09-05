@@ -12,7 +12,10 @@
  *
  * @since 4.0.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 abstract class WP_Session_Tokens {
 
 	/**

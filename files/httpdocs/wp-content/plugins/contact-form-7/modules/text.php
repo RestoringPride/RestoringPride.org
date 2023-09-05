@@ -52,11 +52,21 @@ function wpcf7_text_form_tag_handler( $tag ) {
 	$atts['class'] = $tag->get_class_option( $class );
 	$atts['id'] = $tag->get_id_option();
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'signed_int', true );
+<<<<<<< HEAD
 	$atts['readonly'] = $tag->has_option( 'readonly' );
 
 	$atts['autocomplete'] = $tag->get_option(
 		'autocomplete', '[-0-9a-zA-Z]+', true
 	);
+=======
+
+	$atts['autocomplete'] = $tag->get_option( 'autocomplete',
+		'[-0-9a-zA-Z]+', true );
+
+	if ( $tag->has_option( 'readonly' ) ) {
+		$atts['readonly'] = 'readonly';
+	}
+>>>>>>> fb785cbb (Initial commit)
 
 	if ( $tag->is_required() ) {
 		$atts['aria-required'] = 'true';
@@ -84,7 +94,17 @@ function wpcf7_text_form_tag_handler( $tag ) {
 	$value = wpcf7_get_hangover( $tag->name, $value );
 
 	$atts['value'] = $value;
+<<<<<<< HEAD
 	$atts['type'] = $tag->basetype;
+=======
+
+	if ( wpcf7_support_html5() ) {
+		$atts['type'] = $tag->basetype;
+	} else {
+		$atts['type'] = 'text';
+	}
+
+>>>>>>> fb785cbb (Initial commit)
 	$atts['name'] = $tag->name;
 
 	$html = sprintf(

@@ -15,7 +15,10 @@
  * @since 1.5.0
  * @since 4.5.0 Removed the `$comments_popup` property.
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Query {
 
 	/**
@@ -446,6 +449,7 @@ class WP_Query {
 	public $thumbnails_cached = false;
 
 	/**
+<<<<<<< HEAD
 	 * Controls whether an attachment query should include filenames or not.
 	 *
 	 * @since 6.0.3
@@ -454,6 +458,8 @@ class WP_Query {
 	protected $allow_query_attachment_by_filename = false;
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Cached list of search stopwords.
 	 *
 	 * @since 3.7.0
@@ -610,7 +616,10 @@ class WP_Query {
 			'post_parent__not_in',
 			'author__in',
 			'author__not_in',
+<<<<<<< HEAD
 			'search_columns',
+=======
+>>>>>>> fb785cbb (Initial commit)
 		);
 
 		foreach ( $array_keys as $key ) {
@@ -637,8 +646,11 @@ class WP_Query {
 	 * @since 4.9.0 Introduced the `$comment_count` parameter.
 	 * @since 5.1.0 Introduced the `$meta_compare_key` parameter.
 	 * @since 5.3.0 Introduced the `$meta_type_key` parameter.
+<<<<<<< HEAD
 	 * @since 6.1.0 Introduced the `$update_menu_item_cache` parameter.
 	 * @since 6.2.0 Introduced the `$search_columns` parameter.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param string|array $query {
 	 *     Optional. Array or string of Query parameters.
@@ -676,6 +688,7 @@ class WP_Query {
 	 *                                                    excludes stickies from 'post__in'. Accepts 1|true, 0|false.
 	 *                                                    Default false.
 	 *     @type int             $m                       Combination YearMonth. Accepts any four-digit year and month
+<<<<<<< HEAD
 	 *                                                    numbers 01-12. Default empty.
 	 *     @type string|string[] $meta_key                Meta key or keys to filter by.
 	 *     @type string|string[] $meta_value              Meta value or values to filter by.
@@ -689,6 +702,21 @@ class WP_Query {
 	 *                                                    See WP_Meta_Query::__construct() for accepted values and default value.
 	 *     @type array           $meta_query              An associative array of WP_Meta_Query arguments.
 	 *                                                    See WP_Meta_Query::__construct() for accepted values.
+=======
+	 *                                                    numbers 1-12. Default empty.
+	 *     @type string|string[] $meta_key                Meta key or keys to filter by.
+	 *     @type string|string[] $meta_value              Meta value or values to filter by.
+	 *     @type string          $meta_compare            MySQL operator used for comparing the meta value.
+	 *                                                    See WP_Meta_Query::__construct for accepted values and default value.
+	 *     @type string          $meta_compare_key        MySQL operator used for comparing the meta key.
+	 *                                                    See WP_Meta_Query::__construct for accepted values and default value.
+	 *     @type string          $meta_type               MySQL data type that the meta_value column will be CAST to for comparisons.
+	 *                                                    See WP_Meta_Query::__construct for accepted values and default value.
+	 *     @type string          $meta_type_key           MySQL data type that the meta_key column will be CAST to for comparisons.
+	 *                                                    See WP_Meta_Query::__construct for accepted values and default value.
+	 *     @type array           $meta_query              An associative array of WP_Meta_Query arguments.
+	 *                                                    See WP_Meta_Query::__construct for accepted values.
+>>>>>>> fb785cbb (Initial commit)
 	 *     @type int             $menu_order              The menu order of the posts.
 	 *     @type int             $minute                  Minute of the hour. Default empty. Accepts numbers 0-59.
 	 *     @type int             $monthnum                The two-digit month. Default empty. Accepts numbers 1-12.
@@ -752,8 +780,11 @@ class WP_Query {
 	 *                                                    return posts containing 'pillow' but not 'sofa'. The
 	 *                                                    character used for exclusion can be modified using the
 	 *                                                    the 'wp_query_search_exclusion_prefix' filter.
+<<<<<<< HEAD
 	 *     @type array           $search_columns          Array of column names to be searched. Accepts 'post_title',
 	 *                                                    'post_excerpt' and 'post_content'. Default empty array.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *     @type int             $second                  Second of the minute. Default empty. Accepts numbers 0-59.
 	 *     @type bool            $sentence                Whether to search by phrase. Default false.
 	 *     @type bool            $suppress_filters        Whether to suppress filters. Default false.
@@ -766,11 +797,18 @@ class WP_Query {
 	 *     @type string[]        $tag_slug__in            An array of tag slugs (OR in). unless 'ignore_sticky_posts' is
 	 *                                                    true. Note: a string of comma-separated IDs will NOT work.
 	 *     @type array           $tax_query               An associative array of WP_Tax_Query arguments.
+<<<<<<< HEAD
 	 *                                                    See WP_Tax_Query::__construct().
 	 *     @type string          $title                   Post title.
 	 *     @type bool            $update_post_meta_cache  Whether to update the post meta cache. Default true.
 	 *     @type bool            $update_post_term_cache  Whether to update the post term cache. Default true.
 	 *     @type bool            $update_menu_item_cache  Whether to update the menu item cache. Default false.
+=======
+	 *                                                    See WP_Tax_Query->__construct().
+	 *     @type string          $title                   Post title.
+	 *     @type bool            $update_post_meta_cache  Whether to update the post meta cache. Default true.
+	 *     @type bool            $update_post_term_cache  Whether to update the post term cache. Default true.
+>>>>>>> fb785cbb (Initial commit)
 	 *     @type bool            $lazy_load_term_meta     Whether to lazy-load term meta. Setting to false will
 	 *                                                    disable cache priming for term meta, so that each
 	 *                                                    get_term_meta() call will hit the database.
@@ -805,6 +843,7 @@ class WP_Query {
 			$qv['p'] = (int) $qv['p'];
 		}
 
+<<<<<<< HEAD
 		$qv['page_id']  = is_scalar( $qv['page_id'] ) ? absint( $qv['page_id'] ) : 0;
 		$qv['year']     = is_scalar( $qv['year'] ) ? absint( $qv['year'] ) : 0;
 		$qv['monthnum'] = is_scalar( $qv['monthnum'] ) ? absint( $qv['monthnum'] ) : 0;
@@ -840,6 +879,31 @@ class WP_Query {
 			$qv['menu_order'] = absint( $qv['menu_order'] );
 		} else {
 			$qv['menu_order'] = '';
+=======
+		$qv['page_id']  = absint( $qv['page_id'] );
+		$qv['year']     = absint( $qv['year'] );
+		$qv['monthnum'] = absint( $qv['monthnum'] );
+		$qv['day']      = absint( $qv['day'] );
+		$qv['w']        = absint( $qv['w'] );
+		$qv['m']        = is_scalar( $qv['m'] ) ? preg_replace( '|[^0-9]|', '', $qv['m'] ) : '';
+		$qv['paged']    = absint( $qv['paged'] );
+		$qv['cat']      = preg_replace( '|[^0-9,-]|', '', $qv['cat'] );    // Comma-separated list of positive or negative integers.
+		$qv['author']   = preg_replace( '|[^0-9,-]|', '', $qv['author'] ); // Comma-separated list of positive or negative integers.
+		$qv['pagename'] = trim( $qv['pagename'] );
+		$qv['name']     = trim( $qv['name'] );
+		$qv['title']    = trim( $qv['title'] );
+		if ( '' !== $qv['hour'] ) {
+			$qv['hour'] = absint( $qv['hour'] );
+		}
+		if ( '' !== $qv['minute'] ) {
+			$qv['minute'] = absint( $qv['minute'] );
+		}
+		if ( '' !== $qv['second'] ) {
+			$qv['second'] = absint( $qv['second'] );
+		}
+		if ( '' !== $qv['menu_order'] ) {
+			$qv['menu_order'] = absint( $qv['menu_order'] );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		// Fairly large, potentially too large, upper bound for search string lengths.
@@ -848,6 +912,7 @@ class WP_Query {
 		}
 
 		// Compat. Map subpost to attachment.
+<<<<<<< HEAD
 		if ( is_scalar( $qv['subpost'] ) && '' != $qv['subpost'] ) {
 			$qv['attachment'] = $qv['subpost'];
 		}
@@ -856,6 +921,16 @@ class WP_Query {
 		}
 
 		$qv['attachment_id'] = is_scalar( $qv['attachment_id'] ) ? absint( $qv['attachment_id'] ) : 0;
+=======
+		if ( '' != $qv['subpost'] ) {
+			$qv['attachment'] = $qv['subpost'];
+		}
+		if ( '' != $qv['subpost_id'] ) {
+			$qv['attachment_id'] = $qv['subpost_id'];
+		}
+
+		$qv['attachment_id'] = absint( $qv['attachment_id'] );
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( ( '' !== $qv['attachment'] ) || ! empty( $qv['attachment_id'] ) ) {
 			$this->is_single     = true;
@@ -1414,6 +1489,7 @@ class WP_Query {
 		$searchand                 = '';
 		$q['search_orderby_title'] = array();
 
+<<<<<<< HEAD
 		$default_search_columns = array( 'post_title', 'post_excerpt', 'post_content' );
 		$search_columns         = ! empty( $q['search_columns'] ) ? $q['search_columns'] : $default_search_columns;
 		if ( ! is_array( $search_columns ) ) {
@@ -1440,6 +1516,8 @@ class WP_Query {
 			$search_columns = $default_search_columns;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		/**
 		 * Filters the prefix that indicates that a search term should be excluded from results.
 		 *
@@ -1467,6 +1545,7 @@ class WP_Query {
 				$q['search_orderby_title'][] = $wpdb->prepare( "{$wpdb->posts}.post_title LIKE %s", $like );
 			}
 
+<<<<<<< HEAD
 			$like = $n . $wpdb->esc_like( $term ) . $n;
 
 			$search_columns_parts = array();
@@ -1480,6 +1559,10 @@ class WP_Query {
 
 			$search .= "$searchand(" . implode( " $andor_op ", $search_columns_parts ) . ')';
 
+=======
+			$like      = $n . $wpdb->esc_like( $term ) . $n;
+			$search   .= $wpdb->prepare( "{$searchand}(({$wpdb->posts}.post_title $like_op %s) $andor_op ({$wpdb->posts}.post_excerpt $like_op %s) $andor_op ({$wpdb->posts}.post_content $like_op %s))", $like, $like, $like );
+>>>>>>> fb785cbb (Initial commit)
 			$searchand = ' AND ';
 		}
 
@@ -1815,8 +1898,12 @@ class WP_Query {
 	 * @since 3.9.0 The `$default_value` argument was introduced.
 	 *
 	 * @param string $query_var     Query variable key.
+<<<<<<< HEAD
 	 * @param mixed  $default_value Optional. Value to return if the query variable is not set.
 	 *                              Default empty string.
+=======
+	 * @param mixed  $default_value Optional. Value to return if the query variable is not set. Default empty string.
+>>>>>>> fb785cbb (Initial commit)
 	 * @return mixed Contents of the query variable.
 	 */
 	public function get( $query_var, $default_value = '' ) {
@@ -1875,6 +1962,7 @@ class WP_Query {
 		// Fill again in case 'pre_get_posts' unset some vars.
 		$q = $this->fill_query_vars( $q );
 
+<<<<<<< HEAD
 		/**
 		 * Filters whether an attachment query should include filenames or not.
 		 *
@@ -1885,6 +1973,8 @@ class WP_Query {
 		$this->allow_query_attachment_by_filename = apply_filters( 'wp_allow_query_attachment_by_filename', false );
 		remove_all_filters( 'wp_allow_query_attachment_by_filename' );
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		// Parse meta query.
 		$this->meta_query = new WP_Meta_Query();
 		$this->meta_query->parse_query_vars( $q );
@@ -1935,13 +2025,22 @@ class WP_Query {
 		}
 
 		if ( ! isset( $q['cache_results'] ) ) {
+<<<<<<< HEAD
 			$q['cache_results'] = true;
+=======
+			if ( wp_using_ext_object_cache() ) {
+				$q['cache_results'] = false;
+			} else {
+				$q['cache_results'] = true;
+			}
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		if ( ! isset( $q['update_post_term_cache'] ) ) {
 			$q['update_post_term_cache'] = true;
 		}
 
+<<<<<<< HEAD
 		if ( ! isset( $q['update_menu_item_cache'] ) ) {
 			$q['update_menu_item_cache'] = false;
 		}
@@ -1950,6 +2049,10 @@ class WP_Query {
 			$q['lazy_load_term_meta'] = $q['update_post_term_cache'];
 		} elseif ( $q['lazy_load_term_meta'] ) { // Lazy loading term meta only works if term caches are primed.
 			$q['update_post_term_cache'] = true;
+=======
+		if ( ! isset( $q['lazy_load_term_meta'] ) ) {
+			$q['lazy_load_term_meta'] = $q['update_post_term_cache'];
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		if ( ! isset( $q['update_post_meta_cache'] ) ) {
@@ -2318,7 +2421,11 @@ class WP_Query {
 			}
 		}
 
+<<<<<<< HEAD
 		if ( ! empty( $this->tax_query->queries ) || ! empty( $this->meta_query->queries ) || ! empty( $this->allow_query_attachment_by_filename ) ) {
+=======
+		if ( ! empty( $this->tax_query->queries ) || ! empty( $this->meta_query->queries ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			$groupby = "{$wpdb->posts}.ID";
 		}
 
@@ -2395,10 +2502,13 @@ class WP_Query {
 		}
 		$where .= $search . $whichauthor . $whichmimetype;
 
+<<<<<<< HEAD
 		if ( ! empty( $this->allow_query_attachment_by_filename ) ) {
 			$join .= " LEFT JOIN {$wpdb->postmeta} AS sq1 ON ( {$wpdb->posts}.ID = sq1.post_id AND sq1.meta_key = '_wp_attached_file' )";
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( ! empty( $this->meta_query->queries ) ) {
 			$clauses = $this->meta_query->get_sql( 'post', $wpdb->posts, 'ID', $this );
 			$join   .= $clauses['join'];
@@ -3135,6 +3245,7 @@ class WP_Query {
 		 */
 		$this->posts = apply_filters_ref_array( 'posts_pre_query', array( null, &$this ) );
 
+<<<<<<< HEAD
 		/*
 		 * Ensure the ID database query is able to be cached.
 		 *
@@ -3203,6 +3314,8 @@ class WP_Query {
 			}
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( 'ids' === $q['fields'] ) {
 			if ( null === $this->posts ) {
 				$this->posts = $wpdb->get_col( $this->request );
@@ -3213,6 +3326,7 @@ class WP_Query {
 			$this->post_count = count( $this->posts );
 			$this->set_found_posts( $q, $limits );
 
+<<<<<<< HEAD
 			if ( $q['cache_results'] && $id_query_is_cacheable ) {
 				$cache_value = array(
 					'posts'         => $this->posts,
@@ -3223,6 +3337,8 @@ class WP_Query {
 				wp_cache_set( $cache_key, $cache_value, 'posts' );
 			}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			return $this->posts;
 		}
 
@@ -3235,13 +3351,18 @@ class WP_Query {
 			$this->set_found_posts( $q, $limits );
 
 			/** @var int[] */
+<<<<<<< HEAD
 			$post_parents = array();
 			$post_ids     = array();
 
+=======
+			$r = array();
+>>>>>>> fb785cbb (Initial commit)
 			foreach ( $this->posts as $key => $post ) {
 				$this->posts[ $key ]->ID          = (int) $post->ID;
 				$this->posts[ $key ]->post_parent = (int) $post->post_parent;
 
+<<<<<<< HEAD
 				$post_parents[ (int) $post->ID ] = (int) $post->post_parent;
 				$post_ids[]                      = (int) $post->ID;
 			}
@@ -3257,6 +3378,12 @@ class WP_Query {
 			}
 
 			return $post_parents;
+=======
+				$r[ (int) $post->ID ] = (int) $post->post_parent;
+			}
+
+			return $r;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		if ( null === $this->posts ) {
@@ -3298,12 +3425,21 @@ class WP_Query {
 				 */
 				$this->request = apply_filters( 'posts_request_ids', $this->request, $this );
 
+<<<<<<< HEAD
 				$post_ids = $wpdb->get_col( $this->request );
 
 				if ( $post_ids ) {
 					$this->posts = $post_ids;
 					$this->set_found_posts( $q, $limits );
 					_prime_post_caches( $post_ids, $q['update_post_term_cache'], $q['update_post_meta_cache'] );
+=======
+				$ids = $wpdb->get_col( $this->request );
+
+				if ( $ids ) {
+					$this->posts = $ids;
+					$this->set_found_posts( $q, $limits );
+					_prime_post_caches( $ids, $q['update_post_term_cache'], $q['update_post_meta_cache'] );
+>>>>>>> fb785cbb (Initial commit)
 				} else {
 					$this->posts = array();
 				}
@@ -3319,6 +3455,7 @@ class WP_Query {
 			$this->posts = array_map( 'get_post', $this->posts );
 		}
 
+<<<<<<< HEAD
 		if ( $q['cache_results'] && $id_query_is_cacheable && ! $cache_found ) {
 			$post_ids = wp_list_pluck( $this->posts, 'ID' );
 
@@ -3331,6 +3468,8 @@ class WP_Query {
 			wp_cache_set( $cache_key, $cache_value, 'posts' );
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( ! $q['suppress_filters'] ) {
 			/**
 			 * Filters the raw post results array, prior to status checks.
@@ -3363,6 +3502,7 @@ class WP_Query {
 
 			$comments_request = "SELECT {$wpdb->comments}.comment_ID FROM {$wpdb->comments} $cjoin $cwhere $cgroupby $corderby $climits";
 
+<<<<<<< HEAD
 			$comment_key          = md5( $comments_request );
 			$comment_last_changed = wp_cache_get_last_changed( 'comment' );
 
@@ -3371,6 +3511,16 @@ class WP_Query {
 			if ( false === $comment_ids ) {
 				$comment_ids = $wpdb->get_col( $comments_request );
 				wp_cache_add( $comment_cache_key, $comment_ids, 'comment' );
+=======
+			$key          = md5( $comments_request );
+			$last_changed = wp_cache_get_last_changed( 'comment' );
+
+			$cache_key   = "comment_feed:$key:$last_changed";
+			$comment_ids = wp_cache_get( $cache_key, 'comment' );
+			if ( false === $comment_ids ) {
+				$comment_ids = $wpdb->get_col( $comments_request );
+				wp_cache_add( $cache_key, $comment_ids, 'comment' );
+>>>>>>> fb785cbb (Initial commit)
 			}
 			_prime_comment_caches( $comment_ids, false );
 
@@ -3524,10 +3674,13 @@ class WP_Query {
 			$this->posts      = array();
 		}
 
+<<<<<<< HEAD
 		if ( ! empty( $this->posts ) && $q['update_menu_item_cache'] ) {
 			update_menu_item_cache( $this->posts );
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( $q['lazy_load_term_meta'] ) {
 			wp_queue_posts_for_term_meta_lazyload( $this->posts );
 		}
@@ -3622,6 +3775,7 @@ class WP_Query {
 	 */
 	public function the_post() {
 		global $post;
+<<<<<<< HEAD
 
 		if ( ! $this->in_the_loop ) {
 			// Only prime the post cache for queries limited to the ID field.
@@ -3635,6 +3789,8 @@ class WP_Query {
 			update_post_author_caches( $post_objects );
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$this->in_the_loop = true;
 
 		if ( -1 == $this->current_post ) { // Loop has just started.
@@ -4005,10 +4161,13 @@ class WP_Query {
 		}
 		$post_type_object = get_post_type_object( $post_type );
 
+<<<<<<< HEAD
 		if ( ! $post_type_object ) {
 			return false;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return in_array( $post_type_object->name, (array) $post_types, true );
 	}
 
@@ -4033,9 +4192,12 @@ class WP_Query {
 		$attachment = array_map( 'strval', (array) $attachment );
 
 		$post_obj = $this->get_queried_object();
+<<<<<<< HEAD
 		if ( ! $post_obj ) {
 			return false;
 		}
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( in_array( (string) $post_obj->ID, $attachment, true ) ) {
 			return true;
@@ -4069,9 +4231,12 @@ class WP_Query {
 		}
 
 		$author_obj = $this->get_queried_object();
+<<<<<<< HEAD
 		if ( ! $author_obj ) {
 			return false;
 		}
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 		$author = array_map( 'strval', (array) $author );
 
@@ -4108,9 +4273,12 @@ class WP_Query {
 		}
 
 		$cat_obj = $this->get_queried_object();
+<<<<<<< HEAD
 		if ( ! $cat_obj ) {
 			return false;
 		}
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 		$category = array_map( 'strval', (array) $category );
 
@@ -4147,9 +4315,12 @@ class WP_Query {
 		}
 
 		$tag_obj = $this->get_queried_object();
+<<<<<<< HEAD
 		if ( ! $tag_obj ) {
 			return false;
 		}
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 		$tag = array_map( 'strval', (array) $tag );
 
@@ -4397,9 +4568,12 @@ class WP_Query {
 		}
 
 		$page_obj = $this->get_queried_object();
+<<<<<<< HEAD
 		if ( ! $page_obj ) {
 			return false;
 		}
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 		$page = array_map( 'strval', (array) $page );
 
@@ -4507,9 +4681,12 @@ class WP_Query {
 		}
 
 		$post_obj = $this->get_queried_object();
+<<<<<<< HEAD
 		if ( ! $post_obj ) {
 			return false;
 		}
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 		$post = array_map( 'strval', (array) $post );
 
@@ -4557,9 +4734,12 @@ class WP_Query {
 		}
 
 		$post_obj = $this->get_queried_object();
+<<<<<<< HEAD
 		if ( ! $post_obj ) {
 			return false;
 		}
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 		return in_array( $post_obj->post_type, (array) $post_types, true );
 	}
@@ -4783,6 +4963,7 @@ class WP_Query {
 
 		return $elements;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Generate cache key.
@@ -4839,6 +5020,8 @@ class WP_Query {
 		return "wp_query:$key:$last_changed";
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	/**
 	 * After looping through a nested query, this function
 	 * restores the $post global to the current post in this query.

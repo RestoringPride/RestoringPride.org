@@ -5,6 +5,10 @@ namespace Yoast\WP\SEO\Integrations\Admin;
 use WPSEO_Addon_Manager;
 use WPSEO_Admin_Asset_Manager;
 use Yoast\WP\SEO\Conditionals\Admin_Conditional;
+<<<<<<< HEAD
+=======
+use Yoast\WP\SEO\Helpers\Indexing_Helper;
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Helpers\Options_Helper;
 use Yoast\WP\SEO\Helpers\Product_Helper;
 use Yoast\WP\SEO\Integrations\Integration_Interface;

@@ -48,7 +48,11 @@ class WP_Widget_Links extends WP_Widget {
 		$order            = 'rating' === $orderby ? 'DESC' : 'ASC';
 		$limit            = isset( $instance['limit'] ) ? $instance['limit'] : -1;
 
+<<<<<<< HEAD
 		$before_widget = preg_replace( '/ id="[^"]*"/', ' id="%id"', $args['before_widget'] );
+=======
+		$before_widget = preg_replace( '/id="[^"]*"/', 'id="%id"', $args['before_widget'] );
+>>>>>>> fb785cbb (Initial commit)
 
 		$widget_links_args = array(
 			'title_before'     => $args['before_title'],

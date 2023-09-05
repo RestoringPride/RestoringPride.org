@@ -2,13 +2,19 @@
 
 namespace Yoast\WP\SEO\Presentations;
 
+<<<<<<< HEAD
 use AllowDynamicProperties;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Exception;
 
 /**
  * The abstract presentation class.
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class Abstract_Presentation {
 
 	/**

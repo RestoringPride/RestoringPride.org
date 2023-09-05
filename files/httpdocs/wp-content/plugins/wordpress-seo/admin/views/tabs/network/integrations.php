@@ -8,7 +8,10 @@
  */
 
 use Yoast\WP\SEO\Presenters\Admin\Badge_Presenter;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Presenters\Admin\Premium_Badge_Presenter;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 if ( ! defined( 'WPSEO_VERSION' ) ) {
 	header( 'Status: 403 Forbidden' );
@@ -52,14 +55,18 @@ $integration_toggles = Yoast_Integration_Toggles::instance()->get_all();
 			);
 
 			$name = $integration->name;
+<<<<<<< HEAD
 			if ( ! empty( $integration->premium ) && $integration->premium === true ) {
 				$name .= ' ' . new Premium_Badge_Presenter( $integration->name );
 			}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			if ( ! empty( $integration->new ) && $integration->new === true ) {
 				$name .= ' ' . new Badge_Presenter( $integration->name );
 			}
 
+<<<<<<< HEAD
 			$disabled            = $integration->disabled;
 			$show_premium_upsell = false;
 			$premium_upsell_url  = '';
@@ -75,6 +82,8 @@ $integration_toggles = Yoast_Integration_Toggles::instance()->get_all();
 				$preserve_disabled_value = true;
 			}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 			$yform->toggle_switch(
 				WPSEO_Option::ALLOW_KEY_PREFIX . $integration->setting,
 				[
@@ -83,12 +92,16 @@ $integration_toggles = Yoast_Integration_Toggles::instance()->get_all();
 				],
 				$name,
 				$feature_help->get_button_html() . $feature_help->get_panel_html(),
+<<<<<<< HEAD
 				[
 					'disabled'                => $disabled,
 					'preserve_disabled_value' => $preserve_disabled_value,
 					'show_premium_upsell'     => $show_premium_upsell,
 					'premium_upsell_url'      => $premium_upsell_url,
 				]
+=======
+				[ 'disabled' => $integration->disabled ]
+>>>>>>> fb785cbb (Initial commit)
 			);
 
 			do_action( 'Yoast\WP\SEO\admin_network_integration_after', $integration );

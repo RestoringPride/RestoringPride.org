@@ -79,10 +79,13 @@ abstract class Field
      */
     public $attributes = [];
 
+<<<<<<< HEAD
     final public function __construct()
     {
     }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
     /**
      * Parse field arguments
      *

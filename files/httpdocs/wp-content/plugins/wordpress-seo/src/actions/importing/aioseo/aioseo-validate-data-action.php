@@ -4,9 +4,15 @@
 namespace Yoast\WP\SEO\Actions\Importing\Aioseo;
 
 use wpdb;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Actions\Importing\Abstract_Aioseo_Importing_Action;
 use Yoast\WP\SEO\Exceptions\Importing\Aioseo_Validation_Exception;
 use Yoast\WP\SEO\Helpers\Options_Helper;
+=======
+use Yoast\WP\SEO\Helpers\Options_Helper;
+use Yoast\WP\SEO\Exceptions\Importing\Aioseo_Validation_Exception;
+use Yoast\WP\SEO\Actions\Importing\Abstract_Aioseo_Importing_Action;
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Importing action for validating AIOSEO data before the import occurs.
@@ -101,7 +107,11 @@ class Aioseo_Validate_Data_Action extends Abstract_Aioseo_Importing_Action {
 	/**
 	 * Validates AIOSEO data.
 	 *
+<<<<<<< HEAD
 	 * @return array An array of validated data or false if aioseo data did not pass validation.
+=======
+	 * @return array|false An array of validated data or false if aioseo data did not pass validation.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @throws Aioseo_Validation_Exception If the validation fails.
 	 */

@@ -33,6 +33,7 @@ function wp_register_layout_support( $block_type ) {
  * Generates the CSS corresponding to the provided layout.
  *
  * @since 5.9.0
+<<<<<<< HEAD
  * @since 6.1.0 Added `$block_spacing` param, use style engine to enqueue styles.
  * @access private
  *
@@ -86,6 +87,26 @@ function wp_get_layout_style( $selector, $layout, $has_block_gap_support = false
 		$content_size    = isset( $layout['contentSize'] ) ? $layout['contentSize'] : '';
 		$wide_size       = isset( $layout['wideSize'] ) ? $layout['wideSize'] : '';
 		$justify_content = isset( $layout['justifyContent'] ) ? $layout['justifyContent'] : 'center';
+=======
+ * @access private
+ *
+ * @param string  $selector                      CSS selector.
+ * @param array   $layout                        Layout object. The one that is passed has already checked
+ *                                               the existence of default block layout.
+ * @param boolean $has_block_gap_support         Whether the theme has support for the block gap.
+ * @param string  $gap_value                     The block gap value to apply.
+ * @param boolean $should_skip_gap_serialization Whether to skip applying the user-defined value set in the editor.
+ * @param string  $fallback_gap_value            The custom fallback value for block gap.
+ * @return string CSS style.
+ */
+function wp_get_layout_style( $selector, $layout, $has_block_gap_support = false, $gap_value = null, $should_skip_gap_serialization = false, $fallback_gap_value = '0.5em' ) {
+	$layout_type = isset( $layout['type'] ) ? $layout['type'] : 'default';
+
+	$style = '';
+	if ( 'default' === $layout_type ) {
+		$content_size = isset( $layout['contentSize'] ) ? $layout['contentSize'] : '';
+		$wide_size    = isset( $layout['wideSize'] ) ? $layout['wideSize'] : '';
+>>>>>>> fb785cbb (Initial commit)
 
 		$all_max_width_value  = $content_size ? $content_size : $wide_size;
 		$wide_max_width_value = $wide_size ? $wide_size : $content_size;
@@ -94,6 +115,7 @@ function wp_get_layout_style( $selector, $layout, $has_block_gap_support = false
 		$all_max_width_value  = safecss_filter_attr( explode( ';', $all_max_width_value )[0] );
 		$wide_max_width_value = safecss_filter_attr( explode( ';', $wide_max_width_value )[0] );
 
+<<<<<<< HEAD
 		$margin_left  = 'left' === $justify_content ? '0 !important' : 'auto !important';
 		$margin_right = 'right' === $justify_content ? '0 !important' : 'auto !important';
 
@@ -160,10 +182,27 @@ function wp_get_layout_style( $selector, $layout, $has_block_gap_support = false
 			);
 		}
 
+=======
+		if ( $content_size || $wide_size ) {
+			$style  = "$selector > :where(:not(.alignleft):not(.alignright)) {";
+			$style .= 'max-width: ' . esc_html( $all_max_width_value ) . ';';
+			$style .= 'margin-left: auto !important;';
+			$style .= 'margin-right: auto !important;';
+			$style .= '}';
+
+			$style .= "$selector > .alignwide { max-width: " . esc_html( $wide_max_width_value ) . ';}';
+			$style .= "$selector .alignfull { max-width: none; }";
+		}
+
+		$style .= "$selector > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }";
+		$style .= "$selector > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }";
+		$style .= "$selector > .aligncenter { margin-left: auto !important; margin-right: auto !important; }";
+>>>>>>> fb785cbb (Initial commit)
 		if ( $has_block_gap_support ) {
 			if ( is_array( $gap_value ) ) {
 				$gap_value = isset( $gap_value['top'] ) ? $gap_value['top'] : null;
 			}
+<<<<<<< HEAD
 			if ( null !== $gap_value && ! $should_skip_gap_serialization ) {
 				// Get spacing CSS variable from preset value if provided.
 				if ( is_string( $gap_value ) && str_contains( $gap_value, 'var:preset|spacing|' ) ) {
@@ -190,6 +229,11 @@ function wp_get_layout_style( $selector, $layout, $has_block_gap_support = false
 					)
 				);
 			}
+=======
+			$gap_style = $gap_value && ! $should_skip_gap_serialization ? $gap_value : 'var( --wp--style--block-gap )';
+			$style    .= "$selector > * { margin-block-start: 0; margin-block-end: 0; }";
+			$style    .= "$selector > * + * { margin-block-start: $gap_style; margin-block-end: 0; }";
+>>>>>>> fb785cbb (Initial commit)
 		}
 	} elseif ( 'flex' === $layout_type ) {
 		$layout_orientation = isset( $layout['orientation'] ) ? $layout['orientation'] : 'horizontal';
@@ -200,6 +244,7 @@ function wp_get_layout_style( $selector, $layout, $has_block_gap_support = false
 			'center' => 'center',
 		);
 
+<<<<<<< HEAD
 		$vertical_alignment_options = array(
 			'top'    => 'flex-start',
 			'center' => 'center',
@@ -247,11 +292,41 @@ function wp_get_layout_style( $selector, $layout, $has_block_gap_support = false
 
 		if ( 'horizontal' === $layout_orientation ) {
 			/*
+=======
+		if ( 'horizontal' === $layout_orientation ) {
+			$justify_content_options += array( 'space-between' => 'space-between' );
+		}
+
+		$flex_wrap_options = array( 'wrap', 'nowrap' );
+		$flex_wrap         = ! empty( $layout['flexWrap'] ) && in_array( $layout['flexWrap'], $flex_wrap_options, true ) ?
+			$layout['flexWrap'] :
+			'wrap';
+
+		$style  = "$selector {";
+		$style .= 'display: flex;';
+		if ( $has_block_gap_support ) {
+			if ( is_array( $gap_value ) ) {
+				$gap_row    = isset( $gap_value['top'] ) ? $gap_value['top'] : $fallback_gap_value;
+				$gap_column = isset( $gap_value['left'] ) ? $gap_value['left'] : $fallback_gap_value;
+				$gap_value  = $gap_row === $gap_column ? $gap_row : $gap_row . ' ' . $gap_column;
+			}
+			$gap_style = $gap_value && ! $should_skip_gap_serialization ? $gap_value : "var( --wp--style--block-gap, $fallback_gap_value )";
+			$style    .= "gap: $gap_style;";
+		} else {
+			$style .= "gap: $fallback_gap_value;";
+		}
+
+		$style .= "flex-wrap: $flex_wrap;";
+		if ( 'horizontal' === $layout_orientation ) {
+			$style .= 'align-items: center;';
+			/**
+>>>>>>> fb785cbb (Initial commit)
 			 * Add this style only if is not empty for backwards compatibility,
 			 * since we intend to convert blocks that had flex layout implemented
 			 * by custom css.
 			 */
 			if ( ! empty( $layout['justifyContent'] ) && array_key_exists( $layout['justifyContent'], $justify_content_options ) ) {
+<<<<<<< HEAD
 				$layout_styles[] = array(
 					'selector'     => $selector,
 					'declarations' => array( 'justify-content' => $justify_content_options[ $layout['justifyContent'] ] ),
@@ -306,6 +381,24 @@ function wp_get_layout_style( $selector, $layout, $has_block_gap_support = false
 	}
 
 	return '';
+=======
+				$style .= "justify-content: {$justify_content_options[ $layout['justifyContent'] ]};";
+			}
+		} else {
+			$style .= 'flex-direction: column;';
+			if ( ! empty( $layout['justifyContent'] ) && array_key_exists( $layout['justifyContent'], $justify_content_options ) ) {
+				$style .= "align-items: {$justify_content_options[ $layout['justifyContent'] ]};";
+			} else {
+				$style .= 'align-items: flex-start;';
+			}
+		}
+		$style .= '}';
+
+		$style .= "$selector > * { margin: 0; }";
+	}
+
+	return $style;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -321,6 +414,7 @@ function wp_get_layout_style( $selector, $layout, $has_block_gap_support = false
 function wp_render_layout_support_flag( $block_content, $block ) {
 	$block_type     = WP_Block_Type_Registry::get_instance()->get_registered( $block['blockName'] );
 	$support_layout = block_has_support( $block_type, array( '__experimentalLayout' ), false );
+<<<<<<< HEAD
 	$has_child_layout = isset( $block['attrs']['style']['layout']['selfStretch'] );
 
 	if ( ! $support_layout && ! $has_child_layout ) {
@@ -406,6 +500,33 @@ function wp_render_layout_support_flag( $block_content, $block ) {
 	 * not intended to provide an extended set of classes to match all block layout attributes
 	 * here.
 	 */
+=======
+
+	if ( ! $support_layout ) {
+		return $block_content;
+	}
+
+	$block_gap             = wp_get_global_settings( array( 'spacing', 'blockGap' ) );
+	$default_layout        = wp_get_global_settings( array( 'layout' ) );
+	$has_block_gap_support = isset( $block_gap ) ? null !== $block_gap : false;
+	$default_block_layout  = _wp_array_get( $block_type->supports, array( '__experimentalLayout', 'default' ), array() );
+	$used_layout           = isset( $block['attrs']['layout'] ) ? $block['attrs']['layout'] : $default_block_layout;
+	if ( isset( $used_layout['inherit'] ) && $used_layout['inherit'] ) {
+		if ( ! $default_layout ) {
+			return $block_content;
+		}
+		$used_layout = $default_layout;
+	}
+
+	$class_names     = array();
+	$container_class = wp_unique_id( 'wp-container-' );
+	$class_names[]   = $container_class;
+
+	// The following section was added to reintroduce a small set of layout classnames that were
+	// removed in the 5.9 release (https://github.com/WordPress/gutenberg/issues/38719). It is
+	// not intended to provide an extended set of classes to match all block layout attributes
+	// here.
+>>>>>>> fb785cbb (Initial commit)
 	if ( ! empty( $block['attrs']['layout']['orientation'] ) ) {
 		$class_names[] = 'is-' . sanitize_title( $block['attrs']['layout']['orientation'] );
 	}
@@ -418,6 +539,7 @@ function wp_render_layout_support_flag( $block_content, $block ) {
 		$class_names[] = 'is-nowrap';
 	}
 
+<<<<<<< HEAD
 	// Get classname for layout type.
 	if ( isset( $used_layout['type'] ) ) {
 		$layout_classname = _wp_array_get( $layout_definitions, array( $used_layout['type'], 'className' ), '' );
@@ -517,6 +639,38 @@ function wp_render_layout_support_flag( $block_content, $block ) {
 	}
 
 	return (string) $content;
+=======
+	$gap_value = _wp_array_get( $block, array( 'attrs', 'style', 'spacing', 'blockGap' ) );
+	// Skip if gap value contains unsupported characters.
+	// Regex for CSS value borrowed from `safecss_filter_attr`, and used here
+	// because we only want to match against the value, not the CSS attribute.
+	if ( is_array( $gap_value ) ) {
+		foreach ( $gap_value as $key => $value ) {
+			$gap_value[ $key ] = $value && preg_match( '%[\\\(&=}]|/\*%', $value ) ? null : $value;
+		}
+	} else {
+		$gap_value = $gap_value && preg_match( '%[\\\(&=}]|/\*%', $gap_value ) ? null : $gap_value;
+	}
+
+	$fallback_gap_value = _wp_array_get( $block_type->supports, array( 'spacing', 'blockGap', '__experimentalDefault' ), '0.5em' );
+
+	// If a block's block.json skips serialization for spacing or spacing.blockGap,
+	// don't apply the user-defined value to the styles.
+	$should_skip_gap_serialization = wp_should_skip_block_supports_serialization( $block_type, 'spacing', 'blockGap' );
+	$style                         = wp_get_layout_style( ".$container_class", $used_layout, $has_block_gap_support, $gap_value, $should_skip_gap_serialization, $fallback_gap_value );
+	// This assumes the hook only applies to blocks with a single wrapper.
+	// I think this is a reasonable limitation for that particular hook.
+	$content = preg_replace(
+		'/' . preg_quote( 'class="', '/' ) . '/',
+		'class="' . esc_attr( implode( ' ', $class_names ) ) . ' ',
+		$block_content,
+		1
+	);
+
+	wp_enqueue_block_support_styles( $style );
+
+	return $content;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 // Register the block support.
@@ -548,9 +702,15 @@ function wp_restore_group_inner_container( $block_content, $block ) {
 	);
 
 	if (
+<<<<<<< HEAD
 		wp_theme_has_theme_json() ||
 		1 === preg_match( $group_with_inner_container_regex, $block_content ) ||
 		( isset( $block['attrs']['layout']['type'] ) && 'flex' === $block['attrs']['layout']['type'] )
+=======
+		WP_Theme_JSON_Resolver::theme_has_support() ||
+		1 === preg_match( $group_with_inner_container_regex, $block_content ) ||
+		( isset( $block['attrs']['layout']['type'] ) && 'default' !== $block['attrs']['layout']['type'] )
+>>>>>>> fb785cbb (Initial commit)
 	) {
 		return $block_content;
 	}
@@ -611,7 +771,11 @@ function wp_restore_image_outer_container( $block_content, $block ) {
 )/iUx";
 
 	if (
+<<<<<<< HEAD
 		wp_theme_has_theme_json() ||
+=======
+		WP_Theme_JSON_Resolver::theme_has_support() ||
+>>>>>>> fb785cbb (Initial commit)
 		0 === preg_match( $image_with_align, $block_content, $matches )
 	) {
 		return $block_content;

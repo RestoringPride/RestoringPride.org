@@ -13,7 +13,10 @@
  * @since 3.7.0
  * @since 4.6.0 Moved to its own file from wp-admin/includes/class-wp-upgrader.php.
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Automatic_Updater {
 
 	/**
@@ -57,6 +60,7 @@ class WP_Automatic_Updater {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks whether access to a given directory is allowed.
 	 *
 	 * This is used when detecting version control checkouts. Takes into account
@@ -105,6 +109,8 @@ class WP_Automatic_Updater {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Checks for version control checkouts.
 	 *
 	 * Checks for Subversion, Git, Mercurial, and Bazaar. It recursively looks up the
@@ -150,11 +156,15 @@ class WP_Automatic_Updater {
 		// Search all directories we've found for evidence of version control.
 		foreach ( $vcs_dirs as $vcs_dir ) {
 			foreach ( $check_dirs as $check_dir ) {
+<<<<<<< HEAD
 				if ( ! $this->is_allowed_dir( $check_dir ) ) {
 					continue;
 				}
 
 				$checkout = is_dir( rtrim( $check_dir, '\\/' ) . "/$vcs_dir" );
+=======
+				$checkout = @is_dir( rtrim( $check_dir, '\\/' ) . "/$vcs_dir" );
+>>>>>>> fb785cbb (Initial commit)
 				if ( $checkout ) {
 					break 2;
 				}
@@ -191,7 +201,11 @@ class WP_Automatic_Updater {
 	 */
 	public function should_update( $type, $item, $context ) {
 		// Used to see if WP_Filesystem is set up to allow unattended updates.
+<<<<<<< HEAD
 		$skin = new Automatic_Upgrader_Skin();
+=======
+		$skin = new Automatic_Upgrader_Skin;
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( $this->is_disabled() ) {
 			return false;
@@ -275,7 +289,11 @@ class WP_Automatic_Updater {
 		if ( 'core' === $type ) {
 			global $wpdb;
 
+<<<<<<< HEAD
 			$php_compat = version_compare( PHP_VERSION, $item->php_version, '>=' );
+=======
+			$php_compat = version_compare( phpversion(), $item->php_version, '>=' );
+>>>>>>> fb785cbb (Initial commit)
 			if ( file_exists( WP_CONTENT_DIR . '/db.php' ) && empty( $wpdb->is_mysql ) ) {
 				$mysql_compat = true;
 			} else {
@@ -289,7 +307,11 @@ class WP_Automatic_Updater {
 
 		// If updating a plugin or theme, ensure the minimum PHP version requirements are satisfied.
 		if ( in_array( $type, array( 'plugin', 'theme' ), true ) ) {
+<<<<<<< HEAD
 			if ( ! empty( $item->requires_php ) && version_compare( PHP_VERSION, $item->requires_php, '<' ) ) {
+=======
+			if ( ! empty( $item->requires_php ) && version_compare( phpversion(), $item->requires_php, '<' ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				return false;
 			}
 		}
@@ -357,7 +379,11 @@ class WP_Automatic_Updater {
 	 * @return null|WP_Error
 	 */
 	public function update( $type, $item ) {
+<<<<<<< HEAD
 		$skin = new Automatic_Upgrader_Skin();
+=======
+		$skin = new Automatic_Upgrader_Skin;
+>>>>>>> fb785cbb (Initial commit)
 
 		switch ( $type ) {
 			case 'core':
@@ -882,7 +908,11 @@ class WP_Automatic_Updater {
 		}
 
 		if ( $critical_support ) {
+<<<<<<< HEAD
 			$body .= ' ' . __( "Reach out to WordPress Core developers to ensure you'll never have this problem again." );
+=======
+			$body .= ' ' . __( "If you reach out to us, we'll also ensure you'll never have this problem again." );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		// If things are successful and we're now on the latest, mention plugins and themes if any are out of date.
@@ -1153,6 +1183,7 @@ class WP_Automatic_Updater {
 				$body[] = __( 'These plugins failed to update:' );
 
 				foreach ( $failed_updates['plugin'] as $item ) {
+<<<<<<< HEAD
 					$body_message = '';
 					$item_url     = '';
 
@@ -1181,6 +1212,25 @@ class WP_Automatic_Updater {
 
 					$body[] = $body_message;
 
+=======
+					if ( $item->item->current_version ) {
+						$body[] = sprintf(
+							/* translators: 1: Plugin name, 2: Current version number, 3: New version number. */
+							__( '- %1$s (from version %2$s to %3$s)' ),
+							$item->name,
+							$item->item->current_version,
+							$item->item->new_version
+						);
+					} else {
+						$body[] = sprintf(
+							/* translators: 1: Plugin name, 2: Version number. */
+							__( '- %1$s version %2$s' ),
+							$item->name,
+							$item->item->new_version
+						);
+					}
+
+>>>>>>> fb785cbb (Initial commit)
 					$past_failure_emails[ $item->item->plugin ] = $item->item->new_version;
 				}
 
@@ -1196,7 +1246,11 @@ class WP_Automatic_Updater {
 						$body[] = sprintf(
 							/* translators: 1: Theme name, 2: Current version number, 3: New version number. */
 							__( '- %1$s (from version %2$s to %3$s)' ),
+<<<<<<< HEAD
 							html_entity_decode( $item->name ),
+=======
+							$item->name,
+>>>>>>> fb785cbb (Initial commit)
 							$item->item->current_version,
 							$item->item->new_version
 						);
@@ -1204,7 +1258,11 @@ class WP_Automatic_Updater {
 						$body[] = sprintf(
 							/* translators: 1: Theme name, 2: Version number. */
 							__( '- %1$s version %2$s' ),
+<<<<<<< HEAD
 							html_entity_decode( $item->name ),
+=======
+							$item->name,
+>>>>>>> fb785cbb (Initial commit)
 							$item->item->new_version
 						);
 					}
@@ -1225,6 +1283,7 @@ class WP_Automatic_Updater {
 				$body[] = __( 'These plugins are now up to date:' );
 
 				foreach ( $successful_updates['plugin'] as $item ) {
+<<<<<<< HEAD
 					$body_message = '';
 					$item_url     = '';
 
@@ -1251,6 +1310,24 @@ class WP_Automatic_Updater {
 						);
 					}
 					$body[] = $body_message;
+=======
+					if ( $item->item->current_version ) {
+						$body[] = sprintf(
+							/* translators: 1: Plugin name, 2: Current version number, 3: New version number. */
+							__( '- %1$s (from version %2$s to %3$s)' ),
+							$item->name,
+							$item->item->current_version,
+							$item->item->new_version
+						);
+					} else {
+						$body[] = sprintf(
+							/* translators: 1: Plugin name, 2: Version number. */
+							__( '- %1$s version %2$s' ),
+							$item->name,
+							$item->item->new_version
+						);
+					}
+>>>>>>> fb785cbb (Initial commit)
 
 					unset( $past_failure_emails[ $item->item->plugin ] );
 				}
@@ -1267,7 +1344,11 @@ class WP_Automatic_Updater {
 						$body[] = sprintf(
 							/* translators: 1: Theme name, 2: Current version number, 3: New version number. */
 							__( '- %1$s (from version %2$s to %3$s)' ),
+<<<<<<< HEAD
 							html_entity_decode( $item->name ),
+=======
+							$item->name,
+>>>>>>> fb785cbb (Initial commit)
 							$item->item->current_version,
 							$item->item->new_version
 						);
@@ -1275,7 +1356,11 @@ class WP_Automatic_Updater {
 						$body[] = sprintf(
 							/* translators: 1: Theme name, 2: Version number. */
 							__( '- %1$s version %2$s' ),
+<<<<<<< HEAD
 							html_entity_decode( $item->name ),
+=======
+							$item->name,
+>>>>>>> fb785cbb (Initial commit)
 							$item->item->new_version
 						);
 					}

@@ -12,7 +12,10 @@
 		}
 	},
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"align": [ "wide", "full" ],
 		"html": false,
 		"color": {
@@ -22,6 +25,7 @@
 				"text": true
 			}
 		},
+<<<<<<< HEAD
 		"spacing": {
 			"padding": true,
 			"margin": true
@@ -35,6 +39,11 @@
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
+=======
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}

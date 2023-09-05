@@ -473,6 +473,10 @@ body.trashing #publish-settings {
 	height: 20px;
 	cursor: pointer;
 	box-shadow: none;
+<<<<<<< HEAD
+=======
+	-webkit-appearance: none;
+>>>>>>> fb785cbb (Initial commit)
 	background: transparent;
 	color: #50575e;
 	border: none;
@@ -1605,6 +1609,10 @@ p.customize-section-description {
 	font-family: Consolas, Monaco, monospace;
 	font-size: 12px;
 	padding: 6px 8px;
+<<<<<<< HEAD
+=======
+	-o-tab-size: 2;
+>>>>>>> fb785cbb (Initial commit)
 	tab-size: 2;
 }
 .customize-control-code_editor textarea,

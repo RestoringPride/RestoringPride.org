@@ -26,6 +26,7 @@
  *
  * @global string $auth_secure_cookie
  *
+<<<<<<< HEAD
  * @param array       $credentials {
  *     Optional. User info in order to sign on.
  *
@@ -34,16 +35,23 @@
  *     @type bool   $remember      Whether to 'remember' the user. Increases the time
  *                                 that the cookie will be kept. Default false.
  * }
+=======
+ * @param array       $credentials   Optional. User info in order to sign on.
+>>>>>>> fb785cbb (Initial commit)
  * @param string|bool $secure_cookie Optional. Whether to use secure cookie.
  * @return WP_User|WP_Error WP_User on success, WP_Error on failure.
  */
 function wp_signon( $credentials = array(), $secure_cookie = '' ) {
 	if ( empty( $credentials ) ) {
+<<<<<<< HEAD
 		$credentials = array(
 			'user_login'    => '',
 			'user_password' => '',
 			'remember'      => false,
 		);
+=======
+		$credentials = array(); // Back-compat for plugins passing an empty string.
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( ! empty( $_POST['log'] ) ) {
 			$credentials['user_login'] = wp_unslash( $_POST['log'] );
@@ -145,11 +153,19 @@ function wp_authenticate_username_password( $user, $username, $password ) {
 		$error = new WP_Error();
 
 		if ( empty( $username ) ) {
+<<<<<<< HEAD
 			$error->add( 'empty_username', __( '<strong>Error:</strong> The username field is empty.' ) );
 		}
 
 		if ( empty( $password ) ) {
 			$error->add( 'empty_password', __( '<strong>Error:</strong> The password field is empty.' ) );
+=======
+			$error->add( 'empty_username', __( '<strong>Error</strong>: The username field is empty.' ) );
+		}
+
+		if ( empty( $password ) ) {
+			$error->add( 'empty_password', __( '<strong>Error</strong>: The password field is empty.' ) );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return $error;
@@ -162,7 +178,11 @@ function wp_authenticate_username_password( $user, $username, $password ) {
 			'invalid_username',
 			sprintf(
 				/* translators: %s: User name. */
+<<<<<<< HEAD
 				__( '<strong>Error:</strong> The username <strong>%s</strong> is not registered on this site. If you are unsure of your username, try your email address instead.' ),
+=======
+				__( '<strong>Error</strong>: The username <strong>%s</strong> is not registered on this site. If you are unsure of your username, try your email address instead.' ),
+>>>>>>> fb785cbb (Initial commit)
 				$username
 			)
 		);
@@ -187,7 +207,11 @@ function wp_authenticate_username_password( $user, $username, $password ) {
 			'incorrect_password',
 			sprintf(
 				/* translators: %s: User name. */
+<<<<<<< HEAD
 				__( '<strong>Error:</strong> The password you entered for the username %s is incorrect.' ),
+=======
+				__( '<strong>Error</strong>: The password you entered for the username %s is incorrect.' ),
+>>>>>>> fb785cbb (Initial commit)
 				'<strong>' . $username . '</strong>'
 			) .
 			' <a href="' . wp_lostpassword_url() . '">' .
@@ -224,11 +248,19 @@ function wp_authenticate_email_password( $user, $email, $password ) {
 
 		if ( empty( $email ) ) {
 			// Uses 'empty_username' for back-compat with wp_signon().
+<<<<<<< HEAD
 			$error->add( 'empty_username', __( '<strong>Error:</strong> The email field is empty.' ) );
 		}
 
 		if ( empty( $password ) ) {
 			$error->add( 'empty_password', __( '<strong>Error:</strong> The password field is empty.' ) );
+=======
+			$error->add( 'empty_username', __( '<strong>Error</strong>: The email field is empty.' ) );
+		}
+
+		if ( empty( $password ) ) {
+			$error->add( 'empty_password', __( '<strong>Error</strong>: The password field is empty.' ) );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return $error;
@@ -259,7 +291,11 @@ function wp_authenticate_email_password( $user, $email, $password ) {
 			'incorrect_password',
 			sprintf(
 				/* translators: %s: Email address. */
+<<<<<<< HEAD
 				__( '<strong>Error:</strong> The password you entered for the email address %s is incorrect.' ),
+=======
+				__( '<strong>Error</strong>: The password you entered for the email address %s is incorrect.' ),
+>>>>>>> fb785cbb (Initial commit)
 				'<strong>' . $email . '</strong>'
 			) .
 			' <a href="' . wp_lostpassword_url() . '">' .
@@ -362,12 +398,20 @@ function wp_authenticate_application_password( $input_user, $username, $password
 		if ( is_email( $username ) ) {
 			$error = new WP_Error(
 				'invalid_email',
+<<<<<<< HEAD
 				__( '<strong>Error:</strong> Unknown email address. Check again or try your username.' )
+=======
+				__( '<strong>Error</strong>: Unknown email address. Check again or try your username.' )
+>>>>>>> fb785cbb (Initial commit)
 			);
 		} else {
 			$error = new WP_Error(
 				'invalid_username',
+<<<<<<< HEAD
 				__( '<strong>Error:</strong> Unknown username. Check again or try your email address.' )
+=======
+				__( '<strong>Error</strong>: Unknown username. Check again or try your email address.' )
+>>>>>>> fb785cbb (Initial commit)
 			);
 		}
 	} elseif ( ! wp_is_application_passwords_available() ) {
@@ -514,7 +558,11 @@ function wp_authenticate_spam_check( $user ) {
 		$spammed = apply_filters( 'check_is_user_spammed', is_user_spammy( $user ), $user );
 
 		if ( $spammed ) {
+<<<<<<< HEAD
 			return new WP_Error( 'spammer_account', __( '<strong>Error:</strong> Your account has been marked as a spammer.' ) );
+=======
+			return new WP_Error( 'spammer_account', __( '<strong>Error</strong>: Your account has been marked as a spammer.' ) );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 	return $user;
@@ -702,7 +750,11 @@ function get_user_option( $option, $user = 0, $deprecated = '' ) {
  * Updates user option with global blog capability.
  *
  * User options are just like user metadata except that they have support for
+<<<<<<< HEAD
  * global blog options. If the 'is_global' parameter is false, which it is by default,
+=======
+ * global blog options. If the 'global' parameter is false, which it is by default
+>>>>>>> fb785cbb (Initial commit)
  * it will prepend the WordPress table prefix to the option name.
  *
  * Deletes the user option if $newvalue is empty.
@@ -714,15 +766,26 @@ function get_user_option( $option, $user = 0, $deprecated = '' ) {
  * @param int    $user_id     User ID.
  * @param string $option_name User option name.
  * @param mixed  $newvalue    User option value.
+<<<<<<< HEAD
  * @param bool   $is_global   Optional. Whether option name is global or blog specific.
+=======
+ * @param bool   $global      Optional. Whether option name is global or blog specific.
+>>>>>>> fb785cbb (Initial commit)
  *                            Default false (blog specific).
  * @return int|bool User meta ID if the option didn't exist, true on successful update,
  *                  false on failure.
  */
+<<<<<<< HEAD
 function update_user_option( $user_id, $option_name, $newvalue, $is_global = false ) {
 	global $wpdb;
 
 	if ( ! $is_global ) {
+=======
+function update_user_option( $user_id, $option_name, $newvalue, $global = false ) {
+	global $wpdb;
+
+	if ( ! $global ) {
+>>>>>>> fb785cbb (Initial commit)
 		$option_name = $wpdb->get_blog_prefix() . $option_name;
 	}
 
@@ -733,7 +796,11 @@ function update_user_option( $user_id, $option_name, $newvalue, $is_global = fal
  * Deletes user option with global blog capability.
  *
  * User options are just like user metadata except that they have support for
+<<<<<<< HEAD
  * global blog options. If the 'is_global' parameter is false, which it is by default,
+=======
+ * global blog options. If the 'global' parameter is false, which it is by default
+>>>>>>> fb785cbb (Initial commit)
  * it will prepend the WordPress table prefix to the option name.
  *
  * @since 3.0.0
@@ -742,6 +809,7 @@ function update_user_option( $user_id, $option_name, $newvalue, $is_global = fal
  *
  * @param int    $user_id     User ID
  * @param string $option_name User option name.
+<<<<<<< HEAD
  * @param bool   $is_global   Optional. Whether option name is global or blog specific.
  *                            Default false (blog specific).
  * @return bool True on success, false on failure.
@@ -753,6 +821,18 @@ function delete_user_option( $user_id, $option_name, $is_global = false ) {
 		$option_name = $wpdb->get_blog_prefix() . $option_name;
 	}
 
+=======
+ * @param bool   $global      Optional. Whether option name is global or blog specific.
+ *                            Default false (blog specific).
+ * @return bool True on success, false on failure.
+ */
+function delete_user_option( $user_id, $option_name, $global = false ) {
+	global $wpdb;
+
+	if ( ! $global ) {
+		$option_name = $wpdb->get_blog_prefix() . $option_name;
+	}
+>>>>>>> fb785cbb (Initial commit)
 	return delete_user_meta( $user_id, $option_name );
 }
 
@@ -823,6 +903,7 @@ function wp_list_users( $args = array() ) {
 		'include'       => '',
 	);
 
+<<<<<<< HEAD
 	$parsed_args = wp_parse_args( $args, $defaults );
 
 	$return = '';
@@ -841,10 +922,20 @@ function wp_list_users( $args = array() ) {
 	$query_args = apply_filters( 'wp_list_users_args', $query_args, $parsed_args );
 
 	$users = get_users( $query_args );
+=======
+	$args = wp_parse_args( $args, $defaults );
+
+	$return = '';
+
+	$query_args           = wp_array_slice_assoc( $args, array( 'orderby', 'order', 'number', 'exclude', 'include' ) );
+	$query_args['fields'] = 'ids';
+	$users                = get_users( $query_args );
+>>>>>>> fb785cbb (Initial commit)
 
 	foreach ( $users as $user_id ) {
 		$user = get_userdata( $user_id );
 
+<<<<<<< HEAD
 		if ( $parsed_args['exclude_admin'] && 'admin' === $user->display_name ) {
 			continue;
 		}
@@ -856,22 +947,39 @@ function wp_list_users( $args = array() ) {
 				$user->first_name,
 				$user->last_name
 			);
+=======
+		if ( $args['exclude_admin'] && 'admin' === $user->display_name ) {
+			continue;
+		}
+
+		if ( $args['show_fullname'] && '' !== $user->first_name && '' !== $user->last_name ) {
+			$name = "$user->first_name $user->last_name";
+>>>>>>> fb785cbb (Initial commit)
 		} else {
 			$name = $user->display_name;
 		}
 
+<<<<<<< HEAD
 		if ( ! $parsed_args['html'] ) {
+=======
+		if ( ! $args['html'] ) {
+>>>>>>> fb785cbb (Initial commit)
 			$return .= $name . ', ';
 
 			continue; // No need to go further to process HTML.
 		}
 
+<<<<<<< HEAD
 		if ( 'list' === $parsed_args['style'] ) {
+=======
+		if ( 'list' === $args['style'] ) {
+>>>>>>> fb785cbb (Initial commit)
 			$return .= '<li>';
 		}
 
 		$row = $name;
 
+<<<<<<< HEAD
 		if ( ! empty( $parsed_args['feed_image'] ) || ! empty( $parsed_args['feed'] ) ) {
 			$row .= ' ';
 			if ( empty( $parsed_args['feed_image'] ) ) {
@@ -884,30 +992,61 @@ function wp_list_users( $args = array() ) {
 			if ( ! empty( $parsed_args['feed'] ) ) {
 				$alt  = ' alt="' . esc_attr( $parsed_args['feed'] ) . '"';
 				$name = $parsed_args['feed'];
+=======
+		if ( ! empty( $args['feed_image'] ) || ! empty( $args['feed'] ) ) {
+			$row .= ' ';
+			if ( empty( $args['feed_image'] ) ) {
+				$row .= '(';
+			}
+
+			$row .= '<a href="' . get_author_feed_link( $user->ID, $args['feed_type'] ) . '"';
+
+			$alt = '';
+			if ( ! empty( $args['feed'] ) ) {
+				$alt  = ' alt="' . esc_attr( $args['feed'] ) . '"';
+				$name = $args['feed'];
+>>>>>>> fb785cbb (Initial commit)
 			}
 
 			$row .= '>';
 
+<<<<<<< HEAD
 			if ( ! empty( $parsed_args['feed_image'] ) ) {
 				$row .= '<img src="' . esc_url( $parsed_args['feed_image'] ) . '" style="border: none;"' . $alt . ' />';
+=======
+			if ( ! empty( $args['feed_image'] ) ) {
+				$row .= '<img src="' . esc_url( $args['feed_image'] ) . '" style="border: none;"' . $alt . ' />';
+>>>>>>> fb785cbb (Initial commit)
 			} else {
 				$row .= $name;
 			}
 
 			$row .= '</a>';
 
+<<<<<<< HEAD
 			if ( empty( $parsed_args['feed_image'] ) ) {
+=======
+			if ( empty( $args['feed_image'] ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				$row .= ')';
 			}
 		}
 
 		$return .= $row;
+<<<<<<< HEAD
 		$return .= ( 'list' === $parsed_args['style'] ) ? '</li>' : ', ';
+=======
+		$return .= ( 'list' === $args['style'] ) ? '</li>' : ', ';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	$return = rtrim( $return, ', ' );
 
+<<<<<<< HEAD
 	if ( ! $parsed_args['echo'] ) {
+=======
+	if ( ! $args['echo'] ) {
+>>>>>>> fb785cbb (Initial commit)
 		return $return;
 	}
 	echo $return;
@@ -963,7 +1102,11 @@ function get_blogs_of_user( $user_id, $all = false ) {
 
 	if ( ! is_multisite() ) {
 		$site_id                        = get_current_blog_id();
+<<<<<<< HEAD
 		$sites                          = array( $site_id => new stdClass() );
+=======
+		$sites                          = array( $site_id => new stdClass );
+>>>>>>> fb785cbb (Initial commit)
 		$sites[ $site_id ]->userblog_id = $site_id;
 		$sites[ $site_id ]->blogname    = get_option( 'blogname' );
 		$sites[ $site_id ]->domain      = '';
@@ -1236,10 +1379,17 @@ function count_users( $strategy = 'time', $site_id = null ) {
 	 *
 	 * @since 5.1.0
 	 *
+<<<<<<< HEAD
 	 * @param null|array $result   The value to return instead. Default null to continue with the query.
 	 * @param string     $strategy Optional. The computational strategy to use when counting the users.
 	 *                             Accepts either 'time' or 'memory'. Default 'time'.
 	 * @param int        $site_id  The site ID to count users for.
+=======
+	 * @param null|string $result   The value to return instead. Default null to continue with the query.
+	 * @param string      $strategy Optional. The computational strategy to use when counting the users.
+	 *                              Accepts either 'time' or 'memory'. Default 'time'.
+	 * @param int|null    $site_id  Optional. The site ID to count users for. Defaults to the current site.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	$pre = apply_filters( 'pre_count_users', null, $strategy, $site_id );
 
@@ -1548,7 +1698,11 @@ function setup_userdata( $for_user_id = 0 ) {
  *                                                 Default empty.
  *     @type string       $show_option_none        Text to show as the drop-down default when no
  *                                                 users were found. Default empty.
+<<<<<<< HEAD
  *     @type int|string   $option_none_value       Value to use for $show_option_none when no users
+=======
+ *     @type int|string   $option_none_value       Value to use for $show_option_non when no users
+>>>>>>> fb785cbb (Initial commit)
  *                                                 were found. Default -1.
  *     @type string       $hide_if_only_one_author Whether to skip generating the drop-down
  *                                                 if only one user was found. Default empty.
@@ -1873,11 +2027,16 @@ function update_user_caches( $user ) {
 
 	wp_cache_add( $user->ID, $user, 'users' );
 	wp_cache_add( $user->user_login, $user->ID, 'userlogins' );
+<<<<<<< HEAD
 	wp_cache_add( $user->user_nicename, $user->ID, 'userslugs' );
 
 	if ( ! empty( $user->user_email ) ) {
 		wp_cache_add( $user->user_email, $user->ID, 'useremail' );
 	}
+=======
+	wp_cache_add( $user->user_email, $user->ID, 'useremail' );
+	wp_cache_add( $user->user_nicename, $user->ID, 'userslugs' );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1885,11 +2044,22 @@ function update_user_caches( $user ) {
  *
  * @since 3.0.0
  * @since 4.4.0 'clean_user_cache' action was added.
+<<<<<<< HEAD
  * @since 6.2.0 User metadata caches are now cleared.
+=======
+ * @since 5.8.0 Refreshes the global user instance if cleaning the user cache for the current user.
+ *
+ * @global WP_User $current_user The current user object which holds the user data.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param WP_User|int $user User object or ID to be cleaned from the cache
  */
 function clean_user_cache( $user ) {
+<<<<<<< HEAD
+=======
+	global $current_user;
+
+>>>>>>> fb785cbb (Initial commit)
 	if ( is_numeric( $user ) ) {
 		$user = new WP_User( $user );
 	}
@@ -1900,6 +2070,7 @@ function clean_user_cache( $user ) {
 
 	wp_cache_delete( $user->ID, 'users' );
 	wp_cache_delete( $user->user_login, 'userlogins' );
+<<<<<<< HEAD
 	wp_cache_delete( $user->user_nicename, 'userslugs' );
 
 	if ( ! empty( $user->user_email ) ) {
@@ -1908,6 +2079,11 @@ function clean_user_cache( $user ) {
 
 	wp_cache_delete( $user->ID, 'user_meta' );
 
+=======
+	wp_cache_delete( $user->user_email, 'useremail' );
+	wp_cache_delete( $user->user_nicename, 'userslugs' );
+
+>>>>>>> fb785cbb (Initial commit)
 	/**
 	 * Fires immediately after the given user's cache is cleaned.
 	 *
@@ -1917,6 +2093,16 @@ function clean_user_cache( $user ) {
 	 * @param WP_User $user    User object.
 	 */
 	do_action( 'clean_user_cache', $user->ID, $user );
+<<<<<<< HEAD
+=======
+
+	// Refresh the global user instance if the cleaning current user.
+	if ( get_current_user_id() === (int) $user->ID ) {
+		$user_id      = (int) $user->ID;
+		$current_user = null;
+		wp_set_current_user( $user_id, '' );
+	}
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -2123,16 +2309,22 @@ function wp_insert_user( $userdata ) {
 		return new WP_Error( 'user_login_too_long', __( 'Username may not be longer than 60 characters.' ) );
 	}
 
+<<<<<<< HEAD
 	// Username must be unique.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	if ( ! $update && username_exists( $user_login ) ) {
 		return new WP_Error( 'existing_user_login', __( 'Sorry, that username already exists!' ) );
 	}
 
+<<<<<<< HEAD
 	// Username must not match an existing user email.
 	if ( email_exists( $user_login ) ) {
 		return new WP_Error( 'existing_user_email_as_login', __( 'Sorry, that username is not available.' ) );
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	/**
 	 * Filters the list of disallowed usernames.
 	 *
@@ -2273,12 +2465,17 @@ function wp_insert_user( $userdata ) {
 		if ( $update ) {
 			$display_name = $user_login;
 		} elseif ( $meta['first_name'] && $meta['last_name'] ) {
+<<<<<<< HEAD
 			$display_name = sprintf(
 				/* translators: 1: User's first name, 2: Last name. */
 				_x( '%1$s %2$s', 'Display name based on first name and last name' ),
 				$meta['first_name'],
 				$meta['last_name']
 			);
+=======
+			/* translators: 1: User's first name, 2: Last name. */
+			$display_name = sprintf( _x( '%1$s %2$s', 'Display name based on first name and last name' ), $meta['first_name'], $meta['last_name'] );
+>>>>>>> fb785cbb (Initial commit)
 		} elseif ( $meta['first_name'] ) {
 			$display_name = $meta['first_name'];
 		} elseif ( $meta['last_name'] ) {
@@ -2595,7 +2792,11 @@ function wp_update_user( $userdata ) {
 
 	$switched_locale = false;
 	if ( ! empty( $send_password_change_email ) || ! empty( $send_email_change_email ) ) {
+<<<<<<< HEAD
 		$switched_locale = switch_to_user_locale( $user_id );
+=======
+		$switched_locale = switch_to_locale( get_user_locale( $user_id ) );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	if ( ! empty( $send_password_change_email ) ) {
@@ -2865,7 +3066,11 @@ function get_password_reset_key( $user ) {
 	global $wp_hasher;
 
 	if ( ! ( $user instanceof WP_User ) ) {
+<<<<<<< HEAD
 		return new WP_Error( 'invalidcombo', __( '<strong>Error:</strong> There is no account with that username or email address.' ) );
+=======
+		return new WP_Error( 'invalidcombo', __( '<strong>Error</strong>: There is no account with that username or email address.' ) );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -3059,6 +3264,7 @@ function retrieve_password( $user_login = null ) {
 		$user_login = $_POST['user_login'];
 	}
 
+<<<<<<< HEAD
 	$user_login = trim( wp_unslash( $user_login ) );
 
 	if ( empty( $user_login ) ) {
@@ -3075,6 +3281,17 @@ function retrieve_password( $user_login = null ) {
 		}
 	} else {
 		$user_data = get_user_by( 'login', $user_login );
+=======
+	if ( empty( $user_login ) ) {
+		$errors->add( 'empty_username', __( '<strong>Error</strong>: Please enter a username or email address.' ) );
+	} elseif ( strpos( $user_login, '@' ) ) {
+		$user_data = get_user_by( 'email', trim( wp_unslash( $user_login ) ) );
+		if ( empty( $user_data ) ) {
+			$errors->add( 'invalid_email', __( '<strong>Error</strong>: There is no account with that username or email address.' ) );
+		}
+	} else {
+		$user_data = get_user_by( 'login', trim( wp_unslash( $user_login ) ) );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -3125,7 +3342,11 @@ function retrieve_password( $user_login = null ) {
 	}
 
 	if ( ! $user_data ) {
+<<<<<<< HEAD
 		$errors->add( 'invalidcombo', __( '<strong>Error:</strong> There is no account with that username or email address.' ) );
+=======
+		$errors->add( 'invalidcombo', __( '<strong>Error</strong>: There is no account with that username or email address.' ) );
+>>>>>>> fb785cbb (Initial commit)
 		return $errors;
 	}
 
@@ -3156,7 +3377,11 @@ function retrieve_password( $user_login = null ) {
 	// Localize password reset message content for user.
 	$locale = get_user_locale( $user_data );
 
+<<<<<<< HEAD
 	$switched_locale = switch_to_user_locale( $user_data->ID );
+=======
+	$switched_locale = switch_to_locale( $locale );
+>>>>>>> fb785cbb (Initial commit)
 
 	if ( is_multisite() ) {
 		$site_name = get_network()->site_name;
@@ -3273,8 +3498,13 @@ function retrieve_password( $user_login = null ) {
 			'retrieve_password_email_failure',
 			sprintf(
 				/* translators: %s: Documentation URL. */
+<<<<<<< HEAD
 				__( '<strong>Error:</strong> The email could not be sent. Your site may not be correctly configured to send emails. <a href="%s">Get support for resetting your password</a>.' ),
 				esc_url( __( 'https://wordpress.org/documentation/article/reset-your-password/' ) )
+=======
+				__( '<strong>Error</strong>: The email could not be sent. Your site may not be correctly configured to send emails. <a href="%s">Get support for resetting your password</a>.' ),
+				esc_url( __( 'https://wordpress.org/support/article/resetting-your-password/' ) )
+>>>>>>> fb785cbb (Initial commit)
 			)
 		);
 		return $errors;
@@ -3340,6 +3570,7 @@ function register_new_user( $user_login, $user_email ) {
 
 	// Check the username.
 	if ( '' === $sanitized_user_login ) {
+<<<<<<< HEAD
 		$errors->add( 'empty_username', __( '<strong>Error:</strong> Please enter a username.' ) );
 	} elseif ( ! validate_username( $user_login ) ) {
 		$errors->add( 'invalid_username', __( '<strong>Error:</strong> This username is invalid because it uses illegal characters. Please enter a valid username.' ) );
@@ -3348,19 +3579,38 @@ function register_new_user( $user_login, $user_email ) {
 		$errors->add( 'username_exists', __( '<strong>Error:</strong> This username is already registered. Please choose another one.' ) );
 	} elseif ( email_exists( $sanitized_user_login ) ) {
 		$errors->add( 'username_exists_as_email', __( '<strong>Error:</strong> This username is not available. Please choose another one.' ) );
+=======
+		$errors->add( 'empty_username', __( '<strong>Error</strong>: Please enter a username.' ) );
+	} elseif ( ! validate_username( $user_login ) ) {
+		$errors->add( 'invalid_username', __( '<strong>Error</strong>: This username is invalid because it uses illegal characters. Please enter a valid username.' ) );
+		$sanitized_user_login = '';
+	} elseif ( username_exists( $sanitized_user_login ) ) {
+		$errors->add( 'username_exists', __( '<strong>Error</strong>: This username is already registered. Please choose another one.' ) );
+
+>>>>>>> fb785cbb (Initial commit)
 	} else {
 		/** This filter is documented in wp-includes/user.php */
 		$illegal_user_logins = (array) apply_filters( 'illegal_user_logins', array() );
 		if ( in_array( strtolower( $sanitized_user_login ), array_map( 'strtolower', $illegal_user_logins ), true ) ) {
+<<<<<<< HEAD
 			$errors->add( 'invalid_username', __( '<strong>Error:</strong> Sorry, that username is not allowed.' ) );
+=======
+			$errors->add( 'invalid_username', __( '<strong>Error</strong>: Sorry, that username is not allowed.' ) );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 
 	// Check the email address.
 	if ( '' === $user_email ) {
+<<<<<<< HEAD
 		$errors->add( 'empty_email', __( '<strong>Error:</strong> Please type your email address.' ) );
 	} elseif ( ! is_email( $user_email ) ) {
 		$errors->add( 'invalid_email', __( '<strong>Error:</strong> The email address is not correct.' ) );
+=======
+		$errors->add( 'empty_email', __( '<strong>Error</strong>: Please type your email address.' ) );
+	} elseif ( ! is_email( $user_email ) ) {
+		$errors->add( 'invalid_email', __( '<strong>Error</strong>: The email address is not correct.' ) );
+>>>>>>> fb785cbb (Initial commit)
 		$user_email = '';
 	} elseif ( email_exists( $user_email ) ) {
 		$errors->add(
@@ -3415,7 +3665,11 @@ function register_new_user( $user_login, $user_email ) {
 			'registerfail',
 			sprintf(
 				/* translators: %s: Admin email address. */
+<<<<<<< HEAD
 				__( '<strong>Error:</strong> Could not register you&hellip; please contact the <a href="mailto:%s">site admin</a>!' ),
+=======
+				__( '<strong>Error</strong>: Could not register you&hellip; please contact the <a href="mailto:%s">site admin</a>!' ),
+>>>>>>> fb785cbb (Initial commit)
 				get_option( 'admin_email' )
 			)
 		);
@@ -3527,8 +3781,11 @@ function wp_destroy_all_sessions() {
  * @since 4.4.0
  * @since 4.9.0 The `$site_id` parameter was added to support multisite.
  *
+<<<<<<< HEAD
  * @global wpdb $wpdb WordPress database abstraction object.
  *
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @param int|null $site_id Optional. The site ID to get users with no role for. Defaults to the current site.
  * @return string[] Array of user IDs as strings.
  */
@@ -3660,7 +3917,11 @@ function send_confirmation_on_profile_email() {
 		if ( ! is_email( $_POST['email'] ) ) {
 			$errors->add(
 				'user_email',
+<<<<<<< HEAD
 				__( '<strong>Error:</strong> The email address is not correct.' ),
+=======
+				__( '<strong>Error</strong>: The email address is not correct.' ),
+>>>>>>> fb785cbb (Initial commit)
 				array(
 					'form-field' => 'email',
 				)
@@ -3672,7 +3933,11 @@ function send_confirmation_on_profile_email() {
 		if ( email_exists( $_POST['email'] ) ) {
 			$errors->add(
 				'user_email',
+<<<<<<< HEAD
 				__( '<strong>Error:</strong> The email address is already used.' ),
+=======
+				__( '<strong>Error</strong>: The email address is already used.' ),
+>>>>>>> fb785cbb (Initial commit)
 				array(
 					'form-field' => 'email',
 				)
@@ -3734,7 +3999,11 @@ All at ###SITENAME###
 		$content = apply_filters( 'new_user_email_content', $email_text, $new_user_email );
 
 		$content = str_replace( '###USERNAME###', $current_user->user_login, $content );
+<<<<<<< HEAD
 		$content = str_replace( '###ADMIN_URL###', esc_url( self_admin_url( 'profile.php?newuseremail=' . $hash ) ), $content );
+=======
+		$content = str_replace( '###ADMIN_URL###', esc_url( admin_url( 'profile.php?newuseremail=' . $hash ) ), $content );
+>>>>>>> fb785cbb (Initial commit)
 		$content = str_replace( '###EMAIL###', $_POST['email'], $content );
 		$content = str_replace( '###SITENAME###', $sitename, $content );
 		$content = str_replace( '###SITEURL###', home_url(), $content );
@@ -3773,7 +4042,11 @@ function new_user_email_admin_notice() {
  * @since 4.9.6
  * @access private
  *
+<<<<<<< HEAD
  * @return string[] List of core privacy action types.
+=======
+ * @return array List of core privacy action types.
+>>>>>>> fb785cbb (Initial commit)
  */
 function _wp_privacy_action_request_types() {
 	return array(
@@ -3787,8 +4060,13 @@ function _wp_privacy_action_request_types() {
  *
  * @since 4.9.6
  *
+<<<<<<< HEAD
  * @param array[] $exporters An array of personal data exporters.
  * @return array[] An array of personal data exporters.
+=======
+ * @param array $exporters  An array of personal data exporters.
+ * @return array An array of personal data exporters.
+>>>>>>> fb785cbb (Initial commit)
  */
 function wp_register_user_personal_data_exporter( $exporters ) {
 	$exporters['wordpress-user'] = array(
@@ -4203,8 +4481,13 @@ All at ###SITENAME###
 	$content = str_replace( '###SITENAME###', $email_data['sitename'], $content );
 	$content = str_replace( '###USER_EMAIL###', $email_data['user_email'], $content );
 	$content = str_replace( '###DESCRIPTION###', $email_data['description'], $content );
+<<<<<<< HEAD
 	$content = str_replace( '###MANAGE_URL###', sanitize_url( $email_data['manage_url'] ), $content );
 	$content = str_replace( '###SITEURL###', sanitize_url( $email_data['siteurl'] ), $content );
+=======
+	$content = str_replace( '###MANAGE_URL###', esc_url_raw( $email_data['manage_url'] ), $content );
+	$content = str_replace( '###SITEURL###', esc_url_raw( $email_data['siteurl'] ), $content );
+>>>>>>> fb785cbb (Initial commit)
 
 	$headers = '';
 
@@ -4262,11 +4545,21 @@ function _wp_privacy_send_erasure_fulfillment_notification( $request_id ) {
 
 	// Localize message content for user; fallback to site default for visitors.
 	if ( ! empty( $request->user_id ) ) {
+<<<<<<< HEAD
 		$switched_locale = switch_to_user_locale( $request->user_id );
 	} else {
 		$switched_locale = switch_to_locale( get_locale() );
 	}
 
+=======
+		$locale = get_user_locale( $request->user_id );
+	} else {
+		$locale = get_locale();
+	}
+
+	$switched_locale = switch_to_locale( $locale );
+
+>>>>>>> fb785cbb (Initial commit)
 	/**
 	 * Filters the recipient of the data erasure fulfillment notification.
 	 *
@@ -4442,7 +4735,11 @@ All at ###SITENAME###
 
 	$content = str_replace( '###SITENAME###', $email_data['sitename'], $content );
 	$content = str_replace( '###PRIVACY_POLICY_URL###', $email_data['privacy_policy_url'], $content );
+<<<<<<< HEAD
 	$content = str_replace( '###SITEURL###', sanitize_url( $email_data['siteurl'] ), $content );
+=======
+	$content = str_replace( '###SITEURL###', esc_url_raw( $email_data['siteurl'] ), $content );
+>>>>>>> fb785cbb (Initial commit)
 
 	$headers = '';
 
@@ -4671,11 +4968,21 @@ function wp_send_user_request( $request_id ) {
 
 	// Localize message content for user; fallback to site default for visitors.
 	if ( ! empty( $request->user_id ) ) {
+<<<<<<< HEAD
 		$switched_locale = switch_to_user_locale( $request->user_id );
 	} else {
 		$switched_locale = switch_to_locale( get_locale() );
 	}
 
+=======
+		$locale = get_user_locale( $request->user_id );
+	} else {
+		$locale = get_locale();
+	}
+
+	$switched_locale = switch_to_locale( $locale );
+
+>>>>>>> fb785cbb (Initial commit)
 	$email_data = array(
 		'request'     => $request,
 		'email'       => $request->email,
@@ -4761,10 +5068,17 @@ All at ###SITENAME###
 	$content = apply_filters( 'user_request_action_email_content', $content, $email_data );
 
 	$content = str_replace( '###DESCRIPTION###', $email_data['description'], $content );
+<<<<<<< HEAD
 	$content = str_replace( '###CONFIRM_URL###', sanitize_url( $email_data['confirm_url'] ), $content );
 	$content = str_replace( '###EMAIL###', $email_data['email'], $content );
 	$content = str_replace( '###SITENAME###', $email_data['sitename'], $content );
 	$content = str_replace( '###SITEURL###', sanitize_url( $email_data['siteurl'] ), $content );
+=======
+	$content = str_replace( '###CONFIRM_URL###', esc_url_raw( $email_data['confirm_url'] ), $content );
+	$content = str_replace( '###EMAIL###', $email_data['email'], $content );
+	$content = str_replace( '###SITENAME###', $email_data['sitename'], $content );
+	$content = str_replace( '###SITEURL###', esc_url_raw( $email_data['siteurl'] ), $content );
+>>>>>>> fb785cbb (Initial commit)
 
 	$headers = '';
 
@@ -4977,6 +5291,7 @@ function wp_is_application_passwords_available_for_user( $user ) {
 	 */
 	return apply_filters( 'wp_is_application_passwords_available_for_user', true, $user );
 }
+<<<<<<< HEAD
 
 /**
  * Registers the user meta property for persisted preferences.
@@ -5024,3 +5339,5 @@ function wp_register_persisted_preferences_meta() {
 		)
 	);
 }
+=======
+>>>>>>> fb785cbb (Initial commit)

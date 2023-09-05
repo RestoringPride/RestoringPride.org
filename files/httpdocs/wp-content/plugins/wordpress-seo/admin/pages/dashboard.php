@@ -35,6 +35,27 @@ $dashboard_tabs->add_tab(
 		]
 	)
 );
+<<<<<<< HEAD
+=======
+$dashboard_tabs->add_tab(
+	new WPSEO_Option_Tab(
+		'features',
+		__( 'Features', 'wordpress-seo' )
+	)
+);
+$dashboard_tabs->add_tab(
+	new WPSEO_Option_Tab(
+		'integrations',
+		__( 'Integrations', 'wordpress-seo' )
+	)
+);
+$dashboard_tabs->add_tab(
+	new WPSEO_Option_Tab(
+		'webmaster-tools',
+		__( 'Webmaster Tools', 'wordpress-seo' )
+	)
+);
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Allows the addition of tabs to the dashboard by calling $dashboard_tabs->add_tab().

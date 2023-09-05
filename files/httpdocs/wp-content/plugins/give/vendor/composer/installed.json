@@ -551,6 +551,7 @@
             "install-path": "../paypal/paypalhttp"
         },
         {
+<<<<<<< HEAD
             "name": "stellarwp/container-contract",
             "version": "1.0.4",
             "version_normalized": "1.0.4.0",
@@ -656,6 +657,8 @@
             "install-path": "../stellarwp/validation"
         },
         {
+=======
+>>>>>>> fb785cbb (Initial commit)
             "name": "stripe/stripe-php",
             "version": "v7.103.0",
             "version_normalized": "7.103.0.0",

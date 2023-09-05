@@ -3,8 +3,11 @@
 namespace Give\LegacySubscriptions;
 
 use Closure;
+<<<<<<< HEAD
 use Give\Helpers\Hooks;
 use Give\LegacySubscriptions\Actions\EnsureSubscriptionHasPaymentMode;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\ServiceProviders\ServiceProvider as ServiceProviderInterface;
 
 /**
@@ -39,7 +42,10 @@ class ServiceProvider implements ServiceProviderInterface
      */
     public function boot()
     {
+<<<<<<< HEAD
         Hooks::addAction('give_subscription_post_create', EnsureSubscriptionHasPaymentMode::class, '__invoke', 10, 2);
+=======
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**

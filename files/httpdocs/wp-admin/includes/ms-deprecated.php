@@ -108,6 +108,7 @@ function wpmu_get_blog_allowedthemes( $blog_id = 0 ) {
  * @deprecated 3.5.0
  */
 function ms_deprecated_blogs_file() {}
+<<<<<<< HEAD
 
 if ( ! function_exists( 'install_global_terms' ) ) :
 	/**
@@ -138,3 +139,5 @@ function sync_category_tag_slugs( $term, $taxonomy ) {
 
 	return $term;
 }
+=======
+>>>>>>> fb785cbb (Initial commit)

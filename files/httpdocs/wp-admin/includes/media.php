@@ -145,7 +145,11 @@ function get_image_send_to_editor( $id, $caption, $title, $align, $url = '', $re
 	}
 
 	if ( $url ) {
+<<<<<<< HEAD
 		$html = '<a href="' . esc_url( $url ) . '"' . $rel . '>' . $html . '</a>';
+=======
+		$html = '<a href="' . esc_attr( $url ) . '"' . $rel . '>' . $html . '</a>';
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -674,6 +678,7 @@ function media_buttons( $editor_id = 'content' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Retrieves the upload iframe source URL.
  *
  * @since 3.0.0
@@ -684,6 +689,13 @@ function media_buttons( $editor_id = 'content' ) {
  * @param int    $post_id Post ID.
  * @param string $tab     Media upload tab.
  * @return string Upload iframe source URL.
+=======
+ * @global int $post_ID
+ * @param string $type
+ * @param int    $post_id
+ * @param string $tab
+ * @return string
+>>>>>>> fb785cbb (Initial commit)
  */
 function get_upload_iframe_src( $type = null, $post_id = null, $tab = null ) {
 	global $post_ID;
@@ -922,7 +934,11 @@ function wp_media_upload_handler() {
 			 * @param string $src   Media source URL.
 			 * @param string $title Media title.
 			 */
+<<<<<<< HEAD
 			$html = apply_filters( "{$type}_send_to_editor_url", $html, sanitize_url( $src ), $title );
+=======
+			$html = apply_filters( "{$type}_send_to_editor_url", $html, esc_url_raw( $src ), $title );
+>>>>>>> fb785cbb (Initial commit)
 		} else {
 			$align = '';
 			$alt   = esc_attr( wp_unslash( $_POST['alt'] ) );
@@ -947,7 +963,11 @@ function wp_media_upload_handler() {
 			 * @param string $align The image alignment. Default 'alignnone'. Possible values include
 			 *                      'alignleft', 'aligncenter', 'alignright', 'alignnone'.
 			 */
+<<<<<<< HEAD
 			$html = apply_filters( 'image_send_to_editor_url', $html, sanitize_url( $src ), $alt, $align );
+=======
+			$html = apply_filters( 'image_send_to_editor_url', $html, esc_url_raw( $src ), $alt, $align );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return media_send_to_editor( $html );
@@ -993,7 +1013,10 @@ function wp_media_upload_handler() {
  * @since 5.3.0 The `$post_id` parameter was made optional.
  * @since 5.4.0 The original URL of the attachment is stored in the `_source_url`
  *              post meta value.
+<<<<<<< HEAD
  * @since 5.8.0 Added 'webp' to the default list of allowed file extensions.
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param string $file        The URL of the image to download.
  * @param int    $post_id     Optional. The post ID the media is to be associated with.
@@ -1018,10 +1041,15 @@ function media_sideload_image( $file, $post_id = 0, $desc = null, $return_type =
 		 *  - `jpe`
 		 *  - `png`
 		 *  - `gif`
+<<<<<<< HEAD
 		 *  - `webp`
 		 *
 		 * @since 5.6.0
 		 * @since 5.8.0 Added 'webp' to the default list of allowed file extensions.
+=======
+		 *
+		 * @since 5.6.0
+>>>>>>> fb785cbb (Initial commit)
 		 *
 		 * @param string[] $allowed_extensions Array of allowed file extensions.
 		 * @param string   $file               The URL of the image to download.
@@ -1158,16 +1186,28 @@ function image_align_input_fields( $post, $checked = '' ) {
 		$checked = 'none';
 	}
 
+<<<<<<< HEAD
 	$output = array();
 
 	foreach ( $alignments as $name => $label ) {
 		$name     = esc_attr( $name );
 		$output[] = "<input type='radio' name='attachments[{$post->ID}][align]' id='image-align-{$name}-{$post->ID}' value='$name'" .
+=======
+	$out = array();
+
+	foreach ( $alignments as $name => $label ) {
+		$name  = esc_attr( $name );
+		$out[] = "<input type='radio' name='attachments[{$post->ID}][align]' id='image-align-{$name}-{$post->ID}' value='$name'" .
+>>>>>>> fb785cbb (Initial commit)
 			( $checked == $name ? " checked='checked'" : '' ) .
 			" /><label for='image-align-{$name}-{$post->ID}' class='align image-align-{$name}-label'>$label</label>";
 	}
 
+<<<<<<< HEAD
 	return implode( "\n", $output );
+=======
+	return implode( "\n", $out );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1202,7 +1242,11 @@ function image_size_input_fields( $post, $check = '' ) {
 		$check = get_user_setting( 'imgsize', 'medium' );
 	}
 
+<<<<<<< HEAD
 	$output = array();
+=======
+	$out = array();
+>>>>>>> fb785cbb (Initial commit)
 
 	foreach ( $size_names as $size => $label ) {
 		$downsize = image_downsize( $post->ID, $size );
@@ -1238,13 +1282,21 @@ function image_size_input_fields( $post, $check = '' ) {
 		}
 		$html .= '</div>';
 
+<<<<<<< HEAD
 		$output[] = $html;
+=======
+		$out[] = $html;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	return array(
 		'label' => __( 'Size' ),
 		'input' => 'html',
+<<<<<<< HEAD
 		'html'  => implode( "\n", $output ),
+=======
+		'html'  => implode( "\n", $out ),
+>>>>>>> fb785cbb (Initial commit)
 	);
 }
 
@@ -1277,8 +1329,13 @@ function image_link_input_fields( $post, $url_type = '' ) {
 	return "
 	<input type='text' class='text urlfield' name='attachments[$post->ID][url]' value='" . esc_attr( $url ) . "' /><br />
 	<button type='button' class='button urlnone' data-link-url=''>" . __( 'None' ) . "</button>
+<<<<<<< HEAD
 	<button type='button' class='button urlfile' data-link-url='" . esc_url( $file ) . "'>" . __( 'File URL' ) . "</button>
 	<button type='button' class='button urlpost' data-link-url='" . esc_url( $link ) . "'>" . __( 'Attachment Post URL' ) . '</button>
+=======
+	<button type='button' class='button urlfile' data-link-url='" . esc_attr( $file ) . "'>" . __( 'File URL' ) . "</button>
+	<button type='button' class='button urlpost' data-link-url='" . esc_attr( $link ) . "'>" . __( 'Attachment Post URL' ) . '</button>
+>>>>>>> fb785cbb (Initial commit)
 ';
 }
 
@@ -1706,7 +1763,12 @@ function get_media_item( $attachment_id, $args = null ) {
 		<tr><td colspan='2' class='imgedit-response' id='imgedit-response-$post->ID'></td></tr>\n
 		<tr><td style='display:none' colspan='2' class='image-editor' id='image-editor-$post->ID'></td></tr>\n
 		<tr><td colspan='2'><p class='media-types media-types-required-info'>" .
+<<<<<<< HEAD
 			wp_required_field_message() .
+=======
+			/* translators: %s: Asterisk symbol (*). */
+			sprintf( __( 'Required fields are marked %s' ), '<span class="required">*</span>' ) .
+>>>>>>> fb785cbb (Initial commit)
 		"</p></td></tr>\n";
 
 	$defaults = array(
@@ -1786,7 +1848,11 @@ function get_media_item( $attachment_id, $args = null ) {
 			continue;
 		}
 
+<<<<<<< HEAD
 		$required      = $field['required'] ? ' ' . wp_required_field_indicator() : '';
+=======
+		$required      = $field['required'] ? '<span class="required">*</span>' : '';
+>>>>>>> fb785cbb (Initial commit)
 		$required_attr = $field['required'] ? ' required' : '';
 		$class         = $id;
 		$class        .= $field['required'] ? ' form-required' : '';
@@ -1977,7 +2043,11 @@ function get_compat_media_markup( $attachment_id, $args = null ) {
 		}
 
 		$readonly      = ! $user_can_edit && ! empty( $field['taxonomy'] ) ? " readonly='readonly' " : '';
+<<<<<<< HEAD
 		$required      = $field['required'] ? ' ' . wp_required_field_indicator() : '';
+=======
+		$required      = $field['required'] ? '<span class="required">*</span>' : '';
+>>>>>>> fb785cbb (Initial commit)
 		$required_attr = $field['required'] ? ' required' : '';
 		$class         = 'compat-field-' . $id;
 		$class        .= $field['required'] ? ' form-required' : '';
@@ -2033,7 +2103,12 @@ function get_compat_media_markup( $attachment_id, $args = null ) {
 
 	if ( $item ) {
 		$item = '<p class="media-types media-types-required-info">' .
+<<<<<<< HEAD
 			wp_required_field_message() .
+=======
+			/* translators: %s: Asterisk symbol (*). */
+			sprintf( __( 'Required fields are marked %s' ), '<span class="required">*</span>' ) .
+>>>>>>> fb785cbb (Initial commit)
 			'</p>' .
 			'<table class="compat-attachment-fields">' . $item . '</table>';
 	}
@@ -2261,12 +2336,16 @@ function media_upload_form( $errors = null ) {
 
 	?>
 	<p id="async-upload-wrap">
+<<<<<<< HEAD
 		<label class="screen-reader-text" for="async-upload">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Upload' );
 			?>
 		</label>
+=======
+		<label class="screen-reader-text" for="async-upload"><?php _e( 'Upload' ); ?></label>
+>>>>>>> fb785cbb (Initial commit)
 		<input type="file" name="async-upload" id="async-upload" />
 		<?php submit_button( __( 'Upload' ), 'primary', 'html-upload', false ); ?>
 		<a href="#" onclick="try{top.tb_remove();}catch(e){}; return false;"><?php _e( 'Cancel' ); ?></a>
@@ -2734,12 +2813,16 @@ function media_upload_library_form( $errors ) {
 	<input type="hidden" name="context" value="<?php echo isset( $_GET['context'] ) ? esc_attr( $_GET['context'] ) : ''; ?>" />
 
 	<p id="media-search" class="search-box">
+<<<<<<< HEAD
 		<label class="screen-reader-text" for="media-search-input">
 			<?php
 			/* translators: Hidden accessibility text. */
 			echo __( 'Search Media' ) . ':';
 			?>
 		</label>
+=======
+		<label class="screen-reader-text" for="media-search-input"><?php _e( 'Search Media' ); ?>:</label>
+>>>>>>> fb785cbb (Initial commit)
 		<input type="search" id="media-search-input" name="s" value="<?php the_search_query(); ?>" />
 		<?php submit_button( __( 'Search Media' ), '', '', false ); ?>
 	</p>
@@ -2940,12 +3023,21 @@ function wp_media_insert_url_form( $default_view = 'image' ) {
 	return '
 	<p class="media-types"><label><input type="radio" name="media_type" value="image" id="image-only"' . checked( 'image-only', $view, false ) . ' /> ' . __( 'Image' ) . '</label> &nbsp; &nbsp; <label><input type="radio" name="media_type" value="generic" id="not-image"' . checked( 'not-image', $view, false ) . ' /> ' . __( 'Audio, Video, or Other File' ) . '</label></p>
 	<p class="media-types media-types-required-info">' .
+<<<<<<< HEAD
 		wp_required_field_message() .
+=======
+		/* translators: %s: Asterisk symbol (*). */
+		sprintf( __( 'Required fields are marked %s' ), '<span class="required">*</span>' ) .
+>>>>>>> fb785cbb (Initial commit)
 	'</p>
 	<table class="describe ' . $table_class . '"><tbody>
 		<tr>
 			<th scope="row" class="label" style="width:130px;">
+<<<<<<< HEAD
 				<label for="src"><span class="alignleft">' . __( 'URL' ) . '</span> ' . wp_required_field_indicator() . '</label>
+=======
+				<label for="src"><span class="alignleft">' . __( 'URL' ) . '</span> <span class="required">*</span></label>
+>>>>>>> fb785cbb (Initial commit)
 				<span class="alignright" id="status_img"></span>
 			</th>
 			<td class="field"><input id="src" name="src" value="" type="text" required onblur="addExtImage.getImageData()" /></td>
@@ -2953,7 +3045,11 @@ function wp_media_insert_url_form( $default_view = 'image' ) {
 
 		<tr>
 			<th scope="row" class="label">
+<<<<<<< HEAD
 				<label for="title"><span class="alignleft">' . __( 'Title' ) . '</span> ' . wp_required_field_indicator() . '</label>
+=======
+				<label for="title"><span class="alignleft">' . __( 'Title' ) . '</span> <span class="required">*</span></label>
+>>>>>>> fb785cbb (Initial commit)
 			</th>
 			<td class="field"><input id="title" name="title" value="" type="text" required /></td>
 		</tr>
@@ -2962,7 +3058,11 @@ function wp_media_insert_url_form( $default_view = 'image' ) {
 
 		<tr class="image-only">
 			<th scope="row" class="label">
+<<<<<<< HEAD
 				<label for="alt"><span class="alignleft">' . __( 'Alternative Text' ) . '</span> ' . wp_required_field_indicator() . '</label>
+=======
+				<label for="alt"><span class="alignleft">' . __( 'Alternative Text' ) . '</span></label>
+>>>>>>> fb785cbb (Initial commit)
 			</th>
 			<td class="field"><input id="alt" name="alt" value="" type="text" required />
 			<p class="help">' . __( 'Alt text for the image, e.g. &#8220;The Mona Lisa&#8221;' ) . '</p></td>
@@ -3220,7 +3320,11 @@ function edit_form_image_editor( $post ) {
 	<?php if ( 'image' === substr( $post->post_mime_type, 0, 5 ) ) : ?>
 		<p class="attachment-alt-text">
 			<label for="attachment_alt"><strong><?php _e( 'Alternative Text' ); ?></strong></label><br />
+<<<<<<< HEAD
 			<textarea class="widefat" name="_wp_attachment_image_alt" id="attachment_alt" aria-describedby="alt-text-description"><?php echo esc_attr( $alt_text ); ?></textarea>
+=======
+			<input type="text" class="widefat" name="_wp_attachment_image_alt" id="attachment_alt" aria-describedby="alt-text-description" value="<?php echo esc_attr( $alt_text ); ?>" />
+>>>>>>> fb785cbb (Initial commit)
 		</p>
 		<p class="attachment-alt-text-description" id="alt-text-description">
 		<?php
@@ -3232,7 +3336,11 @@ function edit_form_image_editor( $post ) {
 			'target="_blank" rel="noopener"',
 			sprintf(
 				'<span class="screen-reader-text"> %s</span>',
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
+=======
+				/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 				__( '(opens in a new tab)' )
 			)
 		);
@@ -3346,9 +3454,12 @@ function attachment_submitbox_metadata() {
 			<span class="success hidden" aria-hidden="true"><?php _e( 'Copied!' ); ?></span>
 		</span>
 	</div>
+<<<<<<< HEAD
 	<div class="misc-pub-section misc-pub-download">
 		<a href="<?php echo esc_attr( $att_url ); ?>" download><?php _e( 'Download file' ); ?></a>
 	</div>
+=======
+>>>>>>> fb785cbb (Initial commit)
 	<div class="misc-pub-section misc-pub-filename">
 		<?php _e( 'File name:' ); ?> <strong><?php echo $filename; ?></strong>
 	</div>
@@ -3482,10 +3593,17 @@ function attachment_submitbox_metadata() {
 
 	if ( ! empty( $meta['original_image'] ) ) {
 		?>
+<<<<<<< HEAD
 		<div class="misc-pub-section misc-pub-original-image word-wrap-break-word">
 			<?php _e( 'Original image:' ); ?>
 			<a href="<?php echo esc_url( wp_get_original_image_url( $attachment_id ) ); ?>">
 				<strong><?php echo esc_html( wp_basename( wp_get_original_image_path( $attachment_id ) ) ); ?></strong>
+=======
+		<div class="misc-pub-section misc-pub-original-image">
+			<?php _e( 'Original image:' ); ?>
+			<a href="<?php echo esc_url( wp_get_original_image_url( $attachment_id ) ); ?>">
+				<?php echo esc_html( wp_basename( wp_get_original_image_path( $attachment_id ) ) ); ?>
+>>>>>>> fb785cbb (Initial commit)
 			</a>
 		</div>
 		<?php
@@ -3643,11 +3761,18 @@ function wp_read_video_metadata( $file ) {
 	 *
 	 * @since 4.9.0
 	 *
+<<<<<<< HEAD
 	 * @param array       $metadata    Filtered video metadata.
 	 * @param string      $file        Path to video file.
 	 * @param string|null $file_format File format of video, as analyzed by getID3.
 	 *                                 Null if unknown.
 	 * @param array       $data        Raw metadata from getID3.
+=======
+	 * @param array  $metadata       Filtered Video metadata.
+	 * @param string $file           Path to video file.
+	 * @param string $file_format    File format of video, as analyzed by getID3.
+	 * @param array  $data           Raw metadata from getID3.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	return apply_filters( 'wp_read_video_metadata', $metadata, $file, $file_format, $data );
 }
@@ -3716,6 +3841,7 @@ function wp_read_audio_metadata( $file ) {
 
 	wp_add_id3_tag_data( $metadata, $data );
 
+<<<<<<< HEAD
 	$file_format = isset( $metadata['fileformat'] ) ? $metadata['fileformat'] : null;
 
 	/**
@@ -3733,6 +3859,9 @@ function wp_read_audio_metadata( $file ) {
 	 * @param array       $data        Raw metadata from getID3.
 	 */
 	return apply_filters( 'wp_read_audio_metadata', $metadata, $file, $file_format, $data );
+=======
+	return $metadata;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**

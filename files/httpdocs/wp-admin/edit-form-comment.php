@@ -10,11 +10,14 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
+<<<<<<< HEAD
 
 /**
  * @global WP_Comment $comment Global comment object.
  */
 global $comment;
+=======
+>>>>>>> fb785cbb (Initial commit)
 ?>
 <form name="post" action="comment.php" method="post" id="post">
 <?php wp_nonce_field( 'update-comment_' . $comment->comment_ID ); ?>
@@ -47,12 +50,16 @@ if ( 'approved' === wp_get_comment_status( $comment ) && $comment->comment_post_
 <div class="inside">
 <h2 class="edit-comment-author"><?php _e( 'Author' ); ?></h2>
 <fieldset>
+<<<<<<< HEAD
 <legend class="screen-reader-text">
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Comment Author' );
 	?>
 </legend>
+=======
+<legend class="screen-reader-text"><?php _e( 'Comment Author' ); ?></legend>
+>>>>>>> fb785cbb (Initial commit)
 <table class="form-table editcomment" role="presentation">
 <tbody>
 <tr>
@@ -78,6 +85,7 @@ if ( 'approved' === wp_get_comment_status( $comment ) && $comment->comment_post_
 </div>
 
 <div id="postdiv" class="postarea">
+<<<<<<< HEAD
 <label for="content" class="screen-reader-text">
 	<?php
 	/* translators: Hidden accessibility text. */
@@ -85,6 +93,10 @@ if ( 'approved' === wp_get_comment_status( $comment ) && $comment->comment_post_
 	?>
 </label>
 <?php
+=======
+<?php
+	echo '<label for="content" class="screen-reader-text">' . __( 'Comment' ) . '</label>';
+>>>>>>> fb785cbb (Initial commit)
 	$quicktags_settings = array( 'buttons' => 'strong,em,link,block,del,ins,img,ul,ol,li,code,close' );
 	wp_editor(
 		$comment->comment_content,
@@ -127,12 +139,16 @@ switch ( $comment->comment_approved ) {
 </span>
 
 <fieldset id="comment-status-radio">
+<<<<<<< HEAD
 <legend class="screen-reader-text">
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Comment status' );
 	?>
 </legend>
+=======
+<legend class="screen-reader-text"><?php _e( 'Comment status' ); ?></legend>
+>>>>>>> fb785cbb (Initial commit)
 <label><input type="radio"<?php checked( $comment->comment_approved, '1' ); ?> name="comment_status" value="1" /><?php _ex( 'Approved', 'comment status' ); ?></label><br />
 <label><input type="radio"<?php checked( $comment->comment_approved, '0' ); ?> name="comment_status" value="0" /><?php _ex( 'Pending', 'comment status' ); ?></label><br />
 <label><input type="radio"<?php checked( $comment->comment_approved, 'spam' ); ?> name="comment_status" value="spam" /><?php _ex( 'Spam', 'comment status' ); ?></label>
@@ -156,6 +172,7 @@ $submitted = sprintf(
 printf( __( 'Submitted on: %s' ), '<b>' . $submitted . '</b>' );
 ?>
 </span>
+<<<<<<< HEAD
 <a href="#edit_timestamp" class="edit-timestamp hide-if-no-js"><span aria-hidden="true"><?php _e( 'Edit' ); ?></span> <span class="screen-reader-text">
 	<?php
 	/* translators: Hidden accessibility text. */
@@ -177,6 +194,12 @@ global $action;
 
 touch_time( ( 'editcomment' === $action ), 0 );
 ?>
+=======
+<a href="#edit_timestamp" class="edit-timestamp hide-if-no-js"><span aria-hidden="true"><?php _e( 'Edit' ); ?></span> <span class="screen-reader-text"><?php _e( 'Edit date and time' ); ?></span></a>
+<fieldset id='timestampdiv' class='hide-if-js'>
+<legend class="screen-reader-text"><?php _e( 'Date and time' ); ?></legend>
+<?php touch_time( ( 'editcomment' === $action ), 0 ); ?>
+>>>>>>> fb785cbb (Initial commit)
 </fieldset>
 </div>
 

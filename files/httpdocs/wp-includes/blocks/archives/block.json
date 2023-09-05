@@ -11,10 +11,13 @@
 			"type": "boolean",
 			"default": false
 		},
+<<<<<<< HEAD
 		"showLabel": {
 			"type": "boolean",
 			"default": true
 		},
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"showPostCounts": {
 			"type": "boolean",
 			"default": false
@@ -26,6 +29,7 @@
 	},
 	"supports": {
 		"align": true,
+<<<<<<< HEAD
 		"anchor": true,
 		"html": false,
 		"spacing": {
@@ -45,6 +49,9 @@
 				"fontSize": true
 			}
 		}
+=======
+		"html": false
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-archives-editor"
 }

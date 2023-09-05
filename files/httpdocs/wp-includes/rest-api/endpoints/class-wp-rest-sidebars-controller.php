@@ -339,10 +339,13 @@ class WP_REST_Sidebars_Controller extends WP_REST_Controller {
 			$sidebar['class']       = '';
 		}
 
+<<<<<<< HEAD
 		if ( wp_is_block_theme() ) {
 			$sidebar['status'] = 'inactive';
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$fields = $this->get_fields_for_response( $request );
 		if ( rest_is_field_included( 'widgets', $fields ) ) {
 			$sidebars = wp_get_sidebars_widgets();
@@ -372,9 +375,13 @@ class WP_REST_Sidebars_Controller extends WP_REST_Controller {
 
 		$response = rest_ensure_response( $data );
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $sidebar ) );
 		}
+=======
+		$response->add_links( $this->prepare_links( $sidebar ) );
+>>>>>>> fb785cbb (Initial commit)
 
 		/**
 		 * Filters the REST API response for a sidebar.

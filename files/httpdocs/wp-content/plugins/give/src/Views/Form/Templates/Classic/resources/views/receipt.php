@@ -122,20 +122,29 @@ ob_start();
                                 <dd class="value"
                                     data-value="<?= esc_attr($lineItem->value) ?>"><?= $lineItem->value ?></dd>
                             </div>
+<<<<<<< HEAD
                         <?php
                         endforeach; ?>
+=======
+                        <?php endforeach; ?>
+>>>>>>> fb785cbb (Initial commit)
 
                     </dl>
                 </div>
 
+<<<<<<< HEAD
             <?php
             endforeach; ?>
+=======
+            <?php endforeach; ?>
+>>>>>>> fb785cbb (Initial commit)
         </div>
 
         <div class="dashboard-link-container">
             <a class="dashboard-link" href="<?= esc_url($donorDashboardUrl); ?>" target="_parent">
                 <?= esc_html__('Go to my Donor Dashboard', 'give'); ?><i class="fas fa-long-arrow-alt-right"></i>
             </a>
+<<<<<<< HEAD
             <?php
             if (isset($section['receiptLink'])) : ?>
                 <div class="give-btn download-btn">
@@ -143,13 +152,25 @@ ob_start();
                 </div>
             <?php
             endif; ?>
+=======
+            <?php if (isset($section['receiptLink'])) : ?>
+                <div class="give-btn download-btn">
+                    <?= $section['receiptLink']->value; ?>
+                </div>
+            <?php endif; ?>
+>>>>>>> fb785cbb (Initial commit)
         </div>
     </article>
 
 <?php
 
+<<<<<<< HEAD
 $pageId = give_get_option('success_page');
 echo (new IframeContentView())
     ->setTitle(esc_html__('Donation Receipt', 'give'))->setPostId($pageId)
+=======
+echo (new IframeContentView())
+    ->setTitle(esc_html__('Donation Receipt', 'give'))
+>>>>>>> fb785cbb (Initial commit)
     ->setBody(ob_get_clean())
     ->renderBody();

@@ -34,13 +34,17 @@
 		"anchor": true,
 		"className": false,
 		"color": {
+<<<<<<< HEAD
 			"gradients": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"link": true,
 			"__experimentalDefaultControls": {
 				"background": true,
 				"text": true
 			}
 		},
+<<<<<<< HEAD
 		"spacing": {
 			"margin": true,
 			"padding": true
@@ -50,6 +54,11 @@
 			"lineHeight": true,
 			"__experimentalFontFamily": true,
 			"__experimentalTextDecoration": true,
+=======
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalFontStyle": true,
 			"__experimentalFontWeight": true,
 			"__experimentalLetterSpacing": true,

@@ -51,7 +51,14 @@ class WPSEO_Post_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	 * @return bool Whether the social templates should be used.
 	 */
 	public function use_social_templates() {
+<<<<<<< HEAD
 		return WPSEO_Options::get( 'opengraph', false ) === true;
+=======
+		return YoastSEO()->helpers->product->is_premium()
+			&& defined( 'WPSEO_PREMIUM_VERSION' )
+			&& version_compare( WPSEO_PREMIUM_VERSION, '16.5-RC0', '>=' )
+			&& WPSEO_Options::get( 'opengraph', false ) === true;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -84,6 +91,7 @@ class WPSEO_Post_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 			$values = ( $values_to_set + $values );
 		}
 
+<<<<<<< HEAD
 		/**
 		 * Filter: 'wpseo_post_edit_values' - Allows changing the values Yoast SEO uses inside the post editor.
 		 *
@@ -92,6 +100,9 @@ class WPSEO_Post_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 		 * @param WP_Post $post The post opened in the editor.
 		 */
 		return \apply_filters( 'wpseo_post_edit_values', $values, $this->post );
+=======
+		return $values;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -158,6 +169,7 @@ class WPSEO_Post_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 		$keyword = WPSEO_Meta::get_value( 'focuskw', $this->post->ID );
 		$usage   = [ $keyword => $this->get_keyword_usage_for_current_post( $keyword ) ];
 
+<<<<<<< HEAD
 		/**
 		 * Allows enhancing the array of posts' that share their focus keywords with the post's related keywords.
 		 *
@@ -165,6 +177,36 @@ class WPSEO_Post_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 		 * @param int   $post_id The id of the post we're finding the usage of related keywords for.
 		 */
 		return apply_filters( 'wpseo_posts_for_related_keywords', $usage, $this->post->ID );
+=======
+		if ( YoastSEO()->helpers->product->is_premium() ) {
+			return $this->get_premium_keywords( $usage );
+		}
+
+		return $usage;
+	}
+
+	/**
+	 * Retrieves the additional keywords from Premium, that are associated with the post.
+	 *
+	 * @param array $usage The original keyword usage for the main keyword.
+	 *
+	 * @return array The keyword usage, including the additional keywords.
+	 */
+	protected function get_premium_keywords( $usage ) {
+		$additional_keywords = json_decode( WPSEO_Meta::get_value( 'focuskeywords', $this->post->ID ), true );
+
+		if ( empty( $additional_keywords ) ) {
+			return $usage;
+		}
+
+		foreach ( $additional_keywords as $additional_keyword ) {
+			$keyword = $additional_keyword['keyword'];
+
+			$usage[ $keyword ] = $this->get_keyword_usage_for_current_post( $keyword );
+		}
+
+		return $usage;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -211,7 +253,11 @@ class WPSEO_Post_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	 */
 	private function get_social_title_template() {
 		if ( $this->use_social_templates ) {
+<<<<<<< HEAD
 			return $this->get_social_template( 'title' );
+=======
+			return $this->get_template( 'social-title' );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return '';
@@ -224,7 +270,11 @@ class WPSEO_Post_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	 */
 	private function get_social_description_template() {
 		if ( $this->use_social_templates ) {
+<<<<<<< HEAD
 			return $this->get_social_template( 'description' );
+=======
+			return $this->get_template( 'social-description' );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return '';
@@ -237,7 +287,11 @@ class WPSEO_Post_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	 */
 	private function get_social_image_template() {
 		if ( $this->use_social_templates ) {
+<<<<<<< HEAD
 			return $this->get_social_template( 'image-url' );
+=======
+			return $this->get_template( 'social-image-url' );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return '';
@@ -261,6 +315,7 @@ class WPSEO_Post_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Retrieves a social template.
 	 *
 	 * @param string $template_option_name The name of the option in which the template you want to get is saved.
@@ -279,6 +334,8 @@ class WPSEO_Post_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Determines the date to be displayed in the snippet preview.
 	 *
 	 * @return string

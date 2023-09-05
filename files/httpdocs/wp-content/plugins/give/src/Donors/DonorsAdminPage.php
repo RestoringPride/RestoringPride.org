@@ -2,8 +2,11 @@
 
 namespace Give\Donors;
 
+<<<<<<< HEAD
 use Give\Donors\ListTable\DonorsListTable;
 use Give\Framework\Database\DB;
+=======
+>>>>>>> fb785cbb (Initial commit)
 use Give\Helpers\EnqueueScript;
 
 class DonorsAdminPage
@@ -21,18 +24,24 @@ class DonorsAdminPage
     private $apiNonce;
 
     /**
+<<<<<<< HEAD
      * @var string
      */
     private $adminUrl;
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.20.0
      */
     public function __construct()
     {
         $this->apiRoot = esc_url_raw(rest_url('give-api/v2/admin/donors'));
         $this->apiNonce = wp_create_nonce('wp_rest');
+<<<<<<< HEAD
         $this->adminUrl = admin_url();
+=======
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -51,7 +60,12 @@ class DonorsAdminPage
             esc_html__('Donors', 'give'),
             'edit_give_forms',
             'give-donors',
+<<<<<<< HEAD
             [$this, 'render']
+=======
+            [$this, 'render'],
+            5
+>>>>>>> fb785cbb (Initial commit)
         );
     }
 
@@ -63,9 +77,14 @@ class DonorsAdminPage
         $data = [
             'apiRoot' => $this->apiRoot,
             'apiNonce' => $this->apiNonce,
+<<<<<<< HEAD
             'forms' => $this->getForms(),
             'table' => give(DonorsListTable::class)->toArray(),
             'adminUrl' => $this->adminUrl,
+=======
+            'preload' => $this->preloadDonors(),
+            'forms' => $this->getForms(),
+>>>>>>> fb785cbb (Initial commit)
         ];
 
         EnqueueScript::make('give-admin-donors', 'assets/dist/js/give-admin-donors.js')
@@ -82,10 +101,36 @@ class DonorsAdminPage
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Make REST request to Donors endpoint before page load
+     * @since 2.20.0
+     */
+    public function preloadDonors(){
+        $queryParameters = [
+            'page' => 1,
+            'perPage' => 30,
+            'search' => '',
+        ];
+
+        $url = add_query_arg(
+            $queryParameters,
+            $this->apiRoot
+        );
+
+        $request = \WP_REST_Request::from_url($url);
+        $response = rest_do_request($request);
+
+        return $response->get_data();
+    }
+
+    /**
+>>>>>>> fb785cbb (Initial commit)
      * Preload initial table data
      * @since 2.20.0
      */
     public function getForms(){
+<<<<<<< HEAD
         $options = DB::table('posts')
             ->select(
                 ['ID', 'value'],
@@ -101,6 +146,39 @@ class DonorsAdminPage
                 'text' => 'Any',
             ]
         ], $options);
+=======
+        $queryParameters = [
+            'page' => 1,
+            'perPage' => 50,
+            'search' => '',
+            'status' => 'any'
+        ];
+
+        $url = esc_url_raw(add_query_arg(
+            $queryParameters,
+            rest_url('give-api/v2/admin/forms')
+        ));
+
+        $request = \WP_REST_Request::from_url($url);
+        $response = rest_do_request($request);
+
+        $response = $response->get_data();
+        $forms = $response['items'];
+
+        $emptyOption = [
+                [
+                'value' => '0',
+                'text' => 'Any',
+            ]
+        ];
+        $formOptions = array_map(function($form){
+            return [
+                'value' => $form['id'],
+                'text' => $form['name'],
+            ];
+        }, $forms);
+        return array_merge($emptyOption, $formOptions);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**

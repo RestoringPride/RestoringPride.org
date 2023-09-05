@@ -15,7 +15,10 @@
  *
  * @since 2.1.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Error {
 	/**
 	 * Stores the list of errors.
@@ -56,7 +59,11 @@ class WP_Error {
 	 *
 	 * @param string|int $code    Error code.
 	 * @param string     $message Error message.
+<<<<<<< HEAD
 	 * @param mixed      $data    Optional. Error data. Default empty string.
+=======
+	 * @param mixed      $data    Optional. Error data.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function __construct( $code = '', $message = '', $data = '' ) {
 		if ( empty( $code ) ) {
@@ -103,8 +110,12 @@ class WP_Error {
 	 *
 	 * @since 2.1.0
 	 *
+<<<<<<< HEAD
 	 * @param string|int $code Optional. Error code to retrieve the messages for.
 	 *                         Default empty string.
+=======
+	 * @param string|int $code Optional. Retrieve messages matching code, if exists.
+>>>>>>> fb785cbb (Initial commit)
 	 * @return string[] Error strings on success, or empty array if there are none.
 	 */
 	public function get_error_messages( $code = '' ) {
@@ -133,8 +144,12 @@ class WP_Error {
 	 *
 	 * @since 2.1.0
 	 *
+<<<<<<< HEAD
 	 * @param string|int $code Optional. Error code to retrieve the message for.
 	 *                         Default empty string.
+=======
+	 * @param string|int $code Optional. Error code to retrieve message.
+>>>>>>> fb785cbb (Initial commit)
 	 * @return string The error message.
 	 */
 	public function get_error_message( $code = '' ) {
@@ -153,7 +168,11 @@ class WP_Error {
 	 *
 	 * @since 2.1.0
 	 *
+<<<<<<< HEAD
 	 * @param string|int $code Optional. Error code. Default empty string.
+=======
+	 * @param string|int $code Optional. Error code.
+>>>>>>> fb785cbb (Initial commit)
 	 * @return mixed Error data, if it exists.
 	 */
 	public function get_error_data( $code = '' ) {
@@ -187,7 +206,11 @@ class WP_Error {
 	 *
 	 * @param string|int $code    Error code.
 	 * @param string     $message Error message.
+<<<<<<< HEAD
 	 * @param mixed      $data    Optional. Error data. Default empty string.
+=======
+	 * @param mixed      $data    Optional. Error data.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function add( $code, $message, $data = '' ) {
 		$this->errors[ $code ][] = $message;

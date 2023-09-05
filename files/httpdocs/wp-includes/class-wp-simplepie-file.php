@@ -17,6 +17,7 @@
  *
  * @see SimplePie_File
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 class WP_SimplePie_File extends SimplePie_File {
 
@@ -28,6 +29,11 @@ class WP_SimplePie_File extends SimplePie_File {
 	public $timeout = 10;
 
 	/**
+=======
+class WP_SimplePie_File extends SimplePie_File {
+
+	/**
+>>>>>>> fb785cbb (Initial commit)
 	 * Constructor.
 	 *
 	 * @since 2.8.0

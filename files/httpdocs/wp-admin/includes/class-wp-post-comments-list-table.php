@@ -11,6 +11,10 @@
  * Core class used to implement displaying post comments in a list table.
  *
  * @since 3.1.0
+<<<<<<< HEAD
+=======
+ * @access private
+>>>>>>> fb785cbb (Initial commit)
  *
  * @see WP_Comments_List_Table
  */

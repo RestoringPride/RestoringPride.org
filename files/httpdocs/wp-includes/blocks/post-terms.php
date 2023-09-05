@@ -27,16 +27,23 @@ function render_block_core_post_terms( $attributes, $content, $block ) {
 		return '';
 	}
 
+<<<<<<< HEAD
 	$classes = array( 'taxonomy-' . $attributes['term'] );
 	if ( isset( $attributes['textAlign'] ) ) {
 		$classes[] = 'has-text-align-' . $attributes['textAlign'];
 	}
 	if ( isset( $attributes['style']['elements']['link']['color']['text'] ) ) {
 		$classes[] = 'has-link-color';
+=======
+	$classes = 'taxonomy-' . $attributes['term'];
+	if ( isset( $attributes['textAlign'] ) ) {
+		$classes .= ' has-text-align-' . $attributes['textAlign'];
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	$separator = empty( $attributes['separator'] ) ? ' ' : $attributes['separator'];
 
+<<<<<<< HEAD
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) );
 
 	$prefix = "<div $wrapper_attributes>";
@@ -48,13 +55,22 @@ function render_block_core_post_terms( $attributes, $content, $block ) {
 	if ( isset( $attributes['suffix'] ) && $attributes['suffix'] ) {
 		$suffix = '<span class="wp-block-post-terms__suffix">' . $attributes['suffix'] . '</span>' . $suffix;
 	}
+=======
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classes ) );
+>>>>>>> fb785cbb (Initial commit)
 
 	return get_the_term_list(
 		$block->context['postId'],
 		$attributes['term'],
+<<<<<<< HEAD
 		wp_kses_post( $prefix ),
 		'<span class="wp-block-post-terms__separator">' . esc_html( $separator ) . '</span>',
 		wp_kses_post( $suffix )
+=======
+		"<div $wrapper_attributes>",
+		'<span class="wp-block-post-terms__separator">' . esc_html( $separator ) . '</span>',
+		'</div>'
+>>>>>>> fb785cbb (Initial commit)
 	);
 }
 
@@ -62,6 +78,7 @@ function render_block_core_post_terms( $attributes, $content, $block ) {
  * Registers the `core/post-terms` block on the server.
  */
 function register_block_core_post_terms() {
+<<<<<<< HEAD
 	$taxonomies = get_taxonomies(
 		array(
 			'public'       => true,
@@ -99,11 +116,16 @@ function register_block_core_post_terms() {
 		}
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	register_block_type_from_metadata(
 		__DIR__ . '/post-terms',
 		array(
 			'render_callback' => 'render_block_core_post_terms',
+<<<<<<< HEAD
 			'variations'      => array_merge( $built_ins, $custom_variations ),
+=======
+>>>>>>> fb785cbb (Initial commit)
 		)
 	);
 }

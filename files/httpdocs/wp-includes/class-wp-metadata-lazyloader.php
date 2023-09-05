@@ -28,7 +28,10 @@
  *
  * @since 4.5.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Metadata_Lazyloader {
 	/**
 	 * Pending objects queue.

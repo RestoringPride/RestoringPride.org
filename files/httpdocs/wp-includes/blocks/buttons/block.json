@@ -18,6 +18,7 @@
 				"blockGap": true
 			}
 		},
+<<<<<<< HEAD
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true,
@@ -31,6 +32,8 @@
 				"fontSize": true
 			}
 		},
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"__experimentalLayout": {
 			"allowSwitching": false,
 			"allowInheriting": false,

@@ -70,7 +70,11 @@ wp_localize_script(
 			'noThemesFound'       => __( 'No themes found. Try a different search.' ),
 			'collapseSidebar'     => __( 'Collapse Sidebar' ),
 			'expandSidebar'       => __( 'Expand Sidebar' ),
+<<<<<<< HEAD
 			/* translators: Hidden accessibility text. */
+=======
+			/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 			'selectFeatureFilter' => __( 'Select one or more Theme features to filter by' ),
 		),
 		'installedThemes' => array_keys( $installed_themes ),
@@ -90,7 +94,10 @@ if ( $tab ) {
 	 *
 	 * Possible hook names include:
 	 *
+<<<<<<< HEAD
 	 *  - `install_themes_pre_block-themes`
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *  - `install_themes_pre_dashboard`
 	 *  - `install_themes_pre_featured`
 	 *  - `install_themes_pre_new`
@@ -99,7 +106,10 @@ if ( $tab ) {
 	 *  - `install_themes_pre_upload`
 	 *
 	 * @since 2.8.0
+<<<<<<< HEAD
 	 * @since 6.1.0 Added the `install_themes_pre_block-themes` hook name.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	do_action( "install_themes_pre_{$tab}" );
 }
@@ -138,6 +148,7 @@ get_current_screen()->add_help_tab(
 	)
 );
 
+<<<<<<< HEAD
 // Help tab: Block themes.
 $help_block_themes =
 	'<p>' . __( 'A block theme is a theme that uses blocks for all parts of a site including navigation menus, header, content, and site footer. These themes are built for the features that allow you to edit and customize all parts of your site.' ) . '</p>' .
@@ -156,6 +167,12 @@ get_current_screen()->set_help_sidebar(
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/appearance-themes-screen/#install-themes">Documentation on Adding New Themes</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/block-themes/">Documentation on Block Themes</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+=======
+get_current_screen()->set_help_sidebar(
+	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
+	'<p>' . __( '<a href="https://wordpress.org/support/article/appearance-themes-screen/#install-themes">Documentation on Adding New Themes</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://wordpress.org/support/">Support</a>' ) . '</p>'
+>>>>>>> fb785cbb (Initial commit)
 );
 
 require_once ABSPATH . 'wp-admin/admin-header.php';
@@ -191,12 +208,16 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 	<?php install_themes_upload(); ?>
 	</div>
 
+<<<<<<< HEAD
 	<h2 class="screen-reader-text hide-if-no-js">
 		<?php
 		/* translators: Hidden accessibility text. */
 		_e( 'Filter themes list' );
 		?>
 	</h2>
+=======
+	<h2 class="screen-reader-text hide-if-no-js"><?php _e( 'Filter themes list' ); ?></h2>
+>>>>>>> fb785cbb (Initial commit)
 
 	<div class="wp-filter hide-if-no-js">
 		<div class="filter-count">
@@ -206,7 +227,10 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 		<ul class="filter-links">
 			<li><a href="#" data-sort="popular"><?php _ex( 'Popular', 'themes' ); ?></a></li>
 			<li><a href="#" data-sort="new"><?php _ex( 'Latest', 'themes' ); ?></a></li>
+<<<<<<< HEAD
 			<li><a href="#" data-sort="block-themes"><?php _ex( 'Block Themes', 'themes' ); ?></a></li>
+=======
+>>>>>>> fb785cbb (Initial commit)
 			<li><a href="#" data-sort="favorites"><?php _ex( 'Favorites', 'themes' ); ?></a></li>
 		</ul>
 
@@ -268,12 +292,16 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
 	<h2 class="screen-reader-text hide-if-no-js">
 		<?php
 		/* translators: Hidden accessibility text. */
 		_e( 'Themes list' );
 		?>
 	</h2>
+=======
+	<h2 class="screen-reader-text hide-if-no-js"><?php _e( 'Themes list' ); ?></h2>
+>>>>>>> fb785cbb (Initial commit)
 	<div class="theme-browser content-filterable"></div>
 	<div class="theme-install-overlay wp-full-overlay expanded"></div>
 
@@ -290,7 +318,10 @@ if ( $tab ) {
 	 *
 	 * Possible hook names include:
 	 *
+<<<<<<< HEAD
 	 *  - `install_themes_block-themes`
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *  - `install_themes_dashboard`
 	 *  - `install_themes_featured`
 	 *  - `install_themes_new`
@@ -299,7 +330,10 @@ if ( $tab ) {
 	 *  - `install_themes_upload`
 	 *
 	 * @since 2.8.0
+<<<<<<< HEAD
 	 * @since 6.1.0 Added the `install_themes_block-themes` hook name.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @param int $paged Number of the current page of results being viewed.
 	 */
@@ -450,6 +484,7 @@ if ( $tab ) {
 <script id="tmpl-theme-preview" type="text/template">
 	<div class="wp-full-overlay-sidebar">
 		<div class="wp-full-overlay-header">
+<<<<<<< HEAD
 			<button class="close-full-overlay"><span class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
@@ -468,6 +503,11 @@ if ( $tab ) {
 				_e( 'Next theme' );
 				?>
 			</span></button>
+=======
+			<button class="close-full-overlay"><span class="screen-reader-text"><?php _e( 'Close' ); ?></span></button>
+			<button class="previous-theme"><span class="screen-reader-text"><?php _e( 'Previous theme' ); ?></span></button>
+			<button class="next-theme"><span class="screen-reader-text"><?php _e( 'Next theme' ); ?></span></button>
+>>>>>>> fb785cbb (Initial commit)
 			<# if ( data.installed ) { #>
 				<# if ( data.compatible_wp && data.compatible_php ) { #>
 					<?php

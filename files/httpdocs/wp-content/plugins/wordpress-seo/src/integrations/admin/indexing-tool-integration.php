@@ -130,7 +130,11 @@ class Indexing_Tool_Integration implements Integration_Interface {
 	 * Register hooks.
 	 */
 	public function register_hooks() {
+<<<<<<< HEAD
 		\add_action( 'wpseo_tools_overview_list_items_internal', [ $this, 'render_indexing_list_item' ], 10 );
+=======
+		\add_action( 'wpseo_tools_overview_list_items', [ $this, 'render_indexing_list_item' ], 10 );
+>>>>>>> fb785cbb (Initial commit)
 		\add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ], 10 );
 	}
 
@@ -244,4 +248,39 @@ class Indexing_Tool_Integration implements Integration_Interface {
 
 		return $importing_endpoints;
 	}
+<<<<<<< HEAD
+=======
+
+	/**
+	 * Returns the total number of unindexed objects.
+	 *
+	 * @deprecated 15.3
+	 * @codeCoverageIgnore
+	 *
+	 * @param int $unindexed_count The total number of unindexed indexables.
+	 *
+	 * @return int The total number of unindexed objects.
+	 */
+	public function get_unindexed_indexables_count( $unindexed_count = 0 ) {
+		\_deprecated_function( __METHOD__, 'WPSEO 15.3' );
+
+		return $this->indexing_helper->get_unindexed_count();
+	}
+
+	/**
+	 * Returns the total number of unindexed objects and applies a filter for third party integrations.
+	 *
+	 * @deprecated 15.3
+	 * @codeCoverageIgnore
+	 *
+	 * @param int $unindexed_count The total number of unindexed objects.
+	 *
+	 * @return int The total number of unindexed objects.
+	 */
+	public function get_unindexed_count( $unindexed_count = 0 ) {
+		\_deprecated_function( __METHOD__, 'WPSEO 15.3' );
+
+		return $this->indexing_helper->get_filtered_unindexed_count();
+	}
+>>>>>>> fb785cbb (Initial commit)
 }

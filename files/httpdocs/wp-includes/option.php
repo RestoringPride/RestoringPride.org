@@ -29,7 +29,11 @@
  *
  * Exceptions:
  *
+<<<<<<< HEAD
  * 1. When the option has not been saved in the database, the `$default_value` value
+=======
+ * 1. When the option has not been saved in the database, the `$default` value
+>>>>>>> fb785cbb (Initial commit)
  *    is returned if provided. If not, boolean `false` is returned.
  * 2. When one of the Options API filters is used: {@see 'pre_option_$option'},
  *    {@see 'default_option_$option'}, or {@see 'option_$option'}, the returned
@@ -67,15 +71,24 @@
  *
  * @global wpdb $wpdb WordPress database abstraction object.
  *
+<<<<<<< HEAD
  * @param string $option        Name of the option to retrieve. Expected to not be SQL-escaped.
  * @param mixed  $default_value Optional. Default value to return if the option does not exist.
+=======
+ * @param string $option  Name of the option to retrieve. Expected to not be SQL-escaped.
+ * @param mixed  $default Optional. Default value to return if the option does not exist.
+>>>>>>> fb785cbb (Initial commit)
  * @return mixed Value of the option. A value of any type may be returned, including
  *               scalar (string, boolean, float, integer), null, array, object.
  *               Scalar and null values will be returned as strings as long as they originate
  *               from a database stored option value. If there is no option in the database,
  *               boolean `false` is returned.
  */
+<<<<<<< HEAD
 function get_option( $option, $default_value = false ) {
+=======
+function get_option( $option, $default = false ) {
+>>>>>>> fb785cbb (Initial commit)
 	global $wpdb;
 
 	if ( is_scalar( $option ) ) {
@@ -95,7 +108,11 @@ function get_option( $option, $default_value = false ) {
 		'comment_whitelist' => 'comment_previously_approved',
 	);
 
+<<<<<<< HEAD
 	if ( isset( $deprecated_keys[ $option ] ) && ! wp_installing() ) {
+=======
+	if ( ! wp_installing() && isset( $deprecated_keys[ $option ] ) ) {
+>>>>>>> fb785cbb (Initial commit)
 		_deprecated_argument(
 			__FUNCTION__,
 			'5.5.0',
@@ -106,7 +123,11 @@ function get_option( $option, $default_value = false ) {
 				$deprecated_keys[ $option ]
 			)
 		);
+<<<<<<< HEAD
 		return get_option( $deprecated_keys[ $option ], $default_value );
+=======
+		return get_option( $deprecated_keys[ $option ], $default );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -114,6 +135,7 @@ function get_option( $option, $default_value = false ) {
 	 *
 	 * The dynamic portion of the hook name, `$option`, refers to the option name.
 	 *
+<<<<<<< HEAD
 	 * Returning a value other than false from the filter will short-circuit retrieval
 	 * and return that value instead.
 	 *
@@ -148,6 +170,24 @@ function get_option( $option, $default_value = false ) {
 	 *                              Default false.
 	 */
 	$pre = apply_filters( 'pre_option', $pre, $option, $default_value );
+=======
+	 * Returning a truthy value from the filter will effectively short-circuit retrieval
+	 * and return the passed value instead.
+	 *
+	 * @since 1.5.0
+	 * @since 4.4.0 The `$option` parameter was added.
+	 * @since 4.9.0 The `$default` parameter was added.
+	 *
+	 * @param mixed  $pre_option The value to return instead of the option value. This differs
+	 *                           from `$default`, which is used as the fallback value in the event
+	 *                           the option doesn't exist elsewhere in get_option().
+	 *                           Default false (to skip past the short-circuit).
+	 * @param string $option     Option name.
+	 * @param mixed  $default    The fallback value to return if the option does not exist.
+	 *                           Default false.
+	 */
+	$pre = apply_filters( "pre_option_{$option}", false, $option, $default );
+>>>>>>> fb785cbb (Initial commit)
 
 	if ( false !== $pre ) {
 		return $pre;
@@ -164,12 +204,15 @@ function get_option( $option, $default_value = false ) {
 		// Prevent non-existent options from triggering multiple queries.
 		$notoptions = wp_cache_get( 'notoptions', 'options' );
 
+<<<<<<< HEAD
 		// Prevent non-existent `notoptions` key from triggering multiple key lookups.
 		if ( ! is_array( $notoptions ) ) {
 			$notoptions = array();
 			wp_cache_set( 'notoptions', $notoptions, 'options' );
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		if ( isset( $notoptions[ $option ] ) ) {
 			/**
 			 * Filters the default value for an option.
@@ -180,12 +223,21 @@ function get_option( $option, $default_value = false ) {
 			 * @since 4.4.0 The `$option` parameter was added.
 			 * @since 4.7.0 The `$passed_default` parameter was added to distinguish between a `false` value and the default parameter value.
 			 *
+<<<<<<< HEAD
 			 * @param mixed  $default_value  The default value to return if the option does not exist
 			 *                               in the database.
 			 * @param string $option         Option name.
 			 * @param bool   $passed_default Was `get_option()` passed a default value?
 			 */
 			return apply_filters( "default_option_{$option}", $default_value, $option, $passed_default );
+=======
+			 * @param mixed  $default The default value to return if the option does not exist
+			 *                        in the database.
+			 * @param string $option  Option name.
+			 * @param bool   $passed_default Was `get_option()` passed a default value?
+			 */
+			return apply_filters( "default_option_{$option}", $default, $option, $passed_default );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		$alloptions = wp_load_alloptions();
@@ -211,7 +263,11 @@ function get_option( $option, $default_value = false ) {
 					wp_cache_set( 'notoptions', $notoptions, 'options' );
 
 					/** This filter is documented in wp-includes/option.php */
+<<<<<<< HEAD
 					return apply_filters( "default_option_{$option}", $default_value, $option, $passed_default );
+=======
+					return apply_filters( "default_option_{$option}", $default, $option, $passed_default );
+>>>>>>> fb785cbb (Initial commit)
 				}
 			}
 		}
@@ -224,7 +280,11 @@ function get_option( $option, $default_value = false ) {
 			$value = $row->option_value;
 		} else {
 			/** This filter is documented in wp-includes/option.php */
+<<<<<<< HEAD
 			return apply_filters( "default_option_{$option}", $default_value, $option, $passed_default );
+=======
+			return apply_filters( "default_option_{$option}", $default, $option, $passed_default );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 
@@ -301,6 +361,7 @@ function form_option( $option ) {
 function wp_load_alloptions( $force_cache = false ) {
 	global $wpdb;
 
+<<<<<<< HEAD
 	/**
 	 * Filters the array of alloptions before it is populated.
 	 *
@@ -317,6 +378,8 @@ function wp_load_alloptions( $force_cache = false ) {
 		return $alloptions;
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	if ( ! wp_installing() || ! is_multisite() ) {
 		$alloptions = wp_cache_get( 'alloptions', 'options', $force_cache );
 	} else {
@@ -441,7 +504,11 @@ function update_option( $option, $value, $autoload = null ) {
 		'comment_whitelist' => 'comment_previously_approved',
 	);
 
+<<<<<<< HEAD
 	if ( isset( $deprecated_keys[ $option ] ) && ! wp_installing() ) {
+=======
+	if ( ! wp_installing() && isset( $deprecated_keys[ $option ] ) ) {
+>>>>>>> fb785cbb (Initial commit)
 		_deprecated_argument(
 			__FUNCTION__,
 			'5.5.0',
@@ -631,7 +698,11 @@ function add_option( $option, $value = '', $deprecated = '', $autoload = 'yes' )
 		'comment_whitelist' => 'comment_previously_approved',
 	);
 
+<<<<<<< HEAD
 	if ( isset( $deprecated_keys[ $option ] ) && ! wp_installing() ) {
+=======
+	if ( ! wp_installing() && isset( $deprecated_keys[ $option ] ) ) {
+>>>>>>> fb785cbb (Initial commit)
 		_deprecated_argument(
 			__FUNCTION__,
 			'5.5.0',
@@ -872,8 +943,13 @@ function get_transient( $transient ) {
 	 *
 	 * The dynamic portion of the hook name, `$transient`, refers to the transient name.
 	 *
+<<<<<<< HEAD
 	 * Returning a value other than false from the filter will short-circuit retrieval
 	 * and return that value instead.
+=======
+	 * Returning a truthy value from the filter will effectively short-circuit retrieval
+	 * and return the passed value instead.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.8.0
 	 * @since 4.4.0 The `$transient` parameter was added
@@ -1044,6 +1120,7 @@ function set_transient( $transient, $value, $expiration = 0 ) {
 /**
  * Deletes all expired transients.
  *
+<<<<<<< HEAD
  * Note that this function won't do anything if an external object cache is in use.
  *
  * The multi-table delete syntax is used to delete the transient record
@@ -1051,6 +1128,11 @@ function set_transient( $transient, $value, $expiration = 0 ) {
  *
  * @global wpdb $wpdb WordPress database abstraction object.
  *
+=======
+ * The multi-table delete syntax is used to delete the transient record
+ * from table a, and the corresponding transient_timeout record from table b.
+ *
+>>>>>>> fb785cbb (Initial commit)
  * @since 4.9.0
  *
  * @param bool $force_db Optional. Force cleanup to run against the database even when an external object cache is used.
@@ -1153,8 +1235,13 @@ function wp_user_settings() {
 
 	// The cookie is not set in the current browser or the saved value is newer.
 	$secure = ( 'https' === parse_url( admin_url(), PHP_URL_SCHEME ) );
+<<<<<<< HEAD
 	setcookie( 'wp-settings-' . $user_id, $settings, time() + YEAR_IN_SECONDS, SITECOOKIEPATH, '', $secure );
 	setcookie( 'wp-settings-time-' . $user_id, time(), time() + YEAR_IN_SECONDS, SITECOOKIEPATH, '', $secure );
+=======
+	setcookie( 'wp-settings-' . $user_id, $settings, time() + YEAR_IN_SECONDS, SITECOOKIEPATH, null, $secure );
+	setcookie( 'wp-settings-time-' . $user_id, time(), time() + YEAR_IN_SECONDS, SITECOOKIEPATH, null, $secure );
+>>>>>>> fb785cbb (Initial commit)
 	$_COOKIE[ 'wp-settings-' . $user_id ] = $settings;
 }
 
@@ -1163,6 +1250,7 @@ function wp_user_settings() {
  *
  * @since 2.7.0
  *
+<<<<<<< HEAD
  * @param string       $name          The name of the setting.
  * @param string|false $default_value Optional. Default value to return when $name is not set. Default false.
  * @return mixed The last saved user setting or the default value/false if it doesn't exist.
@@ -1171,14 +1259,30 @@ function get_user_setting( $name, $default_value = false ) {
 	$all_user_settings = get_all_user_settings();
 
 	return isset( $all_user_settings[ $name ] ) ? $all_user_settings[ $name ] : $default_value;
+=======
+ * @param string       $name    The name of the setting.
+ * @param string|false $default Optional. Default value to return when $name is not set. Default false.
+ * @return mixed The last saved user setting or the default value/false if it doesn't exist.
+ */
+function get_user_setting( $name, $default = false ) {
+	$all_user_settings = get_all_user_settings();
+
+	return isset( $all_user_settings[ $name ] ) ? $all_user_settings[ $name ] : $default;
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
  * Adds or updates user interface setting.
  *
+<<<<<<< HEAD
  * Both `$name` and `$value` can contain only ASCII letters, numbers, hyphens, and underscores.
  *
  * This function has to be used before any output has started as it calls `setcookie()`.
+=======
+ * Both $name and $value can contain only ASCII letters, numbers, hyphens, and underscores.
+ *
+ * This function has to be used before any output has started as it calls setcookie().
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.8.0
  *
@@ -1203,7 +1307,11 @@ function set_user_setting( $name, $value ) {
  *
  * Deleting settings would reset them to the defaults.
  *
+<<<<<<< HEAD
  * This function has to be used before any output has started as it calls `setcookie()`.
+=======
+ * This function has to be used before any output has started as it calls setcookie().
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.7.0
  *
@@ -1342,6 +1450,7 @@ function delete_all_user_settings() {
  *
  * @see get_network_option()
  *
+<<<<<<< HEAD
  * @param string $option        Name of the option to retrieve. Expected to not be SQL-escaped.
  * @param mixed  $default_value Optional. Value to return if the option doesn't exist. Default false.
  * @param bool   $deprecated    Whether to use cache. Multisite only. Always set to true.
@@ -1349,6 +1458,15 @@ function delete_all_user_settings() {
  */
 function get_site_option( $option, $default_value = false, $deprecated = true ) {
 	return get_network_option( null, $option, $default_value );
+=======
+ * @param string $option     Name of the option to retrieve. Expected to not be SQL-escaped.
+ * @param mixed  $default    Optional. Value to return if the option doesn't exist. Default false.
+ * @param bool   $deprecated Whether to use cache. Multisite only. Always set to true.
+ * @return mixed Value set for the option.
+ */
+function get_site_option( $option, $default = false, $deprecated = true ) {
+	return get_network_option( null, $option, $default );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1409,12 +1527,21 @@ function update_site_option( $option, $value ) {
  *
  * @global wpdb $wpdb WordPress database abstraction object.
  *
+<<<<<<< HEAD
  * @param int    $network_id    ID of the network. Can be null to default to the current network ID.
  * @param string $option        Name of the option to retrieve. Expected to not be SQL-escaped.
  * @param mixed  $default_value Optional. Value to return if the option doesn't exist. Default false.
  * @return mixed Value set for the option.
  */
 function get_network_option( $network_id, $option, $default_value = false ) {
+=======
+ * @param int    $network_id ID of the network. Can be null to default to the current network ID.
+ * @param string $option     Name of the option to retrieve. Expected to not be SQL-escaped.
+ * @param mixed  $default    Optional. Value to return if the option doesn't exist. Default false.
+ * @return mixed Value set for the option.
+ */
+function get_network_option( $network_id, $option, $default = false ) {
+>>>>>>> fb785cbb (Initial commit)
 	global $wpdb;
 
 	if ( $network_id && ! is_numeric( $network_id ) ) {
@@ -1433,13 +1560,19 @@ function get_network_option( $network_id, $option, $default_value = false ) {
 	 *
 	 * The dynamic portion of the hook name, `$option`, refers to the option name.
 	 *
+<<<<<<< HEAD
 	 * Returning a value other than false from the filter will short-circuit retrieval
 	 * and return that value instead.
+=======
+	 * Returning a truthy value from the filter will effectively short-circuit retrieval
+	 * and return the passed value instead.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.9.0 As 'pre_site_option_' . $key
 	 * @since 3.0.0
 	 * @since 4.4.0 The `$option` parameter was added.
 	 * @since 4.7.0 The `$network_id` parameter was added.
+<<<<<<< HEAD
 	 * @since 4.9.0 The `$default_value` parameter was added.
 	 *
 	 * @param mixed  $pre_option    The value to return instead of the option value. This differs from
@@ -1452,6 +1585,20 @@ function get_network_option( $network_id, $option, $default_value = false ) {
 	 *                              Default false.
 	 */
 	$pre = apply_filters( "pre_site_option_{$option}", false, $option, $network_id, $default_value );
+=======
+	 * @since 4.9.0 The `$default` parameter was added.
+	 *
+	 * @param mixed  $pre_option The value to return instead of the option value. This differs
+	 *                           from `$default`, which is used as the fallback value in the event
+	 *                           the option doesn't exist elsewhere in get_network_option().
+	 *                           Default false (to skip past the short-circuit).
+	 * @param string $option     Option name.
+	 * @param int    $network_id ID of the network.
+	 * @param mixed  $default    The fallback value to return if the option does not exist.
+	 *                           Default false.
+	 */
+	$pre = apply_filters( "pre_site_option_{$option}", false, $option, $network_id, $default );
+>>>>>>> fb785cbb (Initial commit)
 
 	if ( false !== $pre ) {
 		return $pre;
@@ -1464,7 +1611,11 @@ function get_network_option( $network_id, $option, $default_value = false ) {
 	if ( is_array( $notoptions ) && isset( $notoptions[ $option ] ) ) {
 
 		/**
+<<<<<<< HEAD
 		 * Filters the value of a specific default network option.
+=======
+		 * Filters a specific default network option.
+>>>>>>> fb785cbb (Initial commit)
 		 *
 		 * The dynamic portion of the hook name, `$option`, refers to the option name.
 		 *
@@ -1472,18 +1623,32 @@ function get_network_option( $network_id, $option, $default_value = false ) {
 		 * @since 4.4.0 The `$option` parameter was added.
 		 * @since 4.7.0 The `$network_id` parameter was added.
 		 *
+<<<<<<< HEAD
 		 * @param mixed  $default_value The value to return if the site option does not exist
 		 *                              in the database.
 		 * @param string $option        Option name.
 		 * @param int    $network_id    ID of the network.
 		 */
 		return apply_filters( "default_site_option_{$option}", $default_value, $option, $network_id );
+=======
+		 * @param mixed  $default    The value to return if the site option does not exist
+		 *                           in the database.
+		 * @param string $option     Option name.
+		 * @param int    $network_id ID of the network.
+		 */
+		return apply_filters( "default_site_option_{$option}", $default, $option, $network_id );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	if ( ! is_multisite() ) {
 		/** This filter is documented in wp-includes/option.php */
+<<<<<<< HEAD
 		$default_value = apply_filters( 'default_site_option_' . $option, $default_value, $option, $network_id );
 		$value         = get_option( $option, $default_value );
+=======
+		$default = apply_filters( 'default_site_option_' . $option, $default, $option, $network_id );
+		$value   = get_option( $option, $default );
+>>>>>>> fb785cbb (Initial commit)
 	} else {
 		$cache_key = "$network_id:$option";
 		$value     = wp_cache_get( $cache_key, 'site-options' );
@@ -1505,7 +1670,11 @@ function get_network_option( $network_id, $option, $default_value = false ) {
 				wp_cache_set( $notoptions_key, $notoptions, 'site-options' );
 
 				/** This filter is documented in wp-includes/option.php */
+<<<<<<< HEAD
 				$value = apply_filters( 'default_site_option_' . $option, $default_value, $option, $network_id );
+=======
+				$value = apply_filters( 'default_site_option_' . $option, $default, $option, $network_id );
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 	}
@@ -1952,8 +2121,13 @@ function get_site_transient( $transient ) {
 	 *
 	 * The dynamic portion of the hook name, `$transient`, refers to the transient name.
 	 *
+<<<<<<< HEAD
 	 * Returning a value other than boolean false will short-circuit retrieval and
 	 * return that value instead.
+=======
+	 * Returning a truthy value from the filter will effectively short-circuit retrieval
+	 * and return the passed value instead.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.9.0
 	 * @since 4.4.0 The `$transient` parameter was added.
@@ -2572,19 +2746,33 @@ function get_registered_settings() {
  *
  * @since 4.7.0
  *
+<<<<<<< HEAD
  * @param mixed  $default_value  Existing default value to return.
+=======
+ * @param mixed  $default        Existing default value to return.
+>>>>>>> fb785cbb (Initial commit)
  * @param string $option         Option name.
  * @param bool   $passed_default Was `get_option()` passed a default value?
  * @return mixed Filtered default value.
  */
+<<<<<<< HEAD
 function filter_default_option( $default_value, $option, $passed_default ) {
 	if ( $passed_default ) {
 		return $default_value;
+=======
+function filter_default_option( $default, $option, $passed_default ) {
+	if ( $passed_default ) {
+		return $default;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	$registered = get_registered_settings();
 	if ( empty( $registered[ $option ] ) ) {
+<<<<<<< HEAD
 		return $default_value;
+=======
+		return $default;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	return $registered[ $option ]['default'];

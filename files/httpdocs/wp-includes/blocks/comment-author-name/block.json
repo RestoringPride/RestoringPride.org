@@ -22,7 +22,10 @@
 	},
 	"usesContext": [ "commentId" ],
 	"supports": {
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"html": false,
 		"spacing": {
 			"margin": true,
@@ -44,11 +47,15 @@
 			"__experimentalFontWeight": true,
 			"__experimentalFontStyle": true,
 			"__experimentalTextTransform": true,
+<<<<<<< HEAD
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
+=======
+			"__experimentalLetterSpacing": true
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 }

@@ -18,7 +18,10 @@
  *
  * @since 2.8.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Http_Cookie {
 
 	/**

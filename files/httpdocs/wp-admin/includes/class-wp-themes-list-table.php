@@ -11,6 +11,10 @@
  * Core class used to implement displaying installed themes in a list table.
  *
  * @since 3.1.0
+<<<<<<< HEAD
+=======
+ * @access private
+>>>>>>> fb785cbb (Initial commit)
  *
  * @see WP_List_Table
  */

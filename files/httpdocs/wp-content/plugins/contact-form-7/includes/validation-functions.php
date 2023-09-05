@@ -7,7 +7,11 @@
  * and may be followed by any number of letters, digits ([0-9]),
  * hyphens ("-"), underscores ("_"), colons (":"), and periods (".").
  *
+<<<<<<< HEAD
  * @link http://www.w3.org/TR/html401/types.html#h-6.2
+=======
+ * @see http://www.w3.org/TR/html401/types.html#h-6.2
+>>>>>>> fb785cbb (Initial commit)
  *
  * @return bool True if it is a valid name, false if not.
  */
@@ -48,7 +52,11 @@ function wpcf7_is_tel( $text ) {
 /**
  * Checks whether the given text is a well-formed number.
  *
+<<<<<<< HEAD
  * @link https://html.spec.whatwg.org/multipage/input.html#number-state-(type=number)
+=======
+ * @see https://html.spec.whatwg.org/multipage/input.html#number-state-(type=number)
+>>>>>>> fb785cbb (Initial commit)
  */
 function wpcf7_is_number( $text ) {
 	$result = false;
@@ -72,7 +80,11 @@ function wpcf7_is_number( $text ) {
 /**
  * Checks whether the given text is a valid date.
  *
+<<<<<<< HEAD
  * @link https://html.spec.whatwg.org/multipage/input.html#date-state-(type=date)
+=======
+ * @see https://html.spec.whatwg.org/multipage/input.html#date-state-(type=date)
+>>>>>>> fb785cbb (Initial commit)
  */
 function wpcf7_is_date( $text ) {
 	$result = preg_match( '/^([0-9]{4,})-([0-9]{2})-([0-9]{2})$/', $text, $matches );
@@ -189,6 +201,7 @@ function wpcf7_is_email_in_site_domain( $email ) {
 		return true;
 	}
 
+<<<<<<< HEAD
 	$homes = array(
 		home_url(),
 		network_home_url(),
@@ -209,6 +222,15 @@ function wpcf7_is_email_in_site_domain( $email ) {
 	}
 
 	return false;
+=======
+	$sitename = wp_parse_url( network_home_url(), PHP_URL_HOST );
+
+	if ( preg_match( '/^[0-9.]+$/', $sitename ) ) { // 123.456.789.012
+		return true;
+	}
+
+	return wpcf7_is_email_in_domain( $email, $sitename );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 

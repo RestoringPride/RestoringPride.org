@@ -12,7 +12,10 @@
  *
  * @since 3.3.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 final class WP_Screen {
 	/**
 	 * Any action associated with the screen.
@@ -144,7 +147,11 @@ final class WP_Screen {
 	 * The accessible hidden headings and text associated with the screen, if any.
 	 *
 	 * @since 4.4.0
+<<<<<<< HEAD
 	 * @var string[]
+=======
+	 * @var array
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	private $_screen_reader_content = array();
 
@@ -212,7 +219,10 @@ final class WP_Screen {
 			return $hook_name;
 		}
 
+<<<<<<< HEAD
 		$id              = '';
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$post_type       = null;
 		$taxonomy        = null;
 		$in_admin        = false;
@@ -221,7 +231,11 @@ final class WP_Screen {
 
 		if ( $hook_name ) {
 			$id = $hook_name;
+<<<<<<< HEAD
 		} elseif ( ! empty( $GLOBALS['hook_suffix'] ) ) {
+=======
+		} else {
+>>>>>>> fb785cbb (Initial commit)
 			$id = $GLOBALS['hook_suffix'];
 		}
 
@@ -432,7 +446,11 @@ final class WP_Screen {
 	private function __construct() {}
 
 	/**
+<<<<<<< HEAD
 	 * Indicates whether the screen is in a particular admin.
+=======
+	 * Indicates whether the screen is in a particular admin
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.5.0
 	 *
@@ -477,7 +495,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Sets the parent information for the screen.
+=======
+	 * Set the parent information for the screen.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * This is called in admin-header.php after the menu parent for the screen has been determined.
 	 *
@@ -507,7 +529,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Removes an option from the screen.
+=======
+	 * Remove an option from the screen.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.8.0
 	 *
@@ -518,7 +544,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Removes all options from the screen.
+=======
+	 * Remove all options from the screen.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.8.0
 	 */
@@ -527,7 +557,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Gets the options registered for the screen.
+=======
+	 * Get the options registered for the screen.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.8.0
 	 *
@@ -608,7 +642,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Adds a help tab to the contextual help for the screen.
+=======
+	 * Add a help tab to the contextual help for the screen.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Call this on the `load-$pagenow` hook for the relevant screen,
 	 * or fetch the `$current_screen` object, or use get_current_screen()
@@ -684,7 +722,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Adds a sidebar to the contextual help for the screen.
+=======
+	 * Add a sidebar to the contextual help for the screen.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * Call this in template files after admin.php is loaded and before admin-header.php is loaded
 	 * to add a sidebar to the contextual help.
@@ -715,20 +757,32 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Gets the accessible hidden headings and text used in the screen.
+=======
+	 * Get the accessible hidden headings and text used in the screen.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 4.4.0
 	 *
 	 * @see set_screen_reader_content() For more information on the array format.
 	 *
+<<<<<<< HEAD
 	 * @return string[] An associative array of screen reader text strings.
+=======
+	 * @return array An associative array of screen reader text strings.
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function get_screen_reader_content() {
 		return $this->_screen_reader_content;
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Gets a screen reader text string.
+=======
+	 * Get a screen reader text string.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 4.4.0
 	 *
@@ -743,7 +797,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Adds accessible hidden headings and text for the screen.
+=======
+	 * Add accessible hidden headings and text for the screen.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 4.4.0
 	 *
@@ -770,7 +828,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Removes all the accessible hidden headings and text for the screen.
+=======
+	 * Remove all the accessible hidden headings and text for the screen.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 4.4.0
 	 */
@@ -779,7 +841,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Renders the screen's help section.
+=======
+	 * Render the screen's help section.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * This will trigger the deprecated filters for backward compatibility.
 	 *
@@ -1036,7 +1102,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Renders the screen options tab.
+=======
+	 * Render the screen options tab.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.3.0
 	 *
@@ -1099,7 +1169,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Renders the meta boxes preferences.
+=======
+	 * Render the meta boxes preferences.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 4.4.0
 	 *
@@ -1116,7 +1190,11 @@ final class WP_Screen {
 		<legend><?php _e( 'Screen elements' ); ?></legend>
 		<p>
 			<?php _e( 'Some screen elements can be shown or hidden by using the checkboxes.' ); ?>
+<<<<<<< HEAD
 			<?php _e( 'Expand or collapse the elements by clicking on their headings, and arrange them by dragging their headings or by clicking on the up and down arrows.' ); ?>
+=======
+			<?php _e( 'They can be expanded and collapsed by clickling on their headings, and arranged by dragging their headings or by clicking on the up and down arrows.' ); ?>
+>>>>>>> fb785cbb (Initial commit)
 		</p>
 		<?php
 
@@ -1142,7 +1220,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Renders the list table columns preferences.
+=======
+	 * Render the list table columns preferences.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 4.4.0
 	 */
@@ -1190,7 +1272,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Renders the option for number of columns on the page.
+=======
+	 * Render the option for number of columns on the page
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.3.0
 	 */
@@ -1222,7 +1308,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Renders the items per page option.
+=======
+	 * Render the items per page option
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.3.0
 	 */
@@ -1286,7 +1376,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Renders the list table view mode preferences.
+=======
+	 * Render the list table view mode preferences.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 4.4.0
 	 *
@@ -1340,7 +1434,11 @@ final class WP_Screen {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Renders screen reader text.
+=======
+	 * Render screen reader text.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 4.4.0
 	 *

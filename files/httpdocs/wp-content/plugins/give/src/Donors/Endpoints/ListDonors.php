@@ -2,9 +2,14 @@
 
 namespace Give\Donors\Endpoints;
 
+<<<<<<< HEAD
 use Give\Donors\ListTable\DonorsListTable;
 use Give\Framework\Database\DB;
 use Give\Framework\QueryBuilder\QueryBuilder;
+=======
+use Give\Donors\Controllers\DonorsRequestController;
+use Give\Donors\DataTransferObjects\DonorResponseData;
+>>>>>>> fb785cbb (Initial commit)
 use WP_REST_Request;
 use WP_REST_Response;
 
@@ -16,6 +21,7 @@ class ListDonors extends Endpoint
     protected $endpoint = 'admin/donors';
 
     /**
+<<<<<<< HEAD
      * @var WP_REST_Request
      */
     protected $request;
@@ -26,6 +32,8 @@ class ListDonors extends Endpoint
     protected $listTable;
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @inheritDoc
      */
     public function registerRoute()
@@ -76,6 +84,7 @@ class ListDonors extends Endpoint
                         'required' => false,
                         'validate_callback' => [$this, 'validateDate']
                     ],
+<<<<<<< HEAD
                     'sortColumn' => [
                         'type' => 'string',
                         'required' => false,
@@ -103,21 +112,29 @@ class ListDonors extends Endpoint
                             'columns'
                         ],
                     ],
+=======
+>>>>>>> fb785cbb (Initial commit)
                 ],
             ]
         );
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.24.0 Change this to use the new ListTable class
      * @since 2.20.0
      *
      * @param WP_REST_Request $request
+=======
+     * @param WP_REST_Request $request
+     * @since 2.20.0
+>>>>>>> fb785cbb (Initial commit)
      *
      * @return WP_REST_Response
      */
     public function handleRequest(WP_REST_Request $request): WP_REST_Response
     {
+<<<<<<< HEAD
         $this->request = $request;
         $this->listTable = give(DonorsListTable::class);
 
@@ -130,16 +147,31 @@ class ListDonors extends Endpoint
         } else {
             $this->listTable->items($donors, $this->request->get_param('locale') ?? '');
             $items = $this->listTable->getItems();
+=======
+        $data = [];
+        $controller = new DonorsRequestController($request);
+        $donors = $controller->getDonors();
+        $donorsCount = $controller->getTotalDonorsCount();
+        $pageCount = (int)ceil($donorsCount / $request->get_param('perPage'));
+
+        foreach ($donors as $donor) {
+            $data[] = DonorResponseData::fromObject($donor)->toArray();
+>>>>>>> fb785cbb (Initial commit)
         }
 
         return new WP_REST_Response(
             [
+<<<<<<< HEAD
                 'items' => $items,
+=======
+                'items' => $data,
+>>>>>>> fb785cbb (Initial commit)
                 'totalItems' => $donorsCount,
                 'totalPages' => $pageCount
             ]
         );
     }
+<<<<<<< HEAD
 
     /**
      * @since 2.24.0 Replace Query Builder with Donors model
@@ -239,4 +271,6 @@ class ListDonors extends Endpoint
 
         return $query;
     }
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

@@ -414,7 +414,11 @@ function wp_templating_constants() {
 	 * @see WP_Theme::get_core_default_theme()
 	 */
 	if ( ! defined( 'WP_DEFAULT_THEME' ) ) {
+<<<<<<< HEAD
 		define( 'WP_DEFAULT_THEME', 'twentytwentythree' );
+=======
+		define( 'WP_DEFAULT_THEME', 'twentytwentytwo' );
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 }

@@ -299,8 +299,11 @@ function get_theme_update_available( $theme ) {
  *              and 'Full Site Editing' features.
  * @since 5.5.0 Added 'Wide Blocks' layout option.
  * @since 5.8.1 Added 'Template Editing' feature.
+<<<<<<< HEAD
  * @since 6.1.1 Replaced 'Full Site Editing' feature name with 'Site Editor'.
  * @since 6.2.0 Added 'Style Variations' feature.
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param bool $api Optional. Whether try to fetch tags from the WordPress.org API. Defaults to true.
  * @return array Array of features keyed by category with translations keyed by slug.
@@ -333,11 +336,18 @@ function get_theme_feature_list( $api = true ) {
 			'featured-image-header' => __( 'Featured Image Header' ),
 			'featured-images'       => __( 'Featured Images' ),
 			'footer-widgets'        => __( 'Footer Widgets' ),
+<<<<<<< HEAD
 			'full-site-editing'     => __( 'Site Editor' ),
 			'full-width-template'   => __( 'Full Width Template' ),
 			'post-formats'          => __( 'Post Formats' ),
 			'sticky-post'           => __( 'Sticky Post' ),
 			'style-variations'      => __( 'Style Variations' ),
+=======
+			'full-site-editing'     => __( 'Full Site Editing' ),
+			'full-width-template'   => __( 'Full Width Template' ),
+			'post-formats'          => __( 'Post Formats' ),
+			'sticky-post'           => __( 'Sticky Post' ),
+>>>>>>> fb785cbb (Initial commit)
 			'template-editing'      => __( 'Template Editing' ),
 			'theme-options'         => __( 'Theme Options' ),
 		),
@@ -445,7 +455,11 @@ function get_theme_feature_list( $api = true ) {
  * @param string       $action API action to perform: 'query_themes', 'theme_information',
  *                             'hot_tags' or 'feature_list'.
  * @param array|object $args   {
+<<<<<<< HEAD
  *     Optional. Array or object of arguments to serialize for the Themes API. Default empty array.
+=======
+ *     Optional. Array or object of arguments to serialize for the Themes API.
+>>>>>>> fb785cbb (Initial commit)
  *
  *     @type string  $slug     The theme slug. Default empty.
  *     @type int     $per_page Number of themes per page. Default 24.
@@ -555,7 +569,10 @@ function themes_api( $action, $args = array() ) {
 		}
 
 		$http_args = array(
+<<<<<<< HEAD
 			'timeout'    => 15,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url( '/' ),
 		);
 		$request   = wp_remote_get( $url, $http_args );
@@ -716,7 +733,11 @@ function wp_prepare_themes_for_js( $themes = null ) {
 			$customize_action = esc_url(
 				add_query_arg(
 					array(
+<<<<<<< HEAD
 						'return' => urlencode( sanitize_url( remove_query_arg( wp_removable_query_args(), wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) ),
+=======
+						'return' => urlencode( esc_url_raw( remove_query_arg( wp_removable_query_args(), wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) ),
+>>>>>>> fb785cbb (Initial commit)
 					),
 					wp_customize_url( $slug )
 				)
@@ -820,6 +841,7 @@ function customize_themes_print_templates() {
 		<div class="theme-backdrop"></div>
 		<div class="theme-wrap wp-clearfix" role="document">
 			<div class="theme-header">
+<<<<<<< HEAD
 				<button type="button" class="left dashicons dashicons-no"><span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
@@ -838,6 +860,11 @@ function customize_themes_print_templates() {
 					_e( 'Close details dialog' );
 					?>
 				</span></button>
+=======
+				<button type="button" class="left dashicons dashicons-no"><span class="screen-reader-text"><?php _e( 'Show previous theme' ); ?></span></button>
+				<button type="button" class="right dashicons dashicons-no"><span class="screen-reader-text"><?php _e( 'Show next theme' ); ?></span></button>
+				<button type="button" class="close dashicons dashicons-no"><span class="screen-reader-text"><?php _e( 'Close details dialog' ); ?></span></button>
+>>>>>>> fb785cbb (Initial commit)
 			</div>
 			<div class="theme-about wp-clearfix">
 				<div class="theme-screenshots">
@@ -874,7 +901,11 @@ function customize_themes_print_templates() {
 									'%1$s <span class="screen-reader-text">%2$s</span>',
 									/* translators: %s: Number of ratings. */
 									sprintf( __( '(%s ratings)' ), '{{ data.num_ratings }}' ),
+<<<<<<< HEAD
 									/* translators: Hidden accessibility text. */
+=======
+									/* translators: Accessibility text. */
+>>>>>>> fb785cbb (Initial commit)
 									__( '(opens in a new tab)' )
 								);
 								?>

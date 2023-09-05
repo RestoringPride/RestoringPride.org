@@ -110,10 +110,17 @@ if ( ! class_exists( 'PO', false ) ) :
 		/**
 		 * Formats a string in PO-style
 		 *
+<<<<<<< HEAD
 		 * @param string $input_string the string to format
 		 * @return string the poified string
 		 */
 		public static function poify( $input_string ) {
+=======
+		 * @param string $string the string to format
+		 * @return string the poified string
+		 */
+		public static function poify( $string ) {
+>>>>>>> fb785cbb (Initial commit)
 			$quote   = '"';
 			$slash   = '\\';
 			$newline = "\n";
@@ -124,12 +131,21 @@ if ( ! class_exists( 'PO', false ) ) :
 				"\t"     => '\t',
 			);
 
+<<<<<<< HEAD
 			$input_string = str_replace( array_keys( $replaces ), array_values( $replaces ), $input_string );
 
 			$po = $quote . implode( "{$slash}n{$quote}{$newline}{$quote}", explode( $newline, $input_string ) ) . $quote;
 			// Add empty string on first line for readbility.
 			if ( false !== strpos( $input_string, $newline ) &&
 				( substr_count( $input_string, $newline ) > 1 || substr( $input_string, -strlen( $newline ) ) !== $newline ) ) {
+=======
+			$string = str_replace( array_keys( $replaces ), array_values( $replaces ), $string );
+
+			$po = $quote . implode( "${slash}n$quote$newline$quote", explode( $newline, $string ) ) . $quote;
+			// Add empty string on first line for readbility.
+			if ( false !== strpos( $string, $newline ) &&
+				( substr_count( $string, $newline ) > 1 || substr( $string, -strlen( $newline ) ) !== $newline ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				$po = "$quote$quote$newline$po";
 			}
 			// Remove empty strings.
@@ -140,17 +156,28 @@ if ( ! class_exists( 'PO', false ) ) :
 		/**
 		 * Gives back the original string from a PO-formatted string
 		 *
+<<<<<<< HEAD
 		 * @param string $input_string PO-formatted string
 		 * @return string enascaped string
 		 */
 		public static function unpoify( $input_string ) {
+=======
+		 * @param string $string PO-formatted string
+		 * @return string enascaped string
+		 */
+		public static function unpoify( $string ) {
+>>>>>>> fb785cbb (Initial commit)
 			$escapes               = array(
 				't'  => "\t",
 				'n'  => "\n",
 				'r'  => "\r",
 				'\\' => '\\',
 			);
+<<<<<<< HEAD
 			$lines                 = array_map( 'trim', explode( "\n", $input_string ) );
+=======
+			$lines                 = array_map( 'trim', explode( "\n", $string ) );
+>>>>>>> fb785cbb (Initial commit)
 			$lines                 = array_map( array( 'PO', 'trim_quotes' ), $lines );
 			$unpoified             = '';
 			$previous_is_backslash = false;
@@ -178,6 +205,7 @@ if ( ! class_exists( 'PO', false ) ) :
 		}
 
 		/**
+<<<<<<< HEAD
 		 * Inserts $with in the beginning of every new line of $input_string and
 		 * returns the modified string
 		 *
@@ -190,6 +218,20 @@ if ( ! class_exists( 'PO', false ) ) :
 			if ( "\n" === substr( $input_string, -1 ) && '' === end( $lines ) ) {
 				/*
 				 * Last line might be empty because $input_string was terminated
+=======
+		 * Inserts $with in the beginning of every new line of $string and
+		 * returns the modified string
+		 *
+		 * @param string $string prepend lines in this string
+		 * @param string $with prepend lines with this string
+		 */
+		public static function prepend_each_line( $string, $with ) {
+			$lines  = explode( "\n", $string );
+			$append = '';
+			if ( "\n" === substr( $string, -1 ) && '' === end( $lines ) ) {
+				/*
+				 * Last line might be empty because $string was terminated
+>>>>>>> fb785cbb (Initial commit)
 				 * with a newline, remove it from the $lines array,
 				 * we'll restore state by re-terminating the string at the end.
 				 */

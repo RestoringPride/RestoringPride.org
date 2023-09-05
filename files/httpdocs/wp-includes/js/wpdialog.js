@@ -17,7 +17,11 @@
 			this._super();
 
 			// WebKit leaves focus in the TinyMCE editor unless we shift focus.
+<<<<<<< HEAD
 			this.element.trigger('focus');
+=======
+			this.element.focus();
+>>>>>>> fb785cbb (Initial commit)
 			this._trigger('refresh');
 		}
 	});

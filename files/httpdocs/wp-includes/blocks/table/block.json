@@ -47,6 +47,7 @@
 							"type": "string",
 							"source": "attribute",
 							"attribute": "data-align"
+<<<<<<< HEAD
 						},
 						"colspan": {
 							"type": "string",
@@ -57,6 +58,8 @@
 							"type": "string",
 							"source": "attribute",
 							"attribute": "rowspan"
+=======
+>>>>>>> fb785cbb (Initial commit)
 						}
 					}
 				}
@@ -92,6 +95,7 @@
 							"type": "string",
 							"source": "attribute",
 							"attribute": "data-align"
+<<<<<<< HEAD
 						},
 						"colspan": {
 							"type": "string",
@@ -102,6 +106,8 @@
 							"type": "string",
 							"source": "attribute",
 							"attribute": "rowspan"
+=======
+>>>>>>> fb785cbb (Initial commit)
 						}
 					}
 				}
@@ -137,6 +143,7 @@
 							"type": "string",
 							"source": "attribute",
 							"attribute": "data-align"
+<<<<<<< HEAD
 						},
 						"colspan": {
 							"type": "string",
@@ -147,6 +154,8 @@
 							"type": "string",
 							"source": "attribute",
 							"attribute": "rowspan"
+=======
+>>>>>>> fb785cbb (Initial commit)
 						}
 					}
 				}
@@ -164,6 +173,7 @@
 				"text": true
 			}
 		},
+<<<<<<< HEAD
 		"spacing": {
 			"margin": true,
 			"padding": true
@@ -172,11 +182,19 @@
 			"fontSize": true,
 			"lineHeight": true,
 			"__experimentalFontFamily": true,
+=======
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalFontStyle": true,
 			"__experimentalFontWeight": true,
 			"__experimentalLetterSpacing": true,
 			"__experimentalTextTransform": true,
+<<<<<<< HEAD
 			"__experimentalTextDecoration": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}

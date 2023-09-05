@@ -7,6 +7,7 @@ use Give\Donations\Models\DonationNote;
 use Give\Donations\ValueObjects\DonationStatus;
 use Give\Framework\Exceptions\Primitives\Exception;
 use Give\Framework\Http\Response\Types\RedirectResponse;
+<<<<<<< HEAD
 use Give\Framework\PaymentGateways\Commands\GatewayCommand;
 use Give\Framework\PaymentGateways\Commands\RedirectOffsite;
 use Give\Framework\PaymentGateways\PaymentGateway;
@@ -18,6 +19,14 @@ use Give\Subscriptions\Models\Subscription;
 
 use Give\Subscriptions\ValueObjects\SubscriptionStatus;
 
+=======
+use Give\Framework\PaymentGateways\Commands\RedirectOffsite;
+use Give\Framework\PaymentGateways\Exceptions\PaymentGatewayException;
+use Give\Framework\PaymentGateways\PaymentGateway;
+use Give\Helpers\Form\Utils as FormUtils;
+use Give\PaymentGateways\Gateways\TestGateway\Views\LegacyFormFieldMarkup;
+
+>>>>>>> fb785cbb (Initial commit)
 use function Give\Framework\Http\Response\response;
 
 /**
@@ -29,6 +38,16 @@ class TestGatewayOffsite extends PaymentGateway
     /**
      * @inheritDoc
      */
+<<<<<<< HEAD
+=======
+    public $routeMethods = [
+        'returnFromOffsiteRedirect'
+    ];
+
+    /**
+     * @inheritDoc
+     */
+>>>>>>> fb785cbb (Initial commit)
     public $secureRouteMethods = [
         'securelyReturnFromOffsiteRedirect'
     ];
@@ -94,6 +113,7 @@ class TestGatewayOffsite extends PaymentGateway
         return new RedirectOffsite($redirectUrl);
     }
 
+<<<<<<< HEAD
     public function createSubscription(
         Donation $donation,
         Subscription $subscription,
@@ -109,6 +129,27 @@ class TestGatewayOffsite extends PaymentGateway
         );
 
         return new RedirectOffsite($redirectUrl);
+=======
+    /**
+     * An example of using a routeMethod for extending the Gateway API to handle a redirect.
+     *
+     * @since 2.21.0 update to use Donation model
+     * @since 2.19.0
+     *
+     * @param array $queryParams
+     *
+     * @return RedirectResponse
+     * @throws Exception
+     * @throws PaymentGatewayException
+     */
+    protected function returnFromOffsiteRedirect(array $queryParams): RedirectResponse
+    {
+        $donation = Donation::find($queryParams['give-donation-id']);
+
+        $this->updateDonation($donation);
+
+        return response()->redirectTo(give_get_success_page_uri());
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -128,6 +169,7 @@ class TestGatewayOffsite extends PaymentGateway
 
         $this->updateDonation($donation);
 
+<<<<<<< HEAD
         if ( $donation->type->isSubscription() ) {
             $subscription = Subscription::find($queryParams['give-subscription-id']);
             $this->updateSubscription($subscription);
@@ -145,6 +187,9 @@ class TestGatewayOffsite extends PaymentGateway
     {
         $donation->status = DonationStatus::REFUNDED();
         $donation->save();
+=======
+        return response()->redirectTo(give_get_success_page_uri());
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -166,6 +211,7 @@ class TestGatewayOffsite extends PaymentGateway
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.23.0
      *
      * @return void
@@ -175,5 +221,14 @@ class TestGatewayOffsite extends PaymentGateway
         $subscription->status = SubscriptionStatus::ACTIVE();
         $subscription->transactionId = "test-gateway-transaction-id";
         $subscription->save();
+=======
+     * @since 2.20.0
+     * @inerhitDoc
+     * @throws Exception
+     */
+    public function refundDonation(Donation $donation)
+    {
+        throw new Exception('Method has not been implemented yet. Please use the legacy method in the meantime.');
+>>>>>>> fb785cbb (Initial commit)
     }
 }

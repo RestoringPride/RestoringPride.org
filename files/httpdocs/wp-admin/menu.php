@@ -203,6 +203,7 @@ if ( ! is_multisite() && current_user_can( 'update_themes' ) ) {
 	$submenu['themes.php'][5] = array( sprintf( __( 'Themes %s' ), $count ), $appearance_cap, 'themes.php' );
 
 if ( wp_is_block_theme() ) {
+<<<<<<< HEAD
 	$submenu['themes.php'][6] = array( _x( 'Editor', 'site editor menu item' ), 'edit_theme_options', 'site-editor.php' );
 }
 
@@ -211,6 +212,16 @@ if ( ! wp_is_block_theme() && current_theme_supports( 'block-template-parts' ) )
 		__( 'Template Parts' ),
 		'edit_theme_options',
 		'site-editor.php?postType=wp_template_part',
+=======
+	$submenu['themes.php'][6] = array(
+		sprintf(
+			/* translators: %s: "beta" label */
+			__( 'Editor %s' ),
+			'<span class="awaiting-mod">' . __( 'beta' ) . '</span>'
+		),
+		'edit_theme_options',
+		'site-editor.php',
+>>>>>>> fb785cbb (Initial commit)
 	);
 }
 
@@ -219,7 +230,11 @@ $customize_url = add_query_arg( 'return', urlencode( remove_query_arg( wp_remova
 // Hide Customize link on block themes unless a plugin or theme
 // is using 'customize_register' to add a setting.
 if ( ! wp_is_block_theme() || has_action( 'customize_register' ) ) {
+<<<<<<< HEAD
 	$position = ( wp_is_block_theme() || current_theme_supports( 'block-template-parts' ) ) ? 7 : 6;
+=======
+	$position = wp_is_block_theme() ? 7 : 6;
+>>>>>>> fb785cbb (Initial commit)
 
 	$submenu['themes.php'][ $position ] = array( __( 'Customize' ), 'customize', esc_url( $customize_url ), '', 'hide-if-no-customize' );
 }
@@ -342,6 +357,7 @@ if ( current_user_can( 'list_users' ) ) {
 	}
 }
 
+<<<<<<< HEAD
 $site_health_count = '';
 if ( ! is_multisite() && current_user_can( 'view_site_health_checks' ) ) {
 	$get_issues = get_transient( 'health-check-site-status-result' );
@@ -367,12 +383,18 @@ if ( ! is_multisite() && current_user_can( 'view_site_health_checks' ) ) {
 	);
 }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 $menu[75]                     = array( __( 'Tools' ), 'edit_posts', 'tools.php', '', 'menu-top menu-icon-tools', 'menu-tools', 'dashicons-admin-tools' );
 	$submenu['tools.php'][5]  = array( __( 'Available Tools' ), 'edit_posts', 'tools.php' );
 	$submenu['tools.php'][10] = array( __( 'Import' ), 'import', 'import.php' );
 	$submenu['tools.php'][15] = array( __( 'Export' ), 'export', 'export.php' );
+<<<<<<< HEAD
 	/* translators: %s: Number of critical Site Health checks. */
 	$submenu['tools.php'][20] = array( sprintf( __( 'Site Health %s' ), $site_health_count ), 'view_site_health_checks', 'site-health.php' );
+=======
+	$submenu['tools.php'][20] = array( __( 'Site Health' ), 'view_site_health_checks', 'site-health.php' );
+>>>>>>> fb785cbb (Initial commit)
 	$submenu['tools.php'][25] = array( __( 'Export Personal Data' ), 'export_others_personal_data', 'export-personal-data.php' );
 	$submenu['tools.php'][30] = array( __( 'Erase Personal Data' ), 'erase_others_personal_data', 'erase-personal-data.php' );
 if ( is_multisite() && ! is_main_site() ) {

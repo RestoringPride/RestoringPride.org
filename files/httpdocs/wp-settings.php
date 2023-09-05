@@ -19,8 +19,13 @@ define( 'WPINC', 'wp-includes' );
  * Version information for the current WordPress release.
  *
  * These can't be directly globalized in version.php. When updating,
+<<<<<<< HEAD
  * include version.php from another installation and don't override
  * these values if already set.
+=======
+ * we're including version.php from another installation and don't want
+ * these values to be overridden if already set.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @global string $wp_version             The WordPress version string.
  * @global int    $wp_db_version          WordPress database version.
@@ -60,7 +65,11 @@ global $blog_id;
 // Set initial default constants including WP_MEMORY_LIMIT, WP_MAX_MEMORY_LIMIT, WP_DEBUG, SCRIPT_DEBUG, WP_CONTENT_DIR and WP_CACHE.
 wp_initial_constants();
 
+<<<<<<< HEAD
 // Register the shutdown handler for fatal errors as soon as possible.
+=======
+// Make sure we register the shutdown handler for fatal errors as soon as possible.
+>>>>>>> fb785cbb (Initial commit)
 wp_register_fatal_error_handler();
 
 // WordPress calculates offsets from UTC.
@@ -70,13 +79,21 @@ date_default_timezone_set( 'UTC' );
 // Standardize $_SERVER variables across setups.
 wp_fix_server_vars();
 
+<<<<<<< HEAD
 // Check if the site is in maintenance mode.
+=======
+// Check if we're in maintenance mode.
+>>>>>>> fb785cbb (Initial commit)
 wp_maintenance();
 
 // Start loading timer.
 timer_start();
 
+<<<<<<< HEAD
 // Check if WP_DEBUG mode is enabled.
+=======
+// Check if we're in WP_DEBUG mode.
+>>>>>>> fb785cbb (Initial commit)
 wp_debug_mode();
 
 /**
@@ -145,14 +162,21 @@ if ( is_multisite() ) {
 
 register_shutdown_function( 'shutdown_action_hook' );
 
+<<<<<<< HEAD
 // Stop most of WordPress from being loaded if SHORTINIT is enabled.
+=======
+// Stop most of WordPress from being loaded if we just want the basics.
+>>>>>>> fb785cbb (Initial commit)
 if ( SHORTINIT ) {
 	return false;
 }
 
 // Load the L10n library.
 require_once ABSPATH . WPINC . '/l10n.php';
+<<<<<<< HEAD
 require_once ABSPATH . WPINC . '/class-wp-textdomain-registry.php';
+=======
+>>>>>>> fb785cbb (Initial commit)
 require_once ABSPATH . WPINC . '/class-wp-locale.php';
 require_once ABSPATH . WPINC . '/class-wp-locale-switcher.php';
 
@@ -172,7 +196,10 @@ require ABSPATH . WPINC . '/class-wp-date-query.php';
 require ABSPATH . WPINC . '/theme.php';
 require ABSPATH . WPINC . '/class-wp-theme.php';
 require ABSPATH . WPINC . '/class-wp-theme-json-schema.php';
+<<<<<<< HEAD
 require ABSPATH . WPINC . '/class-wp-theme-json-data.php';
+=======
+>>>>>>> fb785cbb (Initial commit)
 require ABSPATH . WPINC . '/class-wp-theme-json.php';
 require ABSPATH . WPINC . '/class-wp-theme-json-resolver.php';
 require ABSPATH . WPINC . '/global-styles-and-settings.php';
@@ -234,10 +261,13 @@ require ABSPATH . WPINC . '/class-wp-oembed.php';
 require ABSPATH . WPINC . '/class-wp-oembed-controller.php';
 require ABSPATH . WPINC . '/media.php';
 require ABSPATH . WPINC . '/http.php';
+<<<<<<< HEAD
 require ABSPATH . WPINC . '/html-api/class-wp-html-attribute-token.php';
 require ABSPATH . WPINC . '/html-api/class-wp-html-span.php';
 require ABSPATH . WPINC . '/html-api/class-wp-html-text-replacement.php';
 require ABSPATH . WPINC . '/html-api/class-wp-html-tag-processor.php';
+=======
+>>>>>>> fb785cbb (Initial commit)
 require ABSPATH . WPINC . '/class-wp-http.php';
 require ABSPATH . WPINC . '/class-wp-http-streams.php';
 require ABSPATH . WPINC . '/class-wp-http-curl.php';
@@ -327,7 +357,10 @@ require ABSPATH . WPINC . '/block-patterns.php';
 require ABSPATH . WPINC . '/class-wp-block-supports.php';
 require ABSPATH . WPINC . '/block-supports/utils.php';
 require ABSPATH . WPINC . '/block-supports/align.php';
+<<<<<<< HEAD
 require ABSPATH . WPINC . '/block-supports/anchor.php';
+=======
+>>>>>>> fb785cbb (Initial commit)
 require ABSPATH . WPINC . '/block-supports/border.php';
 require ABSPATH . WPINC . '/block-supports/colors.php';
 require ABSPATH . WPINC . '/block-supports/custom-classname.php';
@@ -336,6 +369,7 @@ require ABSPATH . WPINC . '/block-supports/duotone.php';
 require ABSPATH . WPINC . '/block-supports/elements.php';
 require ABSPATH . WPINC . '/block-supports/generated-classname.php';
 require ABSPATH . WPINC . '/block-supports/layout.php';
+<<<<<<< HEAD
 require ABSPATH . WPINC . '/block-supports/position.php';
 require ABSPATH . WPINC . '/block-supports/spacing.php';
 require ABSPATH . WPINC . '/block-supports/typography.php';
@@ -360,6 +394,13 @@ $GLOBALS['wp_embed'] = new WP_Embed();
  */
 $GLOBALS['wp_textdomain_registry'] = new WP_Textdomain_Registry();
 
+=======
+require ABSPATH . WPINC . '/block-supports/spacing.php';
+require ABSPATH . WPINC . '/block-supports/typography.php';
+
+$GLOBALS['wp_embed'] = new WP_Embed();
+
+>>>>>>> fb785cbb (Initial commit)
 // Load multisite-specific files.
 if ( is_multisite() ) {
 	require ABSPATH . WPINC . '/ms-functions.php';
@@ -441,7 +482,11 @@ wp_start_scraping_edited_file_errors();
 // Register the default theme directory root.
 register_theme_directory( get_theme_root() );
 
+<<<<<<< HEAD
 if ( ! is_multisite() && wp_is_fatal_error_handler_enabled() ) {
+=======
+if ( ! is_multisite() ) {
+>>>>>>> fb785cbb (Initial commit)
 	// Handle users requesting a recovery mode link and initiating recovery mode.
 	wp_recovery_mode()->initialize();
 }

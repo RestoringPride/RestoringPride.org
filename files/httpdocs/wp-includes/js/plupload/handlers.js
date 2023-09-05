@@ -399,7 +399,11 @@ jQuery( document ).ready( function( $ ) {
 	var tryAgainCount = {};
 	var tryAgain;
 
+<<<<<<< HEAD
 	$( '.media-upload-form' ).on( 'click.uploader', function( e ) {
+=======
+	$( '.media-upload-form' ).bind( 'click.uploader', function( e ) {
+>>>>>>> fb785cbb (Initial commit)
 		var target = $( e.target ), tr, c;
 
 		if ( target.is( 'input[type="radio"]' ) ) { // Remember the last used image size and alignment.
@@ -557,7 +561,11 @@ jQuery( document ).ready( function( $ ) {
 	uploader_init = function() {
 		uploader = new plupload.Uploader( wpUploaderInit );
 
+<<<<<<< HEAD
 		$( '#image_resize' ).on( 'change', function() {
+=======
+		$( '#image_resize' ).bind( 'change', function() {
+>>>>>>> fb785cbb (Initial commit)
 			var arg = $( this ).prop( 'checked' );
 
 			setResize( arg );

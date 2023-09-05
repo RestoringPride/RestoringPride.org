@@ -3,7 +3,11 @@
 namespace Yoast\WP\SEO\Actions\Configuration;
 
 use Yoast\WP\SEO\Helpers\Options_Helper;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Helpers\Social_Profiles_Helper;
+=======
+use Yoast\WP\SEO\Integrations\Admin\Social_Profiles_Helper;
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * Class First_Time_Configuration_Action.
@@ -16,7 +20,10 @@ class First_Time_Configuration_Action {
 	const SITE_REPRESENTATION_FIELDS = [
 		'company_or_person',
 		'company_name',
+<<<<<<< HEAD
 		'website_name',
+=======
+>>>>>>> fb785cbb (Initial commit)
 		'company_logo',
 		'company_logo_id',
 		'person_logo',
@@ -130,10 +137,17 @@ class First_Time_Configuration_Action {
 	public function set_person_social_profiles( $params ) {
 		$social_profiles = \array_filter(
 			$params,
+<<<<<<< HEAD
 			static function ( $key ) {
 				return $key !== 'user_id';
 			},
 			\ARRAY_FILTER_USE_KEY
+=======
+			function ( $key ) {
+				return $key !== 'user_id';
+			},
+			ARRAY_FILTER_USE_KEY
+>>>>>>> fb785cbb (Initial commit)
 		);
 
 		$failures = $this->social_profiles_helper->set_person_social_profiles( $params['user_id'], $social_profiles );
@@ -155,7 +169,11 @@ class First_Time_Configuration_Action {
 	/**
 	 * Gets the values for the social profiles.
 	 *
+<<<<<<< HEAD
 	 * @param int $user_id The person ID.
+=======
+	 * @param int $user_id the person id.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @return object The response object.
 	 */
@@ -266,7 +284,11 @@ class First_Time_Configuration_Action {
 	public function get_configuration_state() {
 		$configuration_option = $this->options_helper->get( 'configuration_finished_steps' );
 
+<<<<<<< HEAD
 		if ( ! \is_null( $configuration_option ) ) {
+=======
+		if ( ! is_null( $configuration_option ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			return (object) [
 				'success' => true,
 				'status'  => 200,

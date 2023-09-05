@@ -15,5 +15,10 @@
 		"customClassName": false,
 		"html": false,
 		"inserter": false
+<<<<<<< HEAD
 	}
+=======
+	},
+	"editorStyle": "wp-block-editor"
+>>>>>>> fb785cbb (Initial commit)
 }

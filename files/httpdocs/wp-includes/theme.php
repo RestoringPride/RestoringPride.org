@@ -733,12 +733,19 @@ function locale_stylesheet() {
  * @global array                $wp_theme_directories
  * @global WP_Customize_Manager $wp_customize
  * @global array                $sidebars_widgets
+<<<<<<< HEAD
  * @global array                $wp_registered_sidebars
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param string $stylesheet Stylesheet name.
  */
 function switch_theme( $stylesheet ) {
+<<<<<<< HEAD
 	global $wp_theme_directories, $wp_customize, $sidebars_widgets, $wp_registered_sidebars;
+=======
+	global $wp_theme_directories, $wp_customize, $sidebars_widgets;
+>>>>>>> fb785cbb (Initial commit)
 
 	$requirements = validate_theme_requirements( $stylesheet );
 	if ( is_wp_error( $requirements ) ) {
@@ -815,11 +822,14 @@ function switch_theme( $stylesheet ) {
 		}
 	}
 
+<<<<<<< HEAD
 	// Stores classic sidebars for later use by block themes.
 	if ( $new_theme->is_block_theme() ) {
 		set_theme_mod( 'wp_classic_sidebars', $wp_registered_sidebars );
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	update_option( 'theme_switched', $old_theme->get_stylesheet() );
 
 	/**
@@ -997,18 +1007,30 @@ function get_theme_mods() {
 /**
  * Retrieves theme modification value for the active theme.
  *
+<<<<<<< HEAD
  * If the modification name does not exist and `$default_value` is a string, then the
+=======
+ * If the modification name does not exist and `$default` is a string, then the
+>>>>>>> fb785cbb (Initial commit)
  * default will be passed through the {@link https://www.php.net/sprintf sprintf()}
  * PHP function with the template directory URI as the first value and the
  * stylesheet directory URI as the second value.
  *
  * @since 2.1.0
  *
+<<<<<<< HEAD
  * @param string $name          Theme modification name.
  * @param mixed  $default_value Optional. Theme modification default value. Default false.
  * @return mixed Theme modification value.
  */
 function get_theme_mod( $name, $default_value = false ) {
+=======
+ * @param string $name    Theme modification name.
+ * @param mixed  $default Optional. Theme modification default value. Default false.
+ * @return mixed Theme modification value.
+ */
+function get_theme_mod( $name, $default = false ) {
+>>>>>>> fb785cbb (Initial commit)
 	$mods = get_theme_mods();
 
 	if ( isset( $mods[ $name ] ) ) {
@@ -1026,17 +1048,30 @@ function get_theme_mod( $name, $default_value = false ) {
 		return apply_filters( "theme_mod_{$name}", $mods[ $name ] );
 	}
 
+<<<<<<< HEAD
 	if ( is_string( $default_value ) ) {
 		// Only run the replacement if an sprintf() string format pattern was found.
 		if ( preg_match( '#(?<!%)%(?:\d+\$?)?s#', $default_value ) ) {
 			// Remove a single trailing percent sign.
 			$default_value = preg_replace( '#(?<!%)%$#', '', $default_value );
 			$default_value = sprintf( $default_value, get_template_directory_uri(), get_stylesheet_directory_uri() );
+=======
+	if ( is_string( $default ) ) {
+		// Only run the replacement if an sprintf() string format pattern was found.
+		if ( preg_match( '#(?<!%)%(?:\d+\$?)?s#', $default ) ) {
+			// Remove a single trailing percent sign.
+			$default = preg_replace( '#(?<!%)%$#', '', $default );
+			$default = sprintf( $default, get_template_directory_uri(), get_stylesheet_directory_uri() );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 
 	/** This filter is documented in wp-includes/theme.php */
+<<<<<<< HEAD
 	return apply_filters( "theme_mod_{$name}", $default_value );
+=======
+	return apply_filters( "theme_mod_{$name}", $default );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1185,6 +1220,7 @@ function get_header_image() {
 		$url = get_random_header_image();
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Filters the header image URL.
 	 *
@@ -1200,6 +1236,9 @@ function get_header_image() {
 
 	$url = trim( $url );
 	return sanitize_url( set_url_scheme( $url ) );
+=======
+	return esc_url_raw( set_url_scheme( $url ) );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1337,7 +1376,11 @@ function _get_random_header_data() {
 		}
 
 		if ( empty( $headers ) ) {
+<<<<<<< HEAD
 			return new stdClass();
+=======
+			return new stdClass;
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		$_wp_random_header = (object) $headers[ array_rand( $headers ) ];
@@ -1448,7 +1491,11 @@ function get_uploaded_header_images() {
 	}
 
 	foreach ( (array) $headers as $header ) {
+<<<<<<< HEAD
 		$url          = sanitize_url( wp_get_attachment_url( $header->ID ) );
+=======
+		$url          = esc_url_raw( wp_get_attachment_url( $header->ID ) );
+>>>>>>> fb785cbb (Initial commit)
 		$header_data  = wp_get_attachment_metadata( $header->ID );
 		$header_index = $header->ID;
 
@@ -1609,7 +1656,11 @@ function get_header_video_url() {
 		return false;
 	}
 
+<<<<<<< HEAD
 	return sanitize_url( set_url_scheme( $url ) );
+=======
+	return esc_url_raw( set_url_scheme( $url ) );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -1826,7 +1877,11 @@ function _custom_background_cb() {
 	$style = $color ? "background-color: #$color;" : '';
 
 	if ( $background ) {
+<<<<<<< HEAD
 		$image = ' background-image: url("' . sanitize_url( $background ) . '");';
+=======
+		$image = ' background-image: url("' . esc_url_raw( $background ) . '");';
+>>>>>>> fb785cbb (Initial commit)
 
 		// Background Position.
 		$position_x = get_theme_mod( 'background_position_x', get_theme_support( 'custom-background', 'default-position-x' ) );
@@ -2074,8 +2129,12 @@ function wp_update_custom_css_post( $css, $args = array() ) {
 			}
 
 			// Trigger creation of a revision. This should be removed once #30854 is resolved.
+<<<<<<< HEAD
 			$revisions = wp_get_latest_revision_id_and_total_count( $r );
 			if ( ! is_wp_error( $revisions ) && 0 === $revisions['count'] ) {
+=======
+			if ( 0 === count( wp_get_post_revisions( $r ) ) ) {
+>>>>>>> fb785cbb (Initial commit)
 				wp_save_post_revision( $r );
 			}
 		}
@@ -2167,7 +2226,11 @@ function get_editor_stylesheets() {
 		// Support externally referenced styles (like, say, fonts).
 		foreach ( $editor_styles as $key => $file ) {
 			if ( preg_match( '~^(https?:)?//~', $file ) ) {
+<<<<<<< HEAD
 				$stylesheets[] = sanitize_url( $file );
+=======
+				$stylesheets[] = esc_url_raw( $file );
+>>>>>>> fb785cbb (Initial commit)
 				unset( $editor_styles[ $key ] );
 			}
 		}
@@ -2544,8 +2607,11 @@ function get_theme_starter_content() {
  * @since 2.9.0
  * @since 3.4.0 The `custom-header-uploads` feature was deprecated.
  * @since 3.6.0 The `html5` feature was added.
+<<<<<<< HEAD
  * @since 3.6.1 The `html5` feature requires an array of types to be passed. Defaults to
  *              'comment-list', 'comment-form', 'search-form' for backward compatibility.
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @since 3.9.0 The `html5` feature now also accepts 'gallery' and 'caption'.
  * @since 4.1.0 The `title-tag` feature was added.
  * @since 4.5.0 The `customize-selective-refresh-widgets` feature was added.
@@ -2558,9 +2624,14 @@ function get_theme_starter_content() {
  *              by adding it to the function signature.
  * @since 5.5.0 The `core-block-patterns` feature was added and is enabled by default.
  * @since 5.5.0 The `custom-logo` feature now also accepts 'unlink-homepage-logo'.
+<<<<<<< HEAD
  * @since 5.6.0 The `post-formats` feature warns if no array is passed as the second parameter.
  * @since 5.8.0 The `widgets-block-editor` feature enables the Widgets block editor.
  * @since 6.0.0 The `html5` feature warns if no array is passed as the second parameter.
+=======
+ * @since 5.6.0 The `post-formats` feature warns if no array is passed.
+ * @since 5.8.0 The `widgets-block-editor` feature enables the Widgets block editor.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @global array $_wp_theme_features
  *
@@ -3131,12 +3202,21 @@ function current_theme_supports( $feature, ...$args ) {
  *
  * @param string $feature The feature being checked. See add_theme_support() for the list
  *                        of possible values.
+<<<<<<< HEAD
  * @param string $file    Path to the file.
  * @return bool True if the active theme supports the supplied feature, false otherwise.
  */
 function require_if_theme_supports( $feature, $file ) {
 	if ( current_theme_supports( $feature ) ) {
 		require $file;
+=======
+ * @param string $include Path to the file.
+ * @return bool True if the active theme supports the supplied feature, false otherwise.
+ */
+function require_if_theme_supports( $feature, $include ) {
+	if ( current_theme_supports( $feature ) ) {
+		require $include;
+>>>>>>> fb785cbb (Initial commit)
 		return true;
 	}
 	return false;
@@ -3573,7 +3653,11 @@ function _wp_customize_publish_changeset( $new_status, $old_status, $changeset_p
 		remove_action( 'customize_register', array( $wp_customize, 'register_controls' ) );
 		$wp_customize->register_controls();
 
+<<<<<<< HEAD
 		/** This filter is documented in wp-includes/class-wp-customize-manager.php */
+=======
+		/** This filter is documented in /wp-includes/class-wp-customize-manager.php */
+>>>>>>> fb785cbb (Initial commit)
 		do_action( 'customize_register', $wp_customize );
 	}
 	$wp_customize->_publish_changeset_values( $changeset_post->ID );
@@ -3850,6 +3934,7 @@ function create_initial_theme_features() {
 		)
 	);
 	register_theme_feature(
+<<<<<<< HEAD
 		'block-template-parts',
 		array(
 			'description'  => __( 'Whether a theme uses block-based template parts.' ),
@@ -3857,6 +3942,8 @@ function create_initial_theme_features() {
 		)
 	);
 	register_theme_feature(
+=======
+>>>>>>> fb785cbb (Initial commit)
 		'custom-background',
 		array(
 			'description'  => __( 'Custom background if defined by the theme.' ),
@@ -4040,6 +4127,7 @@ function create_initial_theme_features() {
 		)
 	);
 	register_theme_feature(
+<<<<<<< HEAD
 		'disable-layout-styles',
 		array(
 			'description'  => __( 'Whether the theme disables generated layout styles.' ),
@@ -4047,6 +4135,8 @@ function create_initial_theme_features() {
 		)
 	);
 	register_theme_feature(
+=======
+>>>>>>> fb785cbb (Initial commit)
 		'editor-color-palette',
 		array(
 			'type'         => 'array',
@@ -4224,6 +4314,7 @@ function wp_is_block_theme() {
 }
 
 /**
+<<<<<<< HEAD
  * Given an element name, returns a class name.
  *
  * Alias of WP_Theme_JSON::get_element_class_name.
@@ -4239,6 +4330,8 @@ function wp_theme_get_element_class_name( $element ) {
 }
 
 /**
+=======
+>>>>>>> fb785cbb (Initial commit)
  * Adds default theme supports for block themes when the 'setup_theme' action fires.
  *
  * See {@see 'setup_theme'}.
@@ -4263,6 +4356,7 @@ function _add_default_theme_supports() {
 	add_theme_support( 'automatic-feed-links' );
 
 	add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+<<<<<<< HEAD
 
 	/*
 	 * Remove the Customizer's Menus panel when block theme is active.
@@ -4282,4 +4376,6 @@ function _add_default_theme_supports() {
 		10,
 		2
 	);
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

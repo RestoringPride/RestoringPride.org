@@ -57,7 +57,14 @@ class WPSEO_Term_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	 * @return bool Whether the social templates should be used.
 	 */
 	public function use_social_templates() {
+<<<<<<< HEAD
 		return WPSEO_Options::get( 'opengraph', false ) === true;
+=======
+		return YoastSEO()->helpers->product->is_premium()
+			&& defined( 'WPSEO_PREMIUM_VERSION' )
+			&& version_compare( WPSEO_PREMIUM_VERSION, '16.5-RC0', '>=' )
+			&& WPSEO_Options::get( 'opengraph', false ) === true;
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -130,9 +137,13 @@ class WPSEO_Term_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 
 		$base_url = home_url( '/', null );
 		if ( ! WPSEO_Options::get( 'stripcategorybase', false ) ) {
+<<<<<<< HEAD
 			if ( $this->taxonomy->rewrite ) {
 				$base_url = trailingslashit( $base_url . $this->taxonomy->rewrite['slug'] );
 			}
+=======
+			$base_url = trailingslashit( $base_url . $this->taxonomy->rewrite['slug'] );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return $base_url;
@@ -184,7 +195,11 @@ class WPSEO_Term_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	 */
 	private function get_social_title_template() {
 		if ( $this->use_social_templates ) {
+<<<<<<< HEAD
 			return $this->get_social_template( 'title' );
+=======
+			return $this->get_template( 'social-title' );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return '';
@@ -197,7 +212,11 @@ class WPSEO_Term_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	 */
 	private function get_social_description_template() {
 		if ( $this->use_social_templates ) {
+<<<<<<< HEAD
 			return $this->get_social_template( 'description' );
+=======
+			return $this->get_template( 'social-description' );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return '';
@@ -210,7 +229,11 @@ class WPSEO_Term_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	 */
 	private function get_social_image_template() {
 		if ( $this->use_social_templates ) {
+<<<<<<< HEAD
 			return $this->get_social_template( 'image-url' );
+=======
+			return $this->get_template( 'social-image-url' );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return '';
@@ -229,6 +252,7 @@ class WPSEO_Term_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Retrieves a social template.
 	 *
 	 * @param string $template_option_name The name of the option in which the template you want to get is saved.
@@ -247,6 +271,8 @@ class WPSEO_Term_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Determines whether the insights feature is enabled for this taxonomy.
 	 *
 	 * @return bool

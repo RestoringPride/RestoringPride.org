@@ -61,13 +61,17 @@ __webpack_require__.d(__webpack_exports__, {
   "ZERO": function() { return /* binding */ ZERO; },
   "displayShortcut": function() { return /* binding */ displayShortcut; },
   "displayShortcutList": function() { return /* binding */ displayShortcutList; },
+<<<<<<< HEAD
   "isAppleOS": function() { return /* reexport */ isAppleOS; },
+=======
+>>>>>>> fb785cbb (Initial commit)
   "isKeyboardEvent": function() { return /* binding */ isKeyboardEvent; },
   "modifiers": function() { return /* binding */ modifiers; },
   "rawShortcut": function() { return /* binding */ rawShortcut; },
   "shortcutAriaLabel": function() { return /* binding */ shortcutAriaLabel; }
 });
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -410,16 +414,31 @@ function capitalCase(input, options) {
     return noCase(input, __assign({ delimiter: " ", transform: capitalCaseTransform }, options));
 }
 
+=======
+;// CONCATENATED MODULE: external "lodash"
+var external_lodash_namespaceObject = window["lodash"];
+>>>>>>> fb785cbb (Initial commit)
 ;// CONCATENATED MODULE: external ["wp","i18n"]
 var external_wp_i18n_namespaceObject = window["wp"]["i18n"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/keycodes/build-module/platform.js
 /**
+<<<<<<< HEAD
+=======
+ * External dependencies
+ */
+
+/**
+>>>>>>> fb785cbb (Initial commit)
  * Return true if platform is MacOS.
  *
  * @param {Window?} _window window object by default; used for DI testing.
  *
  * @return {boolean} True if MacOS; false otherwise.
  */
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 function isAppleOS() {
   let _window = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
@@ -434,7 +453,11 @@ function isAppleOS() {
   const {
     platform
   } = _window.navigator;
+<<<<<<< HEAD
   return platform.indexOf('Mac') !== -1 || ['iPad', 'iPhone'].includes(platform);
+=======
+  return platform.indexOf('Mac') !== -1 || (0,external_lodash_namespaceObject.includes)(['iPad', 'iPhone'], platform);
+>>>>>>> fb785cbb (Initial commit)
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/keycodes/build-module/index.js
@@ -484,8 +507,11 @@ function isAppleOS() {
 
 /** @typedef {(event: KeyboardEvent, character: string, isApple?: () => boolean) => boolean} WPEventKeyHandler */
 
+<<<<<<< HEAD
 /** @typedef {( isApple: () => boolean ) => WPModifierPart[]} WPModifier */
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Keycode for BACKSPACE key.
  */
@@ -586,6 +612,7 @@ const SHIFT = 'shift';
  */
 
 const ZERO = 48;
+<<<<<<< HEAD
 
 /**
  * Map the values of an object with a specified callback and return the result object.
@@ -604,6 +631,8 @@ function mapValues(object, mapFn) {
     return [key, mapFn(value)];
   }));
 }
+=======
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Object that contains functions that return the available modifier
  * depending on platform.
@@ -611,7 +640,10 @@ function mapValues(object, mapFn) {
  * @type {WPModifierHandler< ( isApple: () => boolean ) => WPModifierPart[]>}
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 const modifiers = {
   primary: _isApple => _isApple() ? [COMMAND] : [CTRL],
   primaryShift: _isApple => _isApple() ? [SHIFT, COMMAND] : [CTRL, SHIFT],
@@ -641,9 +673,13 @@ const modifiers = {
  *                                                 shortcuts.
  */
 
+<<<<<<< HEAD
 const rawShortcut = mapValues(modifiers, (
 /** @type {WPModifier} */
 modifier) => {
+=======
+const rawShortcut = (0,external_lodash_namespaceObject.mapValues)(modifiers, modifier => {
+>>>>>>> fb785cbb (Initial commit)
   return (
     /** @type {WPKeyHandler<string>} */
     function (character) {
@@ -667,9 +703,13 @@ modifier) => {
  *                                                   shortcut sequences.
  */
 
+<<<<<<< HEAD
 const displayShortcutList = mapValues(modifiers, (
 /** @type {WPModifier} */
 modifier) => {
+=======
+const displayShortcutList = (0,external_lodash_namespaceObject.mapValues)(modifiers, modifier => {
+>>>>>>> fb785cbb (Initial commit)
   return (
     /** @type {WPKeyHandler<string[]>} */
     function (character) {
@@ -685,9 +725,13 @@ modifier) => {
         [SHIFT]: isApple ? '⇧' : 'Shift'
       };
       const modifierKeys = modifier(_isApple).reduce((accumulator, key) => {
+<<<<<<< HEAD
         var _replacementKeyMap$ke;
 
         const replacementKey = (_replacementKeyMap$ke = replacementKeyMap[key]) !== null && _replacementKeyMap$ke !== void 0 ? _replacementKeyMap$ke : key; // If on the Mac, adhere to platform convention and don't show plus between keys.
+=======
+        const replacementKey = (0,external_lodash_namespaceObject.get)(replacementKeyMap, key, key); // If on the Mac, adhere to platform convention and don't show plus between keys.
+>>>>>>> fb785cbb (Initial commit)
 
         if (isApple) {
           return [...accumulator, replacementKey];
@@ -696,6 +740,7 @@ modifier) => {
         return [...accumulator, replacementKey, '+'];
       },
       /** @type {string[]} */
+<<<<<<< HEAD
       []); // Symbols (~`,.) are removed by the default regular expression,
       // so override the rule to allow symbols used for shortcuts.
       // see: https://github.com/blakeembrey/change-case#options
@@ -703,6 +748,10 @@ modifier) => {
       const capitalizedCharacter = capitalCase(character, {
         stripRegexp: /[^A-Z0-9~`,\.\\\-]/gi
       });
+=======
+      []);
+      const capitalizedCharacter = (0,external_lodash_namespaceObject.capitalize)(character);
+>>>>>>> fb785cbb (Initial commit)
       return [...modifierKeys, capitalizedCharacter];
     }
   );
@@ -721,9 +770,13 @@ modifier) => {
  *                                                 display shortcuts.
  */
 
+<<<<<<< HEAD
 const displayShortcut = mapValues(displayShortcutList, (
 /** @type {WPKeyHandler<string[]>} */
 shortcutList) => {
+=======
+const displayShortcut = (0,external_lodash_namespaceObject.mapValues)(displayShortcutList, shortcutList => {
+>>>>>>> fb785cbb (Initial commit)
   return (
     /** @type {WPKeyHandler<string>} */
     function (character) {
@@ -748,17 +801,24 @@ shortcutList) => {
  *                                                 shortcut ARIA labels.
  */
 
+<<<<<<< HEAD
 const shortcutAriaLabel = mapValues(modifiers, (
 /** @type {WPModifier} */
 modifier) => {
+=======
+const shortcutAriaLabel = (0,external_lodash_namespaceObject.mapValues)(modifiers, modifier => {
+>>>>>>> fb785cbb (Initial commit)
   return (
     /** @type {WPKeyHandler<string>} */
     function (character) {
       let _isApple = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : isAppleOS;
 
       const isApple = _isApple();
+<<<<<<< HEAD
       /** @type {Record<string,string>} */
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 
       const replacementKeyMap = {
         [SHIFT]: 'Shift',
@@ -773,6 +833,7 @@ modifier) => {
         '.': (0,external_wp_i18n_namespaceObject.__)('Period'),
 
         /* translators: backtick as in the character '`' */
+<<<<<<< HEAD
         '`': (0,external_wp_i18n_namespaceObject.__)('Backtick'),
 
         /* translators: tilde as in the character '~' */
@@ -783,6 +844,11 @@ modifier) => {
 
         return capitalCase((_replacementKeyMap$ke2 = replacementKeyMap[key]) !== null && _replacementKeyMap$ke2 !== void 0 ? _replacementKeyMap$ke2 : key);
       }).join(isApple ? ' ' : ' + ');
+=======
+        '`': (0,external_wp_i18n_namespaceObject.__)('Backtick')
+      };
+      return [...modifier(_isApple), character].map(key => (0,external_lodash_namespaceObject.capitalize)((0,external_lodash_namespaceObject.get)(replacementKeyMap, key, key))).join(isApple ? ' ' : ' + ');
+>>>>>>> fb785cbb (Initial commit)
     }
   );
 });
@@ -819,9 +885,13 @@ function getEventModifiers(event) {
  */
 
 
+<<<<<<< HEAD
 const isKeyboardEvent = mapValues(modifiers, (
 /** @type {WPModifier} */
 getModifiers) => {
+=======
+const isKeyboardEvent = (0,external_lodash_namespaceObject.mapValues)(modifiers, getModifiers => {
+>>>>>>> fb785cbb (Initial commit)
   return (
     /** @type {WPEventKeyHandler} */
     function (event, character) {
@@ -829,6 +899,7 @@ getModifiers) => {
 
       const mods = getModifiers(_isApple);
       const eventMods = getEventModifiers(event);
+<<<<<<< HEAD
       /** @type {Record<string,string>} */
 
       const replacementWithShiftKeyMap = {
@@ -842,19 +913,28 @@ getModifiers) => {
       const eventModsDiff = eventMods.filter(mod => !mods.includes(mod));
 
       if (modsDiff.length > 0 || eventModsDiff.length > 0) {
+=======
+
+      if ((0,external_lodash_namespaceObject.xor)(mods, eventMods).length) {
+>>>>>>> fb785cbb (Initial commit)
         return false;
       }
 
       let key = event.key.toLowerCase();
 
       if (!character) {
+<<<<<<< HEAD
         return mods.includes(
         /** @type {WPModifierPart} */
         key);
+=======
+        return (0,external_lodash_namespaceObject.includes)(mods, key);
+>>>>>>> fb785cbb (Initial commit)
       }
 
       if (event.altKey && character.length === 1) {
         key = String.fromCharCode(event.keyCode).toLowerCase();
+<<<<<<< HEAD
       } // `event.key` returns the value of the key pressed, taking into the state of
       // modifier keys such as `Shift`. If the shift key is pressed, a different
       // value may be returned depending on the keyboard layout. It is necessary to
@@ -864,6 +944,8 @@ getModifiers) => {
 
       if (event.shiftKey && character.length === 1 && replacementWithShiftKeyMap[event.code]) {
         key = replacementWithShiftKeyMap[event.code];
+=======
+>>>>>>> fb785cbb (Initial commit)
       } // For backwards compatibility.
 
 

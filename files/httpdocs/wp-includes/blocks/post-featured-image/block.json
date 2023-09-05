@@ -23,6 +23,7 @@
 		},
 		"sizeSlug": {
 			"type": "string"
+<<<<<<< HEAD
 		},
 		"rel": {
 			"type": "string",
@@ -48,17 +49,23 @@
 		},
 		"customGradient": {
 			"type": "string"
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"usesContext": [ "postId", "postType", "queryId" ],
 	"supports": {
 		"align": [ "left", "right", "center", "wide", "full" ],
+<<<<<<< HEAD
 		"anchor": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"color": {
 			"__experimentalDuotone": "img, .wp-block-post-featured-image__placeholder, .components-placeholder__illustration, .components-placeholder::before",
 			"text": false,
 			"background": false
 		},
+<<<<<<< HEAD
 		"__experimentalBorder": {
 			"color": true,
 			"radius": true,
@@ -71,6 +78,8 @@
 				"width": true
 			}
 		},
+=======
+>>>>>>> fb785cbb (Initial commit)
 		"html": false,
 		"spacing": {
 			"margin": true,

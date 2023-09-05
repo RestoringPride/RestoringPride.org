@@ -53,7 +53,11 @@ class Snoopy
 	var $cookies		=	array();			// array of cookies to pass
 												// $cookies["username"]="joe";
 	var	$rawheaders		=	array();			// array of raw headers to send
+<<<<<<< HEAD
 												// $rawheaders["Content-Type"]="text/html";
+=======
+												// $rawheaders["Content-type"]="text/html";
+>>>>>>> fb785cbb (Initial commit)
 
 	var $maxredirs		=	5;					// http redirection depth maximum. 0 = disallow
 	var $lastredirectaddr	=	"";				// contains address of last redirected address
@@ -825,13 +829,21 @@ class Snoopy
 				$headers .= $headerKey.": ".$headerVal."\r\n";
 		}
 		if(!empty($content_type)) {
+<<<<<<< HEAD
 			$headers .= "Content-Type: $content_type";
+=======
+			$headers .= "Content-type: $content_type";
+>>>>>>> fb785cbb (Initial commit)
 			if ($content_type == "multipart/form-data")
 				$headers .= "; boundary=".$this->_mime_boundary;
 			$headers .= "\r\n";
 		}
 		if(!empty($body))
+<<<<<<< HEAD
 			$headers .= "Content-Length: ".strlen($body)."\r\n";
+=======
+			$headers .= "Content-length: ".strlen($body)."\r\n";
+>>>>>>> fb785cbb (Initial commit)
 		if(!empty($this->user) || !empty($this->pass))
 			$headers .= "Authorization: Basic ".base64_encode($this->user.":".$this->pass)."\r\n";
 
@@ -990,12 +1002,21 @@ class Snoopy
 		}
 		if(!empty($content_type)) {
 			if ($content_type == "multipart/form-data")
+<<<<<<< HEAD
 				$headers[] = "Content-Type: $content_type; boundary=".$this->_mime_boundary;
 			else
 				$headers[] = "Content-Type: $content_type";
 		}
 		if(!empty($body))
 			$headers[] = "Content-Length: ".strlen($body);
+=======
+				$headers[] = "Content-type: $content_type; boundary=".$this->_mime_boundary;
+			else
+				$headers[] = "Content-type: $content_type";
+		}
+		if(!empty($body))
+			$headers[] = "Content-length: ".strlen($body);
+>>>>>>> fb785cbb (Initial commit)
 		if(!empty($this->user) || !empty($this->pass))
 			$headers[] = "Authorization: BASIC ".base64_encode($this->user.":".$this->pass);
 

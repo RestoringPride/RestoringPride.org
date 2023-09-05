@@ -368,6 +368,7 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Moves a file or directory.
 	 *
 	 * After moving files or directories, OPcache will need to be invalidated.
@@ -382,6 +383,15 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	 * @param string $source      Path to the source file or directory.
 	 * @param string $destination Path to the destination file or directory.
 	 * @param bool   $overwrite   Optional. Whether to overwrite the destination if it exists.
+=======
+	 * Moves a file.
+	 *
+	 * @since 2.5.0
+	 *
+	 * @param string $source      Path to the source file.
+	 * @param string $destination Path to the destination file.
+	 * @param bool   $overwrite   Optional. Whether to overwrite the destination file if it exists.
+>>>>>>> fb785cbb (Initial commit)
 	 *                            Default false.
 	 * @return bool True on success, false on failure.
 	 */
@@ -422,6 +432,7 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	 *
 	 * @since 2.5.0
 	 *
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path exists or not.
 	 */
@@ -429,6 +440,15 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 		$list = $this->ftp->nlist( $path );
 
 		if ( empty( $list ) && $this->is_dir( $path ) ) {
+=======
+	 * @param string $file Path to file or directory.
+	 * @return bool Whether $file exists or not.
+	 */
+	public function exists( $file ) {
+		$list = $this->ftp->nlist( $file );
+
+		if ( empty( $list ) && $this->is_dir( $file ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			return true; // File is an empty directory.
 		}
 
@@ -492,10 +512,17 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	 *
 	 * @since 2.5.0
 	 *
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path is writable.
 	 */
 	public function is_writable( $path ) {
+=======
+	 * @param string $file Path to file or directory.
+	 * @return bool Whether $file is writable.
+	 */
+	public function is_writable( $file ) {
+>>>>>>> fb785cbb (Initial commit)
 		return true;
 	}
 
@@ -645,8 +672,12 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 			return false;
 		}
 
+<<<<<<< HEAD
 		$path = trailingslashit( $path );
 		$ret  = array();
+=======
+		$ret = array();
+>>>>>>> fb785cbb (Initial commit)
 
 		foreach ( $list as $struc ) {
 
@@ -664,7 +695,11 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 
 			if ( 'd' === $struc['type'] ) {
 				if ( $recursive ) {
+<<<<<<< HEAD
 					$struc['files'] = $this->dirlist( $path . $struc['name'], $include_hidden, $recursive );
+=======
+					$struc['files'] = $this->dirlist( $path . '/' . $struc['name'], $include_hidden, $recursive );
+>>>>>>> fb785cbb (Initial commit)
 				} else {
 					$struc['files'] = array();
 				}

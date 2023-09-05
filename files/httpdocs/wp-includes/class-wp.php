@@ -5,7 +5,10 @@
  * @package WordPress
  * @since 2.0.0
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP {
 	/**
 	 * Public query variables.
@@ -408,6 +411,7 @@ class WP {
 	 * If showing a feed, it will also send Last-Modified, ETag, and 304 status if needed.
 	 *
 	 * @since 2.0.0
+<<<<<<< HEAD
 	 * @since 4.4.0 `X-Pingback` header is added conditionally for single posts that allow pings.
 	 * @since 6.1.0 Runs after posts have been queried.
 	 *
@@ -416,6 +420,11 @@ class WP {
 	public function send_headers() {
 		global $wp_query;
 
+=======
+	 * @since 4.4.0 `X-Pingback` header is added conditionally after posts have been queried in handle_404().
+	 */
+	public function send_headers() {
+>>>>>>> fb785cbb (Initial commit)
 		$headers       = array();
 		$status        = null;
 		$exit_required = false;
@@ -509,6 +518,7 @@ class WP {
 			}
 		}
 
+<<<<<<< HEAD
 		if ( is_singular() ) {
 			$post = isset( $wp_query->post ) ? $wp_query->post : null;
 
@@ -518,6 +528,8 @@ class WP {
 			}
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		/**
 		 * Filters the HTTP headers before they're sent to the browser.
 		 *
@@ -715,9 +727,20 @@ class WP {
 
 			if ( is_singular() ) {
 				$post = isset( $wp_query->post ) ? $wp_query->post : null;
+<<<<<<< HEAD
 				$next = '<!--nextpage-->';
 
 				// Check for paged content that exceeds the max number of pages.
+=======
+
+				// Only set X-Pingback for single posts that allow pings.
+				if ( $post && pings_open( $post ) && ! headers_sent() ) {
+					header( 'X-Pingback: ' . get_bloginfo( 'pingback_url', 'display' ) );
+				}
+
+				// Check for paged content that exceeds the max number of pages.
+				$next = '<!--nextpage-->';
+>>>>>>> fb785cbb (Initial commit)
 				if ( $post && ! empty( $this->query_vars['page'] ) ) {
 					// Check if content is actually intended to be paged.
 					if ( false !== strpos( $post->post_content, $next ) ) {
@@ -779,14 +802,22 @@ class WP {
 
 		$parsed = $this->parse_request( $query_args );
 
+<<<<<<< HEAD
+=======
+		$this->send_headers();
+
+>>>>>>> fb785cbb (Initial commit)
 		if ( $parsed ) {
 			$this->query_posts();
 			$this->handle_404();
 			$this->register_globals();
 		}
 
+<<<<<<< HEAD
 		$this->send_headers();
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		/**
 		 * Fires once the WordPress environment has been set up.
 		 *

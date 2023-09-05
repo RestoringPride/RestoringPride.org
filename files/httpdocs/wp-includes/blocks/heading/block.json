@@ -29,9 +29,14 @@
 	"supports": {
 		"align": [ "wide", "full" ],
 		"anchor": true,
+<<<<<<< HEAD
 		"className": true,
 		"color": {
 			"gradients": true,
+=======
+		"className": false,
+		"color": {
+>>>>>>> fb785cbb (Initial commit)
 			"link": true,
 			"__experimentalDefaultControls": {
 				"background": true,
@@ -39,24 +44,38 @@
 			}
 		},
 		"spacing": {
+<<<<<<< HEAD
 			"margin": true,
 			"padding": true
+=======
+			"margin": true
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true,
+<<<<<<< HEAD
 			"__experimentalFontFamily": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalFontStyle": true,
 			"__experimentalFontWeight": true,
 			"__experimentalLetterSpacing": true,
 			"__experimentalTextTransform": true,
+<<<<<<< HEAD
 			"__experimentalTextDecoration": true,
+=======
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true,
 				"fontAppearance": true,
 				"textTransform": true
 			}
 		},
+<<<<<<< HEAD
+=======
+		"__experimentalSelector": "h1,h2,h3,h4,h5,h6",
+>>>>>>> fb785cbb (Initial commit)
 		"__unstablePasteTextInline": true,
 		"__experimentalSlashInserter": true
 	},

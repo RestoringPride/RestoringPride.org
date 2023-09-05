@@ -2,6 +2,11 @@
 
 namespace Yoast\WP\SEO\Generators\Schema;
 
+<<<<<<< HEAD
+=======
+use Yoast\WP\SEO\Config\Schema_IDs;
+
+>>>>>>> fb785cbb (Initial commit)
 /**
  * Returns schema Author data.
  */

@@ -6,11 +6,18 @@ use Exception;
 use Give\Donations\ValueObjects\DonationMetaKeys;
 use Give\Donors\Exceptions\FailedDonorUpdateException;
 use Give\Donors\Models\Donor;
+<<<<<<< HEAD
 use Give\Donors\Models\DonorModelQueryBuilder;
 use Give\Donors\ValueObjects\DonorMetaKeys;
 use Give\Donors\ValueObjects\DonorType;
 use Give\Framework\Database\DB;
 use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
+=======
+use Give\Donors\ValueObjects\DonorMetaKeys;
+use Give\Framework\Database\DB;
+use Give\Framework\Exceptions\Primitives\InvalidArgumentException;
+use Give\Framework\Models\ModelQueryBuilder;
+>>>>>>> fb785cbb (Initial commit)
 use Give\Framework\Support\Facades\DateTime\Temporal;
 use Give\Helpers\Hooks;
 use Give\Log\Log;
@@ -34,12 +41,20 @@ class DonorRepository
     /**
      * Query Donor By ID
      *
+<<<<<<< HEAD
      * @since 2.24.0 replace ModelQueryBuilder with DonorModelQueryBuilder
      * @since 2.19.6
      *
      * @return DonorModelQueryBuilder<Donor>
      */
     public function queryById(int $donorId): DonorModelQueryBuilder
+=======
+     * @since 2.19.6
+     *
+     * @return ModelQueryBuilder<Donor>
+     */
+    public function queryById(int $donorId): ModelQueryBuilder
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->prepareQuery()
             ->where('id', $donorId);
@@ -85,7 +100,11 @@ class DonorRepository
     {
         $additionalEmails = DB::table('give_donormeta')
             ->select(['meta_value', 'email'])
+<<<<<<< HEAD
             ->where('meta_key', DonorMetaKeys::ADDITIONAL_EMAILS)
+=======
+            ->where('meta_key', 'additional_email')
+>>>>>>> fb785cbb (Initial commit)
             ->where('donor_id', $donorId)
             ->getAll();
 
@@ -97,7 +116,10 @@ class DonorRepository
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.24.0 add support for $donor->totalAmountDonated and $donor->totalNumberOfDonation
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.21.0 add actions givewp_donor_creating and givewp_donor_created
      * @since 2.20.0 mutate model and return void
      * @since 2.19.6
@@ -115,6 +137,7 @@ class DonorRepository
 
         DB::query('START TRANSACTION');
 
+<<<<<<< HEAD
         $args = [
             'date_created' => Temporal::getFormattedDateTime($dateCreated),
             'user_id' => $donor->userId ?? 0,
@@ -133,6 +156,16 @@ class DonorRepository
         try {
             DB::table('give_donors')
                 ->insert($args);
+=======
+        try {
+            DB::table('give_donors')
+                ->insert([
+                    'date_created' => Temporal::getFormattedDateTime($dateCreated),
+                    'user_id' => $donor->userId ?? 0,
+                    'email' => $donor->email,
+                    'name' => $donor->name
+                ]);
+>>>>>>> fb785cbb (Initial commit)
 
             $donorId = DB::last_insert_id();
 
@@ -172,8 +205,12 @@ class DonorRepository
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.24.0 add support for $donor->totalAmountDonated and $donor->totalNumberOfDonation
      * @since 2.23.1 use give()->donor_meta to update meta so data is upserted
+=======
+     *
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.21.0 add actions givewp_donor_updating and givewp_donor_updated
      * @since 2.20.0 return void
      * @since 2.19.6
@@ -189,6 +226,7 @@ class DonorRepository
 
         DB::query('START TRANSACTION');
 
+<<<<<<< HEAD
         $args = [
             'user_id' => $donor->userId,
             'email' => $donor->email,
@@ -210,6 +248,24 @@ class DonorRepository
 
             foreach ($this->getCoreDonorMeta($donor) as $metaKey => $metaValue) {
                 give()->donor_meta->update_meta($donor->id, $metaKey, $metaValue);
+=======
+        try {
+            DB::table('give_donors')
+                ->where('id', $donor->id)
+                ->update([
+                    'user_id' => $donor->userId,
+                    'email' => $donor->email,
+                    'name' => $donor->name
+                ]);
+
+            foreach ($this->getCoreDonorMeta($donor) as $metaKey => $metaValue) {
+                DB::table('give_donormeta')
+                    ->where('donor_id', $donor->id)
+                    ->where('meta_key', $metaKey)
+                    ->update([
+                        'meta_value' => $metaValue,
+                    ]);
+>>>>>>> fb785cbb (Initial commit)
             }
 
             if (isset($donor->additionalEmails) && $donor->isDirty('additionalEmails')) {
@@ -355,7 +411,11 @@ class DonorRepository
     {
         $donorMetaObject = DB::table('give_donormeta')
             ->select(['donor_id', 'id'])
+<<<<<<< HEAD
             ->where('meta_key', DonorMetaKeys::ADDITIONAL_EMAILS)
+=======
+            ->where('meta_key', 'additional_email')
+>>>>>>> fb785cbb (Initial commit)
             ->where('meta_value', $email)
             ->get();
 
@@ -367,6 +427,7 @@ class DonorRepository
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.24.0 replace ModelQueryBuilder with DonorModelQueryBuilder
      * @since 2.19.6
      *
@@ -375,6 +436,15 @@ class DonorRepository
     public function prepareQuery(): DonorModelQueryBuilder
     {
         $builder = new DonorModelQueryBuilder(Donor::class);
+=======
+     * @since 2.19.6
+     *
+     * @return ModelQueryBuilder<Donor>
+     */
+    public function prepareQuery(): ModelQueryBuilder
+    {
+        $builder = new ModelQueryBuilder(Donor::class);
+>>>>>>> fb785cbb (Initial commit)
 
         return $builder->from('give_donors')
             ->select(
@@ -383,7 +453,11 @@ class DonorRepository
                 'email',
                 'name',
                 ['purchase_value', 'totalAmountDonated'],
+<<<<<<< HEAD
                 ['purchase_count', 'totalNumberOfDonations'],
+=======
+                ['purchase_count', 'totalDonations'],
+>>>>>>> fb785cbb (Initial commit)
                 ['payment_ids', 'paymentIds'],
                 ['date_created', 'createdAt'],
                 'token',
@@ -394,7 +468,11 @@ class DonorRepository
                 'give_donormeta',
                 'ID',
                 'donor_id',
+<<<<<<< HEAD
                 ...DonorMetaKeys::getColumnsForAttachMetaQueryWithoutAdditionalEmails()
+=======
+                ...DonorMetaKeys::getColumnsForAttachMetaQueryWithAdditionalEmails()
+>>>>>>> fb785cbb (Initial commit)
             );
     }
 
@@ -452,10 +530,16 @@ class DonorRepository
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.24.0 change return to DonorType
      * @since 2.20.0
      *
      * @return DonorType|null
+=======
+     * @since 2.20.0
+     *
+     * @return string|null
+>>>>>>> fb785cbb (Initial commit)
      */
     public function getDonorType(int $donorId)
     {
@@ -473,7 +557,11 @@ class DonorRepository
         }
 
         if (!$donor->donationCount) {
+<<<<<<< HEAD
             return DonorType::NEW();
+=======
+            return 'new';
+>>>>>>> fb785cbb (Initial commit)
         }
 
         // Donation IDs
@@ -490,6 +578,7 @@ class DonorRepository
             ->count();
 
         if ($recurringDonations) {
+<<<<<<< HEAD
             return DonorType::SUBSCRIBER();
         }
 
@@ -498,6 +587,16 @@ class DonorRepository
         }
 
         return DonorType::SINGLE();
+=======
+            return 'subscriber';
+        }
+
+        if ((int)$donor->donationCount > 1) {
+            return 'repeat';
+        }
+
+        return 'single';
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**

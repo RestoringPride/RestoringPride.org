@@ -16,36 +16,56 @@
 			"type": "string",
 			"source": "attribute",
 			"selector": "img",
+<<<<<<< HEAD
 			"attribute": "src",
 			"__experimentalRole": "content"
+=======
+			"attribute": "src"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"alt": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "img",
 			"attribute": "alt",
+<<<<<<< HEAD
 			"default": "",
 			"__experimentalRole": "content"
+=======
+			"default": ""
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"caption": {
 			"type": "string",
 			"source": "html",
+<<<<<<< HEAD
 			"selector": "figcaption",
 			"__experimentalRole": "content"
+=======
+			"selector": "figcaption"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"title": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "img",
+<<<<<<< HEAD
 			"attribute": "title",
 			"__experimentalRole": "content"
+=======
+			"attribute": "title"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"href": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "figure > a",
+<<<<<<< HEAD
 			"attribute": "href",
 			"__experimentalRole": "content"
+=======
+			"attribute": "href"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"rel": {
 			"type": "string",
@@ -60,8 +80,12 @@
 			"attribute": "class"
 		},
 		"id": {
+<<<<<<< HEAD
 			"type": "number",
 			"__experimentalRole": "content"
+=======
+			"type": "number"
+>>>>>>> fb785cbb (Initial commit)
 		},
 		"width": {
 			"type": "number"
@@ -85,11 +109,16 @@
 	"supports": {
 		"anchor": true,
 		"color": {
+<<<<<<< HEAD
 			"__experimentalDuotone": "img, .components-placeholder",
+=======
+			"__experimentalDuotone": "img",
+>>>>>>> fb785cbb (Initial commit)
 			"text": false,
 			"background": false
 		},
 		"__experimentalBorder": {
+<<<<<<< HEAD
 			"color": true,
 			"radius": true,
 			"width": true,
@@ -99,6 +128,11 @@
 				"color": true,
 				"radius": true,
 				"width": true
+=======
+			"radius": true,
+			"__experimentalDefaultControls": {
+				"radius": true
+>>>>>>> fb785cbb (Initial commit)
 			}
 		}
 	},

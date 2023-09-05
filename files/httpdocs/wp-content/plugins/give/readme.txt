@@ -1,4 +1,5 @@
 === GiveWP - Donation Plugin and Fundraising Platform ===
+<<<<<<< HEAD
 Contributors: givewp, dlocc, webdevmattcrom, ravinderk, mehul0810, kevinwhoffman, jason_the_adams, henryholtgeerts, kbjohnson90, alaca, benmeredithgmailcom, jonwaldstein, joshuadinh, glaubersilvawp, pauloiankoski
 Donate link: https://go.givewp.com/home
 Tags: donation, donate, recurring donations, fundraising, crowdfunding
@@ -6,6 +7,15 @@ Requires at least: 5.0
 Tested up to: 6.1
 Requires PHP: 7.0
 Stable tag: 2.25.0
+=======
+Contributors: givewp, dlocc, webdevmattcrom, ravinderk, mehul0810, kevinwhoffman, jason_the_adams, henryholtgeerts, kbjohnson90, alaca, benmeredithgmailcom, jonwaldstein, joshuadinh
+Donate link: https://go.givewp.com/home
+Tags: donation, donate, recurring donations, fundraising, crowdfunding
+Requires at least: 5.0
+Tested up to: 6.0
+Requires PHP: 7.0
+Stable tag: 2.21.4
+>>>>>>> fb785cbb (Initial commit)
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -60,7 +70,11 @@ With more than 100,000+ active installs of GiveWP, we hear more and more success
 
 * [The City Mission used GiveWP](https://go.givewp.com/cmstory) for Giving Tuesday and a competition fundraiser with a neighboring organization, where they raised $45K in 16 hours.
 * [A local neighborhood watch program](https://go.givewp.com/memstory) switched from using GoFundMe to GiveWP and raised $40,000 in five days for a memorial fundraiser. 
+<<<<<<< HEAD
 * [Fans of Ivan the Gorilla have kept his memory alive](https://go.givewp.com/readivan) by fundraising for a conservancy program in his name. 
+=======
+* [Students have funded their tuition](https://go.givewp.com/tuitionstory) to schools like Oxford through individual fundraising pages. 
+>>>>>>> fb785cbb (Initial commit)
 * [A hospital raised money](https://go.givewp.com/twiststory) through a community-wide virtual dance party during the pandemic. 
 
 In addition to nonprofit organizations, GiveWP is widely used for individual or creative purposes. We’ve seen tip jars for blogs or musicians, live streams, and more. Our [Donation Upsells for WooCommerce Add-on](https://go.givewp.com/wooread) is even used in some eCommerce stores to collect donations for a cause, or ask for tips in the cart or checkout.
@@ -87,7 +101,11 @@ If you are a GiveWP customer with an active license of any of our popular add-on
 
 GiveWP comes with several payment gateway options:
 
+<<<<<<< HEAD
 * **Stripe Donations** -- Our Stripe integration allows you to accept credit card donations on your website. There is a small 2% fee associated with these donations. Want no additional fees? Upgrade to our Stripe Premium add-on to start accepting [Stripe Donations](https://go.givewp.com/addon-stripe).
+=======
+* **Stripe Donations** -- Our Stripe integration allows you to accept credit card donations on your website. There is a small 2% fee associated with these donations. Want no additional fees? Upgrade to our Stripe Premium add-on to start accepting [Stripe Donations]](https://go.givewp.com/addon-stripe).
+>>>>>>> fb785cbb (Initial commit)
 * **PayPal Donations** -- Allow worldwide donations with PayPal Donations. No additional fees applied.
 * **Venmo Donations** -- Give donors the option to pay through Venmo with their account balance or connected bank account. 
 * **Offline Donations** -- Enable your donors to send checks or physical donations with an offline gateway with instructions.
@@ -160,9 +178,15 @@ Here’s a few ways you can contribute to GiveWP:
 
 = Minimum Requirements =
 
+<<<<<<< HEAD
 * WordPress 5.0 or greater
 * PHP version 7.0 or greater
 * MySQL version 5.7 or greater
+=======
+* WordPress 4.9 or greater
+* PHP version 5.6 or greater
+* MySQL version 5.6 or greater
+>>>>>>> fb785cbb (Initial commit)
 * MariaDB version 10 or later
 * Some payment gateways require fsockopen support (for IPN access)
 * cURL version 5.40 or higher
@@ -251,6 +275,7 @@ The 2% fee on Stripe donations only applies to donations taken via our free Stri
 8. GiveWP has a dedicated support team to help answer any questions you may have and help you through stumbling blocks.
 
 == Changelog ==
+<<<<<<< HEAD
 = 2.25.0: February 21st, 2023 =
 * Feature: Donors now explicitly state whether they are donating as a company, useful for things like Gift Aid
 * Enhancement: Improvements to the Gateway API in preparation for GiveWP 3.0
@@ -328,6 +353,8 @@ The 2% fee on Stripe donations only applies to donations taken via our free Stri
 * Fix: When filling out the deactivation survey, deactivation will no longer be prevented if our server is down
 * Fix: Added more escaping to secure against vulnerabilities
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 = 2.21.4: July 8th, 2022 =
 * Fix: The CSRF patch for the stats exporter was breaking other exporters. The patch is still in place but the other exporters are working again.
 

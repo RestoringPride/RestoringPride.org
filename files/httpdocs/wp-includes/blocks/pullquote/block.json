@@ -10,7 +10,12 @@
 		"value": {
 			"type": "string",
 			"source": "html",
+<<<<<<< HEAD
 			"selector": "p",
+=======
+			"selector": "blockquote",
+			"multiline": "p",
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalRole": "content"
 		},
 		"citation": {
@@ -39,12 +44,19 @@
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true,
+<<<<<<< HEAD
 			"__experimentalFontFamily": true,
 			"__experimentalFontWeight": true,
 			"__experimentalFontStyle": true,
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
+=======
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+>>>>>>> fb785cbb (Initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true,
 				"fontAppearance": true
@@ -61,12 +73,15 @@
 				"style": true,
 				"width": true
 			}
+<<<<<<< HEAD
 		},
 		"__experimentalStyle": {
 			"typography": {
 				"fontSize": "1.5em",
 				"lineHeight": "1.6"
 			}
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"editorStyle": "wp-block-pullquote-editor",

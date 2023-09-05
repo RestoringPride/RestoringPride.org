@@ -13,12 +13,19 @@
  * @since 2.7.0
  * @since 3.7.0 Combined with the fsockopen transport and switched to `stream_socket_client()`.
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Http_Streams {
 	/**
 	 * Send a HTTP request to a URI using PHP Streams.
 	 *
+<<<<<<< HEAD
 	 * @see WP_Http::request() For default options descriptions.
+=======
+	 * @see WP_Http::request For default options descriptions.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.7.0
 	 * @since 3.7.0 Combined with the fsockopen transport and switched to stream_socket_client().
@@ -101,9 +108,14 @@ class WP_Http_Streams {
 			 * @since 2.8.0
 			 * @since 5.1.0 The `$url` parameter was added.
 			 *
+<<<<<<< HEAD
 			 * @param bool|string $ssl_verify Boolean to control whether to verify the SSL connection
 			 *                                or path to an SSL certificate.
 			 * @param string      $url        The request URL.
+=======
+			 * @param bool   $ssl_verify Whether to verify the SSL connection. Default true.
+			 * @param string $url        The request URL.
+>>>>>>> fb785cbb (Initial commit)
 			 */
 			$ssl_verify = apply_filters( 'https_local_ssl_verify', $ssl_verify, $url );
 		} elseif ( ! $is_local ) {

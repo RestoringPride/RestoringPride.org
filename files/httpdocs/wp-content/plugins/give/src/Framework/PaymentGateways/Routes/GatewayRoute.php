@@ -165,7 +165,11 @@ class GatewayRoute
             PaymentGatewayLog::error(
                 $exception->getMessage(),
                 [
+<<<<<<< HEAD
                     'Payment Gateway' => $gateway::id(),
+=======
+                    'Payment Gateway' => $gateway->getId(),
+>>>>>>> fb785cbb (Initial commit)
                     'Payment Gateway Method' => $method,
                     'Query Params' => $queryParams
                 ]

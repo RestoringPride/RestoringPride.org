@@ -34,6 +34,7 @@ function render_block_core_post_navigation_link( $attributes, $content ) {
 	$link   = 'next' === $navigation_type ? _x( 'Next', 'label for next post link' ) : _x( 'Previous', 'label for previous post link' );
 	$label  = '';
 
+<<<<<<< HEAD
 	$arrow_map = array(
 		'none'    => '',
 		'arrow'   => array(
@@ -46,6 +47,8 @@ function render_block_core_post_navigation_link( $attributes, $content ) {
 		),
 	);
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	// If a custom label is provided, make this a link.
 	// `$label` is used to prepend the provided label, if we want to show the page title as well.
 	if ( isset( $attributes['label'] ) && ! empty( $attributes['label'] ) ) {
@@ -83,6 +86,7 @@ function render_block_core_post_navigation_link( $attributes, $content ) {
 		}
 	}
 
+<<<<<<< HEAD
 	// Display arrows.
 	if ( isset( $attributes['arrow'] ) && ! empty( $attributes['arrow'] ) && 'none' !== $attributes['arrow'] ) {
 		$arrow = $arrow_map[ $attributes['arrow'] ][ $navigation_type ];
@@ -94,6 +98,8 @@ function render_block_core_post_navigation_link( $attributes, $content ) {
 		}
 	}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	// The dynamic portion of the function name, `$navigation_type`,
 	// refers to the type of adjacency, 'next' or 'previous'.
 	$get_link_function = "get_{$navigation_type}_post_link";

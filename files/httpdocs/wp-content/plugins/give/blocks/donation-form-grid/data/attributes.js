@@ -67,6 +67,13 @@ const blockAttributes = {
 		type: 'boolean',
 		default: true,
 	},
+<<<<<<< HEAD
+=======
+    showProgressBar: {
+        type: 'boolean',
+        default: true,
+    },
+>>>>>>> fb785cbb (Initial commit)
 	showFeaturedImage: {
 		type: 'boolean',
 		default: true,

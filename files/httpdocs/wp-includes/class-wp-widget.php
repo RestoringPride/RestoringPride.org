@@ -17,7 +17,10 @@
  * @since 2.8.0
  * @since 4.4.0 Moved to its own file from wp-includes/widgets.php
  */
+<<<<<<< HEAD
 #[AllowDynamicProperties]
+=======
+>>>>>>> fb785cbb (Initial commit)
 class WP_Widget {
 
 	/**
@@ -152,7 +155,11 @@ class WP_Widget {
 	 *
 	 * @since 2.8.0
 	 *
+<<<<<<< HEAD
 	 * @param string $id_base         Base ID for the widget, lowercase and unique. If left empty,
+=======
+	 * @param string $id_base         Optional. Base ID for the widget, lowercase and unique. If left empty,
+>>>>>>> fb785cbb (Initial commit)
 	 *                                a portion of the widget's PHP class name will be used. Has to be unique.
 	 * @param string $name            Name for the widget displayed on the configuration page.
 	 * @param array  $widget_options  Optional. Widget options. See wp_register_sidebar_widget() for
@@ -188,7 +195,11 @@ class WP_Widget {
 	 *
 	 * @see WP_Widget::__construct()
 	 *
+<<<<<<< HEAD
 	 * @param string $id_base         Base ID for the widget, lowercase and unique. If left empty,
+=======
+	 * @param string $id_base         Optional. Base ID for the widget, lowercase and unique. If left empty,
+>>>>>>> fb785cbb (Initial commit)
 	 *                                a portion of the widget's PHP class name will be used. Has to be unique.
 	 * @param string $name            Name for the widget displayed on the configuration page.
 	 * @param array  $widget_options  Optional. Widget options. See wp_register_sidebar_widget() for
@@ -613,6 +624,7 @@ class WP_Widget {
 		$settings = get_option( $this->option_name );
 
 		if ( false === $settings ) {
+<<<<<<< HEAD
 			$settings = array();
 			if ( isset( $this->alt_option_name ) ) {
 				// Get settings from alternative (legacy) option.
@@ -623,6 +635,14 @@ class WP_Widget {
 			}
 			// Save an option so it can be autoloaded next time.
 			$this->save_settings( $settings );
+=======
+			if ( isset( $this->alt_option_name ) ) {
+				$settings = get_option( $this->alt_option_name );
+			} else {
+				// Save an option so it can be autoloaded next time.
+				$this->save_settings( array() );
+			}
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		if ( ! is_array( $settings ) && ! ( $settings instanceof ArrayObject || $settings instanceof ArrayIterator ) ) {

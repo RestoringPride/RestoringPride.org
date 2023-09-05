@@ -12,6 +12,10 @@ use RuntimeException;
  */
 abstract class Model implements Arrayable
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
     /**
      * The model's attributes.
      *
@@ -50,15 +54,24 @@ abstract class Model implements Arrayable
     /**
      * Create a new model instance.
      *
+<<<<<<< HEAD
      * @since      2.19.6
      * @since      2.20.0 add support for property defaults
      * @since 2.23.1 Make constructor final to avoid unsafe usage of `new static()`.
+=======
+     * @since 2.20.0 add support for property defaults
+     * @since 2.19.6
+>>>>>>> fb785cbb (Initial commit)
      *
      * @param array $attributes
      *
      * @return void
      */
+<<<<<<< HEAD
     final public function __construct(array $attributes = [])
+=======
+    public function __construct(array $attributes = [])
+>>>>>>> fb785cbb (Initial commit)
     {
         $this->fill(array_merge($this->getPropertyDefaults(), $attributes));
 
@@ -104,7 +117,11 @@ abstract class Model implements Arrayable
      */
     public function isDirty($attribute = null)
     {
+<<<<<<< HEAD
         if ( ! $attribute) {
+=======
+        if (!$attribute) {
+>>>>>>> fb785cbb (Initial commit)
             return (bool)$this->getDirty();
         }
 
@@ -122,7 +139,11 @@ abstract class Model implements Arrayable
      */
     public function isClean($attribute = null)
     {
+<<<<<<< HEAD
         return ! $this->isDirty($attribute);
+=======
+        return !$this->isDirty($attribute);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -137,7 +158,11 @@ abstract class Model implements Arrayable
         $dirty = [];
 
         foreach ($this->attributes as $key => $value) {
+<<<<<<< HEAD
             if ( ! array_key_exists($key, $this->original) || $value !== $this->original[$key]) {
+=======
+            if (!array_key_exists($key, $this->original) || $value !== $this->original[$key]) {
+>>>>>>> fb785cbb (Initial commit)
                 $dirty[$key] = $value;
             }
         }
@@ -166,16 +191,31 @@ abstract class Model implements Arrayable
     /**
      * Get an attribute from the model.
      *
+<<<<<<< HEAD
      * @since 2.23.0 use the existence validation method
      * @since 2.19.6
      *
+=======
+     * @since 2.19.6
+     *
+     * @param string $key
+     *
+>>>>>>> fb785cbb (Initial commit)
      * @return mixed
      *
      * @throws RuntimeException
      */
+<<<<<<< HEAD
     public function getAttribute(string $key)
     {
         $this->validatePropertyExists($key);
+=======
+    public function getAttribute($key)
+    {
+        if (!array_key_exists($key, $this->properties)) {
+            throw new InvalidArgumentException("$key is not a valid property.");
+        }
+>>>>>>> fb785cbb (Initial commit)
 
         return $this->attributes[$key] ?? null;
     }
@@ -183,6 +223,7 @@ abstract class Model implements Arrayable
     /**
      * Set a given attribute on the model.
      *
+<<<<<<< HEAD
      * @since 2.23.0 validate that the property exists before setting
      * @since 2.19.6
      *
@@ -201,6 +242,20 @@ abstract class Model implements Arrayable
     public function hasProperty($key): bool
     {
         return array_key_exists($key, $this->properties);
+=======
+     * @since 2.19.6
+     *
+     * @param string $key
+     * @param mixed $value
+     */
+    public function setAttribute($key, $value)
+    {
+        $this->validatePropertyType($key, $value);
+
+        $this->attributes[$key] = $value;
+
+        return $this;
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -209,7 +264,11 @@ abstract class Model implements Arrayable
      * @since 2.19.6
      *
      * @param string $key
+<<<<<<< HEAD
      * @param mixed  $value
+=======
+     * @param mixed $value
+>>>>>>> fb785cbb (Initial commit)
      *
      * @return bool
      */
@@ -236,19 +295,33 @@ abstract class Model implements Arrayable
     }
 
     /**
+<<<<<<< HEAD
      * Validates that the given value is a valid type for the given property.
      *
      * @since 2.19.6
      *
      * @param string $key
      * @param mixed  $value
+=======
+     * Validate property type
+     *
+     * @param string $key
+     * @param mixed $value
+     *
+>>>>>>> fb785cbb (Initial commit)
      * @return void
      *
      * @throws InvalidArgumentException
      */
+<<<<<<< HEAD
     protected function validatePropertyType(string $key, $value)
     {
         if ( ! $this->isPropertyTypeValid($key, $value)) {
+=======
+    protected function validatePropertyType($key, $value)
+    {
+        if (!$this->isPropertyTypeValid($key, $value)) {
+>>>>>>> fb785cbb (Initial commit)
             $type = $this->getPropertyType($key);
 
             throw new InvalidArgumentException("Invalid attribute assignment. '$key' should be of type: '$type'");
@@ -256,6 +329,7 @@ abstract class Model implements Arrayable
     }
 
     /**
+<<<<<<< HEAD
      * Validates that the given property exists
      *
      * @since 2.23.0
@@ -276,6 +350,17 @@ abstract class Model implements Arrayable
      * @since 2.19.6
      */
     protected function getPropertyType(string $key): string
+=======
+     * Get the property type
+     *
+     * @since 2.19.6
+     *
+     * @param $key
+     *
+     * @return string
+     */
+    protected function getPropertyType($key)
+>>>>>>> fb785cbb (Initial commit)
     {
         $type = is_array($this->properties[$key]) ? $this->properties[$key][0] : $this->properties[$key];
 
@@ -302,8 +387,15 @@ abstract class Model implements Arrayable
      * Returns the defaults for all the properties. If a default is omitted it defaults to null.
      *
      * @since 2.20.0
+<<<<<<< HEAD
      */
     protected function getPropertyDefaults(): array
+=======
+     *
+     * @return array
+     */
+    protected function getPropertyDefaults()
+>>>>>>> fb785cbb (Initial commit)
     {
         $defaults = [];
         foreach (array_keys($this->properties) as $property) {
@@ -315,16 +407,30 @@ abstract class Model implements Arrayable
 
     /**
      * @since 2.19.6
+<<<<<<< HEAD
      */
     public function toArray(): array
+=======
+     *
+     * @return array
+     */
+    public function toArray()
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->attributes;
     }
 
     /**
      * @since 2.19.6
+<<<<<<< HEAD
      */
     public function getAttributes(): array
+=======
+     *
+     * @return array
+     */
+    public function getAttributes()
+>>>>>>> fb785cbb (Initial commit)
     {
         return $this->attributes;
     }
@@ -332,9 +438,15 @@ abstract class Model implements Arrayable
     /**
      * @return int[]|string[]
      */
+<<<<<<< HEAD
     public static function propertyKeys(): array
     {
         return array_keys((new static())->properties);
+=======
+    public static function propertyKeys()
+    {
+        return array_keys((new static)->properties);
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**
@@ -342,9 +454,17 @@ abstract class Model implements Arrayable
      *
      * @since 2.19.6
      *
+<<<<<<< HEAD
      * @return mixed
      */
     public function __get(string $key)
+=======
+     * @param string $key
+     *
+     * @return mixed
+     */
+    public function __get($key)
+>>>>>>> fb785cbb (Initial commit)
     {
         if (array_key_exists($key, $this->relationships)) {
             return $this->getRelationship($key);
@@ -359,7 +479,11 @@ abstract class Model implements Arrayable
      * @since 2.19.6
      *
      * @param string $key
+<<<<<<< HEAD
      * @param mixed  $value
+=======
+     * @param mixed $value
+>>>>>>> fb785cbb (Initial commit)
      *
      * @return void
      */
@@ -394,7 +518,11 @@ abstract class Model implements Arrayable
      */
     protected function getRelationship($key)
     {
+<<<<<<< HEAD
         if ( ! is_callable([$this, $key])) {
+=======
+        if (!is_callable([$this, $key])) {
+>>>>>>> fb785cbb (Initial commit)
             throw new InvalidArgumentException("$key() does not exist.");
         }
 

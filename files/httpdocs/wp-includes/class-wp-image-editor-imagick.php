@@ -254,6 +254,7 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Sets Imagick time limit.
 	 *
 	 * Depending on configuration, Imagick processing may take time.
@@ -298,6 +299,8 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Resizes current image.
 	 *
 	 * At minimum, either a height or width must be provided.
@@ -327,8 +330,11 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 			return $this->crop( $src_x, $src_y, $src_w, $src_h, $dst_w, $dst_h );
 		}
 
+<<<<<<< HEAD
 		self::set_imagick_time_limit();
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		// Execute the resize.
 		$thumb_result = $this->thumbnail_image( $dst_w, $dst_h );
 		if ( is_wp_error( $thumb_result ) ) {
@@ -549,10 +555,13 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 			$size_data['crop'] = false;
 		}
 
+<<<<<<< HEAD
 		if ( ( $this->size['width'] === $size_data['width'] ) && ( $this->size['height'] === $size_data['height'] ) ) {
 			return new WP_Error( 'image_subsize_create_error', __( 'The image already has the requested size.' ) );
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		$resized = $this->resize( $size_data['width'], $size_data['height'], $size_data['crop'] );
 
 		if ( is_wp_error( $resized ) ) {
@@ -595,8 +604,11 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 			$src_h -= $src_y;
 		}
 
+<<<<<<< HEAD
 		self::set_imagick_time_limit();
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		try {
 			$this->image->cropImage( $src_w, $src_h, $src_x, $src_y );
 			$this->image->setImagePage( $src_w, $src_h, 0, 0 );
@@ -713,6 +725,7 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 	 * Saves current image to file.
 	 *
 	 * @since 3.5.0
+<<<<<<< HEAD
 	 * @since 6.0.0 The `$filesize` value was added to the returned array.
 	 *
 	 * @param string $destfilename Optional. Destination filename. Default null.
@@ -727,6 +740,12 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 	 *     @type string $mime-type The mime type of the image.
 	 *     @type int    $filesize  File size of the image.
 	 * }
+=======
+	 *
+	 * @param string $destfilename Optional. Destination filename. Default null.
+	 * @param string $mime_type    Optional. The mime-type. Default null.
+	 * @return array|WP_Error {'path'=>string, 'file'=>string, 'width'=>int, 'height'=>int, 'mime-type'=>string}
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	public function save( $destfilename = null, $mime_type = null ) {
 		$saved = $this->_save( $this->image, $destfilename, $mime_type );
@@ -746,6 +765,7 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * @since 3.5.0
 	 * @since 6.0.0 The `$filesize` value was added to the returned array.
 	 *
@@ -762,6 +782,12 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 	 *     @type string $mime-type The mime type of the image.
 	 *     @type int    $filesize  File size of the image.
 	 * }
+=======
+	 * @param Imagick $image
+	 * @param string  $filename
+	 * @param string  $mime_type
+	 * @return array|WP_Error
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	protected function _save( $image, $filename = null, $mime_type = null ) {
 		list( $filename, $extension, $mime_type ) = $this->get_output_format( $filename, $mime_type );

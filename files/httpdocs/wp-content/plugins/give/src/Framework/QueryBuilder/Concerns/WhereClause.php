@@ -487,7 +487,11 @@ trait WhereClause
                     $where->comparisonOperator,
                     strpos($where->value, '%') !== false
                         ? $where->value
+<<<<<<< HEAD
                         : '%' . $where->value . '%'
+=======
+                        : sprintf('%%%s%%', $where->value )
+>>>>>>> fb785cbb (Initial commit)
                 );
 
             // Handle NULL conditions

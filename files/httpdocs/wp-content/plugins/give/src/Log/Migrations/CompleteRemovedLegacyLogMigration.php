@@ -33,7 +33,11 @@ class CompleteRemovedLegacyLogMigration extends Migration
      */
     public static function title()
     {
+<<<<<<< HEAD
         return esc_html__('Remove legacy Log table', 'give');
+=======
+        return esc_html__('Complete Removed Legacy Log Migration', 'give');
+>>>>>>> fb785cbb (Initial commit)
     }
 
     /**

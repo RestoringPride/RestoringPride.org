@@ -15,9 +15,16 @@
         }
     }
 
+<<<<<<< HEAD
     .give-tributes-legend,
     .give-tributes-label {
         display: block !important;
+=======
+    legend,
+    .give-tributes-legend,
+    .give-tributes-label {
+        display: block;
+>>>>>>> fb785cbb (Initial commit)
         font-size: 14px !important;
         font-weight: 400 !important;
         border-bottom: none !important;
@@ -26,6 +33,7 @@
         line-height: 1.7;
     }
 
+<<<<<<< HEAD
     legend {
         color: var(--global-palette3);
         display: block !important;
@@ -34,6 +42,8 @@
         margin-bottom: 5px !important;
     }
 
+=======
+>>>>>>> fb785cbb (Initial commit)
     .give_tributes_send_ecard_fields > .give-tributes-legend {
         width: auto !important;
     }

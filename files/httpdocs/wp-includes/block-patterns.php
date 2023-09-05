@@ -36,6 +36,7 @@ function _register_core_block_patterns_and_categories() {
 		}
 	}
 
+<<<<<<< HEAD
 	register_block_pattern_category( 'banner', array( 'label' => _x( 'Banners', 'Block pattern category' ) ) );
 	register_block_pattern_category(
 		'buttons',
@@ -181,6 +182,15 @@ function wp_normalize_remote_block_pattern( $pattern ) {
 	}
 
 	return (array) $pattern;
+=======
+	register_block_pattern_category( 'buttons', array( 'label' => _x( 'Buttons', 'Block pattern category' ) ) );
+	register_block_pattern_category( 'columns', array( 'label' => _x( 'Columns', 'Block pattern category' ) ) );
+	register_block_pattern_category( 'featured', array( 'label' => _x( 'Featured', 'Block pattern category' ) ) );
+	register_block_pattern_category( 'gallery', array( 'label' => _x( 'Gallery', 'Block pattern category' ) ) );
+	register_block_pattern_category( 'header', array( 'label' => _x( 'Headers', 'Block pattern category' ) ) );
+	register_block_pattern_category( 'text', array( 'label' => _x( 'Text', 'Block pattern category' ) ) );
+	register_block_pattern_category( 'query', array( 'label' => _x( 'Query', 'Block pattern category' ) ) );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 /**
@@ -188,8 +198,11 @@ function wp_normalize_remote_block_pattern( $pattern ) {
  *
  * @since 5.8.0
  * @since 5.9.0 The $current_screen argument was removed.
+<<<<<<< HEAD
  * @since 6.2.0 Normalize the pattern from the API (snake_case) to the
  *              format expected by `register_block_pattern` (camelCase).
+=======
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param WP_Screen $deprecated Unused. Formerly the screen that the current request was triggered from.
  */
@@ -223,10 +236,16 @@ function _load_remote_block_patterns( $deprecated = null ) {
 		}
 		$patterns = $response->get_data();
 
+<<<<<<< HEAD
 		foreach ( $patterns as $pattern ) {
 			$normalized_pattern = wp_normalize_remote_block_pattern( $pattern );
 			$pattern_name       = 'core/' . sanitize_title( $normalized_pattern['title'] );
 			register_block_pattern( $pattern_name, $normalized_pattern );
+=======
+		foreach ( $patterns as $settings ) {
+			$pattern_name = 'core/' . sanitize_title( $settings['title'] );
+			register_block_pattern( $pattern_name, (array) $settings );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 }
@@ -235,8 +254,11 @@ function _load_remote_block_patterns( $deprecated = null ) {
  * Register `Featured` (category) patterns from wordpress.org/patterns.
  *
  * @since 5.9.0
+<<<<<<< HEAD
  * @since 6.2.0 Normalized the pattern from the API (snake_case) to the
  *              format expected by `register_block_pattern()` (camelCase).
+=======
+>>>>>>> fb785cbb (Initial commit)
  */
 function _load_remote_featured_patterns() {
 	$supports_core_patterns = get_theme_support( 'core-block-patterns' );
@@ -256,6 +278,7 @@ function _load_remote_featured_patterns() {
 		return;
 	}
 	$patterns = $response->get_data();
+<<<<<<< HEAD
 	$registry = WP_Block_Patterns_Registry::get_instance();
 	foreach ( $patterns as $pattern ) {
 		$normalized_pattern = wp_normalize_remote_block_pattern( $pattern );
@@ -264,6 +287,16 @@ function _load_remote_featured_patterns() {
 		$is_registered = $registry->is_registered( $pattern_name ) || $registry->is_registered( "core/$pattern_name" );
 		if ( ! $is_registered ) {
 			register_block_pattern( $pattern_name, $normalized_pattern );
+=======
+
+	foreach ( $patterns as $pattern ) {
+		$pattern_name = sanitize_title( $pattern['title'] );
+		$registry     = WP_Block_Patterns_Registry::get_instance();
+		// Some patterns might be already registered as core patterns with the `core` prefix.
+		$is_registered = $registry->is_registered( $pattern_name ) || $registry->is_registered( "core/$pattern_name" );
+		if ( ! $is_registered ) {
+			register_block_pattern( $pattern_name, (array) $pattern );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 }
@@ -273,8 +306,11 @@ function _load_remote_featured_patterns() {
  * `theme.json` file.
  *
  * @since 6.0.0
+<<<<<<< HEAD
  * @since 6.2.0 Normalized the pattern from the API (snake_case) to the
  *              format expected by `register_block_pattern()` (camelCase).
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @access private
  */
 function _register_remote_theme_patterns() {
@@ -283,7 +319,11 @@ function _register_remote_theme_patterns() {
 		return;
 	}
 
+<<<<<<< HEAD
 	if ( ! wp_theme_has_theme_json() ) {
+=======
+	if ( ! WP_Theme_JSON_Resolver::theme_has_support() ) {
+>>>>>>> fb785cbb (Initial commit)
 		return;
 	}
 
@@ -301,12 +341,20 @@ function _register_remote_theme_patterns() {
 	$patterns          = $response->get_data();
 	$patterns_registry = WP_Block_Patterns_Registry::get_instance();
 	foreach ( $patterns as $pattern ) {
+<<<<<<< HEAD
 		$normalized_pattern = wp_normalize_remote_block_pattern( $pattern );
 		$pattern_name       = sanitize_title( $normalized_pattern['title'] );
 		// Some patterns might be already registered as core patterns with the `core` prefix.
 		$is_registered = $patterns_registry->is_registered( $pattern_name ) || $patterns_registry->is_registered( "core/$pattern_name" );
 		if ( ! $is_registered ) {
 			register_block_pattern( $pattern_name, $normalized_pattern );
+=======
+		$pattern_name = sanitize_title( $pattern['title'] );
+		// Some patterns might be already registered as core patterns with the `core` prefix.
+		$is_registered = $patterns_registry->is_registered( $pattern_name ) || $patterns_registry->is_registered( "core/$pattern_name" );
+		if ( ! $is_registered ) {
+			register_block_pattern( $pattern_name, (array) $pattern );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 }
@@ -331,6 +379,7 @@ function _register_remote_theme_patterns() {
  *
  *   - Description
  *   - Viewport Width
+<<<<<<< HEAD
  *   - Inserter         (yes/no)
  *   - Categories       (comma-separated values)
  *   - Keywords         (comma-separated values)
@@ -341,6 +390,14 @@ function _register_remote_theme_patterns() {
  * @since 6.0.0
  * @since 6.1.0 The `postTypes` property was added.
  * @since 6.2.0 The `templateTypes` property was added.
+=======
+ *   - Categories       (comma-separated values)
+ *   - Keywords         (comma-separated values)
+ *   - Block Types      (comma-separated values)
+ *   - Inserter         (yes/no)
+ *
+ * @since 6.0.0
+>>>>>>> fb785cbb (Initial commit)
  * @access private
  */
 function _register_theme_block_patterns() {
@@ -349,12 +406,19 @@ function _register_theme_block_patterns() {
 		'slug'          => 'Slug',
 		'description'   => 'Description',
 		'viewportWidth' => 'Viewport Width',
+<<<<<<< HEAD
 		'inserter'      => 'Inserter',
 		'categories'    => 'Categories',
 		'keywords'      => 'Keywords',
 		'blockTypes'    => 'Block Types',
 		'postTypes'     => 'Post Types',
 		'templateTypes' => 'Template Types',
+=======
+		'categories'    => 'Categories',
+		'keywords'      => 'Keywords',
+		'blockTypes'    => 'Block Types',
+		'inserter'      => 'Inserter',
+>>>>>>> fb785cbb (Initial commit)
 	);
 
 	/*
@@ -425,7 +489,11 @@ function _register_theme_block_patterns() {
 					}
 
 					// For properties of type array, parse data as comma-separated.
+<<<<<<< HEAD
 					foreach ( array( 'categories', 'keywords', 'blockTypes', 'postTypes', 'templateTypes' ) as $property ) {
+=======
+					foreach ( array( 'categories', 'keywords', 'blockTypes' ) as $property ) {
+>>>>>>> fb785cbb (Initial commit)
 						if ( ! empty( $pattern_data[ $property ] ) ) {
 							$pattern_data[ $property ] = array_filter(
 								preg_split(

@@ -399,7 +399,11 @@ function give_output_donation_amount_top( $form_id = 0, $args = [] ) {
 	$allow_custom_amount = give_get_meta( $form_id, '_give_custom_amount', true );
 	$currency_position   = isset( $give_options['currency_position'] ) ? $give_options['currency_position'] : 'before';
 	$symbol              = give_currency_symbol( give_get_currency( $form_id, $args ) );
+<<<<<<< HEAD
 	$currency_output     = '<span class="give-currency-symbol give-currency-position-' . esc_attr($currency_position) . '">' . esc_html($symbol) . '</span>';
+=======
+	$currency_output     = '<span class="give-currency-symbol give-currency-position-' . $currency_position . '">' . $symbol . '</span>';
+>>>>>>> fb785cbb (Initial commit)
 	$default_amount      = give_format_amount(
 		give_get_default_form_amount( $form_id ),
 		[
@@ -424,7 +428,11 @@ function give_output_donation_amount_top( $form_id = 0, $args = [] ) {
 		?>
 		<label class="give-hidden" for="give-amount"><?php esc_html_e( 'Donation Amount:', 'give' ); ?></label>
 		<input id="give-amount" class="give-amount-hidden" type="hidden" name="give-amount"
+<<<<<<< HEAD
 			   value="<?php echo esc_attr($default_amount); ?>" required aria-required="true"/>
+=======
+			   value="<?php echo $default_amount; ?>" required aria-required="true"/>
+>>>>>>> fb785cbb (Initial commit)
 		<div class="set-price give-donation-amount form-row-wide">
 			<?php
 			if ( 'before' === $currency_position ) {
@@ -451,7 +459,11 @@ function give_output_donation_amount_top( $form_id = 0, $args = [] ) {
 				?>
 				<label class="give-hidden" for="give-amount"><?php esc_html_e( 'Donation Amount:', 'give' ); ?></label>
 				<input class="give-text-input give-amount-top" id="give-amount" name="give-amount" type="text" inputmode="decimal"
+<<<<<<< HEAD
 					   placeholder="" value="<?php echo esc_attr($default_amount); ?>" autocomplete="off">
+=======
+					   placeholder="" value="<?php echo $default_amount; ?>" autocomplete="off">
+>>>>>>> fb785cbb (Initial commit)
 				<?php
 				if ( 'after' === $currency_position ) {
 					echo $currency_output;
@@ -475,7 +487,11 @@ function give_output_donation_amount_top( $form_id = 0, $args = [] ) {
 	// Custom Amount Text
 	if ( ! $variable_pricing && give_is_setting_enabled( $allow_custom_amount ) && ! empty( $custom_amount_text ) ) {
 		?>
+<<<<<<< HEAD
 		<p class="give-custom-amount-text"><?php echo esc_html($custom_amount_text); ?></p>
+=======
+		<p class="give-custom-amount-text"><?php echo $custom_amount_text; ?></p>
+>>>>>>> fb785cbb (Initial commit)
 		<?php
 	}
 
@@ -547,11 +563,19 @@ function give_output_levels( $form_id ) {
 
 				$output .= sprintf(
 					'<li><button type="button" data-price-id="%1$s" class="%2$s" value="%3$s" data-default="%4$s">%5$s</button></li>',
+<<<<<<< HEAD
 					esc_attr($price['_give_id']['level_id']),
 					esc_attr($level_classes),
 					esc_attr($formatted_amount),
 					array_key_exists( '_give_default', $price ) ? 1 : 0,
 					esc_html($level_text)
+=======
+					$price['_give_id']['level_id'],
+					$level_classes,
+					$formatted_amount,
+					array_key_exists( '_give_default', $price ) ? 1 : 0,
+					$level_text
+>>>>>>> fb785cbb (Initial commit)
 				);
 			}
 
@@ -588,12 +612,21 @@ function give_output_levels( $form_id ) {
 
 				$output .= sprintf(
 					'<li><input type="radio" data-price-id="%1$s" class="%2$s" value="%3$s" name="give-radio-donation-level" id="give-radio-level-%1$s" %4$s data-default="%5$s"><label for="give-radio-level-%1$s">%6$s</label></li>',
+<<<<<<< HEAD
 					esc_attr($price['_give_id']['level_id']),
 					esc_attr($level_classes),
 					esc_attr($formatted_amount),
 					( give_is_default_level_id( $price ) ? 'checked="checked"' : '' ),
 					array_key_exists( '_give_default', $price ) ? 1 : 0,
 					esc_html($level_text)
+=======
+					$price['_give_id']['level_id'],
+					$level_classes,
+					$formatted_amount,
+					( give_is_default_level_id( $price ) ? 'checked="checked"' : '' ),
+					array_key_exists( '_give_default', $price ) ? 1 : 0,
+					$level_text
+>>>>>>> fb785cbb (Initial commit)
 				);
 			}
 
@@ -636,12 +669,21 @@ function give_output_levels( $form_id ) {
 
 				$output .= sprintf(
 					'<option data-price-id="%1$s" class="%2$s" value="%3$s" %4$s data-default="%5$s">%6$s</option>',
+<<<<<<< HEAD
 					esc_attr($price['_give_id']['level_id']),
 					esc_attr($level_classes),
 					esc_attr($formatted_amount),
 					( give_is_default_level_id( $price ) ? 'selected="selected"' : '' ),
 					array_key_exists( '_give_default', $price ) ? 1 : 0,
 					esc_html($level_text)
+=======
+					$price['_give_id']['level_id'],
+					$level_classes,
+					$formatted_amount,
+					( give_is_default_level_id( $price ) ? 'selected="selected"' : '' ),
+					array_key_exists( '_give_default', $price ) ? 1 : 0,
+					$level_text
+>>>>>>> fb785cbb (Initial commit)
 				);
 			}
 
@@ -689,7 +731,11 @@ function give_display_checkout_button( $form_id, $args ) {
 	$display_label_field = give_get_meta( $form_id, '_give_reveal_label', true );
 	$display_label       = ! empty( $args['continue_button_title'] ) ? $args['continue_button_title'] : ( ! empty( $display_label_field ) ? $display_label_field : esc_html__( 'Donate Now', 'give' ) );
 
+<<<<<<< HEAD
 	$output = '<button type="button" class="give-btn give-btn-' . esc_attr($display_option) . '">' . esc_html($display_label) . '</button>';
+=======
+	$output = '<button type="button" class="give-btn give-btn-' . $display_option . '">' . $display_label . '</button>';
+>>>>>>> fb785cbb (Initial commit)
 
 	/**
 	 * filter the button html
@@ -721,7 +767,11 @@ function give_add_button_open_form( $form_id, $args ) {
 
 	$output = sprintf(
 		'<button type="button" class="give-btn give-btn-modal">%1$s</button>',
+<<<<<<< HEAD
 		esc_html($display_label)
+=======
+		$display_label
+>>>>>>> fb785cbb (Initial commit)
 	);
 
 	/**
@@ -741,6 +791,7 @@ function give_add_button_open_form( $form_id, $args ) {
 /**
  * Shows the User Info fields in the Personal Info box, more fields can be added via the hooks provided.
  *
+<<<<<<< HEAD
  * @since 2.25.0 add radio group to conditionally enable/disable company name field
  * @since      1.0
  *
@@ -748,6 +799,14 @@ function give_add_button_open_form( $form_id, $args ) {
  *
  * @return void
  * @see        For Pattern Attribute: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
+=======
+ * @param int $form_id The form ID.
+ *
+ * @return void
+ * @see    For Pattern Attribute: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
+ *
+ * @since  1.0
+>>>>>>> fb785cbb (Initial commit)
  */
 function give_user_info_fields( $form_id ) {
 
@@ -791,6 +850,7 @@ function give_user_info_fields( $form_id ) {
 					type="text"
 					name="give_title"
 					id="give-title"
+<<<<<<< HEAD
                     <?php
                     echo(give_field_is_required('give_title', $form_id) ? ' required aria-required="true" ' : ''); ?>
                 >
@@ -1010,6 +1070,132 @@ function give_user_info_fields( $form_id ) {
                         __('Make this an anonymous donation.', 'give'), $form_id);
 
                     if ( give_field_is_required( 'give_comment', $form_id ) ) {
+=======
+					<?php echo( give_field_is_required( 'give_title', $form_id ) ? ' required aria-required="true" ' : '' ); ?>
+				>
+					<?php foreach ( $title_prefixes as $key => $value ) { ?>
+						<option
+							value="<?php echo esc_html( $value ); ?>" <?php selected( $value, $title, true ); ?>><?php echo esc_html( $value ); ?></option>
+					<?php } ?>
+				</select>
+			</p>
+		<?php } ?>
+
+		<p id="give-first-name-wrap" class="form-row form-row-first form-row-responsive">
+			<label class="give-label" for="give-first">
+				<?php esc_attr_e( 'First Name', 'give' ); ?>
+				<?php if ( give_field_is_required( 'give_first', $form_id ) ) : ?>
+					<span class="give-required-indicator">*</span>
+				<?php endif ?>
+				<?php echo Give()->tooltips->render_help( __( 'First Name is used to personalize your donation record.', 'give' ) ); ?>
+			</label>
+			<input
+				class="give-input required"
+				type="text"
+				name="give_first"
+				autocomplete="given-name"
+				placeholder="<?php esc_attr_e( 'First Name', 'give' ); ?>"
+				id="give-first"
+				value="<?php echo esc_html( $first_name ); ?>"
+				<?php echo( give_field_is_required( 'give_first', $form_id ) ? ' required aria-required="true" ' : '' ); ?>
+			/>
+		</p>
+
+		<p id="give-last-name-wrap" class="form-row form-row-last form-row-responsive">
+			<label class="give-label" for="give-last">
+				<?php esc_attr_e( 'Last Name', 'give' ); ?>
+				<?php if ( give_field_is_required( 'give_last', $form_id ) ) : ?>
+					<span class="give-required-indicator">*</span>
+				<?php endif ?>
+				<?php echo Give()->tooltips->render_help( __( 'Last Name is used to personalize your donation record.', 'give' ) ); ?>
+			</label>
+
+			<input
+				class="give-input<?php echo( give_field_is_required( 'give_last', $form_id ) ? ' required' : '' ); ?>"
+				type="text"
+				name="give_last"
+				autocomplete="family-name"
+				id="give-last"
+				placeholder="<?php esc_attr_e( 'Last Name', 'give' ); ?>"
+				value="<?php echo esc_html( $last_name ); ?>"
+				<?php echo( give_field_is_required( 'give_last', $form_id ) ? ' required aria-required="true" ' : '' ); ?>
+			/>
+		</p>
+
+		<?php if ( give_is_company_field_enabled( $form_id ) ) : ?>
+			<?php $give_company = give_field_is_required( 'give_company_name', $form_id ); ?>
+			<p id="give-company-wrap" class="form-row form-row-wide">
+				<label class="give-label" for="give-company">
+					<?php esc_attr_e( 'Company Name', 'give' ); ?>
+					<?php if ( $give_company ) : ?>
+						<span class="give-required-indicator">*</span>
+					<?php endif; ?>
+					<?php echo Give()->tooltips->render_help( __( 'Donate on behalf of Company', 'give' ) ); ?>
+				</label>
+				<input
+					class="give-input<?php echo( $give_company ? ' required' : '' ); ?>"
+					type="text"
+					name="give_company_name"
+					placeholder="<?php esc_attr_e( 'Company Name', 'give' ); ?>"
+					id="give-company"
+					value="<?php echo esc_html( $company_name ); ?>"
+					<?php echo( $give_company ? ' required aria-required="true" ' : '' ); ?>
+				/>
+			</p>
+		<?php endif ?>
+
+		<?php
+		/**
+		 * Fire before user email field
+		 *
+		 * @since 1.7
+		 */
+		do_action( 'give_donation_form_before_email', $form_id );
+		?>
+		<p id="give-email-wrap" class="form-row form-row-wide">
+			<label class="give-label" for="give-email">
+				<?php esc_attr_e( 'Email Address', 'give' ); ?>
+				<?php if ( give_field_is_required( 'give_email', $form_id ) ) { ?>
+					<span class="give-required-indicator">*</span>
+				<?php } ?>
+				<?php echo Give()->tooltips->render_help( __( 'We will send the donation receipt to this address.', 'give' ) ); ?>
+			</label>
+			<input
+				class="give-input required"
+				type="email"
+				name="give_email"
+				autocomplete="email"
+				placeholder="<?php esc_attr_e( 'Email Address', 'give' ); ?>"
+				id="give-email"
+				value="<?php echo esc_html( $email ); ?>"
+				<?php echo( give_field_is_required( 'give_email', $form_id ) ? ' required aria-required="true" ' : '' ); ?>
+			/>
+
+		</p>
+
+		<?php if ( give_is_anonymous_donation_field_enabled( $form_id ) ) : ?>
+			<?php $is_anonymous_donation = isset( $_POST['give_anonymous_donation'] ) ? absint( $_POST['give_anonymous_donation'] ) : 0; ?>
+			<p id="give-anonymous-donation-wrap" class="form-row form-row-wide">
+				<label class="give-label" for="give-anonymous-donation">
+					<input
+						type="checkbox"
+						class="give-input<?php echo( give_field_is_required( 'give_anonymous_donation', $form_id ) ? ' required' : '' ); ?>"
+						name="give_anonymous_donation"
+						id="give-anonymous-donation"
+						value="1"
+						<?php echo( give_field_is_required( 'give_anonymous_donation', $form_id ) ? ' required aria-required="true" ' : '' ); ?>
+						<?php checked( 1, $is_anonymous_donation ); ?>
+					>
+					<?php
+					/**
+					 * Filters the checkbox label.
+					 *
+					 * @since 2.4.1
+					 */
+					echo apply_filters( 'give_anonymous_donation_checkbox_label', __( 'Make this an anonymous donation.', 'give' ), $form_id );
+
+					if ( give_field_is_required( 'give_comment', $form_id ) ) {
+>>>>>>> fb785cbb (Initial commit)
 						?>
 						<span class="give-required-indicator">*</span>
 					<?php } ?>
@@ -1586,7 +1772,11 @@ function give_get_login_fields( $form_id ) {
 			}
 			?>
 		</legend>
+<<<<<<< HEAD
 		<?php if ( $show_register_form === 'both' ) { ?>
+=======
+		<?php if ( $show_register_form == 'both' ) { ?>
+>>>>>>> fb785cbb (Initial commit)
 			<p class="give-new-account-link">
 				<?php _e( 'Don\'t have an account?', 'give' ); ?>&nbsp;
 				<a href="<?php echo esc_url( remove_query_arg( 'login' ) ); ?>" class="give-checkout-register-cancel"
@@ -2517,7 +2707,11 @@ function give_redirect_and_popup_form( $redirect, $args ) {
 	}
 
 	// Return the modified URL.
+<<<<<<< HEAD
 	return esc_url_raw( $redirect );
+=======
+	return esc_url( $redirect );
+>>>>>>> fb785cbb (Initial commit)
 }
 
 add_filter( 'give_send_back_to_checkout', 'give_redirect_and_popup_form', 10, 2 );

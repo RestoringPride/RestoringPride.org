@@ -47,7 +47,11 @@ printf(
 	 * {@link http://www.dragonmetrics.com/how-to-optimize-your-site-with-baidu-webmaster-tools/}
 	 * We are unable to create a Baidu Webmaster Tools account due to the Chinese phone number verification.
 	 */
+<<<<<<< HEAD
 	'<a target="_blank" href="' . esc_url( 'https://ziyuan.baidu.com/site/' ) . '" rel="noopener noreferrer">',
+=======
+	'<a target="_blank" href="' . esc_url( 'https://ziyuan.baidu.com/site/siteadd' ) . '" rel="noopener noreferrer">',
+>>>>>>> fb785cbb (Initial commit)
 	'</a>'
 );
 echo '</p>';

@@ -2,7 +2,11 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
 	"name": "core/categories",
+<<<<<<< HEAD
 	"title": "Categories List",
+=======
+	"title": "Categories",
+>>>>>>> fb785cbb (Initial commit)
 	"category": "widgets",
 	"description": "Display a list of all categories.",
 	"textdomain": "default",
@@ -22,14 +26,18 @@
 		"showOnlyTopLevel": {
 			"type": "boolean",
 			"default": false
+<<<<<<< HEAD
 		},
 		"showEmpty": {
 			"type": "boolean",
 			"default": false
+=======
+>>>>>>> fb785cbb (Initial commit)
 		}
 	},
 	"supports": {
 		"align": true,
+<<<<<<< HEAD
 		"anchor": true,
 		"html": false,
 		"spacing": {
@@ -49,6 +57,9 @@
 				"fontSize": true
 			}
 		}
+=======
+		"html": false
+>>>>>>> fb785cbb (Initial commit)
 	},
 	"editorStyle": "wp-block-categories-editor",
 	"style": "wp-block-categories"

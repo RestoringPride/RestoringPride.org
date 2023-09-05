@@ -159,15 +159,26 @@ class Walker_Nav_Menu extends Walker {
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 		/**
+<<<<<<< HEAD
 		 * Filters the ID attribute applied to a menu item's list item element.
+=======
+		 * Filters the ID applied to a menu item's list item element.
+>>>>>>> fb785cbb (Initial commit)
 		 *
 		 * @since 3.0.1
 		 * @since 4.1.0 The `$depth` parameter was added.
 		 *
+<<<<<<< HEAD
 		 * @param string   $menu_item_id The ID attribute applied to the menu item's `<li>` element.
 		 * @param WP_Post  $menu_item    The current menu item.
 		 * @param stdClass $args         An object of wp_nav_menu() arguments.
 		 * @param int      $depth        Depth of menu item. Used for padding.
+=======
+		 * @param string   $menu_id   The ID that is applied to the menu item's `<li>` element.
+		 * @param WP_Post  $menu_item The current menu item.
+		 * @param stdClass $args      An object of wp_nav_menu() arguments.
+		 * @param int      $depth     Depth of menu item. Used for padding.
+>>>>>>> fb785cbb (Initial commit)
 		 */
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $menu_item->ID, $menu_item, $args, $depth );
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
@@ -182,6 +193,7 @@ class Walker_Nav_Menu extends Walker {
 		} else {
 			$atts['rel'] = $menu_item->xfn;
 		}
+<<<<<<< HEAD
 
 		if ( ! empty( $menu_item->url ) ) {
 			if ( get_privacy_policy_url() === $menu_item->url ) {
@@ -193,6 +205,9 @@ class Walker_Nav_Menu extends Walker {
 			$atts['href'] = '';
 		}
 
+=======
+		$atts['href']         = ! empty( $menu_item->url ) ? $menu_item->url : '';
+>>>>>>> fb785cbb (Initial commit)
 		$atts['aria-current'] = $menu_item->current ? 'page' : '';
 
 		/**

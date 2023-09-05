@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /**
  * Configuration validator.
  *
@@ -11,6 +12,11 @@ class WPCF7_ConfigValidator {
 	 * The plugin version in which important updates happened last time.
 	 */
 	const last_important_update = '5.6.1';
+=======
+class WPCF7_ConfigValidator {
+
+	const last_important_update = '5.5';
+>>>>>>> fb785cbb (Initial commit)
 
 	const error = 100;
 	const error_maybe_empty = 101;
@@ -26,6 +32,7 @@ class WPCF7_ConfigValidator {
 	const error_unavailable_html_elements = 111;
 	const error_attachments_overweight = 112;
 	const error_dots_in_names = 113;
+<<<<<<< HEAD
 	const error_colons_in_names = 114;
 	const error_upload_filesize_overlimit = 115;
 
@@ -33,6 +40,9 @@ class WPCF7_ConfigValidator {
 	/**
 	 * Returns a URL linking to the documentation page for the error type.
 	 */
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 	public static function get_doc_link( $error_code = '' ) {
 		$url = __( 'https://contactform7.com/configuration-errors/',
 			'contact-form-7'
@@ -47,7 +57,10 @@ class WPCF7_ConfigValidator {
 		return esc_url( $url );
 	}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 	private $contact_form;
 	private $errors = array();
 
@@ -55,26 +68,35 @@ class WPCF7_ConfigValidator {
 		$this->contact_form = $contact_form;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Returns the contact form object that is tied to this validator.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function contact_form() {
 		return $this->contact_form;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Returns true if no error has been detected.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function is_valid() {
 		return ! $this->count_errors();
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Counts detected errors.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function count_errors( $args = '' ) {
 		$args = wp_parse_args( $args, array(
 			'section' => '',
@@ -110,10 +132,13 @@ class WPCF7_ConfigValidator {
 		return $count;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Collects messages for detected errors.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function collect_error_messages() {
 		$error_messages = array();
 
@@ -147,10 +172,13 @@ class WPCF7_ConfigValidator {
 		return $error_messages;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Builds an error message by replacing placeholders.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function build_message( $message, $params = '' ) {
 		$params = wp_parse_args( $params, array() );
 
@@ -169,11 +197,14 @@ class WPCF7_ConfigValidator {
 		return $message;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Returns a default message that is used when the message for the error
 	 * is not specified.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function get_default_message( $code ) {
 		switch ( $code ) {
 			case self::error_maybe_empty:
@@ -195,6 +226,7 @@ class WPCF7_ConfigValidator {
 		}
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Adds a validation error.
@@ -204,6 +236,8 @@ class WPCF7_ConfigValidator {
 	 *            This must be one of the class constants.
 	 * @param string|array $args Optional options for the error.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function add_error( $section, $code, $args = '' ) {
 		$args = wp_parse_args( $args, array(
 			'message' => '',
@@ -219,10 +253,13 @@ class WPCF7_ConfigValidator {
 		return true;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Removes an error.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function remove_error( $section, $code ) {
 		if ( empty( $this->errors[$section] ) ) {
 			return;
@@ -240,12 +277,15 @@ class WPCF7_ConfigValidator {
 		}
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * The main validation runner.
 	 *
 	 * @return bool True if there is no error detected.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function validate() {
 		$this->errors = array();
 
@@ -260,10 +300,13 @@ class WPCF7_ConfigValidator {
 		return $this->is_valid();
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Saves detected errors as a post meta data.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function save() {
 		if ( $this->contact_form->initial() ) {
 			return;
@@ -272,6 +315,7 @@ class WPCF7_ConfigValidator {
 		delete_post_meta( $this->contact_form->id(), '_config_errors' );
 
 		if ( $this->errors ) {
+<<<<<<< HEAD
 			update_post_meta(
 				$this->contact_form->id(), '_config_errors', $this->errors
 			);
@@ -286,6 +330,16 @@ class WPCF7_ConfigValidator {
 		$config_errors = get_post_meta(
 			$this->contact_form->id(), '_config_errors', true
 		);
+=======
+			update_post_meta( $this->contact_form->id(), '_config_errors',
+				$this->errors );
+		}
+	}
+
+	public function restore() {
+		$config_errors = get_post_meta(
+			$this->contact_form->id(), '_config_errors', true );
+>>>>>>> fb785cbb (Initial commit)
 
 		foreach ( (array) $config_errors as $section => $errors ) {
 			if ( empty( $errors ) ) {
@@ -307,11 +361,14 @@ class WPCF7_ConfigValidator {
 		}
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Callback function for WPCF7_MailTaggedText. Replaces mail-tags with
 	 * the most conservative inputs.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function replace_mail_tags_with_minimum_input( $matches ) {
 		// allow [[foo]] syntax for escaping a tag
 		if ( $matches[1] == '[' && $matches[4] == ']' ) {
@@ -330,8 +387,12 @@ class WPCF7_ConfigValidator {
 		$example_blank = '';
 
 		$form_tags = $this->contact_form->scan_form_tags(
+<<<<<<< HEAD
 			array( 'name' => $field_name )
 		);
+=======
+			array( 'name' => $field_name ) );
+>>>>>>> fb785cbb (Initial commit)
 
 		if ( $form_tags ) {
 			$form_tag = new WPCF7_FormTag( $form_tags[0] );
@@ -399,10 +460,13 @@ class WPCF7_ConfigValidator {
 		return $tag;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Runs error detection for the form section.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function validate_form() {
 		$section = 'form.body';
 		$form = $this->contact_form->prop( 'form' );
@@ -410,6 +474,7 @@ class WPCF7_ConfigValidator {
 		$this->detect_unavailable_names( $section, $form );
 		$this->detect_unavailable_html_elements( $section, $form );
 		$this->detect_dots_in_names( $section, $form );
+<<<<<<< HEAD
 		$this->detect_colons_in_names( $section, $form );
 		$this->detect_upload_filesize_overlimit( $section, $form );
 	}
@@ -420,6 +485,10 @@ class WPCF7_ConfigValidator {
 	 *
 	 * @link https://contactform7.com/configuration-errors/multiple-controls-in-label/
 	 */
+=======
+	}
+
+>>>>>>> fb785cbb (Initial commit)
 	public function detect_multiple_controls_in_label( $section, $content ) {
 		$pattern = '%<label(?:[ \t\n]+.*?)?>(.+?)</label>%s';
 
@@ -432,12 +501,18 @@ class WPCF7_ConfigValidator {
 
 				foreach ( $tags as $tag ) {
 					$is_multiple_controls_container = wpcf7_form_tag_supports(
+<<<<<<< HEAD
 						$tag->type, 'multiple-controls-container'
 					);
 
 					$is_zero_controls_container = wpcf7_form_tag_supports(
 						$tag->type, 'zero-controls-container'
 					);
+=======
+						$tag->type, 'multiple-controls-container' );
+					$is_zero_controls_container = wpcf7_form_tag_supports(
+						$tag->type, 'zero-controls-container' );
+>>>>>>> fb785cbb (Initial commit)
 
 					if ( $is_multiple_controls_container ) {
 						$fields_count += count( $tag->values );
@@ -465,12 +540,15 @@ class WPCF7_ConfigValidator {
 		return false;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Detects errors of unavailable form-tag names.
 	 *
 	 * @link https://contactform7.com/configuration-errors/unavailable-names/
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function detect_unavailable_names( $section, $content ) {
 		$public_query_vars = array( 'm', 'p', 'posts', 'w', 'cat',
 			'withcomments', 'withoutcomments', 's', 'search', 'exact', 'sentence',
@@ -512,12 +590,15 @@ class WPCF7_ConfigValidator {
 		return false;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Detects errors of unavailable HTML elements.
 	 *
 	 * @link https://contactform7.com/configuration-errors/unavailable-html-elements/
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function detect_unavailable_html_elements( $section, $content ) {
 		$pattern = '%(?:<form[\s\t>]|</form>)%i';
 
@@ -534,12 +615,15 @@ class WPCF7_ConfigValidator {
 		return false;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Detects errors of dots in form-tag names.
 	 *
 	 * @link https://contactform7.com/configuration-errors/dots-in-names/
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function detect_dots_in_names( $section, $content ) {
 		$form_tags_manager = WPCF7_FormTagsManager::get_instance();
 
@@ -562,6 +646,7 @@ class WPCF7_ConfigValidator {
 		return false;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Detects errors of colons in form-tag names.
@@ -653,13 +738,21 @@ class WPCF7_ConfigValidator {
 			return;
 		}
 
+=======
+	public function validate_mail( $template = 'mail' ) {
+>>>>>>> fb785cbb (Initial commit)
 		$components = (array) $this->contact_form->prop( $template );
 
 		if ( ! $components ) {
 			return;
 		}
 
+<<<<<<< HEAD
 		if ( 'mail' !== $template and empty( $components['active'] ) ) {
+=======
+		if ( 'mail' != $template
+		and empty( $components['active'] ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			return;
 		}
 
@@ -674,6 +767,7 @@ class WPCF7_ConfigValidator {
 
 		$callback = array( $this, 'replace_mail_tags_with_minimum_input' );
 
+<<<<<<< HEAD
 		$subject = new WPCF7_MailTaggedText(
 			$components['subject'],
 			array( 'callback' => $callback )
@@ -698,6 +792,23 @@ class WPCF7_ConfigValidator {
 		);
 
 		if ( ! $invalid_mailbox and ! wpcf7_is_email_in_site_domain( $sender ) ) {
+=======
+		$subject = $components['subject'];
+		$subject = new WPCF7_MailTaggedText( $subject,
+			array( 'callback' => $callback ) );
+		$subject = $subject->replace_tags();
+		$subject = wpcf7_strip_newline( $subject );
+		$this->detect_maybe_empty( sprintf( '%s.subject', $template ), $subject );
+
+		$sender = $components['sender'];
+		$sender = new WPCF7_MailTaggedText( $sender,
+			array( 'callback' => $callback ) );
+		$sender = $sender->replace_tags();
+		$sender = wpcf7_strip_newline( $sender );
+
+		if ( ! $this->detect_invalid_mailbox_syntax( sprintf( '%s.sender', $template ), $sender )
+		and ! wpcf7_is_email_in_site_domain( $sender ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			$this->add_error( sprintf( '%s.sender', $template ),
 				self::error_email_not_in_site_domain, array(
 					'link' => self::get_doc_link( 'email_not_in_site_domain' ),
@@ -705,15 +816,22 @@ class WPCF7_ConfigValidator {
 			);
 		}
 
+<<<<<<< HEAD
 		$recipient = new WPCF7_MailTaggedText(
 			$components['recipient'],
 			array( 'callback' => $callback )
 		);
 
+=======
+		$recipient = $components['recipient'];
+		$recipient = new WPCF7_MailTaggedText( $recipient,
+			array( 'callback' => $callback ) );
+>>>>>>> fb785cbb (Initial commit)
 		$recipient = $recipient->replace_tags();
 		$recipient = wpcf7_strip_newline( $recipient );
 
 		$this->detect_invalid_mailbox_syntax(
+<<<<<<< HEAD
 			sprintf( '%s.recipient', $template ),
 			$recipient
 		);
@@ -723,6 +841,13 @@ class WPCF7_ConfigValidator {
 			array( 'callback' => $callback )
 		);
 
+=======
+			sprintf( '%s.recipient', $template ), $recipient );
+
+		$additional_headers = $components['additional_headers'];
+		$additional_headers = new WPCF7_MailTaggedText( $additional_headers,
+			array( 'callback' => $callback ) );
+>>>>>>> fb785cbb (Initial commit)
 		$additional_headers = $additional_headers->replace_tags();
 		$additional_headers = explode( "\n", $additional_headers );
 		$mailbox_header_types = array( 'reply-to', 'cc', 'bcc' );
@@ -764,6 +889,7 @@ class WPCF7_ConfigValidator {
 			);
 		}
 
+<<<<<<< HEAD
 		$body = new WPCF7_MailTaggedText(
 			$components['body'],
 			array( 'callback' => $callback )
@@ -771,6 +897,12 @@ class WPCF7_ConfigValidator {
 
 		$body = $body->replace_tags();
 
+=======
+		$body = $components['body'];
+		$body = new WPCF7_MailTaggedText( $body,
+			array( 'callback' => $callback ) );
+		$body = $body->replace_tags();
+>>>>>>> fb785cbb (Initial commit)
 		$this->detect_maybe_empty( sprintf( '%s.body', $template ), $body );
 
 		if ( '' !== $components['attachments'] ) {
@@ -803,7 +935,12 @@ class WPCF7_ConfigValidator {
 			foreach ( explode( "\n", $components['attachments'] ) as $line ) {
 				$line = trim( $line );
 
+<<<<<<< HEAD
 				if ( '' === $line or '[' == substr( $line, 0, 1 ) ) {
+=======
+				if ( '' === $line
+				or '[' == substr( $line, 0, 1 ) ) {
+>>>>>>> fb785cbb (Initial commit)
 					continue;
 				}
 
@@ -811,7 +948,12 @@ class WPCF7_ConfigValidator {
 					sprintf( '%s.attachments', $template ), $line
 				);
 
+<<<<<<< HEAD
 				if ( ! $has_file_not_found and ! $has_file_not_in_content_dir ) {
+=======
+				if ( ! $has_file_not_found
+				and ! $has_file_not_in_content_dir ) {
+>>>>>>> fb785cbb (Initial commit)
 					$has_file_not_in_content_dir = $this->detect_file_not_in_content_dir(
 						sprintf( '%s.attachments', $template ), $line
 					);
@@ -837,12 +979,15 @@ class WPCF7_ConfigValidator {
 		}
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Detects errors of invalid mailbox syntax.
 	 *
 	 * @link https://contactform7.com/configuration-errors/invalid-mailbox-syntax/
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function detect_invalid_mailbox_syntax( $section, $content, $args = '' ) {
 		$args = wp_parse_args( $args, array(
 			'link' => self::get_doc_link( 'invalid_mailbox_syntax' ),
@@ -852,19 +997,26 @@ class WPCF7_ConfigValidator {
 
 		if ( ! wpcf7_is_mailbox_list( $content ) ) {
 			return $this->add_error( $section,
+<<<<<<< HEAD
 				self::error_invalid_mailbox_syntax, $args
 			);
+=======
+				self::error_invalid_mailbox_syntax, $args );
+>>>>>>> fb785cbb (Initial commit)
 		}
 
 		return false;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Detects errors of empty message fields.
 	 *
 	 * @link https://contactform7.com/configuration-errors/maybe-empty/
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function detect_maybe_empty( $section, $content ) {
 		if ( '' === $content ) {
 			return $this->add_error( $section,
@@ -877,6 +1029,7 @@ class WPCF7_ConfigValidator {
 		return false;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Detects errors of nonexistent attachment files.
@@ -887,6 +1040,13 @@ class WPCF7_ConfigValidator {
 		$path = path_join( WP_CONTENT_DIR, $content );
 
 		if ( ! is_readable( $path ) or ! is_file( $path ) ) {
+=======
+	public function detect_file_not_found( $section, $content ) {
+		$path = path_join( WP_CONTENT_DIR, $content );
+
+		if ( ! is_readable( $path )
+		or ! is_file( $path ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			return $this->add_error( $section,
 				self::error_file_not_found,
 				array(
@@ -901,12 +1061,15 @@ class WPCF7_ConfigValidator {
 		return false;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Detects errors of attachment files out of the content directory.
 	 *
 	 * @link https://contactform7.com/configuration-errors/file-not-in-content-dir/
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function detect_file_not_in_content_dir( $section, $content ) {
 		$path = path_join( WP_CONTENT_DIR, $content );
 
@@ -924,10 +1087,13 @@ class WPCF7_ConfigValidator {
 		return false;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Runs error detection for the messages section.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function validate_messages() {
 		$messages = (array) $this->contact_form->prop( 'messages' );
 
@@ -946,12 +1112,15 @@ class WPCF7_ConfigValidator {
 		}
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Detects errors of HTML uses in a message.
 	 *
 	 * @link https://contactform7.com/configuration-errors/html-in-message/
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function detect_html_in_message( $section, $content ) {
 		$stripped = wp_strip_all_tags( $content );
 
@@ -967,10 +1136,13 @@ class WPCF7_ConfigValidator {
 		return false;
 	}
 
+<<<<<<< HEAD
 
 	/**
 	 * Runs error detection for the additional settings section.
 	 */
+=======
+>>>>>>> fb785cbb (Initial commit)
 	public function validate_additional_settings() {
 		$deprecated_settings_used =
 			$this->contact_form->additional_setting( 'on_sent_ok' ) ||

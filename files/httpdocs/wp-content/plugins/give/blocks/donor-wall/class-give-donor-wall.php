@@ -242,7 +242,11 @@ class Give_Donor_Wall_Block {
 
 
     /**
+<<<<<<< HEAD
      * @since 2.25.0
+=======
+     * @unreleased
+>>>>>>> fb785cbb (Initial commit)
      *
      * @param string|array $value
      * @return array

@@ -12,7 +12,11 @@ wpcf7_include_module_file( 'stripe/api.php' );
 add_action(
 	'wpcf7_init',
 	'wpcf7_stripe_register_service',
+<<<<<<< HEAD
 	50, 0
+=======
+	10, 0
+>>>>>>> fb785cbb (Initial commit)
 );
 
 /**
@@ -48,11 +52,17 @@ function wpcf7_stripe_enqueue_scripts() {
 		array(), WPCF7_VERSION, 'all'
 	);
 
+<<<<<<< HEAD
 	wp_register_script(
 		'stripe',
 		'https://js.stripe.com/v3/',
 		array(),
 		null
+=======
+	wp_enqueue_script( 'stripe',
+		'https://js.stripe.com/v3/',
+		array(), null
+>>>>>>> fb785cbb (Initial commit)
 	);
 
 	$assets = array();
@@ -64,12 +74,20 @@ function wpcf7_stripe_enqueue_scripts() {
 	}
 
 	$assets = wp_parse_args( $assets, array(
+<<<<<<< HEAD
 		'dependencies' => array(),
+=======
+		'src' => wpcf7_plugin_url( 'modules/stripe/index.js' ),
+		'dependencies' => array(
+			'wp-polyfill',
+		),
+>>>>>>> fb785cbb (Initial commit)
 		'version' => WPCF7_VERSION,
 	) );
 
 	wp_enqueue_script(
 		'wpcf7-stripe',
+<<<<<<< HEAD
 		wpcf7_plugin_url( 'modules/stripe/index.js' ),
 		array_merge(
 			$assets['dependencies'],
@@ -79,6 +97,13 @@ function wpcf7_stripe_enqueue_scripts() {
 				'stripe',
 			)
 		),
+=======
+		$assets['src'],
+		array_merge( array(
+			'contact-form-7',
+			'stripe',
+		), $assets['dependencies'] ),
+>>>>>>> fb785cbb (Initial commit)
 		$assets['version'],
 		true
 	);
@@ -117,11 +142,19 @@ function wpcf7_stripe_skip_spam_check( $skip_spam_check, $submission ) {
 
 		if ( isset( $payment_intent['status'] )
 		and ( 'succeeded' === $payment_intent['status'] ) ) {
+<<<<<<< HEAD
 			$submission->push( 'payment_intent', $pi_id );
 		}
 	}
 
 	if ( ! empty( $submission->pull( 'payment_intent' ) )
+=======
+			$submission->payment_intent = $pi_id;
+		}
+	}
+
+	if ( ! empty( $submission->payment_intent )
+>>>>>>> fb785cbb (Initial commit)
 	and $submission->verify_posted_data_hash() ) {
 		$skip_spam_check = true;
 	}
@@ -152,7 +185,11 @@ function wpcf7_stripe_before_send_mail( $contact_form, &$abort, $submission ) {
 		return;
 	}
 
+<<<<<<< HEAD
 	if ( ! empty( $submission->pull( 'payment_intent' ) ) ) {
+=======
+	if ( ! empty( $submission->payment_intent ) ) {
+>>>>>>> fb785cbb (Initial commit)
 		return;
 	}
 
@@ -221,10 +258,15 @@ function wpcf7_stripe_smt( $output, $tag_name, $html, $mail_tag = null ) {
 	if ( '_stripe_payment_link' === $tag_name ) {
 		$submission = WPCF7_Submission::get_instance();
 
+<<<<<<< HEAD
 		$pi_id = $submission->pull( 'payment_intent' );
 
 		if ( ! empty( $pi_id ) ) {
 			$output = wpcf7_stripe_get_payment_link( $pi_id );
+=======
+		if ( ! empty( $submission->payment_intent ) ) {
+			$output = wpcf7_stripe_get_payment_link( $submission->payment_intent );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 
@@ -244,6 +286,7 @@ add_filter(
 function wpcf7_stripe_add_flamingo_inbound_message_params( $args ) {
 	$submission = WPCF7_Submission::get_instance();
 
+<<<<<<< HEAD
 	$pi_id = $submission->pull( 'payment_intent' );
 
 	if ( empty( $pi_id ) ) {
@@ -251,6 +294,13 @@ function wpcf7_stripe_add_flamingo_inbound_message_params( $args ) {
 	}
 
 	$pi_link = wpcf7_stripe_get_payment_link( $pi_id );
+=======
+	if ( empty( $submission->payment_intent ) ) {
+		return $args;
+	}
+
+	$pi_link = wpcf7_stripe_get_payment_link( $submission->payment_intent );
+>>>>>>> fb785cbb (Initial commit)
 
 	$meta = (array) $args['meta'];
 

@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 import {useRef, useEffect} from 'react';
+=======
+import { useRef, useEffect } from 'react'
+>>>>>>> fb785cbb (Initial commit)
 
 // use fallbackData as the initial data on component mount, instead of default data whenever there's a cache miss
 // adapted from https://viralganatra.com/how-to-fix-swr-to-work%20correctly-with-initialData-or-fallbackData/
 
 export default function useFallbackAsInitial(useSWRNext) {
     return (key, fetcher, config) => {
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
         const hasMounted = useRef(false);
 
         useEffect(() => {
@@ -19,5 +27,9 @@ export default function useFallbackAsInitial(useSWRNext) {
         });
 
         return swr;
+<<<<<<< HEAD
     };
+=======
+    }
+>>>>>>> fb785cbb (Initial commit)
 }

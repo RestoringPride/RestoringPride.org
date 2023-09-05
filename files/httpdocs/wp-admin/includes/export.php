@@ -31,6 +31,7 @@ define( 'WXR_VERSION', '1.2' );
  * @param array $args {
  *     Optional. Arguments for generating the WXR export file for download. Default empty array.
  *
+<<<<<<< HEAD
  *     @type string $content    Type of content to export. If set, only the post content of this post type
  *                              will be exported. Accepts 'all', 'post', 'page', 'attachment', or a defined
  *                              custom post. If an invalid custom post type is supplied, every post type for
@@ -52,6 +53,29 @@ define( 'WXR_VERSION', '1.2' );
  *                              Accepts false (all statuses except 'auto-draft'), or a specific status, i.e.
  *                              'publish', 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', or
  *                              'trash'. Default false (all statuses except 'auto-draft').
+=======
+ *     @type string $content        Type of content to export. If set, only the post content of this post type
+ *                                  will be exported. Accepts 'all', 'post', 'page', 'attachment', or a defined
+ *                                  custom post. If an invalid custom post type is supplied, every post type for
+ *                                  which `can_export` is enabled will be exported instead. If a valid custom post
+ *                                  type is supplied but `can_export` is disabled, then 'posts' will be exported
+ *                                  instead. When 'all' is supplied, only post types with `can_export` enabled will
+ *                                  be exported. Default 'all'.
+ *     @type string $author         Author to export content for. Only used when `$content` is 'post', 'page', or
+ *                                  'attachment'. Accepts false (all) or a specific author ID. Default false (all).
+ *     @type string $category       Category (slug) to export content for. Used only when `$content` is 'post'. If
+ *                                  set, only post content assigned to `$category` will be exported. Accepts false
+ *                                  or a specific category slug. Default is false (all categories).
+ *     @type string $start_date     Start date to export content from. Expected date format is 'Y-m-d'. Used only
+ *                                  when `$content` is 'post', 'page' or 'attachment'. Default false (since the
+ *                                  beginning of time).
+ *     @type string $end_date       End date to export content to. Expected date format is 'Y-m-d'. Used only when
+ *                                  `$content` is 'post', 'page' or 'attachment'. Default false (latest publish date).
+ *     @type string $status         Post status to export posts for. Used only when `$content` is 'post' or 'page'.
+ *                                  Accepts false (all statuses except 'auto-draft'), or a specific status, i.e.
+ *                                  'publish', 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', or
+ *                                  'trash'. Default false (all statuses except 'auto-draft').
+>>>>>>> fb785cbb (Initial commit)
  * }
  */
 function export_wp( $args = array() ) {
@@ -189,7 +213,11 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Wraps given string in XML CDATA tag.
+=======
+	 * Wrap given string in XML CDATA tag.
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.1.0
 	 *
@@ -207,7 +235,11 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns the URL of the site.
+=======
+	 * Return the URL of the site
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.5.0
 	 *
@@ -224,11 +256,19 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Outputs a cat_name XML tag from a given category object.
 	 *
 	 * @since 2.1.0
 	 *
 	 * @param WP_Term $category Category Object.
+=======
+	 * Output a cat_name XML tag from a given category object
+	 *
+	 * @since 2.1.0
+	 *
+	 * @param WP_Term $category Category Object
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wxr_cat_name( $category ) {
 		if ( empty( $category->name ) ) {
@@ -239,11 +279,19 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Outputs a category_description XML tag from a given category object.
 	 *
 	 * @since 2.1.0
 	 *
 	 * @param WP_Term $category Category Object.
+=======
+	 * Output a category_description XML tag from a given category object
+	 *
+	 * @since 2.1.0
+	 *
+	 * @param WP_Term $category Category Object
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wxr_category_description( $category ) {
 		if ( empty( $category->description ) ) {
@@ -254,11 +302,19 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Outputs a tag_name XML tag from a given tag object.
 	 *
 	 * @since 2.3.0
 	 *
 	 * @param WP_Term $tag Tag Object.
+=======
+	 * Output a tag_name XML tag from a given tag object
+	 *
+	 * @since 2.3.0
+	 *
+	 * @param WP_Term $tag Tag Object
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wxr_tag_name( $tag ) {
 		if ( empty( $tag->name ) ) {
@@ -269,11 +325,19 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Outputs a tag_description XML tag from a given tag object.
 	 *
 	 * @since 2.3.0
 	 *
 	 * @param WP_Term $tag Tag Object.
+=======
+	 * Output a tag_description XML tag from a given tag object
+	 *
+	 * @since 2.3.0
+	 *
+	 * @param WP_Term $tag Tag Object
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wxr_tag_description( $tag ) {
 		if ( empty( $tag->description ) ) {
@@ -284,11 +348,19 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Outputs a term_name XML tag from a given term object.
 	 *
 	 * @since 2.9.0
 	 *
 	 * @param WP_Term $term Term Object.
+=======
+	 * Output a term_name XML tag from a given term object
+	 *
+	 * @since 2.9.0
+	 *
+	 * @param WP_Term $term Term Object
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wxr_term_name( $term ) {
 		if ( empty( $term->name ) ) {
@@ -299,11 +371,19 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Outputs a term_description XML tag from a given term object.
 	 *
 	 * @since 2.9.0
 	 *
 	 * @param WP_Term $term Term Object.
+=======
+	 * Output a term_description XML tag from a given term object
+	 *
+	 * @since 2.9.0
+	 *
+	 * @param WP_Term $term Term Object
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	function wxr_term_description( $term ) {
 		if ( empty( $term->description ) ) {
@@ -314,12 +394,19 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Outputs term meta XML tags for a given term object.
 	 *
 	 * @since 4.6.0
 	 *
 	 * @global wpdb $wpdb WordPress database abstraction object.
 	 *
+=======
+	 * Output term meta XML tags for a given term object.
+	 *
+	 * @since 4.6.0
+	 *
+>>>>>>> fb785cbb (Initial commit)
 	 * @param WP_Term $term Term object.
 	 */
 	function wxr_term_meta( $term ) {
@@ -347,7 +434,11 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Outputs list of authors with posts.
+=======
+	 * Output list of authors with posts
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.1.0
 	 *
@@ -386,7 +477,11 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Outputs all navigation menu terms.
+=======
+	 * Output all navigation menu terms
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 3.1.0
 	 */
@@ -407,7 +502,11 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Outputs list of taxonomy terms, in XML tag format, associated with a post.
+=======
+	 * Output list of taxonomy terms, in XML tag format, associated with a post
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @since 2.3.0
 	 */
@@ -426,12 +525,17 @@ function export_wp( $args = array() ) {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Determines whether to selectively skip post meta used for WXR exports.
 	 *
 	 * @since 3.3.0
 	 *
 	 * @param bool   $return_me Whether to skip the current post meta. Default false.
 	 * @param string $meta_key  Meta key.
+=======
+	 * @param bool   $return_me
+	 * @param string $meta_key
+>>>>>>> fb785cbb (Initial commit)
 	 * @return bool
 	 */
 	function wxr_filter_postmeta( $return_me, $meta_key ) {
@@ -521,8 +625,12 @@ function export_wp( $args = array() ) {
 	<?php endforeach; ?>
 	<?php
 	if ( 'all' === $args['content'] ) {
+<<<<<<< HEAD
 		wxr_nav_menu_terms();
 	}
+=======
+		wxr_nav_menu_terms();}
+>>>>>>> fb785cbb (Initial commit)
 	?>
 
 	<?php
@@ -639,7 +747,11 @@ function export_wp( $args = array() ) {
 			<wp:comment_id><?php echo (int) $c->comment_ID; ?></wp:comment_id>
 			<wp:comment_author><?php echo wxr_cdata( $c->comment_author ); ?></wp:comment_author>
 			<wp:comment_author_email><?php echo wxr_cdata( $c->comment_author_email ); ?></wp:comment_author_email>
+<<<<<<< HEAD
 			<wp:comment_author_url><?php echo sanitize_url( $c->comment_author_url ); ?></wp:comment_author_url>
+=======
+			<wp:comment_author_url><?php echo esc_url_raw( $c->comment_author_url ); ?></wp:comment_author_url>
+>>>>>>> fb785cbb (Initial commit)
 			<wp:comment_author_IP><?php echo wxr_cdata( $c->comment_author_IP ); ?></wp:comment_author_IP>
 			<wp:comment_date><?php echo wxr_cdata( $c->comment_date ); ?></wp:comment_date>
 			<wp:comment_date_gmt><?php echo wxr_cdata( $c->comment_date_gmt ); ?></wp:comment_date_gmt>

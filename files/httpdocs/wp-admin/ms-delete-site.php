@@ -65,10 +65,18 @@ If you really want to delete your site, click the link below. You will not
 be asked to confirm again so only click this link if you are absolutely certain:
 ###URL_DELETE###
 
+<<<<<<< HEAD
 If you delete your site, please consider opening a new site here some time in
 the future! (But remember that your current site and username are gone forever.)
 
 Thank you for using the site,
+=======
+If you delete your site, please consider opening a new site here
+some time in the future! (But remember your current site and username
+are gone forever.)
+
+Thanks for using the site,
+>>>>>>> fb785cbb (Initial commit)
 All at ###SITENAME###
 ###SITEURL###"
 	);

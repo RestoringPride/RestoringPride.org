@@ -2,9 +2,15 @@
 
 namespace Yoast\WP\SEO\Surfaces\Values;
 
+<<<<<<< HEAD
 use WPSEO_Replace_Vars;
 use Yoast\WP\SEO\Context\Meta_Tags_Context;
 use Yoast\WP\SEO\Exceptions\Forbidden_Property_Mutation_Exception;
+=======
+use Exception;
+use WPSEO_Replace_Vars;
+use Yoast\WP\SEO\Context\Meta_Tags_Context;
+>>>>>>> fb785cbb (Initial commit)
 use Yoast\WP\SEO\Integrations\Front_End_Integration;
 use Yoast\WP\SEO\Models\Indexable;
 use Yoast\WP\SEO\Presenters\Abstract_Indexable_Presenter;
@@ -97,6 +103,7 @@ class Meta {
 	protected $replace_vars;
 
 	/**
+<<<<<<< HEAD
 	 * Collection of properties dynamically set via the magic __get() method.
 	 *
 	 * @var array<string, mixed> Key is the property name.
@@ -104,6 +111,8 @@ class Meta {
 	private $properties_bin = [];
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Create a meta value object.
 	 *
 	 * @param Meta_Tags_Context  $context   The indexable presentation.
@@ -161,6 +170,7 @@ class Meta {
 	 *
 	 * @param string $name The property to get.
 	 *
+<<<<<<< HEAD
 	 * @return mixed The value, as presented by the appropriate presenter.
 	 */
 	public function __get( $name ) {
@@ -168,13 +178,25 @@ class Meta {
 			return $this->properties_bin[ $name ];
 		}
 
+=======
+	 * @return mixed The value, as presented by teh appropriate presenter.
+	 *
+	 * @throws Exception If an invalid property is accessed.
+	 */
+	public function __get( $name ) {
+>>>>>>> fb785cbb (Initial commit)
 		/** This filter is documented in src/integrations/front-end-integration.php */
 		$presentation = \apply_filters( 'wpseo_frontend_presentation', $this->context->presentation, $this->context );
 
 		if ( ! isset( $presentation->{$name} ) ) {
 			if ( isset( $this->context->{$name} ) ) {
+<<<<<<< HEAD
 				$this->properties_bin[ $name ] = $this->context->{$name};
 				return $this->properties_bin[ $name ];
+=======
+				$this->{$name} = $this->context->{$name};
+				return $this->{$name};
+>>>>>>> fb785cbb (Initial commit)
 			}
 			return null;
 		}
@@ -208,8 +230,13 @@ class Meta {
 			$value = $presentation->{$name};
 		}
 
+<<<<<<< HEAD
 		$this->properties_bin[ $name ] = $value;
 		return $this->properties_bin[ $name ];
+=======
+		$this->{$name} = $value;
+		return $this->{$name};
+>>>>>>> fb785cbb (Initial commit)
 	}
 
 	/**
@@ -220,14 +247,18 @@ class Meta {
 	 * @return bool Whether or not the requested property exists.
 	 */
 	public function __isset( $name ) {
+<<<<<<< HEAD
 		if ( \array_key_exists( $name, $this->properties_bin ) ) {
 			return true;
 		}
 
+=======
+>>>>>>> fb785cbb (Initial commit)
 		return isset( $this->context->presentation->{$name} );
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Prevents setting dynamic properties and overwriting the value of declared properties
 	 * from an inaccessible context.
 	 *
@@ -257,6 +288,8 @@ class Meta {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Strips all nested dependencies from the debug info.
 	 *
 	 * @return array

@@ -40,7 +40,11 @@ class DonationSummary
      */
     public function getSummaryWithDonor(): string
     {
+<<<<<<< HEAD
         return $this->trim(
+=======
+        return $this->trimAndFilter(
+>>>>>>> fb785cbb (Initial commit)
             implode(' - ', [
                 $this->getSummary(),
                 $this->getDonorLabel(),
@@ -114,6 +118,7 @@ class DonationSummary
     protected function trimAndFilter(string $text): string
     {
         /**
+<<<<<<< HEAD
          * @since 2.25.0 Re-use trim method for text.
          * @since 1.8.12
          */
@@ -130,5 +135,10 @@ class DonationSummary
     protected function trim(string $text): string
     {
         return substr($text, 0, $this->length);
+=======
+         * @since 1.8.12
+         */
+        return apply_filters('give_payment_gateway_donation_summary', substr($text, 0, $this->length));
+>>>>>>> fb785cbb (Initial commit)
     }
 }

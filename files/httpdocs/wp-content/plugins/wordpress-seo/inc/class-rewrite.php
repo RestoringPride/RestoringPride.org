@@ -34,6 +34,31 @@ class WPSEO_Rewrite {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * If the flush option is set, flush the rewrite rules.
+	 *
+	 * @since 1.2.8
+	 * @deprecated 17.4
+	 * @codeCoverageIgnore
+	 *
+	 * @return bool
+	 */
+	public function flush() {
+		_deprecated_function( __METHOD__, 'WPSEO 17.4', __CLASS__ . '::schedule_flush' );
+		if ( get_option( 'wpseo_flush_rewrite' ) ) {
+
+			add_action( 'shutdown', 'flush_rewrite_rules' );
+			delete_option( 'wpseo_flush_rewrite' );
+
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+>>>>>>> fb785cbb (Initial commit)
 	 * Override the category link to remove the category base.
 	 *
 	 * @param string  $link     Term link, overridden by the function for categories.

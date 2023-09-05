@@ -269,7 +269,11 @@ function sanitize_category( $category, $context = 'display' ) {
  * @param mixed  $value   Category value to sanitize.
  * @param int    $cat_id  Category ID.
  * @param string $context What filter to use, 'raw', 'display', etc.
+<<<<<<< HEAD
  * @return mixed Value after $value has been sanitized.
+=======
+ * @return mixed Same type as $value after $value has been sanitized.
+>>>>>>> fb785cbb (Initial commit)
  */
 function sanitize_category_field( $field, $value, $cat_id, $context ) {
 	return sanitize_term_field( $field, $value, $cat_id, 'category', $context );

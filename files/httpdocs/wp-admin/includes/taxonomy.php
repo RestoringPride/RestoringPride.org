@@ -11,7 +11,11 @@
 //
 
 /**
+<<<<<<< HEAD
  * Checks whether a category exists.
+=======
+ * Check whether a category exists.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
@@ -30,7 +34,11 @@ function category_exists( $cat_name, $category_parent = null ) {
 }
 
 /**
+<<<<<<< HEAD
  * Gets category object for given ID and 'edit' filter context.
+=======
+ * Get category object for given ID and 'edit' filter context.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
@@ -44,7 +52,11 @@ function get_category_to_edit( $id ) {
 }
 
 /**
+<<<<<<< HEAD
  * Adds a new category to the database if it does not already exist.
+=======
+ * Add a new category to the database if it does not already exist.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
@@ -67,7 +79,11 @@ function wp_create_category( $cat_name, $category_parent = 0 ) {
 }
 
 /**
+<<<<<<< HEAD
  * Creates categories for the given post.
+=======
+ * Create categories for the given post.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.0.0
  *
@@ -186,14 +202,24 @@ function wp_insert_category( $catarr, $wp_error = false ) {
  * @return int|false The ID number of the new or updated Category on success. Zero or FALSE on failure.
  */
 function wp_update_category( $catarr ) {
+<<<<<<< HEAD
 	$cat_id = (int) $catarr['cat_ID'];
 
 	if ( isset( $catarr['category_parent'] ) && ( $cat_id == $catarr['category_parent'] ) ) {
+=======
+	$cat_ID = (int) $catarr['cat_ID'];
+
+	if ( isset( $catarr['category_parent'] ) && ( $cat_ID == $catarr['category_parent'] ) ) {
+>>>>>>> fb785cbb (Initial commit)
 		return false;
 	}
 
 	// First, get all of the original fields.
+<<<<<<< HEAD
 	$category = get_term( $cat_id, 'category', ARRAY_A );
+=======
+	$category = get_term( $cat_ID, 'category', ARRAY_A );
+>>>>>>> fb785cbb (Initial commit)
 	_make_cat_compat( $category );
 
 	// Escape data pulled from DB.
@@ -210,7 +236,11 @@ function wp_update_category( $catarr ) {
 //
 
 /**
+<<<<<<< HEAD
  * Checks whether a post tag with a given name exists.
+=======
+ * Check whether a post tag with a given name exists.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.3.0
  *
@@ -224,7 +254,11 @@ function tag_exists( $tag_name ) {
 }
 
 /**
+<<<<<<< HEAD
  * Adds a new tag to the database if it does not already exist.
+=======
+ * Add a new tag to the database if it does not already exist.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.3.0
  *
@@ -236,7 +270,11 @@ function wp_create_tag( $tag_name ) {
 }
 
 /**
+<<<<<<< HEAD
  * Gets comma-separated list of tags available to edit.
+=======
+ * Get comma-separated list of tags available to edit.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.3.0
  *
@@ -249,7 +287,11 @@ function get_tags_to_edit( $post_id, $taxonomy = 'post_tag' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Gets comma-separated list of terms available to edit for the given post ID.
+=======
+ * Get comma-separated list of terms available to edit for the given post ID.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.8.0
  *
@@ -298,7 +340,11 @@ function get_terms_to_edit( $post_id, $taxonomy = 'post_tag' ) {
 }
 
 /**
+<<<<<<< HEAD
  * Adds a new term to the database if it does not already exist.
+=======
+ * Add a new term to the database if it does not already exist.
+>>>>>>> fb785cbb (Initial commit)
  *
  * @since 2.8.0
  *

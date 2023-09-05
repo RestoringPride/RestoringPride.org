@@ -186,6 +186,7 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 		$fields = $this->get_fields_for_response( $request );
 		$data   = array();
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( 'capabilities', $fields ) ) {
 			$data['capabilities'] = $post_type->cap;
 		}
@@ -203,12 +204,28 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 		}
 
 		if ( rest_is_field_included( 'visibility', $fields ) ) {
+=======
+		if ( in_array( 'capabilities', $fields, true ) ) {
+			$data['capabilities'] = $post_type->cap;
+		}
+
+		if ( in_array( 'description', $fields, true ) ) {
+			$data['description'] = $post_type->description;
+		}
+
+		if ( in_array( 'hierarchical', $fields, true ) ) {
+			$data['hierarchical'] = $post_type->hierarchical;
+		}
+
+		if ( in_array( 'visibility', $fields, true ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			$data['visibility'] = array(
 				'show_in_nav_menus' => (bool) $post_type->show_in_nav_menus,
 				'show_ui'           => (bool) $post_type->show_ui,
 			);
 		}
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( 'viewable', $fields ) ) {
 			$data['viewable'] = is_post_type_viewable( $post_type );
 		}
@@ -242,6 +259,37 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 		}
 
 		if ( rest_is_field_included( 'rest_namespace', $fields ) ) {
+=======
+		if ( in_array( 'viewable', $fields, true ) ) {
+			$data['viewable'] = is_post_type_viewable( $post_type );
+		}
+
+		if ( in_array( 'labels', $fields, true ) ) {
+			$data['labels'] = $post_type->labels;
+		}
+
+		if ( in_array( 'name', $fields, true ) ) {
+			$data['name'] = $post_type->label;
+		}
+
+		if ( in_array( 'slug', $fields, true ) ) {
+			$data['slug'] = $post_type->name;
+		}
+
+		if ( in_array( 'supports', $fields, true ) ) {
+			$data['supports'] = $supports;
+		}
+
+		if ( in_array( 'taxonomies', $fields, true ) ) {
+			$data['taxonomies'] = array_values( $taxonomies );
+		}
+
+		if ( in_array( 'rest_base', $fields, true ) ) {
+			$data['rest_base'] = $base;
+		}
+
+		if ( in_array( 'rest_namespace', $fields, true ) ) {
+>>>>>>> fb785cbb (Initial commit)
 			$data['rest_namespace'] = $namespace;
 		}
 
@@ -252,9 +300,22 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 		// Wrap the data in a response object.
 		$response = rest_ensure_response( $data );
 
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $post_type ) );
 		}
+=======
+		$response->add_links(
+			array(
+				'collection'              => array(
+					'href' => rest_url( sprintf( '%s/%s', $this->namespace, $this->rest_base ) ),
+				),
+				'https://api.w.org/items' => array(
+					'href' => rest_url( rest_get_route_for_post_type_items( $post_type->name ) ),
+				),
+			)
+		);
+>>>>>>> fb785cbb (Initial commit)
 
 		/**
 		 * Filters a post type returned from the REST API.
@@ -271,6 +332,7 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Prepares links for the request.
 	 *
 	 * @since 6.1.0
@@ -290,12 +352,17 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Retrieves the post type's schema, conforming to JSON Schema.
 	 *
 	 * @since 4.7.0
 	 * @since 4.8.0 The `supports` property was added.
 	 * @since 5.9.0 The `visibility` and `rest_namespace` properties were added.
+<<<<<<< HEAD
 	 * @since 6.1.0 The `icon` property was added.
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 *
 	 * @return array Item schema data.
 	 */
@@ -357,12 +424,15 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 					'context'     => array( 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'has_archive'    => array(
 					'description' => __( 'If the value is a string, the value will be used as the archive slug. If the value is false the post type has no archive.' ),
 					'type'        => array( 'string', 'boolean' ),
 					'context'     => array( 'view', 'edit' ),
 					'readonly'    => true,
 				),
+=======
+>>>>>>> fb785cbb (Initial commit)
 				'taxonomies'     => array(
 					'description' => __( 'Taxonomies associated with post type.' ),
 					'type'        => 'array',
@@ -400,12 +470,15 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 						),
 					),
 				),
+<<<<<<< HEAD
 				'icon'           => array(
 					'description' => __( 'The icon for the post type.' ),
 					'type'        => array( 'string', 'null' ),
 					'context'     => array( 'view', 'edit', 'embed' ),
 					'readonly'    => true,
 				),
+=======
+>>>>>>> fb785cbb (Initial commit)
 			),
 		);
 
@@ -426,4 +499,8 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 			'context' => $this->get_context_param( array( 'default' => 'view' ) ),
 		);
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb785cbb (Initial commit)
 }

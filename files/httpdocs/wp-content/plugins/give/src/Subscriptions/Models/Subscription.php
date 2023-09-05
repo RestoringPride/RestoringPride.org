@@ -13,22 +13,31 @@ use Give\Framework\Models\ModelQueryBuilder;
 use Give\Framework\Models\ValueObjects\Relationship;
 use Give\Framework\PaymentGateways\PaymentGateway;
 use Give\Framework\Support\ValueObjects\Money;
+<<<<<<< HEAD
 use Give\Subscriptions\Actions\GenerateNextRenewalForSubscription;
 use Give\Subscriptions\DataTransferObjects\SubscriptionQueryData;
 use Give\Subscriptions\Factories\SubscriptionFactory;
 use Give\Subscriptions\ValueObjects\SubscriptionMode;
+=======
+use Give\Subscriptions\DataTransferObjects\SubscriptionQueryData;
+use Give\Subscriptions\Factories\SubscriptionFactory;
+>>>>>>> fb785cbb (Initial commit)
 use Give\Subscriptions\ValueObjects\SubscriptionPeriod;
 use Give\Subscriptions\ValueObjects\SubscriptionStatus;
 
 /**
  * Class Subscription
  *
+<<<<<<< HEAD
  * @since 2.23.0 added the renewsAt property
+=======
+>>>>>>> fb785cbb (Initial commit)
  * @since 2.19.6
  *
  * @property int $id
  * @property int $donationFormId
  * @property DateTime $createdAt
+<<<<<<< HEAD
  * @property DateTime $renewsAt The date the subscription will renew next
  * @property int $donorId
  * @property SubscriptionPeriod $period
@@ -36,6 +45,13 @@ use Give\Subscriptions\ValueObjects\SubscriptionStatus;
  * @property int $installments The total number of installments for the subscription; discontinues after this number of installments
  * @property string $transactionId
  * @property SubscriptionMode $mode
+=======
+ * @property int $donorId
+ * @property SubscriptionPeriod $period
+ * @property int $frequency
+ * @property int $installments
+ * @property string $transactionId
+>>>>>>> fb785cbb (Initial commit)
  * @property Money $amount
  * @property Money $feeAmountRecovered
  * @property SubscriptionStatus $status
@@ -53,13 +69,19 @@ class Subscription extends Model implements ModelCrud, ModelHasFactory
         'id' => 'int',
         'donationFormId' => 'int',
         'createdAt' => DateTime::class,
+<<<<<<< HEAD
         'renewsAt' => DateTime::class,
+=======
+>>>>>>> fb785cbb (Initial commit)
         'donorId' => 'int',
         'period' => SubscriptionPeriod::class,
         'frequency' => 'int',
         'installments' => ['int', 0],
         'transactionId' => 'string',
+<<<<<<< HEAD
         'mode' => SubscriptionMode::class,
+=======
+>>>>>>> fb785cbb (Initial commit)
         'amount' => Money::class,
         'feeAmountRecovered' => Money::class,
         'status' => SubscriptionStatus::class,
@@ -135,6 +157,7 @@ class Subscription extends Model implements ModelCrud, ModelHasFactory
     }
 
     /**
+<<<<<<< HEAD
      * Bumps the subscription's renewsAt date to the next renewal date.
      *
      * @return void
@@ -159,6 +182,8 @@ class Subscription extends Model implements ModelCrud, ModelHasFactory
     }
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.20.0 return mutated model instance
      * @since 2.19.6
      *
@@ -167,7 +192,12 @@ class Subscription extends Model implements ModelCrud, ModelHasFactory
     public static function create(array $attributes)
     {
         $subscription = new static($attributes);
+<<<<<<< HEAD
         $subscription->save();
+=======
+
+        give()->subscriptions->insert($subscription);
+>>>>>>> fb785cbb (Initial commit)
 
         return $subscription;
     }
@@ -207,7 +237,11 @@ class Subscription extends Model implements ModelCrud, ModelHasFactory
      */
     public function cancel(bool $force = false)
     {
+<<<<<<< HEAD
         if (!$force && $this->status->isCancelled()) {
+=======
+        if (!$force && $this->status->isCanceled()) {
+>>>>>>> fb785cbb (Initial commit)
             return;
         }
 
@@ -215,6 +249,7 @@ class Subscription extends Model implements ModelCrud, ModelHasFactory
     }
 
     /**
+<<<<<<< HEAD
      * @since 2.24.0
      */
     public function isIndefinite(): bool
@@ -243,6 +278,8 @@ class Subscription extends Model implements ModelCrud, ModelHasFactory
     }
 
     /**
+=======
+>>>>>>> fb785cbb (Initial commit)
      * @since 2.19.6
      *
      * @return ModelQueryBuilder<Subscription>
@@ -263,6 +300,28 @@ class Subscription extends Model implements ModelCrud, ModelHasFactory
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Expiration / End Date / Renewal
+     *
+     * @since 2.19.6
+     */
+    public function expiration(): string
+    {
+        $frequency = $this->frequency;
+        $period = $this->period;
+
+        // Calculate the quarter as times 3 months
+        if ($period->equals(SubscriptionPeriod::QUARTER())) {
+            $frequency *= 3;
+            $period = SubscriptionPeriod::MONTH();
+        }
+
+        return date('Y-m-d H:i:s', strtotime('+ ' . $frequency . $period->getValue() . ' 23:59:59'));
+    }
+
+    /**
+>>>>>>> fb785cbb (Initial commit)
      * @return PaymentGateway
      */
     public function gateway(): PaymentGateway

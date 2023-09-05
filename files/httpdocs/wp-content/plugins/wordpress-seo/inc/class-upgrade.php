@@ -6,8 +6,11 @@
  */
 
 use Yoast\WP\Lib\Model;
+<<<<<<< HEAD
 use Yoast\WP\SEO\Helpers\Taxonomy_Helper;
 use Yoast\WP\SEO\Integrations\Cleanup_Integration;
+=======
+>>>>>>> fb785cbb (Initial commit)
 
 /**
  * This code handles the option upgrades.
@@ -17,7 +20,11 @@ class WPSEO_Upgrade {
 	/**
 	 * The taxonomy helper.
 	 *
+<<<<<<< HEAD
 	 * @var Taxonomy_Helper
+=======
+	 * @var \Yoast\WP\SEO\Helpers\Taxonomy_Helper
+>>>>>>> fb785cbb (Initial commit)
 	 */
 	private $taxonomy_helper;
 
@@ -83,11 +90,18 @@ class WPSEO_Upgrade {
 			'18.9-RC0'   => 'upgrade_189',
 			'19.1-RC0'   => 'upgrade_191',
 			'19.3-RC0'   => 'upgrade_193',
+<<<<<<< HEAD
 			'19.6-RC0'   => 'upgrade_196',
 			'19.11-RC0'  => 'upgrade_1911',
 		];
 
 		array_walk( $routines, [ $this, 'run_upgrade_routine' ], $version );
+=======
+		];
+
+		array_walk( $routines, [ $this, 'run_upgrade_routine' ], $version );
+
+>>>>>>> fb785cbb (Initial commit)
 		if ( version_compare( $version, '12.5-RC0', '<' ) ) {
 			/*
 			 * We have to run this by hook, because otherwise:
@@ -849,8 +863,13 @@ class WPSEO_Upgrade {
 		\wp_unschedule_hook( 'wpseo_cleanup_orphaned_indexables' );
 		\wp_unschedule_hook( 'wpseo_cleanup_indexables' );
 
+<<<<<<< HEAD
 		if ( ! \wp_next_scheduled( Cleanup_Integration::START_HOOK ) ) {
 			\wp_schedule_single_event( ( time() + ( MINUTE_IN_SECONDS * 5 ) ), Cleanup_Integration::START_HOOK );
+=======
+		if ( ! \wp_next_scheduled( \Yoast\WP\SEO\Integrations\Cleanup_Integration::START_HOOK ) ) {
+			\wp_schedule_single_event( ( time() + ( MINUTE_IN_SECONDS * 5 ) ), \Yoast\WP\SEO\Integrations\Cleanup_Integration::START_HOOK );
+>>>>>>> fb785cbb (Initial commit)
 		}
 	}
 
@@ -942,6 +961,7 @@ class WPSEO_Upgrade {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Performs the 19.6 upgrade routine.
 	 */
 	private function upgrade_196() {
@@ -964,6 +984,8 @@ class WPSEO_Upgrade {
 	}
 
 	/**
+=======
+>>>>>>> fb785cbb (Initial commit)
 	 * Sets the home_url option for the 15.1 upgrade routine.
 	 *
 	 * @return void
@@ -1356,6 +1378,7 @@ class WPSEO_Upgrade {
 
 		update_option( 'wpseo_titles', $wpseo_titles );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Removes all indexables for posts that are not publicly viewable.
@@ -1575,4 +1598,6 @@ class WPSEO_Upgrade {
 		);
 		// phpcs:enable
 	}
+=======
+>>>>>>> fb785cbb (Initial commit)
 }

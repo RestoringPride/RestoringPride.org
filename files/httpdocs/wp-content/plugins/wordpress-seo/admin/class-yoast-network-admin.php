@@ -100,8 +100,12 @@ class Yoast_Network_Admin implements WPSEO_WordPress_AJAX_Integration, WPSEO_Wor
 	 * @return void
 	 */
 	public function handle_update_options_request() {
+<<<<<<< HEAD
 		// phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged -- This deprecation will be addressed later.
 		$option_group = filter_input( INPUT_POST, 'network_option_group', @FILTER_SANITIZE_STRING );
+=======
+		$option_group = filter_input( INPUT_POST, 'network_option_group', FILTER_SANITIZE_STRING );
+>>>>>>> fb785cbb (Initial commit)
 
 		$this->verify_request( "{$option_group}-network-options" );
 

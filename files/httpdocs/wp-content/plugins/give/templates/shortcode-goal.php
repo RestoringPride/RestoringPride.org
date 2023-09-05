@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 use Give\Log\Log;
 
@@ -27,6 +28,18 @@ if ( ( isset( $args['show_goal'] ) && ! filter_var( $args['show_goal'], FILTER_V
      || empty( $form->ID )
      || ( is_singular( 'give_forms' ) && ! give_is_setting_enabled( $goal_option ) )
      || ! give_is_setting_enabled( $goal_option ) || 0 === $form->goal ) {
+=======
+/**
+ * This template is used to display the goal with [give_goal]
+ */
+$form        = new Give_Donate_Form( $form_id );
+$goal_option = give_get_meta( $form->ID, '_give_goal_option', true );
+// Sanity check - ensure form has pass all condition to show goal.
+if ( ( isset( $args['show_goal'] ) && ! filter_var( $args['show_goal'], FILTER_VALIDATE_BOOLEAN ) )
+    || empty( $form->ID )
+    || ( is_singular( 'give_forms' ) && ! give_is_setting_enabled( $goal_option ) )
+    || ! give_is_setting_enabled( $goal_option ) || 0 === $form->goal ) {
+>>>>>>> fb785cbb (Initial commit)
     return false;
 }
 
@@ -39,7 +52,11 @@ $show_bar            = isset( $args['show_bar'] ) ? filter_var( $args['show_bar'
 /**
  * Allow filtering the goal stats used for this shortcode context.
  *
+<<<<<<< HEAD
  * @since 2.23.1
+=======
+ * @unreleased
+>>>>>>> fb785cbb (Initial commit)
  *
  * @param  array  $stats  The income and goal values for this form goal.
  * @param  int    $form_id  Donation Form ID.
@@ -62,6 +79,7 @@ $goal   = $shortcode_stats['goal'];
 switch ( $goal_format ) {
 
     case 'donation':
+<<<<<<< HEAD
         $progress           = $goal ? round( ( $form->get_sales() / $goal ) * 100, 2 ) : 0;
         $progress_bar_value = $form->get_sales() >= $goal ? 100 : $progress;
         break;
@@ -69,6 +87,15 @@ switch ( $goal_format ) {
     case 'donors':
         $progress           = $goal ? round( ( give_get_form_donor_count( $form->ID ) / $goal ) * 100, 2 ) : 0;
         $progress_bar_value = give_get_form_donor_count( $form->ID ) >= $goal ? 100 : $progress;
+=======
+        $progress           = $goal ? round( ( $income / $goal ) * 100, 2 ) : 0;
+        $progress_bar_value = $income >= $goal ? 100 : $progress;
+        break;
+
+    case 'donors':
+        $progress_bar_value = $goal ? round( ( $income / $goal ) * 100, 2 ) : 0;
+        $progress           = $progress_bar_value;
+>>>>>>> fb785cbb (Initial commit)
         break;
 
     case 'percentage':
@@ -201,9 +228,14 @@ $progress = apply_filters( 'give_goal_amount_funded_percentage_output', $progres
                         $goal,
                         'give'
                     ),
+<<<<<<< HEAD
 
                     give_format_amount( $form->get_sales(), array( 'decimal' => false )),
                     give_format_amount( $goal, array( 'decimal' => false ))
+=======
+                    give_format_amount( $income, array( 'decimal' => false ) ),
+                    give_format_amount( $goal, array( 'decimal' => false ) )
+>>>>>>> fb785cbb (Initial commit)
                 );
 
             elseif ( 'donors' === $goal_format ) :
@@ -215,8 +247,12 @@ $progress = apply_filters( 'give_goal_amount_funded_percentage_output', $progres
                         $goal,
                         'give'
                     ),
+<<<<<<< HEAD
 
                     give_format_amount(  give_get_form_donor_count( $form->ID ), array( 'decimal' => false ) ),
+=======
+                    give_format_amount( $income, array( 'decimal' => false ) ),
+>>>>>>> fb785cbb (Initial commit)
                     give_format_amount( $goal, array( 'decimal' => false ) )
                 );
 
@@ -225,8 +261,14 @@ $progress = apply_filters( 'give_goal_amount_funded_percentage_output', $progres
         </div>
     <?php endif; ?>
 
+<<<<<<< HEAD
     <?php if ( ! empty( $show_bar ) ) :
         $style = "width:{$progress_bar_value}%";
+=======
+
+    <?php if ( ! empty( $show_bar ) ) :
+        $style = "width:{$progress_bar_value}%;";
+>>>>>>> fb785cbb (Initial commit)
 
         if ( ! empty($color)) {
             $style .= ";background: linear-gradient(180deg, {$color} 0%, {$color} 100%), linear-gradient(180deg, #fff 0%, #ccc 100%); background-blend-mode: multiply;";
@@ -240,4 +282,7 @@ $progress = apply_filters( 'give_goal_amount_funded_percentage_output', $progres
     <?php endif; ?>
 
 </div><!-- /.goal-progress -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> fb785cbb (Initial commit)
