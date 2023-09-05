@@ -194,12 +194,18 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 		$response = rest_ensure_response( $data );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $location ) );
 		}
 =======
 		$response->add_links( $this->prepare_links( $location ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
+			$response->add_links( $this->prepare_links( $location ) );
+		}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters menu location data returned from the REST API.
@@ -215,6 +221,9 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Prepares links for the request.
 	 *
 	 * @since 5.9.0
@@ -253,8 +262,11 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Retrieves the menu location's schema, conforming to JSON Schema.
 	 *
 	 * @since 5.9.0
@@ -308,6 +320,7 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 		);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 	/**
@@ -348,4 +361,6 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 		return $links;
 	}
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }

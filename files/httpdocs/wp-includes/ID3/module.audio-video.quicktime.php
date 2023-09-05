@@ -62,24 +62,33 @@ class getid3_quicktime extends getid3_handler
 			$AtomHeader = $this->fread(8);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			// https://github.com/JamesHeinrich/getID3/issues/382
 			// Atom sizes are stored as 32-bit number in most cases, but sometimes (notably for "mdat")
 			// a 64-bit value is required, in which case the normal 32-bit size field is set to 0x00000001
 			// and the 64-bit "real" size value is the next 8 bytes.
 			$atom_size_extended_bytes = 0;
+<<<<<<< HEAD
 			$atomsize = getid3_lib::BigEndian2Int(substr($AtomHeader, 0, 4));
 			$atomname = substr($AtomHeader, 4, 4);
 			if ($atomsize == 1) {
 				$atom_size_extended_bytes = 8;
 				$atomsize = getid3_lib::BigEndian2Int($this->fread($atom_size_extended_bytes));
 =======
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$atomsize = getid3_lib::BigEndian2Int(substr($AtomHeader, 0, 4));
 			$atomname = substr($AtomHeader, 4, 4);
-
-			// 64-bit MOV patch by jlegateØktnc*com
 			if ($atomsize == 1) {
+<<<<<<< HEAD
 				$atomsize = getid3_lib::BigEndian2Int($this->fread(8));
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$atom_size_extended_bytes = 8;
+				$atomsize = getid3_lib::BigEndian2Int($this->fread($atom_size_extended_bytes));
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 
 			if (($offset + $atomsize) > $info['avdataend']) {
@@ -99,6 +108,7 @@ class getid3_quicktime extends getid3_handler
 				break;
 			}
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$atomHierarchy = array();
 			$parsedAtomData = $this->QuicktimeParseAtom($atomname, $atomsize, $this->fread(min($atomsize - $atom_size_extended_bytes, $atom_data_read_buffer_size)), $offset, $atomHierarchy, $this->ParseAllPossibleAtoms);
 			$parsedAtomData['name']   = $atomname;
@@ -109,12 +119,20 @@ class getid3_quicktime extends getid3_handler
 			}
 =======
 
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$atomHierarchy = array();
-			$parsedAtomData = $this->QuicktimeParseAtom($atomname, $atomsize, $this->fread(min($atomsize, $atom_data_read_buffer_size)), $offset, $atomHierarchy, $this->ParseAllPossibleAtoms);
+			$parsedAtomData = $this->QuicktimeParseAtom($atomname, $atomsize, $this->fread(min($atomsize - $atom_size_extended_bytes, $atom_data_read_buffer_size)), $offset, $atomHierarchy, $this->ParseAllPossibleAtoms);
 			$parsedAtomData['name']   = $atomname;
 			$parsedAtomData['size']   = $atomsize;
 			$parsedAtomData['offset'] = $offset;
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+			if ($atom_size_extended_bytes) {
+				$parsedAtomData['xsize_bytes'] = $atom_size_extended_bytes;
+			}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if (in_array($atomname, array('uuid'))) {
 				@$info['quicktime'][$atomname][] = $parsedAtomData;
 			} else {
@@ -133,10 +151,14 @@ class getid3_quicktime extends getid3_handler
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if (isset($info['quicktime']['comments']['chapters']) && is_array($info['quicktime']['comments']['chapters']) && (count($info['quicktime']['comments']['chapters']) > 0)) {
 =======
 		if (!empty($info['quicktime']['comments']['chapters']) && is_array($info['quicktime']['comments']['chapters']) && (count($info['quicktime']['comments']['chapters']) > 0)) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if (isset($info['quicktime']['comments']['chapters']) && is_array($info['quicktime']['comments']['chapters']) && (count($info['quicktime']['comments']['chapters']) > 0)) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$durations = $this->quicktime_time_to_sample_table($info);
 			for ($i = 0; $i < count($info['quicktime']['comments']['chapters']); $i++) {
 				$bookmark = array();
@@ -288,12 +310,18 @@ class getid3_quicktime extends getid3_handler
 			switch ($atomname) {
 				case 'moov': // MOVie container atom
 <<<<<<< HEAD
+<<<<<<< HEAD
 				case 'moof': // MOvie Fragment box
 				case 'trak': // TRAcK container atom
 				case 'traf': // TRAck Fragment box
 =======
 				case 'trak': // TRAcK container atom
 >>>>>>> fb785cbb (Initial commit)
+=======
+				case 'moof': // MOvie Fragment box
+				case 'trak': // TRAcK container atom
+				case 'traf': // TRAck Fragment box
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				case 'clip': // CLIPping container atom
 				case 'matt': // track MATTe container atom
 				case 'edts': // EDiTS container atom
@@ -878,9 +906,13 @@ $this->warning('incomplete/incorrect handling of "stsd" with Parrot metadata in 
 									case 'gif ':
 									case 'h263':
 <<<<<<< HEAD
+<<<<<<< HEAD
 									case 'hvc1':
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+									case 'hvc1':
+>>>>>>> c058c778 (Combining with the latest source from WP)
 									case 'jpeg':
 									case 'kpcd':
 									case 'mjpa':
@@ -1580,6 +1612,9 @@ $this->warning('incomplete/incorrect handling of "stsd" with Parrot metadata in 
 					break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				case 'ID32': // ID3v2
 					getid3_lib::IncludeDependency(GETID3_INCLUDEPATH.'module.tag.id3v2.php', __FILE__, true);
 
@@ -1595,8 +1630,11 @@ $this->warning('incomplete/incorrect handling of "stsd" with Parrot metadata in 
 					unset($getid3_temp, $getid3_id3v2);
 					break;
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				case 'free': // FREE space atom
 				case 'skip': // SKIP atom
 				case 'wide': // 64-bit expansion placeholder atom
@@ -1757,11 +1795,16 @@ $this->warning('incomplete/incorrect handling of "stsd" with Parrot metadata in 
 					$atom_structure['unknown']  = getid3_lib::BigEndian2Int(substr($atom_data, 4 + 2, 2));
 					$atom_structure['data']     =                           substr($atom_data, 4 + 4);
 <<<<<<< HEAD
+<<<<<<< HEAD
 					$atom_structure['key_name'] = (isset($info['quicktime']['temp_meta_key_names'][$metaDATAkey]) ? $info['quicktime']['temp_meta_key_names'][$metaDATAkey] : '');
 					$metaDATAkey++;
 =======
 					$atom_structure['key_name'] = @$info['quicktime']['temp_meta_key_names'][$metaDATAkey++];
 >>>>>>> fb785cbb (Initial commit)
+=======
+					$atom_structure['key_name'] = (isset($info['quicktime']['temp_meta_key_names'][$metaDATAkey]) ? $info['quicktime']['temp_meta_key_names'][$metaDATAkey] : '');
+					$metaDATAkey++;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 					if ($atom_structure['key_name'] && $atom_structure['data']) {
 						@$info['quicktime']['comments'][str_replace('com.apple.quicktime.', '', $atom_structure['key_name'])][] = $atom_structure['data'];
@@ -2137,6 +2180,9 @@ $this->warning('incomplete/incorrect handling of "stsd" with Parrot metadata in 
 					break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 // AVIF-related - https://docs.rs/avif-parse/0.13.2/src/avif_parse/boxes.rs.html
 				case 'pitm': // Primary ITeM
@@ -2159,8 +2205,11 @@ $this->error('fragmented mp4 files not currently supported');
 				case 'mvex': // MoVie EXtends box
 				case 'pssh': // Protection System Specific Header box
 				case 'sidx': // Segment InDeX box
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				default:
 					$this->warning('Unknown QuickTime atom type: "'.preg_replace('#[^a-zA-Z0-9 _\\-]#', '?', $atomname).'" ('.trim(getid3_lib::PrintHexBytes($atomname)).'), '.$atomsize.' bytes at offset '.$baseoffset);
 					$atom_structure['data'] = $atom_data;
@@ -2410,9 +2459,13 @@ $this->error('fragmented mp4 files not currently supported');
 			$QuicktimeVideoCodecLookup['h261'] = 'H261';
 			$QuicktimeVideoCodecLookup['h263'] = 'H263';
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$QuicktimeVideoCodecLookup['hvc1'] = 'H.265/HEVC';
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$QuicktimeVideoCodecLookup['hvc1'] = 'H.265/HEVC';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$QuicktimeVideoCodecLookup['IV41'] = 'Indeo4';
 			$QuicktimeVideoCodecLookup['jpeg'] = 'JPEG';
 			$QuicktimeVideoCodecLookup['kpcd'] = 'PhotoCD';

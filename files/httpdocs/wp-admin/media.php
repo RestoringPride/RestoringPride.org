@@ -89,10 +89,14 @@ switch ( $action ) {
 					'<p>' . __( 'For images only, you can click on Edit Image under the thumbnail to expand out an inline image editor with icons for cropping, rotating, or flipping the image as well as for undoing and redoing. The boxes on the right give you more options for scaling the image, for cropping it, and for cropping the thumbnail in a different way than you crop the original image. You can click on Help in those boxes to get more information.' ) . '</p>' .
 					'<p>' . __( 'Note that you crop the image by clicking on it (the Crop icon is already selected) and dragging the cropping frame to select the desired part. Then click Save to retain the cropping.' ) . '</p>' .
 <<<<<<< HEAD
+<<<<<<< HEAD
 					'<p>' . __( 'Remember to click Update to save metadata entered or changed.' ) . '</p>',
 =======
 					'<p>' . __( 'Remember to click Update Media to save metadata entered or changed.' ) . '</p>',
 >>>>>>> fb785cbb (Initial commit)
+=======
+					'<p>' . __( 'Remember to click Update to save metadata entered or changed.' ) . '</p>',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			)
 		);
 
@@ -144,10 +148,14 @@ switch ( $action ) {
 	<form method="post" class="media-upload-form" id="media-single-form">
 	<p class="submit" style="padding-bottom: 0;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<?php submit_button( __( 'Update' ), 'primary', 'save', false ); ?>
 =======
 		<?php submit_button( __( 'Update Media' ), 'primary', 'save', false ); ?>
 >>>>>>> fb785cbb (Initial commit)
+=======
+		<?php submit_button( __( 'Update' ), 'primary', 'save', false ); ?>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	</p>
 
 	<div class="media-single">
@@ -168,10 +176,14 @@ switch ( $action ) {
 	</div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<?php submit_button( __( 'Update' ), 'primary', 'save' ); ?>
 =======
 		<?php submit_button( __( 'Update Media' ), 'primary', 'save' ); ?>
 >>>>>>> fb785cbb (Initial commit)
+=======
+		<?php submit_button( __( 'Update' ), 'primary', 'save' ); ?>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<input type="hidden" name="post_id" id="post_id" value="<?php echo isset( $post_id ) ? esc_attr( $post_id ) : ''; ?>" />
 	<input type="hidden" name="attachment_id" id="attachment_id" value="<?php echo esc_attr( $att_id ); ?>" />
 	<input type="hidden" name="action" value="editattachment" />

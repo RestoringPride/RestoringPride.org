@@ -68,15 +68,21 @@ class WP_Customize_Themes_Panel extends WP_Customize_Panel {
 		?>
 		<li class="panel-meta customize-info accordion-section <# if ( ! data.description ) { #> cannot-expand<# } #>">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<button class="customize-panel-back" tabindex="-1" type="button"><span class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( 'Back' );
 				?>
 			</span></button>
+<<<<<<< HEAD
 =======
 			<button class="customize-panel-back" tabindex="-1" type="button"><span class="screen-reader-text"><?php _e( 'Back' ); ?></span></button>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<div class="accordion-section-title">
 				<span class="preview-notice">
 					<?php
@@ -90,15 +96,21 @@ class WP_Customize_Themes_Panel extends WP_Customize_Panel {
 				<?php if ( current_user_can( 'install_themes' ) && ! is_multisite() ) : ?>
 					<# if ( data.description ) { #>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						<button class="customize-help-toggle dashicons dashicons-editor-help" type="button" aria-expanded="false"><span class="screen-reader-text">
 							<?php
 							/* translators: Hidden accessibility text. */
 							_e( 'Help' );
 							?>
 						</span></button>
+<<<<<<< HEAD
 =======
 						<button class="customize-help-toggle dashicons dashicons-editor-help" type="button" aria-expanded="false"><span class="screen-reader-text"><?php _e( 'Help' ); ?></span></button>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<# } #>
 				<?php endif; ?>
 			</div>

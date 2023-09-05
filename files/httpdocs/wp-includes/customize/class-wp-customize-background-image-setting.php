@@ -16,6 +16,9 @@
  */
 final class WP_Customize_Background_Image_Setting extends WP_Customize_Setting {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Unique string identifier for the setting.
@@ -23,8 +26,11 @@ final class WP_Customize_Background_Image_Setting extends WP_Customize_Setting {
 	 * @since 3.4.0
 	 * @var string
 	 */
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	public $id = 'background_image_thumb';
 
 	/**

@@ -187,6 +187,7 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 		$data   = array();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( rest_is_field_included( 'capabilities', $fields ) ) {
 			$data['capabilities'] = $post_type->cap;
 		}
@@ -206,25 +207,37 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 		if ( rest_is_field_included( 'visibility', $fields ) ) {
 =======
 		if ( in_array( 'capabilities', $fields, true ) ) {
+=======
+		if ( rest_is_field_included( 'capabilities', $fields ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$data['capabilities'] = $post_type->cap;
 		}
 
-		if ( in_array( 'description', $fields, true ) ) {
+		if ( rest_is_field_included( 'description', $fields ) ) {
 			$data['description'] = $post_type->description;
 		}
 
-		if ( in_array( 'hierarchical', $fields, true ) ) {
+		if ( rest_is_field_included( 'hierarchical', $fields ) ) {
 			$data['hierarchical'] = $post_type->hierarchical;
 		}
 
+<<<<<<< HEAD
 		if ( in_array( 'visibility', $fields, true ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( rest_is_field_included( 'has_archive', $fields ) ) {
+			$data['has_archive'] = $post_type->has_archive;
+		}
+
+		if ( rest_is_field_included( 'visibility', $fields ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$data['visibility'] = array(
 				'show_in_nav_menus' => (bool) $post_type->show_in_nav_menus,
 				'show_ui'           => (bool) $post_type->show_ui,
 			);
 		}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		if ( rest_is_field_included( 'viewable', $fields ) ) {
 			$data['viewable'] = is_post_type_viewable( $post_type );
@@ -261,35 +274,46 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 		if ( rest_is_field_included( 'rest_namespace', $fields ) ) {
 =======
 		if ( in_array( 'viewable', $fields, true ) ) {
+=======
+		if ( rest_is_field_included( 'viewable', $fields ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$data['viewable'] = is_post_type_viewable( $post_type );
 		}
 
-		if ( in_array( 'labels', $fields, true ) ) {
+		if ( rest_is_field_included( 'labels', $fields ) ) {
 			$data['labels'] = $post_type->labels;
 		}
 
-		if ( in_array( 'name', $fields, true ) ) {
+		if ( rest_is_field_included( 'name', $fields ) ) {
 			$data['name'] = $post_type->label;
 		}
 
-		if ( in_array( 'slug', $fields, true ) ) {
+		if ( rest_is_field_included( 'slug', $fields ) ) {
 			$data['slug'] = $post_type->name;
 		}
 
-		if ( in_array( 'supports', $fields, true ) ) {
+		if ( rest_is_field_included( 'icon', $fields ) ) {
+			$data['icon'] = $post_type->menu_icon;
+		}
+
+		if ( rest_is_field_included( 'supports', $fields ) ) {
 			$data['supports'] = $supports;
 		}
 
-		if ( in_array( 'taxonomies', $fields, true ) ) {
+		if ( rest_is_field_included( 'taxonomies', $fields ) ) {
 			$data['taxonomies'] = array_values( $taxonomies );
 		}
 
-		if ( in_array( 'rest_base', $fields, true ) ) {
+		if ( rest_is_field_included( 'rest_base', $fields ) ) {
 			$data['rest_base'] = $base;
 		}
 
+<<<<<<< HEAD
 		if ( in_array( 'rest_namespace', $fields, true ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( rest_is_field_included( 'rest_namespace', $fields ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$data['rest_namespace'] = $namespace;
 		}
 
@@ -300,6 +324,7 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 		// Wrap the data in a response object.
 		$response = rest_ensure_response( $data );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $post_type ) );
@@ -316,6 +341,11 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 			)
 		);
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
+			$response->add_links( $this->prepare_links( $post_type ) );
+		}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters a post type returned from the REST API.
@@ -333,6 +363,9 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Prepares links for the request.
 	 *
 	 * @since 6.1.0
@@ -352,17 +385,24 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Retrieves the post type's schema, conforming to JSON Schema.
 	 *
 	 * @since 4.7.0
 	 * @since 4.8.0 The `supports` property was added.
 	 * @since 5.9.0 The `visibility` and `rest_namespace` properties were added.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 The `icon` property was added.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 The `icon` property was added.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @return array Item schema data.
 	 */
@@ -425,14 +465,20 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 					'readonly'    => true,
 				),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'has_archive'    => array(
 					'description' => __( 'If the value is a string, the value will be used as the archive slug. If the value is false the post type has no archive.' ),
 					'type'        => array( 'string', 'boolean' ),
 					'context'     => array( 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'taxonomies'     => array(
 					'description' => __( 'Taxonomies associated with post type.' ),
 					'type'        => 'array',
@@ -471,14 +517,20 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 					),
 				),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'icon'           => array(
 					'description' => __( 'The icon for the post type.' ),
 					'type'        => array( 'string', 'null' ),
 					'context'     => array( 'view', 'edit', 'embed' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			),
 		);
 
@@ -500,7 +552,10 @@ class WP_REST_Post_Types_Controller extends WP_REST_Controller {
 		);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }

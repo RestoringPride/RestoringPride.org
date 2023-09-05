@@ -228,10 +228,14 @@ class WP_REST_Response extends WP_HTTP_Response {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$error = new WP_Error();
 =======
 		$error = new WP_Error;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$error = new WP_Error();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( is_array( $this->get_data() ) ) {
 			$data = $this->get_data();

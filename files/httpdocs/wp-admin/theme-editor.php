@@ -172,6 +172,9 @@ if ( ! empty( $posted_content ) ) {
 		$functions = wp_doc_link_parse( $content );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! empty( $functions ) ) {
 			$docs_select  = '<select name="docs-list" id="docs-list">';
 			$docs_select .= '<option value="">' . esc_html__( 'Function Name&hellip;' ) . '</option>';
@@ -181,6 +184,7 @@ if ( ! empty( $posted_content ) ) {
 			}
 
 			$docs_select .= '</select>';
+<<<<<<< HEAD
 		}
 =======
 		$docs_select  = '<select name="docs-list" id="docs-list">';
@@ -190,6 +194,9 @@ if ( ! empty( $posted_content ) ) {
 		}
 		$docs_select .= '</select>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+		}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	$content = esc_textarea( $content );
@@ -238,11 +245,16 @@ if ( $file_description !== $file_show ) {
 	echo $theme->display( 'Name' );
 	if ( $description ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		echo ': ' . $description;
 	}
 =======
 		echo ': ' . $description;}
 >>>>>>> fb785cbb (Initial commit)
+=======
+		echo ': ' . $description;
+	}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	?>
 </h2>
 </div>

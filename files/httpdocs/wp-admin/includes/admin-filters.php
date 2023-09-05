@@ -81,9 +81,13 @@ add_filter( 'heartbeat_received', 'heartbeat_autosave', 500, 2 );
 
 add_filter( 'wp_refresh_nonces', 'wp_refresh_post_nonces', 10, 3 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 add_filter( 'wp_refresh_nonces', 'wp_refresh_metabox_loader_nonces', 10, 2 );
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+add_filter( 'wp_refresh_nonces', 'wp_refresh_metabox_loader_nonces', 10, 2 );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 add_filter( 'wp_refresh_nonces', 'wp_refresh_heartbeat_nonces' );
 
 add_filter( 'heartbeat_settings', 'wp_heartbeat_set_suspension' );

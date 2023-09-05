@@ -105,10 +105,14 @@ function wp_terms_checklist( $post_id = 0, $args = array() ) {
 
 	if ( empty( $parsed_args['walker'] ) || ! ( $parsed_args['walker'] instanceof Walker ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$walker = new Walker_Category_Checklist();
 =======
 		$walker = new Walker_Category_Checklist;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$walker = new Walker_Category_Checklist();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	} else {
 		$walker = $parsed_args['walker'];
 	}
@@ -265,10 +269,14 @@ function wp_popular_terms_checklist( $taxonomy, $default_term = 0, $number = 10,
  * @since 2.5.1
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param int $link_id Optional. The link ID. Default 0.
 =======
  * @param int $link_id
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param int $link_id Optional. The link ID. Default 0.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function wp_link_category_checklist( $link_id = 0 ) {
 	$default = 1;
@@ -411,17 +419,23 @@ function get_inline_data( $post ) {
  * @global WP_List_Table $wp_list_table
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @param int    $position  Optional. The value of the 'position' input field. Default 1.
  * @param bool   $checkbox  Optional. The value of the 'checkbox' input field. Default false.
  * @param string $mode      Optional. If set to 'single', will use WP_Post_Comments_List_Table,
  *                          otherwise WP_Comments_List_Table. Default 'single'.
  * @param bool   $table_row Optional. Whether to use a table instead of a div element. Default true.
+<<<<<<< HEAD
 =======
  * @param int    $position
  * @param bool   $checkbox
  * @param string $mode
  * @param bool   $table_row
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function wp_comment_reply( $position = 1, $checkbox = false, $mode = 'single', $table_row = true ) {
 	global $wp_list_table;
@@ -479,15 +493,21 @@ function wp_comment_reply( $position = 1, $checkbox = false, $mode = 'single', $
 
 	<div id="replycontainer">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<label for="replycontent" class="screen-reader-text">
 		<?php
 		/* translators: Hidden accessibility text. */
 		_e( 'Comment' );
 		?>
 	</label>
+<<<<<<< HEAD
 =======
 	<label for="replycontent" class="screen-reader-text"><?php _e( 'Comment' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<?php
 	$quicktags_settings = array( 'buttons' => 'strong,em,link,block,del,ins,img,ul,ol,li,code,close' );
 	wp_editor(
@@ -591,10 +611,14 @@ function wp_comment_trashnotice() {
  * @since 1.2.0
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param array[] $meta An array of meta data arrays keyed on 'meta_key' and 'meta_value'.
 =======
  * @param array $meta
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param array[] $meta An array of meta data arrays keyed on 'meta_key' and 'meta_value'.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function list_meta( $meta ) {
 	// Exit if no meta.
@@ -639,6 +663,7 @@ function list_meta( $meta ) {
  * @since 2.5.0
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param array $entry An array of meta data keyed on 'meta_key' and 'meta_value'.
  * @param int   $count Reference to the row number.
  * @return string A single row of public meta data.
@@ -647,6 +672,11 @@ function list_meta( $meta ) {
  * @param int   $count
  * @return string
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param array $entry An array of meta data keyed on 'meta_key' and 'meta_value'.
+ * @param int   $count Reference to the row number.
+ * @return string A single row of public meta data.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function _list_meta_row( $entry, &$count ) {
 	static $update_nonce = '';
@@ -661,10 +691,14 @@ function _list_meta_row( $entry, &$count ) {
 
 	$r = '';
 <<<<<<< HEAD
+<<<<<<< HEAD
 	++$count;
 =======
 	++ $count;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	++$count;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	if ( is_serialized( $entry['meta_value'] ) ) {
 		if ( is_serialized_string( $entry['meta_value'] ) ) {
@@ -685,13 +719,19 @@ function _list_meta_row( $entry, &$count ) {
 
 	$r .= "\n\t<tr id='meta-{$entry['meta_id']}'>";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$r .= "\n\t\t<td class='left'><label class='screen-reader-text' for='meta-{$entry['meta_id']}-key'>" .
 		/* translators: Hidden accessibility text. */
 		__( 'Key' ) .
 	"</label><input name='meta[{$entry['meta_id']}][key]' id='meta-{$entry['meta_id']}-key' type='text' size='20' value='{$entry['meta_key']}' />";
+<<<<<<< HEAD
 =======
 	$r .= "\n\t\t<td class='left'><label class='screen-reader-text' for='meta-{$entry['meta_id']}-key'>" . __( 'Key' ) . "</label><input name='meta[{$entry['meta_id']}][key]' id='meta-{$entry['meta_id']}-key' type='text' size='20' value='{$entry['meta_key']}' />";
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	$r .= "\n\t\t<div class='submit'>";
 	$r .= get_submit_button( __( 'Delete' ), 'deletemeta small', "deletemeta[{$entry['meta_id']}]", false, array( 'data-wp-lists' => "delete:the-list:meta-{$entry['meta_id']}::_ajax_nonce=$delete_nonce" ) );
@@ -702,13 +742,19 @@ function _list_meta_row( $entry, &$count ) {
 	$r .= '</td>';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$r .= "\n\t\t<td><label class='screen-reader-text' for='meta-{$entry['meta_id']}-value'>" .
 		/* translators: Hidden accessibility text. */
 		__( 'Value' ) .
 	"</label><textarea name='meta[{$entry['meta_id']}][value]' id='meta-{$entry['meta_id']}-value' rows='2' cols='30'>{$entry['meta_value']}</textarea></td>\n\t</tr>";
+<<<<<<< HEAD
 =======
 	$r .= "\n\t\t<td><label class='screen-reader-text' for='meta-{$entry['meta_id']}-value'>" . __( 'Value' ) . "</label><textarea name='meta[{$entry['meta_id']}][value]' id='meta-{$entry['meta_id']}-value' rows='2' cols='30'>{$entry['meta_value']}</textarea></td>\n\t</tr>";
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	return $r;
 }
 
@@ -873,13 +919,19 @@ function touch_time( $edit = 1, $for_post = 1, $tab_index = 0, $multi = 0 ) {
 	$cur_mn = current_time( 'i' );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$month = '<label><span class="screen-reader-text">' .
 		/* translators: Hidden accessibility text. */
 		__( 'Month' ) .
 	'</span><select class="form-required" ' . ( $multi ? '' : 'id="mm" ' ) . 'name="mm"' . $tab_index_attribute . ">\n";
+<<<<<<< HEAD
 =======
 	$month = '<label><span class="screen-reader-text">' . __( 'Month' ) . '</span><select class="form-required" ' . ( $multi ? '' : 'id="mm" ' ) . 'name="mm"' . $tab_index_attribute . ">\n";
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	for ( $i = 1; $i < 13; $i = $i + 1 ) {
 		$monthnum  = zeroise( $i, 2 );
 		$monthtext = $wp_locale->get_month_abbrev( $wp_locale->get_month( $i ) );
@@ -890,6 +942,9 @@ function touch_time( $edit = 1, $for_post = 1, $tab_index = 0, $multi = 0 ) {
 	$month .= '</select></label>';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$day = '<label><span class="screen-reader-text">' .
 		/* translators: Hidden accessibility text. */
 		__( 'Day' ) .
@@ -906,12 +961,15 @@ function touch_time( $edit = 1, $for_post = 1, $tab_index = 0, $multi = 0 ) {
 		/* translators: Hidden accessibility text. */
 		__( 'Minute' ) .
 	'</span><input type="text" ' . ( $multi ? '' : 'id="mn" ' ) . 'name="mn" value="' . $mn . '" size="2" maxlength="2"' . $tab_index_attribute . ' autocomplete="off" class="form-required" /></label>';
+<<<<<<< HEAD
 =======
 	$day    = '<label><span class="screen-reader-text">' . __( 'Day' ) . '</span><input type="text" ' . ( $multi ? '' : 'id="jj" ' ) . 'name="jj" value="' . $jj . '" size="2" maxlength="2"' . $tab_index_attribute . ' autocomplete="off" class="form-required" /></label>';
 	$year   = '<label><span class="screen-reader-text">' . __( 'Year' ) . '</span><input type="text" ' . ( $multi ? '' : 'id="aa" ' ) . 'name="aa" value="' . $aa . '" size="4" maxlength="4"' . $tab_index_attribute . ' autocomplete="off" class="form-required" /></label>';
 	$hour   = '<label><span class="screen-reader-text">' . __( 'Hour' ) . '</span><input type="text" ' . ( $multi ? '' : 'id="hh" ' ) . 'name="hh" value="' . $hh . '" size="2" maxlength="2"' . $tab_index_attribute . ' autocomplete="off" class="form-required" /></label>';
 	$minute = '<label><span class="screen-reader-text">' . __( 'Minute' ) . '</span><input type="text" ' . ( $multi ? '' : 'id="mn" ' ) . 'name="mn" value="' . $mn . '" size="2" maxlength="2"' . $tab_index_attribute . ' autocomplete="off" class="form-required" /></label>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	echo '<div class="timestamp-wrap">';
 	/* translators: 1: Month, 2: Day, 3: Year, 4: Hour, 5: Minute. */
@@ -979,14 +1037,19 @@ function page_template_dropdown( $default_template = '', $post_type = 'page' ) {
  *
  * @param int         $default_page Optional. The default page ID to be pre-selected. Default 0.
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param int         $parent_page  Optional. The parent page ID. Default 0.
 =======
  * @param int         $parent       Optional. The parent page ID. Default 0.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param int         $parent_page  Optional. The parent page ID. Default 0.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @param int         $level        Optional. Page depth level. Default 0.
  * @param int|WP_Post $post         Post ID or WP_Post object.
  * @return void|false Void on success, false if the page has no children.
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 function parent_dropdown( $default_page = 0, $parent_page = 0, $level = 0, $post = null ) {
 	global $wpdb;
@@ -1008,6 +1071,21 @@ function parent_dropdown( $default_page = 0, $parent = 0, $level = 0, $post = nu
 	$post  = get_post( $post );
 	$items = $wpdb->get_results( $wpdb->prepare( "SELECT ID, post_parent, post_title FROM $wpdb->posts WHERE post_parent = %d AND post_type = 'page' ORDER BY menu_order", $parent ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+function parent_dropdown( $default_page = 0, $parent_page = 0, $level = 0, $post = null ) {
+	global $wpdb;
+
+	$post  = get_post( $post );
+	$items = $wpdb->get_results(
+		$wpdb->prepare(
+			"SELECT ID, post_parent, post_title
+			FROM $wpdb->posts
+			WHERE post_parent = %d AND post_type = 'page'
+			ORDER BY menu_order",
+			$parent_page
+		)
+	);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	if ( $items ) {
 		foreach ( $items as $item ) {
@@ -1054,10 +1132,14 @@ function wp_dropdown_roles( $selected = '' ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Outputs the form used by the importers to accept the data to be imported.
 =======
  * Outputs the form used by the importers to accept the data to be imported
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Outputs the form used by the importers to accept the data to be imported.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 2.0.0
  *
@@ -1435,13 +1517,19 @@ function do_meta_boxes( $screen, $context, $data_object ) {
 					if ( 'dashboard_php_nag' === $box['id'] ) {
 						echo '<span aria-hidden="true" class="dashicons dashicons-warning"></span>';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						echo '<span class="screen-reader-text">' .
 							/* translators: Hidden accessibility text. */
 							__( 'Warning:' ) .
 						' </span>';
+<<<<<<< HEAD
 =======
 						echo '<span class="screen-reader-text">' . __( 'Warning:' ) . ' </span>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					}
 					echo $box['title'];
 					echo "</h2>\n";
@@ -1459,13 +1547,19 @@ function do_meta_boxes( $screen, $context, $data_object ) {
 
 						echo '<button type="button" class="handle-order-higher" aria-disabled="false" aria-describedby="' . $box['id'] . '-handle-order-higher-description">';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						echo '<span class="screen-reader-text">' .
 							/* translators: Hidden accessibility text. */
 							__( 'Move up' ) .
 						'</span>';
+<<<<<<< HEAD
 =======
 						echo '<span class="screen-reader-text">' . __( 'Move up' ) . '</span>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						echo '<span class="order-higher-indicator" aria-hidden="true"></span>';
 						echo '</button>';
 						echo '<span class="hidden" id="' . $box['id'] . '-handle-order-higher-description">' . sprintf(
@@ -1476,13 +1570,19 @@ function do_meta_boxes( $screen, $context, $data_object ) {
 
 						echo '<button type="button" class="handle-order-lower" aria-disabled="false" aria-describedby="' . $box['id'] . '-handle-order-lower-description">';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						echo '<span class="screen-reader-text">' .
 							/* translators: Hidden accessibility text. */
 							__( 'Move down' ) .
 						'</span>';
+<<<<<<< HEAD
 =======
 						echo '<span class="screen-reader-text">' . __( 'Move down' ) . '</span>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						echo '<span class="order-lower-indicator" aria-hidden="true"></span>';
 						echo '</button>';
 						echo '<span class="hidden" id="' . $box['id'] . '-handle-order-lower-description">' . sprintf(
@@ -1494,10 +1594,14 @@ function do_meta_boxes( $screen, $context, $data_object ) {
 						echo '<button type="button" class="handlediv" aria-expanded="true">';
 						echo '<span class="screen-reader-text">' . sprintf(
 <<<<<<< HEAD
+<<<<<<< HEAD
 							/* translators: %s: Hidden accessibility text. Meta box title. */
 =======
 							/* translators: %s: Meta box title. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+							/* translators: %s: Hidden accessibility text. Meta box title. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							__( 'Toggle panel: %s' ),
 							$widget_title
 						) . '</span>';
@@ -1650,15 +1754,21 @@ function do_accordion_sections( $screen, $context, $data_object ) {
 						<h3 class="accordion-section-title hndle" tabindex="0">
 							<?php echo esc_html( $box['title'] ); ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							<span class="screen-reader-text">
 								<?php
 								/* translators: Hidden accessibility text. */
 								_e( 'Press return or enter to open this section' );
 								?>
 							</span>
+<<<<<<< HEAD
 =======
 							<span class="screen-reader-text"><?php _e( 'Press return or enter to open this section' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						</h3>
 						<div class="accordion-section-content <?php postbox_classes( $box['id'], $page ); ?>">
 							<div class="inside">
@@ -1691,9 +1801,13 @@ function do_accordion_sections( $screen, $context, $data_object ) {
  *
  * @since 2.7.0
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @since 6.1.0 Added an `$args` parameter for the section's HTML wrapper and class name.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @since 6.1.0 Added an `$args` parameter for the section's HTML wrapper and class name.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @global array $wp_settings_sections Storage array of all settings sections added to admin pages.
  *
@@ -1704,6 +1818,9 @@ function do_accordion_sections( $screen, $context, $data_object ) {
  *                           'general', 'reading', 'writing', 'discussion', 'media', etc. Create your own using
  *                           add_options_page();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @param array    $args     {
  *     Arguments used to create the settings section.
  *
@@ -1712,6 +1829,7 @@ function do_accordion_sections( $screen, $context, $data_object ) {
  *     @type string $after_section  HTML content to append to the section's HTML output. Default empty.
  *     @type string $section_class  The class name to use for the section. Default empty.
  * }
+<<<<<<< HEAD
  */
 function add_settings_section( $id, $title, $callback, $page, $args = array() ) {
 	global $wp_settings_sections;
@@ -1728,11 +1846,27 @@ function add_settings_section( $id, $title, $callback, $page, $args = array() ) 
 	$section = wp_parse_args( $args, $defaults );
 
 =======
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
-function add_settings_section( $id, $title, $callback, $page ) {
+function add_settings_section( $id, $title, $callback, $page, $args = array() ) {
 	global $wp_settings_sections;
 
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$defaults = array(
+		'id'             => $id,
+		'title'          => $title,
+		'callback'       => $callback,
+		'before_section' => '',
+		'after_section'  => '',
+		'section_class'  => '',
+	);
+
+	$section = wp_parse_args( $args, $defaults );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( 'misc' === $page ) {
 		_deprecated_argument(
 			__FUNCTION__,
@@ -1760,6 +1894,7 @@ function add_settings_section( $id, $title, $callback, $page ) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$wp_settings_sections[ $page ][ $id ] = $section;
 =======
 	$wp_settings_sections[ $page ][ $id ] = array(
@@ -1768,6 +1903,9 @@ function add_settings_section( $id, $title, $callback, $page ) {
 		'callback' => $callback,
 	);
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$wp_settings_sections[ $page ][ $id ] = $section;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 /**
@@ -1797,10 +1935,14 @@ function add_settings_section( $id, $title, $callback, $page ) {
  *                           in which to show the box. Default 'default'.
  * @param array    $args {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *     Optional. Extra arguments that get passed to the callback function.
 =======
  *     Optional. Extra arguments used when outputting the field.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ *     Optional. Extra arguments that get passed to the callback function.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  *     @type string $label_for When supplied, the setting title will be wrapped
  *                             in a `<label>` element, its `for` attribute populated
@@ -1848,10 +1990,14 @@ function add_settings_field( $id, $title, $callback, $page, $section = 'default'
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Prints out all settings sections added to a particular settings page.
 =======
  * Prints out all settings sections added to a particular settings page
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Prints out all settings sections added to a particular settings page.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * Part of the Settings API. Use this in a settings page callback function
  * to output all the sections and fields that were added to that $page with
@@ -1872,6 +2018,9 @@ function do_settings_sections( $page ) {
 
 	foreach ( (array) $wp_settings_sections[ $page ] as $section ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( '' !== $section['before_section'] ) {
 			if ( '' !== $section['section_class'] ) {
 				echo wp_kses_post( sprintf( $section['before_section'], esc_attr( $section['section_class'] ) ) );
@@ -1880,8 +2029,11 @@ function do_settings_sections( $page ) {
 			}
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( $section['title'] ) {
 			echo "<h2>{$section['title']}</h2>\n";
 		}
@@ -1897,12 +2049,18 @@ function do_settings_sections( $page ) {
 		do_settings_fields( $page, $section['id'] );
 		echo '</table>';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( '' !== $section['after_section'] ) {
 			echo wp_kses_post( $section['after_section'] );
 		}
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 }
 
@@ -1966,10 +2124,14 @@ function do_settings_fields( $page, $section ) {
  * @since 5.3.0 Added `warning` and `info` as possible values for `$type`.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @global array[] $wp_settings_errors Storage array of errors registered during this pageload
 =======
  * @global array $wp_settings_errors Storage array of errors registered during this pageload
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @global array[] $wp_settings_errors Storage array of errors registered during this pageload
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @param string $setting Slug title of the setting to which this error applies.
  * @param string $code    Slug-name to identify the error. Used as part of 'id' attribute in HTML output.
@@ -2007,6 +2169,7 @@ function add_settings_error( $setting, $code, $message, $type = 'error' ) {
  * @since 3.0.0
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @global array[] $wp_settings_errors Storage array of errors registered during this pageload
  *
  * @param string $setting  Optional. Slug title of a specific setting whose errors you want.
@@ -2026,12 +2189,16 @@ function add_settings_error( $setting, $code, $message, $type = 'error' ) {
  *     }
 =======
  * @global array $wp_settings_errors Storage array of errors registered during this pageload
+=======
+ * @global array[] $wp_settings_errors Storage array of errors registered during this pageload
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @param string $setting  Optional. Slug title of a specific setting whose errors you want.
  * @param bool   $sanitize Optional. Whether to re-sanitize the setting value before returning errors.
- * @return array {
- *     Array of settings errors.
+ * @return array[] {
+ *     Array of settings error arrays.
  *
+<<<<<<< HEAD
  *     @type string $setting Slug title of the setting to which this error applies.
  *     @type string $code    Slug-name to identify the error. Used as part of 'id' attribute in HTML output.
  *     @type string $message The formatted message text to display to the user (will be shown inside styled
@@ -2039,6 +2206,18 @@ function add_settings_error( $setting, $code, $message, $type = 'error' ) {
  *     @type string $type    Optional. Message type, controls HTML class. Possible values include 'error',
  *                           'success', 'warning', 'info'. Default 'error'.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ *     @type array ...$0 {
+ *         Associative array of setting error data.
+ *
+ *         @type string $setting Slug title of the setting to which this error applies.
+ *         @type string $code    Slug-name to identify the error. Used as part of 'id' attribute in HTML output.
+ *         @type string $message The formatted message text to display to the user (will be shown inside styled
+ *                               `<div>` and `<p>` tags).
+ *         @type string $type    Optional. Message type, controls HTML class. Possible values include 'error',
+ *                               'success', 'warning', 'info'. Default 'error'.
+ *     }
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * }
  */
 function get_settings_errors( $setting = '', $sanitize = false ) {
@@ -2155,10 +2334,14 @@ function settings_errors( $setting = '', $sanitize = false, $hide_on_update = fa
  * @since 2.7.0
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param string $found_action Optional. The value of the 'found_action' input field. Default empty string.
 =======
  * @param string $found_action
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param string $found_action Optional. The value of the 'found_action' input field. Default empty string.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function find_posts_div( $found_action = '' ) {
 	?>
@@ -2166,15 +2349,21 @@ function find_posts_div( $found_action = '' ) {
 		<div id="find-posts-head" class="find-box-head">
 			<?php _e( 'Attach to existing content' ); ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<button type="button" id="find-posts-close"><span class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( 'Close media attachment panel' );
 				?>
 			</span></button>
+<<<<<<< HEAD
 =======
 			<button type="button" id="find-posts-close"><span class="screen-reader-text"><?php _e( 'Close media attachment panel' ); ?></span></button>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		</div>
 		<div class="find-box-inside">
 			<div class="find-box-search">
@@ -2184,15 +2373,21 @@ function find_posts_div( $found_action = '' ) {
 				<input type="hidden" name="affected" id="affected" value="" />
 				<?php wp_nonce_field( 'find-posts', '_ajax_nonce', false ); ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<label class="screen-reader-text" for="find-posts-input">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Search' );
 					?>
 				</label>
+<<<<<<< HEAD
 =======
 				<label class="screen-reader-text" for="find-posts-input"><?php _e( 'Search' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<input type="text" id="find-posts-input" name="ps" value="" />
 				<span class="spinner"></span>
 				<input type="button" id="find-posts-search" value="<?php esc_attr_e( 'Search' ); ?>" class="button" />
@@ -2404,6 +2599,7 @@ function _post_states( $post, $display = true ) {
 			++$i;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$separator = ( $i < $state_count ) ? ', ' : '';
 
 			$post_states_string .= "<span class='post-state'>{$state}{$separator}</span>";
@@ -2412,6 +2608,11 @@ function _post_states( $post, $display = true ) {
 
 			$post_states_string .= "<span class='post-state'>$state$sep</span>";
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$separator = ( $i < $state_count ) ? ', ' : '';
+
+			$post_states_string .= "<span class='post-state'>{$state}{$separator}</span>";
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 
@@ -2524,6 +2725,7 @@ function _media_states( $post, $display = true ) {
 			++$i;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$separator = ( $i < $state_count ) ? ', ' : '';
 
 			$media_states_string .= "<span class='post-state'>{$state}{$separator}</span>";
@@ -2532,6 +2734,11 @@ function _media_states( $post, $display = true ) {
 
 			$media_states_string .= "<span class='post-state'>$state$sep</span>";
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$separator = ( $i < $state_count ) ? ', ' : '';
+
+			$media_states_string .= "<span class='post-state'>{$state}{$separator}</span>";
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 
@@ -2787,10 +2994,15 @@ function get_submit_button( $text = '', $type = 'primary large', $name = 'submit
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Prints out the beginning of the admin HTML header.
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Prints out the beginning of the admin HTML header.
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @global bool $is_IE
  */
 function _wp_admin_html_begin() {
@@ -2853,10 +3065,14 @@ function convert_to_screen( $hook_name ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Outputs the HTML for restoring the post data from DOM storage
 =======
  * Output the HTML for restoring the post data from DOM storage
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Outputs the HTML for restoring the post data from DOM storage
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 3.6.0
  * @access private
@@ -2922,6 +3138,7 @@ function wp_star_rating( $args = array() ) {
 
 	if ( $parsed_args['number'] ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		/* translators: Hidden accessibility text. 1: The rating, 2: The number of ratings. */
 		$format = _n( '%1$s rating based on %2$s rating', '%1$s rating based on %2$s ratings', $parsed_args['number'] );
 		$title  = sprintf( $format, number_format_i18n( $rating, 1 ), number_format_i18n( $parsed_args['number'] ) );
@@ -2934,6 +3151,13 @@ function wp_star_rating( $args = array() ) {
 	} else {
 		/* translators: %s: The rating. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+		/* translators: Hidden accessibility text. 1: The rating, 2: The number of ratings. */
+		$format = _n( '%1$s rating based on %2$s rating', '%1$s rating based on %2$s ratings', $parsed_args['number'] );
+		$title  = sprintf( $format, number_format_i18n( $rating, 1 ), number_format_i18n( $parsed_args['number'] ) );
+	} else {
+		/* translators: Hidden accessibility text. %s: The rating. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$title = sprintf( __( '%s rating' ), number_format_i18n( $rating, 1 ) );
 	}
 

@@ -471,10 +471,14 @@ function network_step2( $errors = false ) {
 	?>
 	<ol>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<li><p id="network-wpconfig-rules-description">
 =======
 		<li><p>
 >>>>>>> fb785cbb (Initial commit)
+=======
+		<li><p id="network-wpconfig-rules-description">
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<?php
 		printf(
 			/* translators: 1: wp-config.php, 2: Location of wp-config file, 3: Translated version of "That's all, stop editing! Happy publishing." */
@@ -491,6 +495,9 @@ function network_step2( $errors = false ) {
 		?>
 		</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<p class="configuration-rules-label"><label for="network-wpconfig-rules">
 			<?php
 			printf(
@@ -501,9 +508,12 @@ function network_step2( $errors = false ) {
 			?>
 		</label></p>
 		<textarea id="network-wpconfig-rules" class="code" readonly="readonly" cols="100" rows="7" aria-describedby="network-wpconfig-rules-description">
+<<<<<<< HEAD
 =======
 		<textarea class="code" readonly="readonly" cols="100" rows="7">
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 define( 'MULTISITE', true );
 define( 'SUBDOMAIN_INSTALL', <?php echo $subdomain_install ? 'true' : 'false'; ?> );
 define( 'DOMAIN_CURRENT_SITE', '<?php echo $hostname; ?>' );
@@ -544,10 +554,14 @@ define( 'BLOG_ID_CURRENT_SITE', 1 );
 			$num_keys_salts = count( $keys_salts );
 			?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<p id="network-wpconfig-authentication-description">
 =======
 		<p>
 >>>>>>> fb785cbb (Initial commit)
+=======
+		<p id="network-wpconfig-authentication-description">
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<?php
 			if ( 1 === $num_keys_salts ) {
 				printf(
@@ -566,11 +580,16 @@ define( 'BLOG_ID_CURRENT_SITE', 1 );
 			<?php _e( 'To make your installation more secure, you should also add:' ); ?>
 		</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<p class="configuration-rules-label"><label for="network-wpconfig-authentication"><?php _e( 'Network configuration authentication keys' ); ?></label></p>
 		<textarea id="network-wpconfig-authentication" class="code" readonly="readonly" cols="100" rows="<?php echo $num_keys_salts; ?>" aria-describedby="network-wpconfig-authentication-description"><?php echo esc_textarea( $keys_salts_str ); ?></textarea>
 =======
 		<textarea class="code" readonly="readonly" cols="100" rows="<?php echo $num_keys_salts; ?>"><?php echo esc_textarea( $keys_salts_str ); ?></textarea>
 >>>>>>> fb785cbb (Initial commit)
+=======
+		<p class="configuration-rules-label"><label for="network-wpconfig-authentication"><?php _e( 'Network configuration authentication keys' ); ?></label></p>
+		<textarea id="network-wpconfig-authentication" class="code" readonly="readonly" cols="100" rows="<?php echo $num_keys_salts; ?>" aria-describedby="network-wpconfig-authentication-description"><?php echo esc_textarea( $keys_salts_str ); ?></textarea>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<?php
 		}
 		?>
@@ -630,10 +649,14 @@ define( 'BLOG_ID_CURRENT_SITE', 1 );
 ';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			echo '<li><p id="network-webconfig-rules-description">';
 =======
 			echo '<li><p>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+			echo '<li><p id="network-webconfig-rules-description">';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			printf(
 				/* translators: 1: File name (.htaccess or web.config), 2: File path. */
 				__( 'Add the following to your %1$s file in %2$s, <strong>replacing</strong> other WordPress rules:' ),
@@ -646,6 +669,9 @@ define( 'BLOG_ID_CURRENT_SITE', 1 );
 		}
 		?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<p class="configuration-rules-label"><label for="network-webconfig-rules">
 				<?php
 				printf(
@@ -656,9 +682,12 @@ define( 'BLOG_ID_CURRENT_SITE', 1 );
 				?>
 			</label></p>
 			<textarea id="network-webconfig-rules" class="code" readonly="readonly" cols="100" rows="20" aria-describedby="network-webconfig-rules-description"><?php echo esc_textarea( $web_config_file ); ?></textarea>
+<<<<<<< HEAD
 =======
 		<textarea class="code" readonly="readonly" cols="100" rows="20"><?php echo esc_textarea( $web_config_file ); ?></textarea>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		</li>
 	</ol>
 
@@ -704,10 +733,14 @@ RewriteRule . index.php [L]
 EOF;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		echo '<li><p id="network-htaccess-rules-description">';
 =======
 		echo '<li><p>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+		echo '<li><p id="network-htaccess-rules-description">';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		printf(
 			/* translators: 1: File name (.htaccess or web.config), 2: File path. */
 			__( 'Add the following to your %1$s file in %2$s, <strong>replacing</strong> other WordPress rules:' ),
@@ -720,6 +753,9 @@ EOF;
 		}
 		?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<p class="configuration-rules-label"><label for="network-htaccess-rules">
 				<?php
 				printf(
@@ -730,9 +766,12 @@ EOF;
 				?>
 			</label></p>
 			<textarea id="network-htaccess-rules" class="code" readonly="readonly" cols="100" rows="<?php echo substr_count( $htaccess_file, "\n" ) + 1; ?>" aria-describedby="network-htaccess-rules-description"><?php echo esc_textarea( $htaccess_file ); ?></textarea>
+<<<<<<< HEAD
 =======
 		<textarea class="code" readonly="readonly" cols="100" rows="<?php echo substr_count( $htaccess_file, "\n" ) + 1; ?>"><?php echo esc_textarea( $htaccess_file ); ?></textarea>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		</li>
 	</ol>
 

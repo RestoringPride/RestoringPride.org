@@ -12,9 +12,12 @@
  *
  * @since 3.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_List_Table
  */
@@ -266,20 +269,27 @@ class WP_MS_Sites_List_Table extends WP_List_Table {
 
 		foreach ( $statuses as $status => $label_count ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			$current_link_attributes = $requested_status === $status || ( '' === $requested_status && 'all' === $status )
 				? ' class="current" aria-current="page"'
 				: '';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( (int) $counts[ $status ] > 0 ) {
 				$label    = sprintf( translate_nooped_plural( $label_count, $counts[ $status ] ), number_format_i18n( $counts[ $status ] ) );
 				$full_url = 'all' === $status ? $url : add_query_arg( 'status', $status, $url );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$view_links[ $status ] = array(
 					'url'     => esc_url( $full_url ),
 					'label'   => $label,
 					'current' => $requested_status === $status || ( '' === $requested_status && 'all' === $status ),
+<<<<<<< HEAD
 =======
 				$view_links[ $status ] = sprintf(
 					'<a href="%1$s"%2$s>%3$s</a>',
@@ -287,15 +297,21 @@ class WP_MS_Sites_List_Table extends WP_List_Table {
 					$current_link_attributes,
 					$label
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				);
 			}
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return $this->get_views_links( $view_links );
 =======
 		return $view_links;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return $this->get_views_links( $view_links );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -669,6 +685,7 @@ class WP_MS_Sites_List_Table extends WP_List_Table {
 				++$i;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$separator = ( $i < $state_count ) ? ', ' : '';
 
 				echo "<span class='post-state'>{$state}{$separator}</span>";
@@ -677,6 +694,11 @@ class WP_MS_Sites_List_Table extends WP_List_Table {
 
 				echo "<span class='post-state'>{$state}{$sep}</span>";
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$separator = ( $i < $state_count ) ? ', ' : '';
+
+				echo "<span class='post-state'>{$state}{$separator}</span>";
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 		}
 	}

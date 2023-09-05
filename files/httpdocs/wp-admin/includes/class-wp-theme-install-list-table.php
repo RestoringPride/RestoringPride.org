@@ -12,9 +12,12 @@
  *
  * @since 3.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_Themes_List_Table
  */
@@ -190,11 +193,15 @@ class WP_Theme_Install_List_Table extends WP_Themes_List_Table {
 		$display_tabs = array();
 		foreach ( (array) $tabs as $action => $text ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$display_tabs[ 'theme-install-' . $action ] = array(
 				'url'     => self_admin_url( 'theme-install.php?tab=' . $action ),
 				'label'   => $text,
 				'current' => $action === $tab,
 			);
+<<<<<<< HEAD
 		}
 
 		return $this->get_views_links( $display_tabs );
@@ -206,6 +213,11 @@ class WP_Theme_Install_List_Table extends WP_Themes_List_Table {
 
 		return $display_tabs;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		}
+
+		return $this->get_views_links( $display_tabs );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**

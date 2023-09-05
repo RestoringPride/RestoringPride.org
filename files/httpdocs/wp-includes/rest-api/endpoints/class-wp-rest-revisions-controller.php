@@ -135,6 +135,7 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 	 * @since 4.7.2
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param int $parent_post_id Supplied ID.
 	 * @return WP_Post|WP_Error Post object if ID is valid, WP_Error otherwise.
 	 */
@@ -145,11 +146,18 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 	 */
 	protected function get_parent( $parent ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param int $parent_post_id Supplied ID.
+	 * @return WP_Post|WP_Error Post object if ID is valid, WP_Error otherwise.
+	 */
+	protected function get_parent( $parent_post_id ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$error = new WP_Error(
 			'rest_post_invalid_parent',
 			__( 'Invalid post parent ID.' ),
 			array( 'status' => 404 )
 		);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 		if ( (int) $parent_post_id <= 0 ) {
@@ -167,16 +175,27 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 		return $parent_post;
 =======
 		if ( (int) $parent <= 0 ) {
+=======
+
+		if ( (int) $parent_post_id <= 0 ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			return $error;
 		}
 
-		$parent = get_post( (int) $parent );
-		if ( empty( $parent ) || empty( $parent->ID ) || $this->parent_post_type !== $parent->post_type ) {
+		$parent_post = get_post( (int) $parent_post_id );
+
+		if ( empty( $parent_post ) || empty( $parent_post->ID )
+			|| $this->parent_post_type !== $parent_post->post_type
+		) {
 			return $error;
 		}
 
+<<<<<<< HEAD
 		return $parent;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return $parent_post;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -359,11 +378,16 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 
 		$request_params = $request->get_query_params();
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$base_path      = rest_url( sprintf( '%s/%s/%d/%s', $this->namespace, $this->parent_base, $request['parent'], $this->rest_base ) );
 		$base           = add_query_arg( urlencode_deep( $request_params ), $base_path );
 =======
 		$base           = add_query_arg( urlencode_deep( $request_params ), rest_url( sprintf( '%s/%s/%d/%s', $this->namespace, $this->parent_base, $request['parent'], $this->rest_base ) ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$base_path      = rest_url( sprintf( '%s/%s/%d/%s', $this->namespace, $this->parent_base, $request['parent'], $this->rest_base ) );
+		$base           = add_query_arg( urlencode_deep( $request_params ), $base_path );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( $page > 1 ) {
 			$prev_page = $page - 1;
@@ -650,10 +674,14 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 
 		if ( ! empty( $data['parent'] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$response->add_link( 'parent', rest_url( rest_get_route_for_post( $data['parent'] ) ) );
 =======
 			$response->add_link( 'parent', rest_url( sprintf( '%s/%s/%d', $this->namespace, $this->parent_base, $data['parent'] ) ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$response->add_link( 'parent', rest_url( rest_get_route_for_post( $data['parent'] ) ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		/**

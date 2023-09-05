@@ -8,10 +8,14 @@
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Retrieves the list of importers.
 =======
  * Retrieve list of importers.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Retrieves the list of importers.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 2.0.0
  *
@@ -28,10 +32,14 @@ function get_importers() {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Sorts a multidimensional array by first member of each top level member.
 =======
  * Sorts a multidimensional array by first member of each top level member
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Sorts a multidimensional array by first member of each top level member.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * Used by uasort() as a callback, should not be used directly.
  *
@@ -48,10 +56,14 @@ function _usort_by_first_member( $a, $b ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Registers importer for WordPress.
 =======
  * Register importer for WordPress.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Registers importer for WordPress.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 2.0.0
  *
@@ -86,6 +98,7 @@ function wp_import_cleanup( $id ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Handles importer uploading and adds attachment.
  *
  * @since 2.0.0
@@ -98,6 +111,13 @@ function wp_import_cleanup( $id ) {
  *
  * @return array Uploaded file's details on success, error message on failure
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Handles importer uploading and adds attachment.
+ *
+ * @since 2.0.0
+ *
+ * @return array Uploaded file's details on success, error message on failure.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function wp_import_handle_upload() {
 	if ( ! isset( $_FILES['import'] ) ) {

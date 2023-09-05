@@ -44,9 +44,13 @@ class WP_REST_Site_Health_Controller extends WP_REST_Controller {
 	 *
 	 * @since 5.6.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 Adds page-cache async test.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 Adds page-cache async test.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @see register_rest_route()
 	 */
@@ -161,6 +165,9 @@ class WP_REST_Site_Health_Controller extends WP_REST_Controller {
 			)
 		);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		register_rest_route(
 			$this->namespace,
@@ -179,8 +186,11 @@ class WP_REST_Site_Health_Controller extends WP_REST_Controller {
 				),
 			)
 		);
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -269,6 +279,9 @@ class WP_REST_Site_Health_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Checks that full page cache is active.
 	 *
 	 * @since 6.1.0
@@ -281,8 +294,11 @@ class WP_REST_Site_Health_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Gets the current directory sizes for this install.
 	 *
 	 * @since 5.6.0
@@ -346,10 +362,14 @@ class WP_REST_Site_Health_Controller extends WP_REST_Controller {
 		if ( ! is_admin() ) {
 			$locale = determine_locale();
 <<<<<<< HEAD
+<<<<<<< HEAD
 			load_textdomain( 'default', WP_LANG_DIR . "/admin-$locale.mo", $locale );
 =======
 			load_textdomain( 'default', WP_LANG_DIR . "/admin-$locale.mo" );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			load_textdomain( 'default', WP_LANG_DIR . "/admin-$locale.mo", $locale );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 

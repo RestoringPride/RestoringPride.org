@@ -183,10 +183,14 @@ class getID3
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Use MD5 of source file if available - only FLAC and OptimFROG
 =======
 	 * Use MD5 of source file if availble - only FLAC and OptimFROG
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Use MD5 of source file if available - only FLAC and OptimFROG
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @var bool
 	 */
@@ -392,21 +396,31 @@ class getID3
 	protected $startup_warning = '';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	const VERSION           = '1.9.22-202207161647';
 =======
 	const VERSION           = '1.9.21-202109171300';
 >>>>>>> fb785cbb (Initial commit)
+=======
+	const VERSION           = '1.9.22-202207161647';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	const FREAD_BUFFER_SIZE = 32768;
 
 	const ATTACHMENTS_NONE   = false;
 	const ATTACHMENTS_INLINE = true;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/**
 	 * @throws getid3_exception
 	 */
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	/**
+	 * @throws getid3_exception
+	 */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	public function __construct() {
 
 		// Check for PHP version
@@ -584,10 +598,14 @@ class getID3
 
 			// remote files not supported
 <<<<<<< HEAD
+<<<<<<< HEAD
 			if (preg_match('#^(ht|f)tps?://#', $filename)) {
 =======
 			if (preg_match('#^(ht|f)tp://#', $filename)) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+			if (preg_match('#^(ht|f)tps?://#', $filename)) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				throw new getid3_exception('Remote files are not supported - please copy the file locally first');
 			}
 
@@ -1074,6 +1092,9 @@ class getID3
 						),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 				// MOD  - audio       - MODule (SoundTracker)
 				'mod'  => array(
@@ -1084,6 +1105,7 @@ class getID3
 							'option'    => 'mod',
 							'mime_type' => 'audio/mod',
 						),
+<<<<<<< HEAD
 =======
 // has been known to produce false matches in random files (e.g. JPEGs), leave out until more precise matching available
 //				// MOD  - audio       - MODule (assorted sub-formats)
@@ -1095,6 +1117,8 @@ class getID3
 //							'mime_type' => 'audio/mod',
 //						),
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 				// MOD  - audio       - MODule (Impulse Tracker)
 				'it'   => array(
@@ -1126,10 +1150,14 @@ class getID3
 				// MPC  - audio       - Musepack / MPEGplus
 				'mpc'  => array(
 <<<<<<< HEAD
+<<<<<<< HEAD
 							'pattern'   => '^(MPCK|MP\\+)',
 =======
 							'pattern'   => '^(MPCK|MP\\+|[\\x00\\x01\\x10\\x11\\x40\\x41\\x50\\x51\\x80\\x81\\x90\\x91\\xC0\\xC1\\xD0\\xD1][\\x20-\\x37][\\x00\\x20\\x40\\x60\\x80\\xA0\\xC0\\xE0])',
 >>>>>>> fb785cbb (Initial commit)
+=======
+							'pattern'   => '^(MPCK|MP\\+)',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							'group'     => 'audio',
 							'module'    => 'mpc',
 							'mime_type' => 'audio/x-musepack',
@@ -1587,6 +1615,9 @@ class getID3
 			$info['include'] = 'module.'.$info['group'].'.'.$info['module'].'.php';
 			return $info;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		} elseif (preg_match('#\\.mp[cp\\+]$#i', $filename) && preg_match('#[\x00\x01\x10\x11\x40\x41\x50\x51\x80\x81\x90\x91\xC0\xC1\xD0\xD1][\x20-37][\x00\x20\x40\x60\x80\xA0\xC0\xE0]#s', $filedata)) {
 			// old-format (SV4-SV6) Musepack header that has a very loose pattern match and could falsely match other data (e.g. corrupt mp3)
 			// only enable this pattern check if the filename ends in .mpc/mpp/mp+
@@ -1594,8 +1625,11 @@ class getID3
 			$info = $GetFileFormatArray['mpc'];
 			$info['include'] = 'module.'.$info['group'].'.'.$info['module'].'.php';
 			return $info;
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		} elseif (preg_match('#\\.cue$#i', $filename) && preg_match('#FILE "[^"]+" (BINARY|MOTOROLA|AIFF|WAVE|MP3)#', $filedata)) {
 			// there's not really a useful consistent "magic" at the beginning of .cue files to identify them
 			// so until I think of something better, just go by filename if all other format checks fail
@@ -2244,13 +2278,19 @@ abstract class getid3_handler
 			return substr($this->data_string, $this->data_string_position - $bytes, $bytes);
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ($bytes == 0) {
 			return '';
 		} elseif ($bytes < 0) {
 			throw new getid3_exception('cannot fread('.$bytes.' from '.$this->ftell().')', 10);
 		}
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$pos = $this->ftell() + $bytes;
 		if (!getid3_lib::intValueSupported($pos)) {
 			throw new getid3_exception('cannot fread('.$bytes.' from '.$this->ftell().') because beyond PHP filesystem limit', 10);

@@ -18,9 +18,13 @@
  * @since 4.4.0 Moved to its own file from wp-includes/widgets.php
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Widget {
 
 	/**
@@ -156,10 +160,14 @@ class WP_Widget {
 	 * @since 2.8.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string $id_base         Base ID for the widget, lowercase and unique. If left empty,
 =======
 	 * @param string $id_base         Optional. Base ID for the widget, lowercase and unique. If left empty,
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param string $id_base         Base ID for the widget, lowercase and unique. If left empty,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *                                a portion of the widget's PHP class name will be used. Has to be unique.
 	 * @param string $name            Name for the widget displayed on the configuration page.
 	 * @param array  $widget_options  Optional. Widget options. See wp_register_sidebar_widget() for
@@ -196,10 +204,14 @@ class WP_Widget {
 	 * @see WP_Widget::__construct()
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string $id_base         Base ID for the widget, lowercase and unique. If left empty,
 =======
 	 * @param string $id_base         Optional. Base ID for the widget, lowercase and unique. If left empty,
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param string $id_base         Base ID for the widget, lowercase and unique. If left empty,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *                                a portion of the widget's PHP class name will be used. Has to be unique.
 	 * @param string $name            Name for the widget displayed on the configuration page.
 	 * @param array  $widget_options  Optional. Widget options. See wp_register_sidebar_widget() for
@@ -625,6 +637,7 @@ class WP_Widget {
 
 		if ( false === $settings ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$settings = array();
 			if ( isset( $this->alt_option_name ) ) {
 				// Get settings from alternative (legacy) option.
@@ -636,13 +649,22 @@ class WP_Widget {
 			// Save an option so it can be autoloaded next time.
 			$this->save_settings( $settings );
 =======
+=======
+			$settings = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( isset( $this->alt_option_name ) ) {
-				$settings = get_option( $this->alt_option_name );
-			} else {
-				// Save an option so it can be autoloaded next time.
-				$this->save_settings( array() );
+				// Get settings from alternative (legacy) option.
+				$settings = get_option( $this->alt_option_name, array() );
+
+				// Delete the alternative (legacy) option as the new option will be created using `$this->option_name`.
+				delete_option( $this->alt_option_name );
 			}
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+			// Save an option so it can be autoloaded next time.
+			$this->save_settings( $settings );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		if ( ! is_array( $settings ) && ! ( $settings instanceof ArrayObject || $settings instanceof ArrayIterator ) ) {

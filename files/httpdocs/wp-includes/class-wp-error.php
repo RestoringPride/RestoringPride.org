@@ -16,9 +16,13 @@
  * @since 2.1.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Error {
 	/**
 	 * Stores the list of errors.
@@ -60,10 +64,14 @@ class WP_Error {
 	 * @param string|int $code    Error code.
 	 * @param string     $message Error message.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param mixed      $data    Optional. Error data. Default empty string.
 =======
 	 * @param mixed      $data    Optional. Error data.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param mixed      $data    Optional. Error data. Default empty string.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function __construct( $code = '', $message = '', $data = '' ) {
 		if ( empty( $code ) ) {
@@ -111,11 +119,16 @@ class WP_Error {
 	 * @since 2.1.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string|int $code Optional. Error code to retrieve the messages for.
 	 *                         Default empty string.
 =======
 	 * @param string|int $code Optional. Retrieve messages matching code, if exists.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param string|int $code Optional. Error code to retrieve the messages for.
+	 *                         Default empty string.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @return string[] Error strings on success, or empty array if there are none.
 	 */
 	public function get_error_messages( $code = '' ) {
@@ -145,11 +158,16 @@ class WP_Error {
 	 * @since 2.1.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string|int $code Optional. Error code to retrieve the message for.
 	 *                         Default empty string.
 =======
 	 * @param string|int $code Optional. Error code to retrieve message.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param string|int $code Optional. Error code to retrieve the message for.
+	 *                         Default empty string.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @return string The error message.
 	 */
 	public function get_error_message( $code = '' ) {
@@ -169,10 +187,14 @@ class WP_Error {
 	 * @since 2.1.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string|int $code Optional. Error code. Default empty string.
 =======
 	 * @param string|int $code Optional. Error code.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param string|int $code Optional. Error code. Default empty string.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @return mixed Error data, if it exists.
 	 */
 	public function get_error_data( $code = '' ) {
@@ -207,10 +229,14 @@ class WP_Error {
 	 * @param string|int $code    Error code.
 	 * @param string     $message Error message.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param mixed      $data    Optional. Error data. Default empty string.
 =======
 	 * @param mixed      $data    Optional. Error data.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param mixed      $data    Optional. Error data. Default empty string.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function add( $code, $message, $data = '' ) {
 		$this->errors[ $code ][] = $message;

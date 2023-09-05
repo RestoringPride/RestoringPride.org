@@ -716,10 +716,14 @@ class WP_REST_Widgets_Controller extends WP_REST_Controller {
 				if ( ! empty( $widget_object->widget_options['show_instance_in_rest'] ) ) {
 					// Use new stdClass so that JSON result is {} and not [].
 <<<<<<< HEAD
+<<<<<<< HEAD
 					$prepared['instance']['raw'] = empty( $instance ) ? new stdClass() : $instance;
 =======
 					$prepared['instance']['raw'] = empty( $instance ) ? new stdClass : $instance;
 >>>>>>> fb785cbb (Initial commit)
+=======
+					$prepared['instance']['raw'] = empty( $instance ) ? new stdClass() : $instance;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				}
 			}
 		}
@@ -731,12 +735,18 @@ class WP_REST_Widgets_Controller extends WP_REST_Controller {
 		$response = rest_ensure_response( $prepared );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $prepared ) );
 		}
 =======
 		$response->add_links( $this->prepare_links( $prepared ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
+			$response->add_links( $this->prepare_links( $prepared ) );
+		}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters the REST API response for a widget.
@@ -870,6 +880,7 @@ class WP_REST_Widgets_Controller extends WP_REST_Controller {
 					'context'     => array(),
 					'arg_options' => array(
 <<<<<<< HEAD
+<<<<<<< HEAD
 						'sanitize_callback' => static function( $form_data ) {
 							$array = array();
 							wp_parse_str( $form_data, $array );
@@ -878,6 +889,11 @@ class WP_REST_Widgets_Controller extends WP_REST_Controller {
 							$array = array();
 							wp_parse_str( $string, $array );
 >>>>>>> fb785cbb (Initial commit)
+=======
+						'sanitize_callback' => static function( $form_data ) {
+							$array = array();
+							wp_parse_str( $form_data, $array );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							return $array;
 						},
 					),

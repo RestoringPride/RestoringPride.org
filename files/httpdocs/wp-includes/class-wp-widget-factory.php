@@ -14,9 +14,13 @@
  * @since 4.4.0 Moved to its own file from wp-includes/widgets.php
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Widget_Factory {
 
 	/**

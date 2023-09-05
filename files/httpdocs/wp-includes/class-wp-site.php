@@ -23,9 +23,13 @@
  * @property string $home
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 final class WP_Site {
 
 	/**

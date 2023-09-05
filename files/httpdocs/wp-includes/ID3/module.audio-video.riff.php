@@ -809,11 +809,17 @@ class getid3_riff extends getid3_handler
 									$strfData = $thisfile_riff['AVI ']['hdrl']['strl']['strf'][$i]['data'];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 									if (!isset($thisfile_riff_raw['strf'][$strhfccType][$streamindex])) {
 										$thisfile_riff_raw['strf'][$strhfccType][$streamindex] = null;
 									}
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+									if (!isset($thisfile_riff_raw['strf'][$strhfccType][$streamindex])) {
+										$thisfile_riff_raw['strf'][$strhfccType][$streamindex] = null;
+									}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 									// shortcut
 									$thisfile_riff_raw_strf_strhfccType_streamindex = &$thisfile_riff_raw['strf'][$strhfccType][$streamindex];
 
@@ -1360,6 +1366,7 @@ class getid3_riff extends getid3_handler
 			$info['playtime_seconds'] = 0;
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if (isset($thisfile_riff_raw['strh'][0]['dwLength']) && isset($thisfile_riff_raw['avih']['dwMicroSecPerFrame'])) { // @phpstan-ignore-line
 			// needed for >2GB AVIs where 'avih' chunk only lists number of frames in that chunk, not entire movie
 			$info['playtime_seconds'] = $thisfile_riff_raw['strh'][0]['dwLength'] * ($thisfile_riff_raw['avih']['dwMicroSecPerFrame'] / 1000000);
@@ -1370,6 +1377,12 @@ class getid3_riff extends getid3_handler
 			$info['playtime_seconds'] = $thisfile_riff_raw['strh'][0]['dwLength'] * ($thisfile_riff_raw['avih']['dwMicroSecPerFrame'] / 1000000);
 		} elseif (isset($thisfile_riff_raw['avih']['dwTotalFrames']) && isset($thisfile_riff_raw['avih']['dwMicroSecPerFrame'])) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if (isset($thisfile_riff_raw['strh'][0]['dwLength']) && isset($thisfile_riff_raw['avih']['dwMicroSecPerFrame'])) { // @phpstan-ignore-line
+			// needed for >2GB AVIs where 'avih' chunk only lists number of frames in that chunk, not entire movie
+			$info['playtime_seconds'] = $thisfile_riff_raw['strh'][0]['dwLength'] * ($thisfile_riff_raw['avih']['dwMicroSecPerFrame'] / 1000000);
+		} elseif (isset($thisfile_riff_raw['avih']['dwTotalFrames']) && isset($thisfile_riff_raw['avih']['dwMicroSecPerFrame'])) { // @phpstan-ignore-line
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$info['playtime_seconds'] = $thisfile_riff_raw['avih']['dwTotalFrames'] * ($thisfile_riff_raw['avih']['dwMicroSecPerFrame'] / 1000000);
 		}
 
@@ -1593,10 +1606,14 @@ class getid3_riff extends getid3_handler
 		$info = &$this->getid3->info;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$RIFFchunk = array();
 =======
 		$RIFFchunk = false;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$RIFFchunk = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$FoundAllChunksWeNeed = false;
 		$LISTchunkParent = null;
 		$LISTchunkMaxOffset = null;
@@ -1952,10 +1969,14 @@ class getid3_riff extends getid3_handler
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return !empty($RIFFchunk) ? $RIFFchunk : false;
 =======
 		return $RIFFchunk;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return !empty($RIFFchunk) ? $RIFFchunk : false;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**

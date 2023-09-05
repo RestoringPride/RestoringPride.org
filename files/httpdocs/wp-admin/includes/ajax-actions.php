@@ -109,6 +109,7 @@ function wp_ajax_ajax_tag_search() {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$taxonomy        = sanitize_key( $_GET['tax'] );
 	$taxonomy_object = get_taxonomy( $taxonomy );
 
@@ -136,35 +137,44 @@ function wp_ajax_ajax_tag_search() {
 =======
 	$taxonomy = sanitize_key( $_GET['tax'] );
 	$tax      = get_taxonomy( $taxonomy );
+=======
+	$taxonomy        = sanitize_key( $_GET['tax'] );
+	$taxonomy_object = get_taxonomy( $taxonomy );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
-	if ( ! $tax ) {
+	if ( ! $taxonomy_object ) {
 		wp_die( 0 );
 	}
 
-	if ( ! current_user_can( $tax->cap->assign_terms ) ) {
+	if ( ! current_user_can( $taxonomy_object->cap->assign_terms ) ) {
 		wp_die( -1 );
 	}
 
-	$s = wp_unslash( $_GET['q'] );
+	$search = wp_unslash( $_GET['q'] );
 
 	$comma = _x( ',', 'tag delimiter' );
 	if ( ',' !== $comma ) {
-		$s = str_replace( $comma, ',', $s );
+		$search = str_replace( $comma, ',', $search );
 	}
 
-	if ( false !== strpos( $s, ',' ) ) {
-		$s = explode( ',', $s );
-		$s = $s[ count( $s ) - 1 ];
+	if ( false !== strpos( $search, ',' ) ) {
+		$search = explode( ',', $search );
+		$search = $search[ count( $search ) - 1 ];
 	}
 
+<<<<<<< HEAD
 	$s = trim( $s );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$search = trim( $search );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Filters the minimum number of characters required to fire a tag search via Ajax.
 	 *
 	 * @since 4.0.0
 	 *
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @param int         $characters      The minimum number of characters required. Default 2.
 	 * @param WP_Taxonomy $taxonomy_object The taxonomy object.
@@ -178,16 +188,27 @@ function wp_ajax_ajax_tag_search() {
 	 */
 	$term_search_min_chars = (int) apply_filters( 'term_search_min_chars', 2, $tax, $s );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param int         $characters      The minimum number of characters required. Default 2.
+	 * @param WP_Taxonomy $taxonomy_object The taxonomy object.
+	 * @param string      $search          The search term.
+	 */
+	$term_search_min_chars = (int) apply_filters( 'term_search_min_chars', 2, $taxonomy_object, $search );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/*
 	 * Require $term_search_min_chars chars for matching (default: 2)
 	 * ensure it's a non-negative, non-zero integer.
 	 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if ( ( 0 == $term_search_min_chars ) || ( strlen( $search ) < $term_search_min_chars ) ) {
 =======
 	if ( ( 0 == $term_search_min_chars ) || ( strlen( $s ) < $term_search_min_chars ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	if ( ( 0 == $term_search_min_chars ) || ( strlen( $search ) < $term_search_min_chars ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		wp_die();
 	}
 
@@ -195,10 +216,14 @@ function wp_ajax_ajax_tag_search() {
 		array(
 			'taxonomy'   => $taxonomy,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			'name__like' => $search,
 =======
 			'name__like' => $s,
 >>>>>>> fb785cbb (Initial commit)
+=======
+			'name__like' => $search,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'fields'     => 'names',
 			'hide_empty' => false,
 			'number'     => isset( $_GET['number'] ) ? (int) $_GET['number'] : 0,
@@ -206,6 +231,9 @@ function wp_ajax_ajax_tag_search() {
 	);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	/**
 	 * Filters the Ajax term search results.
 	 *
@@ -217,8 +245,11 @@ function wp_ajax_ajax_tag_search() {
 	 */
 	$results = apply_filters( 'ajax_term_search_results', $results, $taxonomy_object, $search );
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	echo implode( "\n", $results );
 	wp_die();
 }
@@ -489,10 +520,14 @@ function _wp_ajax_delete_comment_response( $comment_id, $delta = -1 ) {
 	$per_page = isset( $_POST['_per_page'] ) ? (int) $_POST['_per_page'] : 0;
 	$page     = isset( $_POST['_page'] ) ? (int) $_POST['_page'] : 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$url      = isset( $_POST['_url'] ) ? sanitize_url( $_POST['_url'] ) : '';
 =======
 	$url      = isset( $_POST['_url'] ) ? esc_url_raw( $_POST['_url'] ) : '';
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$url      = isset( $_POST['_url'] ) ? sanitize_url( $_POST['_url'] ) : '';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	// JS didn't send us everything we need to know. Just die with success message.
 	if ( ! $total || ! $per_page || ! $page || ! $url ) {
@@ -1072,6 +1107,7 @@ function wp_ajax_add_link_category( $action ) {
 
 	check_ajax_referer( $action );
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	$taxonomy_object = get_taxonomy( 'link_category' );
 
@@ -1081,6 +1117,12 @@ function wp_ajax_add_link_category( $action ) {
 
 	if ( ! current_user_can( $tax->cap->manage_terms ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+	$taxonomy_object = get_taxonomy( 'link_category' );
+
+	if ( ! current_user_can( $taxonomy_object->cap->manage_terms ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		wp_die( -1 );
 	}
 
@@ -1125,6 +1167,7 @@ function wp_ajax_add_link_category( $action ) {
 function wp_ajax_add_tag() {
 	check_ajax_referer( 'add-tag', '_wpnonce_add-tag' );
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	$taxonomy        = ! empty( $_POST['taxonomy'] ) ? $_POST['taxonomy'] : 'post_tag';
 	$taxonomy_object = get_taxonomy( $taxonomy );
@@ -1136,6 +1179,13 @@ function wp_ajax_add_tag() {
 
 	if ( ! current_user_can( $tax->cap->edit_terms ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+	$taxonomy        = ! empty( $_POST['taxonomy'] ) ? $_POST['taxonomy'] : 'post_tag';
+	$taxonomy_object = get_taxonomy( $taxonomy );
+
+	if ( ! current_user_can( $taxonomy_object->cap->edit_terms ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		wp_die( -1 );
 	}
 
@@ -1188,12 +1238,17 @@ function wp_ajax_add_tag() {
 
 	$message = '';
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if ( isset( $messages[ $taxonomy_object->name ][1] ) ) {
 		$message = $messages[ $taxonomy_object->name ][1];
 =======
 	if ( isset( $messages[ $tax->name ][1] ) ) {
 		$message = $messages[ $tax->name ][1];
 >>>>>>> fb785cbb (Initial commit)
+=======
+	if ( isset( $messages[ $taxonomy_object->name ][1] ) ) {
+		$message = $messages[ $taxonomy_object->name ][1];
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	} elseif ( isset( $messages['_item'][1] ) ) {
 		$message = $messages['_item'][1];
 	}
@@ -1232,6 +1287,7 @@ function wp_ajax_get_tagcloud() {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$taxonomy        = sanitize_key( $_POST['tax'] );
 	$taxonomy_object = get_taxonomy( $taxonomy );
 
@@ -1243,13 +1299,21 @@ function wp_ajax_get_tagcloud() {
 =======
 	$taxonomy = sanitize_key( $_POST['tax'] );
 	$tax      = get_taxonomy( $taxonomy );
+=======
+	$taxonomy        = sanitize_key( $_POST['tax'] );
+	$taxonomy_object = get_taxonomy( $taxonomy );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
-	if ( ! $tax ) {
+	if ( ! $taxonomy_object ) {
 		wp_die( 0 );
 	}
 
+<<<<<<< HEAD
 	if ( ! current_user_can( $tax->cap->assign_terms ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	if ( ! current_user_can( $taxonomy_object->cap->assign_terms ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		wp_die( -1 );
 	}
 
@@ -1264,10 +1328,14 @@ function wp_ajax_get_tagcloud() {
 
 	if ( empty( $tags ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		wp_die( $taxonomy_object->labels->not_found );
 =======
 		wp_die( $tax->labels->not_found );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		wp_die( $taxonomy_object->labels->not_found );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	if ( is_wp_error( $tags ) ) {
@@ -1374,22 +1442,31 @@ function wp_ajax_replyto_comment( $action ) {
 	check_ajax_referer( $action, '_ajax_nonce-replyto-comment' );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$comment_post_id = (int) $_POST['comment_post_ID'];
 	$post            = get_post( $comment_post_id );
 =======
 	$comment_post_ID = (int) $_POST['comment_post_ID'];
 	$post            = get_post( $comment_post_ID );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$comment_post_id = (int) $_POST['comment_post_ID'];
+	$post            = get_post( $comment_post_id );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	if ( ! $post ) {
 		wp_die( -1 );
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if ( ! current_user_can( 'edit_post', $comment_post_id ) ) {
 =======
 	if ( ! current_user_can( 'edit_post', $comment_post_ID ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	if ( ! current_user_can( 'edit_post', $comment_post_id ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		wp_die( -1 );
 	}
 
@@ -1403,6 +1480,7 @@ function wp_ajax_replyto_comment( $action ) {
 
 	if ( $user->exists() ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$comment_author       = wp_slash( $user->display_name );
 		$comment_author_email = wp_slash( $user->user_email );
 		$comment_author_url   = wp_slash( $user->user_url );
@@ -1415,6 +1493,12 @@ function wp_ajax_replyto_comment( $action ) {
 		$comment_content      = trim( $_POST['content'] );
 		$comment_type         = isset( $_POST['comment_type'] ) ? trim( $_POST['comment_type'] ) : 'comment';
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$comment_author       = wp_slash( $user->display_name );
+		$comment_author_email = wp_slash( $user->user_email );
+		$comment_author_url   = wp_slash( $user->user_url );
+		$user_id              = $user->ID;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( current_user_can( 'unfiltered_html' ) ) {
 			if ( ! isset( $_POST['_wp_unfiltered_html_comment'] ) ) {
@@ -1433,19 +1517,29 @@ function wp_ajax_replyto_comment( $action ) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$comment_content = trim( $_POST['content'] );
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$comment_content = trim( $_POST['content'] );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( '' === $comment_content ) {
 		wp_die( __( 'Please type your comment text.' ) );
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$comment_type = isset( $_POST['comment_type'] ) ? trim( $_POST['comment_type'] ) : 'comment';
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$comment_type = isset( $_POST['comment_type'] ) ? trim( $_POST['comment_type'] ) : 'comment';
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$comment_parent = 0;
 
 	if ( isset( $_POST['comment_ID'] ) ) {
@@ -1454,6 +1548,9 @@ function wp_ajax_replyto_comment( $action ) {
 
 	$comment_auto_approved = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	$commentdata = array(
 		'comment_post_ID' => $comment_post_id,
@@ -1468,19 +1565,26 @@ function wp_ajax_replyto_comment( $action ) {
 		'comment_parent',
 		'user_id'
 	);
+<<<<<<< HEAD
 =======
 	$commentdata           = compact( 'comment_post_ID', 'comment_author', 'comment_author_email', 'comment_author_url', 'comment_content', 'comment_type', 'comment_parent', 'user_ID' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	// Automatically approve parent comment.
 	if ( ! empty( $_POST['approve_parent'] ) ) {
 		$parent = get_comment( $comment_parent );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( $parent && '0' === $parent->comment_approved && $parent->comment_post_ID == $comment_post_id ) {
 =======
 		if ( $parent && '0' === $parent->comment_approved && $parent->comment_post_ID == $comment_post_ID ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( $parent && '0' === $parent->comment_approved && $parent->comment_post_ID == $comment_post_id ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( ! current_user_can( 'edit_comment', $parent->comment_ID ) ) {
 				wp_die( -1 );
 			}
@@ -1686,10 +1790,14 @@ function wp_ajax_add_menu_item() {
 			'link_after'  => '',
 			'link_before' => '',
 <<<<<<< HEAD
+<<<<<<< HEAD
 			'walker'      => new $walker_class_name(),
 =======
 			'walker'      => new $walker_class_name,
 >>>>>>> fb785cbb (Initial commit)
+=======
+			'walker'      => new $walker_class_name(),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		);
 
 		echo walk_nav_menu_tree( $menu_items, 0, (object) $args );
@@ -2154,6 +2262,7 @@ function wp_ajax_inline_save() {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$post_id = (int) $_POST['post_ID'];
 
 	if ( 'page' === $_POST['post_type'] ) {
@@ -2164,23 +2273,34 @@ function wp_ajax_inline_save() {
 		if ( ! current_user_can( 'edit_post', $post_id ) ) {
 =======
 	$post_ID = (int) $_POST['post_ID'];
+=======
+	$post_id = (int) $_POST['post_ID'];
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	if ( 'page' === $_POST['post_type'] ) {
-		if ( ! current_user_can( 'edit_page', $post_ID ) ) {
+		if ( ! current_user_can( 'edit_page', $post_id ) ) {
 			wp_die( __( 'Sorry, you are not allowed to edit this page.' ) );
 		}
 	} else {
+<<<<<<< HEAD
 		if ( ! current_user_can( 'edit_post', $post_ID ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			wp_die( __( 'Sorry, you are not allowed to edit this post.' ) );
 		}
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$last = wp_check_post_lock( $post_id );
 =======
 	$last = wp_check_post_lock( $post_ID );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$last = wp_check_post_lock( $post_id );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( $last ) {
 		$last_user      = get_userdata( $last );
 		$last_user_name = $last_user ? $last_user->display_name : __( 'Someone' );
@@ -2200,10 +2320,14 @@ function wp_ajax_inline_save() {
 	$data = &$_POST;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$post = get_post( $post_id, ARRAY_A );
 =======
 	$post = get_post( $post_ID, ARRAY_A );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$post = get_post( $post_id, ARRAY_A );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	// Since it's coming from the database.
 	$post = wp_slash( $post );
@@ -2284,6 +2408,7 @@ function wp_ajax_inline_save_tax() {
 	check_ajax_referer( 'taxinlineeditnonce', '_inline_edit' );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$taxonomy        = sanitize_key( $_POST['taxonomy'] );
 	$taxonomy_object = get_taxonomy( $taxonomy );
 
@@ -2294,6 +2419,12 @@ function wp_ajax_inline_save_tax() {
 
 	if ( ! $tax ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$taxonomy        = sanitize_key( $_POST['taxonomy'] );
+	$taxonomy_object = get_taxonomy( $taxonomy );
+
+	if ( ! $taxonomy_object ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		wp_die( 0 );
 	}
 
@@ -2356,9 +2487,12 @@ function wp_ajax_find_posts() {
 	unset( $post_types['attachment'] );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	$s    = wp_unslash( $_POST['ps'] );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$args = array(
 		'post_type'      => array_keys( $post_types ),
 		'post_status'    => 'any',
@@ -2366,14 +2500,20 @@ function wp_ajax_find_posts() {
 	);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$search = wp_unslash( $_POST['ps'] );
 
 	if ( '' !== $search ) {
 		$args['s'] = $search;
+<<<<<<< HEAD
 =======
 	if ( '' !== $s ) {
 		$args['s'] = $s;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	$posts = get_posts( $args );
@@ -2687,10 +2827,14 @@ function wp_ajax_upload_attachment() {
 	/*
 	 * This function does not use wp_send_json_success() / wp_send_json_error()
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * as the html4 Plupload handler requires a text/html Content-Type for older IE.
 =======
 	 * as the html4 Plupload handler requires a text/html content-type for older IE.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * as the html4 Plupload handler requires a text/html Content-Type for older IE.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * See https://core.trac.wordpress.org/ticket/31037
 	 */
 
@@ -2858,18 +3002,24 @@ function wp_ajax_set_post_thumbnail() {
 	$json = ! empty( $_REQUEST['json'] ); // New-style request.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$post_id = (int) $_POST['post_id'];
 	if ( ! current_user_can( 'edit_post', $post_id ) ) {
 =======
 	$post_ID = (int) $_POST['post_id'];
 	if ( ! current_user_can( 'edit_post', $post_ID ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$post_id = (int) $_POST['post_id'];
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		wp_die( -1 );
 	}
 
 	$thumbnail_id = (int) $_POST['thumbnail_id'];
 
 	if ( $json ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 		check_ajax_referer( "update-post_$post_id" );
 	} else {
@@ -2881,14 +3031,22 @@ function wp_ajax_set_post_thumbnail() {
 			$return = _wp_post_thumbnail_html( null, $post_id );
 =======
 		check_ajax_referer( "update-post_$post_ID" );
+=======
+		check_ajax_referer( "update-post_$post_id" );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	} else {
-		check_ajax_referer( "set_post_thumbnail-$post_ID" );
+		check_ajax_referer( "set_post_thumbnail-$post_id" );
 	}
 
 	if ( '-1' == $thumbnail_id ) {
+<<<<<<< HEAD
 		if ( delete_post_thumbnail( $post_ID ) ) {
 			$return = _wp_post_thumbnail_html( null, $post_ID );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( delete_post_thumbnail( $post_id ) ) {
+			$return = _wp_post_thumbnail_html( null, $post_id );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$json ? wp_send_json_success( $return ) : wp_die( $return );
 		} else {
 			wp_die( 0 );
@@ -2896,12 +3054,17 @@ function wp_ajax_set_post_thumbnail() {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if ( set_post_thumbnail( $post_id, $thumbnail_id ) ) {
 		$return = _wp_post_thumbnail_html( $thumbnail_id, $post_id );
 =======
 	if ( set_post_thumbnail( $post_ID, $thumbnail_id ) ) {
 		$return = _wp_post_thumbnail_html( $thumbnail_id, $post_ID );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	if ( set_post_thumbnail( $post_id, $thumbnail_id ) ) {
+		$return = _wp_post_thumbnail_html( $thumbnail_id, $post_id );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$json ? wp_send_json_success( $return ) : wp_die( $return );
 	}
 
@@ -2915,6 +3078,7 @@ function wp_ajax_set_post_thumbnail() {
  */
 function wp_ajax_get_post_thumbnail_html() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$post_id = (int) $_POST['post_id'];
 
 	check_ajax_referer( "update-post_$post_id" );
@@ -2922,11 +3086,18 @@ function wp_ajax_get_post_thumbnail_html() {
 	if ( ! current_user_can( 'edit_post', $post_id ) ) {
 =======
 	$post_ID = (int) $_POST['post_id'];
+=======
+	$post_id = (int) $_POST['post_id'];
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
-	check_ajax_referer( "update-post_$post_ID" );
+	check_ajax_referer( "update-post_$post_id" );
 
+<<<<<<< HEAD
 	if ( ! current_user_can( 'edit_post', $post_ID ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		wp_die( -1 );
 	}
 
@@ -2938,10 +3109,14 @@ function wp_ajax_get_post_thumbnail_html() {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$return = _wp_post_thumbnail_html( $thumbnail_id, $post_id );
 =======
 	$return = _wp_post_thumbnail_html( $thumbnail_id, $post_ID );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$return = _wp_post_thumbnail_html( $thumbnail_id, $post_id );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	wp_send_json_success( $return );
 }
 
@@ -3215,10 +3390,14 @@ function wp_ajax_query_attachments() {
 	// Filter query clauses to include filenames.
 	if ( isset( $query['s'] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		add_filter( 'wp_allow_query_attachment_by_filename', '__return_true' );
 =======
 		add_filter( 'posts_clauses', '_filter_query_attachment_filenames' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		add_filter( 'wp_allow_query_attachment_by_filename', '__return_true' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -3234,9 +3413,13 @@ function wp_ajax_query_attachments() {
 	$query             = apply_filters( 'ajax_query_attachments_args', $query );
 	$attachments_query = new WP_Query( $query );
 <<<<<<< HEAD
+<<<<<<< HEAD
 	update_post_parent_caches( $attachments_query->posts );
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	update_post_parent_caches( $attachments_query->posts );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	$posts       = array_map( 'wp_prepare_attachment_for_js', $attachments_query->posts );
 	$posts       = array_filter( $posts );
@@ -3343,6 +3526,9 @@ function wp_ajax_save_attachment() {
 	} else {
 		wp_update_post( $post );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Fires after an attachment has been updated via the Ajax handler
@@ -3354,8 +3540,11 @@ function wp_ajax_save_attachment() {
 		 * @param array $changes An array containing the updated attachment attributes.
 		 */
 		do_action( 'wp_ajax_save_attachment', $post, $changes );
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	wp_send_json_success();
@@ -3576,10 +3765,14 @@ function wp_ajax_send_link_to_editor() {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$src = sanitize_url( $src );
 =======
 	$src = esc_url_raw( $src );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$src = sanitize_url( $src );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( ! $src ) {
 		wp_send_json_error();
 	}
@@ -3734,13 +3927,19 @@ function wp_ajax_get_revision_diffs() {
 
 	$return = array();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	if ( function_exists( 'set_time_limit' ) ) {
 		set_time_limit( 0 );
 	}
+<<<<<<< HEAD
 =======
 	set_time_limit( 0 );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	foreach ( $_REQUEST['compare'] as $compare_key ) {
 		list( $compare_from, $compare_to ) = explode( ':', $compare_key ); // from:to

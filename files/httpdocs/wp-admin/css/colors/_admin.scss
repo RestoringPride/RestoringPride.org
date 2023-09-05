@@ -3,12 +3,18 @@
 @import 'mixins';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 /**
  * This function name uses British English to maintain backward compatibility, as developers
  * may use the function in their own admin CSS files. See #56811.
  */
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 @function url-friendly-colour( $color ) {
 	@return '%23' + str-slice( '#{ $color }', 2, -1 );
 }
@@ -358,9 +364,13 @@ ul#adminmenu > li.current > a.current:after {
 /* Admin Menu: bubble */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #adminmenu .menu-counter,
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#adminmenu .menu-counter,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 #adminmenu .awaiting-mod,
 #adminmenu .update-plugins {
 	color: $menu-bubble-text;
@@ -796,6 +806,7 @@ div#wp-responsive-toggle a:before {
 /* Welcome Panel */
 .welcome-panel {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	background-color: $dashboard-accent-1;
 }
 
@@ -806,17 +817,24 @@ div#wp-responsive-toggle a:before {
 
 =======
 	background-color: mix($dashboard-accent-1, white, 12%);
+=======
+	background-color: $dashboard-accent-1;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
-.welcome-panel-header-image .about-six {
+.welcome-panel-header-image circle {
+	stroke: $dashboard-accent-2;
 	fill: $dashboard-accent-1;
 }
 
+<<<<<<< HEAD
 .welcome-panel-header-image .about-zero {
 	fill: $dashboard-accent-2;
 }
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 [class*="welcome-panel-icon"] {
 	background-color: $dashboard-icon-background;
 }

@@ -28,13 +28,19 @@ header( 'Content-Type: text/html; charset=utf-8' );
 if ( ! defined( 'WP_ALLOW_REPAIR' ) || ! WP_ALLOW_REPAIR ) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	echo '<h1 class="screen-reader-text">' .
 		/* translators: Hidden accessibility text. */
 		__( 'Allow automatic database repair' ) .
 	'</h1>';
+<<<<<<< HEAD
 =======
 	echo '<h1 class="screen-reader-text">' . __( 'Allow automatic database repair' ) . '</h1>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	echo '<p>';
 	printf(
@@ -45,6 +51,9 @@ if ( ! defined( 'WP_ALLOW_REPAIR' ) || ! WP_ALLOW_REPAIR ) {
 	echo "</p><p><code>define('WP_ALLOW_REPAIR', true);</code></p>";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$default_keys    = array_unique(
 		array(
 			'put your unique phrase here',
@@ -56,9 +65,12 @@ if ( ! defined( 'WP_ALLOW_REPAIR' ) || ! WP_ALLOW_REPAIR ) {
 			__( 'put your unique phrase here' ),
 		)
 	);
+<<<<<<< HEAD
 =======
 	$default_key     = 'put your unique phrase here';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$missing_key     = false;
 	$duplicated_keys = array();
 
@@ -73,16 +85,22 @@ if ( ! defined( 'WP_ALLOW_REPAIR' ) || ! WP_ALLOW_REPAIR ) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	// If at least one key uses a default value, consider it duplicated.
 	foreach ( $default_keys as $default_key ) {
 		if ( isset( $duplicated_keys[ $default_key ] ) ) {
 			$duplicated_keys[ $default_key ] = true;
 		}
+<<<<<<< HEAD
 =======
 	// If at least one key uses the default value, consider it duplicated.
 	if ( isset( $duplicated_keys[ $default_key ] ) ) {
 		$duplicated_keys[ $default_key ] = true;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	// Weed out all unique, non-default values.
@@ -91,13 +109,19 @@ if ( ! defined( 'WP_ALLOW_REPAIR' ) || ! WP_ALLOW_REPAIR ) {
 	if ( $duplicated_keys || $missing_key ) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		echo '<h2 class="screen-reader-text">' .
 			/* translators: Hidden accessibility text. */
 			__( 'Check secret keys' ) .
 		'</h2>';
+<<<<<<< HEAD
 =======
 		echo '<h2 class="screen-reader-text">' . __( 'Check secret keys' ) . '</h2>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/* translators: 1: wp-config.php, 2: Secret key service URL. */
 		echo '<p>' . sprintf( __( 'While you are editing your %1$s file, take a moment to make sure you have all 8 keys and that they are unique. You can generate these using the <a href="%2$s">WordPress.org secret key service</a>.' ), '<code>wp-config.php</code>', 'https://api.wordpress.org/secret-key/1.1/salt/' ) . '</p>';
@@ -105,13 +129,19 @@ if ( ! defined( 'WP_ALLOW_REPAIR' ) || ! WP_ALLOW_REPAIR ) {
 } elseif ( isset( $_GET['repair'] ) ) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	echo '<h1 class="screen-reader-text">' .
 		/* translators: Hidden accessibility text. */
 		__( 'Database repair results' ) .
 	'</h1>';
+<<<<<<< HEAD
 =======
 	echo '<h1 class="screen-reader-text">' . __( 'Database repair results' ) . '</h1>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	$optimize = 2 == $_GET['repair'];
 	$okay     = true;
@@ -203,13 +233,19 @@ if ( ! defined( 'WP_ALLOW_REPAIR' ) || ! WP_ALLOW_REPAIR ) {
 } else {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	echo '<h1 class="screen-reader-text">' .
 		/* translators: Hidden accessibility text. */
 		__( 'WordPress database repair' ) .
 	'</h1>';
+<<<<<<< HEAD
 =======
 	echo '<h1 class="screen-reader-text">' . __( 'WordPress database repair' ) . '</h1>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	if ( isset( $_GET['referrer'] ) && 'is_blog_installed' === $_GET['referrer'] ) {
 		echo '<p>' . __( 'One or more database tables are unavailable. To allow WordPress to attempt to repair these tables, press the &#8220;Repair Database&#8221; button. Repairing can take a while, so please be patient.' ) . '</p>';

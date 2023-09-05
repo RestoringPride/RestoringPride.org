@@ -22,9 +22,13 @@ $wp_file_descriptions = array(
 	'404.php'               => __( '404 Template' ),
 	'link.php'              => __( 'Links Template' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 	'theme.json'            => __( 'Theme Styles & Block Settings' ),
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	'theme.json'            => __( 'Theme Styles & Block Settings' ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	// Archives.
 	'index.php'             => __( 'Main Index Template' ),
 	'archive.php'           => __( 'Archives' ),
@@ -347,15 +351,21 @@ function wp_print_file_editor_templates() {
 			<# } #>
 			<# if ( data.dismissible ) { #>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<button type="button" class="notice-dismiss"><span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Dismiss' );
 					?>
 				</span></button>
+<<<<<<< HEAD
 =======
 				<button type="button" class="notice-dismiss"><span class="screen-reader-text"><?php _e( 'Dismiss' ); ?></span></button>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<# } #>
 		</div>
 	</script>
@@ -557,6 +567,7 @@ function wp_edit_theme_plugin_file( $args ) {
 
 		// Make sure PHP process doesn't die before loopback requests complete.
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( function_exists( 'set_time_limit' ) ) {
 			set_time_limit( 5 * MINUTE_IN_SECONDS );
 		}
@@ -569,6 +580,14 @@ function wp_edit_theme_plugin_file( $args ) {
 		// Time to wait for loopback requests to finish.
 		$timeout = 100;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( function_exists( 'set_time_limit' ) ) {
+			set_time_limit( 5 * MINUTE_IN_SECONDS );
+		}
+
+		// Time to wait for loopback requests to finish.
+		$timeout = 100; // 100 seconds.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$needle_start = "###### wp_scraping_result_start:$scrape_key ######";
 		$needle_end   = "###### wp_scraping_result_end:$scrape_key ######";
@@ -1210,10 +1229,14 @@ function download_url( $url, $timeout = 300, $signature_verification = false ) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$content_disposition = wp_remote_retrieve_header( $response, 'Content-Disposition' );
 =======
 	$content_disposition = wp_remote_retrieve_header( $response, 'content-disposition' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$content_disposition = wp_remote_retrieve_header( $response, 'Content-Disposition' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	if ( $content_disposition ) {
 		$content_disposition = strtolower( $content_disposition );
@@ -1241,10 +1264,14 @@ function download_url( $url, $timeout = 300, $signature_verification = false ) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$content_md5 = wp_remote_retrieve_header( $response, 'Content-MD5' );
 =======
 	$content_md5 = wp_remote_retrieve_header( $response, 'content-md5' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$content_md5 = wp_remote_retrieve_header( $response, 'Content-MD5' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	if ( $content_md5 ) {
 		$md5_check = verify_file_md5( $tmpfname, $content_md5 );
@@ -1272,10 +1299,14 @@ function download_url( $url, $timeout = 300, $signature_verification = false ) {
 	// Perform signature valiation if supported.
 	if ( $signature_verification ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$signature = wp_remote_retrieve_header( $response, 'X-Content-Signature' );
 =======
 		$signature = wp_remote_retrieve_header( $response, 'x-content-signature' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$signature = wp_remote_retrieve_header( $response, 'X-Content-Signature' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( ! $signature ) {
 			// Retrieve signatures from a file if the header wasn't included.
@@ -1424,10 +1455,14 @@ function verify_file_signature( $filename, $signatures, $filename_for_errors = f
 			),
 			array(
 <<<<<<< HEAD
+<<<<<<< HEAD
 				'php'    => PHP_VERSION,
 =======
 				'php'    => phpversion(),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'php'    => PHP_VERSION,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'sodium' => defined( 'SODIUM_LIBRARY_VERSION' ) ? SODIUM_LIBRARY_VERSION : ( defined( 'ParagonIE_Sodium_Compat::VERSION_STRING' ) ? ParagonIE_Sodium_Compat::VERSION_STRING : false ),
 			)
 		);
@@ -1463,10 +1498,14 @@ function verify_file_signature( $filename, $signatures, $filename_for_errors = f
 				),
 				array(
 <<<<<<< HEAD
+<<<<<<< HEAD
 					'php'                => PHP_VERSION,
 =======
 					'php'                => phpversion(),
 >>>>>>> fb785cbb (Initial commit)
+=======
+					'php'                => PHP_VERSION,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					'sodium'             => defined( 'SODIUM_LIBRARY_VERSION' ) ? SODIUM_LIBRARY_VERSION : ( defined( 'ParagonIE_Sodium_Compat::VERSION_STRING' ) ? ParagonIE_Sodium_Compat::VERSION_STRING : false ),
 					'polyfill_is_fast'   => false,
 					'max_execution_time' => ini_get( 'max_execution_time' ),
@@ -1540,10 +1579,14 @@ function verify_file_signature( $filename, $signatures, $filename_for_errors = f
 			'skipped_key' => $skipped_key,
 			'skipped_sig' => $skipped_signature,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			'php'         => PHP_VERSION,
 =======
 			'php'         => phpversion(),
 >>>>>>> fb785cbb (Initial commit)
+=======
+			'php'         => PHP_VERSION,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'sodium'      => defined( 'SODIUM_LIBRARY_VERSION' ) ? SODIUM_LIBRARY_VERSION : ( defined( 'ParagonIE_Sodium_Compat::VERSION_STRING' ) ? ParagonIE_Sodium_Compat::VERSION_STRING : false ),
 		)
 	);
@@ -1757,10 +1800,14 @@ function _unzip_file_ziparchive( $file, $to, $needed_dirs = array() ) {
 		// Only check to see if the Dir exists upon creation failure. Less I/O this way.
 		if ( ! $wp_filesystem->mkdir( $_dir, FS_CHMOD_DIR ) && ! $wp_filesystem->is_dir( $_dir ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			return new WP_Error( 'mkdir_failed_ziparchive', __( 'Could not create directory.' ), $_dir );
 =======
 			return new WP_Error( 'mkdir_failed_ziparchive', __( 'Could not create directory.' ), substr( $_dir, strlen( $to ) ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			return new WP_Error( 'mkdir_failed_ziparchive', __( 'Could not create directory.' ), $_dir );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 	unset( $needed_dirs );
@@ -1902,10 +1949,14 @@ function _unzip_file_pclzip( $file, $to, $needed_dirs = array() ) {
 		// Only check to see if the dir exists upon creation failure. Less I/O this way.
 		if ( ! $wp_filesystem->mkdir( $_dir, FS_CHMOD_DIR ) && ! $wp_filesystem->is_dir( $_dir ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			return new WP_Error( 'mkdir_failed_pclzip', __( 'Could not create directory.' ), $_dir );
 =======
 			return new WP_Error( 'mkdir_failed_pclzip', __( 'Could not create directory.' ), substr( $_dir, strlen( $to ) ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			return new WP_Error( 'mkdir_failed_pclzip', __( 'Could not create directory.' ), $_dir );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 	unset( $needed_dirs );
@@ -2005,6 +2056,9 @@ function copy_dir( $from, $to, $skip_list = array() ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * Moves a directory from one location to another.
  *
  * Recursively invalidates OPcache on success.
@@ -2078,8 +2132,11 @@ function move_dir( $from, $to, $overwrite = false ) {
 }
 
 /**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * Initializes and connects the WordPress Filesystem Abstraction classes.
  *
  * This function will include the chosen transport and attempt connecting.
@@ -2142,6 +2199,7 @@ function WP_Filesystem( $args = false, $context = false, $allow_relaxed_file_own
 	 */
 	if ( ! defined( 'FS_CONNECT_TIMEOUT' ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		define( 'FS_CONNECT_TIMEOUT', 30 ); // 30 seconds.
 	}
 	if ( ! defined( 'FS_TIMEOUT' ) ) {
@@ -2152,6 +2210,12 @@ function WP_Filesystem( $args = false, $context = false, $allow_relaxed_file_own
 	if ( ! defined( 'FS_TIMEOUT' ) ) {
 		define( 'FS_TIMEOUT', 30 );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		define( 'FS_CONNECT_TIMEOUT', 30 ); // 30 seconds.
+	}
+	if ( ! defined( 'FS_TIMEOUT' ) ) {
+		define( 'FS_TIMEOUT', 30 ); // 30 seconds.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	if ( is_wp_error( $wp_filesystem->errors ) && $wp_filesystem->errors->has_errors() ) {
@@ -2448,10 +2512,14 @@ function request_filesystem_credentials( $form_post, $type = '', $error = false,
 
 	if ( $error ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$error_string = __( '<strong>Error:</strong> Could not connect to the server. Please verify the settings are correct.' );
 =======
 		$error_string = __( '<strong>Error</strong>: Could not connect to the server. Please verify the settings are correct.' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$error_string = __( '<strong>Error:</strong> Could not connect to the server. Please verify the settings are correct.' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( is_wp_error( $error ) ) {
 			$error_string = esc_html( $error->get_error_message() );
 		}
@@ -2539,6 +2607,7 @@ function request_filesystem_credentials( $form_post, $type = '', $error = false,
 	<label for="password">
 		<span class="field-title"><?php echo $label_pass; ?></span>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<input name="password" type="password" id="password" value="<?php echo $password_value; ?>"<?php disabled( defined( 'FTP_PASS' ) ); ?> spellcheck="false" />
 		<?php
 		if ( ! defined( 'FTP_PASS' ) ) {
@@ -2550,6 +2619,13 @@ function request_filesystem_credentials( $form_post, $type = '', $error = false,
 		if ( ! defined( 'FTP_PASS' ) ) {
 			_e( 'This password will not be stored on the server.' );}
 >>>>>>> fb785cbb (Initial commit)
+=======
+		<input name="password" type="password" id="password" value="<?php echo $password_value; ?>"<?php disabled( defined( 'FTP_PASS' ) ); ?> spellcheck="false" />
+		<?php
+		if ( ! defined( 'FTP_PASS' ) ) {
+			_e( 'This password will not be stored on the server.' );
+		}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		?>
 	</label>
 </div>
@@ -2599,10 +2675,14 @@ function request_filesystem_credentials( $form_post, $type = '', $error = false,
 	// from WP_Site_Health_Auto_Updates::test_check_wp_filesystem_method().
 	if ( ! function_exists( 'submit_button' ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		require_once ABSPATH . 'wp-admin/includes/template.php';
 =======
 		require_once ABSPATH . '/wp-admin/includes/template.php';
 >>>>>>> fb785cbb (Initial commit)
+=======
+		require_once ABSPATH . 'wp-admin/includes/template.php';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 	?>
 	<p class="request-filesystem-credentials-action-buttons">
@@ -2717,6 +2797,9 @@ function wp_opcache_invalidate( $filepath, $force = false ) {
 	return false;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 /**
  * Attempts to clear the opcode cache for a directory of files.
@@ -2779,5 +2862,8 @@ function wp_opcache_invalidate_directory( $dir ) {
 
 	$invalidate_directory( $dirlist, $dir );
 }
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)

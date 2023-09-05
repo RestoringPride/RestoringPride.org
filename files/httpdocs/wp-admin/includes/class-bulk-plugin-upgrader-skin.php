@@ -17,6 +17,9 @@
  */
 class Bulk_Plugin_Upgrader_Skin extends Bulk_Upgrader_Skin {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Plugin info.
@@ -27,9 +30,12 @@ class Bulk_Plugin_Upgrader_Skin extends Bulk_Upgrader_Skin {
 	 * @var array Plugin data. Values will be empty if not supplied by the plugin.
 	 */
 	public $plugin_info = array();
+<<<<<<< HEAD
 =======
 	public $plugin_info = array(); // Plugin_Upgrader::bulk_upgrade() will fill this in.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	public function add_strings() {
 		parent::add_strings();

@@ -8,9 +8,13 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Debug_Data {
 	/**
 	 * Calls all core functions to check for updates.
@@ -33,20 +37,29 @@ class WP_Debug_Data {
 	 *
 	 * @throws ImagickException
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @global wpdb  $wpdb               WordPress database abstraction object.
 	 * @global array $_wp_theme_features
 =======
 	 * @global wpdb $wpdb WordPress database abstraction object.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @global wpdb  $wpdb               WordPress database abstraction object.
+	 * @global array $_wp_theme_features
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @return array The debug data for the site.
 	 */
 	public static function debug_data() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		global $wpdb, $_wp_theme_features;
 =======
 		global $wpdb;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		global $wpdb, $_wp_theme_features;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		// Save few function calls.
 		$upload_dir             = wp_upload_dir();
@@ -249,10 +262,14 @@ class WP_Debug_Data {
 
 		// Check WP_ENVIRONMENT_TYPE.
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( defined( 'WP_ENVIRONMENT_TYPE' ) && WP_ENVIRONMENT_TYPE ) {
 =======
 		if ( defined( 'WP_ENVIRONMENT_TYPE' ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( defined( 'WP_ENVIRONMENT_TYPE' ) && WP_ENVIRONMENT_TYPE ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$wp_environment_type = WP_ENVIRONMENT_TYPE;
 		} else {
 			$wp_environment_type = __( 'Undefined' );
@@ -597,9 +614,13 @@ class WP_Debug_Data {
 				'memory' => ( defined( 'imagick::RESOURCETYPE_MEMORY' ) ? size_format( $imagick->getResourceLimit( imagick::RESOURCETYPE_MEMORY ) ) : $not_available ),
 				'thread' => ( defined( 'imagick::RESOURCETYPE_THREAD' ) ? $imagick->getResourceLimit( imagick::RESOURCETYPE_THREAD ) : $not_available ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 				'time'   => ( defined( 'imagick::RESOURCETYPE_TIME' ) ? $imagick->getResourceLimit( imagick::RESOURCETYPE_TIME ) : $not_available ),
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'time'   => ( defined( 'imagick::RESOURCETYPE_TIME' ) ? $imagick->getResourceLimit( imagick::RESOURCETYPE_TIME ) : $not_available ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			);
 
 			$limits_debug = array(
@@ -610,9 +631,13 @@ class WP_Debug_Data {
 				'imagick::RESOURCETYPE_MEMORY' => ( defined( 'imagick::RESOURCETYPE_MEMORY' ) ? size_format( $imagick->getResourceLimit( imagick::RESOURCETYPE_MEMORY ) ) : 'not available' ),
 				'imagick::RESOURCETYPE_THREAD' => ( defined( 'imagick::RESOURCETYPE_THREAD' ) ? $imagick->getResourceLimit( imagick::RESOURCETYPE_THREAD ) : 'not available' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 				'imagick::RESOURCETYPE_TIME'   => ( defined( 'imagick::RESOURCETYPE_TIME' ) ? $imagick->getResourceLimit( imagick::RESOURCETYPE_TIME ) : 'not available' ),
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'imagick::RESOURCETYPE_TIME'   => ( defined( 'imagick::RESOURCETYPE_TIME' ) ? $imagick->getResourceLimit( imagick::RESOURCETYPE_TIME ) : 'not available' ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			);
 
 			$info['wp-media']['fields']['imagick_limits'] = array(
@@ -703,6 +728,7 @@ class WP_Debug_Data {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$php_version_debug = PHP_VERSION;
 		// Whether PHP supports 64-bit.
 		$php64bit = ( PHP_INT_SIZE * 8 === 64 );
@@ -720,13 +746,19 @@ class WP_Debug_Data {
 			$php_version_debug = phpversion();
 			// Whether PHP supports 64-bit.
 			$php64bit = ( PHP_INT_SIZE * 8 === 64 );
+=======
+		$php_version_debug = PHP_VERSION;
+		// Whether PHP supports 64-bit.
+		$php64bit = ( PHP_INT_SIZE * 8 === 64 );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
-			$php_version = sprintf(
-				'%s %s',
-				$php_version_debug,
-				( $php64bit ? __( '(Supports 64bit values)' ) : __( '(Does not support 64bit values)' ) )
-			);
+		$php_version = sprintf(
+			'%s %s',
+			$php_version_debug,
+			( $php64bit ? __( '(Supports 64bit values)' ) : __( '(Does not support 64bit values)' ) )
+		);
 
+<<<<<<< HEAD
 			if ( $php64bit ) {
 				$php_version_debug .= ' 64bit';
 			}
@@ -734,6 +766,10 @@ class WP_Debug_Data {
 			$php_version       = __( 'Unable to determine PHP version' );
 			$php_version_debug = 'unknown';
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( $php64bit ) {
+			$php_version_debug .= ' 64bit';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		if ( function_exists( 'php_sapi_name' ) ) {
@@ -1109,9 +1145,12 @@ class WP_Debug_Data {
 
 		// Populate the section for the currently active theme.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		global $_wp_theme_features;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$theme_features = array();
 
 		if ( ! empty( $_wp_theme_features ) ) {
@@ -1443,10 +1482,14 @@ class WP_Debug_Data {
 
 		/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 * Filters the debug information shown on the Tools -> Site Health -> Info screen.
 =======
 		 * Add to or modify the debug information shown on the Tools -> Site Health -> Info screen.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		 * Filters the debug information shown on the Tools -> Site Health -> Info screen.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 *
 		 * Plugin or themes may wish to introduce their own debug information without creating
 		 * additional admin pages. They can utilize this filter to introduce their own sections
@@ -1537,10 +1580,14 @@ class WP_Debug_Data {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Formats the information gathered for debugging, in a manner suitable for copying to a forum or support ticket.
 =======
 	 * Format the information gathered for debugging, in a manner suitable for copying to a forum or support ticket.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Formats the information gathered for debugging, in a manner suitable for copying to a forum or support ticket.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.2.0
 	 *
@@ -1610,6 +1657,7 @@ class WP_Debug_Data {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Fetches the total size of all the database tables for the active database user.
 	 *
 	 * @since 5.2.0
@@ -1622,6 +1670,14 @@ class WP_Debug_Data {
 	 * @since 5.2.0
 	 *
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Fetches the total size of all the database tables for the active database user.
+	 *
+	 * @since 5.2.0
+	 *
+	 * @global wpdb $wpdb WordPress database abstraction object.
+	 *
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @return int The size of the database, in bytes.
 	 */
 	public static function get_database_size() {
@@ -1640,10 +1696,14 @@ class WP_Debug_Data {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Fetches the sizes of the WordPress directories: `wordpress` (ABSPATH), `plugins`, `themes`, and `uploads`.
 =======
 	 * Fetch the sizes of the WordPress directories: `wordpress` (ABSPATH), `plugins`, `themes`, and `uploads`.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Fetches the sizes of the WordPress directories: `wordpress` (ABSPATH), `plugins`, `themes`, and `uploads`.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Intended to supplement the array returned by `WP_Debug_Data::debug_data()`.
 	 *
 	 * @since 5.2.0
@@ -1667,10 +1727,14 @@ class WP_Debug_Data {
 		// We still want to limit it below.
 		if ( empty( $max_execution_time ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$max_execution_time = 30; // 30 seconds.
 =======
 			$max_execution_time = 30;
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$max_execution_time = 30; // 30 seconds.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		if ( $max_execution_time > 20 ) {

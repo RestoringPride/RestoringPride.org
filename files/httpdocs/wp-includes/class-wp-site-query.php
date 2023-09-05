@@ -15,9 +15,13 @@
  * @see WP_Site_Query::__construct() for accepted arguments.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Site_Query {
 
 	/**
@@ -178,6 +182,7 @@ class WP_Site_Query {
 	 *     @type string|string[] $meta_value             Meta value or values to filter by.
 	 *     @type string          $meta_compare           MySQL operator used for comparing the meta value.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 *                                                   See WP_Meta_Query::__construct() for accepted values and default value.
 	 *     @type string          $meta_compare_key       MySQL operator used for comparing the meta key.
 	 *                                                   See WP_Meta_Query::__construct() for accepted values and default value.
@@ -189,15 +194,22 @@ class WP_Site_Query {
 	 *                                                   See WP_Meta_Query::__construct() for accepted values.
 =======
 	 *                                                   See WP_Meta_Query::__construct for accepted values and default value.
+=======
+	 *                                                   See WP_Meta_Query::__construct() for accepted values and default value.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *     @type string          $meta_compare_key       MySQL operator used for comparing the meta key.
-	 *                                                   See WP_Meta_Query::__construct for accepted values and default value.
+	 *                                                   See WP_Meta_Query::__construct() for accepted values and default value.
 	 *     @type string          $meta_type              MySQL data type that the meta_value column will be CAST to for comparisons.
-	 *                                                   See WP_Meta_Query::__construct for accepted values and default value.
+	 *                                                   See WP_Meta_Query::__construct() for accepted values and default value.
 	 *     @type string          $meta_type_key          MySQL data type that the meta_key column will be CAST to for comparisons.
-	 *                                                   See WP_Meta_Query::__construct for accepted values and default value.
+	 *                                                   See WP_Meta_Query::__construct() for accepted values and default value.
 	 *     @type array           $meta_query             An associative array of WP_Meta_Query arguments.
+<<<<<<< HEAD
 	 *                                                   See WP_Meta_Query::__construct for accepted values.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 *                                                   See WP_Meta_Query::__construct() for accepted values.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * }
 	 */
 	public function __construct( $query = '' ) {
@@ -643,12 +655,18 @@ class WP_Site_Query {
 		$date_query = $this->query_vars['date_query'];
 		if ( ! empty( $date_query ) && is_array( $date_query ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$this->date_query = new WP_Date_Query( $date_query, 'registered' );
 
 			// Strip leading 'AND'.
 =======
 			$this->date_query                         = new WP_Date_Query( $date_query, 'registered' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$this->date_query = new WP_Date_Query( $date_query, 'registered' );
+
+			// Strip leading 'AND'.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$this->sql_clauses['where']['date_query'] = preg_replace( '/^\s*AND\s*/', '', $this->date_query->get_sql() );
 		}
 
@@ -669,10 +687,14 @@ class WP_Site_Query {
 		$where = implode( ' AND ', $this->sql_clauses['where'] );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$pieces = array( 'fields', 'join', 'where', 'orderby', 'limits', 'groupby' );
 =======
 		$clauses = array( 'fields', 'join', 'where', 'orderby', 'limits', 'groupby' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$pieces = array( 'fields', 'join', 'where', 'orderby', 'limits', 'groupby' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters the site query clauses.
@@ -683,10 +705,14 @@ class WP_Site_Query {
 		 * @param WP_Site_Query $query   Current instance of WP_Site_Query (passed by reference).
 		 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$clauses = apply_filters_ref_array( 'sites_clauses', array( compact( $pieces ), &$this ) );
 =======
 		$clauses = apply_filters_ref_array( 'sites_clauses', array( compact( $clauses ), &$this ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$clauses = apply_filters_ref_array( 'sites_clauses', array( compact( $pieces ), &$this ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$fields  = isset( $clauses['fields'] ) ? $clauses['fields'] : '';
 		$join    = isset( $clauses['join'] ) ? $clauses['join'] : '';

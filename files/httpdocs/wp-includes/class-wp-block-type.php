@@ -15,9 +15,13 @@
  * @see register_block_type()
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Block_Type {
 
 	/**
@@ -59,10 +63,14 @@ class WP_Block_Type {
 	 *
 	 * @since 5.5.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var string[]|null
 =======
 	 * @var array|null
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var string[]|null
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $parent = null;
 
@@ -72,10 +80,14 @@ class WP_Block_Type {
 	 *
 	 * @since 6.0.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var string[]|null
 =======
 	 * @var array|null
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var string[]|null
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $ancestor = null;
 
@@ -125,10 +137,14 @@ class WP_Block_Type {
 	 *
 	 * @since 5.8.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var array[]
 =======
 	 * @var array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var array[]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $variations = array();
 
@@ -169,10 +185,14 @@ class WP_Block_Type {
 	 *
 	 * @since 5.5.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var string[]
 =======
 	 * @var array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var string[]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $uses_context = array();
 
@@ -181,14 +201,19 @@ class WP_Block_Type {
 	 *
 	 * @since 5.5.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var string[]|null
 =======
 	 * @var array|null
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var string[]|null
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $provides_context = null;
 
 	/**
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * Block type editor only script handles.
 	 *
@@ -244,44 +269,65 @@ class WP_Block_Type {
 	);
 =======
 	 * Block type editor only script handle.
+=======
+	 * Block type editor only script handles.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
-	 * @since 5.0.0
-	 * @var string|null
+	 * @since 6.1.0
+	 * @var string[]
 	 */
-	public $editor_script = null;
+	public $editor_script_handles = array();
 
 	/**
-	 * Block type front end and editor script handle.
+	 * Block type front end and editor script handles.
 	 *
-	 * @since 5.0.0
-	 * @var string|null
+	 * @since 6.1.0
+	 * @var string[]
 	 */
-	public $script = null;
+	public $script_handles = array();
 
 	/**
-	 * Block type front end only script handle.
+	 * Block type front end only script handles.
 	 *
-	 * @since 5.9.0
-	 * @var string|null
+	 * @since 6.1.0
+	 * @var string[]
 	 */
-	public $view_script = null;
+	public $view_script_handles = array();
 
 	/**
-	 * Block type editor only style handle.
+	 * Block type editor only style handles.
 	 *
-	 * @since 5.0.0
-	 * @var string|null
+	 * @since 6.1.0
+	 * @var string[]
 	 */
-	public $editor_style = null;
+	public $editor_style_handles = array();
 
 	/**
-	 * Block type front end and editor style handle.
+	 * Block type front end and editor style handles.
 	 *
-	 * @since 5.0.0
-	 * @var string|null
+	 * @since 6.1.0
+	 * @var string[]
 	 */
+<<<<<<< HEAD
 	public $style = null;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	public $style_handles = array();
+
+	/**
+	 * Deprecated block type properties for script and style handles.
+	 *
+	 * @since 6.1.0
+	 * @var string[]
+	 */
+	private $deprecated_properties = array(
+		'editor_script',
+		'script',
+		'view_script',
+		'editor_style',
+		'style',
+	);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Attributes supported by every block.
@@ -307,11 +353,17 @@ class WP_Block_Type {
 	 * @since 5.9.0 Added the `view_script` property.
 	 * @since 6.0.0 Added the `ancestor` property.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 Added the `editor_script_handles`, `script_handles`, `view_script_handles,
 	 *              `editor_style_handles`, and `style_handles` properties.
 	 *              Deprecated the `editor_script`, `script`, `view_script`, `editor_style`, and `style` properties.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 Added the `editor_script_handles`, `script_handles`, `view_script_handles,
+	 *              `editor_style_handles`, and `style_handles` properties.
+	 *              Deprecated the `editor_script`, `script`, `view_script`, `editor_style`, and `style` properties.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @see register_block_type()
 	 *
@@ -321,6 +373,9 @@ class WP_Block_Type {
 	 *     however the ones described below are supported by default. Default empty array.
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *     @type string        $api_version              Block API version.
 	 *     @type string        $title                    Human-readable block type label.
 	 *     @type string|null   $category                 Block type category classification, used in
@@ -347,6 +402,7 @@ class WP_Block_Type {
 	 *     @type string[]      $view_script_handles      Block type front end only script handles.
 	 *     @type string[]      $editor_style_handles     Block type editor only style handles.
 	 *     @type string[]      $style_handles            Block type front end and editor style handles.
+<<<<<<< HEAD
 =======
 	 *     @type string        $api_version      Block API version.
 	 *     @type string        $title            Human-readable block type label.
@@ -375,6 +431,8 @@ class WP_Block_Type {
 	 *     @type string|null   $editor_style     Block type editor only style handle.
 	 *     @type string|null   $style            Block type front end and editor style handle.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * }
 	 */
 	public function __construct( $block_type, $args = array() ) {
@@ -385,6 +443,9 @@ class WP_Block_Type {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Proxies getting values for deprecated properties for script and style handles for backward compatibility.
 	 * Gets the value for the corresponding new property if the first item in the array provided.
 	 *
@@ -477,8 +538,11 @@ class WP_Block_Type {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Renders the block type output for given attributes.
 	 *
 	 * @since 5.0.0

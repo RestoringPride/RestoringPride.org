@@ -6,9 +6,13 @@
  * @since 2.0.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP {
 	/**
 	 * Public query variables.
@@ -412,10 +416,14 @@ class WP {
 	 *
 	 * @since 2.0.0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @since 4.4.0 `X-Pingback` header is added conditionally for single posts that allow pings.
 	 * @since 6.1.0 Runs after posts have been queried.
 	 *
 	 * @global WP_Query $wp_query WordPress Query object.
+<<<<<<< HEAD
 	 */
 	public function send_headers() {
 		global $wp_query;
@@ -425,6 +433,12 @@ class WP {
 	 */
 	public function send_headers() {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 */
+	public function send_headers() {
+		global $wp_query;
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$headers       = array();
 		$status        = null;
 		$exit_required = false;
@@ -519,6 +533,9 @@ class WP {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( is_singular() ) {
 			$post = isset( $wp_query->post ) ? $wp_query->post : null;
 
@@ -528,8 +545,11 @@ class WP {
 			}
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		/**
 		 * Filters the HTTP headers before they're sent to the browser.
 		 *
@@ -728,6 +748,7 @@ class WP {
 			if ( is_singular() ) {
 				$post = isset( $wp_query->post ) ? $wp_query->post : null;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$next = '<!--nextpage-->';
 
 				// Check for paged content that exceeds the max number of pages.
@@ -741,6 +762,11 @@ class WP {
 				// Check for paged content that exceeds the max number of pages.
 				$next = '<!--nextpage-->';
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$next = '<!--nextpage-->';
+
+				// Check for paged content that exceeds the max number of pages.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				if ( $post && ! empty( $this->query_vars['page'] ) ) {
 					// Check if content is actually intended to be paged.
 					if ( false !== strpos( $post->post_content, $next ) ) {
@@ -803,10 +829,13 @@ class WP {
 		$parsed = $this->parse_request( $query_args );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		$this->send_headers();
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( $parsed ) {
 			$this->query_posts();
 			$this->handle_404();
@@ -814,10 +843,15 @@ class WP {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$this->send_headers();
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$this->send_headers();
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		/**
 		 * Fires once the WordPress environment has been set up.
 		 *

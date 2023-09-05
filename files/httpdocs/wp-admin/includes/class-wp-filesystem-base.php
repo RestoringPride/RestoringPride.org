@@ -12,9 +12,13 @@
  * @since 2.5.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Filesystem_Base {
 
 	/**
@@ -267,10 +271,14 @@ class WP_Filesystem_Base {
 		if ( $this->verbose ) {
 			/* translators: 1: Folder to locate, 2: Folder to start searching from. */
 <<<<<<< HEAD
+<<<<<<< HEAD
 			printf( "\n" . __( 'Looking for %1$s in %2$s' ) . "<br />\n", $folder, $base );
 =======
 			printf( "\n" . __( 'Looking for %1$s in %2$s' ) . "<br/>\n", $folder, $base );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			printf( "\n" . __( 'Looking for %1$s in %2$s' ) . "<br />\n", $folder, $base );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		$folder_parts     = explode( '/', $folder );
@@ -300,10 +308,14 @@ class WP_Filesystem_Base {
 				if ( $this->verbose ) {
 					/* translators: %s: Directory name. */
 <<<<<<< HEAD
+<<<<<<< HEAD
 					printf( "\n" . __( 'Changing to %s' ) . "<br />\n", $newdir );
 =======
 					printf( "\n" . __( 'Changing to %s' ) . "<br/>\n", $newdir );
 >>>>>>> fb785cbb (Initial commit)
+=======
+					printf( "\n" . __( 'Changing to %s' ) . "<br />\n", $newdir );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				}
 
 				// Only search for the remaining path tokens in the directory, not the full path again.
@@ -322,10 +334,14 @@ class WP_Filesystem_Base {
 			if ( $this->verbose ) {
 				/* translators: %s: Directory name. */
 <<<<<<< HEAD
+<<<<<<< HEAD
 				printf( "\n" . __( 'Found %s' ) . "<br />\n", $base . $last_path );
 =======
 				printf( "\n" . __( 'Found %s' ) . "<br/>\n", $base . $last_path );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				printf( "\n" . __( 'Found %s' ) . "<br />\n", $base . $last_path );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 
 			return trailingslashit( $base . $last_path );
@@ -680,6 +696,7 @@ class WP_Filesystem_Base {
 	 * @abstract
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path exists or not.
 	 */
@@ -690,6 +707,12 @@ class WP_Filesystem_Base {
 	 */
 	public function exists( $file ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param string $path Path to file or directory.
+	 * @return bool Whether $path exists or not.
+	 */
+	public function exists( $path ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return false;
 	}
 
@@ -739,6 +762,7 @@ class WP_Filesystem_Base {
 	 * @abstract
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path is writable.
 	 */
@@ -749,6 +773,12 @@ class WP_Filesystem_Base {
 	 */
 	public function is_writable( $file ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param string $path Path to file or directory.
+	 * @return bool Whether $path is writable.
+	 */
+	public function is_writable( $path ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return false;
 	}
 

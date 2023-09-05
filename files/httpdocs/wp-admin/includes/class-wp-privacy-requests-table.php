@@ -154,11 +154,15 @@ abstract class WP_Privacy_Requests_Table extends WP_List_Table {
 		$admin_url = $this->get_admin_url();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$status_label = sprintf(
 =======
 		$current_link_attributes = empty( $current_status ) ? ' class="current" aria-current="page"' : '';
 		$status_label            = sprintf(
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$status_label = sprintf(
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			/* translators: %s: Number of requests. */
 			_nx(
 				'All <span class="count">(%s)</span>',
@@ -170,10 +174,14 @@ abstract class WP_Privacy_Requests_Table extends WP_List_Table {
 		);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$views['all'] = array(
 			'url'     => esc_url( $admin_url ),
 			'label'   => $status_label,
 			'current' => empty( $current_status ),
+<<<<<<< HEAD
 =======
 		$views['all'] = sprintf(
 			'<a href="%s"%s>%s</a>',
@@ -181,6 +189,8 @@ abstract class WP_Privacy_Requests_Table extends WP_List_Table {
 			$current_link_attributes,
 			$status_label
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		);
 
 		foreach ( $statuses as $status => $label ) {
@@ -190,11 +200,15 @@ abstract class WP_Privacy_Requests_Table extends WP_List_Table {
 			}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$total_status_requests = absint( $counts->{$status} );
 =======
 			$current_link_attributes = $status === $current_status ? ' class="current" aria-current="page"' : '';
 			$total_status_requests   = absint( $counts->{$status} );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$total_status_requests = absint( $counts->{$status} );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 			if ( ! $total_status_requests ) {
 				continue;
@@ -208,10 +222,14 @@ abstract class WP_Privacy_Requests_Table extends WP_List_Table {
 			$status_link = add_query_arg( 'filter-status', $status, $admin_url );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$views[ $status ] = array(
 				'url'     => esc_url( $status_link ),
 				'label'   => $status_label,
 				'current' => $status === $current_status,
+<<<<<<< HEAD
 			);
 		}
 
@@ -227,6 +245,12 @@ abstract class WP_Privacy_Requests_Table extends WP_List_Table {
 
 		return $views;
 >>>>>>> fb785cbb (Initial commit)
+=======
+			);
+		}
+
+		return $this->get_views_links( $views );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**

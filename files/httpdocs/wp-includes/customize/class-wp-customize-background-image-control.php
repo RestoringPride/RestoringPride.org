@@ -16,6 +16,9 @@
  */
 class WP_Customize_Background_Image_Control extends WP_Customize_Image_Control {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Customize control type.
@@ -23,8 +26,11 @@ class WP_Customize_Background_Image_Control extends WP_Customize_Image_Control {
 	 * @since 4.1.0
 	 * @var string
 	 */
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	public $type = 'background';
 
 	/**

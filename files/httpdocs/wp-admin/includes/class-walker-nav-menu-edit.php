@@ -181,6 +181,7 @@ class Walker_Nav_Menu_Edit extends Walker_Nav_Menu {
 							'<a class="item-edit" id="edit-%s" href="%s" aria-label="%s"><span class="screen-reader-text">%s</span></a>',
 							$item_id,
 <<<<<<< HEAD
+<<<<<<< HEAD
 							esc_url( $edit_url ),
 							esc_attr__( 'Edit menu item' ),
 							/* translators: Hidden accessibility text. */
@@ -188,6 +189,11 @@ class Walker_Nav_Menu_Edit extends Walker_Nav_Menu {
 							$edit_url,
 							esc_attr__( 'Edit menu item' ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+							esc_url( $edit_url ),
+							esc_attr__( 'Edit menu item' ),
+							/* translators: Hidden accessibility text. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							__( 'Edit' )
 						);
 						?>
@@ -272,10 +278,14 @@ class Walker_Nav_Menu_Edit extends Walker_Nav_Menu {
 							<?php
 							/* translators: %s: Link to menu item's original object. */
 <<<<<<< HEAD
+<<<<<<< HEAD
 							printf( __( 'Original: %s' ), '<a href="' . esc_url( $menu_item->url ) . '">' . esc_html( $original_title ) . '</a>' );
 =======
 							printf( __( 'Original: %s' ), '<a href="' . esc_attr( $menu_item->url ) . '">' . esc_html( $original_title ) . '</a>' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+							printf( __( 'Original: %s' ), '<a href="' . esc_url( $menu_item->url ) . '">' . esc_html( $original_title ) . '</a>' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							?>
 						</p>
 					<?php endif; ?>

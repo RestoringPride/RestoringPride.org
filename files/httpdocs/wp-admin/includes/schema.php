@@ -389,6 +389,9 @@ function populate_options( array $options = array() ) {
 	 * translators: default GMT offset or timezone string. Must be either a valid offset (-12 to 14)
 	 * or a valid timezone string (America/New_York). See https://www.php.net/manual/en/timezones.php
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * for all timezone strings currently supported by PHP.
 	 *
 	 * Important: When a previous timezone string, like `Europe/Kiev`, has been superseded by an
@@ -400,13 +403,17 @@ function populate_options( array $options = array() ) {
 	 * To verify which timezone strings are available in the _oldest_ PHP version supported, you can
 	 * use https://3v4l.org/6YQAt#v5.6.20 and replace the "BR" (Brazil) in the code line with the
 	 * country code for which you want to look up the supported timezone names.
+<<<<<<< HEAD
 =======
 	 * for all timezone strings supported by PHP.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	$offset_or_tz = _x( '0', 'default GMT offset or timezone string' );
 	if ( is_numeric( $offset_or_tz ) ) {
 		$gmt_offset = $offset_or_tz;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	} elseif ( $offset_or_tz && in_array( $offset_or_tz, timezone_identifiers_list( DateTimeZone::ALL_WITH_BC ), true ) ) {
 		$timezone_string = $offset_or_tz;
@@ -414,6 +421,10 @@ function populate_options( array $options = array() ) {
 	} elseif ( $offset_or_tz && in_array( $offset_or_tz, timezone_identifiers_list(), true ) ) {
 			$timezone_string = $offset_or_tz;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	} elseif ( $offset_or_tz && in_array( $offset_or_tz, timezone_identifiers_list( DateTimeZone::ALL_WITH_BC ), true ) ) {
+		$timezone_string = $offset_or_tz;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	$defaults = array(
@@ -421,11 +432,15 @@ function populate_options( array $options = array() ) {
 		'home'                            => $guessurl,
 		'blogname'                        => __( 'My Site' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 		'blogdescription'                 => '',
 =======
 		/* translators: Site tagline. */
 		'blogdescription'                 => __( 'Just another WordPress site' ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+		'blogdescription'                 => '',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		'users_can_register'              => 0,
 		'admin_email'                     => 'you@example.com',
 		/* translators: Default start of the week. 0 = Sunday, 1 = Monday. */
@@ -579,10 +594,13 @@ function populate_options( array $options = array() ) {
 	// 3.0.0 multisite.
 	if ( is_multisite() ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		/* translators: %s: Network title. */
 		$defaults['blogdescription']     = sprintf( __( 'Just another %s site' ), get_network()->site_name );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$defaults['permalink_structure'] = '/%year%/%monthnum%/%day%/%postname%/';
 	}
 
@@ -1070,10 +1088,14 @@ function populate_network( $network_id = 1, $domain = '', $email = '', $site_nam
 	 */
 	if ( ! is_multisite() ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$current_site            = new stdClass();
 =======
 		$current_site            = new stdClass;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$current_site            = new stdClass();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$current_site->domain    = $domain;
 		$current_site->path      = $path;
 		$current_site->site_name = ucfirst( $domain );
@@ -1092,6 +1114,9 @@ function populate_network( $network_id = 1, $domain = '', $email = '', $site_nam
 		update_user_meta( $site_user->ID, 'primary_blog', $current_site->blog_id );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// Unable to use update_network_option() while populating the network.
 		$wpdb->insert(
 			$wpdb->sitemeta,
@@ -1102,8 +1127,11 @@ function populate_network( $network_id = 1, $domain = '', $email = '', $site_nam
 			)
 		);
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( $subdomain_install ) {
 			$wp_rewrite->set_permalink_structure( '/%year%/%monthnum%/%day%/%postname%/' );
 		} else {
@@ -1307,9 +1335,12 @@ We hope you enjoy your new site. Thanks!
 		'upload_space_check_disabled' => is_multisite() ? get_site_option( 'upload_space_check_disabled' ) : '1',
 		'subdomain_install'           => $subdomain_install,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		'global_terms_enabled'        => global_terms_enabled() ? '1' : '0',
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		'ms_files_rewriting'          => is_multisite() ? get_site_option( 'ms_files_rewriting' ) : '0',
 		'user_count'                  => get_site_option( 'user_count' ),
 		'initial_db_version'          => get_option( 'initial_db_version' ),

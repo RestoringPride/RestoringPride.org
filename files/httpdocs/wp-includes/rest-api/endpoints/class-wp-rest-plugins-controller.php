@@ -572,19 +572,28 @@ class WP_REST_Plugins_Controller extends WP_REST_Controller {
 	 * @since 5.5.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param array           $item    Unmarked up and untranslated plugin data from {@see get_plugin_data()}.
 =======
 	 * @param mixed           $item    Unmarked up and untranslated plugin data from {@see get_plugin_data()}.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param array           $item    Unmarked up and untranslated plugin data from {@see get_plugin_data()}.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param WP_REST_Request $request Request object.
 	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
 	 */
 	public function prepare_item_for_response( $item, $request ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$fields = $this->get_fields_for_response( $request );
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$fields = $this->get_fields_for_response( $request );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$item   = _get_plugin_data_markup_translate( $item['_file'], $item, false );
 		$marked = _get_plugin_data_markup_translate( $item['_file'], $item, true );
 
@@ -610,13 +619,19 @@ class WP_REST_Plugins_Controller extends WP_REST_Controller {
 
 		$response = new WP_REST_Response( $data );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $item ) );
 		}
+<<<<<<< HEAD
 =======
 		$response->add_links( $this->prepare_links( $item ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters plugin data for a REST API response.
@@ -642,6 +657,9 @@ class WP_REST_Plugins_Controller extends WP_REST_Controller {
 		return array(
 			'self' => array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'href' => rest_url(
 					sprintf(
 						'%s/%s/%s',
@@ -650,9 +668,12 @@ class WP_REST_Plugins_Controller extends WP_REST_Controller {
 						substr( $item['_file'], 0, - 4 )
 					)
 				),
+<<<<<<< HEAD
 =======
 				'href' => rest_url( sprintf( '%s/%s/%s', $this->namespace, $this->rest_base, substr( $item['_file'], 0, - 4 ) ) ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			),
 		);
 	}

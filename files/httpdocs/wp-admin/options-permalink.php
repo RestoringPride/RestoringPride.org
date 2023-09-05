@@ -58,6 +58,7 @@ get_current_screen()->add_help_tab(
 
 $help_sidebar_content = '<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
 <<<<<<< HEAD
+<<<<<<< HEAD
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/settings-permalinks-screen/">Documentation on Permalinks Settings</a>' ) . '</p>' .
 	'<p>' . __( '<a href="https://wordpress.org/documentation/article/customize-permalinks/">Documentation on Using Permalinks</a>' ) . '</p>';
 
@@ -69,6 +70,10 @@ $help_sidebar_content .= '<p>' . __( '<a href="https://wordpress.org/support/for
 =======
 						'<p>' . __( '<a href="https://wordpress.org/support/article/settings-permalinks-screen/">Documentation on Permalinks Settings</a>' ) . '</p>' .
 						'<p>' . __( '<a href="https://wordpress.org/support/article/using-permalinks/">Documentation on Using Permalinks</a>' ) . '</p>';
+=======
+	'<p>' . __( '<a href="https://wordpress.org/support/article/settings-permalinks-screen/">Documentation on Permalinks Settings</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://wordpress.org/support/article/using-permalinks/">Documentation on Using Permalinks</a>' ) . '</p>';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 if ( $is_nginx ) {
 	$help_sidebar_content .= '<p>' . __( '<a href="https://wordpress.org/support/article/nginx/">Documentation on Nginx configuration</a>.' ) . '</p>';
@@ -85,6 +90,7 @@ $iis7_permalinks     = iis7_supports_permalinks();
 $permalink_structure = get_option( 'permalink_structure' );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 $index_php_prefix = '';
 $blog_prefix      = '';
 
@@ -96,6 +102,13 @@ $blog_prefix = '';
 if ( ! got_url_rewrite() ) {
 	$prefix = '/index.php';
 >>>>>>> fb785cbb (Initial commit)
+=======
+$index_php_prefix = '';
+$blog_prefix      = '';
+
+if ( ! got_url_rewrite() ) {
+	$index_php_prefix = '/index.php';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 /*
@@ -105,12 +118,18 @@ if ( ! got_url_rewrite() ) {
  * base prefix, WordPress core can no longer account for the possible collision.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 if ( is_multisite() && ! is_subdomain_install() && is_main_site()
 	&& 0 === strpos( $permalink_structure, '/blog/' )
 ) {
 =======
 if ( is_multisite() && ! is_subdomain_install() && is_main_site() && 0 === strpos( $permalink_structure, '/blog/' ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+if ( is_multisite() && ! is_subdomain_install() && is_main_site()
+	&& 0 === strpos( $permalink_structure, '/blog/' )
+) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$blog_prefix = '/blog';
 }
 
@@ -133,6 +152,7 @@ if ( isset( $_POST['permalink_structure'] ) || isset( $_POST['category_base'] ) 
 		if ( ! empty( $permalink_structure ) ) {
 			$permalink_structure = preg_replace( '#/+#', '/', '/' . str_replace( '#', '', $permalink_structure ) );
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 			if ( $index_php_prefix && $blog_prefix ) {
 				$permalink_structure = $index_php_prefix . preg_replace( '#^/?index\.php#', '', $permalink_structure );
@@ -140,6 +160,11 @@ if ( isset( $_POST['permalink_structure'] ) || isset( $_POST['category_base'] ) 
 			if ( $prefix && $blog_prefix ) {
 				$permalink_structure = $prefix . preg_replace( '#^/?index\.php#', '', $permalink_structure );
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+			if ( $index_php_prefix && $blog_prefix ) {
+				$permalink_structure = $index_php_prefix . preg_replace( '#^/?index\.php#', '', $permalink_structure );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			} else {
 				$permalink_structure = $blog_prefix . $permalink_structure;
 			}
@@ -175,12 +200,18 @@ if ( isset( $_POST['permalink_structure'] ) || isset( $_POST['category_base'] ) 
 
 if ( $iis7_permalinks ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if ( ( ! file_exists( $home_path . 'web.config' )
 		&& win_is_writable( $home_path ) ) || win_is_writable( $home_path . 'web.config' )
 	) {
 =======
 	if ( ( ! file_exists( $home_path . 'web.config' ) && win_is_writable( $home_path ) ) || win_is_writable( $home_path . 'web.config' ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	if ( ( ! file_exists( $home_path . 'web.config' )
+		&& win_is_writable( $home_path ) ) || win_is_writable( $home_path . 'web.config' )
+	) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$writable = true;
 	} else {
 		$writable = false;
@@ -189,12 +220,18 @@ if ( $iis7_permalinks ) {
 	$writable = false;
 } else {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if ( ( ! file_exists( $home_path . '.htaccess' )
 		&& is_writable( $home_path ) ) || is_writable( $home_path . '.htaccess' )
 	) {
 =======
 	if ( ( ! file_exists( $home_path . '.htaccess' ) && is_writable( $home_path ) ) || is_writable( $home_path . '.htaccess' ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	if ( ( ! file_exists( $home_path . '.htaccess' )
+		&& is_writable( $home_path ) ) || is_writable( $home_path . '.htaccess' )
+	) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$writable = true;
 	} else {
 		$writable       = false;
@@ -239,10 +276,14 @@ if ( $structure_updated ) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	set_transient( 'settings_errors', get_settings_errors(), 30 ); // 30 seconds.
 =======
 	set_transient( 'settings_errors', get_settings_errors(), 30 );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	set_transient( 'settings_errors', get_settings_errors(), 30 ); // 30 seconds.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	wp_redirect( admin_url( 'options-permalink.php?settings-updated=true' ) );
 	exit;
@@ -259,6 +300,9 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 <?php wp_nonce_field( 'update-permalink' ); ?>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <p>
 <?php
 printf(
@@ -268,6 +312,7 @@ printf(
 );
 ?>
 </p>
+<<<<<<< HEAD
 
 <?php
 if ( is_multisite() && ! is_subdomain_install() && is_main_site()
@@ -287,12 +332,22 @@ if ( is_multisite() && ! is_subdomain_install() && is_main_site()
 <?php
 if ( is_multisite() && ! is_subdomain_install() && is_main_site() && 0 === strpos( $permalink_structure, '/blog/' ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+<?php
+if ( is_multisite() && ! is_subdomain_install() && is_main_site()
+	&& 0 === strpos( $permalink_structure, '/blog/' )
+) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$permalink_structure = preg_replace( '|^/?blog|', '', $permalink_structure );
 	$category_base       = preg_replace( '|^/?blog|', '', $category_base );
 	$tag_base            = preg_replace( '|^/?blog|', '', $tag_base );
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 $url_base = home_url( $blog_prefix . $index_php_prefix );
 
 $default_structures = array(
@@ -326,6 +381,7 @@ $default_structures = array(
 		'value'   => $index_php_prefix . '/%postname%/',
 		'example' => $url_base . '/' . _x( 'sample-post', 'sample permalink structure' ) . '/',
 	),
+<<<<<<< HEAD
 );
 
 $default_structure_values = wp_list_pluck( $default_structures, 'value' );
@@ -469,91 +525,128 @@ $structures = array(
 	2 => $prefix . '/%year%/%monthnum%/%postname%/',
 	3 => $prefix . '/' . _x( 'archives', 'sample permalink base' ) . '/%post_id%',
 	4 => $prefix . '/%postname%/',
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 );
+
+$default_structure_values = wp_list_pluck( $default_structures, 'value' );
+
+$available_tags = array(
+	/* translators: %s: Permalink structure tag. */
+	'year'     => __( '%s (The year of the post, four digits, for example 2004.)' ),
+	/* translators: %s: Permalink structure tag. */
+	'monthnum' => __( '%s (Month of the year, for example 05.)' ),
+	/* translators: %s: Permalink structure tag. */
+	'day'      => __( '%s (Day of the month, for example 28.)' ),
+	/* translators: %s: Permalink structure tag. */
+	'hour'     => __( '%s (Hour of the day, for example 15.)' ),
+	/* translators: %s: Permalink structure tag. */
+	'minute'   => __( '%s (Minute of the hour, for example 43.)' ),
+	/* translators: %s: Permalink structure tag. */
+	'second'   => __( '%s (Second of the minute, for example 33.)' ),
+	/* translators: %s: Permalink structure tag. */
+	'post_id'  => __( '%s (The unique ID of the post, for example 423.)' ),
+	/* translators: %s: Permalink structure tag. */
+	'postname' => __( '%s (The sanitized post title (slug).)' ),
+	/* translators: %s: Permalink structure tag. */
+	'category' => __( '%s (Category slug. Nested sub-categories appear as nested directories in the URL.)' ),
+	/* translators: %s: Permalink structure tag. */
+	'author'   => __( '%s (A sanitized version of the author name.)' ),
+);
+
+/**
+ * Filters the list of available permalink structure tags on the Permalinks settings page.
+ *
+ * @since 4.9.0
+ *
+ * @param string[] $available_tags An array of key => value pairs of available permalink structure tags.
+ */
+$available_tags = apply_filters( 'available_permalink_structure_tags', $available_tags );
+
+/* translators: %s: Permalink structure tag. */
+$tag_added = __( '%s added to permalink structure' );
+/* translators: %s: Permalink structure tag. */
+$tag_removed = __( '%s removed from permalink structure' );
+/* translators: %s: Permalink structure tag. */
+$tag_already_used = __( '%s (already used in permalink structure)' );
 ?>
 <h2 class="title"><?php _e( 'Common Settings' ); ?></h2>
-<table class="form-table permalink-structure">
-	<tr>
-		<th scope="row"><label><input name="selection" type="radio" value="" <?php checked( '', $permalink_structure ); ?> /> <?php _e( 'Plain' ); ?></label></th>
-		<td><code><?php echo get_option( 'home' ); ?>/?p=123</code></td>
-	</tr>
-	<tr>
-		<th scope="row"><label><input name="selection" type="radio" value="<?php echo esc_attr( $structures[1] ); ?>" <?php checked( $structures[1], $permalink_structure ); ?> /> <?php _e( 'Day and name' ); ?></label></th>
-		<td><code><?php echo get_option( 'home' ) . $blog_prefix . $prefix . '/' . gmdate( 'Y' ) . '/' . gmdate( 'm' ) . '/' . gmdate( 'd' ) . '/' . _x( 'sample-post', 'sample permalink structure' ) . '/'; ?></code></td>
-	</tr>
-	<tr>
-		<th scope="row"><label><input name="selection" type="radio" value="<?php echo esc_attr( $structures[2] ); ?>" <?php checked( $structures[2], $permalink_structure ); ?> /> <?php _e( 'Month and name' ); ?></label></th>
-		<td><code><?php echo get_option( 'home' ) . $blog_prefix . $prefix . '/' . gmdate( 'Y' ) . '/' . gmdate( 'm' ) . '/' . _x( 'sample-post', 'sample permalink structure' ) . '/'; ?></code></td>
-	</tr>
-	<tr>
-		<th scope="row"><label><input name="selection" type="radio" value="<?php echo esc_attr( $structures[3] ); ?>" <?php checked( $structures[3], $permalink_structure ); ?> /> <?php _e( 'Numeric' ); ?></label></th>
-		<td><code><?php echo get_option( 'home' ) . $blog_prefix . $prefix . '/' . _x( 'archives', 'sample permalink base' ) . '/123'; ?></code></td>
-	</tr>
-	<tr>
-		<th scope="row"><label><input name="selection" type="radio" value="<?php echo esc_attr( $structures[4] ); ?>" <?php checked( $structures[4], $permalink_structure ); ?> /> <?php _e( 'Post name' ); ?></label></th>
-		<td><code><?php echo get_option( 'home' ) . $blog_prefix . $prefix . '/' . _x( 'sample-post', 'sample permalink structure' ) . '/'; ?></code></td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<label><input name="selection" id="custom_selection" type="radio" value="custom" <?php checked( ! in_array( $permalink_structure, $structures, true ) ); ?> />
-			<?php _e( 'Custom Structure' ); ?>
-			</label>
-		</th>
-		<td>
-			<code><?php echo get_option( 'home' ) . $blog_prefix; ?></code>
-			<input name="permalink_structure" id="permalink_structure" type="text" value="<?php echo esc_attr( $permalink_structure ); ?>" class="regular-text code" />
-			<div class="available-structure-tags hide-if-no-js">
-				<div id="custom_selection_updated" aria-live="assertive" class="screen-reader-text"></div>
+<p>
+<?php
+printf(
+	/* translators: %s: %postname% */
+	__( 'Select the permalink structure for your website. Including the %s tag makes links easy to understand, and can help your posts rank higher in search engines.' ),
+	'<code>%postname%</code>'
+);
+?>
+</p>
+<table class="form-table permalink-structure" role="presentation">
+<tbody>
+<tr>
+	<th scope="row"><?php _e( 'Permalink structure' ); ?></th>
+	<td>
+		<fieldset class="structure-selection">
+			<legend class="screen-reader-text">
 				<?php
-				$available_tags = array(
-					/* translators: %s: Permalink structure tag. */
-					'year'     => __( '%s (The year of the post, four digits, for example 2004.)' ),
-					/* translators: %s: Permalink structure tag. */
-					'monthnum' => __( '%s (Month of the year, for example 05.)' ),
-					/* translators: %s: Permalink structure tag. */
-					'day'      => __( '%s (Day of the month, for example 28.)' ),
-					/* translators: %s: Permalink structure tag. */
-					'hour'     => __( '%s (Hour of the day, for example 15.)' ),
-					/* translators: %s: Permalink structure tag. */
-					'minute'   => __( '%s (Minute of the hour, for example 43.)' ),
-					/* translators: %s: Permalink structure tag. */
-					'second'   => __( '%s (Second of the minute, for example 33.)' ),
-					/* translators: %s: Permalink structure tag. */
-					'post_id'  => __( '%s (The unique ID of the post, for example 423.)' ),
-					/* translators: %s: Permalink structure tag. */
-					'postname' => __( '%s (The sanitized post title (slug).)' ),
-					/* translators: %s: Permalink structure tag. */
-					'category' => __( '%s (Category slug. Nested sub-categories appear as nested directories in the URL.)' ),
-					/* translators: %s: Permalink structure tag. */
-					'author'   => __( '%s (A sanitized version of the author name.)' ),
-				);
+				/* translators: Hidden accessibility text. */
+				_e( 'Permalink structure' );
+				?>
+			</legend>
+			<?php foreach ( $default_structures as $input ) : ?>
+			<div class="row">
+				<input id="permalink-input-<?php echo esc_attr( $input['id'] ); ?>"
+					name="selection" aria-describedby="permalink-<?php echo esc_attr( $input['id'] ); ?>"
+					type="radio" value="<?php echo esc_attr( $input['value'] ); ?>"
+					<?php checked( $input['value'], $permalink_structure ); ?>
+				/>
+				<div>
+					<label for="permalink-input-<?php echo esc_attr( $input['id'] ); ?>">
+						<?php echo esc_html( $input['label'] ); ?>
+					</label>
+					<p>
+						<code id="permalink-<?php echo esc_attr( $input['id'] ); ?>">
+							<?php echo esc_html( $input['example'] ); ?>
+						</code>
+					</p>
+				</div>
+			</div><!-- .row -->
+			<?php endforeach; ?>
 
-				/**
-				 * Filters the list of available permalink structure tags on the Permalinks settings page.
-				 *
-				 * @since 4.9.0
-				 *
-				 * @param string[] $available_tags An array of key => value pairs of available permalink structure tags.
-				 */
-				$available_tags = apply_filters( 'available_permalink_structure_tags', $available_tags );
-
-				/* translators: %s: Permalink structure tag. */
-				$structure_tag_added = __( '%s added to permalink structure' );
-
-				/* translators: %s: Permalink structure tag. */
-				$structure_tag_already_used = __( '%s (already used in permalink structure)' );
-
-				if ( ! empty( $available_tags ) ) :
-					?>
-					<p><?php _e( 'Available tags:' ); ?></p>
-					<ul role="list">
-						<?php
-						foreach ( $available_tags as $tag => $explanation ) {
+			<div class="row">
+				<input id="custom_selection"
+					name="selection" type="radio" value="custom"
+					<?php checked( ! in_array( $permalink_structure, $default_structure_values, true ) ); ?>
+				/>
+				<div>
+					<label for="custom_selection"><?php _e( 'Custom Structure' ); ?></label>
+					<p>
+						<label for="permalink_structure" class="screen-reader-text">
+							<?php
+							/* translators: Hidden accessibility text. */
+							_e( 'Customize permalink structure by selecting available tags' );
 							?>
-							<li>
-								<button type="button"
+						</label>
+						<span class="code">
+							<code id="permalink-custom"><?php echo esc_url( $url_base ); ?></code>
+							<input name="permalink_structure" id="permalink_structure"
+								type="text" value="<?php echo esc_attr( $permalink_structure ); ?>"
+								aria-describedby="permalink-custom" class="regular-text code"
+							/>
+						</span>
+					</p>
+
+					<div class="available-structure-tags hide-if-no-js">
+						<div id="custom_selection_updated" aria-live="assertive" class="screen-reader-text"></div>
+						<?php if ( ! empty( $available_tags ) ) : ?>
+						<fieldset>
+							<legend><?php _e( 'Available tags:' ); ?></legend>
+							<ul role="list">
+							<?php foreach ( $available_tags as $tag => $explanation ) : ?>
+								<li>
+									<button type="button"
 										class="button button-secondary"
 										aria-label="<?php echo esc_attr( sprintf( $explanation, $tag ) ); ?>"
+<<<<<<< HEAD
 										data-added="<?php echo esc_attr( sprintf( $structure_tag_added, $tag ) ); ?>"
 										data-used="<?php echo esc_attr( sprintf( $structure_tag_already_used, $tag ) ); ?>">
 									<?php echo '%' . $tag . '%'; ?>
@@ -568,27 +661,55 @@ $structures = array(
 		</td>
 	</tr>
 >>>>>>> fb785cbb (Initial commit)
+=======
+										data-added="<?php echo esc_attr( sprintf( $tag_added, $tag ) ); ?>"
+										data-removed="<?php echo esc_attr( sprintf( $tag_removed, $tag ) ); ?>"
+										data-used="<?php echo esc_attr( sprintf( $tag_already_used, $tag ) ); ?>">
+										<?php echo '%' . esc_html( $tag ) . '%'; ?>
+									</button>
+								</li>
+							<?php endforeach; ?>
+							</ul>
+						</fieldset>
+						<?php endif; ?>
+					</div><!-- .available-structure-tags -->
+				</div>
+			</div><!-- .row -->
+		</fieldset><!-- .structure-selection -->
+	</td>
+</tr>
+</tbody>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 </table>
 
 <h2 class="title"><?php _e( 'Optional' ); ?></h2>
 <p>
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 printf(
 	/* translators: %s: Placeholder that must come at the start of the URL. */
 	__( 'If you like, you may enter custom structures for your category and tag URLs here. For example, using <code>topics</code> as your category base would make your category links like <code>%s/topics/uncategorized/</code>. If you leave these blank the defaults will be used.' ),
 	$url_base
 );
+<<<<<<< HEAD
 =======
 /* translators: %s: Placeholder that must come at the start of the URL. */
 printf( __( 'If you like, you may enter custom structures for your category and tag URLs here. For example, using <code>topics</code> as your category base would make your category links like <code>%s/topics/uncategorized/</code>. If you leave these blank the defaults will be used.' ), get_option( 'home' ) . $blog_prefix . $prefix );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 ?>
 </p>
 
 <table class="form-table" role="presentation">
 	<tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<th>
 			<label for="category_base">
 				<?php /* translators: Prefix for category permalinks. */ _e( 'Category base' ); ?>
@@ -600,6 +721,7 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 				value="<?php echo esc_attr( $category_base ); ?>" class="regular-text code"
 			/>
 		</td>
+<<<<<<< HEAD
 	</tr>
 	<tr>
 		<th>
@@ -619,6 +741,19 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 		<th><label for="tag_base"><?php _e( 'Tag base' ); ?></label></th>
 		<td><?php echo $blog_prefix; ?> <input name="tag_base" id="tag_base" type="text" value="<?php echo esc_attr( $tag_base ); ?>" class="regular-text code" /></td>
 >>>>>>> fb785cbb (Initial commit)
+=======
+	</tr>
+	<tr>
+		<th>
+			<label for="tag_base"><?php _e( 'Tag base' ); ?></label>
+		</th>
+		<td>
+			<?php echo $blog_prefix; ?>
+			<input name="tag_base" id="tag_base" type="text"
+				value="<?php echo esc_attr( $tag_base ); ?>" class="regular-text code"
+			/>
+		</td>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	</tr>
 	<?php do_settings_fields( 'permalink', 'optional' ); ?>
 </table>
@@ -628,21 +763,30 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 <?php submit_button(); ?>
 </form>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <?php if ( ! is_multisite() ) : ?>
 =======
 <?php if ( ! is_multisite() ) { ?>
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+<?php if ( ! is_multisite() ) : ?>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<?php
 	if ( $iis7_permalinks ) :
 		if ( isset( $_POST['submit'] ) && $permalink_structure && ! $using_index_permalinks && ! $writable ) :
 			if ( file_exists( $home_path . 'web.config' ) ) :
 				?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<p id="iis-description-a">
 =======
 <p id="iis-description-a">
 >>>>>>> fb785cbb (Initial commit)
+=======
+				<p id="iis-description-a">
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<?php
 				printf(
 					/* translators: 1: web.config, 2: Documentation URL, 3: Ctrl + A, 4: ⌘ + A, 5: Element code. */
@@ -655,6 +799,9 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 				);
 				?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				</p>
 				<form action="options-permalink.php" method="post">
 					<?php wp_nonce_field( 'update-permalink' ); ?>
@@ -667,6 +814,7 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 					</p>
 				</form>
 				<p>
+<<<<<<< HEAD
 =======
 </p>
 <form action="options-permalink.php" method="post">
@@ -675,6 +823,8 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 </form>
 <p>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<?php
 				printf(
 					/* translators: %s: web.config */
@@ -683,6 +833,9 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 				);
 				?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				</p>
 			<?php else : ?>
 				<p id="iis-description-b">
@@ -721,6 +874,7 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 	<?php else : ?>
 		<?php if ( $permalink_structure && ! $using_index_permalinks && ! $writable && $htaccess_update_required ) : ?>
 			<p id="htaccess-description">
+<<<<<<< HEAD
 			<?php
 			printf(
 				/* translators: 1: .htaccess, 2: Documentation URL, 3: Ctrl + A, 4: ⌘ + A */
@@ -731,18 +885,27 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 </p>
 		<?php else : ?>
 <p id="iis-description-b">
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<?php
 			printf(
-				/* translators: 1: Documentation URL, 2: web.config, 3: Ctrl + A, 4: ⌘ + A */
-				__( '<strong>Error:</strong> The root directory of your site is not <a href="%1$s">writable</a>, so creating a file automatically was not possible. This is the URL rewrite rule you should have in your %2$s file. Create a new file called %2$s in the root directory of your site. Click in the field and press %3$s (or %4$s on Mac) to select all. Then insert this code into the %2$s file.' ),
+				/* translators: 1: .htaccess, 2: Documentation URL, 3: Ctrl + A, 4: ⌘ + A */
+				__( '<strong>Error:</strong> Your %1$s file is not <a href="%2$s">writable</a>, so updating it automatically was not possible. These are the mod_rewrite rules you should have in your %1$s file. Click in the field and press %3$s (or %4$s on Mac) to select all.' ),
+				'<code>.htaccess</code>',
 				__( 'https://wordpress.org/support/article/changing-file-permissions/' ),
+<<<<<<< HEAD
 				'<code>web.config</code>',
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'<kbd>Ctrl + A</kbd>',
 				'<kbd>⌘ + A</kbd>'
 			);
 			?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			</p>
 			<form action="options-permalink.php" method="post">
 				<?php wp_nonce_field( 'update-permalink' ); ?>
@@ -757,6 +920,7 @@ printf( __( 'If you like, you may enter custom structures for your category and 
 		<?php endif; // End if ! $writable && $htaccess_update_required. ?>
 	<?php endif; // End if $iis7_permalinks. ?>
 <?php endif; // End if ! is_multisite(). ?>
+<<<<<<< HEAD
 
 </div><!-- .wrap -->
 =======
@@ -802,5 +966,9 @@ else :
 
 </div>
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+</div><!-- .wrap -->
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 <?php require_once ABSPATH . 'wp-admin/admin-footer.php'; ?>

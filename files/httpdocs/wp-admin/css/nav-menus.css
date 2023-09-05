@@ -170,10 +170,14 @@ label.bulk-select-button:focus-within {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 input.bulk-select-switcher:focus + .bulk-select-button-label {
 =======
 input.bulk-select-switcher:focus + .bulk-select-button-label{
 >>>>>>> fb785cbb (Initial commit)
+=======
+input.bulk-select-switcher:focus + .bulk-select-button-label {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	color: #0a4b78;
 }
 
@@ -196,12 +200,16 @@ input.bulk-select-switcher:focus + .bulk-select-button-label{
 
 .bulk-actions input.menu-items-delete.disabled {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	display: none;
 =======
 	cursor: default;
 	color: #a7aaad;
 	box-shadow: none;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	display: none;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .menu-settings {

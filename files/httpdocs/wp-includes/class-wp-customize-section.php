@@ -17,9 +17,13 @@
  * @see WP_Customize_Manager
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Customize_Section {
 
 	/**
@@ -361,30 +365,42 @@ class WP_Customize_Section {
 			<h3 class="accordion-section-title" tabindex="0">
 				{{ data.title }}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Press return or enter to open this section' );
 					?>
 				</span>
+<<<<<<< HEAD
 =======
 				<span class="screen-reader-text"><?php _e( 'Press return or enter to open this section' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			</h3>
 			<ul class="accordion-section-content">
 				<li class="customize-section-description-container section-meta <# if ( data.description_hidden ) { #>customize-info<# } #>">
 					<div class="customize-section-title">
 						<button class="customize-section-back" tabindex="-1">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							<span class="screen-reader-text">
 								<?php
 								/* translators: Hidden accessibility text. */
 								_e( 'Back' );
 								?>
 							</span>
+<<<<<<< HEAD
 =======
 							<span class="screen-reader-text"><?php _e( 'Back' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						</button>
 						<h3>
 							<span class="customize-action">
@@ -394,15 +410,21 @@ class WP_Customize_Section {
 						</h3>
 						<# if ( data.description && data.description_hidden ) { #>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							<button type="button" class="customize-help-toggle dashicons dashicons-editor-help" aria-expanded="false"><span class="screen-reader-text">
 								<?php
 								/* translators: Hidden accessibility text. */
 								_e( 'Help' );
 								?>
 							</span></button>
+<<<<<<< HEAD
 =======
 							<button type="button" class="customize-help-toggle dashicons dashicons-editor-help" aria-expanded="false"><span class="screen-reader-text"><?php _e( 'Help' ); ?></span></button>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							<div class="description customize-section-description">
 								{{{ data.description }}}
 							</div>

@@ -15,9 +15,13 @@
  * @access private
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Block_Supports {
 
 	/**
@@ -77,10 +81,15 @@ class WP_Block_Supports {
 	 * @since 5.6.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @link https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/
 	 *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @link https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/
+	 *
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param string $block_support_name   Block support name.
 	 * @param array  $block_support_config Array containing the properties of the block support.
 	 */
@@ -101,11 +110,15 @@ class WP_Block_Supports {
 	 */
 	public function apply_block_supports() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$block_type = WP_Block_Type_Registry::get_instance()->get_registered(
 =======
 		$block_attributes = self::$block_to_render['attrs'];
 		$block_type       = WP_Block_Type_Registry::get_instance()->get_registered(
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$block_type = WP_Block_Type_Registry::get_instance()->get_registered(
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			self::$block_to_render['blockName']
 		);
 
@@ -115,12 +128,18 @@ class WP_Block_Supports {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$block_attributes = array_key_exists( 'attrs', self::$block_to_render )
 			? self::$block_to_render['attrs']
 			: array();
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$output = array();
 		foreach ( $this->block_supports as $block_support_config ) {
 			if ( ! isset( $block_support_config['apply'] ) ) {
@@ -196,10 +215,14 @@ function get_block_wrapper_attributes( $extra_attributes = array() ) {
 	// This is hardcoded on purpose.
 	// We only support a fixed list of attributes.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$attributes_to_merge = array( 'style', 'class', 'id' );
 =======
 	$attributes_to_merge = array( 'style', 'class' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$attributes_to_merge = array( 'style', 'class', 'id' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$attributes          = array();
 	foreach ( $attributes_to_merge as $attribute_name ) {
 		if ( empty( $new_attributes[ $attribute_name ] ) && empty( $extra_attributes[ $attribute_name ] ) ) {

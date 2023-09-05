@@ -21,6 +21,9 @@ getid3_lib::IncludeDependency(GETID3_INCLUDEPATH.'module.audio-video.riff.php', 
 class getid3_asf extends getid3_handler
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	protected static $ASFIndexParametersObjectIndexSpecifiersIndexTypes = array(
 		1 => 'Nearest Past Data Packet',
 		2 => 'Nearest Past Media Object',
@@ -39,8 +42,11 @@ class getid3_asf extends getid3_handler
 		3 => 'Nearest Past Cleanpoint'
 	);
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	/**
 	 * @param getID3 $getid3
 	 */
@@ -339,9 +345,13 @@ class getid3_asf extends getid3_handler
 					// shortcut
 					$thisfile_asf['codec_list_object'] = array();
 <<<<<<< HEAD
+<<<<<<< HEAD
 					/** @var mixed[] $thisfile_asf_codeclistobject */
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+					/** @var mixed[] $thisfile_asf_codeclistobject */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					$thisfile_asf_codeclistobject      = &$thisfile_asf['codec_list_object'];
 
 					$thisfile_asf_codeclistobject['offset']                    = $NextObjectOffset + $offset;
@@ -358,11 +368,17 @@ class getid3_asf extends getid3_handler
 					}
 					$thisfile_asf_codeclistobject['codec_entries_count'] = getid3_lib::LittleEndian2Int(substr($ASFHeaderData, $offset, 4));
 <<<<<<< HEAD
+<<<<<<< HEAD
 					if ($thisfile_asf_codeclistobject['codec_entries_count'] > 0) {
 						$thisfile_asf_codeclistobject['codec_entries'] = array();
 					}
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+					if ($thisfile_asf_codeclistobject['codec_entries_count'] > 0) {
+						$thisfile_asf_codeclistobject['codec_entries'] = array();
+					}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					$offset += 4;
 					for ($CodecEntryCounter = 0; $CodecEntryCounter < $thisfile_asf_codeclistobject['codec_entries_count']; $CodecEntryCounter++) {
 						// shortcut
@@ -560,10 +576,14 @@ class getid3_asf extends getid3_handler
 					$thisfile_asf_markerobject['reserved_guid']        = $this->BytestringToGUID($thisfile_asf_markerobject['reserved']);
 					if ($thisfile_asf_markerobject['reserved'] != $this->GUIDtoBytestring('4CFEDB20-75F6-11CF-9C0F-00A0C90349CB')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 						$this->warning('marker_object.reserved GUID {'.$this->BytestringToGUID($thisfile_asf_markerobject['reserved']).'} does not match expected "GETID3_ASF_Reserved_1" GUID {4CFEDB20-75F6-11CF-9C0F-00A0C90349CB}');
 =======
 						$this->warning('marker_object.reserved GUID {'.$this->BytestringToGUID($thisfile_asf_markerobject['reserved_1']).'} does not match expected "GETID3_ASF_Reserved_1" GUID {4CFEDB20-75F6-11CF-9C0F-00A0C90349CB}');
 >>>>>>> fb785cbb (Initial commit)
+=======
+						$this->warning('marker_object.reserved GUID {'.$this->BytestringToGUID($thisfile_asf_markerobject['reserved']).'} does not match expected "GETID3_ASF_Reserved_1" GUID {4CFEDB20-75F6-11CF-9C0F-00A0C90349CB}');
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						break;
 					}
 					$thisfile_asf_markerobject['markers_count'] = getid3_lib::LittleEndian2Int(substr($ASFHeaderData, $offset, 4));
@@ -684,10 +704,14 @@ class getid3_asf extends getid3_handler
 
 						default:
 <<<<<<< HEAD
+<<<<<<< HEAD
 							$this->warning('error_correction_object.error_correction_type GUID {'.$this->BytestringToGUID($thisfile_asf_errorcorrectionobject['error_correction_type']).'} does not match expected "GETID3_ASF_No_Error_Correction" GUID {'.$this->BytestringToGUID(GETID3_ASF_No_Error_Correction).'} or  "GETID3_ASF_Audio_Spread" GUID {'.$this->BytestringToGUID(GETID3_ASF_Audio_Spread).'}');
 =======
 							$this->warning('error_correction_object.error_correction_type GUID {'.$this->BytestringToGUID($thisfile_asf_errorcorrectionobject['reserved']).'} does not match expected "GETID3_ASF_No_Error_Correction" GUID {'.$this->BytestringToGUID(GETID3_ASF_No_Error_Correction).'} or  "GETID3_ASF_Audio_Spread" GUID {'.$this->BytestringToGUID(GETID3_ASF_Audio_Spread).'}');
 >>>>>>> fb785cbb (Initial commit)
+=======
+							$this->warning('error_correction_object.error_correction_type GUID {'.$this->BytestringToGUID($thisfile_asf_errorcorrectionobject['error_correction_type']).'} does not match expected "GETID3_ASF_No_Error_Correction" GUID {'.$this->BytestringToGUID(GETID3_ASF_No_Error_Correction).'} or  "GETID3_ASF_Audio_Spread" GUID {'.$this->BytestringToGUID(GETID3_ASF_Audio_Spread).'}');
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							//return false;
 							break;
 					}
@@ -1482,10 +1506,14 @@ class getid3_asf extends getid3_handler
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$info['bitrate'] = 0 + (isset($thisfile_audio['bitrate']) ? $thisfile_audio['bitrate'] : 0) + (isset($thisfile_video['bitrate']) ? $thisfile_video['bitrate'] : 0);
 =======
 		$info['bitrate'] = (isset($thisfile_audio['bitrate']) ? $thisfile_audio['bitrate'] : 0) + (isset($thisfile_video['bitrate']) ? $thisfile_video['bitrate'] : 0);
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$info['bitrate'] = 0 + (isset($thisfile_audio['bitrate']) ? $thisfile_audio['bitrate'] : 0) + (isset($thisfile_video['bitrate']) ? $thisfile_video['bitrate'] : 0);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ((!isset($info['playtime_seconds']) || ($info['playtime_seconds'] <= 0)) && ($info['bitrate'] > 0)) {
 			$info['playtime_seconds'] = ($info['filesize'] - $info['avdataoffset']) / ($info['bitrate'] / 8);
@@ -1621,6 +1649,7 @@ class getid3_asf extends getid3_handler
 			'GETID3_ASF_Media_Object_Index_Object'           => 'FEB103F8-12AD-4C64-840F-2A1D2F7AD48C',
 			'GETID3_ASF_Alt_Extended_Content_Encryption_Obj' => 'FF889EF1-ADEE-40DA-9E71-98704BB928CE',
 <<<<<<< HEAD
+<<<<<<< HEAD
 			'GETID3_ASF_Index_Placeholder_Object'            => 'D9AADE20-7C17-4F9C-BC28-8555DD98E2A2', // https://metacpan.org/dist/Audio-WMA/source/WMA.pm
 			'GETID3_ASF_Compatibility_Object'                => '26F18B5D-4584-47EC-9F5F-0E651F0452C9', // https://metacpan.org/dist/Audio-WMA/source/WMA.pm
 			'GETID3_ASF_Media_Object_Index_Parameters_Object'=> '6B203BAD-3F11-48E4-ACA8-D7613DE2CFA7',
@@ -1628,6 +1657,11 @@ class getid3_asf extends getid3_handler
 			'GETID3_ASF_Index_Placeholder_Object'            => 'D9AADE20-7C17-4F9C-BC28-8555DD98E2A2', // http://cpan.uwinnipeg.ca/htdocs/Audio-WMA/Audio/WMA.pm.html
 			'GETID3_ASF_Compatibility_Object'                => '26F18B5D-4584-47EC-9F5F-0E651F0452C9', // http://cpan.uwinnipeg.ca/htdocs/Audio-WMA/Audio/WMA.pm.html
 >>>>>>> fb785cbb (Initial commit)
+=======
+			'GETID3_ASF_Index_Placeholder_Object'            => 'D9AADE20-7C17-4F9C-BC28-8555DD98E2A2', // https://metacpan.org/dist/Audio-WMA/source/WMA.pm
+			'GETID3_ASF_Compatibility_Object'                => '26F18B5D-4584-47EC-9F5F-0E651F0452C9', // https://metacpan.org/dist/Audio-WMA/source/WMA.pm
+			'GETID3_ASF_Media_Object_Index_Parameters_Object'=> '6B203BAD-3F11-48E4-ACA8-D7613DE2CFA7',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		);
 		return $GUIDarray;
 	}
@@ -1791,10 +1825,14 @@ class getid3_asf extends getid3_handler
 	 */
 	public function HeaderExtensionObjectDataParse(&$asf_header_extension_object_data, &$unhandled_sections) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		// https://web.archive.org/web/20140419205228/http://msdn.microsoft.com/en-us/library/bb643323.aspx
 =======
 		// http://msdn.microsoft.com/en-us/library/bb643323.aspx
 >>>>>>> fb785cbb (Initial commit)
+=======
+		// https://web.archive.org/web/20140419205228/http://msdn.microsoft.com/en-us/library/bb643323.aspx
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$offset = 0;
 		$objectOffset = 0;
@@ -1859,12 +1897,17 @@ class getid3_asf extends getid3_handler
 					$offset += 2;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 					$thisObject['average_time_per_frame']            = getid3_lib::LittleEndian2Int(substr($asf_header_extension_object_data, $offset,  8));
 					$offset += 8;
 =======
 					$thisObject['average_time_per_frame']            = getid3_lib::LittleEndian2Int(substr($asf_header_extension_object_data, $offset,  4));
 					$offset += 4;
 >>>>>>> fb785cbb (Initial commit)
+=======
+					$thisObject['average_time_per_frame']            = getid3_lib::LittleEndian2Int(substr($asf_header_extension_object_data, $offset,  8));
+					$offset += 8;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 					$thisObject['stream_name_count']                 = getid3_lib::LittleEndian2Int(substr($asf_header_extension_object_data, $offset,  2));
 					$offset += 2;
@@ -1882,10 +1925,14 @@ class getid3_asf extends getid3_handler
 						$offset += 2;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 						$streamName['stream_name']                   =                              substr($asf_header_extension_object_data, $offset,  $streamName['stream_name_length']);
 =======
 						$streamName['stream_name']                   = getid3_lib::LittleEndian2Int(substr($asf_header_extension_object_data, $offset,  $streamName['stream_name_length']));
 >>>>>>> fb785cbb (Initial commit)
+=======
+						$streamName['stream_name']                   =                              substr($asf_header_extension_object_data, $offset,  $streamName['stream_name_length']);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						$offset += $streamName['stream_name_length'];
 
 						$thisObject['stream_names'][$i] = $streamName;
@@ -1908,10 +1955,14 @@ class getid3_asf extends getid3_handler
 						$offset += 4;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 						$payloadExtensionSystem['extension_system_info'] = substr($asf_header_extension_object_data, $offset,  $payloadExtensionSystem['extension_system_info_length']);
 =======
 						$payloadExtensionSystem['extension_system_info_length'] = getid3_lib::LittleEndian2Int(substr($asf_header_extension_object_data, $offset,  $payloadExtensionSystem['extension_system_info_length']));
 >>>>>>> fb785cbb (Initial commit)
+=======
+						$payloadExtensionSystem['extension_system_info'] = substr($asf_header_extension_object_data, $offset,  $payloadExtensionSystem['extension_system_info_length']);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						$offset += $payloadExtensionSystem['extension_system_info_length'];
 
 						$thisObject['payload_extension_systems'][$i] = $payloadExtensionSystem;
@@ -1920,6 +1971,9 @@ class getid3_asf extends getid3_handler
 					break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				case GETID3_ASF_Advanced_Mutual_Exclusion_Object:
 					$thisObject['exclusion_type']       = substr($asf_header_extension_object_data, $offset, 16);
 					$offset += 16;
@@ -1954,8 +2008,11 @@ class getid3_asf extends getid3_handler
 
 					break;
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				case GETID3_ASF_Padding_Object:
 					// padding, skip it
 					break;
@@ -2074,6 +2131,9 @@ class getid3_asf extends getid3_handler
 					break;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				case GETID3_ASF_Index_Parameters_Object:
 					$thisObject['index_entry_time_interval'] = getid3_lib::LittleEndian2Int(substr($asf_header_extension_object_data, $offset, 4));
 					$offset += 4;
@@ -2171,8 +2231,11 @@ class getid3_asf extends getid3_handler
 
 					break;
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				default:
 					$unhandled_sections++;
 					if ($this->GUIDname($thisObject['guid_text'])) {

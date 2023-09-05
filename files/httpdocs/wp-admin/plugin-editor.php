@@ -174,6 +174,7 @@ if ( '.php' === substr( $real_file, strrpos( $real_file, '.' ) ) ) {
 	if ( ! empty( $functions ) ) {
 		$docs_select  = '<select name="docs-list" id="docs-list">';
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$docs_select .= '<option value="">' . esc_html__( 'Function Name&hellip;' ) . '</option>';
 
 		foreach ( $functions as $function ) {
@@ -186,6 +187,14 @@ if ( '.php' === substr( $real_file, strrpos( $real_file, '.' ) ) ) {
 			$docs_select .= '<option value="' . esc_attr( $function ) . '">' . esc_html( $function ) . '()</option>';
 		}
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$docs_select .= '<option value="">' . esc_html__( 'Function Name&hellip;' ) . '</option>';
+
+		foreach ( $functions as $function ) {
+			$docs_select .= '<option value="' . esc_attr( $function ) . '">' . esc_html( $function ) . '()</option>';
+		}
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$docs_select .= '</select>';
 	}
 }

@@ -14,9 +14,13 @@
  * @since 4.7.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_List_Util {
 	/**
 	 * The input array.
@@ -235,15 +239,21 @@ class WP_List_Util {
 	 *
 	 * @param string|array $orderby       Optional. Either the field name to order by or an array
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *                                    of multiple orderby fields as `$orderby => $order`.
 	 *                                    Default empty array.
 	 * @param string       $order         Optional. Either 'ASC' or 'DESC'. Only used if `$orderby`
 	 *                                    is a string. Default 'ASC'.
+<<<<<<< HEAD
 =======
 	 *                                    of multiple orderby fields as $orderby => $order.
 	 * @param string       $order         Optional. Either 'ASC' or 'DESC'. Only used if $orderby
 	 *                                    is a string.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param bool         $preserve_keys Optional. Whether to preserve keys. Default false.
 	 * @return array The sorted array.
 	 */

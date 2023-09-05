@@ -180,10 +180,15 @@ function validate_email( $email, $check_domain = true) {
  * @see wp_get_sites()
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @global wpdb $wpdb WordPress database abstraction object.
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @global wpdb $wpdb WordPress database abstraction object.
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @param int    $start      Optional. Offset for retrieving the blog list. Default 0.
  * @param int    $num        Optional. Number of blogs to list. Default 10.
  * @param string $deprecated Unused.
@@ -340,6 +345,7 @@ function wpmu_admin_redirect_add_updated_param( $url = '' ) {
  * @see get_user_by()
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param string $email_or_login Either an email address or a login.
  * @return int
  */
@@ -354,18 +360,25 @@ function get_user_id_from_string( $email_or_login ) {
 		$user = get_user_by( 'login', $email_or_login );
 =======
  * @param string $string Either an email address or a login.
+=======
+ * @param string $email_or_login Either an email address or a login.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @return int
  */
-function get_user_id_from_string( $string ) {
+function get_user_id_from_string( $email_or_login ) {
 	_deprecated_function( __FUNCTION__, '3.6.0', 'get_user_by()' );
 
-	if ( is_email( $string ) )
-		$user = get_user_by( 'email', $string );
-	elseif ( is_numeric( $string ) )
-		return $string;
+	if ( is_email( $email_or_login ) )
+		$user = get_user_by( 'email', $email_or_login );
+	elseif ( is_numeric( $email_or_login ) )
+		return $email_or_login;
 	else
+<<<<<<< HEAD
 		$user = get_user_by( 'login', $string );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$user = get_user_by( 'login', $email_or_login );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	if ( $user )
 		return $user->ID;
@@ -399,10 +412,14 @@ function get_blogaddress_by_domain( $domain, $path ) {
 		}
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return sanitize_url( $url );
 =======
 	return esc_url_raw( $url );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	return sanitize_url( $url );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 /**
@@ -426,10 +443,14 @@ function create_empty_blog( $domain, $path, $weblog_title, $site_id = 1 ) {
 	// Check if the domain has been used already. We should return an error message.
 	if ( domain_exists($domain, $path, $site_id) )
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return __( '<strong>Error:</strong> Site URL you&#8217;ve entered is already taken.' );
 =======
 		return __( '<strong>Error</strong>: Site URL you&#8217;ve entered is already taken.' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return __( '<strong>Error:</strong> Site URL you&#8217;ve entered is already taken.' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/*
 	 * Need to back up wpdb table names, and create a new wp_blogs entry for new blog.
@@ -439,10 +460,14 @@ function create_empty_blog( $domain, $path, $weblog_title, $site_id = 1 ) {
 
 	if ( ! $blog_id = insert_blog($domain, $path, $site_id) )
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return __( '<strong>Error:</strong> There was a problem creating site entry.' );
 =======
 		return __( '<strong>Error</strong>: There was a problem creating site entry.' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return __( '<strong>Error:</strong> There was a problem creating site entry.' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	switch_to_blog($blog_id);
 	install_blog($blog_id);
@@ -763,6 +788,9 @@ function update_user_status( $id, $pref, $value, $deprecated = null ) {
 	return $value;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 /**
  * Maintains a canonical list of terms by syncing terms created for each blog with the global terms table.
@@ -780,5 +808,8 @@ function global_terms( $term_id, $deprecated = '' ) {
 
 	return $term_id;
 }
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)

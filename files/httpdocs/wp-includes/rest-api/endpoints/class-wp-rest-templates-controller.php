@@ -43,9 +43,13 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 	 *
 	 * @since 5.8.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 Endpoint for fallback template content.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 Endpoint for fallback template content.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function register_routes() {
 		// Lists all templates.
@@ -70,6 +74,9 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 		);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// Get fallback template content.
 		register_rest_route(
 			$this->namespace,
@@ -98,8 +105,11 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 			)
 		);
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// Lists/updates a single template based on the given id.
 		register_rest_route(
 			$this->namespace,
@@ -112,10 +122,14 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 				'([^\/:<>\*\?"\|]+(?:\/[^\/:<>\*\?"\|]+)?)',
 				// Matches the template name.
 <<<<<<< HEAD
+<<<<<<< HEAD
 				'[\/\w%-]+'
 =======
 				'[\/\w-]+'
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'[\/\w%-]+'
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			),
 			array(
 				'args'   => array(
@@ -158,6 +172,9 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Returns the fallback template for the given slug.
 	 *
 	 * @since 6.1.0
@@ -173,8 +190,11 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Checks if the user has permissions to make the request.
 	 *
 	 * @since 5.8.0
@@ -542,10 +562,14 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 			$changes->post_status = 'publish';
 			$changes->tax_input   = array(
 <<<<<<< HEAD
+<<<<<<< HEAD
 				'wp_theme' => isset( $request['theme'] ) ? $request['theme'] : get_stylesheet(),
 =======
 				'wp_theme' => isset( $request['theme'] ) ? $request['theme'] : wp_get_theme()->get_stylesheet(),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'wp_theme' => isset( $request['theme'] ) ? $request['theme'] : get_stylesheet(),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			);
 		} elseif ( 'custom' !== $template->source ) {
 			$changes->post_name   = $template->slug;
@@ -587,6 +611,9 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( 'wp_template' === $this->post_type && isset( $request['is_wp_suggestion'] ) ) {
 			$changes->meta_input     = wp_parse_args(
 				array(
@@ -596,8 +623,11 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 			);
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( 'wp_template_part' === $this->post_type ) {
 			if ( isset( $request['area'] ) ) {
 				$changes->tax_input['wp_template_part_area'] = _filter_block_template_part_area( $request['area'] );
@@ -736,6 +766,9 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 		$response = rest_ensure_response( $data );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$links = $this->prepare_links( $template->id );
 			$response->add_links( $links );
@@ -745,6 +778,7 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 				foreach ( $actions as $rel ) {
 					$response->add_link( $rel, $self );
 				}
+<<<<<<< HEAD
 =======
 		$links = $this->prepare_links( $template->id );
 		$response->add_links( $links );
@@ -754,6 +788,8 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 			foreach ( $actions as $rel ) {
 				$response->add_link( $rel, $self );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 		}
 
@@ -771,6 +807,7 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 	 */
 	protected function prepare_links( $id ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$links = array(
 			'self'       => array(
 				'href' => rest_url( rest_get_route_for_post( $id ) ),
@@ -780,13 +817,19 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 =======
 		$base = sprintf( '%s/%s', $this->namespace, $this->rest_base );
 
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$links = array(
 			'self'       => array(
-				'href' => rest_url( trailingslashit( $base ) . $id ),
+				'href' => rest_url( rest_get_route_for_post( $id ) ),
 			),
 			'collection' => array(
+<<<<<<< HEAD
 				'href' => rest_url( $base ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'href' => rest_url( rest_get_route_for_post_type_items( $this->post_type ) ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			),
 			'about'      => array(
 				'href' => rest_url( 'wp/v2/types/' . $this->post_type ),
@@ -876,10 +919,14 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 					'required'    => true,
 					'minLength'   => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
 					'pattern'     => '[a-zA-Z0-9_\%-]+',
 =======
 					'pattern'     => '[a-zA-Z0-9_\-]+',
 >>>>>>> fb785cbb (Initial commit)
+=======
+					'pattern'     => '[a-zA-Z0-9_\%-]+',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				),
 				'theme'          => array(
 					'description' => __( 'Theme identifier for the template.' ),

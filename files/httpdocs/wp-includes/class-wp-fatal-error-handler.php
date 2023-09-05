@@ -17,9 +17,13 @@
  * @since 5.2.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Fatal_Error_Handler {
 
 	/**
@@ -189,14 +193,20 @@ class WP_Fatal_Error_Handler {
 			$message = __( 'There has been a critical error on this website, putting it in recovery mode. Please check the Themes and Plugins screens for more details. If you just installed or updated a theme or plugin, check the relevant page for that first.' );
 		} elseif ( is_protected_endpoint() && wp_recovery_mode()->is_initialized() ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( is_multisite() ) {
 				$message = __( 'There has been a critical error on this website. Please reach out to your site administrator, and inform them of this error for further assistance.' );
 			} else {
 				$message = __( 'There has been a critical error on this website. Please check your site admin email inbox for instructions.' );
 			}
+<<<<<<< HEAD
 =======
 			$message = __( 'There has been a critical error on this website. Please check your site admin email inbox for instructions.' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		} else {
 			$message = __( 'There has been a critical error on this website.' );
 		}

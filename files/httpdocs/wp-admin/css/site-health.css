@@ -12,12 +12,15 @@ are styled in the Privacy section of edit.css */
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .health-check-widget-title-section {
 	text-align: center;
 }
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .site-health-progress-wrapper {
 	margin-bottom: 1rem;
 }
@@ -288,6 +291,7 @@ are styled in the Privacy section of edit.css */
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 /* Better position for the WordPress admin notices and update nag. */
@@ -301,6 +305,8 @@ are styled in the Privacy section of edit.css */
 }
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .health-check-wp-paths-sizes.spinner {
 	visibility: visible;
 	float: none;
@@ -314,6 +320,9 @@ are styled in the Privacy section of edit.css */
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 #dashboard_site_health .site-health-details p:first-child {
 	margin-top: 0;
 }
@@ -322,8 +331,11 @@ are styled in the Privacy section of edit.css */
 	margin-bottom: 0;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 #dashboard_site_health .health-check-widget {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
@@ -336,13 +348,19 @@ are styled in the Privacy section of edit.css */
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .health-check-widget-title-section {
 	margin-bottom: 0;
 	text-align: center;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 @media screen and (max-width: 480px) {
 	#dashboard_site_health .health-check-widget {
 		grid-template-columns: 100%;

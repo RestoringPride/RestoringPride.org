@@ -120,10 +120,15 @@ class WP_REST_Block_Directory_Controller extends WP_REST_Controller {
 		$plugin = $item;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$fields = $this->get_fields_for_response( $request );
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$fields = $this->get_fields_for_response( $request );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// There might be multiple blocks in a plugin. Only the first block is mapped.
 		$block_data = reset( $plugin['blocks'] );
 
@@ -152,13 +157,19 @@ class WP_REST_Block_Directory_Controller extends WP_REST_Controller {
 
 		$response = new WP_REST_Response( $block );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $plugin ) );
 		}
+<<<<<<< HEAD
 =======
 		$response->add_links( $this->prepare_links( $plugin ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		return $response;
 	}

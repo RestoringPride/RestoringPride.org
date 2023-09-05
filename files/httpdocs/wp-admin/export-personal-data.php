@@ -14,11 +14,17 @@ if ( ! current_user_can( 'export_others_personal_data' ) ) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Used in the HTML title tag.
 $title = __( 'Export Personal Data' );
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+// Used in the HTML title tag.
+$title = __( 'Export Personal Data' );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 // Contextual help - choose Help on the top right of admin panel to preview this.
 get_current_screen()->add_help_tab(
 	array(

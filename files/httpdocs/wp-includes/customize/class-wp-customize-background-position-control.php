@@ -91,15 +91,21 @@ class WP_Customize_Background_Position_Control extends WP_Customize_Control {
 		<div class="customize-control-content">
 			<fieldset>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<legend class="screen-reader-text"><span>
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Image Position' );
 					?>
 				</span></legend>
+<<<<<<< HEAD
 =======
 				<legend class="screen-reader-text"><span><?php _e( 'Image Position' ); ?></span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<div class="background-position-control">
 				<?php foreach ( $options as $group ) : ?>
 					<div class="button-group">

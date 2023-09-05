@@ -43,10 +43,14 @@ require_once ABSPATH . 'wp-admin/includes/translation-install.php';
 
 /** Load wpdb */
 <<<<<<< HEAD
+<<<<<<< HEAD
 require_once ABSPATH . WPINC . '/class-wpdb.php';
 =======
 require_once ABSPATH . WPINC . '/wp-db.php';
 >>>>>>> fb785cbb (Initial commit)
+=======
+require_once ABSPATH . WPINC . '/class-wpdb.php';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 nocache_headers();
 
@@ -85,10 +89,14 @@ function display_header( $body_classes = '' ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Displays installer setup form.
 =======
  * Display installer setup form.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Displays installer setup form.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 2.8.0
  *
@@ -105,10 +113,14 @@ function display_setup_form( $error = null ) {
 	$blog_public = 1;
 	if ( isset( $_POST['weblog_title'] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$blog_public = isset( $_POST['blog_public'] ) ? (int) $_POST['blog_public'] : $blog_public;
 =======
 		$blog_public = isset( $_POST['blog_public'] );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$blog_public = isset( $_POST['blog_public'] ) ? (int) $_POST['blog_public'] : $blog_public;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	$weblog_title = isset( $_POST['weblog_title'] ) ? trim( wp_unslash( $_POST['weblog_title'] ) ) : '';
@@ -153,10 +165,14 @@ function display_setup_form( $error = null ) {
 				<div class="wp-pwd">
 					<?php $initial_password = isset( $_POST['admin_password'] ) ? stripslashes( $_POST['admin_password'] ) : wp_generate_password( 18 ); ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<input type="password" name="admin_password" id="pass1" class="regular-text" autocomplete="new-password" spellcheck="false" data-reveal="1" data-pw="<?php echo esc_attr( $initial_password ); ?>" aria-describedby="pass-strength-result" />
 =======
 					<input type="password" name="admin_password" id="pass1" class="regular-text" autocomplete="new-password" data-reveal="1" data-pw="<?php echo esc_attr( $initial_password ); ?>" aria-describedby="pass-strength-result" />
 >>>>>>> fb785cbb (Initial commit)
+=======
+					<input type="password" name="admin_password" id="pass1" class="regular-text" autocomplete="new-password" spellcheck="false" data-reveal="1" data-pw="<?php echo esc_attr( $initial_password ); ?>" aria-describedby="pass-strength-result" />
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<button type="button" class="button wp-hide-pw hide-if-no-js" data-start-masked="<?php echo (int) isset( $_POST['admin_password'] ); ?>" data-toggle="0" aria-label="<?php esc_attr_e( 'Hide password' ); ?>">
 						<span class="dashicons dashicons-hidden"></span>
 						<span class="text"><?php _e( 'Hide' ); ?></span>
@@ -177,10 +193,14 @@ function display_setup_form( $error = null ) {
 			</th>
 			<td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<input type="password" name="admin_password2" id="pass2" autocomplete="new-password" spellcheck="false" />
 =======
 				<input name="admin_password2" type="password" id="pass2" autocomplete="new-password" />
 >>>>>>> fb785cbb (Initial commit)
+=======
+				<input type="password" name="admin_password2" id="pass2" autocomplete="new-password" spellcheck="false" />
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			</td>
 		</tr>
 		<tr class="pw-weak">
@@ -203,6 +223,9 @@ function display_setup_form( $error = null ) {
 			<td>
 				<fieldset>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<legend class="screen-reader-text"><span>
 						<?php
 						has_action( 'blog_privacy_selector' )
@@ -212,18 +235,25 @@ function display_setup_form( $error = null ) {
 							: _e( 'Search engine visibility' );
 						?>
 					</span></legend>
+<<<<<<< HEAD
 =======
 					<legend class="screen-reader-text"><span><?php has_action( 'blog_privacy_selector' ) ? _e( 'Site visibility' ) : _e( 'Search engine visibility' ); ?> </span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<?php
 					if ( has_action( 'blog_privacy_selector' ) ) {
 						?>
 						<input id="blog-public" type="radio" name="blog_public" value="1" <?php checked( 1, $blog_public ); ?> />
 <<<<<<< HEAD
+<<<<<<< HEAD
 						<label for="blog-public"><?php _e( 'Allow search engines to index this site' ); ?></label><br />
 =======
 						<label for="blog-public"><?php _e( 'Allow search engines to index this site' ); ?></label><br/>
 >>>>>>> fb785cbb (Initial commit)
+=======
+						<label for="blog-public"><?php _e( 'Allow search engines to index this site' ); ?></label><br />
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						<input id="blog-norobots" type="radio" name="blog_public" value="0" <?php checked( 0, $blog_public ); ?> />
 						<label for="blog-norobots"><?php _e( 'Discourage search engines from indexing this site' ); ?></label>
 						<p class="description"><?php _e( 'Note: Neither of these options blocks access to your site &mdash; it is up to search engines to honor your request.' ); ?></p>
@@ -262,17 +292,25 @@ if ( is_blog_installed() ) {
  * @global string $required_php_version   The required PHP version string.
  * @global string $required_mysql_version The required MySQL version string.
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @global wpdb   $wpdb                   WordPress database abstraction object.
  */
 global $wp_version, $required_php_version, $required_mysql_version, $wpdb;
 
 $php_version   = PHP_VERSION;
 =======
+=======
+ * @global wpdb   $wpdb                   WordPress database abstraction object.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
-global $wp_version, $required_php_version, $required_mysql_version;
+global $wp_version, $required_php_version, $required_mysql_version, $wpdb;
 
+<<<<<<< HEAD
 $php_version   = phpversion();
 >>>>>>> fb785cbb (Initial commit)
+=======
+$php_version   = PHP_VERSION;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 $mysql_version = $wpdb->db_version();
 $php_compat    = version_compare( $php_version, $required_php_version, '>=' );
 $mysql_compat  = version_compare( $mysql_version, $required_mysql_version, '>=' ) || file_exists( WP_CONTENT_DIR . '/db.php' );

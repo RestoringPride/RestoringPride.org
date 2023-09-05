@@ -369,6 +369,9 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Moves a file or directory.
 	 *
 	 * After moving files or directories, OPcache will need to be invalidated.
@@ -377,6 +380,7 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	 *
 	 * Use `move_dir()` for moving directories with OPcache invalidation and a
 	 * fallback to `copy_dir()`.
+<<<<<<< HEAD
 	 *
 	 * @since 2.5.0
 	 *
@@ -392,6 +396,14 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	 * @param string $destination Path to the destination file.
 	 * @param bool   $overwrite   Optional. Whether to overwrite the destination file if it exists.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 *
+	 * @since 2.5.0
+	 *
+	 * @param string $source      Path to the source file or directory.
+	 * @param string $destination Path to the destination file or directory.
+	 * @param bool   $overwrite   Optional. Whether to overwrite the destination if it exists.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *                            Default false.
 	 * @return bool True on success, false on failure.
 	 */
@@ -433,6 +445,7 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	 * @since 2.5.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path exists or not.
 	 */
@@ -443,12 +456,20 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 =======
 	 * @param string $file Path to file or directory.
 	 * @return bool Whether $file exists or not.
+=======
+	 * @param string $path Path to file or directory.
+	 * @return bool Whether $path exists or not.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
-	public function exists( $file ) {
-		$list = $this->ftp->nlist( $file );
+	public function exists( $path ) {
+		$list = $this->ftp->nlist( $path );
 
+<<<<<<< HEAD
 		if ( empty( $list ) && $this->is_dir( $file ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( empty( $list ) && $this->is_dir( $path ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			return true; // File is an empty directory.
 		}
 
@@ -513,6 +534,7 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	 * @since 2.5.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path is writable.
 	 */
@@ -523,6 +545,12 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 	 */
 	public function is_writable( $file ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param string $path Path to file or directory.
+	 * @return bool Whether $path is writable.
+	 */
+	public function is_writable( $path ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return true;
 	}
 
@@ -673,11 +701,16 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$path = trailingslashit( $path );
 		$ret  = array();
 =======
 		$ret = array();
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$path = trailingslashit( $path );
+		$ret  = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		foreach ( $list as $struc ) {
 
@@ -696,10 +729,14 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 			if ( 'd' === $struc['type'] ) {
 				if ( $recursive ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 					$struc['files'] = $this->dirlist( $path . $struc['name'], $include_hidden, $recursive );
 =======
 					$struc['files'] = $this->dirlist( $path . '/' . $struc['name'], $include_hidden, $recursive );
 >>>>>>> fb785cbb (Initial commit)
+=======
+					$struc['files'] = $this->dirlist( $path . $struc['name'], $include_hidden, $recursive );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				} else {
 					$struc['files'] = array();
 				}

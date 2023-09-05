@@ -15,9 +15,13 @@
  * @see register_post_type()
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 final class WP_Post_Type {
 	/**
 	 * Post type key.
@@ -226,10 +230,14 @@ final class WP_Post_Type {
 	 *
 	 * @since 4.6.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var string[] $taxonomies
 =======
 	 * @var array $taxonomies
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var string[] $taxonomies
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $taxonomies = array();
 
@@ -290,10 +298,14 @@ final class WP_Post_Type {
 	 *
 	 * @since 5.0.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var array[] $template
 =======
 	 * @var array $template
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var array[] $template
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $template = array();
 

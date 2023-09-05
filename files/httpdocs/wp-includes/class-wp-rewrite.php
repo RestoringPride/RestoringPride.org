@@ -23,9 +23,13 @@
  * @since 1.5.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Rewrite {
 	/**
 	 * Permalink structure for posts.
@@ -189,10 +193,14 @@ class WP_Rewrite {
 	 *
 	 * @since 1.5.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var string[]
 =======
 	 * @var array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var string[]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $rules;
 
@@ -203,10 +211,14 @@ class WP_Rewrite {
 	 *
 	 * @since 2.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var string[]
 =======
 	 * @var array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var string[]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $extra_rules = array();
 
@@ -217,10 +229,14 @@ class WP_Rewrite {
 	 *
 	 * @since 2.3.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var string[]
 =======
 	 * @var array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var string[]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $extra_rules_top = array();
 
@@ -232,10 +248,14 @@ class WP_Rewrite {
 	 *
 	 * @since 2.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var string[]
 =======
 	 * @var array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var string[]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $non_wp_rules = array();
 
@@ -244,10 +264,14 @@ class WP_Rewrite {
 	 *
 	 * @since 2.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var array[]
 =======
 	 * @var array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var array[]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $extra_permastructs = array();
 
@@ -256,10 +280,14 @@ class WP_Rewrite {
 	 *
 	 * @since 2.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var array[]
 =======
 	 * @var array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var array[]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $endpoints;
 
@@ -441,10 +469,14 @@ class WP_Rewrite {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Retrieves all pages and attachments for pages URIs.
 =======
 	 * Retrieves all page and attachments for pages URIs.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Retrieves all pages and attachments for pages URIs.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * The attachments are for those that have pages as parents and will be
 	 * retrieved.
@@ -648,10 +680,14 @@ class WP_Rewrite {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Retrieves the permalink structure for tags.
 =======
 	 * Retrieve the permalink structure for tags.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Retrieves the permalink structure for tags.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * If the tag_base property has no value, then the tag structure will have
 	 * the front property value, followed by 'tag', and finally '%tag%'. If it
@@ -897,10 +933,14 @@ class WP_Rewrite {
 	 * @param bool   $paged               Optional. Whether archive pagination rules should be added for the structure.
 	 *                                    Default true.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param bool   $feed                Optional. Whether feed rewrite rules should be added for the structure.
 =======
 	 * @param bool   $feed                Optional Whether feed rewrite rules should be added for the structure.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param bool   $feed                Optional. Whether feed rewrite rules should be added for the structure.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *                                    Default true.
 	 * @param bool   $forcomments         Optional. Whether the feed rules should be a query for a comments feed.
 	 *                                    Default false.
@@ -1285,10 +1325,14 @@ class WP_Rewrite {
 	 * @param bool   $walk_dirs           Optional. Whether to create list of directories to walk over.
 	 *                                    Default false.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return array An array of rewrite rules keyed by their regex pattern.
 =======
 	 * @return array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return array An array of rewrite rules keyed by their regex pattern.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function generate_rewrite_rule( $permalink_structure, $walk_dirs = false ) {
 		return $this->generate_rewrite_rules( $permalink_structure, EP_NONE, false, false, false, $walk_dirs );

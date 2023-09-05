@@ -168,10 +168,14 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Overrides the result of the post password check for REST requested posts.
 =======
 	 * Override the result of the post password check for REST requested posts.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Overrides the result of the post password check for REST requested posts.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * Allow users to read the content of password protected posts if they have
 	 * previously passed a permission check or if they have the `edit_post` capability
@@ -254,9 +258,13 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			'parent_exclude' => 'post_parent__not_in',
 			'search'         => 's',
 <<<<<<< HEAD
+<<<<<<< HEAD
 			'search_columns' => 'search_columns',
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+			'search_columns' => 'search_columns',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'slug'           => 'post_name__in',
 			'status'         => 'post_status',
 		);
@@ -378,6 +386,9 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 		$posts = array();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		update_post_author_caches( $query_result );
 		update_post_parent_caches( $query_result );
 
@@ -385,8 +396,11 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			update_post_thumbnail_cache( $posts_query );
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		foreach ( $query_result as $post ) {
 			if ( ! $this->check_read_permission( $post ) ) {
 				continue;
@@ -405,10 +419,14 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 		$total_posts = $posts_query->found_posts;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( $total_posts < 1 && $page > 1 ) {
 =======
 		if ( $total_posts < 1 ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( $total_posts < 1 && $page > 1 ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			// Out-of-bounds, run the query again without LIMIT for total count.
 			unset( $query_args['paged'] );
 
@@ -434,11 +452,16 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 
 		$request_params = $request->get_query_params();
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$collection_url = rest_url( rest_get_route_for_post_type_items( $this->post_type ) );
 		$base           = add_query_arg( urlencode_deep( $request_params ), $collection_url );
 =======
 		$base           = add_query_arg( urlencode_deep( $request_params ), rest_url( sprintf( '%s/%s', $this->namespace, $this->rest_base ) ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$collection_url = rest_url( rest_get_route_for_post_type_items( $this->post_type ) );
+		$base           = add_query_arg( urlencode_deep( $request_params ), $collection_url );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( $page > 1 ) {
 			$prev_page = $page - 1;
@@ -462,10 +485,14 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Gets the post, if the ID is valid.
 =======
 	 * Get the post, if the ID is valid.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Gets the post, if the ID is valid.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.7.2
 	 *
@@ -678,6 +705,9 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 		$prepared_post->post_type = $this->post_type;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! empty( $prepared_post->post_name )
 			&& ! empty( $prepared_post->post_status )
 			&& in_array( $prepared_post->post_status, array( 'draft', 'pending' ), true )
@@ -696,8 +726,11 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			);
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$post_id = wp_insert_post( wp_slash( (array) $prepared_post ), true, false );
 
 		if ( is_wp_error( $post_id ) ) {
@@ -803,10 +836,14 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 
 		$response->set_status( 201 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$response->header( 'Location', rest_url( rest_get_route_for_post( $post ) ) );
 =======
 		$response->header( 'Location', rest_url( sprintf( '%s/%s/%d', $this->namespace, $this->rest_base, $post_id ) ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$response->header( 'Location', rest_url( rest_get_route_for_post( $post ) ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		return $response;
 	}
@@ -884,6 +921,9 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! empty( $post->post_status ) ) {
 			$post_status = $post->post_status;
 		} else {
@@ -906,8 +946,11 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			);
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// Convert the post object to an array, otherwise wp_update_post() will expect non-escaped input.
 		$post_id = wp_update_post( wp_slash( (array) $post ), true, false );
 
@@ -1529,10 +1572,14 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Checks whether the template is valid for the given post.
 =======
 	 * Check whether the template is valid for the given post.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Checks whether the template is valid for the given post.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.9.0
 	 *
@@ -1835,10 +1882,14 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			 */
 			if ( '0000-00-00 00:00:00' === $post->post_modified_gmt ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$post_modified_gmt = gmdate( 'Y-m-d H:i:s', strtotime( $post->post_modified ) - ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS ) );
 =======
 				$post_modified_gmt = gmdate( 'Y-m-d H:i:s', strtotime( $post->post_modified ) - ( get_option( 'gmt_offset' ) * 3600 ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$post_modified_gmt = gmdate( 'Y-m-d H:i:s', strtotime( $post->post_modified ) - ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			} else {
 				$post_modified_gmt = $post->post_modified_gmt;
 			}
@@ -2016,6 +2067,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 		$response = rest_ensure_response( $data );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$links = $this->prepare_links( $post );
 			$response->add_links( $links );
@@ -2031,15 +2083,26 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 =======
 		$links = $this->prepare_links( $post );
 		$response->add_links( $links );
+=======
+		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
+			$links = $this->prepare_links( $post );
+			$response->add_links( $links );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
-		if ( ! empty( $links['self']['href'] ) ) {
-			$actions = $this->get_available_actions( $post, $request );
+			if ( ! empty( $links['self']['href'] ) ) {
+				$actions = $this->get_available_actions( $post, $request );
 
-			$self = $links['self']['href'];
+				$self = $links['self']['href'];
 
+<<<<<<< HEAD
 			foreach ( $actions as $rel ) {
 				$response->add_link( $rel, $self );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				foreach ( $actions as $rel ) {
+					$response->add_link( $rel, $self );
+				}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 		}
 
@@ -2088,6 +2151,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 	 */
 	protected function prepare_links( $post ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		// Entity meta.
 		$links = array(
 			'self'       => array(
@@ -2098,14 +2162,20 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 =======
 		$base = sprintf( '%s/%s', $this->namespace, $this->rest_base );
 
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// Entity meta.
 		$links = array(
 			'self'       => array(
-				'href' => rest_url( trailingslashit( $base ) . $post->ID ),
+				'href' => rest_url( rest_get_route_for_post( $post->ID ) ),
 			),
 			'collection' => array(
+<<<<<<< HEAD
 				'href' => rest_url( $base ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'href' => rest_url( rest_get_route_for_post_type_items( $this->post_type ) ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			),
 			'about'      => array(
 				'href' => rest_url( 'wp/v2/types/' . $this->post_type ),
@@ -2132,6 +2202,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 
 		if ( in_array( $post->post_type, array( 'post', 'page' ), true ) || post_type_supports( $post->post_type, 'revisions' ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$revisions       = wp_get_latest_revision_id_and_total_count( $post->ID );
 			$revisions_count = ! is_wp_error( $revisions ) ? $revisions['count'] : 0;
 			$revisions_base  = sprintf( '/%s/%s/%d/revisions', $this->namespace, $this->rest_base, $post->ID );
@@ -2145,10 +2216,19 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			$links['version-history'] = array(
 				'href'  => rest_url( trailingslashit( $base ) . $post->ID . '/revisions' ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$revisions       = wp_get_latest_revision_id_and_total_count( $post->ID );
+			$revisions_count = ! is_wp_error( $revisions ) ? $revisions['count'] : 0;
+			$revisions_base  = sprintf( '/%s/%s/%d/revisions', $this->namespace, $this->rest_base, $post->ID );
+
+			$links['version-history'] = array(
+				'href'  => rest_url( $revisions_base ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'count' => $revisions_count,
 			);
 
 			if ( $revisions_count > 0 ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 				$links['predecessor-version'] = array(
 					'href' => rest_url( $revisions_base . '/' . $revisions['latest_id'] ),
@@ -2160,6 +2240,11 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 					'href' => rest_url( trailingslashit( $base ) . $post->ID . '/revisions/' . $last_revision ),
 					'id'   => $last_revision,
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$links['predecessor-version'] = array(
+					'href' => rest_url( $revisions_base . '/' . $revisions['latest_id'] ),
+					'id'   => $revisions['latest_id'],
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				);
 			}
 		}
@@ -2224,10 +2309,14 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Gets the link relations available for the post and current user.
 =======
 	 * Get the link relations available for the post and current user.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Gets the link relations available for the post and current user.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.9.8
 	 *
@@ -2716,10 +2805,14 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Retrieves Link Description Objects that should be added to the Schema for the posts collection.
 =======
 	 * Retrieve Link Description Objects that should be added to the Schema for the posts collection.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Retrieves Link Description Objects that should be added to the Schema for the posts collection.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.9.8
 	 *
@@ -2982,6 +3075,9 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$query_params['search_columns'] = array(
 			'default'     => array(),
 			'description' => __( 'Array of column names to be searched.' ),
@@ -2996,6 +3092,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			'description' => __( 'Limit result set to posts with one or more specific slugs.' ),
 			'type'        => 'array',
 			'items'       => array(
+<<<<<<< HEAD
 				'type' => 'string',
 			),
 =======
@@ -3007,6 +3104,10 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			),
 			'sanitize_callback' => 'wp_parse_slug_list',
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'type' => 'string',
+			),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		);
 
 		$query_params['status'] = array(

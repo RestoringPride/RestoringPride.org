@@ -103,6 +103,7 @@ class WP_REST_Block_Pattern_Categories_Controller extends WP_REST_Controller {
 	public function prepare_item_for_response( $item, $request ) {
 		$fields = $this->get_fields_for_response( $request );
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$keys   = array( 'name', 'label', 'description' );
 		$data   = array();
 		foreach ( $keys as $key ) {
@@ -113,6 +114,12 @@ class WP_REST_Block_Pattern_Categories_Controller extends WP_REST_Controller {
 		foreach ( $keys as $key ) {
 			if ( rest_is_field_included( $key, $fields ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$keys   = array( 'name', 'label', 'description' );
+		$data   = array();
+		foreach ( $keys as $key ) {
+			if ( isset( $item[ $key ] ) && rest_is_field_included( $key, $fields ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$data[ $key ] = $item[ $key ];
 			}
 		}
@@ -138,34 +145,48 @@ class WP_REST_Block_Pattern_Categories_Controller extends WP_REST_Controller {
 			'type'       => 'object',
 			'properties' => array(
 <<<<<<< HEAD
+<<<<<<< HEAD
 				'name'        => array(
 =======
 				'name'  => array(
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'name'        => array(
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					'description' => __( 'The category name.' ),
 					'type'        => 'string',
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
 <<<<<<< HEAD
+<<<<<<< HEAD
 				'label'       => array(
 =======
 				'label' => array(
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'label'       => array(
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					'description' => __( 'The category label, in human readable format.' ),
 					'type'        => 'string',
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'description' => array(
 					'description' => __( 'The category description, in human readable format.' ),
 					'type'        => 'string',
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			),
 		);
 

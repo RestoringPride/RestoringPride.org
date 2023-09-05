@@ -273,6 +273,7 @@ class WP_REST_Taxonomies_Controller extends WP_REST_Controller {
 		$response = rest_ensure_response( $data );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $taxonomy ) );
 		}
@@ -288,6 +289,11 @@ class WP_REST_Taxonomies_Controller extends WP_REST_Controller {
 			)
 		);
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
+			$response->add_links( $this->prepare_links( $taxonomy ) );
+		}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters a taxonomy returned from the REST API.
@@ -305,6 +311,9 @@ class WP_REST_Taxonomies_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Prepares links for the request.
 	 *
 	 * @since 6.1.0
@@ -324,8 +333,11 @@ class WP_REST_Taxonomies_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Retrieves the taxonomy's schema, conforming to JSON Schema.
 	 *
 	 * @since 4.7.0
@@ -465,7 +477,10 @@ class WP_REST_Taxonomies_Controller extends WP_REST_Controller {
 		return $new_params;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }

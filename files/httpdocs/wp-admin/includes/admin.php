@@ -14,12 +14,18 @@ if ( ! defined( 'WP_ADMIN' ) ) {
 	 * load_default_textdomain() will not have done so in this context.
 	 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$admin_locale = get_locale();
 	load_textdomain( 'default', WP_LANG_DIR . '/admin-' . $admin_locale . '.mo', $admin_locale );
 	unset( $admin_locale );
 =======
 	load_textdomain( 'default', WP_LANG_DIR . '/admin-' . get_locale() . '.mo' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$admin_locale = get_locale();
+	load_textdomain( 'default', WP_LANG_DIR . '/admin-' . $admin_locale . '.mo', $admin_locale );
+	unset( $admin_locale );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 /** WordPress Administration Hooks */

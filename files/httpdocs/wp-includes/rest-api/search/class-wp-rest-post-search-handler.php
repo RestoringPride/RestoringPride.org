@@ -64,9 +64,12 @@ class WP_REST_Post_Search_Handler extends WP_REST_Search_Handler {
 			'posts_per_page'      => (int) $request['per_page'],
 			'ignore_sticky_posts' => true,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			'fields'              => 'ids',
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		);
 
 		if ( ! empty( $request['search'] ) ) {
@@ -74,6 +77,9 @@ class WP_REST_Post_Search_Handler extends WP_REST_Search_Handler {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! empty( $request['exclude'] ) ) {
 			$query_args['post__not_in'] = $request['exclude'];
 		}
@@ -82,8 +88,11 @@ class WP_REST_Post_Search_Handler extends WP_REST_Search_Handler {
 			$query_args['post__in'] = $request['include'];
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		/**
 		 * Filters the query arguments for a REST API search request.
 		 *
@@ -97,14 +106,20 @@ class WP_REST_Post_Search_Handler extends WP_REST_Search_Handler {
 		$query_args = apply_filters( 'rest_post_search_query', $query_args, $request );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$query = new WP_Query();
 		$posts = $query->query( $query_args );
 		// Querying the whole post object will warm the object cache, avoiding an extra query per result.
 		$found_ids = wp_list_pluck( $posts, 'ID' );
+<<<<<<< HEAD
 =======
 		$query     = new WP_Query();
 		$found_ids = $query->query( $query_args );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$total     = $query->found_posts;
 
 		return array(

@@ -8,9 +8,13 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 final class WP_Privacy_Policy_Content {
 
 	private static $policy_content = array();
@@ -108,10 +112,14 @@ final class WP_Privacy_Policy_Content {
 
 		// The == operator (equal, not identical) was used intentionally.
 <<<<<<< HEAD
+<<<<<<< HEAD
 		// See https://www.php.net/manual/en/language.operators.array.php
 =======
 		// See http://php.net/manual/en/language.operators.array.php
 >>>>>>> fb785cbb (Initial commit)
+=======
+		// See https://www.php.net/manual/en/language.operators.array.php
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( $new != $old ) {
 			// A plugin was activated or deactivated, or some policy text has changed.
 			// Show a notice on the relevant screens to inform the admin.
@@ -369,10 +377,14 @@ final class WP_Privacy_Policy_Content {
 					$url,
 					$label,
 <<<<<<< HEAD
+<<<<<<< HEAD
 					/* translators: Hidden accessibility text. */
 =======
 					/* translators: Accessibility text. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+					/* translators: Hidden accessibility text. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					__( '(opens in a new tab)' )
 				);
 				?>
@@ -440,10 +452,14 @@ final class WP_Privacy_Policy_Content {
 						<span class="screen-reader-text">
 							<?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 							/* translators: Hidden accessibility text. %s: Plugin name. */
 =======
 							/* translators: %s: Plugin name. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+							/* translators: Hidden accessibility text. %s: Plugin name. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							printf( __( 'Copy suggested policy text from %s.' ), $plugin_name );
 							?>
 						</span>

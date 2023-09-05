@@ -70,15 +70,21 @@ class WP_Customize_Nav_Menus_Panel extends WP_Customize_Panel {
 		<li class="panel-meta customize-info accordion-section <# if ( ! data.description ) { #> cannot-expand<# } #>">
 			<button type="button" class="customize-panel-back" tabindex="-1">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Back' );
 					?>
 				</span>
+<<<<<<< HEAD
 =======
 				<span class="screen-reader-text"><?php _e( 'Back' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			</button>
 			<div class="accordion-section-title">
 				<span class="preview-notice">
@@ -89,12 +95,16 @@ class WP_Customize_Nav_Menus_Panel extends WP_Customize_Panel {
 				</span>
 				<button type="button" class="customize-help-toggle dashicons dashicons-editor-help" aria-expanded="false">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<span class="screen-reader-text">
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'Help' );
 						?>
 					</span>
+<<<<<<< HEAD
 				</button>
 				<button type="button" class="customize-screen-options-toggle" aria-expanded="false">
 					<span class="screen-reader-text">
@@ -109,6 +119,16 @@ class WP_Customize_Nav_Menus_Panel extends WP_Customize_Panel {
 				<button type="button" class="customize-screen-options-toggle" aria-expanded="false">
 					<span class="screen-reader-text"><?php _e( 'Menu Options' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+				</button>
+				<button type="button" class="customize-screen-options-toggle" aria-expanded="false">
+					<span class="screen-reader-text">
+						<?php
+						/* translators: Hidden accessibility text. */
+						_e( 'Menu Options' );
+						?>
+					</span>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				</button>
 			</div>
 			<# if ( data.description ) { #>
@@ -124,6 +144,7 @@ class WP_Customize_Nav_Menus_Panel extends WP_Customize_Panel {
 		<li class="customize-control-title customize-section-title-nav_menus-heading"><?php _e( 'Menus' ); ?></li>
 		<?php
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -150,4 +171,6 @@ class WP_Customize_Nav_Menus_Panel extends WP_Customize_Panel {
 		return parent::check_capabilities();
 	}
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }

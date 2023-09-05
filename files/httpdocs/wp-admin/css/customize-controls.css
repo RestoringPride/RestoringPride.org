@@ -473,9 +473,12 @@ body.trashing #publish-settings {
 	cursor: pointer;
 	box-shadow: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	-webkit-appearance: none;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	background: transparent;
 	color: #50575e;
 	border: none;
@@ -1609,9 +1612,12 @@ p.customize-section-description {
 	font-size: 12px;
 	padding: 6px 8px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	-o-tab-size: 2;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	tab-size: 2;
 }
 .customize-control-code_editor textarea,

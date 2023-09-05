@@ -17,9 +17,13 @@
  * @see WP_Customize_Manager
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Customize_Panel {
 
 	/**
@@ -77,10 +81,14 @@ class WP_Customize_Panel {
 	 *
 	 * @since 4.0.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var mixed[]
 =======
 	 * @var string|string[]
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var mixed[]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $theme_supports = '';
 
@@ -155,10 +163,14 @@ class WP_Customize_Panel {
 	 *     @type string          $capability      Capability required for the panel.
 	 *                                            Default `edit_theme_options`.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 *     @type mixed[]         $theme_supports  Theme features required to support the panel.
 =======
 	 *     @type string|string[] $theme_supports  Theme features required to support the panel.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 *     @type mixed[]         $theme_supports  Theme features required to support the panel.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *     @type string          $title           Title of the panel to show in UI.
 	 *     @type string          $description     Description to show in the UI.
 	 *     @type string          $type            Type of the panel.
@@ -360,15 +372,21 @@ class WP_Customize_Panel {
 			<h3 class="accordion-section-title" tabindex="0">
 				{{ data.title }}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Press return or enter to open this panel' );
 					?>
 				</span>
+<<<<<<< HEAD
 =======
 				<span class="screen-reader-text"><?php _e( 'Press return or enter to open this panel' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			</h3>
 			<ul class="accordion-sub-container control-panel-content"></ul>
 		</li>
@@ -389,15 +407,21 @@ class WP_Customize_Panel {
 		?>
 		<li class="panel-meta customize-info accordion-section <# if ( ! data.description ) { #> cannot-expand<# } #>">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<button class="customize-panel-back" tabindex="-1"><span class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( 'Back' );
 				?>
 			</span></button>
+<<<<<<< HEAD
 =======
 			<button class="customize-panel-back" tabindex="-1"><span class="screen-reader-text"><?php _e( 'Back' ); ?></span></button>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<div class="accordion-section-title">
 				<span class="preview-notice">
 				<?php
@@ -407,15 +431,21 @@ class WP_Customize_Panel {
 				</span>
 				<# if ( data.description ) { #>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<button type="button" class="customize-help-toggle dashicons dashicons-editor-help" aria-expanded="false"><span class="screen-reader-text">
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'Help' );
 						?>
 					</span></button>
+<<<<<<< HEAD
 =======
 					<button type="button" class="customize-help-toggle dashicons dashicons-editor-help" aria-expanded="false"><span class="screen-reader-text"><?php _e( 'Help' ); ?></span></button>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<# } #>
 			</div>
 			<# if ( data.description ) { #>

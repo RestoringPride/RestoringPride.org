@@ -40,19 +40,27 @@
  * @since 2.8.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_HTTP_Proxy {
 
 	/**
 	 * Whether proxy connection should be used.
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Constants which control this behavior:
 =======
 	 * Constants which control this behaviour:
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Constants which control this behavior:
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * - `WP_PROXY_HOST`
 	 * - `WP_PROXY_PORT`
@@ -69,10 +77,14 @@ class WP_HTTP_Proxy {
 	 * Whether authentication should be used.
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Constants which control this behavior:
 =======
 	 * Constants which control this behaviour:
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Constants which control this behavior:
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * - `WP_PROXY_USERNAME`
 	 * - `WP_PROXY_PASSWORD`

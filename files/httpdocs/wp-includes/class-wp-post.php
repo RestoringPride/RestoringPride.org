@@ -15,6 +15,7 @@
  * @property string $page_template
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @property-read int[]    $ancestors
  * @property-read int[]    $post_category
  * @property-read string[] $tags_input
@@ -26,6 +27,13 @@
  * @property-read string $tag_input
  */
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @property-read int[]    $ancestors
+ * @property-read int[]    $post_category
+ * @property-read string[] $tags_input
+ */
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 final class WP_Post {
 
 	/**

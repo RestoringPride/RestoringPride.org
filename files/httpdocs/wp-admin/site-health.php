@@ -123,10 +123,14 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 	<div class="health-check-title-section site-health-progress-wrapper loading hide-if-no-js">
 		<div class="site-health-progress">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<svg aria-hidden="true" focusable="false" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
 =======
 			<svg role="img" aria-hidden="true" focusable="false" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
 >>>>>>> fb785cbb (Initial commit)
+=======
+			<svg aria-hidden="true" focusable="false" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
 				<circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
 			</svg>
@@ -169,15 +173,21 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 			<button type="button" class="health-check-tab health-check-offscreen-nav-wrapper" aria-haspopup="true">
 				<span class="dashicons dashicons-ellipsis"></span>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Toggle extra menu items' );
 					?>
 				</span>
+<<<<<<< HEAD
 =======
 				<span class="screen-reader-text"><?php _e( 'Toggle extra menu items' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 				<div class="health-check-offscreen-nav">
 					<?php
@@ -251,6 +261,7 @@ if ( isset( $_GET['tab'] ) && ! empty( $_GET['tab'] ) ) {
 		</h2>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<p><?php _e( 'The site health check shows information about your WordPress configuration and items that may need your attention.' ); ?></p>
 
 		<div class="site-health-issues-wrapper hidden" id="health-check-issues-critical">
@@ -259,6 +270,11 @@ if ( isset( $_GET['tab'] ) && ! empty( $_GET['tab'] ) ) {
 
 		<div class="site-health-issues-wrapper" id="health-check-issues-critical">
 >>>>>>> fb785cbb (Initial commit)
+=======
+		<p><?php _e( 'The site health check shows information about your WordPress configuration and items that may need your attention.' ); ?></p>
+
+		<div class="site-health-issues-wrapper hidden" id="health-check-issues-critical">
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<h3 class="site-health-issue-count-title">
 				<?php
 					/* translators: %s: Number of critical issues found. */
@@ -266,6 +282,7 @@ if ( isset( $_GET['tab'] ) && ! empty( $_GET['tab'] ) ) {
 				?>
 			</h3>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 			<p><?php _e( 'Critical issues are items that may have a high impact on your sites performance or security, and resolving these issues should be prioritized.' ); ?></p>
 
@@ -279,6 +296,14 @@ if ( isset( $_GET['tab'] ) && ! empty( $_GET['tab'] ) ) {
 
 		<div class="site-health-issues-wrapper" id="health-check-issues-recommended">
 >>>>>>> fb785cbb (Initial commit)
+=======
+			<p><?php _e( 'Critical issues are items that may have a high impact on your sites performance or security, and resolving these issues should be prioritized.' ); ?></p>
+
+			<div id="health-check-site-status-critical" class="health-check-accordion issues"></div>
+		</div>
+
+		<div class="site-health-issues-wrapper hidden" id="health-check-issues-recommended">
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<h3 class="site-health-issue-count-title">
 				<?php
 					/* translators: %s: Number of recommended improvements. */
@@ -287,10 +312,15 @@ if ( isset( $_GET['tab'] ) && ! empty( $_GET['tab'] ) ) {
 			</h3>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<p><?php _e( 'Recommended items are considered beneficial to your site, although not as important to prioritize as a critical issue, they may include improvements to things such as; Performance, user experience, and more.' ); ?></p>
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+			<p><?php _e( 'Recommended items are considered beneficial to your site, although not as important to prioritize as a critical issue, they may include improvements to things such as; Performance, user experience, and more.' ); ?></p>
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<div id="health-check-site-status-recommended" class="health-check-accordion issues"></div>
 		</div>
 	</div>

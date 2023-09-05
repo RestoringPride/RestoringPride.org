@@ -15,9 +15,13 @@
  * @see WP_Comment_Query::__construct() for accepted arguments.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Comment_Query {
 
 	/**
@@ -164,9 +168,12 @@ class WP_Comment_Query {
 	 *     @type string          $fields                    Comment fields to return. Accepts 'ids' for comment IDs
 	 *                                                      only or empty for all fields. Default empty.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	 *     @type int             $ID                        Currently unused.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *     @type array           $include_unapproved        Array of IDs or email addresses of users whose unapproved
 	 *                                                      comments will be returned by the query regardless of
 	 *                                                      `$status`. Default empty.
@@ -175,6 +182,7 @@ class WP_Comment_Query {
 	 *     @type string|string[] $meta_key                  Meta key or keys to filter by.
 	 *     @type string|string[] $meta_value                Meta value or values to filter by.
 	 *     @type string          $meta_compare              MySQL operator used for comparing the meta value.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 *                                                      See WP_Meta_Query::__construct() for accepted values and default value.
 	 *     @type string          $meta_compare_key          MySQL operator used for comparing the meta key.
@@ -187,15 +195,22 @@ class WP_Comment_Query {
 	 *                                                      See WP_Meta_Query::__construct() for accepted values.
 =======
 	 *                                                      See WP_Meta_Query::__construct for accepted values and default value.
+=======
+	 *                                                      See WP_Meta_Query::__construct() for accepted values and default value.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *     @type string          $meta_compare_key          MySQL operator used for comparing the meta key.
-	 *                                                      See WP_Meta_Query::__construct for accepted values and default value.
+	 *                                                      See WP_Meta_Query::__construct() for accepted values and default value.
 	 *     @type string          $meta_type                 MySQL data type that the meta_value column will be CAST to for comparisons.
-	 *                                                      See WP_Meta_Query::__construct for accepted values and default value.
+	 *                                                      See WP_Meta_Query::__construct() for accepted values and default value.
 	 *     @type string          $meta_type_key             MySQL data type that the meta_key column will be CAST to for comparisons.
-	 *                                                      See WP_Meta_Query::__construct for accepted values and default value.
+	 *                                                      See WP_Meta_Query::__construct() for accepted values and default value.
 	 *     @type array           $meta_query                An associative array of WP_Meta_Query arguments.
+<<<<<<< HEAD
 	 *                                                      See WP_Meta_Query::__construct for accepted values.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 *                                                      See WP_Meta_Query::__construct() for accepted values.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *     @type int             $number                    Maximum number of comments to retrieve.
 	 *                                                      Default empty (no limit).
 	 *     @type int             $paged                     When used with `$number`, defines the page of results to return.
@@ -243,9 +258,12 @@ class WP_Comment_Query {
 	 *     @type int[]           $post_author__not_in       Array of author IDs *not* to retrieve comments for.
 	 *                                                      Default empty.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	 *     @type int             $post_ID                   Currently unused.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *     @type int             $post_id                   Limit results to those affiliated with a given post ID.
 	 *                                                      Default 0.
 	 *     @type int[]           $post__in                  Array of post IDs to include affiliated comments for.
@@ -934,22 +952,32 @@ class WP_Comment_Query {
 
 		if ( ! empty( $this->query_vars['date_query'] ) && is_array( $this->query_vars['date_query'] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$this->date_query = new WP_Date_Query( $this->query_vars['date_query'], 'comment_date' );
 
 			// Strip leading 'AND'.
 =======
 			$this->date_query                         = new WP_Date_Query( $this->query_vars['date_query'], 'comment_date' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$this->date_query = new WP_Date_Query( $this->query_vars['date_query'], 'comment_date' );
+
+			// Strip leading 'AND'.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$this->sql_clauses['where']['date_query'] = preg_replace( '/^\s*AND\s*/', '', $this->date_query->get_sql() );
 		}
 
 		$where = implode( ' AND ', $this->sql_clauses['where'] );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$pieces = array( 'fields', 'join', 'where', 'orderby', 'limits', 'groupby' );
 =======
 		$clauses = array( 'fields', 'join', 'where', 'orderby', 'limits', 'groupby' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$pieces = array( 'fields', 'join', 'where', 'orderby', 'limits', 'groupby' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters the comment query clauses.
@@ -960,10 +988,14 @@ class WP_Comment_Query {
 		 * @param WP_Comment_Query $query   Current instance of WP_Comment_Query (passed by reference).
 		 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$clauses = apply_filters_ref_array( 'comments_clauses', array( compact( $pieces ), &$this ) );
 =======
 		$clauses = apply_filters_ref_array( 'comments_clauses', array( compact( $clauses ), &$this ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$clauses = apply_filters_ref_array( 'comments_clauses', array( compact( $pieces ), &$this ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$fields  = isset( $clauses['fields'] ) ? $clauses['fields'] : '';
 		$join    = isset( $clauses['join'] ) ? $clauses['join'] : '';

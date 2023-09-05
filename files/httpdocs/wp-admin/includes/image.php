@@ -191,9 +191,13 @@ function wp_update_image_subsizes( $attachment_id ) {
  *
  * @since 5.3.0
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @since 6.0.0 The `$filesize` value was added to the returned array.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @since 6.0.0 The `$filesize` value was added to the returned array.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @access private
  *
  * @param array  $saved_data    The data returned from WP_Image_Editor after successfully saving an image.
@@ -216,6 +220,7 @@ function _wp_image_meta_replace_original( $saved_data, $original_file, $image_me
 	$image_meta['file'] = _wp_relative_upload_path( $new_file );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// Add image file size.
 	$image_meta['filesize'] = wp_filesize( $new_file );
 
@@ -230,6 +235,14 @@ function _wp_image_meta_replace_original( $saved_data, $original_file, $image_me
 	$image_meta['filesize'] = wp_filesize( $new_file );
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+	// Add image file size.
+	$image_meta['filesize'] = wp_filesize( $new_file );
+
+	// Store the original image file name in image_meta.
+	$image_meta['original_image'] = wp_basename( $original_file );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	return $image_meta;
 }
 
@@ -488,6 +501,7 @@ function _wp_make_subsizes( $new_sizes, $file, $image_meta, $attachment_id ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Generates attachment meta data and create image sub-sizes for images.
  *
  * @since 2.1.0
@@ -497,6 +511,12 @@ function _wp_make_subsizes( $new_sizes, $file, $image_meta, $attachment_id ) {
  *
  * @since 2.1.0
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Generates attachment meta data and create image sub-sizes for images.
+ *
+ * @since 2.1.0
+ * @since 6.0.0 The `$filesize` value was added to the returned array.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @param int    $attachment_id Attachment ID to process.
  * @param string $file          Filepath of the attached image.
@@ -678,10 +698,14 @@ function wp_generate_attachment_metadata( $attachment_id, $file ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Converts a fraction string to a decimal.
 =======
  * Convert a fraction string to a decimal.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Converts a fraction string to a decimal.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 2.5.0
  *
@@ -723,10 +747,14 @@ function wp_exif_frac2dec( $str ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Converts the exif date format to a unix timestamp.
 =======
  * Convert the exif date format to a unix timestamp.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Converts the exif date format to a unix timestamp.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 2.5.0
  *
@@ -742,10 +770,14 @@ function wp_exif_date2ts( $str ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Gets extended image metadata, exif or iptc as available.
 =======
  * Get extended image metadata, exif or iptc as available.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Gets extended image metadata, exif or iptc as available.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * Retrieves the EXIF metadata aperture, credit, camera, caption, copyright, iso
  * created_timestamp, focal_length, shutter_speed, and title.
@@ -980,10 +1012,14 @@ function wp_read_image_metadata( $file ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Validates that file is an image.
 =======
  * Validate that file is an image.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Validates that file is an image.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 2.5.0
  *
@@ -997,10 +1033,14 @@ function file_is_valid_image( $path ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Validates that file is suitable for displaying within a web page.
 =======
  * Validate that file is suitable for displaying within a web page.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Validates that file is suitable for displaying within a web page.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 2.5.0
  *
@@ -1032,10 +1072,14 @@ function file_is_displayable_image( $path ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Loads an image resource for editing.
 =======
  * Load an image resource for editing.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Loads an image resource for editing.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 2.9.0
  *
@@ -1097,10 +1141,14 @@ function load_image_to_edit( $attachment_id, $mime_type, $size = 'full' ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Retrieves the path or URL of an attachment's attached file.
 =======
  * Retrieve the path or URL of an attachment's attached file.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Retrieves the path or URL of an attachment's attached file.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * If the attached file is not present on the local filesystem (usually due to replication plugins),
  * then the URL of the file is returned if `allow_url_fopen` is supported.
@@ -1169,10 +1217,14 @@ function _load_image_to_edit_path( $attachment_id, $size = 'full' ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copies an existing image file.
 =======
  * Copy an existing image file.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Copies an existing image file.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 3.4.0
  * @access private

@@ -61,15 +61,21 @@ class WP_Widget_Area_Customize_Control extends WP_Customize_Control {
 			<span class="reorder-done"><?php _e( 'Done' ); ?></span>
 		</button>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<p class="screen-reader-text" id="<?php echo esc_attr( $id ); ?>">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'When in reorder mode, additional controls to reorder widgets will be available in the widgets list above.' );
 			?>
 		</p>
+<<<<<<< HEAD
 =======
 		<p class="screen-reader-text" id="<?php echo esc_attr( $id ); ?>"><?php _e( 'When in reorder mode, additional controls to reorder widgets will be available in the widgets list above.' ); ?></p>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<?php
 	}
 }

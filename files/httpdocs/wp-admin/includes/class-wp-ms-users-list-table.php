@@ -12,9 +12,12 @@
  *
  * @since 3.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_List_Table
  */
@@ -141,10 +144,14 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 		$total_admins = count( $super_admins );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$role_links        = array();
 		$role_links['all'] = array(
 			'url'     => network_admin_url( 'users.php' ),
 			'label'   => sprintf(
+<<<<<<< HEAD
 =======
 		$current_link_attributes = 'super' !== $role ? ' class="current" aria-current="page"' : '';
 		$role_links              = array();
@@ -154,6 +161,8 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 			$current_link_attributes,
 			sprintf(
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				/* translators: Number of users. */
 				_nx(
 					'All <span class="count">(%s)</span>',
@@ -162,6 +171,7 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 					'users'
 				),
 				number_format_i18n( $total_users )
+<<<<<<< HEAD
 <<<<<<< HEAD
 			),
 			'current' => 'super' !== $role,
@@ -180,6 +190,15 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 			$current_link_attributes,
 			sprintf(
 >>>>>>> fb785cbb (Initial commit)
+=======
+			),
+			'current' => 'super' !== $role,
+		);
+
+		$role_links['super'] = array(
+			'url'     => network_admin_url( 'users.php?role=super' ),
+			'label'   => sprintf(
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				/* translators: Number of users. */
 				_n(
 					'Super Admin <span class="count">(%s)</span>',
@@ -187,6 +206,7 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 					$total_admins
 				),
 				number_format_i18n( $total_admins )
+<<<<<<< HEAD
 <<<<<<< HEAD
 			),
 			'current' => 'super' === $role,
@@ -199,6 +219,13 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 
 		return $role_links;
 >>>>>>> fb785cbb (Initial commit)
+=======
+			),
+			'current' => 'super' === $role,
+		);
+
+		return $this->get_views_links( $role_links );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -270,10 +297,14 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 		<label class="screen-reader-text" for="blog_<?php echo $user->ID; ?>">
 			<?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 			/* translators: Hidden accessibility text. %s: User login. */
 =======
 			/* translators: %s: User login. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+			/* translators: Hidden accessibility text. %s: User login. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			printf( __( 'Select %s' ), $user->user_login );
 			?>
 		</label>
@@ -335,28 +366,40 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 	public function column_name( $user ) {
 		if ( $user->first_name && $user->last_name ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			printf(
 				/* translators: 1: User's first name, 2: Last name. */
 				_x( '%1$s %2$s', 'Display name based on first name and last name' ),
 				$user->first_name,
 				$user->last_name
 			);
+<<<<<<< HEAD
 =======
 			echo "$user->first_name $user->last_name";
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		} elseif ( $user->first_name ) {
 			echo $user->first_name;
 		} elseif ( $user->last_name ) {
 			echo $user->last_name;
 		} else {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			echo '<span aria-hidden="true">&#8212;</span><span class="screen-reader-text">' .
 				/* translators: Hidden accessibility text. */
 				_x( 'Unknown', 'name' ) .
 			'</span>';
+<<<<<<< HEAD
 =======
 			echo '<span aria-hidden="true">&#8212;</span><span class="screen-reader-text">' . _x( 'Unknown', 'name' ) . '</span>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 
@@ -482,6 +525,7 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 				++$i;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$separator = ( $i < $action_count ) ? ' | ' : '';
 
 				echo "<span class='$action'>{$link}{$separator}</span>";
@@ -490,12 +534,19 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 			echo '</small></span><br />';
 =======
 				$sep = ( $i < $action_count ) ? ' | ' : '';
+=======
+				$separator = ( $i < $action_count ) ? ' | ' : '';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
-				echo "<span class='$action'>$link$sep</span>";
+				echo "<span class='$action'>{$link}{$separator}</span>";
 			}
 
+<<<<<<< HEAD
 			echo '</small></span><br/>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+			echo '</small></span><br />';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 

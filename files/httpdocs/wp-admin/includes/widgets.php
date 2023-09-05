@@ -246,20 +246,28 @@ function wp_widget_control( $sidebar_args ) {
 			<span class="screen-reader-text edit">
 				<?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. %s: Widget title. */
 =======
 				/* translators: %s: Widget title. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+				/* translators: Hidden accessibility text. %s: Widget title. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				printf( __( 'Edit widget: %s' ), $widget_title );
 				?>
 			</span>
 			<span class="screen-reader-text add">
 				<?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. %s: Widget title. */
 =======
 				/* translators: %s: Widget title. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+				/* translators: Hidden accessibility text. %s: Widget title. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				printf( __( 'Add widget: %s' ), $widget_title );
 				?>
 			</span>

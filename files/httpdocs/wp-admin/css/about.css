@@ -8,9 +8,13 @@
    2.0 Credits Page
    3.0 Freedoms Page
 <<<<<<< HEAD
+<<<<<<< HEAD
    4.0 Privacy Page
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+   4.0 Privacy Page
+>>>>>>> c058c778 (Combining with the latest source from WP)
    x.2.0 Legacy About Styles: Global
     x.2.1 Typography
     x.2.2 Structure
@@ -25,12 +29,17 @@
 .about__container {
 	/* Section backgrounds */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	--background: #274acd;
 	--subtle-background: #eff2ff;
 =======
 	--background: transparent;
 	--subtle-background: #f0f0f0;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	--background: #274acd;
+	--subtle-background: #eff2ff;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/* Main text color */
 	--text: #000;
@@ -38,12 +47,17 @@
 
 	/* Accent colors: used in header, on special classes. */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	--accent-1: #3858e9; /* Link color, credit image overlay */
 	--accent-2: #fffcb5; /* Accent background */
 =======
 	--accent-1: #3858e9; /* Accent background, link color */
 	--accent-2: #3858e9; /* Header background */
 >>>>>>> fb785cbb (Initial commit)
+=======
+	--accent-1: #3858e9; /* Link color, credit image overlay */
+	--accent-2: #fffcb5; /* Accent background */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/* Navigation colors. */
 	--nav-background: #fff;
@@ -114,14 +128,19 @@
 
 .about__section {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	background: transparent;
 =======
 	background: var(--background);
 >>>>>>> fb785cbb (Initial commit)
+=======
+	background: transparent;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	clear: both;
 }
 
 .about__container .has-accent-background-color {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	background-color: var(--accent-2);
 =======
@@ -132,6 +151,9 @@
 .about__container .has-accent-background-color a {
 	color: var(--text-light);
 >>>>>>> fb785cbb (Initial commit)
+=======
+	background-color: var(--accent-2);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .about__container .has-transparent-background-color {
@@ -140,10 +162,14 @@
 
 .about__container .has-accent-color {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: var(--accent-2);
 =======
 	color: var(--accent-1);
 >>>>>>> fb785cbb (Initial commit)
+=======
+	color: var(--accent-2);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .about__container .has-border {
@@ -164,10 +190,14 @@
 
 .about__section {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin: 0;
 =======
 	margin: 0 0 var(--gap);
 >>>>>>> fb785cbb (Initial commit)
+=======
+	margin: 0;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .about__section .column:not(.is-edge-to-edge) {
@@ -179,6 +209,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .about__section .column[class*="background-color"]:not(.is-edge-to-edge),
 .about__section:where([class*="background-color"]) .column:not(.is-edge-to-edge),
 .about__section .column.has-border:not(.is-edge-to-edge) {
@@ -187,6 +218,11 @@
 .about__section:where([class*="background-color"]) .column,
 .about__section .column.has-border {
 >>>>>>> fb785cbb (Initial commit)
+=======
+.about__section .column[class*="background-color"]:not(.is-edge-to-edge),
+.about__section:where([class*="background-color"]) .column:not(.is-edge-to-edge),
+.about__section .column.has-border:not(.is-edge-to-edge) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	padding-top: var(--gap);
 	padding-bottom: var(--gap);
 }
@@ -246,10 +282,14 @@
 .about__section.has-gutters {
 	gap: var(--gap);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin-bottom: var(--gap);
 =======
 	margin-bottom: calc(var(--gap) * 2);
 >>>>>>> fb785cbb (Initial commit)
+=======
+	margin-bottom: var(--gap);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .about__section.has-2-columns {
@@ -516,6 +556,9 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .about__container h4,
 .about__container h3.is-smaller-heading {
 	margin-top: 0;
@@ -524,8 +567,11 @@
 	line-height: 1.6;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .about__container p {
 	font-size: inherit;
 	line-height: inherit;
@@ -567,10 +613,14 @@
 
 .about__container li {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin-bottom: 0.5rem;
 =======
 	margin-bottom: 0.75rem;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	margin-bottom: 0.5rem;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .about__container img {
@@ -612,9 +662,13 @@
 	height: var(--gap);
 	border: none;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	border-top: 4px solid #d9d9d9;
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	border-top: 4px solid #d9d9d9;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .about__container hr.is-small {
@@ -657,6 +711,7 @@
 
 .about__header {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	--about-header-image-width: 780px;
 	--about-header-image-height: 550px;
 	--about-header-bg-width: var(--about-header-image-width);
@@ -669,10 +724,18 @@
 	--about-header-bg-height: var(--about-header-image-height);
 	--about-header-bg-offset-inline: calc(var(--gap) * -2);
 >>>>>>> fb785cbb (Initial commit)
+=======
+	--about-header-image-width: 780px;
+	--about-header-image-height: 550px;
+	--about-header-bg-width: var(--about-header-image-width);
+	--about-header-bg-height: var(--about-header-image-height);
+	--about-header-bg-offset-block: 0;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	position: relative;
 	margin-bottom: var(--gap);
 	padding-top: 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	color: var(--text-light);
 	background: var(--background) url('../images/about-header-about.svg?ver=6.1') no-repeat;
@@ -702,36 +765,40 @@
 	background-image: url('../images/about-header-privacy.svg?ver=6.1');
 =======
 	background: var(--subtle-background) url('../images/about-header-about.svg?ver=6.0') no-repeat;
+=======
+	color: var(--text-light);
+	background: var(--background) url('../images/about-header-about.svg?ver=6.1') no-repeat;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	background-size: var(--about-header-bg-width) var(--about-header-bg-height);
-	background-position: right var(--about-header-bg-offset-inline) center;
+	background-position: center top var(--about-header-bg-offset-block);
 }
 
 .credits-php .about__header {
-	--about-header-image-width: 477px;
-	--about-header-image-height: 470px;
-	--about-header-bg-offset-inline: calc(var(--gap) * -4);
+	--about-header-image-width: 863px;
+	--about-header-image-height: 550px;
 
-	background-image: url('../images/about-header-credits.svg?ver=6.0');
-	background-position: right var(--about-header-bg-offset-inline) top var(--gap);
+	background-image: url('../images/about-header-credits.svg?ver=6.1');
 }
 
 .freedoms-php .about__header {
-	--about-header-image-width: 411px;
-	--about-header-image-height: 498px;
-	--about-header-bg-offset-inline: var(--gap);
+	--about-header-image-width: 782px;
+	--about-header-image-height: 510px;
 
-	background-image: url('../images/about-header-freedoms.svg?ver=6.0');
-	background-position: right var(--about-header-bg-offset-inline) top calc(var(--gap) * 4);
+	background-image: url('../images/about-header-freedoms.svg?ver=6.1');
 }
 
 .privacy-php .about__header {
-	--about-header-image-width: 277px;
-	--about-header-image-height: 361px;
-	--about-header-bg-offset-inline: var(--gap);
+	--about-header-image-width: 1005px;
+	--about-header-image-height: 500px;
+	--about-header-bg-offset-block: calc(var(--gap) * -2);
 
+<<<<<<< HEAD
 	background-image: url('../images/about-header-privacy.svg?ver=6.0');
 	background-position: right var(--about-header-bg-offset-inline) top var(--gap);
 >>>>>>> fb785cbb (Initial commit)
+=======
+	background-image: url('../images/about-header-privacy.svg?ver=6.1');
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .about__header-image {
@@ -740,6 +807,7 @@
 
 .about__header-title {
 	box-sizing: border-box;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	margin: 0 var(--gap);
 	padding: 9rem 0 0;
@@ -758,22 +826,35 @@
 .freedoms-php .about__header-title {
 	padding-top: 3rem;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	margin: 0 var(--gap);
+	padding: 9rem 0 0;
+	text-align: center;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .about__header-title h1 {
 	margin: 0 0 1rem;
 	padding: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/* Fluid font size scales on browser size 960px - 1200px. */
 	font-size: clamp(3rem, 20vw - 9rem, 6rem);
 =======
 	font-size: clamp(3rem, 18.46vw - 8.08rem, 6rem);
 >>>>>>> fb785cbb (Initial commit)
+=======
+	/* Fluid font size scales on browser size 960px - 1200px. */
+	font-size: clamp(3rem, 20vw - 9rem, 6rem);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	line-height: 1;
 	font-weight: 400;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .credits-php .about__header-title h1,
 .privacy-php .about__header-title h1,
 .freedoms-php .about__header-title h1 {
@@ -781,6 +862,7 @@
 	font-size: clamp(3rem, 10vw - 3rem, 4.5rem);
 }
 
+<<<<<<< HEAD
 .about__header-text {
 	box-sizing: border-box;
 	max-width: 22em;
@@ -794,15 +876,19 @@
 .credits-php .about__header-text {
 	margin-bottom: 9rem;
 =======
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .about__header-text {
 	box-sizing: border-box;
-	margin: 0 0 9rem;
-	padding: 0 0 0 2rem;
-	padding-right: calc(var(--about-header-bg-width) + var(--about-header-bg-offset-inline) + var(--gap));
+	max-width: 22em;
+	margin: 0 auto 10rem;
+	padding: 0;
 	font-size: 1.6rem;
 	line-height: 1.15;
+	text-align: center;
 }
 
+<<<<<<< HEAD
 .credits-php .about__header-text,
 .privacy-php .about__header-text {
 	margin-bottom: 7rem;
@@ -811,6 +897,10 @@
 .freedoms-php .about__header-text {
 	margin-bottom: 6rem;
 >>>>>>> fb785cbb (Initial commit)
+=======
+.credits-php .about__header-text {
+	margin-bottom: 9rem;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .about__header-navigation {
@@ -860,12 +950,16 @@
 @media screen and (max-width: 960px) {
 	.about__header {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		--about-header-bg-width: calc(var(--about-header-image-width) * 0.85);
 		--about-header-bg-height: calc(var(--about-header-image-height) * 0.85);
 	}
 
 	.privacy-php .about__header {
 		--about-header-bg-offset-block: 0;
+<<<<<<< HEAD
 	}
 
 	.about__header-title h1 {
@@ -887,6 +981,20 @@
 	.about__header-title h1 {
 		font-size: clamp(3rem, 18.46vw - 5.08rem, 6rem);
 >>>>>>> fb785cbb (Initial commit)
+=======
+	}
+
+	.about__header-title h1 {
+		/* Fluid font size scales on browser size 600px - 960px. */
+		font-size: clamp(3rem, 13.33vw - 2rem, 6rem);
+	}
+
+	.credits-php .about__header-title h1,
+	.privacy-php .about__header-title h1,
+	.freedoms-php .about__header-title h1 {
+		/* Fluid font size scales on browser size 600px - 960px. */
+		font-size: clamp(3rem, 6.67vw - 0.5rem, 4.5rem);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 }
 
@@ -908,10 +1016,13 @@
 	.about__header-text {
 		margin-top: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		margin-right: 0;
 		padding-left: calc(var(--gap) / 2);
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	.about__header-navigation .nav-tab {
@@ -924,6 +1035,9 @@
 
 @media screen and (max-width: 600px) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.about__header {
 		--about-header-bg-width: calc(var(--about-header-image-width) * 0.75);
 		--about-header-bg-height: calc(var(--about-header-image-height) * 0.75);
@@ -931,8 +1045,11 @@
 }
 
 @media screen and (max-width: 480px) {
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.about__header,
 	.credits-php .about__header,
 	.privacy-php .about__header,
@@ -940,6 +1057,7 @@
 		background-image: none;
 	}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	.about__header-title,
@@ -954,6 +1072,8 @@
 
 @media screen and (max-width: 480px) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.about__header-title p {
 		font-size: 2.4em;
 	}
@@ -963,13 +1083,19 @@
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.about__header-text,
 	.credits-php .about__header-text {
 		margin-left: calc(var(--gap) / 2);
 		margin-right: calc(var(--gap) / 2);
+<<<<<<< HEAD
 =======
 	.about__header-text {
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		margin-bottom: 2rem;
 	}
 
@@ -1116,6 +1242,9 @@
 .about__section .column .freedom-image {
 	margin-bottom: var(--gap);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	max-height: 180px;
 }
 
@@ -1129,9 +1258,12 @@
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 25rem;
+<<<<<<< HEAD
 =======
 	max-height: 140px;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 

@@ -1393,12 +1393,17 @@ i.mce-i-wp_code:before {
 
 #wp-link-wrap {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	height: 600px;
 	margin-top: -300px;
 =======
 	height: 500px;
 	margin-top: -250px;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	height: 600px;
+	margin-top: -300px;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 #wp-link-wrap .wp-link-text-field {
@@ -1413,9 +1418,12 @@ i.mce-i-wp_code:before {
 	background: #fff;
 	border-bottom: 1px solid #dcdcde;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	height: 36px;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	font-size: 18px;
 	font-weight: 600;
 	line-height: 2;
@@ -1468,6 +1476,7 @@ i.mce-i-wp_code:before {
 	padding: 0 16px;
 	position: absolute;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	top: calc(2.15384615em + 16px);
 	left: 0;
 	right: 0;
@@ -1481,6 +1490,15 @@ i.mce-i-wp_code:before {
 	right: 0;
 	bottom: 44px;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	top: calc(2.15384615em + 16px);
+	left: 0;
+	right: 0;
+	bottom: calc(2.15384615em + 19px);
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 #wp-link ol,
@@ -1516,10 +1534,14 @@ i.mce-i-wp_code:before {
 #wp-link #search-panel label span.search-label {
 	display: inline-block;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	width: 120px;
 =======
 	width: 80px;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	width: 120px;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	text-align: right;
 	padding-right: 5px;
 	max-width: 24%;
@@ -1536,14 +1558,20 @@ i.mce-i-wp_code:before {
 	margin: 5px 0 9px;
 	display: block;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 #wp-link .query-results {
 	position: absolute;
 	width: calc(100% - 32px);
+<<<<<<< HEAD
 =======
 	overflow: hidden;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 #wp-link .link-search-wrapper .spinner {
@@ -1554,11 +1582,14 @@ i.mce-i-wp_code:before {
 #wp-link .link-target {
 	padding: 3px 0 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 #wp-link .link-target label {
@@ -1570,6 +1601,7 @@ i.mce-i-wp_code:before {
 	margin: 0 0 12px;
 	background: #fff;
 	overflow: auto;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	max-height: 290px;
 =======
@@ -1583,6 +1615,9 @@ i.mce-i-wp_code:before {
 .has-text-field #wp-link .query-results {
 	top: 210px;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	max-height: 290px;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 #wp-link li {
@@ -1700,6 +1735,7 @@ i.mce-i-wp_code:before {
 
 @media screen and (max-width: 782px) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	#wp-link-wrap {
 		margin-top: -140px;
@@ -1714,16 +1750,22 @@ i.mce-i-wp_code:before {
 	}
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	#link-selector {
 		padding: 0 16px 60px;
 	}
 
 	#wp-link-wrap #link-selector {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		bottom: calc(2.71428571em + 23px);
 =======
 		bottom: 52px;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		bottom: calc(2.71428571em + 23px);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	#wp-link-cancel {
@@ -1750,10 +1792,14 @@ i.mce-i-wp_code:before {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 @media screen and (max-height: 620px) {
 =======
 @media screen and (max-height: 520px) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+@media screen and (max-height: 620px) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	#wp-link-wrap {
 		transition: none;
 		height: auto;
@@ -1766,12 +1812,15 @@ i.mce-i-wp_code:before {
 		overflow: auto;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 	#search-panel .query-results {
 		position: static;
 	}
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 @media screen and (max-height: 290px) {
@@ -1788,12 +1837,15 @@ i.mce-i-wp_code:before {
 		padding-bottom: 2px;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 	#search-panel .query-results {
 		position: static;
 	}
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 div.wp-link-preview {

@@ -14,9 +14,13 @@
  * @since 4.6.0 Moved to its own file from wp-admin/includes/class-wp-upgrader.php.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Automatic_Updater {
 
 	/**
@@ -202,10 +206,14 @@ class WP_Automatic_Updater {
 	public function should_update( $type, $item, $context ) {
 		// Used to see if WP_Filesystem is set up to allow unattended updates.
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$skin = new Automatic_Upgrader_Skin();
 =======
 		$skin = new Automatic_Upgrader_Skin;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$skin = new Automatic_Upgrader_Skin();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( $this->is_disabled() ) {
 			return false;
@@ -290,10 +298,14 @@ class WP_Automatic_Updater {
 			global $wpdb;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$php_compat = version_compare( PHP_VERSION, $item->php_version, '>=' );
 =======
 			$php_compat = version_compare( phpversion(), $item->php_version, '>=' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$php_compat = version_compare( PHP_VERSION, $item->php_version, '>=' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( file_exists( WP_CONTENT_DIR . '/db.php' ) && empty( $wpdb->is_mysql ) ) {
 				$mysql_compat = true;
 			} else {
@@ -308,10 +320,14 @@ class WP_Automatic_Updater {
 		// If updating a plugin or theme, ensure the minimum PHP version requirements are satisfied.
 		if ( in_array( $type, array( 'plugin', 'theme' ), true ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			if ( ! empty( $item->requires_php ) && version_compare( PHP_VERSION, $item->requires_php, '<' ) ) {
 =======
 			if ( ! empty( $item->requires_php ) && version_compare( phpversion(), $item->requires_php, '<' ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+			if ( ! empty( $item->requires_php ) && version_compare( PHP_VERSION, $item->requires_php, '<' ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				return false;
 			}
 		}
@@ -380,10 +396,14 @@ class WP_Automatic_Updater {
 	 */
 	public function update( $type, $item ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$skin = new Automatic_Upgrader_Skin();
 =======
 		$skin = new Automatic_Upgrader_Skin;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$skin = new Automatic_Upgrader_Skin();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		switch ( $type ) {
 			case 'core':
@@ -909,10 +929,14 @@ class WP_Automatic_Updater {
 
 		if ( $critical_support ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$body .= ' ' . __( "Reach out to WordPress Core developers to ensure you'll never have this problem again." );
 =======
 			$body .= ' ' . __( "If you reach out to us, we'll also ensure you'll never have this problem again." );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$body .= ' ' . __( "Reach out to WordPress Core developers to ensure you'll never have this problem again." );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		// If things are successful and we're now on the latest, mention plugins and themes if any are out of date.
@@ -1184,6 +1208,9 @@ class WP_Automatic_Updater {
 
 				foreach ( $failed_updates['plugin'] as $item ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					$body_message = '';
 					$item_url     = '';
 
@@ -1191,6 +1218,7 @@ class WP_Automatic_Updater {
 						$item_url = ' : ' . esc_url( $item->item->url );
 					}
 
+<<<<<<< HEAD
 					if ( $item->item->current_version ) {
 						$body_message .= sprintf(
 							/* translators: 1: Plugin name, 2: Current version number, 3: New version number, 4: Plugin URL. */
@@ -1213,24 +1241,33 @@ class WP_Automatic_Updater {
 					$body[] = $body_message;
 
 =======
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					if ( $item->item->current_version ) {
-						$body[] = sprintf(
-							/* translators: 1: Plugin name, 2: Current version number, 3: New version number. */
-							__( '- %1$s (from version %2$s to %3$s)' ),
+						$body_message .= sprintf(
+							/* translators: 1: Plugin name, 2: Current version number, 3: New version number, 4: Plugin URL. */
+							__( '- %1$s (from version %2$s to %3$s)%4$s' ),
 							$item->name,
 							$item->item->current_version,
-							$item->item->new_version
+							$item->item->new_version,
+							$item_url
 						);
 					} else {
-						$body[] = sprintf(
-							/* translators: 1: Plugin name, 2: Version number. */
-							__( '- %1$s version %2$s' ),
+						$body_message .= sprintf(
+							/* translators: 1: Plugin name, 2: Version number, 3: Plugin URL. */
+							__( '- %1$s version %2$s%3$s' ),
 							$item->name,
-							$item->item->new_version
+							$item->item->new_version,
+							$item_url
 						);
 					}
 
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+					$body[] = $body_message;
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					$past_failure_emails[ $item->item->plugin ] = $item->item->new_version;
 				}
 
@@ -1284,6 +1321,9 @@ class WP_Automatic_Updater {
 
 				foreach ( $successful_updates['plugin'] as $item ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					$body_message = '';
 					$item_url     = '';
 
@@ -1291,6 +1331,7 @@ class WP_Automatic_Updater {
 						$item_url = ' : ' . esc_url( $item->item->url );
 					}
 
+<<<<<<< HEAD
 					if ( $item->item->current_version ) {
 						$body_message .= sprintf(
 							/* translators: 1: Plugin name, 2: Current version number, 3: New version number, 4: Plugin URL. */
@@ -1311,23 +1352,31 @@ class WP_Automatic_Updater {
 					}
 					$body[] = $body_message;
 =======
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					if ( $item->item->current_version ) {
-						$body[] = sprintf(
-							/* translators: 1: Plugin name, 2: Current version number, 3: New version number. */
-							__( '- %1$s (from version %2$s to %3$s)' ),
+						$body_message .= sprintf(
+							/* translators: 1: Plugin name, 2: Current version number, 3: New version number, 4: Plugin URL. */
+							__( '- %1$s (from version %2$s to %3$s)%4$s' ),
 							$item->name,
 							$item->item->current_version,
-							$item->item->new_version
+							$item->item->new_version,
+							$item_url
 						);
 					} else {
-						$body[] = sprintf(
-							/* translators: 1: Plugin name, 2: Version number. */
-							__( '- %1$s version %2$s' ),
+						$body_message .= sprintf(
+							/* translators: 1: Plugin name, 2: Version number, 3: Plugin URL. */
+							__( '- %1$s version %2$s%3$s' ),
 							$item->name,
-							$item->item->new_version
+							$item->item->new_version,
+							$item_url
 						);
 					}
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+					$body[] = $body_message;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 					unset( $past_failure_emails[ $item->item->plugin ] );
 				}

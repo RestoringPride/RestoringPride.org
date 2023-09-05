@@ -158,15 +158,21 @@ switch ( $step ) {
 		}
 		?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <h1 class="screen-reader-text">
 		<?php
 		/* translators: Hidden accessibility text. */
 		_e( 'Before getting started' );
 		?>
 </h1>
+<<<<<<< HEAD
 =======
 <h1 class="screen-reader-text"><?php _e( 'Before getting started' ); ?></h1>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <p><?php _e( 'Welcome to WordPress. Before getting started, you will need to know the following items.' ); ?></p>
 <ol>
 	<li><?php _e( 'Database name' ); ?></li>
@@ -221,43 +227,61 @@ switch ( $step ) {
 		$autofocus = wp_is_mobile() ? '' : ' autofocus';
 		?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <h1 class="screen-reader-text">
 		<?php
 		/* translators: Hidden accessibility text. */
 		_e( 'Set up your database connection' );
 		?>
 </h1>
+<<<<<<< HEAD
 =======
 <h1 class="screen-reader-text"><?php _e( 'Set up your database connection' ); ?></h1>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <form method="post" action="setup-config.php?step=2">
 	<p><?php _e( 'Below you should enter your database connection details. If you are not sure about these, contact your host.' ); ?></p>
 	<table class="form-table" role="presentation">
 		<tr>
 			<th scope="row"><label for="dbname"><?php _e( 'Database Name' ); ?></label></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<td><input name="dbname" id="dbname" type="text" aria-describedby="dbname-desc" size="25" placeholder="wordpress"<?php echo $autofocus; ?>/></td>
 =======
 			<td><input name="dbname" id="dbname" type="text" aria-describedby="dbname-desc" size="25" value="wordpress"<?php echo $autofocus; ?>/></td>
 >>>>>>> fb785cbb (Initial commit)
+=======
+			<td><input name="dbname" id="dbname" type="text" aria-describedby="dbname-desc" size="25" placeholder="wordpress"<?php echo $autofocus; ?>/></td>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<td id="dbname-desc"><?php _e( 'The name of the database you want to use with WordPress.' ); ?></td>
 		</tr>
 		<tr>
 			<th scope="row"><label for="uname"><?php _e( 'Username' ); ?></label></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<td><input name="uname" id="uname" type="text" aria-describedby="uname-desc" size="25" placeholder="<?php echo htmlspecialchars( _x( 'username', 'example username' ), ENT_QUOTES ); ?>" /></td>
 =======
 			<td><input name="uname" id="uname" type="text" aria-describedby="uname-desc" size="25" value="<?php echo htmlspecialchars( _x( 'username', 'example username' ), ENT_QUOTES ); ?>" /></td>
 >>>>>>> fb785cbb (Initial commit)
+=======
+			<td><input name="uname" id="uname" type="text" aria-describedby="uname-desc" size="25" placeholder="<?php echo htmlspecialchars( _x( 'username', 'example username' ), ENT_QUOTES ); ?>" /></td>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<td id="uname-desc"><?php _e( 'Your database username.' ); ?></td>
 		</tr>
 		<tr>
 			<th scope="row"><label for="pwd"><?php _e( 'Password' ); ?></label></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<td><input name="pwd" id="pwd" type="text" aria-describedby="pwd-desc" size="25" placeholder="<?php echo htmlspecialchars( _x( 'password', 'example password' ), ENT_QUOTES ); ?>" autocomplete="off" spellcheck="false" /></td>
 =======
 			<td><input name="pwd" id="pwd" type="text" aria-describedby="pwd-desc" size="25" value="<?php echo htmlspecialchars( _x( 'password', 'example password' ), ENT_QUOTES ); ?>" autocomplete="off" /></td>
 >>>>>>> fb785cbb (Initial commit)
+=======
+			<td><input name="pwd" id="pwd" type="text" aria-describedby="pwd-desc" size="25" placeholder="<?php echo htmlspecialchars( _x( 'password', 'example password' ), ENT_QUOTES ); ?>" autocomplete="off" spellcheck="false" /></td>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<td id="pwd-desc"><?php _e( 'Your database password.' ); ?></td>
 		</tr>
 		<tr>
@@ -313,19 +337,27 @@ switch ( $step ) {
 
 		if ( empty( $prefix ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			wp_die( __( '<strong>Error:</strong> "Table Prefix" must not be empty.' ) . $tryagain_link );
 =======
 			wp_die( __( '<strong>Error</strong>: "Table Prefix" must not be empty.' ) . $tryagain_link );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			wp_die( __( '<strong>Error:</strong> "Table Prefix" must not be empty.' ) . $tryagain_link );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		// Validate $prefix: it can only contain letters, numbers and underscores.
 		if ( preg_match( '|[^a-z0-9_]|i', $prefix ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			wp_die( __( '<strong>Error:</strong> "Table Prefix" can only contain numbers, letters, and underscores.' ) . $tryagain_link );
 =======
 			wp_die( __( '<strong>Error</strong>: "Table Prefix" can only contain numbers, letters, and underscores.' ) . $tryagain_link );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			wp_die( __( '<strong>Error:</strong> "Table Prefix" can only contain numbers, letters, and underscores.' ) . $tryagain_link );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		// Test the DB connection.
@@ -354,6 +386,7 @@ switch ( $step ) {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$errors = $wpdb->suppress_errors();
 		$wpdb->query( "SELECT $prefix" );
 		$wpdb->suppress_errors( $errors );
@@ -363,12 +396,20 @@ switch ( $step ) {
 			wp_die( __( '<strong>Error:</strong> "Table Prefix" is invalid.' ) );
 =======
 		$errors = $wpdb->hide_errors();
+=======
+		$errors = $wpdb->suppress_errors();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$wpdb->query( "SELECT $prefix" );
-		$wpdb->show_errors( $errors );
+		$wpdb->suppress_errors( $errors );
+
 		if ( ! $wpdb->last_error ) {
 			// MySQL was able to parse the prefix as a value, which we don't want. Bail.
+<<<<<<< HEAD
 			wp_die( __( '<strong>Error</strong>: "Table Prefix" is invalid.' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			wp_die( __( '<strong>Error:</strong> "Table Prefix" is invalid.' ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		// Generate keys and salts using secure CSPRNG; fallback to API if enabled; further fallback to original wp_generate_password().
@@ -446,20 +487,28 @@ switch ( $step ) {
 			setup_config_display_header();
 			?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <p>
 =======
 	<p>
 >>>>>>> fb785cbb (Initial commit)
+=======
+<p>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<?php
 			/* translators: %s: wp-config.php */
 			printf( __( 'Unable to write to %s file.' ), '<code>wp-config.php</code>' );
 			?>
 </p>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <p id="wp-config-description">
 =======
 <p>
 >>>>>>> fb785cbb (Initial commit)
+=======
+<p id="wp-config-description">
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<?php
 			/* translators: %s: wp-config.php */
 			printf( __( 'You can create the %s file manually and paste the following text into it.' ), '<code>wp-config.php</code>' );
@@ -472,6 +521,9 @@ switch ( $step ) {
 			?>
 </p>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <p class="configuration-rules-label"><label for="wp-config">
 			<?php
 			/* translators: %s: wp-config.php */
@@ -479,9 +531,12 @@ switch ( $step ) {
 			?>
 	</label></p>
 <textarea id="wp-config" cols="98" rows="15" class="code" readonly="readonly" aria-describedby="wp-config-description"><?php echo $config_text; ?></textarea>
+<<<<<<< HEAD
 =======
 <textarea id="wp-config" cols="98" rows="15" class="code" readonly="readonly"><?php echo $config_text; ?></textarea>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <p><?php _e( 'After you&#8217;ve done that, click &#8220;Run the installation&#8221;.' ); ?></p>
 <p class="step"><a href="<?php echo $install; ?>" class="button button-large"><?php _e( 'Run the installation' ); ?></a></p>
 <script>
@@ -545,15 +600,21 @@ if ( ! /iPad|iPod|iPhone/.test( navigator.userAgent ) ) {
 			if ( false !== $handle ) :
 				?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <h1 class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( 'Successful database connection' );
 				?>
 </h1>
+<<<<<<< HEAD
 =======
 <h1 class="screen-reader-text"><?php _e( 'Successful database connection' ); ?></h1>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <p><?php _e( 'All right, sparky! You&#8217;ve made it through this part of the installation. WordPress can now communicate with your database. If you are ready, time now to&hellip;' ); ?></p>
 
 <p class="step"><a href="<?php echo $install; ?>" class="button button-large"><?php _e( 'Run the installation' ); ?></a></p>

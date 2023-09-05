@@ -11,9 +11,12 @@
  * Fetches an instance of a WP_List_Table class.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @since 3.1.0
  *
  * @global string $hook_suffix
@@ -62,6 +65,9 @@ function _get_list_table( $class_name, $args = array() ) {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		/**
 		 * Filters the list table class to instantiate.
 		 *
@@ -76,8 +82,11 @@ function _get_list_table( $class_name, $args = array() ) {
 			$class_name = $custom_class_name;
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return new $class_name( $args );
 	}
 

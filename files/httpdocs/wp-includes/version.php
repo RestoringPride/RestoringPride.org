@@ -17,10 +17,14 @@
  * @global string $wp_version
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 $wp_version = '6.2-beta3-55425';
 =======
 $wp_version = '6.0.2';
 >>>>>>> fb785cbb (Initial commit)
+=======
+$wp_version = '6.2-beta3-55400-src';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 /**
  * Holds the WordPress DB revision, increments when changes are made to the WordPress DB schema.
@@ -50,7 +54,10 @@ $required_php_version = '5.6.20';
  */
 $required_mysql_version = '5.0';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 $wp_local_package = 'en_GB';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)

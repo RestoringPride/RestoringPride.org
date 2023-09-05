@@ -718,6 +718,7 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 		$id = $user->ID;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$owner_id = false;
 		if ( is_string( $request['email'] ) ) {
 			$owner_id = email_exists( $request['email'] );
@@ -735,6 +736,13 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 		$owner_id = email_exists( $request['email'] );
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$owner_id = false;
+		if ( is_string( $request['email'] ) ) {
+			$owner_id = email_exists( $request['email'] );
+		}
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( $owner_id && $owner_id !== $id ) {
 			return new WP_Error(
 				'rest_user_invalid_email',
@@ -1081,12 +1089,18 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 		$response = rest_ensure_response( $data );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $user ) );
 		}
 =======
 		$response->add_links( $this->prepare_links( $user ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
+			$response->add_links( $this->prepare_links( $user ) );
+		}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters user data returned from the REST API.
@@ -1131,10 +1145,14 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 	 */
 	protected function prepare_item_for_database( $request ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$prepared_user = new stdClass();
 =======
 		$prepared_user = new stdClass;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$prepared_user = new stdClass();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$schema = $this->get_item_schema();
 

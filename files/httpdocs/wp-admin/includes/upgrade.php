@@ -160,6 +160,7 @@ if ( ! function_exists( 'wp_install_defaults' ) ) :
 		$cat_slug = sanitize_title( _x( 'Uncategorized', 'Default category slug' ) );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$cat_id = 1;
 =======
 		if ( global_terms_enabled() ) {
@@ -181,6 +182,9 @@ if ( ! function_exists( 'wp_install_defaults' ) ) :
 			$cat_id = 1;
 		}
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$cat_id = 1;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$wpdb->insert(
 			$wpdb->terms,
@@ -528,20 +532,28 @@ function wp_install_maybe_enable_pretty_permalinks() {
 		/*
 		 * Send a request to the site, and check whether
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 * the 'X-Pingback' header is returned as expected.
 =======
 		 * the 'x-pingback' header is returned as expected.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		 * the 'X-Pingback' header is returned as expected.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 *
 		 * Uses wp_remote_get() instead of wp_remote_head() because web servers
 		 * can block head requests.
 		 */
 		$response          = wp_remote_get( $test_url, array( 'timeout' => 5 ) );
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$x_pingback_header = wp_remote_retrieve_header( $response, 'X-Pingback' );
 =======
 		$x_pingback_header = wp_remote_retrieve_header( $response, 'x-pingback' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$x_pingback_header = wp_remote_retrieve_header( $response, 'X-Pingback' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$pretty_permalinks = $x_pingback_header && get_bloginfo( 'pingback_url' ) === $x_pingback_header;
 
 		if ( $pretty_permalinks ) {
@@ -2190,10 +2202,15 @@ function upgrade_530() {
  * @ignore
  * @since 5.5.0
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
  * @global int $wp_current_db_version The old (current) database version.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ *
+ * @global int $wp_current_db_version The old (current) database version.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function upgrade_550() {
 	global $wp_current_db_version;
@@ -2233,11 +2250,17 @@ function upgrade_550() {
  * @ignore
  * @since 5.6.0
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
  * @global int  $wp_current_db_version The old (current) database version.
  * @global wpdb $wpdb                  WordPress database abstraction object.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ *
+ * @global int  $wp_current_db_version The old (current) database version.
+ * @global wpdb $wpdb                  WordPress database abstraction object.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function upgrade_560() {
 	global $wp_current_db_version, $wpdb;
@@ -2653,10 +2676,14 @@ function maybe_convert_table_to_utf8mb4( $table ) {
 function get_alloptions_110() {
 	global $wpdb;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$all_options = new stdClass();
 =======
 	$all_options = new stdClass;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$all_options = new stdClass();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$options     = $wpdb->get_results( "SELECT option_name, option_value FROM $wpdb->options" );
 	if ( $options ) {
 		foreach ( $options as $option ) {
@@ -2741,10 +2768,15 @@ function deslash( $content ) {
  *
  * @since 1.5.0
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @since 6.1.0 Ignores display width for integer data types on MySQL 8.0.17 or later,
  *              to match MySQL behavior. Note: This does not affect MariaDB.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @since 6.1.0 Ignores display width for integer data types on MySQL 8.0.17 or later,
+ *              to match MySQL behavior. Note: This does not affect MariaDB.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @global wpdb $wpdb WordPress database abstraction object.
  *
@@ -2822,16 +2854,23 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 	$text_fields = array( 'tinytext', 'text', 'mediumtext', 'longtext' );
 	$blob_fields = array( 'tinyblob', 'blob', 'mediumblob', 'longblob' );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$int_fields  = array( 'tinyint', 'smallint', 'mediumint', 'int', 'integer', 'bigint' );
 
 	$global_tables  = $wpdb->tables( 'global' );
 	$db_version     = $wpdb->db_version();
 	$db_server_info = $wpdb->db_server_info();
+<<<<<<< HEAD
 
 =======
 
 	$global_tables = $wpdb->tables( 'global' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	foreach ( $cqueries as $table => $qry ) {
 		// Upgrade global tables only for the main site. Don't upgrade at all if conditions are not optimal.
 		if ( in_array( $table, $global_tables, true ) && ! wp_should_upgrade_global_tables() ) {
@@ -2933,6 +2972,7 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 					foreach ( $index_columns as $id => &$index_column ) {
 						// Extract column name and number of indexed characters (sub_part).
 <<<<<<< HEAD
+<<<<<<< HEAD
 						// phpcs:disable Squiz.Strings.ConcatenationSpacing.PaddingFound -- don't remove regex indentation
 						preg_match(
 							'/'
@@ -2970,14 +3010,38 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 							. '\)'                 // Closing bracket for the sub part.
 							. ')?'
 >>>>>>> fb785cbb (Initial commit)
+=======
+						// phpcs:disable Squiz.Strings.ConcatenationSpacing.PaddingFound -- don't remove regex indentation
+						preg_match(
+							'/'
+							.   '`?'                      // Name can be escaped with a backtick.
+							.       '(?P<column_name>'    // 1) Name of the column.
+							.           '(?:[0-9a-zA-Z$_-]|[\xC2-\xDF][\x80-\xBF])+'
+							.       ')'
+							.   '`?'                      // Name can be escaped with a backtick.
+							.   '(?:'                     // Optional sub part.
+							.       '\s*'                 // Optional white space character between name and opening bracket.
+							.       '\('                  // Opening bracket for the sub part.
+							.           '\s*'             // Optional white space character after opening bracket.
+							.           '(?P<sub_part>'
+							.               '\d+'         // 2) Number of indexed characters.
+							.           ')'
+							.           '\s*'             // Optional white space character before closing bracket.
+							.       '\)'                  // Closing bracket for the sub part.
+							.   ')?'
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							. '/',
 							$index_column,
 							$index_column_matches
 						);
 <<<<<<< HEAD
+<<<<<<< HEAD
 						// phpcs:enable
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+						// phpcs:enable
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 						// Escape the column name with backticks.
 						$index_column = '`' . $index_column_matches['column_name'] . '`';
@@ -3013,6 +3077,9 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 			$tablefield_type_lowercased  = strtolower( $tablefield->Type );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$tablefield_type_without_parentheses = preg_replace(
 				'/'
 				. '(.+)'       // Field type, e.g. `int`.
@@ -3026,8 +3093,11 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 			// Get the type without attributes, e.g. `int`.
 			$tablefield_type_base = strtok( $tablefield_type_without_parentheses, ' ' );
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			// If the table field exists in the field array...
 			if ( array_key_exists( $tablefield_field_lowercased, $cfields ) ) {
 
@@ -3037,6 +3107,9 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 				$fieldtype_lowercased = strtolower( $fieldtype );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$fieldtype_without_parentheses = preg_replace(
 					'/'
 					. '(.+)'       // Field type, e.g. `int`.
@@ -3050,8 +3123,11 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 				// Get the type without attributes, e.g. `int`.
 				$fieldtype_base = strtok( $fieldtype_without_parentheses, ' ' );
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				// Is actual field type different from the field type in query?
 				if ( $tablefield->Type != $fieldtype ) {
 					$do_change = true;
@@ -3068,6 +3144,9 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 					}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					if ( in_array( $fieldtype_base, $int_fields, true ) && in_array( $tablefield_type_base, $int_fields, true )
 						&& $fieldtype_without_parentheses === $tablefield_type_without_parentheses
 					) {
@@ -3083,8 +3162,11 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 						}
 					}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					if ( $do_change ) {
 						// Add a query to change the column type.
 						$cqueries[] = "ALTER TABLE {$table} CHANGE COLUMN `{$tablefield->Field}` " . $cfields[ $tablefield_field_lowercased ];
@@ -3605,6 +3687,7 @@ function pre_schema_upgrade() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 if ( ! function_exists( 'install_global_terms' ) ) :
 	/**
@@ -3634,6 +3717,8 @@ CREATE TABLE $wpdb->sitecategories (
 endif;
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 /**
  * Determine if global tables should be upgraded.
  *

@@ -98,10 +98,14 @@ if ( ! empty( $autofocus ) && is_array( $autofocus ) ) {
 
 $registered             = $wp_scripts->registered;
 <<<<<<< HEAD
+<<<<<<< HEAD
 $wp_scripts             = new WP_Scripts();
 =======
 $wp_scripts             = new WP_Scripts;
 >>>>>>> fb785cbb (Initial commit)
+=======
+$wp_scripts             = new WP_Scripts();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 $wp_scripts->registered = $registered;
 
 add_action( 'customize_controls_print_scripts', 'print_head_scripts', 20 );
@@ -212,15 +216,21 @@ do_action( 'customize_controls_head' );
 			</button>
 			<a class="customize-controls-close" href="<?php echo esc_url( $wp_customize->get_return_url() ); ?>">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Close the Customizer and go back to the previous page' );
 					?>
 				</span>
+<<<<<<< HEAD
 =======
 				<span class="screen-reader-text"><?php _e( 'Close the Customizer and go back to the previous page' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			</a>
 		</div>
 
@@ -244,15 +254,21 @@ do_action( 'customize_controls_head' );
 						?>
 						</span>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						<button type="button" class="customize-help-toggle dashicons dashicons-editor-help" aria-expanded="false"><span class="screen-reader-text">
 							<?php
 							/* translators: Hidden accessibility text. */
 							_e( 'Help' );
 							?>
 						</span></button>
+<<<<<<< HEAD
 =======
 						<button type="button" class="customize-help-toggle dashicons dashicons-editor-help" aria-expanded="false"><span class="screen-reader-text"><?php _e( 'Help' ); ?></span></button>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					</div>
 					<div class="customize-panel-description">
 						<p>

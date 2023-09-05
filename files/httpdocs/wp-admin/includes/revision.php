@@ -195,10 +195,14 @@ function wp_prepare_revisions_for_js( $post, $selected_revision_id, $from = null
 	$show_avatars = get_option( 'show_avatars' );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	update_post_author_caches( $revisions );
 =======
 	cache_users( wp_list_pluck( $revisions, 'post_author' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	update_post_author_caches( $revisions );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	$can_restore = current_user_can( 'edit_post', $post->ID );
 	$current_id  = false;
@@ -284,6 +288,7 @@ function wp_prepare_revisions_for_js( $post, $selected_revision_id, $from = null
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/*
 	 * If we only have one revision, the initial revision is missing. This happens
 	 * when we have an autosave and the user has clicked 'View the Autosave'.
@@ -292,6 +297,11 @@ function wp_prepare_revisions_for_js( $post, $selected_revision_id, $from = null
 	 * If we only have one revision, the initial revision is missing; This happens
 	 * when we have an autsosave and the user has clicked 'View the Autosave'
 >>>>>>> fb785cbb (Initial commit)
+=======
+	/*
+	 * If we only have one revision, the initial revision is missing. This happens
+	 * when we have an autosave and the user has clicked 'View the Autosave'.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	if ( 1 === count( $revisions ) ) {
 		$revisions[ $post->ID ] = array(
@@ -311,10 +321,14 @@ function wp_prepare_revisions_for_js( $post, $selected_revision_id, $from = null
 
 	/*
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * If a post has been saved since the latest revision (no revisioned fields
 =======
 	 * If a post has been saved since the last revision (no revisioned fields
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * If a post has been saved since the latest revision (no revisioned fields
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * were changed), we may not have a "current" revision. Mark the latest
 	 * revision as "current".
 	 */

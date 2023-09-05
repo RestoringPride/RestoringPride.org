@@ -251,12 +251,17 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 				 *
 				 *     @type string $app_name    The suggested name of the application.
 <<<<<<< HEAD
+<<<<<<< HEAD
 				 *     @type string $success_url The URL the user will be redirected to after approving the application.
 				 *     @type string $reject_url  The URL the user will be redirected to after rejecting the application.
 =======
 				 *     @type string $success_url The url the user will be redirected to after approving the application.
 				 *     @type string $reject_url  The url the user will be redirected to after rejecting the application.
 >>>>>>> fb785cbb (Initial commit)
+=======
+				 *     @type string $success_url The URL the user will be redirected to after approving the application.
+				 *     @type string $reject_url  The URL the user will be redirected to after rejecting the application.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				 * }
 				 * @param WP_User $user The user authorizing the application.
 				 */

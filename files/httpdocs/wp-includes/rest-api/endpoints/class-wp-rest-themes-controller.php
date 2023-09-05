@@ -332,6 +332,7 @@ class WP_REST_Themes_Controller extends WP_REST_Controller {
 		$response = rest_ensure_response( $data );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $theme ) );
 =======
@@ -351,6 +352,10 @@ class WP_REST_Themes_Controller extends WP_REST_Controller {
 				rest_url( 'wp/v2/global-styles/' . $id )
 			);
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
+			$response->add_links( $this->prepare_links( $theme ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		/**
@@ -375,10 +380,14 @@ class WP_REST_Themes_Controller extends WP_REST_Controller {
 	 */
 	protected function prepare_links( $theme ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$links = array(
 =======
 		return array(
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$links = array(
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'self'       => array(
 				'href' => rest_url( sprintf( '%s/%s/%s', $this->namespace, $this->rest_base, $theme->get_stylesheet() ) ),
 			),
@@ -387,6 +396,9 @@ class WP_REST_Themes_Controller extends WP_REST_Controller {
 			),
 		);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( $this->is_same_theme( $theme, wp_get_theme() ) ) {
 			// This creates a record for the active theme if not existent.
@@ -403,8 +415,11 @@ class WP_REST_Themes_Controller extends WP_REST_Controller {
 		}
 
 		return $links;
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**

@@ -130,10 +130,14 @@ class Theme_Installer_Skin extends WP_Upgrader_Skin {
 				esc_url( $customize_url ),
 				__( 'Live Preview' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. %s: Theme name. */
 =======
 				/* translators: %s: Theme name. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+				/* translators: Hidden accessibility text. %s: Theme name. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				sprintf( __( 'Live Preview &#8220;%s&#8221;' ), $name )
 			);
 		}
@@ -144,10 +148,14 @@ class Theme_Installer_Skin extends WP_Upgrader_Skin {
 			esc_url( $activate_link ),
 			__( 'Activate' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 			/* translators: Hidden accessibility text. %s: Theme name. */
 =======
 			/* translators: %s: Theme name. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+			/* translators: Hidden accessibility text. %s: Theme name. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			sprintf( _x( 'Activate &#8220;%s&#8221;', 'theme' ), $name )
 		);
 
@@ -310,10 +318,14 @@ class Theme_Installer_Skin extends WP_Upgrader_Skin {
 				/* translators: 1: Current PHP version, 2: Version required by the uploaded theme. */
 				__( 'The PHP version on your server is %1$s, however the uploaded theme requires %2$s.' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 				PHP_VERSION,
 =======
 				phpversion(),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				PHP_VERSION,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$requires_php
 			);
 

@@ -41,10 +41,14 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 		// This class uses the timeout on a per-connection basis, others use it on a per-action basis.
 		if ( ! defined( 'FS_TIMEOUT' ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			define( 'FS_TIMEOUT', 4 * MINUTE_IN_SECONDS );
 =======
 			define( 'FS_TIMEOUT', 240 );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			define( 'FS_TIMEOUT', 4 * MINUTE_IN_SECONDS );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		if ( empty( $opt['port'] ) ) {
@@ -363,6 +367,9 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Moves a file or directory.
 	 *
 	 * After moving files or directories, OPcache will need to be invalidated.
@@ -371,6 +378,7 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 	 *
 	 * Use `move_dir()` for moving directories with OPcache invalidation and a
 	 * fallback to `copy_dir()`.
+<<<<<<< HEAD
 	 *
 	 * @since 2.5.0
 	 *
@@ -386,6 +394,14 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 	 * @param string $destination Path to the destination file.
 	 * @param bool   $overwrite   Optional. Whether to overwrite the destination file if it exists.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 *
+	 * @since 2.5.0
+	 *
+	 * @param string $source      Path to the source file or directory.
+	 * @param string $destination Path to the destination file or directory.
+	 * @param bool   $overwrite   Optional. Whether to overwrite the destination if it exists.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *                            Default false.
 	 * @return bool True on success, false on failure.
 	 */
@@ -435,6 +451,7 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 	 * @since 2.5.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path exists or not.
 	 */
@@ -445,12 +462,20 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 =======
 	 * @param string $file Path to file or directory.
 	 * @return bool Whether $file exists or not.
+=======
+	 * @param string $path Path to file or directory.
+	 * @return bool Whether $path exists or not.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
-	public function exists( $file ) {
-		$list = ftp_nlist( $this->link, $file );
+	public function exists( $path ) {
+		$list = ftp_nlist( $this->link, $path );
 
+<<<<<<< HEAD
 		if ( empty( $list ) && $this->is_dir( $file ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( empty( $list ) && $this->is_dir( $path ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			return true; // File is an empty directory.
 		}
 
@@ -507,6 +532,7 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 	 * @since 2.5.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path is writable.
 	 */
@@ -517,6 +543,12 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 	 */
 	public function is_writable( $file ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param string $path Path to file or directory.
+	 * @return bool Whether $path is writable.
+	 */
+	public function is_writable( $path ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return true;
 	}
 
@@ -554,12 +586,18 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 	 */
 	public function size( $file ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$size = ftp_size( $this->link, $file );
 
 		return ( $size > -1 ) ? $size : false;
 =======
 		return ftp_size( $this->link, $file );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$size = ftp_size( $this->link, $file );
+
+		return ( $size > -1 ) ? $size : false;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -797,20 +835,29 @@ class WP_Filesystem_FTPext extends WP_Filesystem_Base {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$path = trailingslashit( $path );
 		$ret  = array();
 =======
 		$ret = array();
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$path = trailingslashit( $path );
+		$ret  = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		foreach ( (array) $dirlist as $struc ) {
 			if ( 'd' === $struc['type'] ) {
 				if ( $recursive ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 					$struc['files'] = $this->dirlist( $path . $struc['name'], $include_hidden, $recursive );
 =======
 					$struc['files'] = $this->dirlist( $path . '/' . $struc['name'], $include_hidden, $recursive );
 >>>>>>> fb785cbb (Initial commit)
+=======
+					$struc['files'] = $this->dirlist( $path . $struc['name'], $include_hidden, $recursive );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				} else {
 					$struc['files'] = array();
 				}

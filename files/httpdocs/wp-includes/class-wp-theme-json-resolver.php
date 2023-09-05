@@ -18,6 +18,9 @@
  * @access private
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 #[AllowDynamicProperties]
 class WP_Theme_JSON_Resolver {
 
@@ -35,11 +38,14 @@ class WP_Theme_JSON_Resolver {
 	);
 
 	/**
+<<<<<<< HEAD
 =======
 class WP_Theme_JSON_Resolver {
 
 	/**
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Container for data coming from core.
 	 *
 	 * @since 5.8.0
@@ -49,6 +55,9 @@ class WP_Theme_JSON_Resolver {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Container for data coming from the blocks.
 	 *
 	 * @since 6.1.0
@@ -57,8 +66,11 @@ class WP_Theme_JSON_Resolver {
 	protected static $blocks = null;
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Container for data coming from the theme.
 	 *
 	 * @since 5.8.0
@@ -67,6 +79,7 @@ class WP_Theme_JSON_Resolver {
 	protected static $theme = null;
 
 	/**
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	 * Whether or not the theme supports theme.json.
@@ -78,6 +91,8 @@ class WP_Theme_JSON_Resolver {
 
 	/**
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Container for data coming from the user.
 	 *
 	 * @since 5.9.0
@@ -105,6 +120,9 @@ class WP_Theme_JSON_Resolver {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * `theme.json` file cache.
 	 *
 	 * @since 6.1.0
@@ -113,21 +131,29 @@ class WP_Theme_JSON_Resolver {
 	protected static $theme_json_file_cache = array();
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Processes a file that adheres to the theme.json schema
 	 * and returns an array with its contents, or a void array if none found.
 	 *
 	 * @since 5.8.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 Added caching.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 Added caching.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @param string $file_path Path to file. Empty if no file.
 	 * @return array Contents that adhere to the theme.json schema.
 	 */
 	protected static function read_json_file( $file_path ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 		if ( $file_path ) {
 			if ( array_key_exists( $file_path, static::$theme_json_file_cache ) ) {
@@ -144,14 +170,26 @@ class WP_Theme_JSON_Resolver {
 		return array();
 =======
 		$config = array();
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( $file_path ) {
+			if ( array_key_exists( $file_path, static::$theme_json_file_cache ) ) {
+				return static::$theme_json_file_cache[ $file_path ];
+			}
+
 			$decoded_file = wp_json_file_decode( $file_path, array( 'associative' => true ) );
 			if ( is_array( $decoded_file ) ) {
-				$config = $decoded_file;
+				static::$theme_json_file_cache[ $file_path ] = $decoded_file;
+				return static::$theme_json_file_cache[ $file_path ];
 			}
 		}
+<<<<<<< HEAD
 		return $config;
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+		return array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -196,6 +234,7 @@ class WP_Theme_JSON_Resolver {
 	 */
 	public static function get_core_data() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( null !== static::$core && static::has_same_registered_blocks( 'core' ) ) {
 			return static::$core;
 		}
@@ -220,6 +259,24 @@ class WP_Theme_JSON_Resolver {
 		$config       = static::read_json_file( __DIR__ . '/theme.json' );
 		$config       = static::translate( $config );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( null !== static::$core && static::has_same_registered_blocks( 'core' ) ) {
+			return static::$core;
+		}
+
+		$config = static::read_json_file( __DIR__ . '/theme.json' );
+		$config = static::translate( $config );
+
+		/**
+		 * Filters the default data provided by WordPress for global styles & settings.
+		 *
+		 * @since 6.1.0
+		 *
+		 * @param WP_Theme_JSON_Data Class to access and update the underlying data.
+		 */
+		$theme_json   = apply_filters( 'wp_theme_json_data_default', new WP_Theme_JSON_Data( $config, 'default' ) );
+		$config       = $theme_json->get_data();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		static::$core = new WP_Theme_JSON( $config, 'default' );
 
 		return static::$core;
@@ -227,6 +284,9 @@ class WP_Theme_JSON_Resolver {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Checks whether the registered blocks were already processed for this origin.
 	 *
 	 * @since 6.1.0
@@ -258,8 +318,11 @@ class WP_Theme_JSON_Resolver {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Returns the theme's data.
 	 *
 	 * Data from theme.json will be backfilled from existing
@@ -287,6 +350,9 @@ class WP_Theme_JSON_Resolver {
 		$options = wp_parse_args( $options, array( 'with_supports' => true ) );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( null === static::$theme || ! static::has_same_registered_blocks( 'theme' ) ) {
 			$theme_json_file = static::get_file_path_from_theme( 'theme.json' );
 			$wp_theme        = wp_get_theme();
@@ -306,6 +372,7 @@ class WP_Theme_JSON_Resolver {
 			 */
 			$theme_json      = apply_filters( 'wp_theme_json_data_theme', new WP_Theme_JSON_Data( $theme_json_data, 'theme' ) );
 			$theme_json_data = $theme_json->get_data();
+<<<<<<< HEAD
 			static::$theme   = new WP_Theme_JSON( $theme_json_data );
 
 			if ( $wp_theme->parent() ) {
@@ -327,19 +394,33 @@ class WP_Theme_JSON_Resolver {
 		if ( null === static::$theme ) {
 			$theme_json_data = static::read_json_file( static::get_file_path_from_theme( 'theme.json' ) );
 			$theme_json_data = static::translate( $theme_json_data, wp_get_theme()->get( 'TextDomain' ) );
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			static::$theme   = new WP_Theme_JSON( $theme_json_data );
 
-			if ( wp_get_theme()->parent() ) {
+			if ( $wp_theme->parent() ) {
 				// Get parent theme.json.
-				$parent_theme_json_data = static::read_json_file( static::get_file_path_from_theme( 'theme.json', true ) );
-				$parent_theme_json_data = static::translate( $parent_theme_json_data, wp_get_theme()->parent()->get( 'TextDomain' ) );
-				$parent_theme           = new WP_Theme_JSON( $parent_theme_json_data );
+				$parent_theme_json_file = static::get_file_path_from_theme( 'theme.json', true );
+				if ( '' !== $parent_theme_json_file ) {
+					$parent_theme_json_data = static::read_json_file( $parent_theme_json_file );
+					$parent_theme_json_data = static::translate( $parent_theme_json_data, $wp_theme->parent()->get( 'TextDomain' ) );
+					$parent_theme           = new WP_Theme_JSON( $parent_theme_json_data );
 
+<<<<<<< HEAD
 				// Merge the child theme.json into the parent theme.json.
 				// The child theme takes precedence over the parent.
 				$parent_theme->merge( static::$theme );
 				static::$theme = $parent_theme;
 >>>>>>> fb785cbb (Initial commit)
+=======
+					/*
+					 * Merge the child theme.json into the parent theme.json.
+					 * The child theme takes precedence over the parent.
+					 */
+					$parent_theme->merge( static::$theme );
+					static::$theme = $parent_theme;
+				}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 		}
 
@@ -354,12 +435,17 @@ class WP_Theme_JSON_Resolver {
 		 * and merge the static::$theme upon that.
 		 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$theme_support_data = WP_Theme_JSON::get_from_editor_settings( get_classic_theme_supports_block_editor_settings() );
 		if ( ! wp_theme_has_theme_json() ) {
 =======
 		$theme_support_data = WP_Theme_JSON::get_from_editor_settings( get_default_block_editor_settings() );
 		if ( ! static::theme_has_support() ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$theme_support_data = WP_Theme_JSON::get_from_editor_settings( get_classic_theme_supports_block_editor_settings() );
+		if ( ! wp_theme_has_theme_json() ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( ! isset( $theme_support_data['settings']['color'] ) ) {
 				$theme_support_data['settings']['color'] = array();
 			}
@@ -390,14 +476,20 @@ class WP_Theme_JSON_Resolver {
 		$with_theme_supports = new WP_Theme_JSON( $theme_support_data );
 		$with_theme_supports->merge( static::$theme );
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return $with_theme_supports;
 	}
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Gets the styles for blocks from the block.json file.
 	 *
 	 * @since 6.1.0
@@ -462,8 +554,11 @@ class WP_Theme_JSON_Resolver {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Returns the custom post type that contains the user's origin config
 	 * for the active theme or a void array if none are found.
 	 *
@@ -486,6 +581,9 @@ class WP_Theme_JSON_Resolver {
 			$theme = wp_get_theme();
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/*
 		 * Bail early if the theme does not support a theme.json.
@@ -498,6 +596,7 @@ class WP_Theme_JSON_Resolver {
 			return array();
 		}
 
+<<<<<<< HEAD
 		$user_cpt         = array();
 		$post_type_filter = 'wp_global_styles';
 		$stylesheet       = $theme->get_stylesheet();
@@ -517,29 +616,44 @@ class WP_Theme_JSON_Resolver {
 					'field'    => 'name',
 					'terms'    => $stylesheet,
 =======
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$user_cpt         = array();
 		$post_type_filter = 'wp_global_styles';
+		$stylesheet       = $theme->get_stylesheet();
 		$args             = array(
-			'numberposts' => 1,
-			'orderby'     => 'date',
-			'order'       => 'desc',
-			'post_type'   => $post_type_filter,
-			'post_status' => $post_status_filter,
-			'tax_query'   => array(
+			'posts_per_page'         => 1,
+			'orderby'                => 'date',
+			'order'                  => 'desc',
+			'post_type'              => $post_type_filter,
+			'post_status'            => $post_status_filter,
+			'ignore_sticky_posts'    => true,
+			'no_found_rows'          => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
+			'tax_query'              => array(
 				array(
 					'taxonomy' => 'wp_theme',
 					'field'    => 'name',
+<<<<<<< HEAD
 					'terms'    => $theme->get_stylesheet(),
 >>>>>>> fb785cbb (Initial commit)
+=======
+					'terms'    => $stylesheet,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				),
 			),
 		);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$global_style_query = new WP_Query();
 		$recent_posts       = $global_style_query->query( $args );
 		if ( count( $recent_posts ) === 1 ) {
 			$user_cpt = get_object_vars( $recent_posts[0] );
+<<<<<<< HEAD
 =======
 		$cache_key = sprintf( 'wp_global_styles_%s', md5( serialize( $args ) ) );
 		$post_id   = wp_cache_get( $cache_key );
@@ -557,11 +671,14 @@ class WP_Theme_JSON_Resolver {
 		if ( is_array( $recent_posts ) && ( count( $recent_posts ) === 1 ) ) {
 			$user_cpt = $recent_posts[0];
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		} elseif ( $create_post ) {
 			$cpt_post_id = wp_insert_post(
 				array(
 					'post_content' => '{"version": ' . WP_Theme_JSON::LATEST_SCHEMA . ', "isGlobalStylesUserThemeJSON": true }',
 					'post_status'  => 'publish',
+<<<<<<< HEAD
 <<<<<<< HEAD
 					'post_title'   => 'Custom Styles', // Do not make string translatable, see https://core.trac.wordpress.org/ticket/54518.
 					'post_type'    => $post_type_filter,
@@ -570,15 +687,23 @@ class WP_Theme_JSON_Resolver {
 						'wp_theme' => array( $stylesheet ),
 =======
 					'post_title'   => 'Custom Styles',
+=======
+					'post_title'   => 'Custom Styles', // Do not make string translatable, see https://core.trac.wordpress.org/ticket/54518.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					'post_type'    => $post_type_filter,
-					'post_name'    => 'wp-global-styles-' . urlencode( wp_get_theme()->get_stylesheet() ),
+					'post_name'    => sprintf( 'wp-global-styles-%s', urlencode( $stylesheet ) ),
 					'tax_input'    => array(
+<<<<<<< HEAD
 						'wp_theme' => array( wp_get_theme()->get_stylesheet() ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+						'wp_theme' => array( $stylesheet ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					),
 				),
 				true
 			);
+<<<<<<< HEAD
 <<<<<<< HEAD
 			if ( ! is_wp_error( $cpt_post_id ) ) {
 				$user_cpt = get_object_vars( get_post( $cpt_post_id ) );
@@ -590,6 +715,12 @@ class WP_Theme_JSON_Resolver {
 		$cache_expiration = $user_cpt ? DAY_IN_SECONDS : HOUR_IN_SECONDS;
 		wp_cache_set( $cache_key, $user_cpt ? $user_cpt['ID'] : -1, '', $cache_expiration );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			if ( ! is_wp_error( $cpt_post_id ) ) {
+				$user_cpt = get_object_vars( get_post( $cpt_post_id ) );
+			}
+		}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		return $user_cpt;
 	}
@@ -603,10 +734,14 @@ class WP_Theme_JSON_Resolver {
 	 */
 	public static function get_user_data() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( null !== static::$user && static::has_same_registered_blocks( 'user' ) ) {
 =======
 		if ( null !== static::$user ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( null !== static::$user && static::has_same_registered_blocks( 'user' ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			return static::$user;
 		}
 
@@ -620,6 +755,9 @@ class WP_Theme_JSON_Resolver {
 			if ( JSON_ERROR_NONE !== $json_decoding_error ) {
 				trigger_error( 'Error when decoding a theme.json schema for user data. ' . json_last_error_msg() );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				/**
 				 * Filters the data provided by the user for global styles & settings.
 				 *
@@ -629,8 +767,11 @@ class WP_Theme_JSON_Resolver {
 				 */
 				$theme_json = apply_filters( 'wp_theme_json_data_user', new WP_Theme_JSON_Data( $config, 'custom' ) );
 				$config     = $theme_json->get_data();
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				return new WP_Theme_JSON( $config, 'custom' );
 			}
 
@@ -646,12 +787,18 @@ class WP_Theme_JSON_Resolver {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/** This filter is documented in wp-includes/class-wp-theme-json-resolver.php */
 		$theme_json   = apply_filters( 'wp_theme_json_data_user', new WP_Theme_JSON_Data( $config, 'custom' ) );
 		$config       = $theme_json->get_data();
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		static::$user = new WP_Theme_JSON( $config, 'custom' );
 
 		return static::$user;
@@ -661,6 +808,9 @@ class WP_Theme_JSON_Resolver {
 	 * Returns the data merged from multiple origins.
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * There are four sources of data (origins) for a site:
 	 *
 	 * - default => WordPress
@@ -670,11 +820,14 @@ class WP_Theme_JSON_Resolver {
 	 *
 	 * The custom's has higher priority than the theme's, the theme's higher than blocks',
 	 * and block's higher than default's.
+<<<<<<< HEAD
 =======
 	 * There are three sources of data (origins) for a site:
 	 * default, theme, and custom. The custom's has higher priority
 	 * than the theme's, and the theme's higher than default's.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * Unlike the getters
 	 * {@link https://developer.wordpress.org/reference/classes/wp_theme_json_resolver/get_core_data/ get_core_data},
@@ -683,10 +836,14 @@ class WP_Theme_JSON_Resolver {
 	 * this method returns data after it has been merged with the previous origins.
 	 * This means that if the same piece of data is declared in different origins
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * (default, blocks, theme, custom), the last origin overrides the previous.
 =======
 	 * (user, theme, and core), the last origin overrides the previous.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * (default, blocks, theme, custom), the last origin overrides the previous.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * For example, if the user has set a background color
 	 * for the paragraph block, and the theme has done it as well,
@@ -695,6 +852,7 @@ class WP_Theme_JSON_Resolver {
 	 * @since 5.8.0
 	 * @since 5.9.0 Added user data, removed the `$settings` parameter,
 	 *              added the `$origin` parameter.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @since 6.1.0 Added block data and generation of spacingSizes array.
 	 * @since 6.2.0 Changed ' $origin' parameter values to 'default', 'blocks', 'theme' or 'custom'.
@@ -706,6 +864,13 @@ class WP_Theme_JSON_Resolver {
 	 * @param string $origin Optional. To what level should we merge data.
 	 *                       Valid values are 'theme' or 'custom'. Default 'custom'.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 Added block data and generation of spacingSizes array.
+	 * @since 6.2.0 Changed ' $origin' parameter values to 'default', 'blocks', 'theme' or 'custom'.
+	 *
+	 * @param string $origin Optional. To what level should we merge data: 'default', 'blocks', 'theme' or 'custom'.
+	 *                       'custom' is used as default value as well as fallback value if the origin is unknown.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @return WP_Theme_JSON
 	 */
 	public static function get_merged_data( $origin = 'custom' ) {
@@ -714,10 +879,14 @@ class WP_Theme_JSON_Resolver {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$result = static::get_core_data();
 		if ( 'default' === $origin ) {
 			$result->set_spacing_sizes();
 			return $result;
+<<<<<<< HEAD
 		}
 
 		$result->merge( static::get_block_data() );
@@ -740,8 +909,24 @@ class WP_Theme_JSON_Resolver {
 
 		if ( 'custom' === $origin ) {
 			$result->merge( static::get_user_data() );
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 >>>>>>> fb785cbb (Initial commit)
+
+		$result->merge( static::get_block_data() );
+		if ( 'blocks' === $origin ) {
+			return $result;
+		}
+
+		$result->merge( static::get_theme_data() );
+		if ( 'theme' === $origin ) {
+			$result->set_spacing_sizes();
+			return $result;
+		}
+
+		$result->merge( static::get_user_data() );
+		$result->set_spacing_sizes();
 
 		return $result;
 	}
@@ -774,13 +959,18 @@ class WP_Theme_JSON_Resolver {
 	 * @since 5.8.0
 	 * @since 5.9.0 Added a check in the parent theme.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @deprecated 6.2.0 Use wp_theme_has_theme_json() instead.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @deprecated 6.2.0 Use wp_theme_has_theme_json() instead.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @return bool
 	 */
 	public static function theme_has_support() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 		_deprecated_function( __METHOD__, '6.2.0', 'wp_theme_has_theme_json()' );
 
@@ -795,6 +985,11 @@ class WP_Theme_JSON_Resolver {
 
 		return static::$theme_has_support;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		_deprecated_function( __METHOD__, '6.2.0', 'wp_theme_has_theme_json()' );
+
+		return wp_theme_has_theme_json();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -823,6 +1018,7 @@ class WP_Theme_JSON_Resolver {
 	 * @since 5.9.0 Added the `$user`, `$user_custom_post_type_id`,
 	 *              and `$i18n_schema` variables to reset.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 Added the `$blocks` and `$blocks_cache` variables
 	 *              to reset.
 	 */
@@ -839,19 +1035,36 @@ class WP_Theme_JSON_Resolver {
 		static::$user                     = null;
 		static::$user_custom_post_type_id = null;
 =======
+=======
+	 * @since 6.1.0 Added the `$blocks` and `$blocks_cache` variables
+	 *              to reset.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public static function clean_cached_data() {
 		static::$core                     = null;
+		static::$blocks                   = null;
+		static::$blocks_cache             = array(
+			'core'   => array(),
+			'blocks' => array(),
+			'theme'  => array(),
+			'user'   => array(),
+		);
 		static::$theme                    = null;
 		static::$user                     = null;
 		static::$user_custom_post_type_id = null;
+<<<<<<< HEAD
 		static::$theme_has_support        = null;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		static::$i18n_schema              = null;
 	}
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Returns an array of all nested JSON files within a given directory.
 	 *
 	 * @since 6.2.0
@@ -871,20 +1084,27 @@ class WP_Theme_JSON_Resolver {
 	 *
 	 * @since 6.0.0
 	 * @since 6.2.0 Returns parent theme variations if theme is a child.
+<<<<<<< HEAD
 =======
 	 * Returns the style variations defined by the theme.
 	 *
 	 * @since 6.0.0
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @return array
 	 */
 	public static function get_style_variations() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$variation_files    = array();
 		$variations         = array();
 		$base_directory     = get_stylesheet_directory() . '/styles';
 		$template_directory = get_template_directory() . '/styles';
+<<<<<<< HEAD
 		if ( is_dir( $base_directory ) ) {
 			$variation_files = static::recursively_iterate_json( $base_directory );
 		}
@@ -917,24 +1137,40 @@ class WP_Theme_JSON_Resolver {
 =======
 		$variations     = array();
 		$base_directory = get_stylesheet_directory() . '/styles';
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( is_dir( $base_directory ) ) {
-			$nested_files      = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $base_directory ) );
-			$nested_html_files = iterator_to_array( new RegexIterator( $nested_files, '/^.+\.json$/i', RecursiveRegexIterator::GET_MATCH ) );
-			ksort( $nested_html_files );
-			foreach ( $nested_html_files as $path => $file ) {
-				$decoded_file = wp_json_file_decode( $path, array( 'associative' => true ) );
-				if ( is_array( $decoded_file ) ) {
-					$translated = static::translate( $decoded_file, wp_get_theme()->get( 'TextDomain' ) );
-					$variation  = ( new WP_Theme_JSON( $translated ) )->get_raw_data();
-					if ( empty( $variation['title'] ) ) {
-						$variation['title'] = basename( $path, '.json' );
+			$variation_files = static::recursively_iterate_json( $base_directory );
+		}
+		if ( is_dir( $template_directory ) && $template_directory !== $base_directory ) {
+			$variation_files_parent = static::recursively_iterate_json( $template_directory );
+			// If the child and parent variation file basename are the same, only include the child theme's.
+			foreach ( $variation_files_parent as $parent_path => $parent ) {
+				foreach ( $variation_files as $child_path => $child ) {
+					if ( basename( $parent_path ) === basename( $child_path ) ) {
+						unset( $variation_files_parent[ $parent_path ] );
 					}
-					$variations[] = $variation;
 				}
+			}
+			$variation_files = array_merge( $variation_files, $variation_files_parent );
+		}
+		ksort( $variation_files );
+		foreach ( $variation_files as $path => $file ) {
+			$decoded_file = wp_json_file_decode( $path, array( 'associative' => true ) );
+			if ( is_array( $decoded_file ) ) {
+				$translated = static::translate( $decoded_file, wp_get_theme()->get( 'TextDomain' ) );
+				$variation  = ( new WP_Theme_JSON( $translated ) )->get_raw_data();
+				if ( empty( $variation['title'] ) ) {
+					$variation['title'] = basename( $path, '.json' );
+				}
+				$variations[] = $variation;
 			}
 		}
 		return $variations;
 	}
+<<<<<<< HEAD
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }

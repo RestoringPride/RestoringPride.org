@@ -12,9 +12,13 @@
  * @since 5.2.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 final class WP_Recovery_Mode_Key_Service {
 
 	/**
@@ -89,10 +93,15 @@ final class WP_Recovery_Mode_Key_Service {
 	 * @since 5.2.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @global PasswordHash $wp_hasher
 	 *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @global PasswordHash $wp_hasher
+	 *
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param string $token The token used when generating the given key.
 	 * @param string $key   The unhashed key.
 	 * @param int    $ttl   Time in seconds for the key to be valid for.
@@ -100,9 +109,13 @@ final class WP_Recovery_Mode_Key_Service {
 	 */
 	public function validate_recovery_mode_key( $token, $key, $ttl ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		global $wp_hasher;
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+		global $wp_hasher;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$records = $this->get_keys();
 
@@ -119,15 +132,21 @@ final class WP_Recovery_Mode_Key_Service {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( empty( $wp_hasher ) ) {
 			require_once ABSPATH . WPINC . '/class-phpass.php';
 			$wp_hasher = new PasswordHash( 8, true );
 		}
 
 		if ( ! $wp_hasher->CheckPassword( $key, $record['hashed_key'] ) ) {
+<<<<<<< HEAD
 =======
 		if ( ! wp_check_password( $key, $record['hashed_key'] ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			return new WP_Error( 'hash_mismatch', __( 'Invalid recovery key.' ) );
 		}
 

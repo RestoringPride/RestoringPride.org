@@ -42,6 +42,9 @@ class WP_REST_Term_Search_Handler extends WP_REST_Search_Handler {
 	 *
 	 * @param WP_REST_Request $request Full REST request.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @return array {
 	 *     Associative array containing found IDs and total count for the matching search results.
 	 *
@@ -50,11 +53,14 @@ class WP_REST_Term_Search_Handler extends WP_REST_Search_Handler {
 	 *                                      taxonomy, 0 if there are no results, or WP_Error if
 	 *                                      the requested taxonomy does not exist.
 	 * }
+<<<<<<< HEAD
 =======
 	 * @return array Associative array containing an `WP_REST_Search_Handler::RESULT_IDS` containing
 	 *               an array of found IDs and `WP_REST_Search_Handler::RESULT_TOTAL` containing the
 	 *               total count for the matching search results.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function search_items( WP_REST_Request $request ) {
 		$taxonomies = $request[ WP_REST_Search_Controller::PROP_SUBTYPE ];
@@ -77,6 +83,9 @@ class WP_REST_Term_Search_Handler extends WP_REST_Search_Handler {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! empty( $request['exclude'] ) ) {
 			$query_args['exclude'] = $request['exclude'];
 		}
@@ -85,8 +94,11 @@ class WP_REST_Term_Search_Handler extends WP_REST_Search_Handler {
 			$query_args['include'] = $request['include'];
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		/**
 		 * Filters the query arguments for a REST API search request.
 		 *
@@ -155,10 +167,14 @@ class WP_REST_Term_Search_Handler extends WP_REST_Search_Handler {
 	 *
 	 * @param int $id Item ID.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return array[] Array of link arrays for the given item.
 =======
 	 * @return array Links for the given item.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return array[] Array of link arrays for the given item.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function prepare_item_links( $id ) {
 		$term = get_term( $id );

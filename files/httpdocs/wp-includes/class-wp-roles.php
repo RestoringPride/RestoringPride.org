@@ -24,9 +24,13 @@
  * @since 2.0.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Roles {
 	/**
 	 * List of roles and capabilities.
@@ -78,10 +82,14 @@ class WP_Roles {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Constructor.
 =======
 	 * Constructor
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Constructor.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 2.0.0
 	 * @since 4.9.0 The `$site_id` argument was added.
@@ -100,10 +108,14 @@ class WP_Roles {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Makes private/protected methods readable for backward compatibility.
 =======
 	 * Make private/protected methods readable for backward compatibility.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Makes private/protected methods readable for backward compatibility.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.0.0
 	 *
@@ -120,10 +132,14 @@ class WP_Roles {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Sets up the object properties.
 =======
 	 * Set up the object properties.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Sets up the object properties.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * The role key is set to the current prefix for the $wpdb object with
 	 * 'user_roles' appended. If the $wp_user_roles global is set, then it will
@@ -140,10 +156,14 @@ class WP_Roles {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Reinitializes the object.
 =======
 	 * Reinitialize the object
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Reinitializes the object.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * Recreates the role objects. This is typically called only by switch_to_blog()
 	 * after switching wpdb to a new site ID.
@@ -159,6 +179,7 @@ class WP_Roles {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Adds a role name with capabilities to the list.
 	 *
 	 * Updates the list of roles, if the role doesn't already exist.
@@ -173,21 +194,35 @@ class WP_Roles {
 	 * The capabilities are defined in the following format `array( 'read' => true );`
 	 * To explicitly deny a role a capability you set the value for that capability to false.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Adds a role name with capabilities to the list.
+	 *
+	 * Updates the list of roles, if the role doesn't already exist.
+	 *
+	 * The capabilities are defined in the following format: `array( 'read' => true )`.
+	 * To explicitly deny the role a capability, set the value for that capability to false.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 2.0.0
 	 *
 	 * @param string $role         Role name.
 	 * @param string $display_name Role display name.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param bool[] $capabilities Optional. List of capabilities keyed by the capability name,
 	 *                             e.g. `array( 'edit_posts' => true, 'delete_posts' => false )`.
 	 *                             Default empty array.
 	 * @return WP_Role|void WP_Role object, if the role is added.
+<<<<<<< HEAD
 =======
 	 * @param bool[] $capabilities List of capabilities keyed by the capability name,
 	 *                             e.g. array( 'edit_posts' => true, 'delete_posts' => false ).
 	 * @return WP_Role|void WP_Role object, if role is added.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function add_role( $role, $display_name, $capabilities = array() ) {
 		if ( empty( $role ) || isset( $this->roles[ $role ] ) ) {
@@ -208,10 +243,14 @@ class WP_Roles {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Removes a role by name.
 =======
 	 * Remove role by name.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Removes a role by name.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 2.0.0
 	 *
@@ -237,10 +276,14 @@ class WP_Roles {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Adds a capability to role.
 =======
 	 * Add capability to role.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Adds a capability to role.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 2.0.0
 	 *
@@ -262,10 +305,14 @@ class WP_Roles {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Removes a capability from role.
 =======
 	 * Remove capability from role.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Removes a capability from role.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 2.0.0
 	 *
@@ -285,10 +332,14 @@ class WP_Roles {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Retrieves a role object by name.
 =======
 	 * Retrieve role object by name.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Retrieves a role object by name.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 2.0.0
 	 *
@@ -305,10 +356,14 @@ class WP_Roles {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Retrieves a list of role names.
 =======
 	 * Retrieve list of role names.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Retrieves a list of role names.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 2.0.0
 	 *
@@ -320,10 +375,14 @@ class WP_Roles {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Determines whether a role name is currently in the list of available roles.
 =======
 	 * Whether role name is currently in the list of available roles.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Determines whether a role name is currently in the list of available roles.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 2.0.0
 	 *
@@ -353,10 +412,14 @@ class WP_Roles {
 
 		/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 * Fires after the roles have been initialized, allowing plugins to add their own roles.
 =======
 		 * After the roles have been initialized, allow plugins to add their own roles.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		 * Fires after the roles have been initialized, allowing plugins to add their own roles.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 *
 		 * @since 4.7.0
 		 *

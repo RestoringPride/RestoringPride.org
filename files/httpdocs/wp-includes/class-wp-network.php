@@ -22,9 +22,13 @@
  * @property int $site_id
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Network {
 
 	/**
@@ -87,10 +91,14 @@ class WP_Network {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Retrieves a network from the database by its ID.
 =======
 	 * Retrieve a network from the database by its ID.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Retrieves a network from the database by its ID.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.4.0
 	 *
@@ -128,10 +136,14 @@ class WP_Network {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Creates a new WP_Network object.
 =======
 	 * Create a new WP_Network object.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Creates a new WP_Network object.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * Will populate object properties from the object provided and assign other
 	 * default properties based on that information.
@@ -267,6 +279,7 @@ class WP_Network {
 			$main_site_id = (int) $site->id;
 		} else {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 			$main_site_id = get_network_option( $this->id, 'main_site' );
 =======
@@ -274,6 +287,10 @@ class WP_Network {
 
 			$main_site_id = wp_cache_get( $cache_key, 'site-options' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+			$main_site_id = get_network_option( $this->id, 'main_site' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( false === $main_site_id ) {
 				$_sites       = get_sites(
 					array(
@@ -287,10 +304,14 @@ class WP_Network {
 				$main_site_id = ! empty( $_sites ) ? array_shift( $_sites ) : 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 				update_network_option( $this->id, 'main_site', $main_site_id );
 =======
 				wp_cache_add( $cache_key, $main_site_id, 'site-options' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				update_network_option( $this->id, 'main_site', $main_site_id );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 		}
 
@@ -301,10 +322,14 @@ class WP_Network {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Sets the site name assigned to the network if one has not been populated.
 =======
 	 * Set the site name assigned to the network if one has not been populated.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Sets the site name assigned to the network if one has not been populated.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.4.0
 	 */
@@ -319,10 +344,14 @@ class WP_Network {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Sets the cookie domain based on the network domain if one has
 =======
 	 * Set the cookie domain based on the network domain if one has
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Sets the cookie domain based on the network domain if one has
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * not been populated.
 	 *
 	 * @todo What if the domain of the network doesn't match the current site?
@@ -342,10 +371,14 @@ class WP_Network {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Retrieves the closest matching network for a domain and path.
 =======
 	 * Retrieve the closest matching network for a domain and path.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Retrieves the closest matching network for a domain and path.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * This will not necessarily return an exact match for a domain and path. Instead, it
 	 * breaks the domain and path into pieces that are then used to match the closest
@@ -426,10 +459,14 @@ class WP_Network {
 
 		/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 * Determines a network by its domain and path.
 =======
 		 * Determine a network by its domain and path.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		 * Determines a network by its domain and path.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 *
 		 * This allows one to short-circuit the default logic, perhaps by
 		 * replacing it with a routine that is more optimal for your setup.
@@ -442,12 +479,16 @@ class WP_Network {
 		 *
 		 * @param null|false|WP_Network $network  Network value to return by path. Default null
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 *                                        to continue retrieving the network.
 		 * @param string                $domain   The requested domain.
 		 * @param string                $path     The requested path, in full.
 		 * @param int|null              $segments The suggested number of paths to consult.
 		 *                                        Default null, meaning the entire path was to be consulted.
 		 * @param string[]              $paths    Array of paths to search for, based on `$path` and `$segments`.
+<<<<<<< HEAD
 =======
 		 *                                       to continue retrieving the network.
 		 * @param string               $domain   The requested domain.
@@ -456,6 +497,8 @@ class WP_Network {
 		 *                                       Default null, meaning the entire path was to be consulted.
 		 * @param string[]             $paths    Array of paths to search for, based on `$path` and `$segments`.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 */
 		$pre = apply_filters( 'pre_get_network_by_path', null, $domain, $path, $segments, $paths );
 		if ( null !== $pre ) {

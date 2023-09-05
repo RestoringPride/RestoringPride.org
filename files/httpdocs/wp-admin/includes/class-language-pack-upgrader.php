@@ -63,10 +63,14 @@ class Language_Pack_Upgrader extends WP_Upgrader {
 		 * Noted: this is not the ideal way to accomplish this.
 		 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$check_vcs = new WP_Automatic_Updater();
 =======
 		$check_vcs = new WP_Automatic_Updater;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$check_vcs = new WP_Automatic_Updater();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( $check_vcs->is_vcs_checkout( WP_CONTENT_DIR ) ) {
 			return;
 		}

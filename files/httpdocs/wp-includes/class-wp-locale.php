@@ -14,14 +14,19 @@
  * @since 4.6.0 Moved to its own file from wp-includes/locale.php.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Locale {
 	/**
 	 * Stores the translated strings for the full weekday names.
 	 *
 	 * @since 2.1.0
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
@@ -32,6 +37,12 @@ class WP_Locale {
 	 */
 	public $weekday;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.2.0 Initialized to an empty array.
+	 * @var string[]
+	 */
+	public $weekday = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Stores the translated strings for the one character weekday names.
@@ -43,6 +54,7 @@ class WP_Locale {
 	 *
 	 * @since 2.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
 	 */
@@ -52,11 +64,18 @@ class WP_Locale {
 	 */
 	public $weekday_initial;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.2.0 Initialized to an empty array.
+	 * @var string[]
+	 */
+	public $weekday_initial = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Stores the translated strings for the abbreviated weekday names.
 	 *
 	 * @since 2.1.0
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
@@ -67,11 +86,18 @@ class WP_Locale {
 	 */
 	public $weekday_abbrev;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.2.0 Initialized to an empty array.
+	 * @var string[]
+	 */
+	public $weekday_abbrev = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Stores the translated strings for the full month names.
 	 *
 	 * @since 2.1.0
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
@@ -82,11 +108,18 @@ class WP_Locale {
 	 */
 	public $month;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.2.0 Initialized to an empty array.
+	 * @var string[]
+	 */
+	public $month = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Stores the translated strings for the month names in genitive case, if the locale specifies.
 	 *
 	 * @since 4.4.0
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
@@ -97,11 +130,18 @@ class WP_Locale {
 	 */
 	public $month_genitive;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.2.0 Initialized to an empty array.
+	 * @var string[]
+	 */
+	public $month_genitive = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Stores the translated strings for the abbreviated month names.
 	 *
 	 * @since 2.1.0
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
@@ -112,6 +152,12 @@ class WP_Locale {
 	 */
 	public $month_abbrev;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.2.0 Initialized to an empty array.
+	 * @var string[]
+	 */
+	public $month_abbrev = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Stores the translated strings for 'am' and 'pm'.
@@ -119,6 +165,7 @@ class WP_Locale {
 	 * Also the capitalized versions.
 	 *
 	 * @since 2.1.0
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var string[]
@@ -129,6 +176,12 @@ class WP_Locale {
 	 */
 	public $meridiem;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.2.0 Initialized to an empty array.
+	 * @var string[]
+	 */
+	public $meridiem = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * The text direction of the locale language.
@@ -145,6 +198,7 @@ class WP_Locale {
 	 *
 	 * @since 2.3.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.2.0 Initialized to an empty array.
 	 * @var array
 	 */
@@ -154,6 +208,12 @@ class WP_Locale {
 	 */
 	public $number_format;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.2.0 Initialized to an empty array.
+	 * @var array
+	 */
+	public $number_format = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * The separator string used for localizing list item separator.
@@ -165,6 +225,9 @@ class WP_Locale {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * The word count type of the locale language.
 	 *
 	 * Default is 'words'.
@@ -175,8 +238,11 @@ class WP_Locale {
 	public $word_count_type;
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Constructor which calls helper methods to set up object variables.
 	 *
 	 * @since 2.1.0
@@ -197,9 +263,12 @@ class WP_Locale {
 	 *
 	 * @global string $text_direction
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	 * @global string $wp_version     The WordPress version string.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function init() {
 		// The weekdays.
@@ -294,10 +363,14 @@ class WP_Locale {
 		$this->number_format['decimal_point'] = ( 'number_format_decimal_point' === $decimal_point ) ? '.' : $decimal_point;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		/* translators: Used between list items, there is a space after the comma. */
 =======
 		/* translators: used between list items, there is a space after the comma */
 >>>>>>> fb785cbb (Initial commit)
+=======
+		/* translators: Used between list items, there is a space after the comma. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$this->list_item_separator = __( ', ' );
 
 		// Set text direction.
@@ -309,11 +382,17 @@ class WP_Locale {
 			$this->text_direction = 'rtl';
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		// Set the word count type.
 		$this->word_count_type = $this->get_word_count_type();
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+		// Set the word count type.
+		$this->word_count_type = $this->get_word_count_type();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -475,6 +554,9 @@ class WP_Locale {
 		return $this->list_item_separator;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Retrieves the localized word count type.
@@ -501,6 +583,9 @@ class WP_Locale {
 
 		return $word_count_type;
 	}
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }

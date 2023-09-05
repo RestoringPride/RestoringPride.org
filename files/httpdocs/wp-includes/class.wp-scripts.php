@@ -3,6 +3,7 @@
  * Dependencies API: WP_Scripts class
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * This file is deprecated, use 'wp-includes/class-wp-scripts.php' instead.
  *
  * @deprecated 6.1.0
@@ -15,29 +16,17 @@ _deprecated_file( basename( __FILE__ ), '6.1.0', WPINC . '/class-wp-scripts.php'
 require_once ABSPATH . WPINC . '/class-wp-scripts.php';
 =======
  * @since 2.6.0
+=======
+ * This file is deprecated, use 'wp-includes/class-wp-scripts.php' instead.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
+ * @deprecated 6.1.0
  * @package WordPress
- * @subpackage Dependencies
  */
 
-/**
- * Core class used to register scripts.
- *
- * @since 2.1.0
- *
- * @see WP_Dependencies
- */
-class WP_Scripts extends WP_Dependencies {
-	/**
-	 * Base URL for scripts.
-	 *
-	 * Full URL with trailing slash.
-	 *
-	 * @since 2.6.0
-	 * @var string
-	 */
-	public $base_url;
+_deprecated_file( basename( __FILE__ ), '6.1.0', WPINC . '/class-wp-scripts.php' );
 
+<<<<<<< HEAD
 	/**
 	 * URL of the content directory.
 	 *
@@ -733,3 +722,7 @@ JS;
 	}
 }
 >>>>>>> fb785cbb (Initial commit)
+=======
+/** WP_Scripts class */
+require_once ABSPATH . WPINC . '/class-wp-scripts.php';
+>>>>>>> c058c778 (Combining with the latest source from WP)

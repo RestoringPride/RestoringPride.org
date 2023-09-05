@@ -267,10 +267,14 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 				/* translators: 1: Current PHP version, 2: Version required by the uploaded plugin. */
 				__( 'The PHP version on your server is %1$s, however the uploaded plugin requires %2$s.' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 				PHP_VERSION,
 =======
 				phpversion(),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				PHP_VERSION,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$requires_php
 			);
 

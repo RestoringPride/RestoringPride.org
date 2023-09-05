@@ -9,9 +9,13 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 final class _WP_Editors {
 	public static $mce_locale;
 
@@ -1455,10 +1459,14 @@ final class _WP_Editors {
 	 * @param string $mce_locale The locale used for the editor.
 	 * @param bool   $json_only  Optional. Whether to include the JavaScript calls to tinymce.addI18n() and
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 *                           tinymce.ScriptLoader.markDone(). Default false.
 =======
 	 *                           tinymce.ScriptLoader.markDone().
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 *                           tinymce.ScriptLoader.markDone(). Default false.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @return string Translation object, JSON encoded.
 	 */
 	public static function wp_mce_translation( $mce_locale = '', $json_only = false ) {
@@ -1759,15 +1767,21 @@ final class _WP_Editors {
 	 * @since 3.1.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param array $args {
 	 *     Optional. Array of link query arguments.
 	 *
 	 *     @type int    $pagenum Page number. Default 1.
 	 *     @type string $s       Search keywords.
 	 * }
+<<<<<<< HEAD
 =======
 	 * @param array $args Optional. Accepts 'pagenum' and 's' (search) arguments.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @return array|false $results {
 	 *     An array of associative arrays of query results, false if there are none.
 	 *
@@ -1816,10 +1830,14 @@ final class _WP_Editors {
 
 		// Do main query.
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$get_posts = new WP_Query();
 =======
 		$get_posts = new WP_Query;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$get_posts = new WP_Query();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$posts     = $get_posts->query( $query );
 
 		// Build results.
@@ -1887,15 +1905,21 @@ final class _WP_Editors {
 		<?php wp_nonce_field( 'internal-linking', '_ajax_linking_nonce', false ); ?>
 		<h1 id="link-modal-title"><?php _e( 'Insert/edit link' ); ?></h1>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<button type="button" id="wp-link-close"><span class="screen-reader-text">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Close' );
 			?>
 		</span></button>
+<<<<<<< HEAD
 =======
 		<button type="button" id="wp-link-close"><span class="screen-reader-text"><?php _e( 'Close' ); ?></span></button>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<div id="link-selector">
 			<div id="link-options">
 				<p class="howto" id="wplink-enter-url"><?php _e( 'Enter the destination URL' ); ?></p>
@@ -1931,15 +1955,21 @@ final class _WP_Editors {
 					<div class="query-notice" id="query-notice-message">
 						<em class="query-notice-default"><?php _e( 'No search term specified. Showing recent items.' ); ?></em>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						<em class="query-notice-hint screen-reader-text">
 							<?php
 							/* translators: Hidden accessibility text. */
 							_e( 'Search or use up and down arrow keys to select an item.' );
 							?>
 						</em>
+<<<<<<< HEAD
 =======
 						<em class="query-notice-hint screen-reader-text"><?php _e( 'Search or use up and down arrow keys to select an item.' ); ?></em>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					</div>
 					<ul></ul>
 					<div class="river-waiting">

@@ -9,10 +9,14 @@
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Core wrapper object for a WpOrg\Requests\Response for standardisation.
 =======
  * Core wrapper object for a Requests_Response for standardisation.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Core wrapper object for a WpOrg\Requests\Response for standardisation.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 4.6.0
  *
@@ -24,10 +28,14 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 	 *
 	 * @since 4.6.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var \WpOrg\Requests\Response
 =======
 	 * @var Requests_Response
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var \WpOrg\Requests\Response
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	protected $response;
 
@@ -45,6 +53,7 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 	 * @since 4.6.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param \WpOrg\Requests\Response $response HTTP response.
 	 * @param string                   $filename Optional. File name. Default empty.
 	 */
@@ -55,6 +64,12 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 	 */
 	public function __construct( Requests_Response $response, $filename = '' ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param \WpOrg\Requests\Response $response HTTP response.
+	 * @param string                   $filename Optional. File name. Default empty.
+	 */
+	public function __construct( WpOrg\Requests\Response $response, $filename = '' ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$this->response = $response;
 		$this->filename = $filename;
 	}
@@ -65,10 +80,14 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 	 * @since 4.6.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return WpOrg\Requests\Response HTTP response.
 =======
 	 * @return Requests_Response HTTP response.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return WpOrg\Requests\Response HTTP response.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function get_response_object() {
 		return $this->response;
@@ -79,6 +98,7 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 	 *
 	 * @since 4.6.0
 	 *
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @return \WpOrg\Requests\Utility\CaseInsensitiveDictionary Map of header name to header value.
 	 */
@@ -92,6 +112,13 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 		// Ensure headers remain case-insensitive.
 		$converted = new Requests_Utility_CaseInsensitiveDictionary();
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return \WpOrg\Requests\Utility\CaseInsensitiveDictionary Map of header name to header value.
+	 */
+	public function get_headers() {
+		// Ensure headers remain case-insensitive.
+		$converted = new WpOrg\Requests\Utility\CaseInsensitiveDictionary();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		foreach ( $this->response->headers->getAll() as $key => $value ) {
 			if ( count( $value ) === 1 ) {
@@ -113,10 +140,14 @@ class WP_HTTP_Requests_Response extends WP_HTTP_Response {
 	 */
 	public function set_headers( $headers ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$this->response->headers = new WpOrg\Requests\Response\Headers( $headers );
 =======
 		$this->response->headers = new Requests_Response_Headers( $headers );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$this->response->headers = new WpOrg\Requests\Response\Headers( $headers );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**

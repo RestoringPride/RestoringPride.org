@@ -15,9 +15,13 @@
  * @see WP_Network_Query::__construct() for accepted arguments.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Network_Query {
 
 	/**
@@ -443,10 +447,14 @@ class WP_Network_Query {
 		$groupby = '';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$pieces = array( 'fields', 'join', 'where', 'orderby', 'limits', 'groupby' );
 =======
 		$clauses = array( 'fields', 'join', 'where', 'orderby', 'limits', 'groupby' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$pieces = array( 'fields', 'join', 'where', 'orderby', 'limits', 'groupby' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters the network query clauses.
@@ -457,10 +465,14 @@ class WP_Network_Query {
 		 * @param WP_Network_Query $query   Current instance of WP_Network_Query (passed by reference).
 		 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$clauses = apply_filters_ref_array( 'networks_clauses', array( compact( $pieces ), &$this ) );
 =======
 		$clauses = apply_filters_ref_array( 'networks_clauses', array( compact( $clauses ), &$this ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$clauses = apply_filters_ref_array( 'networks_clauses', array( compact( $pieces ), &$this ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$fields  = isset( $clauses['fields'] ) ? $clauses['fields'] : '';
 		$join    = isset( $clauses['join'] ) ? $clauses['join'] : '';

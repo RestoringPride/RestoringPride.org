@@ -47,10 +47,14 @@ $credits = wp_credits();
 	</div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<div class="about__section has-1-column has-gutters">
 =======
 	<div class="about__section has-1-column">
 >>>>>>> fb785cbb (Initial commit)
+=======
+	<div class="about__section has-1-column has-gutters">
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<div class="column aligncenter">
 			<?php if ( ! $credits ) : ?>
 
@@ -87,10 +91,14 @@ if ( ! $credits ) {
 ?>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<hr class="is-large" />
 =======
 	<hr />
 >>>>>>> fb785cbb (Initial commit)
+=======
+	<hr class="is-large" />
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	<div class="about__section">
 		<div class="column is-edge-to-edge">

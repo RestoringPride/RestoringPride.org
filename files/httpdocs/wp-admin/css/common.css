@@ -142,6 +142,7 @@
 	position: absolute;
 	top: -1000em;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	left: 6px;
 =======
 }
@@ -150,6 +151,9 @@
 	left: 6px;
 	top: -25px;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	left: 6px;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	height: auto;
 	width: auto;
 	display: block;
@@ -157,22 +161,32 @@
 	font-weight: 600;
 	padding: 15px 23px 14px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/* Background and color set to prevent false positives in automated accessibility tests. */
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	/* Background and color set to prevent false positives in automated accessibility tests. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	background: #f0f0f1;
 	color: #2271b1;
 	z-index: 100000;
 	line-height: normal;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .screen-reader-shortcut:focus {
 	top: -25px;
 	/* Overrides a:focus in the admin. See ticket #56789. */
 	color: #2271b1;
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	text-decoration: none;
 	/* Only visible in Windows High Contrast mode */
@@ -967,9 +981,13 @@ a#remove-post-thumbnail:hover,
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .word-wrap-break-word,
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+.word-wrap-break-word,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .misc-pub-filename {
 	word-wrap: break-word;
 }
@@ -1596,11 +1614,17 @@ div.error {
 .import-php .updating-message:before {
 	margin-right: 6px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 .import-php .updating-message:before {
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+}
+
+.import-php .updating-message:before {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	vertical-align: bottom;
 }
 
@@ -3054,14 +3078,20 @@ div.action-links {
 .plugin-details-modal #TB_closeWindowButton:hover,
 .plugin-details-modal #TB_closeWindowButton:focus {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	color: #135e96;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	outline: none;
 	box-shadow: none;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .plugin-details-modal #TB_closeWindowButton:hover::after,
 .plugin-details-modal #TB_closeWindowButton:focus::after {
 	outline: 2px solid;
@@ -3069,8 +3099,11 @@ div.action-links {
 	border-radius: 4px;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .plugin-details-modal .tb-close-icon {
 	display: none;
 }
@@ -3191,9 +3224,12 @@ img {
 	font-size: 13px;
 	background: #f6f7f7;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	-o-tab-size: 4;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	tab-size: 4;
 }
 

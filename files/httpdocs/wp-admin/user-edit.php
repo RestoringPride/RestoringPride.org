@@ -10,11 +10,17 @@
 require_once __DIR__ . '/admin.php';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /** WordPress Translation Installation API */
 require_once ABSPATH . 'wp-admin/includes/translation-install.php';
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+/** WordPress Translation Installation API */
+require_once ABSPATH . 'wp-admin/includes/translation-install.php';
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 wp_reset_vars( array( 'action', 'user_id', 'wp_http_referer' ) );
 
 $user_id      = (int) $user_id;
@@ -116,10 +122,14 @@ if ( IS_PROFILE_PAGE && isset( $_GET['newuseremail'] ) && $current_user->ID ) {
 	$new_email = get_user_meta( $current_user->ID, '_new_email', true );
 	if ( $new_email && hash_equals( $new_email['hash'], $_GET['newuseremail'] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$user             = new stdClass();
 =======
 		$user             = new stdClass;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$user             = new stdClass();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$user->ID         = $current_user->ID;
 		$user->user_email = esc_html( trim( $new_email['newemail'] ) );
 		if ( is_multisite() && $wpdb->get_var( $wpdb->prepare( "SELECT user_login FROM {$wpdb->signups} WHERE user_login = %s", $current_user->user_login ) ) ) {
@@ -225,10 +235,14 @@ switch ( $action ) {
 				<?php endif; ?>
 				<?php if ( $wp_http_referer && false === strpos( $wp_http_referer, 'user-new.php' ) && ! IS_PROFILE_PAGE ) : ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<p><a href="<?php echo esc_url( wp_validate_redirect( sanitize_url( $wp_http_referer ), self_admin_url( 'users.php' ) ) ); ?>"><?php _e( '&larr; Go to Users' ); ?></a></p>
 =======
 					<p><a href="<?php echo esc_url( wp_validate_redirect( esc_url_raw( $wp_http_referer ), self_admin_url( 'users.php' ) ) ); ?>"><?php _e( '&larr; Go to Users' ); ?></a></p>
 >>>>>>> fb785cbb (Initial commit)
+=======
+					<p><a href="<?php echo esc_url( wp_validate_redirect( sanitize_url( $wp_http_referer ), self_admin_url( 'users.php' ) ) ); ?>"><?php _e( '&larr; Go to Users' ); ?></a></p>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>
@@ -350,10 +364,14 @@ switch ( $action ) {
 								<?php _e( 'Enable keyboard shortcuts for comment moderation.' ); ?>
 							</label>
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<?php _e( '<a href="https://wordpress.org/documentation/article/keyboard-shortcuts-classic-editor/#keyboard-shortcuts-for-comments">Documentation on Keyboard Shortcuts</a>' ); ?>
 =======
 							<?php _e( '<a href="https://wordpress.org/support/article/keyboard-shortcuts/" target="_blank">More information</a>' ); ?>
 >>>>>>> fb785cbb (Initial commit)
+=======
+							<?php _e( '<a href="https://wordpress.org/support/article/keyboard-shortcuts/#keyboard-shortcuts-for-comments">Documentation on Keyboard Shortcuts</a>' ); ?>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						</td>
 					</tr>
 					<?php endif; ?>
@@ -369,15 +387,21 @@ switch ( $action ) {
 					</tr>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<?php
 					$languages = get_available_languages();
 					$can_install_translations = current_user_can( 'install_languages' ) && wp_can_install_language_pack();
 					?>
 					<?php if ( $languages || $can_install_translations ) : ?>
+<<<<<<< HEAD
 =======
 					<?php $languages = get_available_languages(); ?>
 					<?php if ( $languages ) : ?>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<tr class="user-language-wrap">
 						<th scope="row">
 							<?php /* translators: The user language selection field label. */ ?>
@@ -396,12 +420,16 @@ switch ( $action ) {
 							wp_dropdown_languages(
 								array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 									'name'                        => 'locale',
 									'id'                          => 'locale',
 									'selected'                    => $user_locale,
 									'languages'                   => $languages,
 									'show_available_translations' => $can_install_translations,
 									'show_option_site_default'    => true,
+<<<<<<< HEAD
 =======
 									'name'      => 'locale',
 									'id'        => 'locale',
@@ -410,6 +438,8 @@ switch ( $action ) {
 									'show_available_translations' => false,
 									'show_option_site_default' => true,
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 								)
 							);
 							?>
@@ -679,10 +709,14 @@ switch ( $action ) {
 									<div class="wp-pwd hide-if-js">
 										<span class="password-input-wrapper">
 <<<<<<< HEAD
+<<<<<<< HEAD
 											<input type="password" name="pass1" id="pass1" class="regular-text" value="" autocomplete="new-password" spellcheck="false" data-pw="<?php echo esc_attr( wp_generate_password( 24 ) ); ?>" aria-describedby="pass-strength-result" />
 =======
 											<input type="password" name="pass1" id="pass1" class="regular-text" value="" autocomplete="new-password" data-pw="<?php echo esc_attr( wp_generate_password( 24 ) ); ?>" aria-describedby="pass-strength-result" />
 >>>>>>> fb785cbb (Initial commit)
+=======
+											<input type="password" name="pass1" id="pass1" class="regular-text" value="" autocomplete="new-password" spellcheck="false" data-pw="<?php echo esc_attr( wp_generate_password( 24 ) ); ?>" aria-describedby="pass-strength-result" />
+>>>>>>> c058c778 (Combining with the latest source from WP)
 										</span>
 										<button type="button" class="button wp-hide-pw hide-if-no-js" data-toggle="0" aria-label="<?php esc_attr_e( 'Hide password' ); ?>">
 											<span class="dashicons dashicons-hidden" aria-hidden="true"></span>
@@ -700,10 +734,14 @@ switch ( $action ) {
 								<th scope="row"><label for="pass2"><?php _e( 'Repeat New Password' ); ?></label></th>
 								<td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 								<input type="password" name="pass2" id="pass2" class="regular-text" value="" autocomplete="new-password" spellcheck="false" aria-describedby="pass2-desc" />
 =======
 								<input name="pass2" type="password" id="pass2" class="regular-text" value="" autocomplete="new-password" aria-describedby="pass2-desc" />
 >>>>>>> fb785cbb (Initial commit)
+=======
+								<input type="password" name="pass2" id="pass2" class="regular-text" value="" autocomplete="new-password" spellcheck="false" aria-describedby="pass2-desc" />
+>>>>>>> c058c778 (Combining with the latest source from WP)
 									<?php if ( IS_PROFILE_PAGE ) : ?>
 										<p class="description" id="pass2-desc"><?php _e( 'Type your new password again.' ); ?></p>
 									<?php else : ?>
@@ -828,10 +866,14 @@ switch ( $action ) {
 										<div class="form-field">
 											<label for="new_application_password_name"><?php _e( 'New Application Password Name' ); ?></label>
 <<<<<<< HEAD
+<<<<<<< HEAD
 											<input type="text" size="30" id="new_application_password_name" name="new_application_password_name" class="input" aria-required="true" aria-describedby="new_application_password_name_desc" spellcheck="false" />
 =======
 											<input type="text" size="30" id="new_application_password_name" name="new_application_password_name" class="input" aria-required="true" aria-describedby="new_application_password_name_desc" />
 >>>>>>> fb785cbb (Initial commit)
+=======
+											<input type="text" size="30" id="new_application_password_name" name="new_application_password_name" class="input" aria-required="true" aria-describedby="new_application_password_name_desc" spellcheck="false" />
+>>>>>>> c058c778 (Combining with the latest source from WP)
 											<p class="description" id="new_application_password_name_desc"><?php _e( 'Required to create an Application Password, but not to update the user.' ); ?></p>
 										</div>
 
@@ -869,10 +911,14 @@ switch ( $action ) {
 										/* translators: %s: Documentation URL. */
 										__( 'If this is a development website you can <a href="%s" target="_blank">set the environment type accordingly</a> to enable application passwords.' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 										__( 'https://developer.wordpress.org/apis/wp-config-php/#wp-environment-type' )
 =======
 										__( 'https://wordpress.org/support/article/editing-wp-config-php/#wp_environment_type' )
 >>>>>>> fb785cbb (Initial commit)
+=======
+										__( 'https://developer.wordpress.org/apis/wp-config-php/#wp-environment-type' )
+>>>>>>> c058c778 (Combining with the latest source from WP)
 									);
 									?>
 								</p>
@@ -968,6 +1014,9 @@ switch ( $action ) {
 </script>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <script type="text/javascript">
 	jQuery( function( $ ) {
 		var languageSelect = $( '#locale' );
@@ -981,8 +1030,11 @@ switch ( $action ) {
 	} );
 </script>
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <?php if ( isset( $application_passwords_list_table ) ) : ?>
 	<script type="text/html" id="tmpl-new-application-password">
 		<div class="notice notice-success is-dismissible new-application-password-notice" role="alert" tabindex="-1">
@@ -1001,15 +1053,21 @@ switch ( $action ) {
 			<p><?php _e( 'Be sure to save this in a safe location. You will not be able to retrieve it.' ); ?></p>
 			<button type="button" class="notice-dismiss">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Dismiss this notice.' );
 					?>
 				</span>
+<<<<<<< HEAD
 =======
 				<span class="screen-reader-text"><?php _e( 'Dismiss this notice.' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			</button>
 		</div>
 	</script>

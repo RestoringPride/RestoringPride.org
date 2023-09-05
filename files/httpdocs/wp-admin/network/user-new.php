@@ -149,6 +149,9 @@ if ( isset( $add_user_errors ) && is_wp_error( $add_user_errors ) ) {
 <?php } ?>
 	<form action="<?php echo esc_url( network_admin_url( 'user-new.php?action=add-user' ) ); ?>" id="adduser" method="post" novalidate="novalidate">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<p><?php echo wp_required_field_message(); ?></p>
 		<table class="form-table" role="presentation">
 			<tr class="form-field form-required">
@@ -163,6 +166,7 @@ if ( isset( $add_user_errors ) && is_wp_error( $add_user_errors ) ) {
 				<td colspan="2" class="td-full"><?php _e( 'A password reset link will be sent to the user via email.' ); ?></td>
 			</tr>
 		</table>
+<<<<<<< HEAD
 =======
 	<table class="form-table" role="presentation">
 		<tr class="form-field form-required">
@@ -178,6 +182,8 @@ if ( isset( $add_user_errors ) && is_wp_error( $add_user_errors ) ) {
 		</tr>
 	</table>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<?php
 	/**
 	 * Fires at the end of the new user form in network admin.

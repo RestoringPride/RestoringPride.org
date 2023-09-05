@@ -69,10 +69,14 @@ class WP_Customize_Site_Icon_Control extends WP_Customize_Cropped_Image_Control 
 								<img src="{{ data.attachment.sizes.full ? data.attachment.sizes.full.url : data.attachment.url }}" alt="<?php esc_attr_e( 'Preview as a browser icon' ); ?>" />
 							</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<span class="browser-title" aria-hidden="true"><# print( '<?php echo esc_js( get_bloginfo( 'name' ) ); ?>' ) #></span>
 =======
 							<span class="browser-title" aria-hidden="true"><# print( '<?php bloginfo( 'name' ); ?>' ) #></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+							<span class="browser-title" aria-hidden="true"><# print( '<?php echo esc_js( get_bloginfo( 'name' ) ); ?>' ) #></span>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						</div>
 						<img class="app-icon-preview" src="{{ data.attachment.sizes.full ? data.attachment.sizes.full.url : data.attachment.url }}" alt="<?php esc_attr_e( 'Preview as an app icon' ); ?>" />
 					</div>

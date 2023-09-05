@@ -106,9 +106,12 @@ if ( $_POST ) {
 		'welcome_user_email',
 		'fileupload_maxk',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		'global_terms_enabled',
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		'illegal_names',
 		'limited_email_domains',
 		'banned_email_domains',
@@ -217,15 +220,21 @@ if ( isset( $_GET['updated'] ) ) {
 				<td>
 					<fieldset>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<legend class="screen-reader-text">
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'New registrations settings' );
 						?>
 					</legend>
+<<<<<<< HEAD
 =======
 					<legend class="screen-reader-text"><?php _e( 'New registrations settings' ); ?></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<label><input name="registration" type="radio" id="registration1" value="none"<?php checked( $reg, 'none' ); ?> /> <?php _e( 'Registration is disabled' ); ?></label><br />
 					<label><input name="registration" type="radio" id="registration2" value="user"<?php checked( $reg, 'user' ); ?> /> <?php _e( 'User accounts may be registered' ); ?></label><br />
 					<label><input name="registration" type="radio" id="registration3" value="blog"<?php checked( $reg, 'blog' ); ?> /> <?php _e( 'Logged in users may register new sites' ); ?></label><br />
@@ -427,13 +436,19 @@ if ( isset( $_GET['updated'] ) ) {
 					</label><br />
 					<p class="screen-reader-text" id="blog-upload-space-desc">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'Size in megabytes' );
 						?>
+<<<<<<< HEAD
 =======
 						<?php _e( 'Size in megabytes' ); ?>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					</p>
 				</td>
 			</tr>
@@ -460,13 +475,19 @@ if ( isset( $_GET['updated'] ) ) {
 						?>
 					<p class="screen-reader-text" id="fileupload-maxk-desc">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'Size in kilobytes' );
 						?>
+<<<<<<< HEAD
 =======
 						<?php _e( 'Size in kilobytes' ); ?>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					</p>
 				</td>
 			</tr>
@@ -534,13 +555,19 @@ if ( isset( $_GET['updated'] ) ) {
 					<td>
 						<?php
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						echo '<fieldset><legend class="screen-reader-text">' .
 							/* translators: Hidden accessibility text. */
 							__( 'Enable menus' ) .
 						'</legend>';
+<<<<<<< HEAD
 =======
 						echo '<fieldset><legend class="screen-reader-text">' . __( 'Enable menus' ) . '</legend>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 						foreach ( (array) $menu_items as $key => $val ) {
 							echo "<label><input type='checkbox' name='menu_items[" . $key . "]' value='1'" . ( isset( $menu_perms[ $key ] ) ? checked( $menu_perms[ $key ], '1', false ) : '' ) . ' /> ' . esc_html( $val ) . '</label><br/>';

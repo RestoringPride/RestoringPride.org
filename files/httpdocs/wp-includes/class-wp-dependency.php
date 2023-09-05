@@ -17,9 +17,13 @@
  * @since 2.6.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class _WP_Dependency {
 	/**
 	 * The handle name.
@@ -33,6 +37,7 @@ class _WP_Dependency {
 	 * The handle source.
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * If source is set to false, the item is an alias of other items it depends on.
 	 *
 	 * @since 2.6.0
@@ -41,6 +46,12 @@ class _WP_Dependency {
 	 * @since 2.6.0
 	 * @var string
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * If source is set to false, the item is an alias of other items it depends on.
+	 *
+	 * @since 2.6.0
+	 * @var string|false
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public $src;
 
@@ -137,10 +148,14 @@ class _WP_Dependency {
 	 * @return bool False if $domain is not a string, true otherwise.
 	 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public function set_translations( $domain, $path = '' ) {
 =======
 	public function set_translations( $domain, $path = null ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	public function set_translations( $domain, $path = '' ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! is_string( $domain ) ) {
 			return false;
 		}

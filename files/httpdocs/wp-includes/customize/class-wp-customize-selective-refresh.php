@@ -13,9 +13,13 @@
  * @since 4.5.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 final class WP_Customize_Selective_Refresh {
 
 	/**
@@ -176,10 +180,14 @@ final class WP_Customize_Selective_Refresh {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$switched_locale = switch_to_user_locale( get_current_user_id() );
 =======
 		$switched_locale = switch_to_locale( get_user_locale() );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$switched_locale = switch_to_user_locale( get_current_user_id() );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$l10n            = array(
 			'shiftClickToEdit' => __( 'Shift-click to edit this element.' ),
 			'clickEditMenu'    => __( 'Click to edit this menu.' ),

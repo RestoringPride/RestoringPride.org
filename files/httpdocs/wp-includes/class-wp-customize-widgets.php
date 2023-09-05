@@ -17,9 +17,13 @@
  * @see WP_Customize_Manager
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 final class WP_Customize_Widgets {
 
 	/**
@@ -895,15 +899,21 @@ final class WP_Customize_Widgets {
 			<div class="customize-section-title">
 				<button class="customize-section-back" tabindex="-1">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<span class="screen-reader-text">
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'Back' );
 						?>
 					</span>
+<<<<<<< HEAD
 =======
 					<span class="screen-reader-text"><?php _e( 'Back' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				</button>
 				<h3>
 					<span class="customize-action">
@@ -917,12 +927,16 @@ final class WP_Customize_Widgets {
 			</div>
 			<div id="available-widgets-filter">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<label class="screen-reader-text" for="widgets-search">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Search Widgets' );
 					?>
 				</label>
+<<<<<<< HEAD
 				<input type="text" id="widgets-search" placeholder="<?php esc_attr_e( 'Search widgets&hellip;' ); ?>" aria-describedby="widgets-search-desc" />
 				<div class="search-icon" aria-hidden="true"></div>
 				<button type="button" class="clear-results"><span class="screen-reader-text">
@@ -944,6 +958,22 @@ final class WP_Customize_Widgets {
 				<button type="button" class="clear-results"><span class="screen-reader-text"><?php _e( 'Clear Results' ); ?></span></button>
 				<p class="screen-reader-text" id="widgets-search-desc"><?php _e( 'The search results will be updated as you type.' ); ?></p>
 >>>>>>> fb785cbb (Initial commit)
+=======
+				<input type="text" id="widgets-search" placeholder="<?php esc_attr_e( 'Search widgets&hellip;' ); ?>" aria-describedby="widgets-search-desc" />
+				<div class="search-icon" aria-hidden="true"></div>
+				<button type="button" class="clear-results"><span class="screen-reader-text">
+					<?php
+					/* translators: Hidden accessibility text. */
+					_e( 'Clear Results' );
+					?>
+				</span></button>
+				<p class="screen-reader-text" id="widgets-search-desc">
+					<?php
+					/* translators: Hidden accessibility text. */
+					_e( 'The search results will be updated as you type.' );
+					?>
+				</p>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			</div>
 			<div id="available-widgets-list">
 			<?php foreach ( $this->get_available_widgets() as $available_widget ) : ?>
@@ -1300,10 +1330,14 @@ final class WP_Customize_Widgets {
 		global $wp_registered_sidebars, $wp_registered_widgets;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$switched_locale = switch_to_user_locale( get_current_user_id() );
 =======
 		$switched_locale = switch_to_locale( get_user_locale() );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$switched_locale = switch_to_user_locale( get_current_user_id() );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$l10n = array(
 			'widgetTooltip' => __( 'Shift-click to edit this widget.' ),

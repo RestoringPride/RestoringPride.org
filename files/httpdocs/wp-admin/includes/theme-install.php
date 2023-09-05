@@ -99,15 +99,21 @@ function install_theme_search_form( $type_selector = true ) {
 	<input type="hidden" name="tab" value="search" />
 	<?php if ( $type_selector ) : ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<label class="screen-reader-text" for="typeselector">
 		<?php
 		/* translators: Hidden accessibility text. */
 		_e( 'Type of search' );
 		?>
 	</label>
+<<<<<<< HEAD
 =======
 	<label class="screen-reader-text" for="typeselector"><?php _e( 'Type of search' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<select	name="type" id="typeselector">
 	<option value="term" <?php selected( 'term', $type ); ?>><?php _e( 'Keyword' ); ?></option>
 	<option value="author" <?php selected( 'author', $type ); ?>><?php _e( 'Author' ); ?></option>
@@ -118,6 +124,7 @@ function install_theme_search_form( $type_selector = true ) {
 		switch ( $type ) {
 			case 'term':
 <<<<<<< HEAD
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. */
 				_e( 'Search by keyword' );
 				break;
@@ -128,13 +135,21 @@ function install_theme_search_form( $type_selector = true ) {
 			case 'tag':
 				/* translators: Hidden accessibility text. */
 =======
+=======
+				/* translators: Hidden accessibility text. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				_e( 'Search by keyword' );
 				break;
 			case 'author':
+				/* translators: Hidden accessibility text. */
 				_e( 'Search by author' );
 				break;
 			case 'tag':
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+				/* translators: Hidden accessibility text. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				_e( 'Search by tag' );
 				break;
 		}
@@ -142,15 +157,21 @@ function install_theme_search_form( $type_selector = true ) {
 	</label>
 	<?php else : ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<label class="screen-reader-text" for="s">
 		<?php
 		/* translators: Hidden accessibility text. */
 		_e( 'Search by keyword' );
 		?>
 	</label>
+<<<<<<< HEAD
 =======
 	<label class="screen-reader-text" for="s"><?php _e( 'Search by keyword' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<?php endif; ?>
 	<input type="search" name="s" id="s" size="30" value="<?php echo esc_attr( $term ); ?>" autofocus="autofocus" />
 	<?php submit_button( __( 'Search' ), '', 'search', false ); ?>
@@ -206,15 +227,21 @@ function install_themes_dashboard() {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Displays a form to upload themes from zip files.
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Displays a form to upload themes from zip files.
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @since 2.8.0
  */
 function install_themes_upload() {
 	?>
 <p class="install-help"><?php _e( 'If you have a theme in a .zip format, you may install or update it by uploading it here.' ); ?></p>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <form method="post" enctype="multipart/form-data" class="wp-upload-form" action="<?php echo esc_url( self_admin_url( 'update.php?action=upload-theme' ) ); ?>">
 	<?php wp_nonce_field( 'theme-upload' ); ?>
@@ -229,6 +256,16 @@ function install_themes_upload() {
 	<?php wp_nonce_field( 'theme-upload' ); ?>
 	<label class="screen-reader-text" for="themezip"><?php _e( 'Theme zip file' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+<form method="post" enctype="multipart/form-data" class="wp-upload-form" action="<?php echo esc_url( self_admin_url( 'update.php?action=upload-theme' ) ); ?>">
+	<?php wp_nonce_field( 'theme-upload' ); ?>
+	<label class="screen-reader-text" for="themezip">
+		<?php
+		/* translators: Hidden accessibility text. */
+		_e( 'Theme zip file' );
+		?>
+	</label>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<input type="file" id="themezip" name="themezip" accept=".zip" />
 	<?php submit_button( __( 'Install Now' ), '', 'install-theme-submit', false ); ?>
 </form>

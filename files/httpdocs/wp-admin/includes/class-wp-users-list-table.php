@@ -12,9 +12,12 @@
  *
  * @since 3.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_List_Table
  */
@@ -189,6 +192,7 @@ class WP_Users_List_Table extends WP_List_Table {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$role_links  = array();
 		$avail_roles = array();
 		$all_text    = __( 'All' );
@@ -198,6 +202,11 @@ class WP_Users_List_Table extends WP_List_Table {
 		$all_text                = __( 'All' );
 		$current_link_attributes = empty( $role ) ? ' class="current" aria-current="page"' : '';
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$role_links  = array();
+		$avail_roles = array();
+		$all_text    = __( 'All' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( $count_users ) {
 			if ( $this->is_site_users ) {
@@ -225,20 +234,27 @@ class WP_Users_List_Table extends WP_List_Table {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$role_links['all'] = array(
 			'url'     => $url,
 			'label'   => $all_text,
 			'current' => empty( $role ),
 		);
+<<<<<<< HEAD
 =======
 		$role_links['all'] = sprintf( '<a href="%s"%s>%s</a>', $url, $current_link_attributes, $all_text );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		foreach ( $wp_roles->get_names() as $this_role => $name ) {
 			if ( $count_users && ! isset( $avail_roles[ $this_role ] ) ) {
 				continue;
 			}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 			$current_link_attributes = '';
@@ -248,6 +264,8 @@ class WP_Users_List_Table extends WP_List_Table {
 			}
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$name = translate_user_role( $name );
 			if ( $count_users ) {
 				$name = sprintf(
@@ -259,18 +277,25 @@ class WP_Users_List_Table extends WP_List_Table {
 			}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$role_links[ $this_role ] = array(
 				'url'     => esc_url( add_query_arg( 'role', $this_role, $url ) ),
 				'label'   => $name,
 				'current' => $this_role === $role,
 			);
+<<<<<<< HEAD
 =======
 			$role_links[ $this_role ] = "<a href='" . esc_url( add_query_arg( 'role', $this_role, $url ) ) . "'$current_link_attributes>$name</a>";
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		if ( ! empty( $avail_roles['none'] ) ) {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 			$current_link_attributes = '';
@@ -280,6 +305,8 @@ class WP_Users_List_Table extends WP_List_Table {
 			}
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$name = __( 'No role' );
 			$name = sprintf(
 				/* translators: 1: User role name, 2: Number of users. */
@@ -289,11 +316,15 @@ class WP_Users_List_Table extends WP_List_Table {
 			);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$role_links['none'] = array(
 				'url'     => esc_url( add_query_arg( 'role', 'none', $url ) ),
 				'label'   => $name,
 				'current' => 'none' === $role,
 			);
+<<<<<<< HEAD
 		}
 
 		return $this->get_views_links( $role_links );
@@ -303,6 +334,11 @@ class WP_Users_List_Table extends WP_List_Table {
 
 		return $role_links;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		}
+
+		return $this->get_views_links( $role_links );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -348,15 +384,21 @@ class WP_Users_List_Table extends WP_List_Table {
 	<div class="alignleft actions">
 		<?php if ( current_user_can( 'promote_users' ) && $this->has_items() ) : ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<label class="screen-reader-text" for="<?php echo $id; ?>">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Change role to&hellip;' );
 			?>
 		</label>
+<<<<<<< HEAD
 =======
 		<label class="screen-reader-text" for="<?php echo $id; ?>"><?php _e( 'Change role to&hellip;' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<select name="<?php echo $id; ?>" id="<?php echo $id; ?>">
 			<option value=""><?php _e( 'Change role to&hellip;' ); ?></option>
 			<?php wp_dropdown_roles(); ?>
@@ -417,10 +459,14 @@ class WP_Users_List_Table extends WP_List_Table {
 	 */
 	public function get_columns() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$columns = array(
 =======
 		$c = array(
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$columns = array(
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'cb'       => '<input type="checkbox" />',
 			'username' => __( 'Username' ),
 			'name'     => __( 'Name' ),
@@ -430,6 +476,7 @@ class WP_Users_List_Table extends WP_List_Table {
 		);
 
 		if ( $this->is_site_users ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 			unset( $columns['posts'] );
 		}
@@ -441,6 +488,12 @@ class WP_Users_List_Table extends WP_List_Table {
 
 		return $c;
 >>>>>>> fb785cbb (Initial commit)
+=======
+			unset( $columns['posts'] );
+		}
+
+		return $columns;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -452,19 +505,27 @@ class WP_Users_List_Table extends WP_List_Table {
 	 */
 	protected function get_sortable_columns() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$columns = array(
 =======
 		$c = array(
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$columns = array(
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'username' => 'login',
 			'email'    => 'email',
 		);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return $columns;
 =======
 		return $c;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return $columns;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -594,10 +655,14 @@ class WP_Users_List_Table extends WP_List_Table {
 				'<input type="checkbox" name="users[]" id="user_%1$s" class="%3$s" value="%1$s" />',
 				$user_object->ID,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. %s: User login. */
 =======
 				/* translators: %s: User login. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+				/* translators: Hidden accessibility text. %s: User login. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				sprintf( __( 'Select %s' ), $user_object->user_login ),
 				$role_classes
 			);
@@ -612,10 +677,14 @@ class WP_Users_List_Table extends WP_List_Table {
 		$roles_list = implode( ', ', $user_roles );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$row = "<tr id='user-$user_object->ID'>";
 =======
 		$r = "<tr id='user-$user_object->ID'>";
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$row = "<tr id='user-$user_object->ID'>";
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		list( $columns, $hidden, $sortable, $primary ) = $this->get_column_info();
 
@@ -637,6 +706,7 @@ class WP_Users_List_Table extends WP_List_Table {
 			$attributes = "class='$classes' $data";
 
 			if ( 'cb' === $column_name ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 				$row .= "<th scope='row' class='check-column'>$checkbox</th>";
 			} else {
@@ -663,28 +733,41 @@ class WP_Users_List_Table extends WP_List_Table {
 								/* translators: Hidden accessibility text. */
 =======
 				$r .= "<th scope='row' class='check-column'>$checkbox</th>";
+=======
+				$row .= "<th scope='row' class='check-column'>$checkbox</th>";
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			} else {
-				$r .= "<td $attributes>";
+				$row .= "<td $attributes>";
 				switch ( $column_name ) {
 					case 'username':
-						$r .= "$avatar $edit";
+						$row .= "$avatar $edit";
 						break;
 					case 'name':
 						if ( $user_object->first_name && $user_object->last_name ) {
-							$r .= "$user_object->first_name $user_object->last_name";
+							$row .= sprintf(
+								/* translators: 1: User's first name, 2: Last name. */
+								_x( '%1$s %2$s', 'Display name based on first name and last name' ),
+								$user_object->first_name,
+								$user_object->last_name
+							);
 						} elseif ( $user_object->first_name ) {
-							$r .= $user_object->first_name;
+							$row .= $user_object->first_name;
 						} elseif ( $user_object->last_name ) {
-							$r .= $user_object->last_name;
+							$row .= $user_object->last_name;
 						} else {
-							$r .= sprintf(
+							$row .= sprintf(
 								'<span aria-hidden="true">&#8212;</span><span class="screen-reader-text">%s</span>',
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+								/* translators: Hidden accessibility text. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 								_x( 'Unknown', 'name' )
 							);
 						}
 						break;
 					case 'email':
+<<<<<<< HEAD
 <<<<<<< HEAD
 						$row .= "<a href='" . esc_url( "mailto:$email" ) . "'>$email</a>";
 						break;
@@ -696,33 +779,48 @@ class WP_Users_List_Table extends WP_List_Table {
 							$row .= sprintf(
 =======
 						$r .= "<a href='" . esc_url( "mailto:$email" ) . "'>$email</a>";
+=======
+						$row .= "<a href='" . esc_url( "mailto:$email" ) . "'>$email</a>";
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						break;
 					case 'role':
-						$r .= esc_html( $roles_list );
+						$row .= esc_html( $roles_list );
 						break;
 					case 'posts':
 						if ( $numposts > 0 ) {
+<<<<<<< HEAD
 							$r .= sprintf(
 >>>>>>> fb785cbb (Initial commit)
+=======
+							$row .= sprintf(
+>>>>>>> c058c778 (Combining with the latest source from WP)
 								'<a href="%s" class="edit"><span aria-hidden="true">%s</span><span class="screen-reader-text">%s</span></a>',
 								"edit.php?author={$user_object->ID}",
 								$numposts,
 								sprintf(
 <<<<<<< HEAD
+<<<<<<< HEAD
 									/* translators: Hidden accessibility text. %s: Number of posts. */
 =======
 									/* translators: %s: Number of posts. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+									/* translators: Hidden accessibility text. %s: Number of posts. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 									_n( '%s post by this author', '%s posts by this author', $numposts ),
 									number_format_i18n( $numposts )
 								)
 							);
 						} else {
 <<<<<<< HEAD
+<<<<<<< HEAD
 							$row .= 0;
 =======
 							$r .= 0;
 >>>>>>> fb785cbb (Initial commit)
+=======
+							$row .= 0;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						}
 						break;
 					default:
@@ -735,6 +833,7 @@ class WP_Users_List_Table extends WP_List_Table {
 						 * @param string $column_name Column name.
 						 * @param int    $user_id     ID of the currently-listed user.
 						 */
+<<<<<<< HEAD
 <<<<<<< HEAD
 						$row .= apply_filters( 'manage_users_custom_column', '', $column_name, $user_object->ID );
 				}
@@ -750,18 +849,25 @@ class WP_Users_List_Table extends WP_List_Table {
 		return $row;
 =======
 						$r .= apply_filters( 'manage_users_custom_column', '', $column_name, $user_object->ID );
+=======
+						$row .= apply_filters( 'manage_users_custom_column', '', $column_name, $user_object->ID );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				}
 
 				if ( $primary === $column_name ) {
-					$r .= $this->row_actions( $actions );
+					$row .= $this->row_actions( $actions );
 				}
-				$r .= '</td>';
+				$row .= '</td>';
 			}
 		}
-		$r .= '</tr>';
+		$row .= '</tr>';
 
+<<<<<<< HEAD
 		return $r;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return $row;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**

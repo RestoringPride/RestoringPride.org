@@ -600,10 +600,14 @@ class Theme_Upgrader extends WP_Upgrader {
 				/* translators: 1: Current PHP version, 2: Version required by the uploaded theme. */
 				__( 'The PHP version on your server is %1$s, however the uploaded theme requires %2$s.' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 				PHP_VERSION,
 =======
 				phpversion(),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				PHP_VERSION,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$requires_php
 			);
 

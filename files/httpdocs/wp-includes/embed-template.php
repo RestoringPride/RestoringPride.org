@@ -9,9 +9,13 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 _deprecated_file( basename( __FILE__ ), '4.5.0', WPINC . '/theme-compat/embed.php' );
 =======
 _deprecated_file( basename( __FILE__ ), '4.5.0', 'wp-includes/theme-compat/embed.php' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+_deprecated_file( basename( __FILE__ ), '4.5.0', WPINC . '/theme-compat/embed.php' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 require ABSPATH . WPINC . '/theme-compat/embed.php';

@@ -3,6 +3,7 @@
  * Dependencies API: WP_Dependencies base class
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * This file is deprecated, use 'wp-includes/class-wp-dependencies.php' instead.
  *
  * @deprecated 6.1.0
@@ -15,28 +16,17 @@ _deprecated_file( basename( __FILE__ ), '6.1.0', WPINC . '/class-wp-dependencies
 require_once ABSPATH . WPINC . '/class-wp-dependencies.php';
 =======
  * @since 2.6.0
+=======
+ * This file is deprecated, use 'wp-includes/class-wp-dependencies.php' instead.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
+ * @deprecated 6.1.0
  * @package WordPress
- * @subpackage Dependencies
  */
 
-/**
- * Core base class extended to register items.
- *
- * @since 2.6.0
- *
- * @see _WP_Dependency
- */
-class WP_Dependencies {
-	/**
-	 * An array of all registered dependencies keyed by handle.
-	 *
-	 * @since 2.6.8
-	 *
-	 * @var _WP_Dependency[]
-	 */
-	public $registered = array();
+_deprecated_file( basename( __FILE__ ), '6.1.0', WPINC . '/class-wp-dependencies.php' );
 
+<<<<<<< HEAD
 	/**
 	 * An array of handles of queued dependencies.
 	 *
@@ -504,3 +494,7 @@ class WP_Dependencies {
 
 }
 >>>>>>> fb785cbb (Initial commit)
+=======
+/** WP_Dependencies class */
+require_once ABSPATH . WPINC . '/class-wp-dependencies.php';
+>>>>>>> c058c778 (Combining with the latest source from WP)

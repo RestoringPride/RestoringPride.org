@@ -15,9 +15,13 @@
  * @since 4.8.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Community_Events {
 	/**
 	 * ID for a WordPress user account.
@@ -357,16 +361,24 @@ class WP_Community_Events {
 	 */
 	public function get_cached_events() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$transient_key = $this->get_events_transient_key( $this->user_location );
 		if ( ! $transient_key ) {
 			return false;
 		}
+<<<<<<< HEAD
 
 		$cached_response = get_site_transient( $transient_key );
 =======
 		$cached_response = get_site_transient( $this->get_events_transient_key( $this->user_location ) );
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+		$cached_response = get_site_transient( $transient_key );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( isset( $cached_response['events'] ) ) {
 			$cached_response['events'] = $this->trim_events( $cached_response['events'] );
 		}

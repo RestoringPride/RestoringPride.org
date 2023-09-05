@@ -12,9 +12,13 @@
  * @since 5.2.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 final class WP_Recovery_Mode_Cookie_Service {
 
 	/**
@@ -202,6 +206,9 @@ final class WP_Recovery_Mode_Cookie_Service {
 	 */
 	private function recovery_mode_hash( $data ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$default_keys = array_unique(
 			array(
 				'put your unique phrase here',
@@ -215,9 +222,12 @@ final class WP_Recovery_Mode_Cookie_Service {
 		);
 
 		if ( ! defined( 'AUTH_KEY' ) || in_array( AUTH_KEY, $default_keys, true ) ) {
+<<<<<<< HEAD
 =======
 		if ( ! defined( 'AUTH_KEY' ) || AUTH_KEY === 'put your unique phrase here' ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$auth_key = get_site_option( 'recovery_mode_auth_key' );
 
 			if ( ! $auth_key ) {
@@ -233,10 +243,14 @@ final class WP_Recovery_Mode_Cookie_Service {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( ! defined( 'AUTH_SALT' ) || in_array( AUTH_SALT, $default_keys, true ) || AUTH_SALT === $auth_key ) {
 =======
 		if ( ! defined( 'AUTH_SALT' ) || AUTH_SALT === 'put your unique phrase here' || AUTH_SALT === $auth_key ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( ! defined( 'AUTH_SALT' ) || in_array( AUTH_SALT, $default_keys, true ) || AUTH_SALT === $auth_key ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$auth_salt = get_site_option( 'recovery_mode_auth_salt' );
 
 			if ( ! $auth_salt ) {

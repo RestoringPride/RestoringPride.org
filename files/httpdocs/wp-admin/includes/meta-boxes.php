@@ -77,10 +77,14 @@ function post_submit_meta_box( $post, $args = array() ) {
 					'%1$s<span class="screen-reader-text"> %2$s</span>',
 					$preview_button_text,
 <<<<<<< HEAD
+<<<<<<< HEAD
 					/* translators: Hidden accessibility text. */
 =======
 					/* translators: Accessibility text. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+					/* translators: Hidden accessibility text. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					__( '(opens in a new tab)' )
 				);
 				?>
@@ -137,12 +141,16 @@ function post_submit_meta_box( $post, $args = array() ) {
 				}
 				?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<a href="#post_status" <?php echo $private_style; ?> class="edit-post-status hide-if-no-js" role="button"><span aria-hidden="true"><?php _e( 'Edit' ); ?></span> <span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Edit status' );
 					?>
 				</span></a>
+<<<<<<< HEAD
 
 				<div id="post-status-select" class="hide-if-js">
 					<input type="hidden" name="hidden_post_status" id="hidden_post_status" value="<?php echo esc_attr( ( 'auto-draft' === $post->post_status ) ? 'draft' : $post->post_status ); ?>" />
@@ -159,6 +167,17 @@ function post_submit_meta_box( $post, $args = array() ) {
 					<input type="hidden" name="hidden_post_status" id="hidden_post_status" value="<?php echo esc_attr( ( 'auto-draft' === $post->post_status ) ? 'draft' : $post->post_status ); ?>" />
 					<label for="post_status" class="screen-reader-text"><?php _e( 'Set status' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+				<div id="post-status-select" class="hide-if-js">
+					<input type="hidden" name="hidden_post_status" id="hidden_post_status" value="<?php echo esc_attr( ( 'auto-draft' === $post->post_status ) ? 'draft' : $post->post_status ); ?>" />
+					<label for="post_status" class="screen-reader-text">
+						<?php
+						/* translators: Hidden accessibility text. */
+						_e( 'Set status' );
+						?>
+					</label>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<select name="post_status" id="post_status">
 						<?php if ( 'publish' === $post->post_status ) : ?>
 							<option<?php selected( $post->post_status, 'publish' ); ?> value='publish'><?php _e( 'Published' ); ?></option>
@@ -207,15 +226,21 @@ function post_submit_meta_box( $post, $args = array() ) {
 
 			<?php if ( $can_publish ) { ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<a href="#visibility" class="edit-visibility hide-if-no-js" role="button"><span aria-hidden="true"><?php _e( 'Edit' ); ?></span> <span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Edit visibility' );
 					?>
 				</span></a>
+<<<<<<< HEAD
 =======
 				<a href="#visibility" class="edit-visibility hide-if-no-js" role="button"><span aria-hidden="true"><?php _e( 'Edit' ); ?></span> <span class="screen-reader-text"><?php _e( 'Edit visibility' ); ?></span></a>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 				<div id="post-visibility-select" class="hide-if-js">
 					<input type="hidden" name="hidden_post_password" id="hidden-post-password" value="<?php echo esc_attr( $post->post_password ); ?>" />
@@ -289,15 +314,21 @@ function post_submit_meta_box( $post, $args = array() ) {
 				printf( __( 'Revisions: %s' ), '<b>' . number_format_i18n( $args['args']['revisions_count'] ) . '</b>' );
 				?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<a class="hide-if-no-js" href="<?php echo esc_url( get_edit_post_link( $args['args']['revision_id'] ) ); ?>"><span aria-hidden="true"><?php _ex( 'Browse', 'revisions' ); ?></span> <span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Browse revisions' );
 					?>
 				</span></a>
+<<<<<<< HEAD
 =======
 				<a class="hide-if-no-js" href="<?php echo esc_url( get_edit_post_link( $args['args']['revision_id'] ) ); ?>"><span aria-hidden="true"><?php _ex( 'Browse', 'revisions' ); ?></span> <span class="screen-reader-text"><?php _e( 'Browse revisions' ); ?></span></a>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			</div>
 			<?php
 		endif;
@@ -311,12 +342,16 @@ function post_submit_meta_box( $post, $args = array() ) {
 				<a href="#edit_timestamp" class="edit-timestamp hide-if-no-js" role="button">
 					<span aria-hidden="true"><?php _e( 'Edit' ); ?></span>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<span class="screen-reader-text">
 						<?php
 						/* translators: Hidden accessibility text. */
 						_e( 'Edit date and time' );
 						?>
 					</span>
+<<<<<<< HEAD
 				</a>
 				<fieldset id="timestampdiv" class="hide-if-js">
 					<legend class="screen-reader-text">
@@ -331,6 +366,16 @@ function post_submit_meta_box( $post, $args = array() ) {
 				<fieldset id="timestampdiv" class="hide-if-js">
 					<legend class="screen-reader-text"><?php _e( 'Date and time' ); ?></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+				</a>
+				<fieldset id="timestampdiv" class="hide-if-js">
+					<legend class="screen-reader-text">
+						<?php
+						/* translators: Hidden accessibility text. */
+						_e( 'Date and time' );
+						?>
+					</legend>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<?php touch_time( ( 'edit' === $action ), 1 ); ?>
 				</fieldset>
 			</div>
@@ -500,10 +545,14 @@ function attachment_submit_meta_box( $post ) {
 		} else {
 			$delete_ays = ! MEDIA_TRASH ? " onclick='return showNotice.warn();'" : '';
 <<<<<<< HEAD
+<<<<<<< HEAD
 			echo "<a class='submitdelete deletion'$delete_ays href='" . get_delete_post_link( $post->ID, '', true ) . "'>" . __( 'Delete permanently' ) . '</a>';
 =======
 			echo "<a class='submitdelete deletion'$delete_ays href='" . get_delete_post_link( $post->ID, null, true ) . "'>" . __( 'Delete permanently' ) . '</a>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+			echo "<a class='submitdelete deletion'$delete_ays href='" . get_delete_post_link( $post->ID, '', true ) . "'>" . __( 'Delete permanently' ) . '</a>';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 	?>
@@ -554,15 +603,21 @@ function post_format_meta_box( $post, $box ) {
 		<div id="post-formats-select">
 		<fieldset>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<legend class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( 'Post Formats' );
 				?>
 			</legend>
+<<<<<<< HEAD
 =======
 			<legend class="screen-reader-text"><?php _e( 'Post Formats' ); ?></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<input type="radio" name="post_format" class="post-format" id="post-format-0" value="0" <?php checked( $post_format, '0' ); ?> /> <label for="post-format-0" class="post-format-icon post-format-standard"><?php echo get_post_format_string( 'standard' ); ?></label>
 			<?php foreach ( $post_formats[0] as $format ) : ?>
 			<br /><input type="radio" name="post_format" class="post-format" id="post-format-<?php echo esc_attr( $format ); ?>" value="<?php echo esc_attr( $format ); ?>" <?php checked( $post_format, $format ); ?> /> <label for="post-format-<?php echo esc_attr( $format ); ?>" class="post-format-icon post-format-<?php echo esc_attr( $format ); ?>"><?php echo esc_html( get_post_format_string( $format ) ); ?></label>
@@ -771,15 +826,21 @@ function post_categories_meta_box( $post, $box ) {
 function post_excerpt_meta_box( $post ) {
 	?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <label class="screen-reader-text" for="excerpt">
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Excerpt' );
 	?>
 </label><textarea rows="1" cols="40" name="excerpt" id="excerpt"><?php echo $post->post_excerpt; // textarea_escaped ?></textarea>
+<<<<<<< HEAD
 =======
 <label class="screen-reader-text" for="excerpt"><?php _e( 'Excerpt' ); ?></label><textarea rows="1" cols="40" name="excerpt" id="excerpt"><?php echo $post->post_excerpt; // textarea_escaped ?></textarea>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <p>
 	<?php
 	printf(
@@ -896,10 +957,14 @@ function post_comment_status_meta_box( $post ) {
 		printf(
 			/* translators: %s: Documentation URL. */
 <<<<<<< HEAD
+<<<<<<< HEAD
 			__( 'Allow <a href="%s">trackbacks and pingbacks</a>' ),
 			__( 'https://wordpress.org/documentation/article/introduction-to-blogging/#managing-comments' )
 =======
 			__( 'Allow <a href="%s">trackbacks and pingbacks</a> on this page' ),
+=======
+			__( 'Allow <a href="%s">trackbacks and pingbacks</a>' ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			__( 'https://wordpress.org/support/article/introduction-to-blogging/#managing-comments' )
 >>>>>>> fb785cbb (Initial commit)
 		);
@@ -985,15 +1050,21 @@ function post_slug_meta_box( $post ) {
 	$editable_slug = apply_filters( 'editable_slug', $post->post_name, $post );
 	?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <label class="screen-reader-text" for="post_name">
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Slug' );
 	?>
 </label><input name="post_name" type="text" class="large-text" id="post_name" value="<?php echo esc_attr( $editable_slug ); ?>" />
+<<<<<<< HEAD
 =======
 <label class="screen-reader-text" for="post_name"><?php _e( 'Slug' ); ?></label><input name="post_name" type="text" size="13" id="post_name" value="<?php echo esc_attr( $editable_slug ); ?>" />
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<?php
 }
 
@@ -1012,15 +1083,21 @@ function post_author_meta_box( $post ) {
 	$post_type_object = get_post_type_object( $post->post_type );
 	?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <label class="screen-reader-text" for="post_author_override">
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Author' );
 	?>
 </label>
+<<<<<<< HEAD
 =======
 <label class="screen-reader-text" for="post_author_override"><?php _e( 'Author' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<?php
 	wp_dropdown_users(
 		array(
@@ -1258,15 +1335,21 @@ function link_categories_meta_box( $link ) {
 		<a id="category-add-toggle" href="#category-add" class="taxonomy-add-new"><?php _e( '+ Add New Category' ); ?></a>
 		<p id="link-category-add" class="wp-hidden-child">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<label class="screen-reader-text" for="newcat">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( '+ Add New Category' );
 				?>
 			</label>
+<<<<<<< HEAD
 =======
 			<label class="screen-reader-text" for="newcat"><?php _e( '+ Add New Category' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<input type="text" name="newcat" id="newcat" class="form-required form-input-tip" value="<?php esc_attr_e( 'New category name' ); ?>" aria-required="true" />
 			<input type="button" id="link-category-add-submit" data-wp-lists="add:categorychecklist:link-category-add" class="button" value="<?php esc_attr_e( 'Add' ); ?>" />
 			<?php wp_nonce_field( 'add-link-category', '_ajax_nonce', false ); ?>
@@ -1288,15 +1371,21 @@ function link_target_meta_box( $link ) {
 
 	?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Target' );
 	?>
 </span></legend>
+<<<<<<< HEAD
 =======
 <fieldset><legend class="screen-reader-text"><span><?php _e( 'Target' ); ?></span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <p><label for="link_target_blank" class="selectit">
 <input id="link_target_blank" type="radio" name="link_target" value="_blank" <?php echo ( isset( $link->link_target ) && ( '_blank' === $link->link_target ) ? 'checked="checked"' : '' ); ?> />
 	<?php _e( '<code>_blank</code> &mdash; new window or tab.' ); ?></label></p>
@@ -1387,6 +1476,9 @@ function link_xfn_meta_box( $link ) {
 	<tr>
 		<th scope="row"><?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'identity' ); ?></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<td><fieldset>
 			<legend class="screen-reader-text"><span>
 				<?php
@@ -1394,9 +1486,12 @@ function link_xfn_meta_box( $link ) {
 				_e( 'identity' );
 				?>
 			</span></legend>
+<<<<<<< HEAD
 =======
 		<td><fieldset><legend class="screen-reader-text"><span><?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'identity' ); ?></span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<label for="me">
 			<input type="checkbox" name="identity" value="me" id="me" <?php xfn_check( 'identity', 'me' ); ?> />
 			<?php _e( 'another web address of mine' ); ?></label>
@@ -1405,6 +1500,9 @@ function link_xfn_meta_box( $link ) {
 	<tr>
 		<th scope="row"><?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'friendship' ); ?></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<td><fieldset>
 			<legend class="screen-reader-text"><span>
 				<?php
@@ -1412,9 +1510,12 @@ function link_xfn_meta_box( $link ) {
 				_e( 'friendship' );
 				?>
 			</span></legend>
+<<<<<<< HEAD
 =======
 		<td><fieldset><legend class="screen-reader-text"><span><?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'friendship' ); ?></span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<label for="contact">
 			<input class="valinp" type="radio" name="friendship" value="contact" id="contact" <?php xfn_check( 'friendship', 'contact' ); ?> />&nbsp;<?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'contact' ); ?>
 			</label>
@@ -1432,6 +1533,9 @@ function link_xfn_meta_box( $link ) {
 	<tr>
 		<th scope="row"> <?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'physical' ); ?> </th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<td><fieldset>
 			<legend class="screen-reader-text"><span>
 				<?php
@@ -1439,9 +1543,12 @@ function link_xfn_meta_box( $link ) {
 				_e( 'physical' );
 				?>
 			</span></legend>
+<<<<<<< HEAD
 =======
 		<td><fieldset><legend class="screen-reader-text"><span><?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'physical' ); ?></span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<label for="met">
 			<input class="valinp" type="checkbox" name="physical" value="met" id="met" <?php xfn_check( 'physical', 'met' ); ?> />&nbsp;<?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'met' ); ?>
 			</label>
@@ -1450,6 +1557,9 @@ function link_xfn_meta_box( $link ) {
 	<tr>
 		<th scope="row"> <?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'professional' ); ?> </th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<td><fieldset>
 			<legend class="screen-reader-text"><span>
 				<?php
@@ -1457,9 +1567,12 @@ function link_xfn_meta_box( $link ) {
 				_e( 'professional' );
 				?>
 			</span></legend>
+<<<<<<< HEAD
 =======
 		<td><fieldset><legend class="screen-reader-text"><span><?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'professional' ); ?></span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<label for="co-worker">
 			<input class="valinp" type="checkbox" name="professional" value="co-worker" id="co-worker" <?php xfn_check( 'professional', 'co-worker' ); ?> />&nbsp;<?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'co-worker' ); ?>
 			</label>
@@ -1471,6 +1584,9 @@ function link_xfn_meta_box( $link ) {
 	<tr>
 		<th scope="row"><?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'geographical' ); ?></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<td><fieldset>
 			<legend class="screen-reader-text"><span>
 				<?php
@@ -1478,9 +1594,12 @@ function link_xfn_meta_box( $link ) {
 				_e( 'geographical' );
 				?>
 			</span></legend>
+<<<<<<< HEAD
 =======
 		<td><fieldset><legend class="screen-reader-text"><span> <?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'geographical' ); ?> </span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<label for="co-resident">
 			<input class="valinp" type="radio" name="geographical" value="co-resident" id="co-resident" <?php xfn_check( 'geographical', 'co-resident' ); ?> />&nbsp;<?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'co-resident' ); ?>
 			</label>
@@ -1495,6 +1614,9 @@ function link_xfn_meta_box( $link ) {
 	<tr>
 		<th scope="row"><?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'family' ); ?></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<td><fieldset>
 			<legend class="screen-reader-text"><span>
 				<?php
@@ -1502,9 +1624,12 @@ function link_xfn_meta_box( $link ) {
 				_e( 'family' );
 				?>
 			</span></legend>
+<<<<<<< HEAD
 =======
 		<td><fieldset><legend class="screen-reader-text"><span> <?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'family' ); ?> </span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<label for="child">
 			<input class="valinp" type="radio" name="family" value="child" id="child" <?php xfn_check( 'family', 'child' ); ?> />&nbsp;<?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'child' ); ?>
 			</label>
@@ -1528,6 +1653,9 @@ function link_xfn_meta_box( $link ) {
 	<tr>
 		<th scope="row"><?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'romantic' ); ?></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<td><fieldset>
 			<legend class="screen-reader-text"><span>
 				<?php
@@ -1535,9 +1663,12 @@ function link_xfn_meta_box( $link ) {
 				_e( 'romantic' );
 				?>
 			</span></legend>
+<<<<<<< HEAD
 =======
 		<td><fieldset><legend class="screen-reader-text"><span> <?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'romantic' ); ?> </span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<label for="muse">
 			<input class="valinp" type="checkbox" name="romantic" value="muse" id="muse" <?php xfn_check( 'romantic', 'muse' ); ?> />&nbsp;<?php /* translators: xfn: https://gmpg.org/xfn/ */ _e( 'muse' ); ?>
 			</label>
@@ -1662,6 +1793,7 @@ function register_and_do_post_meta_boxes( $post ) {
 
 	if ( post_type_supports( $post_type, 'revisions' ) && 'auto-draft' !== $post->post_status ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$revisions = wp_get_latest_revision_id_and_total_count( $post->ID );
 
 		// We should aim to show the revisions meta box only when there are revisions.
@@ -1671,13 +1803,21 @@ function register_and_do_post_meta_boxes( $post ) {
 				'revision_id'            => $revisions['latest_id'],
 =======
 		$revisions = wp_get_post_revisions( $post->ID, array( 'fields' => 'ids' ) );
+=======
+		$revisions = wp_get_latest_revision_id_and_total_count( $post->ID );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		// We should aim to show the revisions meta box only when there are revisions.
-		if ( count( $revisions ) > 1 ) {
+		if ( ! is_wp_error( $revisions ) && $revisions['count'] > 1 ) {
 			$publish_callback_args = array(
+<<<<<<< HEAD
 				'revisions_count'        => count( $revisions ),
 				'revision_id'            => reset( $revisions ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'revisions_count'        => $revisions['count'],
+				'revision_id'            => $revisions['latest_id'],
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'__back_compat_meta_box' => true,
 			);
 

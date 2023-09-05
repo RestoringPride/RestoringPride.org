@@ -67,11 +67,16 @@ function get_bloginfo() {}
  */
 function is_admin() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	return true;
 }
 =======
 	return true;}
 >>>>>>> fb785cbb (Initial commit)
+=======
+	return true;
+}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 /**
  * @ignore

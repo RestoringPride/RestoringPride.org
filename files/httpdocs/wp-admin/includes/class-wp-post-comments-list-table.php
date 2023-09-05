@@ -12,9 +12,12 @@
  *
  * @since 3.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_Comments_List_Table
  */

@@ -95,6 +95,9 @@ else :
 <tr>
 <th scope="row"><?php _e( 'Your homepage displays' ); ?></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <td id="front-static-pages"><fieldset>
 	<legend class="screen-reader-text"><span>
 		<?php
@@ -102,9 +105,12 @@ else :
 		_e( 'Your homepage displays' );
 		?>
 	</span></legend>
+<<<<<<< HEAD
 =======
 <td id="front-static-pages"><fieldset><legend class="screen-reader-text"><span><?php _e( 'Your homepage displays' ); ?></span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<p><label>
 		<input name="show_on_front" type="radio" value="posts" class="tog" <?php checked( 'posts', get_option( 'show_on_front' ) ); ?> />
 		<?php _e( 'Your latest posts' ); ?>
@@ -179,6 +185,9 @@ else :
 <tr>
 <th scope="row"><?php _e( 'For each post in a feed, include' ); ?> </th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <td><fieldset>
 	<legend class="screen-reader-text"><span>
 		<?php
@@ -186,9 +195,12 @@ else :
 		_e( 'For each post in a feed, include' );
 		?>
 	</span></legend>
+<<<<<<< HEAD
 =======
 <td><fieldset><legend class="screen-reader-text"><span><?php _e( 'For each post in a feed, include' ); ?> </span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<p>
 		<label><input name="rss_use_excerpt" type="radio" value="0" <?php checked( 0, get_option( 'rss_use_excerpt' ) ); ?>	/> <?php _e( 'Full text' ); ?></label><br />
 		<label><input name="rss_use_excerpt" type="radio" value="1" <?php checked( 1, get_option( 'rss_use_excerpt' ) ); ?> /> <?php _e( 'Excerpt' ); ?></label>
@@ -212,6 +224,9 @@ else :
 <tr class="option-site-visibility">
 <th scope="row"><?php has_action( 'blog_privacy_selector' ) ? _e( 'Site visibility' ) : _e( 'Search engine visibility' ); ?> </th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <td><fieldset>
 	<legend class="screen-reader-text"><span>
 		<?php
@@ -222,6 +237,7 @@ else :
 			: _e( 'Search engine visibility' );
 		?>
 	</span></legend>
+<<<<<<< HEAD
 <?php if ( has_action( 'blog_privacy_selector' ) ) : ?>
 	<input id="blog-public" type="radio" name="blog_public" value="1" <?php checked( '1', get_option( 'blog_public' ) ); ?> />
 	<label for="blog-public"><?php _e( 'Allow search engines to index this site' ); ?></label><br />
@@ -231,16 +247,25 @@ else :
 	<input id="blog-public" type="radio" name="blog_public" value="1" <?php checked( '1', get_option( 'blog_public' ) ); ?> />
 	<label for="blog-public"><?php _e( 'Allow search engines to index this site' ); ?></label><br/>
 >>>>>>> fb785cbb (Initial commit)
+=======
+<?php if ( has_action( 'blog_privacy_selector' ) ) : ?>
+	<input id="blog-public" type="radio" name="blog_public" value="1" <?php checked( '1', get_option( 'blog_public' ) ); ?> />
+	<label for="blog-public"><?php _e( 'Allow search engines to index this site' ); ?></label><br />
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	<input id="blog-norobots" type="radio" name="blog_public" value="0" <?php checked( '0', get_option( 'blog_public' ) ); ?> />
 	<label for="blog-norobots"><?php _e( 'Discourage search engines from indexing this site' ); ?></label>
 	<p class="description"><?php _e( 'Note: Neither of these options blocks access to your site &mdash; it is up to search engines to honor your request.' ); ?></p>
 	<?php
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Enables the legacy 'Site visibility' privacy options.
 =======
 	 * Enable the legacy 'Site visibility' privacy options.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Enables the legacy 'Site visibility' privacy options.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * By default the privacy options form displays a single checkbox to 'discourage' search
 	 * engines from indexing the site. Hooking to this action serves a dual purpose:

@@ -12,6 +12,9 @@
 /////////////////////////////////////////////////////////////////
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 if(!defined('GETID3_LIBXML_OPTIONS') && defined('LIBXML_VERSION')) {
 	if(LIBXML_VERSION >= 20621) {
 		define('GETID3_LIBXML_OPTIONS', LIBXML_NOENT | LIBXML_NONET | LIBXML_NOWARNING | LIBXML_COMPACT);
@@ -19,8 +22,11 @@ if(!defined('GETID3_LIBXML_OPTIONS') && defined('LIBXML_VERSION')) {
 		define('GETID3_LIBXML_OPTIONS', LIBXML_NOENT | LIBXML_NONET | LIBXML_NOWARNING);
 	}
 }
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 class getid3_lib
 {
@@ -314,17 +320,24 @@ class getid3_lib
 		} elseif (($exponent == 0) && ($fraction == 0)) {
 			if ($signbit == '1') {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$floatvalue = -0.0;
 			} else {
 				$floatvalue = 0.0;
 			}
 =======
 				$floatvalue = -0;
+=======
+				$floatvalue = -0.0;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			} else {
-				$floatvalue = 0;
+				$floatvalue = 0.0;
 			}
+<<<<<<< HEAD
 			$floatvalue = ($signbit ? 0 : -0);
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		} elseif (($exponent == 0) && ($fraction != 0)) {
 			// These are 'unnormalized' values
 			$floatvalue = pow(2, (-1 * (pow(2, $exponentbits - 1) - 2))) * self::DecimalBinary2Float($fractionstring);
@@ -750,10 +763,14 @@ class getid3_lib
 			// disabled by default, but is still needed when LIBXML_NOENT is used.
 			$loader = @libxml_disable_entity_loader(true);
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$XMLobject = simplexml_load_string($XMLstring, 'SimpleXMLElement', GETID3_LIBXML_OPTIONS);
 =======
 			$XMLobject = simplexml_load_string($XMLstring, 'SimpleXMLElement', LIBXML_NOENT);
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$XMLobject = simplexml_load_string($XMLstring, 'SimpleXMLElement', GETID3_LIBXML_OPTIONS);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$return = self::SimpleXMLelement2array($XMLobject);
 			@libxml_disable_entity_loader($loader);
 			return $return;

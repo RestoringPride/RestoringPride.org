@@ -21,10 +21,14 @@ if ( empty( $_REQUEST['tag_ID'] ) ) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	wp_redirect( sanitize_url( $sendback ) );
 =======
 	wp_redirect( esc_url_raw( $sendback ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	wp_redirect( sanitize_url( $sendback ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	exit;
 }
 

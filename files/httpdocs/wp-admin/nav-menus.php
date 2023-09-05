@@ -118,12 +118,18 @@ switch ( $action ) {
 							$parent_data                        = (array) $parent_object;
 							$menu_item_data['menu_item_parent'] = $parent_data['menu_item_parent'];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 							// Reset invalid `menu_item_parent`.
 							$menu_item_data = _wp_reset_invalid_menu_item_parent( $menu_item_data );
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							update_post_meta( $menu_item_data['ID'], '_menu_item_menu_item_parent', (int) $menu_item_data['menu_item_parent'] );
 						}
 
@@ -134,12 +140,18 @@ switch ( $action ) {
 
 						$menu_item_data['menu_item_parent'] = $next_item_data['ID'];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 						// Reset invalid `menu_item_parent`.
 						$menu_item_data = _wp_reset_invalid_menu_item_parent( $menu_item_data );
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						update_post_meta( $menu_item_data['ID'], '_menu_item_menu_item_parent', (int) $menu_item_data['menu_item_parent'] );
 
 						wp_update_post( $menu_item_data );
@@ -152,12 +164,18 @@ switch ( $action ) {
 				) {
 					$menu_item_data['menu_item_parent'] = (int) get_post_meta( $menu_item_data['menu_item_parent'], '_menu_item_menu_item_parent', true );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 					// Reset invalid `menu_item_parent`.
 					$menu_item_data = _wp_reset_invalid_menu_item_parent( $menu_item_data );
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					update_post_meta( $menu_item_data['ID'], '_menu_item_menu_item_parent', (int) $menu_item_data['menu_item_parent'] );
 				}
 			}
@@ -269,12 +287,18 @@ switch ( $action ) {
 						// Just make it a child of the previous; keep the order.
 						$menu_item_data['menu_item_parent'] = (int) $orders_to_dbids[ $dbids_to_orders[ $menu_item_id ] - 1 ];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 						// Reset invalid `menu_item_parent`.
 						$menu_item_data = _wp_reset_invalid_menu_item_parent( $menu_item_data );
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						update_post_meta( $menu_item_data['ID'], '_menu_item_menu_item_parent', (int) $menu_item_data['menu_item_parent'] );
 						wp_update_post( $menu_item_data );
 					}
@@ -653,10 +677,14 @@ if ( ! $locations_screen ) : // Main tab.
 
 	$menu_management  = '<p>' . __( 'The menu management box at the top of the screen is used to control which menu is opened in the editor below.' ) . '</p>';
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$menu_management .= '<ul><li>' . __( 'To edit an existing menu, <strong>choose a menu from the dropdown and click Select</strong>' ) . '</li>';
 =======
 	$menu_management .= '<ul><li>' . __( 'To edit an existing menu, <strong>choose a menu from the drop down and click Select</strong>' ) . '</li>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$menu_management .= '<ul><li>' . __( 'To edit an existing menu, <strong>choose a menu from the dropdown and click Select</strong>' ) . '</li>';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$menu_management .= '<li>' . __( 'If you have not yet created any menus, <strong>click the &#8217;create a new menu&#8217; link</strong> to get started' ) . '</li></ul>';
 	$menu_management .= '<p>' . __( 'You can assign theme locations to individual menus by <strong>selecting the desired settings</strong> at the bottom of the menu editor. To assign menus to all theme locations at once, <strong>visit the Manage Locations tab</strong> at the top of the screen.' ) . '</p>';
 
@@ -685,10 +713,14 @@ if ( ! $locations_screen ) : // Main tab.
 else : // Locations tab.
 	$locations_overview  = '<p>' . __( 'This screen is used for globally assigning menus to locations defined by your theme.' ) . '</p>';
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$locations_overview .= '<ul><li>' . __( 'To assign menus to one or more theme locations, <strong>select a menu from each location&#8217;s dropdown</strong>. When you are finished, <strong>click Save Changes</strong>' ) . '</li>';
 =======
 	$locations_overview .= '<ul><li>' . __( 'To assign menus to one or more theme locations, <strong>select a menu from each location&#8217;s drop down.</strong> When you are finished, <strong>click Save Changes</strong>' ) . '</li>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$locations_overview .= '<ul><li>' . __( 'To assign menus to one or more theme locations, <strong>select a menu from each location&#8217;s dropdown</strong>. When you are finished, <strong>click Save Changes</strong>' ) . '</li>';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$locations_overview .= '<li>' . __( 'To edit a menu currently assigned to a theme location, <strong>click the adjacent &#8217;Edit&#8217; link</strong>' ) . '</li>';
 	$locations_overview .= '<li>' . __( 'To add a new menu instead of assigning an existing one, <strong>click the &#8217;Use new menu&#8217; link</strong>. Your new menu will be automatically assigned to that theme location' ) . '</li></ul>';
 
@@ -831,15 +863,21 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 									?>
 									">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 										<span aria-hidden="true"><?php _ex( 'Edit', 'menu' ); ?></span><span class="screen-reader-text">
 											<?php
 											/* translators: Hidden accessibility text. */
 											_e( 'Edit selected menu' );
 											?>
 										</span>
+<<<<<<< HEAD
 =======
 										<span aria-hidden="true"><?php _ex( 'Edit', 'menu' ); ?></span><span class="screen-reader-text"><?php _e( 'Edit selected menu' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 									</a>
 								</span>
 								<?php endif; ?>
@@ -886,15 +924,21 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 		<span class="first-menu-message">
 			<?php _e( 'Create your first menu below.' ); ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<span class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( 'Fill in the Menu Name and click the Create Menu button to create your first menu.' );
 				?>
 			</span>
+<<<<<<< HEAD
 =======
 			<span class="screen-reader-text"><?php _e( 'Fill in the Menu Name and click the Create Menu button to create your first menu.' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		</span><!-- /first-menu-message -->
 		<?php elseif ( $menu_count < 2 ) : ?>
 		<span class="add-edit-menu-action">
@@ -914,15 +958,21 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 			);
 			?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<span class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( 'Click the Save Menu button to save your changes.' );
 				?>
 			</span>
+<<<<<<< HEAD
 =======
 			<span class="screen-reader-text"><?php _e( 'Click the Save Menu button to save your changes.' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		</span><!-- /add-edit-menu-action -->
 		<?php else : ?>
 			<form method="get" action="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
@@ -988,15 +1038,21 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 				);
 				?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Click the Save Menu button to save your changes.' );
 					?>
 				</span>
+<<<<<<< HEAD
 =======
 				<span class="screen-reader-text"><?php _e( 'Click the Save Menu button to save your changes.' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			</span><!-- /add-new-menu-action -->
 		</form>
 			<?php
@@ -1078,10 +1134,14 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 
 								<?php if ( ! $add_new_screen ) : ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 									<div id="nav-menu-bulk-actions-top" class="bulk-actions" <?php echo $hide_style; ?>>
 =======
 									<div id="nav-menu-bulk-actions-top" class="bulk-actions">
 >>>>>>> fb785cbb (Initial commit)
+=======
+									<div id="nav-menu-bulk-actions-top" class="bulk-actions" <?php echo $hide_style; ?>>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 										<label class="bulk-select-button" for="bulk-select-switcher-top">
 											<input type="checkbox" id="bulk-select-switcher-top" name="bulk-select-switcher-top" class="bulk-select-switcher">
 											<span class="bulk-select-button-label"><?php _e( 'Bulk Select' ); ?></span>
@@ -1117,19 +1177,27 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 
 							<?php if ( ! $add_new_screen ) : ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 								<div id="nav-menu-bulk-actions-bottom" class="bulk-actions" <?php echo $hide_style; ?>>
 =======
 								<div id="nav-menu-bulk-actions-bottom" class="bulk-actions">
 >>>>>>> fb785cbb (Initial commit)
+=======
+								<div id="nav-menu-bulk-actions-bottom" class="bulk-actions" <?php echo $hide_style; ?>>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 									<label class="bulk-select-button" for="bulk-select-switcher-bottom">
 										<input type="checkbox" id="bulk-select-switcher-bottom" name="bulk-select-switcher-top" class="bulk-select-switcher">
 										<span class="bulk-select-button-label"><?php _e( 'Bulk Select' ); ?></span>
 									</label>
 <<<<<<< HEAD
+<<<<<<< HEAD
 									<input type="button" class="deletion menu-items-delete disabled" value="<?php esc_attr_e( 'Remove Selected Items' ); ?>">
 =======
 									<input type="button" class="deletion menu-items-delete disabled" value="<?php _e( 'Remove Selected Items' ); ?>">
 >>>>>>> fb785cbb (Initial commit)
+=======
+									<input type="button" class="deletion menu-items-delete disabled" value="<?php esc_attr_e( 'Remove Selected Items' ); ?>">
+>>>>>>> c058c778 (Combining with the latest source from WP)
 									<div id="pending-menu-items-to-delete">
 										<p><?php _e( 'List of menu items selected for deletion:' ); ?></p>
 										<ul></ul>

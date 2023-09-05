@@ -221,6 +221,9 @@ class WP_REST_Autosaves_Controller extends WP_REST_Revisions_Controller {
 		$user_id           = get_current_user_id();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// We need to check post lock to ensure the original author didn't leave their browser tab open.
 		if ( ! function_exists( 'wp_check_post_lock' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/post.php';
@@ -230,9 +233,12 @@ class WP_REST_Autosaves_Controller extends WP_REST_Revisions_Controller {
 		$is_draft  = 'draft' === $post->post_status || 'auto-draft' === $post->post_status;
 
 		if ( $is_draft && (int) $post->post_author === $user_id && ! $post_lock ) {
+<<<<<<< HEAD
 =======
 		if ( ( 'draft' === $post->post_status || 'auto-draft' === $post->post_status ) && $post->post_author == $user_id ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			// Draft posts for the same author: autosaving updates the post and does not create a revision.
 			// Convert the post object to an array and add slashes, wp_update_post() expects escaped array.
 			$autosave_id = wp_update_post( wp_slash( (array) $prepared_post ), true );
@@ -365,6 +371,9 @@ class WP_REST_Autosaves_Controller extends WP_REST_Revisions_Controller {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// Only create an autosave when it is different from the saved post.
 		$autosave_is_different = false;
 		$new_autosave          = _wp_post_revision_data( $post_data, true );
@@ -384,14 +393,18 @@ class WP_REST_Autosaves_Controller extends WP_REST_Revisions_Controller {
 			);
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$user_id = get_current_user_id();
 
 		// Store one autosave per author. If there is already an autosave, overwrite it.
 		$old_autosave = wp_get_post_autosave( $post_id, $user_id );
 
 		if ( $old_autosave ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 			$new_autosave['ID']          = $old_autosave->ID;
 			$new_autosave['post_author'] = $user_id;
@@ -421,6 +434,11 @@ class WP_REST_Autosaves_Controller extends WP_REST_Revisions_Controller {
 			}
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$new_autosave['ID']          = $old_autosave->ID;
+			$new_autosave['post_author'] = $user_id;
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			/** This filter is documented in wp-admin/post.php */
 			do_action( 'wp_creating_autosave', $new_autosave );
 

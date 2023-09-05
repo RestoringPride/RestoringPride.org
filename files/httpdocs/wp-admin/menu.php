@@ -204,24 +204,30 @@ if ( ! is_multisite() && current_user_can( 'update_themes' ) ) {
 
 if ( wp_is_block_theme() ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$submenu['themes.php'][6] = array( _x( 'Editor', 'site editor menu item' ), 'edit_theme_options', 'site-editor.php' );
 }
 
 if ( ! wp_is_block_theme() && current_theme_supports( 'block-template-parts' ) ) {
+<<<<<<< HEAD
 	$submenu['themes.php'][6] = array(
 		__( 'Template Parts' ),
 		'edit_theme_options',
 		'site-editor.php?postType=wp_template_part',
 =======
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$submenu['themes.php'][6] = array(
-		sprintf(
-			/* translators: %s: "beta" label */
-			__( 'Editor %s' ),
-			'<span class="awaiting-mod">' . __( 'beta' ) . '</span>'
-		),
+		__( 'Template Parts' ),
 		'edit_theme_options',
+<<<<<<< HEAD
 		'site-editor.php',
 >>>>>>> fb785cbb (Initial commit)
+=======
+		'site-editor.php?postType=wp_template_part',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	);
 }
 
@@ -231,10 +237,14 @@ $customize_url = add_query_arg( 'return', urlencode( remove_query_arg( wp_remova
 // is using 'customize_register' to add a setting.
 if ( ! wp_is_block_theme() || has_action( 'customize_register' ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$position = ( wp_is_block_theme() || current_theme_supports( 'block-template-parts' ) ) ? 7 : 6;
 =======
 	$position = wp_is_block_theme() ? 7 : 6;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$position = ( wp_is_block_theme() || current_theme_supports( 'block-template-parts' ) ) ? 7 : 6;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	$submenu['themes.php'][ $position ] = array( __( 'Customize' ), 'customize', esc_url( $customize_url ), '', 'hide-if-no-customize' );
 }
@@ -358,6 +368,9 @@ if ( current_user_can( 'list_users' ) ) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 $site_health_count = '';
 if ( ! is_multisite() && current_user_can( 'view_site_health_checks' ) ) {
 	$get_issues = get_transient( 'health-check-site-status-result' );
@@ -383,18 +396,26 @@ if ( ! is_multisite() && current_user_can( 'view_site_health_checks' ) ) {
 	);
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 $menu[75]                     = array( __( 'Tools' ), 'edit_posts', 'tools.php', '', 'menu-top menu-icon-tools', 'menu-tools', 'dashicons-admin-tools' );
 	$submenu['tools.php'][5]  = array( __( 'Available Tools' ), 'edit_posts', 'tools.php' );
 	$submenu['tools.php'][10] = array( __( 'Import' ), 'import', 'import.php' );
 	$submenu['tools.php'][15] = array( __( 'Export' ), 'export', 'export.php' );
+<<<<<<< HEAD
 <<<<<<< HEAD
 	/* translators: %s: Number of critical Site Health checks. */
 	$submenu['tools.php'][20] = array( sprintf( __( 'Site Health %s' ), $site_health_count ), 'view_site_health_checks', 'site-health.php' );
 =======
 	$submenu['tools.php'][20] = array( __( 'Site Health' ), 'view_site_health_checks', 'site-health.php' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	/* translators: %s: Number of critical Site Health checks. */
+	$submenu['tools.php'][20] = array( sprintf( __( 'Site Health %s' ), $site_health_count ), 'view_site_health_checks', 'site-health.php' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$submenu['tools.php'][25] = array( __( 'Export Personal Data' ), 'export_others_personal_data', 'export-personal-data.php' );
 	$submenu['tools.php'][30] = array( __( 'Erase Personal Data' ), 'erase_others_personal_data', 'erase-personal-data.php' );
 if ( is_multisite() && ! is_main_site() ) {

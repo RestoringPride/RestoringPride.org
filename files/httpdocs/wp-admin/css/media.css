@@ -192,10 +192,14 @@
 .media-item .original {
 	position: relative;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	min-height: 34px;
 =======
 	height: 34px;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	min-height: 34px;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .media-item .progress {
@@ -786,12 +790,17 @@ border color while dragging a file over the uploader drop area */
 .edit-attachment-frame input,
 .edit-attachment-frame textarea {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	padding: 4px 8px;
 	line-height: 1.42857143;
 =======
 	padding: 6px 8px;
 	line-height: 1.14285714;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	padding: 4px 8px;
+	line-height: 1.42857143;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .edit-attachment-frame .attachment-info {
@@ -859,13 +868,19 @@ border color while dragging a file over the uploader drop area */
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .wp_attachment_details #attachment_alt {
 	max-width: 500px;
 	height: 3.28571428em;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .wp_attachment_details .attachment-alt-text-description {
 	margin-top: 5px;
 }
@@ -1249,19 +1264,28 @@ audio, video {
 
 @media screen and (max-width: 782px) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.edit-attachment-frame input,
 	.edit-attachment-frame textarea {
 		line-height: 1.5;
 	}
 	
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.wp_attachment_details label[for="content"] {
 		font-size: 14px;
 		line-height: 1.5;
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.wp_attachment_details textarea {
 		line-height: 1.5;
 	}
@@ -1270,8 +1294,11 @@ audio, video {
 		height: 3.375em;
 	}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.media-upload-form .media-item.error,
 	.media-upload-form .media-item .error {
 		font-size: 13px;

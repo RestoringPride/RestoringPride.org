@@ -146,6 +146,9 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Checks if the terms for a post can be read.
 	 *
 	 * @since 6.0.3
@@ -175,8 +178,11 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Checks if a request has access to read terms in the specified taxonomy.
 	 *
 	 * @since 4.7.0
@@ -200,6 +206,9 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! empty( $request['post'] ) ) {
 			$post = get_post( $request['post'] );
 
@@ -224,8 +233,11 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 			}
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return true;
 	}
 
@@ -363,13 +375,19 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 		$response->header( 'X-WP-TotalPages', (int) $max_pages );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$request_params = $request->get_query_params();
 		$collection_url = rest_url( rest_get_route_for_taxonomy_items( $this->taxonomy ) );
 		$base           = add_query_arg( urlencode_deep( $request_params ), $collection_url );
 
+<<<<<<< HEAD
 =======
 		$base = add_query_arg( urlencode_deep( $request->get_query_params() ), rest_url( $this->namespace . '/' . $this->rest_base ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( $page > 1 ) {
 			$prev_page = $page - 1;
 
@@ -818,10 +836,14 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 	 */
 	public function prepare_item_for_database( $request ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$prepared_term = new stdClass();
 =======
 		$prepared_term = new stdClass;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$prepared_term = new stdClass();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$schema = $this->get_item_schema();
 		if ( isset( $request['name'] ) && ! empty( $schema['properties']['name'] ) ) {
@@ -930,12 +952,18 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 		$response = rest_ensure_response( $data );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $item ) );
 		}
 =======
 		$response->add_links( $this->prepare_links( $item ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
+			$response->add_links( $this->prepare_links( $item ) );
+		}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters the term data for a REST API response.
@@ -968,6 +996,7 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 	 */
 	protected function prepare_links( $term ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$links = array(
 			'self'       => array(
 				'href' => rest_url( rest_get_route_for_term( $term ) ),
@@ -976,13 +1005,19 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 				'href' => rest_url( rest_get_route_for_taxonomy_items( $this->taxonomy ) ),
 =======
 		$base  = $this->namespace . '/' . $this->rest_base;
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$links = array(
 			'self'       => array(
-				'href' => rest_url( trailingslashit( $base ) . $term->term_id ),
+				'href' => rest_url( rest_get_route_for_term( $term ) ),
 			),
 			'collection' => array(
+<<<<<<< HEAD
 				'href' => rest_url( $base ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'href' => rest_url( rest_get_route_for_taxonomy_items( $this->taxonomy ) ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			),
 			'about'      => array(
 				'href' => rest_url( sprintf( 'wp/v2/taxonomies/%s', $this->taxonomy ) ),
@@ -995,10 +1030,14 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 			if ( $parent_term ) {
 				$links['up'] = array(
 <<<<<<< HEAD
+<<<<<<< HEAD
 					'href'       => rest_url( rest_get_route_for_term( $parent_term ) ),
 =======
 					'href'       => rest_url( trailingslashit( $base ) . $parent_term->term_id ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+					'href'       => rest_url( rest_get_route_for_term( $parent_term ) ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					'embeddable' => true,
 				);
 			}

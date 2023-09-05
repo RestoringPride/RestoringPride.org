@@ -91,10 +91,14 @@ if ( isset( $_REQUEST['action'] ) && 'update-site' === $_REQUEST['action'] ) {
 
 	if ( $old_home_parsed['host'] === $existing_details->domain && $old_home_parsed['path'] === $existing_details->path ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$new_home_url = untrailingslashit( sanitize_url( $blog_data['scheme'] . '://' . $new_details->domain . $new_details->path ) );
 =======
 		$new_home_url = untrailingslashit( esc_url_raw( $blog_data['scheme'] . '://' . $new_details->domain . $new_details->path ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$new_home_url = untrailingslashit( sanitize_url( $blog_data['scheme'] . '://' . $new_details->domain . $new_details->path ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		update_option( 'home', $new_home_url );
 	}
 
@@ -103,10 +107,14 @@ if ( isset( $_REQUEST['action'] ) && 'update-site' === $_REQUEST['action'] ) {
 
 	if ( $old_site_parsed['host'] === $existing_details->domain && $old_site_parsed['path'] === $existing_details->path ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$new_site_url = untrailingslashit( sanitize_url( $blog_data['scheme'] . '://' . $new_details->domain . $new_details->path ) );
 =======
 		$new_site_url = untrailingslashit( esc_url_raw( $blog_data['scheme'] . '://' . $new_details->domain . $new_details->path ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$new_site_url = untrailingslashit( sanitize_url( $blog_data['scheme'] . '://' . $new_details->domain . $new_details->path ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		update_option( 'siteurl', $new_site_url );
 	}
 
@@ -207,12 +215,16 @@ if ( ! empty( $messages ) ) {
 			<td>
 			<fieldset>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<legend class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( 'Set site attributes' );
 				?>
 			</legend>
+<<<<<<< HEAD
 			<?php foreach ( $attribute_fields as $field_key => $field_label ) : ?>
 				<label><input type="checkbox" name="blog[<?php echo $field_key; ?>]" value="1" <?php checked( (bool) $details->$field_key, true ); ?> <?php disabled( ! in_array( (int) $details->$field_key, array( 0, 1 ), true ) ); ?> />
 				<?php echo $field_label; ?></label><br />
@@ -222,6 +234,11 @@ if ( ! empty( $messages ) ) {
 				<label><input type="checkbox" name="blog[<?php echo $field_key; ?>]" value="1" <?php checked( (bool) $details->$field_key, true ); ?> <?php disabled( ! in_array( (int) $details->$field_key, array( 0, 1 ), true ) ); ?> />
 				<?php echo $field_label; ?></label><br/>
 >>>>>>> fb785cbb (Initial commit)
+=======
+			<?php foreach ( $attribute_fields as $field_key => $field_label ) : ?>
+				<label><input type="checkbox" name="blog[<?php echo $field_key; ?>]" value="1" <?php checked( (bool) $details->$field_key, true ); ?> <?php disabled( ! in_array( (int) $details->$field_key, array( 0, 1 ), true ) ); ?> />
+				<?php echo $field_label; ?></label><br />
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<?php endforeach; ?>
 			<fieldset>
 			</td>

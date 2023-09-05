@@ -11,13 +11,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 /**
  * @global WP_Comment $comment Global comment object.
  */
 global $comment;
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 ?>
 <form name="post" action="comment.php" method="post" id="post">
 <?php wp_nonce_field( 'update-comment_' . $comment->comment_ID ); ?>
@@ -51,15 +57,21 @@ if ( 'approved' === wp_get_comment_status( $comment ) && $comment->comment_post_
 <h2 class="edit-comment-author"><?php _e( 'Author' ); ?></h2>
 <fieldset>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <legend class="screen-reader-text">
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Comment Author' );
 	?>
 </legend>
+<<<<<<< HEAD
 =======
 <legend class="screen-reader-text"><?php _e( 'Comment Author' ); ?></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <table class="form-table editcomment" role="presentation">
 <tbody>
 <tr>
@@ -86,17 +98,24 @@ if ( 'approved' === wp_get_comment_status( $comment ) && $comment->comment_post_
 
 <div id="postdiv" class="postarea">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <label for="content" class="screen-reader-text">
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Comment' );
 	?>
 </label>
+<<<<<<< HEAD
 <?php
 =======
 <?php
 	echo '<label for="content" class="screen-reader-text">' . __( 'Comment' ) . '</label>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+<?php
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$quicktags_settings = array( 'buttons' => 'strong,em,link,block,del,ins,img,ul,ol,li,code,close' );
 	wp_editor(
 		$comment->comment_content,
@@ -140,15 +159,21 @@ switch ( $comment->comment_approved ) {
 
 <fieldset id="comment-status-radio">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <legend class="screen-reader-text">
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Comment status' );
 	?>
 </legend>
+<<<<<<< HEAD
 =======
 <legend class="screen-reader-text"><?php _e( 'Comment status' ); ?></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <label><input type="radio"<?php checked( $comment->comment_approved, '1' ); ?> name="comment_status" value="1" /><?php _ex( 'Approved', 'comment status' ); ?></label><br />
 <label><input type="radio"<?php checked( $comment->comment_approved, '0' ); ?> name="comment_status" value="0" /><?php _ex( 'Pending', 'comment status' ); ?></label><br />
 <label><input type="radio"<?php checked( $comment->comment_approved, 'spam' ); ?> name="comment_status" value="spam" /><?php _ex( 'Spam', 'comment status' ); ?></label>
@@ -173,12 +198,16 @@ printf( __( 'Submitted on: %s' ), '<b>' . $submitted . '</b>' );
 ?>
 </span>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <a href="#edit_timestamp" class="edit-timestamp hide-if-no-js"><span aria-hidden="true"><?php _e( 'Edit' ); ?></span> <span class="screen-reader-text">
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Edit date and time' );
 	?>
 </span></a>
+<<<<<<< HEAD
 <fieldset id='timestampdiv' class='hide-if-js'>
 <legend class="screen-reader-text">
 	<?php
@@ -200,6 +229,23 @@ touch_time( ( 'editcomment' === $action ), 0 );
 <legend class="screen-reader-text"><?php _e( 'Date and time' ); ?></legend>
 <?php touch_time( ( 'editcomment' === $action ), 0 ); ?>
 >>>>>>> fb785cbb (Initial commit)
+=======
+<fieldset id='timestampdiv' class='hide-if-js'>
+<legend class="screen-reader-text">
+	<?php
+	/* translators: Hidden accessibility text. */
+	_e( 'Date and time' );
+	?>
+</legend>
+<?php
+/**
+ * @global string $action
+ */
+global $action;
+
+touch_time( ( 'editcomment' === $action ), 0 );
+?>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 </fieldset>
 </div>
 

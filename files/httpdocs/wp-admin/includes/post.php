@@ -253,12 +253,17 @@ function edit_post( $post_data = null ) {
 	unset( $post_data['filter'] );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$post_id = (int) $post_data['post_ID'];
 	$post    = get_post( $post_id );
 =======
 	$post_ID = (int) $post_data['post_ID'];
 	$post    = get_post( $post_ID );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$post_id = (int) $post_data['post_ID'];
+	$post    = get_post( $post_id );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	$post_data['post_type']      = $post->post_type;
 	$post_data['post_mime_type'] = $post->post_mime_type;
@@ -273,10 +278,14 @@ function edit_post( $post_data = null ) {
 
 	$ptype = get_post_type_object( $post_data['post_type'] );
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if ( ! current_user_can( 'edit_post', $post_id ) ) {
 =======
 	if ( ! current_user_can( 'edit_post', $post_ID ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( 'page' === $post_data['post_type'] ) {
 			wp_die( __( 'Sorry, you are not allowed to edit this page.' ) );
 		} else {
@@ -287,10 +296,14 @@ function edit_post( $post_data = null ) {
 	if ( post_type_supports( $ptype->name, 'revisions' ) ) {
 		$revisions = wp_get_post_revisions(
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$post_id,
 =======
 			$post_ID,
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$post_id,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			array(
 				'order'          => 'ASC',
 				'posts_per_page' => 1,
@@ -301,10 +314,14 @@ function edit_post( $post_data = null ) {
 		// Check if the revisions have been upgraded.
 		if ( $revisions && _wp_get_post_revision_version( $revision ) < 1 ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			_wp_upgrade_revisions_of_post( $post, wp_get_post_revisions( $post_id ) );
 =======
 			_wp_upgrade_revisions_of_post( $post, wp_get_post_revisions( $post_ID ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			_wp_upgrade_revisions_of_post( $post, wp_get_post_revisions( $post_id ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 
@@ -333,10 +350,14 @@ function edit_post( $post_data = null ) {
 	// Post formats.
 	if ( isset( $post_data['post_format'] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		set_post_format( $post_id, $post_data['post_format'] );
 =======
 		set_post_format( $post_ID, $post_data['post_format'] );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		set_post_format( $post_id, $post_data['post_format'] );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	$format_meta_urls = array( 'url', 'link_url', 'quote_source_url' );
@@ -344,10 +365,14 @@ function edit_post( $post_data = null ) {
 		$keyed = '_format_' . $format_meta_url;
 		if ( isset( $post_data[ $keyed ] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			update_post_meta( $post_id, $keyed, wp_slash( sanitize_url( wp_unslash( $post_data[ $keyed ] ) ) ) );
 =======
 			update_post_meta( $post_ID, $keyed, wp_slash( esc_url_raw( wp_unslash( $post_data[ $keyed ] ) ) ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			update_post_meta( $post_id, $keyed, wp_slash( sanitize_url( wp_unslash( $post_data[ $keyed ] ) ) ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 
@@ -358,6 +383,7 @@ function edit_post( $post_data = null ) {
 		if ( isset( $post_data[ $keyed ] ) ) {
 			if ( current_user_can( 'unfiltered_html' ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				update_post_meta( $post_id, $keyed, $post_data[ $keyed ] );
 			} else {
 				update_post_meta( $post_id, $keyed, wp_filter_post_kses( $post_data[ $keyed ] ) );
@@ -366,16 +392,25 @@ function edit_post( $post_data = null ) {
 			} else {
 				update_post_meta( $post_ID, $keyed, wp_filter_post_kses( $post_data[ $keyed ] ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				update_post_meta( $post_id, $keyed, $post_data[ $keyed ] );
+			} else {
+				update_post_meta( $post_id, $keyed, wp_filter_post_kses( $post_data[ $keyed ] ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 		}
 	}
 
 	if ( 'attachment' === $post_data['post_type'] && preg_match( '#^(audio|video)/#', $post_data['post_mime_type'] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$id3data = wp_get_attachment_metadata( $post_id );
 =======
 		$id3data = wp_get_attachment_metadata( $post_ID );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$id3data = wp_get_attachment_metadata( $post_id );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! is_array( $id3data ) ) {
 			$id3data = array();
 		}
@@ -386,10 +421,14 @@ function edit_post( $post_data = null ) {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		wp_update_attachment_metadata( $post_id, $id3data );
 =======
 		wp_update_attachment_metadata( $post_ID, $id3data );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		wp_update_attachment_metadata( $post_id, $id3data );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	// Meta stuff.
@@ -399,6 +438,7 @@ function edit_post( $post_data = null ) {
 			if ( ! $meta ) {
 				continue;
 			}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 			if ( $meta->post_id != $post_id ) {
@@ -419,15 +459,29 @@ function edit_post( $post_data = null ) {
 
 =======
 			if ( $meta->post_id != $post_ID ) {
+=======
+
+			if ( $meta->post_id != $post_id ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				continue;
 			}
-			if ( is_protected_meta( $meta->meta_key, 'post' ) || ! current_user_can( 'edit_post_meta', $post_ID, $meta->meta_key ) ) {
+
+			if ( is_protected_meta( $meta->meta_key, 'post' )
+				|| ! current_user_can( 'edit_post_meta', $post_id, $meta->meta_key )
+			) {
 				continue;
 			}
-			if ( is_protected_meta( $value['key'], 'post' ) || ! current_user_can( 'edit_post_meta', $post_ID, $value['key'] ) ) {
+
+			if ( is_protected_meta( $value['key'], 'post' )
+				|| ! current_user_can( 'edit_post_meta', $post_id, $value['key'] )
+			) {
 				continue;
 			}
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			update_meta( $key, $value['key'], $value['value'] );
 		}
 	}
@@ -438,6 +492,7 @@ function edit_post( $post_data = null ) {
 			if ( ! $meta ) {
 				continue;
 			}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 			if ( $meta->post_id != $post_id ) {
@@ -452,12 +507,23 @@ function edit_post( $post_data = null ) {
 
 =======
 			if ( $meta->post_id != $post_ID ) {
+=======
+
+			if ( $meta->post_id != $post_id ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				continue;
 			}
-			if ( is_protected_meta( $meta->meta_key, 'post' ) || ! current_user_can( 'delete_post_meta', $post_ID, $meta->meta_key ) ) {
+
+			if ( is_protected_meta( $meta->meta_key, 'post' )
+				|| ! current_user_can( 'delete_post_meta', $post_id, $meta->meta_key )
+			) {
 				continue;
 			}
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			delete_meta( $key );
 		}
 	}
@@ -467,6 +533,7 @@ function edit_post( $post_data = null ) {
 		if ( isset( $post_data['_wp_attachment_image_alt'] ) ) {
 			$image_alt = wp_unslash( $post_data['_wp_attachment_image_alt'] );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 			if ( get_post_meta( $post_id, '_wp_attachment_image_alt', true ) !== $image_alt ) {
 				$image_alt = wp_strip_all_tags( $image_alt, true );
@@ -479,15 +546,22 @@ function edit_post( $post_data = null ) {
 		$attachment_data = isset( $post_data['attachments'][ $post_id ] ) ? $post_data['attachments'][ $post_id ] : array();
 =======
 			if ( get_post_meta( $post_ID, '_wp_attachment_image_alt', true ) !== $image_alt ) {
+=======
+			if ( get_post_meta( $post_id, '_wp_attachment_image_alt', true ) !== $image_alt ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$image_alt = wp_strip_all_tags( $image_alt, true );
 
 				// update_post_meta() expects slashed.
-				update_post_meta( $post_ID, '_wp_attachment_image_alt', wp_slash( $image_alt ) );
+				update_post_meta( $post_id, '_wp_attachment_image_alt', wp_slash( $image_alt ) );
 			}
 		}
 
+<<<<<<< HEAD
 		$attachment_data = isset( $post_data['attachments'][ $post_ID ] ) ? $post_data['attachments'][ $post_ID ] : array();
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$attachment_data = isset( $post_data['attachments'][ $post_id ] ) ? $post_data['attachments'][ $post_id ] : array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/** This filter is documented in wp-admin/includes/media.php */
 		$translated = apply_filters( 'attachment_fields_to_save', $translated, $attachment_data );
@@ -505,6 +579,7 @@ function edit_post( $post_data = null ) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	add_meta( $post_id );
 
 	update_post_meta( $post_id, '_edit_last', get_current_user_id() );
@@ -513,6 +588,11 @@ function edit_post( $post_data = null ) {
 
 	update_post_meta( $post_ID, '_edit_last', get_current_user_id() );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	add_meta( $post_id );
+
+	update_post_meta( $post_id, '_edit_last', get_current_user_id() );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	$success = wp_update_post( $translated );
 
@@ -531,6 +611,7 @@ function edit_post( $post_data = null ) {
 
 	// Now that we have an ID we can fix any attachment anchor hrefs.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	_fix_attachment_links( $post_id );
 
 	wp_set_post_lock( $post_id );
@@ -546,19 +627,26 @@ function edit_post( $post_data = null ) {
 	return $post_id;
 =======
 	_fix_attachment_links( $post_ID );
+=======
+	_fix_attachment_links( $post_id );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
-	wp_set_post_lock( $post_ID );
+	wp_set_post_lock( $post_id );
 
 	if ( current_user_can( $ptype->cap->edit_others_posts ) && current_user_can( $ptype->cap->publish_posts ) ) {
 		if ( ! empty( $post_data['sticky'] ) ) {
-			stick_post( $post_ID );
+			stick_post( $post_id );
 		} else {
-			unstick_post( $post_ID );
+			unstick_post( $post_id );
 		}
 	}
 
+<<<<<<< HEAD
 	return $post_ID;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	return $post_id;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 /**
@@ -613,10 +701,14 @@ function bulk_edit_posts( $post_data = null ) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$post_ids = array_map( 'intval', (array) $post_data['post'] );
 =======
 	$post_IDs = array_map( 'intval', (array) $post_data['post'] );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$post_ids = array_map( 'intval', (array) $post_data['post'] );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	$reset = array(
 		'post_author',
@@ -654,9 +746,13 @@ function bulk_edit_posts( $post_data = null ) {
 				continue;
 			}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( is_taxonomy_hierarchical( $tax_name ) ) {
 				$tax_input[ $tax_name ] = array_map( 'absint', $terms );
 			} else {
@@ -692,6 +788,7 @@ function bulk_edit_posts( $post_data = null ) {
 	$shared_post_data = $post_data;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	foreach ( $post_ids as $post_id ) {
 		// Start with fresh post data with each iteration.
 		$post_data = $shared_post_data;
@@ -723,29 +820,41 @@ function bulk_edit_posts( $post_data = null ) {
 
 =======
 	foreach ( $post_IDs as $post_ID ) {
+=======
+	foreach ( $post_ids as $post_id ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// Start with fresh post data with each iteration.
 		$post_data = $shared_post_data;
 
-		$post_type_object = get_post_type_object( get_post_type( $post_ID ) );
+		$post_type_object = get_post_type_object( get_post_type( $post_id ) );
 
 		if ( ! isset( $post_type_object )
-			|| ( isset( $children ) && in_array( $post_ID, $children, true ) )
-			|| ! current_user_can( 'edit_post', $post_ID )
+			|| ( isset( $children ) && in_array( $post_id, $children, true ) )
+			|| ! current_user_can( 'edit_post', $post_id )
 		) {
-			$skipped[] = $post_ID;
+			$skipped[] = $post_id;
 			continue;
 		}
 
-		if ( wp_check_post_lock( $post_ID ) ) {
-			$locked[] = $post_ID;
+		if ( wp_check_post_lock( $post_id ) ) {
+			$locked[] = $post_id;
 			continue;
 		}
 
-		$post      = get_post( $post_ID );
+		$post      = get_post( $post_id );
 		$tax_names = get_object_taxonomies( $post );
+
 		foreach ( $tax_names as $tax_name ) {
 			$taxonomy_obj = get_taxonomy( $tax_name );
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+			if ( ! $taxonomy_obj->show_in_quick_edit ) {
+				continue;
+			}
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( isset( $tax_input[ $tax_name ] ) && current_user_can( $taxonomy_obj->cap->assign_terms ) ) {
 				$new_terms = $tax_input[ $tax_name ];
 			} else {
@@ -753,6 +862,7 @@ function bulk_edit_posts( $post_data = null ) {
 			}
 
 			if ( $taxonomy_obj->hierarchical ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 				$current_terms = (array) wp_get_object_terms( $post_id, $tax_name, array( 'fields' => 'ids' ) );
 			} else {
@@ -762,6 +872,11 @@ function bulk_edit_posts( $post_data = null ) {
 			} else {
 				$current_terms = (array) wp_get_object_terms( $post_ID, $tax_name, array( 'fields' => 'names' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$current_terms = (array) wp_get_object_terms( $post_id, $tax_name, array( 'fields' => 'ids' ) );
+			} else {
+				$current_terms = (array) wp_get_object_terms( $post_id, $tax_name, array( 'fields' => 'names' ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 
 			$post_data['tax_input'][ $tax_name ] = array_merge( $current_terms, $new_terms );
@@ -769,19 +884,27 @@ function bulk_edit_posts( $post_data = null ) {
 
 		if ( isset( $new_cats ) && in_array( 'category', $tax_names, true ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$cats                       = (array) wp_get_post_categories( $post_id );
 =======
 			$cats                       = (array) wp_get_post_categories( $post_ID );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$cats                       = (array) wp_get_post_categories( $post_id );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$post_data['post_category'] = array_unique( array_merge( $cats, $new_cats ) );
 			unset( $post_data['tax_input']['category'] );
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$post_data['post_ID']        = $post_id;
 =======
 		$post_data['post_ID']        = $post_ID;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$post_data['post_ID']        = $post_id;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$post_data['post_type']      = $post->post_type;
 		$post_data['post_mime_type'] = $post->post_mime_type;
 
@@ -794,20 +917,28 @@ function bulk_edit_posts( $post_data = null ) {
 		$post_data = _wp_translate_postdata( true, $post_data );
 		if ( is_wp_error( $post_data ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$skipped[] = $post_id;
 =======
 			$skipped[] = $post_ID;
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$skipped[] = $post_id;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			continue;
 		}
 		$post_data = _wp_get_allowed_postdata( $post_data );
 
 		if ( isset( $shared_post_data['post_format'] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			set_post_format( $post_id, $shared_post_data['post_format'] );
 =======
 			set_post_format( $post_ID, $shared_post_data['post_format'] );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			set_post_format( $post_id, $shared_post_data['post_format'] );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		// Prevent wp_insert_post() from overwriting post format with the old data.
@@ -820,6 +951,7 @@ function bulk_edit_posts( $post_data = null ) {
 		if ( isset( $post_data['sticky'] ) && current_user_can( $ptype->cap->edit_others_posts ) ) {
 			if ( 'sticky' === $post_data['sticky'] ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				stick_post( $post_id );
 			} else {
 				unstick_post( $post_id );
@@ -828,6 +960,11 @@ function bulk_edit_posts( $post_data = null ) {
 			} else {
 				unstick_post( $post_ID );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				stick_post( $post_id );
+			} else {
+				unstick_post( $post_id );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 		}
 	}
@@ -886,10 +1023,14 @@ function get_default_post_to_edit( $post_type = 'post', $create_in_db = false ) 
 		}
 	} else {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$post                 = new stdClass();
 =======
 		$post                 = new stdClass;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$post                 = new stdClass();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$post->ID             = 0;
 		$post->post_author    = '';
 		$post->post_date      = '';
@@ -1061,6 +1202,7 @@ function wp_write_post() {
 
 	// Create the post.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$post_id = wp_insert_post( $translated );
 	if ( is_wp_error( $post_id ) ) {
 		return $post_id;
@@ -1084,23 +1226,32 @@ function wp_write_post() {
 	$post_ID = wp_insert_post( $translated );
 	if ( is_wp_error( $post_ID ) ) {
 		return $post_ID;
+=======
+	$post_id = wp_insert_post( $translated );
+	if ( is_wp_error( $post_id ) ) {
+		return $post_id;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
-	if ( empty( $post_ID ) ) {
+	if ( empty( $post_id ) ) {
 		return 0;
 	}
 
-	add_meta( $post_ID );
+	add_meta( $post_id );
 
-	add_post_meta( $post_ID, '_edit_last', $GLOBALS['current_user']->ID );
+	add_post_meta( $post_id, '_edit_last', $GLOBALS['current_user']->ID );
 
 	// Now that we have an ID we can fix any attachment anchor hrefs.
-	_fix_attachment_links( $post_ID );
+	_fix_attachment_links( $post_id );
 
-	wp_set_post_lock( $post_ID );
+	wp_set_post_lock( $post_id );
 
+<<<<<<< HEAD
 	return $post_ID;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	return $post_id;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 /**
@@ -1129,6 +1280,7 @@ function write_post() {
  * @since 1.2.0
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param int $post_id
  * @return int|bool
  */
@@ -1141,6 +1293,13 @@ function add_meta( $post_id ) {
 function add_meta( $post_ID ) {
 	$post_ID = (int) $post_ID;
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param int $post_id
+ * @return int|bool
+ */
+function add_meta( $post_id ) {
+	$post_id = (int) $post_id;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	$metakeyselect = isset( $_POST['metakeyselect'] ) ? wp_unslash( trim( $_POST['metakeyselect'] ) ) : '';
 	$metakeyinput  = isset( $_POST['metakeyinput'] ) ? wp_unslash( trim( $_POST['metakeyinput'] ) ) : '';
@@ -1163,20 +1322,28 @@ function add_meta( $post_ID ) {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( is_protected_meta( $metakey, 'post' ) || ! current_user_can( 'add_post_meta', $post_id, $metakey ) ) {
 =======
 		if ( is_protected_meta( $metakey, 'post' ) || ! current_user_can( 'add_post_meta', $post_ID, $metakey ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( is_protected_meta( $metakey, 'post' ) || ! current_user_can( 'add_post_meta', $post_id, $metakey ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			return false;
 		}
 
 		$metakey = wp_slash( $metakey );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return add_post_meta( $post_id, $metakey, $metavalue );
 =======
 		return add_post_meta( $post_ID, $metakey, $metavalue );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return add_post_meta( $post_id, $metakey, $metavalue );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	return false;
@@ -1520,10 +1687,14 @@ function wp_edit_attachments_query_vars( $q = false ) {
 	// Filter query clauses to include filenames.
 	if ( isset( $q['s'] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		add_filter( 'wp_allow_query_attachment_by_filename', '__return_true' );
 =======
 		add_filter( 'posts_clauses', '_filter_query_attachment_filenames' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		add_filter( 'wp_allow_query_attachment_by_filename', '__return_true' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	return $q;
@@ -1592,10 +1763,14 @@ function postbox_classes( $box_id, $screen_id ) {
  * @since 2.5.0
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param int|WP_Post $post  Post ID or post object.
 =======
  * @param int|WP_Post $id    Post ID or post object.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param int|WP_Post $post  Post ID or post object.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @param string|null $title Optional. Title to override the post's current title
  *                           when generating the post name. Default null.
  * @param string|null $name  Optional. Name to override the post name. Default null.
@@ -1607,6 +1782,7 @@ function postbox_classes( $box_id, $screen_id ) {
  * }
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 function get_sample_permalink( $post, $title = null, $name = null ) {
 	$post = get_post( $post );
 
@@ -1614,6 +1790,11 @@ function get_sample_permalink( $post, $title = null, $name = null ) {
 function get_sample_permalink( $id, $title = null, $name = null ) {
 	$post = get_post( $id );
 >>>>>>> fb785cbb (Initial commit)
+=======
+function get_sample_permalink( $post, $title = null, $name = null ) {
+	$post = get_post( $post );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( ! $post ) {
 		return array( '', '' );
 	}
@@ -1624,9 +1805,13 @@ function get_sample_permalink( $id, $title = null, $name = null ) {
 	$original_date   = $post->post_date;
 	$original_name   = $post->post_name;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$original_filter = $post->filter;
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$original_filter = $post->filter;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	// Hack: get_permalink() would return plain permalink for drafts, so we will fake that our post is published.
 	if ( in_array( $post->post_status, array( 'draft', 'pending', 'future' ), true ) ) {
@@ -1672,10 +1857,14 @@ function get_sample_permalink( $id, $title = null, $name = null ) {
 	$post->post_date   = $original_date;
 	$post->post_name   = $original_name;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$post->filter      = $original_filter;
 =======
 	unset( $post->filter );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$post->filter      = $original_filter;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Filters the sample permalink.
@@ -1702,14 +1891,19 @@ function get_sample_permalink( $id, $title = null, $name = null ) {
  * @since 2.5.0
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param int|WP_Post $post      Post ID or post object.
 =======
  * @param int|WP_Post $id        Post ID or post object.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param int|WP_Post $post      Post ID or post object.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @param string|null $new_title Optional. New title. Default null.
  * @param string|null $new_slug  Optional. New slug. Default null.
  * @return string The HTML of the sample permalink slug editor.
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 function get_sample_permalink_html( $post, $new_title = null, $new_slug = null ) {
 	$post = get_post( $post );
@@ -1718,6 +1912,11 @@ function get_sample_permalink_html( $post, $new_title = null, $new_slug = null )
 function get_sample_permalink_html( $id, $new_title = null, $new_slug = null ) {
 	$post = get_post( $id );
 >>>>>>> fb785cbb (Initial commit)
+=======
+function get_sample_permalink_html( $post, $new_title = null, $new_slug = null ) {
+	$post = get_post( $post );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( ! $post ) {
 		return '';
 	}
@@ -1755,10 +1954,14 @@ function get_sample_permalink_html( $id, $new_title = null, $new_slug = null ) {
 		// Encourage a pretty permalink setting.
 		if ( ! get_option( 'permalink_structure' ) && current_user_can( 'manage_options' )
 <<<<<<< HEAD
+<<<<<<< HEAD
 			&& ! ( 'page' === get_option( 'show_on_front' ) && get_option( 'page_on_front' ) == $post->ID )
 =======
 			&& ! ( 'page' === get_option( 'show_on_front' ) && get_option( 'page_on_front' ) == $id )
 >>>>>>> fb785cbb (Initial commit)
+=======
+			&& ! ( 'page' === get_option( 'show_on_front' ) && get_option( 'page_on_front' ) == $post->ID )
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		) {
 			$return .= '<span id="change-permalinks"><a href="options-permalink.php" class="button button-small">' . __( 'Change Permalink Structure' ) . "</a></span>\n";
 		}
@@ -1876,6 +2079,7 @@ function _wp_post_thumbnail_html( $thumbnail_id = null, $post = null ) {
  * @since 2.5.0
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param int|WP_Post $post ID or object of the post to check for editing.
  * @return int|false ID of the user with lock. False if the post does not exist, post is not locked,
  *                   the user with lock does not exist, or the post is locked by current user.
@@ -1891,15 +2095,28 @@ function wp_check_post_lock( $post ) {
 function wp_check_post_lock( $post_id ) {
 	$post = get_post( $post_id );
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param int|WP_Post $post ID or object of the post to check for editing.
+ * @return int|false ID of the user with lock. False if the post does not exist, post is not locked,
+ *                   the user with lock does not exist, or the post is locked by current user.
+ */
+function wp_check_post_lock( $post ) {
+	$post = get_post( $post );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( ! $post ) {
 		return false;
 	}
 
 	$lock = get_post_meta( $post->ID, '_edit_lock', true );
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( ! $lock ) {
 		return false;
 	}
@@ -1928,10 +2145,14 @@ function wp_check_post_lock( $post_id ) {
  * @since 2.5.0
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param int|WP_Post $post ID or object of the post being edited.
 =======
  * @param int|WP_Post $post_id ID or object of the post being edited.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param int|WP_Post $post ID or object of the post being edited.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @return array|false {
  *     Array of the lock time and user ID. False if the post does not exist, or there
  *     is no current user.
@@ -1941,6 +2162,7 @@ function wp_check_post_lock( $post_id ) {
  * }
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 function wp_set_post_lock( $post ) {
 	$post = get_post( $post );
 
@@ -1948,15 +2170,24 @@ function wp_set_post_lock( $post ) {
 function wp_set_post_lock( $post_id ) {
 	$post = get_post( $post_id );
 >>>>>>> fb785cbb (Initial commit)
+=======
+function wp_set_post_lock( $post ) {
+	$post = get_post( $post );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( ! $post ) {
 		return false;
 	}
 
 	$user_id = get_current_user_id();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( 0 == $user_id ) {
 		return false;
 	}
@@ -1977,9 +2208,13 @@ function wp_set_post_lock( $post_id ) {
 function _admin_notice_post_locked() {
 	$post = get_post();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( ! $post ) {
 		return;
 	}
@@ -1987,9 +2222,13 @@ function _admin_notice_post_locked() {
 	$user    = null;
 	$user_id = wp_check_post_lock( $post->ID );
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( $user_id ) {
 		$user = get_userdata( $user_id );
 	}
@@ -2216,10 +2455,14 @@ function wp_create_post_autosave( $post_data ) {
 function post_preview() {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$post_id     = (int) $_POST['post_ID'];
 	$_POST['ID'] = $post_id;
 
 	$post = get_post( $post_id );
+<<<<<<< HEAD
 
 =======
 	$post_ID     = (int) $_POST['post_ID'];
@@ -2227,6 +2470,9 @@ function post_preview() {
 
 	$post = get_post( $post_ID );
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( ! $post ) {
 		wp_die( __( 'Sorry, you are not allowed to edit this post.' ) );
 	}
@@ -2440,6 +2686,7 @@ function taxonomy_meta_box_sanitize_cb_input( $taxonomy, $terms ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * Returns whether the post can be edited in the block editor.
  *
@@ -2512,6 +2759,8 @@ function use_block_editor_for_post_type( $post_type ) {
 
 /**
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * Prepares server-registered blocks for the block editor.
  *
  * Returns an associative array of registered block data keyed by block name. Data includes properties
@@ -2565,12 +2814,18 @@ function get_block_editor_server_block_settings() {
  *
  * @since 5.0.0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @global WP_Post   $post           Global post object.
  * @global WP_Screen $current_screen WordPress current screen object.
  * @global array     $wp_meta_boxes
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function the_block_editor_meta_boxes() {
 	global $post, $current_screen, $wp_meta_boxes;
@@ -2697,6 +2952,9 @@ function the_block_editor_meta_boxes() {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	/*
 	 * Refresh nonces used by the meta box loader.
 	 *
@@ -2741,8 +2999,11 @@ function the_block_editor_meta_boxes() {
 	} )( jQuery );";
 	wp_add_inline_script( 'heartbeat', $script );
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	// Reset meta box data.
 	$wp_meta_boxes = $_original_meta_boxes;
 }

@@ -18,11 +18,17 @@ if ( ! class_exists( 'WP_Privacy_Policy_Content' ) ) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Used in the HTML title tag.
 $title = __( 'Privacy Policy Guide' );
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+// Used in the HTML title tag.
+$title = __( 'Privacy Policy Guide' );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 add_filter(
 	'admin_body_class',
 	static function( $body_class ) {

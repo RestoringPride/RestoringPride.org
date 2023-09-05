@@ -13,6 +13,7 @@
  * @since 4.7.0
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @see WpOrg\Requests\Hooks
  */
 #[AllowDynamicProperties]
@@ -22,6 +23,12 @@ class WP_HTTP_Requests_Hooks extends WpOrg\Requests\Hooks {
  */
 class WP_HTTP_Requests_Hooks extends Requests_Hooks {
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @see WpOrg\Requests\Hooks
+ */
+#[AllowDynamicProperties]
+class WP_HTTP_Requests_Hooks extends WpOrg\Requests\Hooks {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	/**
 	 * Requested URL.
 	 *

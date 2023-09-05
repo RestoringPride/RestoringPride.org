@@ -1,34 +1,17 @@
 <?php
-/**
- * Dashboard Administration Screen
- *
- * @package WordPress
- * @subpackage Administration
+
+/*
+ * Note: this file exists only to remind developers to build the assets.
+ * For the real wp-admin/index.php that gets built and boots WordPress,
+ * please refer to wp-admin/_index.php.
  */
 
-/** Load WordPress Bootstrap */
-require_once __DIR__ . '/admin.php';
-
-/** Load WordPress dashboard API */
-require_once ABSPATH . 'wp-admin/includes/dashboard.php';
-
-wp_dashboard_setup();
-
-wp_enqueue_script( 'dashboard' );
-
-if ( current_user_can( 'install_plugins' ) ) {
-	wp_enqueue_script( 'plugin-install' );
-	wp_enqueue_script( 'updates' );
-}
-if ( current_user_can( 'upload_files' ) ) {
-	wp_enqueue_script( 'media-upload' );
-}
-add_thickbox();
-
-if ( wp_is_mobile() ) {
-	wp_enqueue_script( 'jquery-touch-punch' );
+if ( file_exists( __DIR__ . '/../wp-includes/js/dist/edit-post.js' ) ) {
+	require_once __DIR__ . '/_index.php';
+	return;
 }
 
+<<<<<<< HEAD
 // Used in the HTML title tag.
 $title       = __( 'Dashboard' );
 $parent_file = 'index.php';
@@ -214,3 +197,6 @@ if ( has_action( 'welcome_panel' ) && current_user_can( 'edit_theme_options' ) )
 wp_print_community_events_templates();
 
 require_once ABSPATH . 'wp-admin/admin-footer.php';
+=======
+require_once dirname( __DIR__ ) . '/index.php';
+>>>>>>> c058c778 (Combining with the latest source from WP)

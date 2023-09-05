@@ -66,6 +66,7 @@ be asked to confirm again so only click this link if you are absolutely certain:
 ###URL_DELETE###
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 If you delete your site, please consider opening a new site here some time in
 the future! (But remember that your current site and username are gone forever.)
 
@@ -77,6 +78,12 @@ are gone forever.)
 
 Thanks for using the site,
 >>>>>>> fb785cbb (Initial commit)
+=======
+If you delete your site, please consider opening a new site here some time in
+the future! (But remember that your current site and username are gone forever.)
+
+Thank you for using the site,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 All at ###SITENAME###
 ###SITEURL###"
 	);

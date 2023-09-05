@@ -14,9 +14,13 @@
  * @uses Text_Diff_Renderer Extends
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 
 	/**
@@ -118,13 +122,19 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 	 */
 	public function addedLine( $line ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return "<td class='diff-addedline'><span aria-hidden='true' class='dashicons dashicons-plus'></span><span class='screen-reader-text'>" .
 			/* translators: Hidden accessibility text. */
 			__( 'Added:' ) .
 		" </span>{$line}</td>";
+<<<<<<< HEAD
 =======
 		return "<td class='diff-addedline'><span aria-hidden='true' class='dashicons dashicons-plus'></span><span class='screen-reader-text'>" . __( 'Added:' ) . " </span>{$line}</td>";
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	}
 
@@ -136,13 +146,19 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 	 */
 	public function deletedLine( $line ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return "<td class='diff-deletedline'><span aria-hidden='true' class='dashicons dashicons-minus'></span><span class='screen-reader-text'>" .
 			/* translators: Hidden accessibility text. */
 			__( 'Deleted:' ) .
 		" </span>{$line}</td>";
+<<<<<<< HEAD
 =======
 		return "<td class='diff-deletedline'><span aria-hidden='true' class='dashicons dashicons-minus'></span><span class='screen-reader-text'>" . __( 'Deleted:' ) . " </span>{$line}</td>";
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -153,13 +169,19 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 	 */
 	public function contextLine( $line ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return "<td class='diff-context'><span class='screen-reader-text'>" .
 			/* translators: Hidden accessibility text. */
 			__( 'Unchanged:' ) .
 		" </span>{$line}</td>";
+<<<<<<< HEAD
 =======
 		return "<td class='diff-context'><span class='screen-reader-text'>" . __( 'Unchanged:' ) . " </span>{$line}</td>";
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -272,10 +294,14 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 	 * @return string
 	 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public function _changed( $orig, $final ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.finalFound
 =======
 	public function _changed( $orig, $final ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	public function _changed( $orig, $final ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.finalFound
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$r = '';
 
 		/*
@@ -298,10 +324,14 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 			if ( is_numeric( $o ) && is_numeric( $f ) ) {
 				$text_diff = new Text_Diff( 'auto', array( array( $orig[ $o ] ), array( $final[ $f ] ) ) );
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$renderer  = new $this->inline_diff_renderer();
 =======
 				$renderer  = new $this->inline_diff_renderer;
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$renderer  = new $this->inline_diff_renderer();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$diff      = $renderer->render( $text_diff );
 
 				// If they're too different, don't include any <ins> or <del>'s.
@@ -391,10 +421,14 @@ class WP_Text_Diff_Renderer_Table extends Text_Diff_Renderer {
 	 * }
 	 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public function interleave_changed_lines( $orig, $final ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.finalFound
 =======
 	public function interleave_changed_lines( $orig, $final ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	public function interleave_changed_lines( $orig, $final ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.finalFound
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		// Contains all pairwise string comparisons. Keys are such that this need only be a one dimensional array.
 		$matches = array();

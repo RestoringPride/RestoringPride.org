@@ -611,10 +611,15 @@ class WP_REST_Application_Passwords_Controller extends WP_REST_Controller {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$fields = $this->get_fields_for_response( $request );
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$fields = $this->get_fields_for_response( $request );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$prepared = array(
 			'uuid'      => $item['uuid'],
 			'app_id'    => empty( $item['app_id'] ) ? '' : $item['app_id'],
@@ -633,13 +638,19 @@ class WP_REST_Application_Passwords_Controller extends WP_REST_Controller {
 
 		$response = new WP_REST_Response( $prepared );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $user, $item ) );
 		}
+<<<<<<< HEAD
 =======
 		$response->add_links( $this->prepare_links( $user, $item ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters the REST API response for an application password.
@@ -666,6 +677,9 @@ class WP_REST_Application_Passwords_Controller extends WP_REST_Controller {
 		return array(
 			'self' => array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'href' => rest_url(
 					sprintf(
 						'%s/users/%d/application-passwords/%s',
@@ -674,9 +688,12 @@ class WP_REST_Application_Passwords_Controller extends WP_REST_Controller {
 						$item['uuid']
 					)
 				),
+<<<<<<< HEAD
 =======
 				'href' => rest_url( sprintf( '%s/users/%d/application-passwords/%s', $this->namespace, $user->ID, $item['uuid'] ) ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			),
 		);
 	}
@@ -731,10 +748,14 @@ class WP_REST_Application_Passwords_Controller extends WP_REST_Controller {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( is_multisite() && ! user_can( $user->ID, 'manage_sites' ) && ! is_user_member_of_blog( $user->ID ) ) {
 =======
 		if ( is_multisite() && ! is_user_member_of_blog( $user->ID ) ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( is_multisite() && ! user_can( $user->ID, 'manage_sites' ) && ! is_user_member_of_blog( $user->ID ) ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			return $error;
 		}
 

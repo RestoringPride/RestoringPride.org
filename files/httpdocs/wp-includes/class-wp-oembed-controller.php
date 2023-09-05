@@ -16,9 +16,13 @@
  * @since 4.4.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 final class WP_oEmbed_Controller {
 	/**
 	 * Register the oEmbed REST API route.
@@ -164,21 +168,30 @@ final class WP_oEmbed_Controller {
 	 *
 	 * @see WP_oEmbed::get_html()
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @global WP_Embed   $wp_embed
 	 * @global WP_Scripts $wp_scripts
 =======
 	 * @global WP_Embed $wp_embed
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @global WP_Embed   $wp_embed
+	 * @global WP_Scripts $wp_scripts
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @param WP_REST_Request $request Full data about the request.
 	 * @return object|WP_Error oEmbed response data or WP_Error on failure.
 	 */
 	public function get_proxy_item( $request ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		global $wp_embed, $wp_scripts;
 =======
 		global $wp_embed;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		global $wp_embed, $wp_scripts;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$args = $request->get_params();
 
@@ -217,9 +230,12 @@ final class WP_oEmbed_Controller {
 
 			if ( $html ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				global $wp_scripts;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				// Check if any scripts were enqueued by the shortcode, and include them in the response.
 				$enqueued_scripts = array();
 

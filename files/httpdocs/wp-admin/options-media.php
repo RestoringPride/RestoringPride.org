@@ -64,15 +64,21 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 <tr>
 <th scope="row"><?php _e( 'Thumbnail size' ); ?></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <td><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Thumbnail size' );
 	?>
 </span></legend>
+<<<<<<< HEAD
 =======
 <td><fieldset><legend class="screen-reader-text"><span><?php _e( 'Thumbnail size' ); ?></span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <label for="thumbnail_size_w"><?php _e( 'Width' ); ?></label>
 <input name="thumbnail_size_w" type="number" step="1" min="0" id="thumbnail_size_w" value="<?php form_option( 'thumbnail_size_w' ); ?>" class="small-text" />
 <br />
@@ -87,15 +93,21 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 <tr>
 <th scope="row"><?php _e( 'Medium size' ); ?></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <td><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Medium size' );
 	?>
 </span></legend>
+<<<<<<< HEAD
 =======
 <td><fieldset><legend class="screen-reader-text"><span><?php _e( 'Medium size' ); ?></span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <label for="medium_size_w"><?php _e( 'Max Width' ); ?></label>
 <input name="medium_size_w" type="number" step="1" min="0" id="medium_size_w" value="<?php form_option( 'medium_size_w' ); ?>" class="small-text" />
 <br />
@@ -107,15 +119,21 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 <tr>
 <th scope="row"><?php _e( 'Large size' ); ?></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <td><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Large size' );
 	?>
 </span></legend>
+<<<<<<< HEAD
 =======
 <td><fieldset><legend class="screen-reader-text"><span><?php _e( 'Large size' ); ?></span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <label for="large_size_w"><?php _e( 'Max Width' ); ?></label>
 <input name="large_size_w" type="number" step="1" min="0" id="large_size_w" value="<?php form_option( 'large_size_w' ); ?>" class="small-text" />
 <br />

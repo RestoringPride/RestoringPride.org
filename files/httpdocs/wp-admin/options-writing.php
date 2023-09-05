@@ -73,15 +73,21 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 <tr>
 <th scope="row"><?php _e( 'Formatting' ); ?></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <td><fieldset><legend class="screen-reader-text"><span>
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Formatting' );
 	?>
 </span></legend>
+<<<<<<< HEAD
 =======
 <td><fieldset><legend class="screen-reader-text"><span><?php _e( 'Formatting' ); ?></span></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <label for="use_smilies">
 <input name="use_smilies" type="checkbox" id="use_smilies" value="1" <?php checked( '1', get_option( 'use_smilies' ) ); ?> />
 	<?php _e( 'Convert emoticons like <code>:-)</code> and <code>:-P</code> to graphics on display' ); ?></label><br />
@@ -222,10 +228,14 @@ if ( apply_filters( 'enable_update_services_configuration', true ) ) {
 		printf(
 			/* translators: %s: Documentation URL. */
 <<<<<<< HEAD
+<<<<<<< HEAD
 			__( 'When you publish a new post, WordPress automatically notifies the following site update services. For more about this, see the <a href="%s">Update Services</a> documentation article. Separate multiple service URLs with line breaks.' ),
 			__( 'https://wordpress.org/documentation/article/update-services/' )
 =======
 			__( 'When you publish a new post, WordPress automatically notifies the following site update services. For more about this, see <a href="%s">Update Services</a> on the Codex. Separate multiple service URLs with line breaks.' ),
+=======
+			__( 'When you publish a new post, WordPress automatically notifies the following site update services. For more about this, see the <a href="%s">Update Services</a> documentation article. Separate multiple service URLs with line breaks.' ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			__( 'https://wordpress.org/support/article/update-services/' )
 >>>>>>> fb785cbb (Initial commit)
 		);

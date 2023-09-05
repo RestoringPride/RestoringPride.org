@@ -84,10 +84,14 @@ if ( $message ) {
 	<p><strong><?php echo $message; ?></strong></p>
 	<?php if ( $wp_http_referer ) { ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<p><a href="<?php echo esc_url( wp_validate_redirect( sanitize_url( $wp_http_referer ), admin_url( 'term.php?taxonomy=' . $taxonomy ) ) ); ?>">
 =======
 	<p><a href="<?php echo esc_url( wp_validate_redirect( esc_url_raw( $wp_http_referer ), admin_url( 'term.php?taxonomy=' . $taxonomy ) ) ); ?>">
 >>>>>>> fb785cbb (Initial commit)
+=======
+	<p><a href="<?php echo esc_url( wp_validate_redirect( sanitize_url( $wp_http_referer ), admin_url( 'term.php?taxonomy=' . $taxonomy ) ) ); ?>">
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<?php echo esc_html( $tax->labels->back_to_items ); ?>
 	</a></p>
 	<?php } ?>
@@ -150,6 +154,7 @@ if ( isset( $tag->name ) ) {
 		<tr class="form-field form-required term-name-wrap">
 			<th scope="row"><label for="name"><?php _ex( 'Name', 'term name' ); ?></label></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<td><input name="name" id="name" type="text" value="<?php echo $tag_name_value; ?>" size="40" aria-required="true" aria-describedby="name-description" />
 			<p class="description" id="name-description"><?php echo $tax->labels->name_field_description; ?></p></td>
 		</tr>
@@ -159,6 +164,11 @@ if ( isset( $tag->name ) ) {
 		</tr>
 <?php if ( ! global_terms_enabled() ) { ?>
 >>>>>>> fb785cbb (Initial commit)
+=======
+			<td><input name="name" id="name" type="text" value="<?php echo $tag_name_value; ?>" size="40" aria-required="true" aria-describedby="name-description" />
+			<p class="description" id="name-description"><?php echo $tax->labels->name_field_description; ?></p></td>
+		</tr>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<tr class="form-field term-slug-wrap">
 			<th scope="row"><label for="slug"><?php _e( 'Slug' ); ?></label></th>
 			<?php
@@ -178,6 +188,7 @@ if ( isset( $tag->name ) ) {
 			$slug = isset( $tag->slug ) ? apply_filters( 'editable_slug', $tag->slug, $tag ) : '';
 			?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<td><input name="slug" id="slug" type="text" value="<?php echo esc_attr( $slug ); ?>" size="40" aria-describedby="slug-description" />
 			<p class="description" id="slug-description"><?php echo $tax->labels->slug_field_description; ?></p></td>
 		</tr>
@@ -187,6 +198,11 @@ if ( isset( $tag->name ) ) {
 		</tr>
 <?php } ?>
 >>>>>>> fb785cbb (Initial commit)
+=======
+			<td><input name="slug" id="slug" type="text" value="<?php echo esc_attr( $slug ); ?>" size="40" aria-describedby="slug-description" />
+			<p class="description" id="slug-description"><?php echo $tax->labels->slug_field_description; ?></p></td>
+		</tr>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <?php if ( is_taxonomy_hierarchical( $taxonomy ) ) : ?>
 		<tr class="form-field term-parent-wrap">
 			<th scope="row"><label for="parent"><?php echo esc_html( $tax->labels->parent_item ); ?></label></th>
@@ -203,9 +219,13 @@ if ( isset( $tag->name ) ) {
 					'hierarchical'     => true,
 					'show_option_none' => __( 'None' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 					'aria_describedby' => 'parent-description',
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+					'aria_describedby' => 'parent-description',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				);
 
 				/** This filter is documented in wp-admin/edit-tags.php */
@@ -213,6 +233,7 @@ if ( isset( $tag->name ) ) {
 				wp_dropdown_categories( $dropdown_args );
 				?>
 				<?php if ( 'category' === $taxonomy ) : ?>
+<<<<<<< HEAD
 <<<<<<< HEAD
 					<p class="description" id="parent-description"><?php _e( 'Categories, unlike tags, can have a hierarchy. You might have a Jazz category, and under that have children categories for Bebop and Big Band. Totally optional.' ); ?></p>
 				<?php else : ?>
@@ -222,6 +243,11 @@ if ( isset( $tag->name ) ) {
 				<?php else : ?>
 					<p class="description"><?php echo $tax->labels->parent_field_description; ?></p>
 >>>>>>> fb785cbb (Initial commit)
+=======
+					<p class="description" id="parent-description"><?php _e( 'Categories, unlike tags, can have a hierarchy. You might have a Jazz category, and under that have children categories for Bebop and Big Band. Totally optional.' ); ?></p>
+				<?php else : ?>
+					<p class="description" id="parent-description"><?php echo $tax->labels->parent_field_description; ?></p>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<?php endif; ?>
 			</td>
 		</tr>
@@ -229,12 +255,17 @@ if ( isset( $tag->name ) ) {
 		<tr class="form-field term-description-wrap">
 			<th scope="row"><label for="description"><?php _e( 'Description' ); ?></label></th>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<td><textarea name="description" id="description" rows="5" cols="50" class="large-text" aria-describedby="description-description"><?php echo $tag->description; // textarea_escaped ?></textarea>
 			<p class="description" id="description-description"><?php echo $tax->labels->desc_field_description; ?></p></td>
 =======
 			<td><textarea name="description" id="description" rows="5" cols="50" class="large-text"><?php echo $tag->description; // textarea_escaped ?></textarea>
 			<p class="description"><?php echo $tax->labels->desc_field_description; ?></p></td>
 >>>>>>> fb785cbb (Initial commit)
+=======
+			<td><textarea name="description" id="description" rows="5" cols="50" class="large-text" aria-describedby="description-description"><?php echo $tag->description; // textarea_escaped ?></textarea>
+			<p class="description" id="description-description"><?php echo $tax->labels->desc_field_description; ?></p></td>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		</tr>
 		<?php
 		// Back compat hooks.

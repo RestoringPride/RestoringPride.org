@@ -61,8 +61,12 @@ class WP_Customize_Nav_Menu_Locations_Control extends WP_Customize_Control {
 								' class="external-link" target="_blank"',
 								sprintf(
 									'<span class="screen-reader-text"> %s</span>',
+<<<<<<< HEAD
 									/* translators: Accessibility text. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+									/* translators: Hidden accessibility text. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 									__( '(opens in a new tab)' )
 								)
 							);

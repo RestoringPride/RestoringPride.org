@@ -58,15 +58,21 @@ class WP_Customize_Nav_Menu_Control extends WP_Customize_Control {
 			</button>
 		</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<p class="screen-reader-text" id="reorder-items-desc-{{ data.menu_id }}">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'When in reorder mode, additional controls to reorder menu items will be available in the items list above.' );
 			?>
 		</p>
+<<<<<<< HEAD
 =======
 		<p class="screen-reader-text" id="reorder-items-desc-{{ data.menu_id }}"><?php _e( 'When in reorder mode, additional controls to reorder menu items will be available in the items list above.' ); ?></p>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<?php
 	}
 

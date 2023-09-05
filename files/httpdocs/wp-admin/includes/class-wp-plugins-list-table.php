@@ -12,9 +12,12 @@
  *
  * @since 3.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_List_Table
  */
@@ -408,10 +411,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 
 		if ( ! empty( $_REQUEST['s'] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$s = esc_html( urldecode( wp_unslash( $_REQUEST['s'] ) ) );
 =======
 			$s = esc_html( wp_unslash( $_REQUEST['s'] ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$s = esc_html( urldecode( wp_unslash( $_REQUEST['s'] ) ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 			/* translators: %s: Plugin search term. */
 			printf( __( 'No plugins found for: %s.' ), '<strong>' . $s . '</strong>' );
@@ -584,10 +591,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 
 			if ( 'search' !== $type ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$status_links[ $type ] = array(
 					'url'     => add_query_arg( 'plugin_status', $type, 'plugins.php' ),
 					'label'   => sprintf( $text, number_format_i18n( $count ) ),
 					'current' => $type === $status,
+<<<<<<< HEAD
 =======
 				$status_links[ $type ] = sprintf(
 					"<a href='%s'%s>%s</a>",
@@ -595,15 +606,21 @@ class WP_Plugins_List_Table extends WP_List_Table {
 					( $type === $status ) ? ' class="current" aria-current="page"' : '',
 					sprintf( $text, number_format_i18n( $count ) )
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				);
 			}
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return $this->get_views_links( $status_links );
 =======
 		return $status_links;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return $this->get_views_links( $status_links );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -771,10 +788,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 
 			if ( $plugin_file !== $plugin_data['Name'] ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$plugin_name .= '<br />' . $plugin_data['Name'];
 =======
 				$plugin_name .= '<br/>' . $plugin_data['Name'];
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$plugin_name .= '<br />' . $plugin_data['Name'];
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 
 			if ( true === ( $dropins[ $plugin_file ][1] ) ) { // Doesn't require a constant.
@@ -925,10 +946,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 			 *                              'activate', 'deactivate', and 'delete'.
 			 * @param string   $plugin_file Path to the plugin file relative to the plugins directory.
 <<<<<<< HEAD
+<<<<<<< HEAD
 			 * @param array    $plugin_data An array of plugin data. See get_plugin_data()
 =======
 			 * @param array    $plugin_data An array of plugin data. See `get_plugin_data()`
 >>>>>>> fb785cbb (Initial commit)
+=======
+			 * @param array    $plugin_data An array of plugin data. See get_plugin_data()
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			 *                              and the {@see 'plugin_row_meta'} filter for the list
 			 *                              of possible values.
 			 * @param string   $context     The plugin context. By default this can include 'all',
@@ -949,10 +974,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 			 *                              'activate', 'deactivate', and 'delete'.
 			 * @param string   $plugin_file Path to the plugin file relative to the plugins directory.
 <<<<<<< HEAD
+<<<<<<< HEAD
 			 * @param array    $plugin_data An array of plugin data. See get_plugin_data()
 =======
 			 * @param array    $plugin_data An array of plugin data. See `get_plugin_data()`
 >>>>>>> fb785cbb (Initial commit)
+=======
+			 * @param array    $plugin_data An array of plugin data. See get_plugin_data()
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			 *                              and the {@see 'plugin_row_meta'} filter for the list
 			 *                              of possible values.
 			 * @param string   $context     The plugin context. By default this can include 'all',
@@ -975,10 +1004,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 			 *                              this can also include 'network_active' and 'network_only' items.
 			 * @param string   $plugin_file Path to the plugin file relative to the plugins directory.
 <<<<<<< HEAD
+<<<<<<< HEAD
 			 * @param array    $plugin_data An array of plugin data. See get_plugin_data()
 =======
 			 * @param array    $plugin_data An array of plugin data. See `get_plugin_data()`
 >>>>>>> fb785cbb (Initial commit)
+=======
+			 * @param array    $plugin_data An array of plugin data. See get_plugin_data()
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			 *                              and the {@see 'plugin_row_meta'} filter for the list
 			 *                              of possible values.
 			 * @param string   $context     The plugin context. By default this can include 'all',
@@ -1001,10 +1034,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 			 *                              this can also include 'network_active' and 'network_only' items.
 			 * @param string   $plugin_file Path to the plugin file relative to the plugins directory.
 <<<<<<< HEAD
+<<<<<<< HEAD
 			 * @param array    $plugin_data An array of plugin data. See get_plugin_data()
 =======
 			 * @param array    $plugin_data An array of plugin data. See `get_plugin_data()`
 >>>>>>> fb785cbb (Initial commit)
+=======
+			 * @param array    $plugin_data An array of plugin data. See get_plugin_data()
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			 *                              and the {@see 'plugin_row_meta'} filter for the list
 			 *                              of possible values.
 			 * @param string   $context     The plugin context. By default this can include 'all',
@@ -1026,10 +1063,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 				'<input type="checkbox" name="checked[]" value="%3$s" id="%1$s" />',
 				$checkbox_id,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				/* translators: Hidden accessibility text. %s: Plugin name. */
 =======
 				/* translators: %s: Plugin name. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+				/* translators: Hidden accessibility text. %s: Plugin name. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				sprintf( __( 'Select %s' ), $plugin_data['Name'] ),
 				esc_attr( $plugin_file )
 			);
@@ -1272,10 +1313,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 					 *                            time to next update.
 					 * @param string $plugin_file Path to the plugin file relative to the plugins directory.
 <<<<<<< HEAD
+<<<<<<< HEAD
 					 * @param array  $plugin_data An array of plugin data. See get_plugin_data()
 =======
 					 * @param array  $plugin_data An array of plugin data. See `get_plugin_data()`
 >>>>>>> fb785cbb (Initial commit)
+=======
+					 * @param array  $plugin_data An array of plugin data. See get_plugin_data()
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					 *                            and the {@see 'plugin_row_meta'} filter for the list
 					 *                            of possible values.
 					 */
@@ -1298,10 +1343,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 					 * @param string $column_name Name of the column.
 					 * @param string $plugin_file Path to the plugin file relative to the plugins directory.
 <<<<<<< HEAD
+<<<<<<< HEAD
 					 * @param array  $plugin_data An array of plugin data. See get_plugin_data()
 =======
 					 * @param array  $plugin_data An array of plugin data. See `get_plugin_data()`
 >>>>>>> fb785cbb (Initial commit)
+=======
+					 * @param array  $plugin_data An array of plugin data. See get_plugin_data()
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					 *                            and the {@see 'plugin_row_meta'} filter for the list
 					 *                            of possible values.
 					 */
@@ -1378,10 +1427,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 		 *
 		 * @param string $plugin_file Path to the plugin file relative to the plugins directory.
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 * @param array  $plugin_data An array of plugin data. See get_plugin_data()
 =======
 		 * @param array  $plugin_data An array of plugin data. See `get_plugin_data()`
 >>>>>>> fb785cbb (Initial commit)
+=======
+		 * @param array  $plugin_data An array of plugin data. See get_plugin_data()
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 *                            and the {@see 'plugin_row_meta'} filter for the list
 		 *                            of possible values.
 		 * @param string $status      Status filter currently applied to the plugin list.
@@ -1403,10 +1456,14 @@ class WP_Plugins_List_Table extends WP_List_Table {
 		 *
 		 * @param string $plugin_file Path to the plugin file relative to the plugins directory.
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 * @param array  $plugin_data An array of plugin data. See get_plugin_data()
 =======
 		 * @param array  $plugin_data An array of plugin data. See `get_plugin_data()`
 >>>>>>> fb785cbb (Initial commit)
+=======
+		 * @param array  $plugin_data An array of plugin data. See get_plugin_data()
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 *                            and the {@see 'plugin_row_meta'} filter for the list
 		 *                            of possible values.
 		 * @param string $status      Status filter currently applied to the plugin list.

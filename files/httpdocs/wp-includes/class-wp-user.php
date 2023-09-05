@@ -37,9 +37,13 @@
  * @property string $use_ssl
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_User {
 	/**
 	 * User data container.
@@ -160,10 +164,14 @@ class WP_User {
 			$this->init( $data, $site_id );
 		} else {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$this->data = new stdClass();
 =======
 			$this->data = new stdClass;
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$this->data = new stdClass();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 

@@ -200,10 +200,14 @@ if ( current_user_can( 'update_themes' ) && wp_is_auto_update_enabled_for_type( 
 	);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$help_sidebar_autoupdates = '<p>' . __( '<a href="https://wordpress.org/documentation/article/plugins-themes-auto-updates/">Documentation on Auto-updates</a>' ) . '</p>';
 =======
 	$help_sidebar_autoupdates = '<p>' . __( '<a href="https://wordpress.org/support/article/plugins-themes-auto-updates/">Learn more: Auto-updates documentation</a>' ) . '</p>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$help_sidebar_autoupdates = '<p>' . __( '<a href="https://wordpress.org/support/article/plugins-themes-auto-updates/">Documentation on Auto-updates</a>' ) . '</p>';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 } // End if 'update_themes' && 'wp_is_auto_update_enabled_for_type'.
 
 get_current_screen()->set_help_sidebar(
@@ -278,6 +282,7 @@ if ( ! validate_current_theme() || isset( $_GET['broken'] ) ) {
 	if ( isset( $_GET['previewed'] ) ) {
 		?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<div id="message2" class="updated notice is-dismissible"><p><?php _e( 'Settings saved and theme activated.' ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Visit site' ); ?></a></p></div>
 		<?php
 	} else {
@@ -290,6 +295,13 @@ if ( ! validate_current_theme() || isset( $_GET['broken'] ) ) {
 		?>
 		<div id="message2" class="updated notice is-dismissible"><p><?php _e( 'New theme activated.' ); ?> <a href="<?php echo home_url( '/' ); ?>"><?php _e( 'Visit site' ); ?></a></p></div>
 >>>>>>> fb785cbb (Initial commit)
+=======
+		<div id="message2" class="updated notice is-dismissible"><p><?php _e( 'Settings saved and theme activated.' ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Visit site' ); ?></a></p></div>
+		<?php
+	} else {
+		?>
+		<div id="message2" class="updated notice is-dismissible"><p><?php _e( 'New theme activated.' ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Visit site' ); ?></a></p></div>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<?php
 	}
 } elseif ( isset( $_GET['deleted'] ) ) {
@@ -960,6 +972,9 @@ function wp_theme_auto_update_setting_template() {
 	<div class="theme-wrap wp-clearfix" role="document">
 		<div class="theme-header">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<button class="left dashicons dashicons-no"><span class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
@@ -978,11 +993,14 @@ function wp_theme_auto_update_setting_template() {
 				_e( 'Close details dialog' );
 				?>
 			</span></button>
+<<<<<<< HEAD
 =======
 			<button class="left dashicons dashicons-no"><span class="screen-reader-text"><?php _e( 'Show previous theme' ); ?></span></button>
 			<button class="right dashicons dashicons-no"><span class="screen-reader-text"><?php _e( 'Show next theme' ); ?></span></button>
 			<button class="close dashicons dashicons-no"><span class="screen-reader-text"><?php _e( 'Close details dialog' ); ?></span></button>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		</div>
 		<div class="theme-about wp-clearfix">
 			<div class="theme-screenshots">

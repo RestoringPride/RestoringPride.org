@@ -727,10 +727,14 @@ class WP_Customize_Nav_Menu_Item_Setting extends WP_Customize_Setting {
 
 		if ( '' !== $menu_item_value['url'] ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$menu_item_value['url'] = sanitize_url( $menu_item_value['url'] );
 =======
 			$menu_item_value['url'] = esc_url_raw( $menu_item_value['url'] );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$menu_item_value['url'] = sanitize_url( $menu_item_value['url'] );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( '' === $menu_item_value['url'] ) {
 				return new WP_Error( 'invalid_url', __( 'Invalid URL.' ) ); // Fail sanitization if URL is invalid.
 			}

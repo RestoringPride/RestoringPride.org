@@ -321,30 +321,42 @@ function install_search_form( $deprecated = true ) {
 	<form class="search-form search-plugins" method="get">
 		<input type="hidden" name="tab" value="search" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<label class="screen-reader-text" for="typeselector">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Search plugins by:' );
 			?>
 		</label>
+<<<<<<< HEAD
 =======
 		<label class="screen-reader-text" for="typeselector"><?php _e( 'Search plugins by:' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<select name="type" id="typeselector">
 			<option value="term"<?php selected( 'term', $type ); ?>><?php _e( 'Keyword' ); ?></option>
 			<option value="author"<?php selected( 'author', $type ); ?>><?php _e( 'Author' ); ?></option>
 			<option value="tag"<?php selected( 'tag', $type ); ?>><?php _ex( 'Tag', 'Plugin Installer' ); ?></option>
 		</select>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<label class="screen-reader-text" for="search-plugins">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Search Plugins' );
 			?>
 		</label>
+<<<<<<< HEAD
 =======
 		<label class="screen-reader-text" for="search-plugins"><?php _e( 'Search Plugins' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<input type="search" name="s" id="search-plugins" value="<?php echo esc_attr( $term ); ?>" class="wp-filter-search" placeholder="<?php esc_attr_e( 'Search plugins...' ); ?>" />
 		<?php submit_button( __( 'Search Plugins' ), 'hide-if-js', false, false, array( 'id' => 'search-submit' ) ); ?>
 	</form>
@@ -361,6 +373,7 @@ function install_plugins_upload() {
 <div class="upload-plugin">
 	<p class="install-help"><?php _e( 'If you have a plugin in a .zip format, you may install or update it by uploading it here.' ); ?></p>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<form method="post" enctype="multipart/form-data" class="wp-upload-form" action="<?php echo esc_url( self_admin_url( 'update.php?action=upload-plugin' ) ); ?>">
 		<?php wp_nonce_field( 'plugin-upload' ); ?>
 		<label class="screen-reader-text" for="pluginzip">
@@ -374,6 +387,16 @@ function install_plugins_upload() {
 		<?php wp_nonce_field( 'plugin-upload' ); ?>
 		<label class="screen-reader-text" for="pluginzip"><?php _e( 'Plugin zip file' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+	<form method="post" enctype="multipart/form-data" class="wp-upload-form" action="<?php echo esc_url( self_admin_url( 'update.php?action=upload-plugin' ) ); ?>">
+		<?php wp_nonce_field( 'plugin-upload' ); ?>
+		<label class="screen-reader-text" for="pluginzip">
+			<?php
+			/* translators: Hidden accessibility text. */
+			_e( 'Plugin zip file' );
+			?>
+		</label>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<input type="file" id="pluginzip" name="pluginzip" accept=".zip" />
 		<?php submit_button( __( 'Install Now' ), '', 'install-plugin-submit', false ); ?>
 	</form>
@@ -425,10 +448,14 @@ function display_plugins_table() {
 			printf(
 				/* translators: %s: https://wordpress.org/plugins/ */
 <<<<<<< HEAD
+<<<<<<< HEAD
 				'<p>' . __( 'Plugins extend and expand the functionality of WordPress. You may install plugins in the <a href="%s">WordPress Plugin Directory</a> right from here, or upload a plugin in .zip format by clicking the button at the top of this page.' ) . '</p>',
 =======
 				'<p>' . __( 'Plugins extend and expand the functionality of WordPress. You may automatically install plugins from the <a href="%s">WordPress Plugin Directory</a> or upload a plugin in .zip format by clicking the button at the top of this page.' ) . '</p>',
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'<p>' . __( 'Plugins extend and expand the functionality of WordPress. You may install plugins in the <a href="%s">WordPress Plugin Directory</a> right from here, or upload a plugin in .zip format by clicking the button at the top of this page.' ) . '</p>',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				__( 'https://wordpress.org/plugins/' )
 			);
 			break;
@@ -861,10 +888,14 @@ function install_plugin_information() {
 				/* translators: %s: URL to WordPress Updates screen. */
 				' ' . __( '<a href="%s" target="_parent">Click here to update WordPress</a>.' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 				esc_url( self_admin_url( 'update-core.php' ) )
 =======
 				self_admin_url( 'update-core.php' )
 >>>>>>> fb785cbb (Initial commit)
+=======
+				esc_url( self_admin_url( 'update-core.php' ) )
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			);
 		}
 		echo '</p></div>';

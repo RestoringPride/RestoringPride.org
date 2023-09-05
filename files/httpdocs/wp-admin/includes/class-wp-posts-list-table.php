@@ -12,9 +12,12 @@
  *
  * @since 3.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_List_Table
  */
@@ -335,19 +338,26 @@ class WP_Posts_List_Table extends WP_List_Table {
 			);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$mine = array(
 				'url'     => esc_url( add_query_arg( $mine_args, 'edit.php' ) ),
 				'label'   => $mine_inner_html,
 				'current' => isset( $_GET['author'] ) && ( $current_user_id === (int) $_GET['author'] ),
 			);
+<<<<<<< HEAD
 =======
 			$mine = $this->get_edit_link( $mine_args, $mine_inner_html, $class );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 			$all_args['all_posts'] = 1;
 			$class                 = '';
 		}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		if ( empty( $class ) && ( $this->is_base_request() || isset( $_REQUEST['all_posts'] ) ) ) {
@@ -355,6 +365,8 @@ class WP_Posts_List_Table extends WP_List_Table {
 		}
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$all_inner_html = sprintf(
 			/* translators: %s: Number of posts. */
 			_nx(
@@ -367,14 +379,20 @@ class WP_Posts_List_Table extends WP_List_Table {
 		);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$status_links['all'] = array(
 			'url'     => esc_url( add_query_arg( $all_args, 'edit.php' ) ),
 			'label'   => $all_inner_html,
 			'current' => empty( $class ) && ( $this->is_base_request() || isset( $_REQUEST['all_posts'] ) ),
 		);
+<<<<<<< HEAD
 =======
 		$status_links['all'] = $this->get_edit_link( $all_args, $all_inner_html, $class );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( $mine ) {
 			$status_links['mine'] = $mine;
@@ -404,14 +422,20 @@ class WP_Posts_List_Table extends WP_List_Table {
 			);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$status_links[ $status_name ] = array(
 				'url'     => esc_url( add_query_arg( $status_args, 'edit.php' ) ),
 				'label'   => $status_label,
 				'current' => isset( $_REQUEST['post_status'] ) && $status_name === $_REQUEST['post_status'],
 			);
+<<<<<<< HEAD
 =======
 			$status_links[ $status_name ] = $this->get_edit_link( $status_args, $status_label, $class );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		if ( ! empty( $this->sticky_posts_count ) ) {
@@ -435,14 +459,20 @@ class WP_Posts_List_Table extends WP_List_Table {
 
 			$sticky_link = array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'sticky' => array(
 					'url'     => esc_url( add_query_arg( $sticky_args, 'edit.php' ) ),
 					'label'   => $sticky_inner_html,
 					'current' => ! empty( $_REQUEST['show_sticky'] ),
 				),
+<<<<<<< HEAD
 =======
 				'sticky' => $this->get_edit_link( $sticky_args, $sticky_inner_html, $class ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			);
 
 			// Sticky comes after Publish, or if not listed, after All.
@@ -451,10 +481,14 @@ class WP_Posts_List_Table extends WP_List_Table {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return $this->get_views_links( $status_links );
 =======
 		return $status_links;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return $this->get_views_links( $status_links );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -566,15 +600,21 @@ class WP_Posts_List_Table extends WP_List_Table {
 		$displayed_post_format = isset( $_GET['post_format'] ) ? $_GET['post_format'] : '';
 		?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<label for="filter-by-format" class="screen-reader-text">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Filter by post format' );
 			?>
 		</label>
+<<<<<<< HEAD
 =======
 		<label for="filter-by-format" class="screen-reader-text"><?php _e( 'Filter by post format' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<select name="post_format" id="filter-by-format">
 			<option<?php selected( $displayed_post_format, '' ); ?> value=""><?php _e( 'All formats' ); ?></option>
 			<?php
@@ -743,6 +783,7 @@ class WP_Posts_List_Table extends WP_List_Table {
 		) {
 			$posts_columns['comments'] = sprintf(
 <<<<<<< HEAD
+<<<<<<< HEAD
 				'<span class="vers comment-grey-bubble" title="%1$s" aria-hidden="true"></span><span class="screen-reader-text">%2$s</span>',
 				esc_attr__( 'Comments' ),
 				/* translators: Hidden accessibility text. */
@@ -750,6 +791,11 @@ class WP_Posts_List_Table extends WP_List_Table {
 				'<span class="vers comment-grey-bubble" title="%1$s"><span class="screen-reader-text">%2$s</span></span>',
 				esc_attr__( 'Comments' ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'<span class="vers comment-grey-bubble" title="%1$s" aria-hidden="true"></span><span class="screen-reader-text">%2$s</span>',
+				esc_attr__( 'Comments' ),
+				/* translators: Hidden accessibility text. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				__( 'Comments' )
 			);
 		}
@@ -848,9 +894,13 @@ class WP_Posts_List_Table extends WP_List_Table {
 			$this->comment_pending_count = get_pending_comments_num( $post_ids );
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		update_post_author_caches( $posts );
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+		update_post_author_caches( $posts );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		foreach ( $posts as $post ) {
 			$this->single_row( $post, $level );
@@ -947,10 +997,15 @@ class WP_Posts_List_Table extends WP_List_Table {
 		$ids = array_keys( $to_display );
 		_prime_post_caches( $ids );
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$_posts = array_map( 'get_post', $ids );
 		update_post_author_caches( $_posts );
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$_posts = array_map( 'get_post', $ids );
+		update_post_author_caches( $_posts );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( ! isset( $GLOBALS['post'] ) ) {
 			$GLOBALS['post'] = reset( $ids );
@@ -1071,10 +1126,14 @@ class WP_Posts_List_Table extends WP_List_Table {
 				<?php
 				printf(
 <<<<<<< HEAD
+<<<<<<< HEAD
 					/* translators: Hidden accessibility text. %s: Post title. */
 =======
 					/* translators: %s: Post title. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+					/* translators: Hidden accessibility text. %s: Post title. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					__( '&#8220;%s&#8221; is locked' ),
 					_draft_or_post_title()
 				);

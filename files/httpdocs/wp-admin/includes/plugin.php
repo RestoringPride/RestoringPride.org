@@ -128,10 +128,14 @@ function get_plugin_data( $plugin_file, $markup = true, $translate = true ) {
  *
  * @param string $plugin_file Path to the main plugin file.
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param array  $plugin_data An array of plugin data. See get_plugin_data().
 =======
  * @param array  $plugin_data An array of plugin data. See `get_plugin_data()`.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param array  $plugin_data An array of plugin data. See get_plugin_data().
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @param bool   $markup      Optional. If the returned data should have HTML markup applied.
  *                            Default true.
  * @param bool   $translate   Optional. If the returned data should be translated. Default true.
@@ -274,10 +278,14 @@ function get_plugin_files( $plugin ) {
  *
  * @param string $plugin_folder Optional. Relative path to single plugin folder.
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @return array[] Array of arrays of plugin data, keyed by plugin file name. See get_plugin_data().
 =======
  * @return array[] Array of arrays of plugin data, keyed by plugin file name. See `get_plugin_data()`.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @return array[] Array of arrays of plugin data, keyed by plugin file name. See get_plugin_data().
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function get_plugins( $plugin_folder = '' ) {
 
@@ -366,10 +374,14 @@ function get_plugins( $plugin_folder = '' ) {
  *
  * @since 3.0.0
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @return array[] Array of arrays of mu-plugin data, keyed by plugin file name. See get_plugin_data().
 =======
  * @return array[] Array of arrays of mu-plugin data, keyed by plugin file name. See `get_plugin_data()`.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @return array[] Array of arrays of mu-plugin data, keyed by plugin file name. See get_plugin_data().
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function get_mu_plugins() {
 	$wp_plugins   = array();
@@ -442,10 +454,14 @@ function _sort_uname_callback( $a, $b ) {
  *
  * @since 3.0.0
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @return array[] Array of arrays of dropin plugin data, keyed by plugin file name. See get_plugin_data().
 =======
  * @return array[] Array of arrays of dropin plugin data, keyed by plugin file name. See `get_plugin_data()`.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @return array[] Array of arrays of dropin plugin data, keyed by plugin file name. See get_plugin_data().
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function get_dropins() {
 	$dropins      = array();
@@ -1167,10 +1183,14 @@ function validate_plugin_requirements( $plugin ) {
 				_x( '<strong>Error:</strong> Current versions of WordPress (%1$s) and PHP (%2$s) do not meet minimum requirements for %3$s. The plugin requires WordPress %4$s and PHP %5$s.', 'plugin' ),
 				get_bloginfo( 'version' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 				PHP_VERSION,
 =======
 				phpversion(),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				PHP_VERSION,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$plugin_headers['Name'],
 				$requirements['requires'],
 				$requirements['requires_php']
@@ -1183,10 +1203,14 @@ function validate_plugin_requirements( $plugin ) {
 				/* translators: 1: Current PHP version, 2: Plugin name, 3: Required PHP version. */
 				_x( '<strong>Error:</strong> Current PHP version (%1$s) does not meet minimum requirements for %2$s. The plugin requires PHP %3$s.', 'plugin' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 				PHP_VERSION,
 =======
 				phpversion(),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				PHP_VERSION,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$plugin_headers['Name'],
 				$requirements['requires_php']
 			) . $php_update_message . '</p>'
@@ -1479,9 +1503,13 @@ function add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, 
 			array_unshift( $submenu[ $parent_slug ], $new_sub_menu );
 		} else {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$position = absint( $position );
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$position = absint( $position );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			// Grab all of the items before the insertion point.
 			$before_items = array_slice( $submenu[ $parent_slug ], 0, $position, true );
 			// Grab all of the items after the insertion point.

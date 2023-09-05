@@ -13,9 +13,13 @@
  * @since 5.0.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 abstract class WP_REST_Search_Handler {
 
 	/**
@@ -41,10 +45,14 @@ abstract class WP_REST_Search_Handler {
 	 *
 	 * @since 5.0.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var string[]
 =======
 	 * @var array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var string[]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	protected $subtypes = array();
 
@@ -65,10 +73,14 @@ abstract class WP_REST_Search_Handler {
 	 * @since 5.0.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return string[] Array of object subtype identifiers.
 =======
 	 * @return array Array of object subtype identifiers.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return string[] Array of object subtype identifiers.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function get_subtypes() {
 		return $this->subtypes;

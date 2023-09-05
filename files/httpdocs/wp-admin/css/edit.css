@@ -726,6 +726,9 @@ form#tags-filter {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 /* Better position for the WordPress admin notices. */
 .privacy-settings .notice,
 .site-health .notice {
@@ -737,8 +740,11 @@ form#tags-filter {
 	margin-top: 5px;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 /* Emulates .wrap h1 styling */
 .privacy-settings-header h1,
 .health-check-header h1 {

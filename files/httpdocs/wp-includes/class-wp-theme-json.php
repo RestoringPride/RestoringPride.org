@@ -17,9 +17,13 @@
  * @access private
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Theme_JSON {
 
 	/**
@@ -37,6 +41,7 @@ class WP_Theme_JSON {
 	 *
 	 * @since 5.8.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 Initialize as an empty array.
 	 * @var array
 	 */
@@ -46,6 +51,12 @@ class WP_Theme_JSON {
 	 */
 	protected static $blocks_metadata = null;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 Initialize as an empty array.
+	 * @var array
+	 */
+	protected static $blocks_metadata = array();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * The CSS selector for the top-level styles.
@@ -60,17 +71,25 @@ class WP_Theme_JSON {
 	 *
 	 * @since 5.8.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 Added 'blocks'.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 Added 'blocks'.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @var string[]
 	 */
 	const VALID_ORIGINS = array(
 		'default',
 <<<<<<< HEAD
+<<<<<<< HEAD
 		'blocks',
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+		'blocks',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		'theme',
 		'custom',
 	);
@@ -130,11 +149,16 @@ class WP_Theme_JSON {
 	 *              `use_default_names` preset key, and simplified the metadata structure.
 	 * @since 6.0.0 Replaced `override` with `prevent_override` and updated the
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 *              `prevent_override` value for `color.duotone` to use `color.defaultDuotone`.
 	 * @since 6.2.0 Added 'shadow' presets.
 =======
 	 *              `prevent_overried` value for `color.duotone` to use `color.defaultDuotone`.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 *              `prevent_override` value for `color.duotone` to use `color.defaultDuotone`.
+	 * @since 6.2.0 Added 'shadow' presets.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @var array
 	 */
 	const PRESETS_METADATA = array(
@@ -174,10 +198,14 @@ class WP_Theme_JSON {
 			'prevent_override'  => false,
 			'use_default_names' => true,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			'value_func'        => 'wp_get_typography_font_size_value',
 =======
 			'value_key'         => 'size',
 >>>>>>> fb785cbb (Initial commit)
+=======
+			'value_func'        => 'wp_get_typography_font_size_value',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'css_vars'          => '--wp--preset--font-size--$slug',
 			'classes'           => array( '.has-$slug-font-size' => 'font-size' ),
 			'properties'        => array( 'font-size' ),
@@ -192,6 +220,9 @@ class WP_Theme_JSON {
 			'properties'        => array( 'font-family' ),
 		),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		array(
 			'path'              => array( 'spacing', 'spacingSizes' ),
 			'prevent_override'  => false,
@@ -210,8 +241,11 @@ class WP_Theme_JSON {
 			'classes'           => array(),
 			'properties'        => array( 'box-shadow' ),
 		),
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	);
 
 	/**
@@ -226,11 +260,15 @@ class WP_Theme_JSON {
 	 *              `text-decoration`, `text-transform`, and `filter` properties,
 	 *              simplified the metadata structure.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @since 6.1.0 Added the `border-*-color`, `border-*-width`, `border-*-style`,
 	 *              `--wp--style--root--padding-*`, and `box-shadow` properties,
 	 *              removed the `--wp--style--block-gap` property.
 	 * @since 6.2.0 Added `outline-*`, and `min-height` properties.
 	 *
+<<<<<<< HEAD
 	 * @var array
 	 */
 	const PROPERTIES_METADATA = array(
@@ -353,6 +391,94 @@ class WP_Theme_JSON {
 		'text-transform'             => array( 'typography', 'textTransform' ),
 		'filter'                     => array( 'filter', 'duotone' ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var array
+	 */
+	const PROPERTIES_METADATA = array(
+		'background'                        => array( 'color', 'gradient' ),
+		'background-color'                  => array( 'color', 'background' ),
+		'border-radius'                     => array( 'border', 'radius' ),
+		'border-top-left-radius'            => array( 'border', 'radius', 'topLeft' ),
+		'border-top-right-radius'           => array( 'border', 'radius', 'topRight' ),
+		'border-bottom-left-radius'         => array( 'border', 'radius', 'bottomLeft' ),
+		'border-bottom-right-radius'        => array( 'border', 'radius', 'bottomRight' ),
+		'border-color'                      => array( 'border', 'color' ),
+		'border-width'                      => array( 'border', 'width' ),
+		'border-style'                      => array( 'border', 'style' ),
+		'border-top-color'                  => array( 'border', 'top', 'color' ),
+		'border-top-width'                  => array( 'border', 'top', 'width' ),
+		'border-top-style'                  => array( 'border', 'top', 'style' ),
+		'border-right-color'                => array( 'border', 'right', 'color' ),
+		'border-right-width'                => array( 'border', 'right', 'width' ),
+		'border-right-style'                => array( 'border', 'right', 'style' ),
+		'border-bottom-color'               => array( 'border', 'bottom', 'color' ),
+		'border-bottom-width'               => array( 'border', 'bottom', 'width' ),
+		'border-bottom-style'               => array( 'border', 'bottom', 'style' ),
+		'border-left-color'                 => array( 'border', 'left', 'color' ),
+		'border-left-width'                 => array( 'border', 'left', 'width' ),
+		'border-left-style'                 => array( 'border', 'left', 'style' ),
+		'color'                             => array( 'color', 'text' ),
+		'font-family'                       => array( 'typography', 'fontFamily' ),
+		'font-size'                         => array( 'typography', 'fontSize' ),
+		'font-style'                        => array( 'typography', 'fontStyle' ),
+		'font-weight'                       => array( 'typography', 'fontWeight' ),
+		'letter-spacing'                    => array( 'typography', 'letterSpacing' ),
+		'line-height'                       => array( 'typography', 'lineHeight' ),
+		'margin'                            => array( 'spacing', 'margin' ),
+		'margin-top'                        => array( 'spacing', 'margin', 'top' ),
+		'margin-right'                      => array( 'spacing', 'margin', 'right' ),
+		'margin-bottom'                     => array( 'spacing', 'margin', 'bottom' ),
+		'margin-left'                       => array( 'spacing', 'margin', 'left' ),
+		'min-height'                        => array( 'dimensions', 'minHeight' ),
+		'outline-color'                     => array( 'outline', 'color' ),
+		'outline-offset'                    => array( 'outline', 'offset' ),
+		'outline-style'                     => array( 'outline', 'style' ),
+		'outline-width'                     => array( 'outline', 'width' ),
+		'padding'                           => array( 'spacing', 'padding' ),
+		'padding-top'                       => array( 'spacing', 'padding', 'top' ),
+		'padding-right'                     => array( 'spacing', 'padding', 'right' ),
+		'padding-bottom'                    => array( 'spacing', 'padding', 'bottom' ),
+		'padding-left'                      => array( 'spacing', 'padding', 'left' ),
+		'--wp--style--root--padding'        => array( 'spacing', 'padding' ),
+		'--wp--style--root--padding-top'    => array( 'spacing', 'padding', 'top' ),
+		'--wp--style--root--padding-right'  => array( 'spacing', 'padding', 'right' ),
+		'--wp--style--root--padding-bottom' => array( 'spacing', 'padding', 'bottom' ),
+		'--wp--style--root--padding-left'   => array( 'spacing', 'padding', 'left' ),
+		'text-decoration'                   => array( 'typography', 'textDecoration' ),
+		'text-transform'                    => array( 'typography', 'textTransform' ),
+		'filter'                            => array( 'filter', 'duotone' ),
+		'box-shadow'                        => array( 'shadow' ),
+	);
+
+	/**
+	 * Indirect metadata for style properties that are not directly output.
+	 *
+	 * Each element maps from a CSS property name to an array of
+	 * paths to the value in theme.json & block attributes.
+	 *
+	 * Indirect properties are not output directly by `compute_style_properties`,
+	 * but are used elsewhere in the processing of global styles. The indirect
+	 * property is used to validate whether or not a style value is allowed.
+	 *
+	 * @since 6.2.0
+	 *
+	 * @var array
+	 */
+	const INDIRECT_PROPERTIES_METADATA = array(
+		'gap'        => array(
+			array( 'spacing', 'blockGap' ),
+		),
+		'column-gap' => array(
+			array( 'spacing', 'blockGap', 'left' ),
+		),
+		'row-gap'    => array(
+			array( 'spacing', 'blockGap', 'top' ),
+		),
+		'max-width'  => array(
+			array( 'layout', 'contentSize' ),
+			array( 'layout', 'wideSize' ),
+		),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	);
 
 	/**
@@ -385,12 +511,17 @@ class WP_Theme_JSON {
 		'styles',
 		'templateParts',
 <<<<<<< HEAD
+<<<<<<< HEAD
 		'title',
 		'version',
 =======
 		'version',
 		'title',
 >>>>>>> fb785cbb (Initial commit)
+=======
+		'title',
+		'version',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	);
 
 	/**
@@ -401,6 +532,7 @@ class WP_Theme_JSON {
 	 *              added new properties for `border`, `color`, `spacing`,
 	 *              and `typography`, and renamed others according to the new schema.
 	 * @since 6.0.0 Added `color.defaultDuotone`.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @since 6.1.0 Added `layout.definitions` and `useRootPaddingAwareAlignments`.
 	 * @since 6.2.0 Added `dimensions.minHeight`, 'shadow.presets', 'shadow.defaultPresets',
@@ -418,16 +550,31 @@ class WP_Theme_JSON {
 		'appearanceTools' => null,
 		'border'          => array(
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 Added `layout.definitions` and `useRootPaddingAwareAlignments`.
+	 * @since 6.2.0 Added `dimensions.minHeight`, 'shadow.presets', 'shadow.defaultPresets',
+	 *              `position.fixed` and `position.sticky`.
+	 * @var array
+	 */
+	const VALID_SETTINGS = array(
+		'appearanceTools'               => null,
+		'useRootPaddingAwareAlignments' => null,
+		'border'                        => array(
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'color'  => null,
 			'radius' => null,
 			'style'  => null,
 			'width'  => null,
 		),
 <<<<<<< HEAD
+<<<<<<< HEAD
 		'color'                         => array(
 =======
 		'color'           => array(
 >>>>>>> fb785cbb (Initial commit)
+=======
+		'color'                         => array(
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'background'       => null,
 			'custom'           => null,
 			'customDuotone'    => null,
@@ -442,11 +589,15 @@ class WP_Theme_JSON {
 			'text'             => null,
 		),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		'custom'                        => null,
 		'dimensions'                    => array(
 			'minHeight' => null,
 		),
 		'layout'                        => array(
+<<<<<<< HEAD
 			'contentSize' => null,
 			'definitions' => null,
 			'wideSize'    => null,
@@ -473,17 +624,36 @@ class WP_Theme_JSON {
 =======
 		'custom'          => null,
 		'layout'          => array(
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'contentSize' => null,
+			'definitions' => null,
 			'wideSize'    => null,
 		),
-		'spacing'         => array(
-			'blockGap' => null,
-			'margin'   => null,
-			'padding'  => null,
-			'units'    => null,
+		'position'                      => array(
+			'fixed'  => null,
+			'sticky' => null,
 		),
+<<<<<<< HEAD
 		'typography'      => array(
 >>>>>>> fb785cbb (Initial commit)
+=======
+		'spacing'                       => array(
+			'customSpacingSize' => null,
+			'spacingSizes'      => null,
+			'spacingScale'      => null,
+			'blockGap'          => null,
+			'margin'            => null,
+			'padding'           => null,
+			'units'             => null,
+		),
+		'shadow'                        => array(
+			'presets'        => null,
+			'defaultPresets' => null,
+		),
+		'typography'                    => array(
+			'fluid'          => null,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'customFontSize' => null,
 			'dropCap'        => null,
 			'fontFamilies'   => null,
@@ -505,13 +675,19 @@ class WP_Theme_JSON {
 	 *              added new properties for `border`, `filter`, `spacing`,
 	 *              and `typography`.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @since 6.1.0 Added new side properties for `border`,
 	 *              added new property `shadow`,
 	 *              updated `blockGap` to be allowed at any level.
 	 * @since 6.2.0 Added `outline`, and `minHeight` properties.
 	 *
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @var array
 	 */
 	const VALID_STYLES = array(
@@ -521,18 +697,25 @@ class WP_Theme_JSON {
 			'style'  => null,
 			'width'  => null,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			'top'    => null,
 			'right'  => null,
 			'bottom' => null,
 			'left'   => null,
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		),
 		'color'      => array(
 			'background' => null,
 			'gradient'   => null,
 			'text'       => null,
 		),
+<<<<<<< HEAD
 <<<<<<< HEAD
 		'dimensions' => array(
 			'minHeight' => null,
@@ -552,14 +735,30 @@ class WP_Theme_JSON {
 			'padding'  => null,
 			'blockGap' => null,
 =======
+=======
+		'dimensions' => array(
+			'minHeight' => null,
+		),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		'filter'     => array(
 			'duotone' => null,
 		),
+		'outline'    => array(
+			'color'  => null,
+			'offset' => null,
+			'style'  => null,
+			'width'  => null,
+		),
+		'shadow'     => null,
 		'spacing'    => array(
 			'margin'   => null,
 			'padding'  => null,
+<<<<<<< HEAD
 			'blockGap' => 'top',
 >>>>>>> fb785cbb (Initial commit)
+=======
+			'blockGap' => null,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		),
 		'typography' => array(
 			'fontFamily'     => null,
@@ -572,6 +771,9 @@ class WP_Theme_JSON {
 			'textTransform'  => null,
 		),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		'css'        => null,
 	);
 
@@ -592,14 +794,18 @@ class WP_Theme_JSON {
 	const VALID_ELEMENT_PSEUDO_SELECTORS = array(
 		'link'   => array( ':link', ':any-link', ':visited', ':hover', ':focus', ':active' ),
 		'button' => array( ':link', ':any-link', ':visited', ':hover', ':focus', ':active' ),
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	);
 
 	/**
 	 * The valid elements that can be found under styles.
 	 *
 	 * @since 5.8.0
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @since 6.1.0 Added `heading`, `button`, and `caption` elements.
 	 * @var string[]
@@ -660,27 +866,82 @@ class WP_Theme_JSON {
 	}
 
 =======
+=======
+	 * @since 6.1.0 Added `heading`, `button`, and `caption` elements.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @var string[]
 	 */
 	const ELEMENTS = array(
-		'link' => 'a',
-		'h1'   => 'h1',
-		'h2'   => 'h2',
-		'h3'   => 'h3',
-		'h4'   => 'h4',
-		'h5'   => 'h5',
-		'h6'   => 'h6',
+		'link'    => 'a:where(:not(.wp-element-button))', // The `where` is needed to lower the specificity.
+		'heading' => 'h1, h2, h3, h4, h5, h6',
+		'h1'      => 'h1',
+		'h2'      => 'h2',
+		'h3'      => 'h3',
+		'h4'      => 'h4',
+		'h5'      => 'h5',
+		'h6'      => 'h6',
+		// We have the .wp-block-button__link class so that this will target older buttons that have been serialized.
+		'button'  => '.wp-element-button, .wp-block-button__link',
+		// The block classes are necessary to target older content that won't use the new class names.
+		'caption' => '.wp-element-caption, .wp-block-audio figcaption, .wp-block-embed figcaption, .wp-block-gallery figcaption, .wp-block-image figcaption, .wp-block-table figcaption, .wp-block-video figcaption',
+		'cite'    => 'cite',
 	);
 
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+	const __EXPERIMENTAL_ELEMENT_CLASS_NAMES = array(
+		'button'  => 'wp-element-button',
+		'caption' => 'wp-element-caption',
+	);
+
+	/**
+	 * List of block support features that can have their related styles
+	 * generated under their own feature level selector rather than the block's.
+	 *
+	 * @since 6.1.0
+	 * @var string[]
+	 */
+	const BLOCK_SUPPORT_FEATURE_LEVEL_SELECTORS = array(
+		'__experimentalBorder' => 'border',
+		'color'                => 'color',
+		'spacing'              => 'spacing',
+		'typography'           => 'typography',
+	);
+
+	/**
+	 * Returns a class name by an element name.
+	 *
+	 * @since 6.1.0
+	 *
+	 * @param string $element The name of the element.
+	 * @return string The name of the class.
+	 */
+	public static function get_element_class_name( $element ) {
+		$class_name = '';
+
+		// TODO: Replace array_key_exists() with isset() check once WordPress drops
+		// support for PHP 5.6. See https://core.trac.wordpress.org/ticket/57067.
+		if ( array_key_exists( $element, static::__EXPERIMENTAL_ELEMENT_CLASS_NAMES ) ) {
+			$class_name = static::__EXPERIMENTAL_ELEMENT_CLASS_NAMES[ $element ];
+		}
+
+		return $class_name;
+	}
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	/**
 	 * Options that settings.appearanceTools enables.
 	 *
 	 * @since 6.0.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.2.0 Added `dimensions.minHeight` and `position.sticky`.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.2.0 Added `dimensions.minHeight` and `position.sticky`.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @var array
 	 */
 	const APPEARANCE_TOOLS_OPT_INS = array(
@@ -690,10 +951,15 @@ class WP_Theme_JSON {
 		array( 'border', 'width' ),
 		array( 'color', 'link' ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 		array( 'dimensions', 'minHeight' ),
 		array( 'position', 'sticky' ),
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+		array( 'dimensions', 'minHeight' ),
+		array( 'position', 'sticky' ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		array( 'spacing', 'blockGap' ),
 		array( 'spacing', 'margin' ),
 		array( 'spacing', 'padding' ),
@@ -734,13 +1000,19 @@ class WP_Theme_JSON {
 		foreach ( $nodes as $node ) {
 			foreach ( static::PRESETS_METADATA as $preset_metadata ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$path = $node['path'];
 				foreach ( $preset_metadata['path'] as $subpath ) {
 					$path[] = $subpath;
 				}
+<<<<<<< HEAD
 =======
 				$path   = array_merge( $node['path'], $preset_metadata['path'] );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$preset = _wp_array_get( $this->theme_json, $path, null );
 				if ( null !== $preset ) {
 					// If the preset is not already keyed by origin.
@@ -813,15 +1085,20 @@ class WP_Theme_JSON {
 	 */
 	protected static function sanitize( $input, $valid_block_names, $valid_element_names ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$output = array();
 
 		if ( ! is_array( $input ) ) {
 			return $output;
 		}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		// Preserve only the top most level keys.
 		$output = array_intersect_key( $input, array_flip( static::VALID_TOP_LEVEL_KEYS ) );
@@ -840,16 +1117,31 @@ class WP_Theme_JSON {
 						unset( $styles_non_top_level[ $section ][ $prop ] );
 					}
 =======
+=======
+		// Preserve only the top most level keys.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$output = array_intersect_key( $input, array_flip( static::VALID_TOP_LEVEL_KEYS ) );
 
-		// Some styles are only meant to be available at the top-level (e.g.: blockGap),
-		// hence, the schema for blocks & elements should not have them.
+		/*
+		 * Remove any rules that are annotated as "top" in VALID_STYLES constant.
+		 * Some styles are only meant to be available at the top-level (e.g.: blockGap),
+		 * hence, the schema for blocks & elements should not have them.
+		 */
 		$styles_non_top_level = static::VALID_STYLES;
 		foreach ( array_keys( $styles_non_top_level ) as $section ) {
+<<<<<<< HEAD
 			foreach ( array_keys( $styles_non_top_level[ $section ] ) as $prop ) {
 				if ( 'top' === $styles_non_top_level[ $section ][ $prop ] ) {
 					unset( $styles_non_top_level[ $section ][ $prop ] );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			// array_key_exists() needs to be used instead of isset() because the value can be null.
+			if ( array_key_exists( $section, $styles_non_top_level ) && is_array( $styles_non_top_level[ $section ] ) ) {
+				foreach ( array_keys( $styles_non_top_level[ $section ] ) as $prop ) {
+					if ( 'top' === $styles_non_top_level[ $section ][ $prop ] ) {
+						unset( $styles_non_top_level[ $section ][ $prop ] );
+					}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				}
 			}
 		}
@@ -858,6 +1150,9 @@ class WP_Theme_JSON {
 		$schema                 = array();
 		$schema_styles_elements = array();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/*
 		 * Set allowed element pseudo selectors based on per element allow list.
@@ -866,6 +1161,7 @@ class WP_Theme_JSON {
 		 * - top level elements: `$schema['styles']['elements']['link'][':hover']`.
 		 * - block level elements: `$schema['styles']['blocks']['core/button']['elements']['link'][':hover']`.
 		 */
+<<<<<<< HEAD
 		foreach ( $valid_element_names as $element ) {
 			$schema_styles_elements[ $element ] = $styles_non_top_level;
 
@@ -902,17 +1198,47 @@ class WP_Theme_JSON {
 		}
 
 =======
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		foreach ( $valid_element_names as $element ) {
 			$schema_styles_elements[ $element ] = $styles_non_top_level;
+
+			// TODO: Replace array_key_exists() with isset() check once WordPress drops
+			// support for PHP 5.6. See https://core.trac.wordpress.org/ticket/57067.
+			if ( array_key_exists( $element, static::VALID_ELEMENT_PSEUDO_SELECTORS ) ) {
+				foreach ( static::VALID_ELEMENT_PSEUDO_SELECTORS[ $element ] as $pseudo_selector ) {
+					$schema_styles_elements[ $element ][ $pseudo_selector ] = $styles_non_top_level;
+				}
+			}
 		}
+
 		$schema_styles_blocks   = array();
 		$schema_settings_blocks = array();
 		foreach ( $valid_block_names as $block ) {
-			$schema_settings_blocks[ $block ]           = static::VALID_SETTINGS;
-			$schema_styles_blocks[ $block ]             = $styles_non_top_level;
-			$schema_styles_blocks[ $block ]['elements'] = $schema_styles_elements;
+			// Build the schema for each block style variation.
+			$style_variation_names = array();
+			if (
+				! empty( $input['styles']['blocks'][ $block ]['variations'] ) &&
+				is_array( $input['styles']['blocks'][ $block ]['variations'] )
+			) {
+				$style_variation_names = array_keys( $input['styles']['blocks'][ $block ]['variations'] );
+			}
+
+			$schema_styles_variations = array();
+			if ( ! empty( $style_variation_names ) ) {
+				$schema_styles_variations = array_fill_keys( $style_variation_names, $styles_non_top_level );
+			}
+
+			$schema_settings_blocks[ $block ]             = static::VALID_SETTINGS;
+			$schema_styles_blocks[ $block ]               = $styles_non_top_level;
+			$schema_styles_blocks[ $block ]['elements']   = $schema_styles_elements;
+			$schema_styles_blocks[ $block ]['variations'] = $schema_styles_variations;
 		}
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$schema['styles']             = static::VALID_STYLES;
 		$schema['styles']['blocks']   = $schema_styles_blocks;
 		$schema['styles']['elements'] = $schema_styles_elements;
@@ -944,6 +1270,9 @@ class WP_Theme_JSON {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Appends a sub-selector to an existing one.
 	 *
 	 * Given the compounded $selector "h1, h2, h3"
@@ -968,8 +1297,11 @@ class WP_Theme_JSON {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Returns the metadata for each block.
 	 *
 	 * Example:
@@ -996,20 +1328,28 @@ class WP_Theme_JSON {
 	 * @since 5.8.0
 	 * @since 5.9.0 Added `duotone` key with CSS selector.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 Added `features` key with block support feature level selectors.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 Added `features` key with block support feature level selectors.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @return array Block metadata.
 	 */
 	protected static function get_blocks_metadata() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$registry = WP_Block_Type_Registry::get_instance();
 		$blocks   = $registry->get_all_registered();
 
 		// Is there metadata for all currently registered blocks?
 		$blocks = array_diff_key( $blocks, static::$blocks_metadata );
 		if ( empty( $blocks ) ) {
+<<<<<<< HEAD
 			return static::$blocks_metadata;
 		}
 
@@ -1023,6 +1363,11 @@ class WP_Theme_JSON {
 		$registry = WP_Block_Type_Registry::get_instance();
 		$blocks   = $registry->get_all_registered();
 >>>>>>> fb785cbb (Initial commit)
+=======
+			return static::$blocks_metadata;
+		}
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		foreach ( $blocks as $block_name => $block_type ) {
 			if (
 				isset( $block_type->supports['__experimentalSelector'] ) &&
@@ -1041,6 +1386,9 @@ class WP_Theme_JSON {
 			}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			// Generate block support feature level selectors if opted into
 			// for the current block.
 			$features = array();
@@ -1060,8 +1408,11 @@ class WP_Theme_JSON {
 				static::$blocks_metadata[ $block_name ]['features'] = $features;
 			}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			// Assign defaults, then overwrite those that the block sets by itself.
 			// If the block selector is compounded, will append the element to each
 			// individual block selector.
@@ -1070,11 +1421,15 @@ class WP_Theme_JSON {
 				$element_selector = array();
 				foreach ( $block_selectors as $selector ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					if ( $selector === $el_selector ) {
 						$element_selector = array( $el_selector );
 						break;
 					}
 					$element_selector[] = static::append_to_selector( $el_selector, $selector . ' ', 'left' );
+<<<<<<< HEAD
 				}
 				static::$blocks_metadata[ $block_name ]['elements'][ $el_name ] = implode( ',', $element_selector );
 			}
@@ -1093,6 +1448,20 @@ class WP_Theme_JSON {
 				static::$blocks_metadata[ $block_name ]['elements'][ $el_name ] = implode( ',', $element_selector );
 			}
 >>>>>>> fb785cbb (Initial commit)
+=======
+				}
+				static::$blocks_metadata[ $block_name ]['elements'][ $el_name ] = implode( ',', $element_selector );
+			}
+			// If the block has style variations, append their selectors to the block metadata.
+			if ( ! empty( $block_type->styles ) ) {
+				$style_selectors = array();
+				foreach ( $block_type->styles as $style ) {
+					// The style variation classname is duplicated in the selector to ensure that it overrides core block styles.
+					$style_selectors[ $style['name'] ] = static::append_to_selector( '.is-style-' . $style['name'] . '.is-style-' . $style['name'], static::$blocks_metadata[ $block_name ]['selector'] );
+				}
+				static::$blocks_metadata[ $block_name ]['styleVariations'] = $style_selectors;
+			}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		return static::$blocks_metadata;
@@ -1108,10 +1477,14 @@ class WP_Theme_JSON {
 	 * @param array $tree   Input to process.
 	 * @param array $schema Schema to adhere to.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return array The modified $tree.
 =======
 	 * @return array Returns the modified $tree.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return array The modified $tree.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	protected static function remove_keys_not_in_schema( $tree, $schema ) {
 		$tree = array_intersect_key( $tree, $schema );
@@ -1178,10 +1551,14 @@ class WP_Theme_JSON {
 	 *                       - `presets`: only the classes for the presets.
 	 * @param array $origins A list of origins to include. By default it includes VALID_ORIGINS.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param array $options An array of options for now used for internal purposes only (may change without notice).
 	 *                       The options currently supported are 'scope' that makes sure all style are scoped to a given selector,
 	 *                       and root_selector which overwrites and forces a given selector to be used on the root node.
 	 * @return string The resulting stylesheet.
+<<<<<<< HEAD
 	 */
 	public function get_stylesheet( $types = array( 'variables', 'styles', 'presets' ), $origins = null, $options = array() ) {
 =======
@@ -1189,6 +1566,10 @@ class WP_Theme_JSON {
 	 */
 	public function get_stylesheet( $types = array( 'variables', 'styles', 'presets' ), $origins = null ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 */
+	public function get_stylesheet( $types = array( 'variables', 'styles', 'presets' ), $origins = null, $options = array() ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( null === $origins ) {
 			$origins = static::VALID_ORIGINS;
 		}
@@ -1210,6 +1591,9 @@ class WP_Theme_JSON {
 		$setting_nodes   = static::get_setting_nodes( $this->theme_json, $blocks_metadata );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$root_style_key    = array_search( static::ROOT_BLOCK_SELECTOR, array_column( $style_nodes, 'selector' ), true );
 		$root_settings_key = array_search( static::ROOT_BLOCK_SELECTOR, array_column( $setting_nodes, 'selector' ), true );
 
@@ -1231,8 +1615,11 @@ class WP_Theme_JSON {
 			}
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$stylesheet = '';
 
 		if ( in_array( 'variables', $types, true ) ) {
@@ -1241,6 +1628,9 @@ class WP_Theme_JSON {
 
 		if ( in_array( 'styles', $types, true ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( false !== $root_style_key ) {
 				$stylesheet .= $this->get_root_layout_rules( $style_nodes[ $root_style_key ]['selector'], $style_nodes[ $root_style_key ] );
 			}
@@ -1272,9 +1662,12 @@ class WP_Theme_JSON {
 			foreach ( $base_styles_nodes as $base_style_node ) {
 				$stylesheet .= $this->get_layout_styles( $base_style_node );
 			}
+<<<<<<< HEAD
 =======
 			$stylesheet .= $this->get_block_classes( $style_nodes );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		if ( in_array( 'presets', $types, true ) ) {
@@ -1286,6 +1679,9 @@ class WP_Theme_JSON {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Processes the CSS, to apply nesting.
 	 *
 	 * @since 6.2.0
@@ -1333,8 +1729,11 @@ class WP_Theme_JSON {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Returns the page templates of the active theme.
 	 *
 	 * @since 5.9.0
@@ -1399,9 +1798,13 @@ class WP_Theme_JSON {
 	 *              and no longer returns preset classes.
 	 *              Removed the `$setting_nodes` parameter.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 Moved most internal logic to `get_styles_for_block()`.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 Moved most internal logic to `get_styles_for_block()`.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @param array $style_nodes Nodes with styles.
 	 * @return string The new stylesheet.
@@ -1413,6 +1816,7 @@ class WP_Theme_JSON {
 			if ( null === $metadata['selector'] ) {
 				continue;
 			}
+<<<<<<< HEAD
 <<<<<<< HEAD
 			$block_rules .= static::get_styles_for_block( $metadata );
 		}
@@ -1533,43 +1937,105 @@ class WP_Theme_JSON {
 						}
 					}
 =======
+=======
+			$block_rules .= static::get_styles_for_block( $metadata );
+		}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
-			$node         = _wp_array_get( $this->theme_json, $metadata['path'], array() );
-			$selector     = $metadata['selector'];
-			$settings     = _wp_array_get( $this->theme_json, array( 'settings' ) );
-			$declarations = static::compute_style_properties( $node, $settings );
+		return $block_rules;
+	}
 
-			// 1. Separate the ones who use the general selector
-			// and the ones who use the duotone selector.
-			$declarations_duotone = array();
-			foreach ( $declarations as $index => $declaration ) {
-				if ( 'filter' === $declaration['name'] ) {
-					unset( $declarations[ $index ] );
-					$declarations_duotone[] = $declaration;
+	/**
+	 * Gets the CSS layout rules for a particular block from theme.json layout definitions.
+	 *
+	 * @since 6.1.0
+	 *
+	 * @param array $block_metadata Metadata about the block to get styles for.
+	 * @return string Layout styles for the block.
+	 */
+	protected function get_layout_styles( $block_metadata ) {
+		$block_rules = '';
+		$block_type  = null;
+
+		// Skip outputting layout styles if explicitly disabled.
+		if ( current_theme_supports( 'disable-layout-styles' ) ) {
+			return $block_rules;
+		}
+
+		if ( isset( $block_metadata['name'] ) ) {
+			$block_type = WP_Block_Type_Registry::get_instance()->get_registered( $block_metadata['name'] );
+			if ( ! block_has_support( $block_type, array( '__experimentalLayout' ), false ) ) {
+				return $block_rules;
+			}
+		}
+
+		$selector                 = isset( $block_metadata['selector'] ) ? $block_metadata['selector'] : '';
+		$has_block_gap_support    = _wp_array_get( $this->theme_json, array( 'settings', 'spacing', 'blockGap' ) ) !== null;
+		$has_fallback_gap_support = ! $has_block_gap_support; // This setting isn't useful yet: it exists as a placeholder for a future explicit fallback gap styles support.
+		$node                     = _wp_array_get( $this->theme_json, $block_metadata['path'], array() );
+		$layout_definitions       = _wp_array_get( $this->theme_json, array( 'settings', 'layout', 'definitions' ), array() );
+		$layout_selector_pattern  = '/^[a-zA-Z0-9\-\.\ *+>:\(\)]*$/'; // Allow alphanumeric classnames, spaces, wildcard, sibling, child combinator and pseudo class selectors.
+
+		// Gap styles will only be output if the theme has block gap support, or supports a fallback gap.
+		// Default layout gap styles will be skipped for themes that do not explicitly opt-in to blockGap with a `true` or `false` value.
+		if ( $has_block_gap_support || $has_fallback_gap_support ) {
+			$block_gap_value = null;
+			// Use a fallback gap value if block gap support is not available.
+			if ( ! $has_block_gap_support ) {
+				$block_gap_value = static::ROOT_BLOCK_SELECTOR === $selector ? '0.5em' : null;
+				if ( ! empty( $block_type ) ) {
+					$block_gap_value = _wp_array_get( $block_type->supports, array( 'spacing', 'blockGap', '__experimentalDefault' ), null );
+				}
+			} else {
+				$block_gap_value = static::get_property_value( $node, array( 'spacing', 'blockGap' ) );
+			}
+
+			// Support split row / column values and concatenate to a shorthand value.
+			if ( is_array( $block_gap_value ) ) {
+				if ( isset( $block_gap_value['top'] ) && isset( $block_gap_value['left'] ) ) {
+					$gap_row         = static::get_property_value( $node, array( 'spacing', 'blockGap', 'top' ) );
+					$gap_column      = static::get_property_value( $node, array( 'spacing', 'blockGap', 'left' ) );
+					$block_gap_value = $gap_row === $gap_column ? $gap_row : $gap_row . ' ' . $gap_column;
+				} else {
+					// Skip outputting gap value if not all sides are provided.
+					$block_gap_value = null;
 				}
 			}
 
-			/*
-			 * Reset default browser margin on the root body element.
-			 * This is set on the root selector **before** generating the ruleset
-			 * from the `theme.json`. This is to ensure that if the `theme.json` declares
-			 * `margin` in its `spacing` declaration for the `body` element then these
-			 * user-generated values take precedence in the CSS cascade.
-			 * @link https://github.com/WordPress/gutenberg/issues/36147.
-			 */
-			if ( static::ROOT_BLOCK_SELECTOR === $selector ) {
-				$block_rules .= 'body { margin: 0; }';
-			}
+			// If the block should have custom gap, add the gap styles.
+			if ( null !== $block_gap_value && false !== $block_gap_value && '' !== $block_gap_value ) {
+				foreach ( $layout_definitions as $layout_definition_key => $layout_definition ) {
+					// Allow outputting fallback gap styles for flex layout type when block gap support isn't available.
+					if ( ! $has_block_gap_support && 'flex' !== $layout_definition_key ) {
+						continue;
+					}
 
-			// 2. Generate the rules that use the general selector.
-			$block_rules .= static::to_ruleset( $selector, $declarations );
+					$class_name    = sanitize_title( _wp_array_get( $layout_definition, array( 'className' ), false ) );
+					$spacing_rules = _wp_array_get( $layout_definition, array( 'spacingStyles' ), array() );
 
-			// 3. Generate the rules that use the duotone selector.
-			if ( isset( $metadata['duotone'] ) && ! empty( $declarations_duotone ) ) {
-				$selector_duotone = static::scope_selector( $metadata['selector'], $metadata['duotone'] );
-				$block_rules     .= static::to_ruleset( $selector_duotone, $declarations_duotone );
-			}
+					if (
+						! empty( $class_name ) &&
+						! empty( $spacing_rules )
+					) {
+						foreach ( $spacing_rules as $spacing_rule ) {
+							$declarations = array();
+							if (
+								isset( $spacing_rule['selector'] ) &&
+								preg_match( $layout_selector_pattern, $spacing_rule['selector'] ) &&
+								! empty( $spacing_rule['rules'] )
+							) {
+								// Iterate over each of the styling rules and substitute non-string values such as `null` with the real `blockGap` value.
+								foreach ( $spacing_rule['rules'] as $css_property => $css_value ) {
+									$current_css_value = is_string( $css_value ) ? $css_value : $block_gap_value;
+									if ( static::is_safe_css_declaration( $css_property, $current_css_value ) ) {
+										$declarations[] = array(
+											'name'  => $css_property,
+											'value' => $current_css_value,
+										);
+									}
+								}
 
+<<<<<<< HEAD
 			if ( static::ROOT_BLOCK_SELECTOR === $selector ) {
 				$block_rules .= '.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }';
 				$block_rules .= '.wp-site-blocks > .alignright { float: right; margin-left: 2em; }';
@@ -1580,11 +2046,38 @@ class WP_Theme_JSON {
 					$block_rules .= '.wp-site-blocks > * { margin-block-start: 0; margin-block-end: 0; }';
 					$block_rules .= '.wp-site-blocks > * + * { margin-block-start: var( --wp--style--block-gap ); }';
 >>>>>>> fb785cbb (Initial commit)
+=======
+								if ( ! $has_block_gap_support ) {
+									// For fallback gap styles, use lower specificity, to ensure styles do not unintentionally override theme styles.
+									$format          = static::ROOT_BLOCK_SELECTOR === $selector ? ':where(.%2$s%3$s)' : ':where(%1$s.%2$s%3$s)';
+									$layout_selector = sprintf(
+										$format,
+										$selector,
+										$class_name,
+										$spacing_rule['selector']
+									);
+								} else {
+									$format          = static::ROOT_BLOCK_SELECTOR === $selector ? '%s .%s%s' : '%s.%s%s';
+									$layout_selector = sprintf(
+										$format,
+										$selector,
+										$class_name,
+										$spacing_rule['selector']
+									);
+								}
+								$block_rules .= static::to_ruleset( $layout_selector, $declarations );
+							}
+						}
+					}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				}
 			}
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// Output base styles.
 		if (
 			static::ROOT_BLOCK_SELECTOR === $selector
@@ -1649,8 +2142,11 @@ class WP_Theme_JSON {
 				}
 			}
 		}
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return $block_rules;
 	}
 
@@ -1730,16 +2226,22 @@ class WP_Theme_JSON {
 			$selector = $metadata['selector'];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$node                    = _wp_array_get( $this->theme_json, $metadata['path'], array() );
 			$declarations            = static::compute_preset_vars( $node, $origins );
 			$theme_vars_declarations = static::compute_theme_vars( $node );
 			foreach ( $theme_vars_declarations as $theme_vars_declaration ) {
 				$declarations[] = $theme_vars_declaration;
 			}
+<<<<<<< HEAD
 =======
 			$node         = _wp_array_get( $this->theme_json, $metadata['path'], array() );
 			$declarations = array_merge( static::compute_preset_vars( $node, $origins ), static::compute_theme_vars( $node ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 			$stylesheet .= static::to_ruleset( $selector, $declarations );
 		}
@@ -1756,10 +2258,14 @@ class WP_Theme_JSON {
 	 * @param string $selector     CSS selector.
 	 * @param array  $declarations List of declarations.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return string The resulting CSS ruleset.
 =======
 	 * @return string CSS ruleset.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return string The resulting CSS ruleset.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	protected static function to_ruleset( $selector, $declarations ) {
 		if ( empty( $declarations ) ) {
@@ -1777,6 +2283,7 @@ class WP_Theme_JSON {
 	}
 
 	/**
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * Given a settings array, returns the generated rulesets
 =======
@@ -1805,6 +2312,9 @@ class WP_Theme_JSON {
 	/**
 	 * Given a settings array, it returns the generated rulesets
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Given a settings array, returns the generated rulesets
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * for the preset classes.
 	 *
 	 * @since 5.8.0
@@ -1863,10 +2373,14 @@ class WP_Theme_JSON {
 	 * @return string Scoped selector.
 	 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public static function scope_selector( $scope, $selector ) {
 =======
 	protected static function scope_selector( $scope, $selector ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	public static function scope_selector( $scope, $selector ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$scopes    = explode( ',', $scope );
 		$selectors = explode( ',', $selector );
 
@@ -1874,6 +2388,9 @@ class WP_Theme_JSON {
 		foreach ( $scopes as $outer ) {
 			foreach ( $selectors as $inner ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$outer = trim( $outer );
 				$inner = trim( $inner );
 				if ( ! empty( $outer ) && ! empty( $inner ) ) {
@@ -1883,6 +2400,7 @@ class WP_Theme_JSON {
 				} elseif ( empty( $inner ) ) {
 					$selectors_scoped[] = $outer;
 				}
+<<<<<<< HEAD
 			}
 		}
 
@@ -1895,6 +2413,13 @@ class WP_Theme_JSON {
 
 		return implode( ', ', $selectors_scoped );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			}
+		}
+
+		$result = implode( ', ', $selectors_scoped );
+		return $result;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -1999,10 +2524,14 @@ class WP_Theme_JSON {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Transforms a slug into a CSS Custom Property.
 =======
 	 * Transform a slug into a CSS Custom Property.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Transforms a slug into a CSS Custom Property.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.9.0
 	 *
@@ -2016,10 +2545,14 @@ class WP_Theme_JSON {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Given the block settings, extracts the CSS Custom Properties
 =======
 	 * Given the block settings, it extracts the CSS Custom Properties
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Given the block settings, extracts the CSS Custom Properties
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * for the presets and adds them to the $declarations array
 	 * following the format:
 	 *
@@ -2034,10 +2567,14 @@ class WP_Theme_JSON {
 	 * @param array $settings Settings to process.
 	 * @param array $origins  List of origins to process.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return array The modified $declarations.
 =======
 	 * @return array Returns the modified $declarations.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return array The modified $declarations.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	protected static function compute_preset_vars( $settings, $origins ) {
 		$declarations = array();
@@ -2056,10 +2593,14 @@ class WP_Theme_JSON {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Given an array of settings, extracts the CSS Custom Properties
 =======
 	 * Given an array of settings, it extracts the CSS Custom Properties
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Given an array of settings, extracts the CSS Custom Properties
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * for the custom values and adds them to the $declarations
 	 * array following the format:
 	 *
@@ -2072,10 +2613,14 @@ class WP_Theme_JSON {
 	 *
 	 * @param array $settings Settings to process.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return array The modified $declarations.
 =======
 	 * @return array Returns the modified $declarations.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return array The modified $declarations.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	protected static function compute_theme_vars( $settings ) {
 		$declarations  = array();
@@ -2139,11 +2684,15 @@ class WP_Theme_JSON {
 
 			if ( is_array( $value ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$new_prefix        = $new_key . $token;
 				$flattened_subtree = static::flatten_tree( $value, $new_prefix, $token );
 				foreach ( $flattened_subtree as $subtree_key => $subtree_value ) {
 					$result[ $subtree_key ] = $subtree_value;
 				}
+<<<<<<< HEAD
 =======
 				$new_prefix = $new_key . $token;
 				$result     = array_merge(
@@ -2151,6 +2700,8 @@ class WP_Theme_JSON {
 					static::flatten_tree( $value, $new_prefix, $token )
 				);
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			} else {
 				$result[ $new_key ] = $value;
 			}
@@ -2170,6 +2721,7 @@ class WP_Theme_JSON {
 	 * @since 5.8.0
 	 * @since 5.9.0 Added the `$settings` and `$properties` parameters.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 Added `$theme_json`, `$selector`, and `$use_root_padding` parameters.
 	 *
 	 * @param array   $styles Styles to process.
@@ -2182,14 +2734,24 @@ class WP_Theme_JSON {
 	 */
 	protected static function compute_style_properties( $styles, $settings = array(), $properties = null, $theme_json = null, $selector = null, $use_root_padding = null ) {
 =======
+=======
+	 * @since 6.1.0 Added `$theme_json`, `$selector`, and `$use_root_padding` parameters.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
-	 * @param array $styles    Styles to process.
-	 * @param array $settings  Theme settings.
-	 * @param array $properties Properties metadata.
-	 * @return array Returns the modified $declarations.
+	 * @param array   $styles Styles to process.
+	 * @param array   $settings Theme settings.
+	 * @param array   $properties Properties metadata.
+	 * @param array   $theme_json Theme JSON array.
+	 * @param string  $selector The style block selector.
+	 * @param boolean $use_root_padding Whether to add custom properties at root level.
+	 * @return array  Returns the modified $declarations.
 	 */
+<<<<<<< HEAD
 	protected static function compute_style_properties( $styles, $settings = array(), $properties = null ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	protected static function compute_style_properties( $styles, $settings = array(), $properties = null, $theme_json = null, $selector = null, $use_root_padding = null ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( null === $properties ) {
 			$properties = static::PROPERTIES_METADATA;
 		}
@@ -2199,6 +2761,7 @@ class WP_Theme_JSON {
 			return $declarations;
 		}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		$root_variable_duplicates = array();
 
@@ -2221,6 +2784,25 @@ class WP_Theme_JSON {
 		foreach ( $properties as $css_property => $value_path ) {
 			$value = static::get_property_value( $styles, $value_path );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$root_variable_duplicates = array();
+
+		foreach ( $properties as $css_property => $value_path ) {
+			$value = static::get_property_value( $styles, $value_path, $theme_json );
+
+			if ( str_starts_with( $css_property, '--wp--style--root--' ) && ( static::ROOT_BLOCK_SELECTOR !== $selector || ! $use_root_padding ) ) {
+				continue;
+			}
+			// Root-level padding styles don't currently support strings with CSS shorthand values.
+			// This may change: https://github.com/WordPress/gutenberg/issues/40132.
+			if ( '--wp--style--root--padding' === $css_property && is_string( $value ) ) {
+				continue;
+			}
+
+			if ( str_starts_with( $css_property, '--wp--style--root--' ) && $use_root_padding ) {
+				$root_variable_duplicates[] = substr( $css_property, strlen( '--wp--style--root--' ) );
+			}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 			// Look up protected properties, keyed by value path.
 			// Skip protected properties that are explicitly set to `null`.
@@ -2228,10 +2810,15 @@ class WP_Theme_JSON {
 				$path_string = implode( '.', $value_path );
 				if (
 <<<<<<< HEAD
+<<<<<<< HEAD
 					// TODO: Replace array_key_exists() with isset() check once WordPress drops
 					// support for PHP 5.6. See https://core.trac.wordpress.org/ticket/57067.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+					// TODO: Replace array_key_exists() with isset() check once WordPress drops
+					// support for PHP 5.6. See https://core.trac.wordpress.org/ticket/57067.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					array_key_exists( $path_string, static::PROTECTED_PROPERTIES ) &&
 					_wp_array_get( $settings, static::PROTECTED_PROPERTIES[ $path_string ], null ) === null
 				) {
@@ -2246,6 +2833,9 @@ class WP_Theme_JSON {
 			}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			// Calculates fluid typography rules where available.
 			if ( 'font-size' === $css_property ) {
 				/*
@@ -2258,8 +2848,11 @@ class WP_Theme_JSON {
 				$value = wp_get_typography_font_size_value( array( 'size' => $value ) );
 			}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$declarations[] = array(
 				'name'  => $css_property,
 				'value' => $value,
@@ -2267,6 +2860,9 @@ class WP_Theme_JSON {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// If a variable value is added to the root, the corresponding property should be removed.
 		foreach ( $root_variable_duplicates as $duplicate ) {
 			$discard = array_search( $duplicate, array_column( $declarations, 'name' ), true );
@@ -2275,8 +2871,11 @@ class WP_Theme_JSON {
 			}
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return $declarations;
 	}
 
@@ -2288,10 +2887,14 @@ class WP_Theme_JSON {
 	 * "--wp--preset--color--secondary".
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * It also converts references to a path to the value
 	 * stored at that location, e.g.
 	 * { "ref": "style.color.background" } => "#fff".
 	 *
+<<<<<<< HEAD
 	 * @since 5.8.0
 	 * @since 5.9.0 Added support for values of array type, which are returned as is.
 	 * @since 6.1.0 Added the `$theme_json` parameter.
@@ -2346,21 +2949,65 @@ class WP_Theme_JSON {
 
 		// Convert custom CSS properties.
 =======
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @since 5.8.0
 	 * @since 5.9.0 Added support for values of array type, which are returned as is.
+	 * @since 6.1.0 Added the `$theme_json` parameter.
 	 *
 	 * @param array $styles Styles subtree.
 	 * @param array $path   Which property to process.
+	 * @param array $theme_json Theme JSON array.
 	 * @return string|array Style property value.
 	 */
-	protected static function get_property_value( $styles, $path ) {
+	protected static function get_property_value( $styles, $path, $theme_json = null ) {
 		$value = _wp_array_get( $styles, $path, '' );
 
-		if ( '' === $value || is_array( $value ) ) {
+		if ( '' === $value || null === $value ) {
+			// No need to process the value further.
+			return '';
+		}
+
+		/*
+		 * This converts references to a path to the value at that path
+		 * where the values is an array with a "ref" key, pointing to a path.
+		 * For example: { "ref": "style.color.background" } => "#fff".
+		 */
+		if ( is_array( $value ) && isset( $value['ref'] ) ) {
+			$value_path = explode( '.', $value['ref'] );
+			$ref_value  = _wp_array_get( $theme_json, $value_path );
+			// Only use the ref value if we find anything.
+			if ( ! empty( $ref_value ) && is_string( $ref_value ) ) {
+				$value = $ref_value;
+			}
+
+			if ( is_array( $ref_value ) && isset( $ref_value['ref'] ) ) {
+				$path_string      = json_encode( $path );
+				$ref_value_string = json_encode( $ref_value );
+				_doing_it_wrong(
+					'get_property_value',
+					sprintf(
+						/* translators: 1: theme.json, 2: Value name, 3: Value path, 4: Another value name. */
+						__( 'Your %1$s file uses a dynamic value (%2$s) for the path at %3$s. However, the value at %3$s is also a dynamic value (pointing to %4$s) and pointing to another dynamic value is not supported. Please update %3$s to point directly to %4$s.' ),
+						'theme.json',
+						$ref_value_string,
+						$path_string,
+						$ref_value['ref']
+					),
+					'6.1.0'
+				);
+			}
+		}
+
+		if ( is_array( $value ) ) {
 			return $value;
 		}
 
+<<<<<<< HEAD
 >>>>>>> fb785cbb (Initial commit)
+=======
+		// Convert custom CSS properties.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$prefix     = 'var:';
 		$prefix_len = strlen( $prefix );
 		$token_in   = '|';
@@ -2396,10 +3043,14 @@ class WP_Theme_JSON {
 	 * @param array $theme_json The tree to extract setting nodes from.
 	 * @param array $selectors  List of selectors per block.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return array An array of setting nodes metadata.
 =======
 	 * @return array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return array An array of setting nodes metadata.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	protected static function get_setting_nodes( $theme_json, $selectors = array() ) {
 		$nodes = array();
@@ -2454,10 +3105,14 @@ class WP_Theme_JSON {
 	 * @param array $theme_json The tree to extract style nodes from.
 	 * @param array $selectors  List of selectors per block.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return array An array of style nodes metadata.
 =======
 	 * @return array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return array An array of style nodes metadata.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	protected static function get_style_nodes( $theme_json, $selectors = array() ) {
 		$nodes = array();
@@ -2473,18 +3128,27 @@ class WP_Theme_JSON {
 
 		if ( isset( $theme_json['styles']['elements'] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			foreach ( self::ELEMENTS as $element => $selector ) {
 				if ( ! isset( $theme_json['styles']['elements'][ $element ] ) ) {
 					continue;
 				}
+<<<<<<< HEAD
 =======
 			foreach ( $theme_json['styles']['elements'] as $element => $node ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$nodes[] = array(
 					'path'     => array( 'styles', 'elements', $element ),
 					'selector' => static::ELEMENTS[ $element ],
 				);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 				// Handle any pseudo selectors for the element.
 				// TODO: Replace array_key_exists() with isset() check once WordPress drops
@@ -2500,8 +3164,11 @@ class WP_Theme_JSON {
 						}
 					}
 				}
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 		}
 
@@ -2511,6 +3178,9 @@ class WP_Theme_JSON {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$block_nodes = static::get_block_nodes( $theme_json );
 		foreach ( $block_nodes as $block_node ) {
 			$nodes[] = $block_node;
@@ -2597,8 +3267,11 @@ class WP_Theme_JSON {
 			return $nodes;
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		foreach ( $theme_json['styles']['blocks'] as $name => $node ) {
 			$selector = null;
 			if ( isset( $selectors[ $name ]['selector'] ) ) {
@@ -2611,6 +3284,9 @@ class WP_Theme_JSON {
 			}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$feature_selectors = null;
 			if ( isset( $selectors[ $name ]['features'] ) ) {
 				$feature_selectors = $selectors[ $name ]['features'];
@@ -2626,6 +3302,7 @@ class WP_Theme_JSON {
 				}
 			}
 
+<<<<<<< HEAD
 			$nodes[] = array(
 				'name'       => $name,
 				'path'       => array( 'styles', 'blocks', $name ),
@@ -2639,6 +3316,15 @@ class WP_Theme_JSON {
 				'selector' => $selector,
 				'duotone'  => $duotone_selector,
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$nodes[] = array(
+				'name'       => $name,
+				'path'       => array( 'styles', 'blocks', $name ),
+				'selector'   => $selector,
+				'duotone'    => $duotone_selector,
+				'features'   => $feature_selectors,
+				'variations' => $variation_selectors,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			);
 
 			if ( isset( $theme_json['styles']['blocks'][ $name ]['elements'] ) ) {
@@ -2648,6 +3334,9 @@ class WP_Theme_JSON {
 						'selector' => $selectors[ $name ]['elements'][ $element ],
 					);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 					// Handle any pseudo selectors for the element.
 					// TODO: Replace array_key_exists() with isset() check once WordPress drops
@@ -2662,8 +3351,11 @@ class WP_Theme_JSON {
 							}
 						}
 					}
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				}
 			}
 		}
@@ -2673,6 +3365,9 @@ class WP_Theme_JSON {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Gets the CSS rules for a particular block from theme.json.
 	 *
 	 * @since 6.1.0
@@ -2944,8 +3639,11 @@ class WP_Theme_JSON {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * For metadata values that can either be booleans or paths to booleans, gets the value.
 	 *
 	 * ```php
@@ -2965,10 +3663,14 @@ class WP_Theme_JSON {
 	 * @since 6.0.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param array      $data          The data to inspect.
 	 * @param bool|array $path          Boolean or path to a boolean.
 	 * @param bool       $default_value Default value if the referenced path is missing.
 	 *                                  Default false.
+<<<<<<< HEAD
 	 * @return bool Value of boolean metadata.
 	 */
 	protected static function get_metadata_boolean( $data, $path, $default_value = false ) {
@@ -2981,6 +3683,11 @@ class WP_Theme_JSON {
 	 */
 	protected static function get_metadata_boolean( $data, $path, $default = false ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return bool Value of boolean metadata.
+	 */
+	protected static function get_metadata_boolean( $data, $path, $default_value = false ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( is_bool( $path ) ) {
 			return $path;
 		}
@@ -2992,6 +3699,7 @@ class WP_Theme_JSON {
 			}
 		}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		return $default_value;
 	}
@@ -3005,6 +3713,13 @@ class WP_Theme_JSON {
 	/**
 	 * Merge new incoming data.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return $default_value;
+	}
+
+	/**
+	 * Merges new incoming data.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.8.0
 	 * @since 5.9.0 Duotone preset also has origins.
@@ -3041,6 +3756,7 @@ class WP_Theme_JSON {
 		$slugs_global = static::get_default_slugs( $this->theme_json, array( 'settings' ) );
 		foreach ( $nodes as $node ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			// Replace the spacing.units.
 			$path   = $node['path'];
 			$path[] = 'spacing';
@@ -3053,6 +3769,13 @@ class WP_Theme_JSON {
 			// Replace the spacing.units.
 			$path    = array_merge( $node['path'], array( 'spacing', 'units' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			// Replace the spacing.units.
+			$path   = $node['path'];
+			$path[] = 'spacing';
+			$path[] = 'units';
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$content = _wp_array_get( $incoming_data, $path, null );
 			if ( isset( $content ) ) {
 				_wp_array_set( $this->theme_json, $path, $content );
@@ -3064,6 +3787,9 @@ class WP_Theme_JSON {
 
 				foreach ( static::VALID_ORIGINS as $origin ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					$base_path = $node['path'];
 					foreach ( $preset['path'] as $leaf ) {
 						$base_path[] = $leaf;
@@ -3073,16 +3799,20 @@ class WP_Theme_JSON {
 					$path[] = $origin;
 
 					$content = _wp_array_get( $incoming_data, $path, null );
+<<<<<<< HEAD
 =======
 					$base_path = array_merge( $node['path'], $preset['path'] );
 					$path      = array_merge( $base_path, array( $origin ) );
 					$content   = _wp_array_get( $incoming_data, $path, null );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					if ( ! isset( $content ) ) {
 						continue;
 					}
 
 					if ( 'theme' === $origin && $preset['use_default_names'] ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 						foreach ( $content as $key => $item ) {
 							if ( ! isset( $item['name'] ) ) {
@@ -3096,6 +3826,13 @@ class WP_Theme_JSON {
 								if ( null !== $name ) {
 									$item['name'] = $name;
 >>>>>>> fb785cbb (Initial commit)
+=======
+						foreach ( $content as $key => $item ) {
+							if ( ! isset( $item['name'] ) ) {
+								$name = static::get_name_from_defaults( $item['slug'], $base_path );
+								if ( null !== $name ) {
+									$content[ $key ]['name'] = $name;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 								}
 							}
 						}
@@ -3108,11 +3845,17 @@ class WP_Theme_JSON {
 						_wp_array_set( $this->theme_json, $path, $content );
 					} else {
 <<<<<<< HEAD
+<<<<<<< HEAD
 						$slugs_node = static::get_default_slugs( $this->theme_json, $node['path'] );
 						$slugs      = array_merge_recursive( $slugs_global, $slugs_node );
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+						$slugs_node = static::get_default_slugs( $this->theme_json, $node['path'] );
+						$slugs      = array_merge_recursive( $slugs_global, $slugs_node );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						$slugs_for_preset = _wp_array_get( $slugs, $preset['path'], array() );
 						$content          = static::filter_slugs( $content, $slugs_for_preset );
 						_wp_array_set( $this->theme_json, $path, $content );
@@ -3158,10 +3901,14 @@ class WP_Theme_JSON {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Determines whether a presets should be overridden or not.
 =======
 	 * Returns whether a presets should be overridden or not.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Determines whether a presets should be overridden or not.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.9.0
 	 * @deprecated 6.0.0 Use {@see 'get_metadata_boolean'} instead.
@@ -3230,15 +3977,21 @@ class WP_Theme_JSON {
 
 		foreach ( static::PRESETS_METADATA as $metadata ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$path = $node_path;
 			foreach ( $metadata['path'] as $leaf ) {
 				$path[] = $leaf;
 			}
 			$path[] = 'default';
 
+<<<<<<< HEAD
 =======
 			$path   = array_merge( $node_path, $metadata['path'], array( 'default' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$preset = _wp_array_get( $data, $path, null );
 			if ( ! isset( $preset ) ) {
 				continue;
@@ -3246,12 +3999,16 @@ class WP_Theme_JSON {
 
 			$slugs_for_preset = array();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			foreach ( $preset as $item ) {
 				if ( isset( $item['slug'] ) ) {
 					$slugs_for_preset[] = $item['slug'];
 				}
 			}
 
+<<<<<<< HEAD
 =======
 			$slugs_for_preset = array_map(
 				static function( $value ) {
@@ -3260,6 +4017,8 @@ class WP_Theme_JSON {
 				$preset
 			);
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			_wp_array_set( $slugs, $metadata['path'], $slugs_for_preset );
 		}
 
@@ -3268,10 +4027,14 @@ class WP_Theme_JSON {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Gets a `default`'s preset name by a provided slug.
 =======
 	 * Get a `default`'s preset name by a provided slug.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Gets a `default`'s preset name by a provided slug.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.9.0
 	 *
@@ -3281,11 +4044,16 @@ class WP_Theme_JSON {
 	 */
 	protected function get_name_from_defaults( $slug, $base_path ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$path            = $base_path;
 		$path[]          = 'default';
 =======
 		$path            = array_merge( $base_path, array( 'default' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$path            = $base_path;
+		$path[]          = 'default';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$default_content = _wp_array_get( $this->theme_json, $path, null );
 		if ( ! $default_content ) {
 			return null;
@@ -3338,6 +4106,7 @@ class WP_Theme_JSON {
 		$valid_block_names   = array_keys( static::get_blocks_metadata() );
 		$valid_element_names = array_keys( static::ELEMENTS );
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		$theme_json = static::sanitize( $theme_json, $valid_block_names, $valid_element_names );
 
@@ -3350,6 +4119,14 @@ class WP_Theme_JSON {
 		$blocks_metadata = static::get_blocks_metadata();
 		$style_nodes     = static::get_style_nodes( $theme_json, $blocks_metadata );
 >>>>>>> fb785cbb (Initial commit)
+=======
+
+		$theme_json = static::sanitize( $theme_json, $valid_block_names, $valid_element_names );
+
+		$blocks_metadata = static::get_blocks_metadata();
+		$style_nodes     = static::get_style_nodes( $theme_json, $blocks_metadata );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		foreach ( $style_nodes as $metadata ) {
 			$input = _wp_array_get( $theme_json, $metadata['path'], array() );
 			if ( empty( $input ) ) {
@@ -3357,6 +4134,9 @@ class WP_Theme_JSON {
 			}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			// The global styles custom CSS is not sanitized, but can only be edited by users with 'edit_css' capability.
 			if ( isset( $input['css'] ) && current_user_can( 'edit_css' ) ) {
 				$output = $input;
@@ -3384,9 +4164,12 @@ class WP_Theme_JSON {
 				}
 			}
 
+<<<<<<< HEAD
 =======
 			$output = static::remove_insecure_styles( $input );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( ! empty( $output ) ) {
 				_wp_array_set( $sanitized, $metadata['path'], $output );
 			}
@@ -3434,6 +4217,7 @@ class WP_Theme_JSON {
 		foreach ( static::PRESETS_METADATA as $preset_metadata ) {
 			foreach ( static::VALID_ORIGINS as $origin ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$path_with_origin   = $preset_metadata['path'];
 				$path_with_origin[] = $origin;
 				$presets            = _wp_array_get( $input, $path_with_origin, null );
@@ -3441,6 +4225,11 @@ class WP_Theme_JSON {
 				$path_with_origin = array_merge( $preset_metadata['path'], array( $origin ) );
 				$presets          = _wp_array_get( $input, $path_with_origin, null );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$path_with_origin   = $preset_metadata['path'];
+				$path_with_origin[] = $origin;
+				$presets            = _wp_array_get( $input, $path_with_origin, null );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				if ( null === $presets ) {
 					continue;
 				}
@@ -3481,12 +4270,18 @@ class WP_Theme_JSON {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		// Ensure indirect properties not included in any `PRESETS_METADATA` value are allowed.
 		static::remove_indirect_properties( $input, $output );
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return $output;
 	}
 
@@ -3516,12 +4311,18 @@ class WP_Theme_JSON {
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		// Ensure indirect properties not handled by `compute_style_properties` are allowed.
 		static::remove_indirect_properties( $input, $output );
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return $output;
 	}
 
@@ -3542,6 +4343,9 @@ class WP_Theme_JSON {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Removes indirect properties from the given input node and
 	 * sets in the given output node.
 	 *
@@ -3565,8 +4369,11 @@ class WP_Theme_JSON {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Returns the raw data.
 	 *
 	 * @since 5.8.0
@@ -3726,13 +4533,19 @@ class WP_Theme_JSON {
 		foreach ( $nodes as $node ) {
 			foreach ( static::PRESETS_METADATA as $preset_metadata ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$path = $node['path'];
 				foreach ( $preset_metadata['path'] as $preset_metadata_path ) {
 					$path[] = $preset_metadata_path;
 				}
+<<<<<<< HEAD
 =======
 				$path   = array_merge( $node['path'], $preset_metadata['path'] );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$preset = _wp_array_get( $output, $path, null );
 				if ( null === $preset ) {
 					continue;
@@ -3756,10 +4569,14 @@ class WP_Theme_JSON {
 				$flattened_preset = array();
 				foreach ( $items as $slug => $value ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 					$flattened_preset[] = array_merge( array( 'slug' => (string) $slug ), $value );
 =======
 					$flattened_preset[] = array_merge( array( 'slug' => $slug ), $value );
 >>>>>>> fb785cbb (Initial commit)
+=======
+					$flattened_preset[] = array_merge( array( 'slug' => (string) $slug ), $value );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				}
 				_wp_array_set( $output, $path, $flattened_preset );
 			}
@@ -3771,13 +4588,19 @@ class WP_Theme_JSON {
 			$all_opt_ins_are_set = true;
 			foreach ( static::APPEARANCE_TOOLS_OPT_INS as $opt_in_path ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$full_path = $node['path'];
 				foreach ( $opt_in_path as $opt_in_path_item ) {
 					$full_path[] = $opt_in_path_item;
 				}
+<<<<<<< HEAD
 =======
 				$full_path = array_merge( $node['path'], $opt_in_path );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				// Use "unset prop" as a marker instead of "null" because
 				// "null" can be a valid value for some props (e.g. blockGap).
 				$opt_in_value = _wp_array_get( $output, $full_path, 'unset prop' );
@@ -3788,6 +4611,7 @@ class WP_Theme_JSON {
 			}
 
 			if ( $all_opt_ins_are_set ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 				$node_path_with_appearance_tools   = $node['path'];
 				$node_path_with_appearance_tools[] = 'appearanceTools';
@@ -3802,6 +4626,16 @@ class WP_Theme_JSON {
 				foreach ( static::APPEARANCE_TOOLS_OPT_INS as $opt_in_path ) {
 					$full_path = array_merge( $node['path'], $opt_in_path );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$node_path_with_appearance_tools   = $node['path'];
+				$node_path_with_appearance_tools[] = 'appearanceTools';
+				_wp_array_set( $output, $node_path_with_appearance_tools, true );
+				foreach ( static::APPEARANCE_TOOLS_OPT_INS as $opt_in_path ) {
+					$full_path = $node['path'];
+					foreach ( $opt_in_path as $opt_in_path_item ) {
+						$full_path[] = $opt_in_path_item;
+					}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					// Use "unset prop" as a marker instead of "null" because
 					// "null" can be a valid value for some props (e.g. blockGap).
 					$opt_in_value = _wp_array_get( $output, $full_path, 'unset prop' );
@@ -3845,6 +4679,9 @@ class WP_Theme_JSON {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	/**
 	 * Sets the spacingSizes array based on the spacingScale values from theme.json.
 	 *
@@ -3967,6 +4804,9 @@ class WP_Theme_JSON {
 
 		_wp_array_set( $this->theme_json, array( 'settings', 'spacing', 'spacingSizes', 'default' ), $spacing_sizes );
 	}
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }

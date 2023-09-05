@@ -497,6 +497,9 @@ class WP_Filesystem_SSH2 extends WP_Filesystem_Base {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Moves a file or directory.
 	 *
 	 * After moving files or directories, OPcache will need to be invalidated.
@@ -505,6 +508,7 @@ class WP_Filesystem_SSH2 extends WP_Filesystem_Base {
 	 *
 	 * Use `move_dir()` for moving directories with OPcache invalidation and a
 	 * fallback to `copy_dir()`.
+<<<<<<< HEAD
 	 *
 	 * @since 2.7.0
 	 *
@@ -520,6 +524,14 @@ class WP_Filesystem_SSH2 extends WP_Filesystem_Base {
 	 * @param string $destination Path to the destination file.
 	 * @param bool   $overwrite   Optional. Whether to overwrite the destination file if it exists.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 *
+	 * @since 2.7.0
+	 *
+	 * @param string $source      Path to the source file or directory.
+	 * @param string $destination Path to the destination file or directory.
+	 * @param bool   $overwrite   Optional. Whether to overwrite the destination if it exists.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *                            Default false.
 	 * @return bool True on success, false on failure.
 	 */
@@ -527,10 +539,14 @@ class WP_Filesystem_SSH2 extends WP_Filesystem_Base {
 		if ( $this->exists( $destination ) ) {
 			if ( $overwrite ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				// We need to remove the destination before we can rename the source.
 =======
 				// We need to remove the destination file before we can rename the source.
 >>>>>>> fb785cbb (Initial commit)
+=======
+				// We need to remove the destination before we can rename the source.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				$this->delete( $destination, false, 'f' );
 			} else {
 				// If we're not overwriting, the rename will fail, so return early.
@@ -579,6 +595,7 @@ class WP_Filesystem_SSH2 extends WP_Filesystem_Base {
 	 * @since 2.7.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path exists or not.
 	 */
@@ -591,6 +608,13 @@ class WP_Filesystem_SSH2 extends WP_Filesystem_Base {
 	public function exists( $file ) {
 		return file_exists( $this->sftp_path( $file ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param string $path Path to file or directory.
+	 * @return bool Whether $path exists or not.
+	 */
+	public function exists( $path ) {
+		return file_exists( $this->sftp_path( $path ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -635,6 +659,7 @@ class WP_Filesystem_SSH2 extends WP_Filesystem_Base {
 	 * @since 2.7.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @param string $path Path to file or directory.
 	 * @return bool Whether $path is writable.
 	 */
@@ -645,6 +670,12 @@ class WP_Filesystem_SSH2 extends WP_Filesystem_Base {
 	 */
 	public function is_writable( $file ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @param string $path Path to file or directory.
+	 * @return bool Whether $path is writable.
+	 */
+	public function is_writable( $path ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// PHP will base its writable checks on system_user === file_owner, not ssh_user === file_owner.
 		return true;
 	}
@@ -804,10 +835,15 @@ class WP_Filesystem_SSH2 extends WP_Filesystem_Base {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$path = trailingslashit( $path );
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$path = trailingslashit( $path );
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		while ( false !== ( $entry = $dir->read() ) ) {
 			$struc         = array();
 			$struc['name'] = $entry;
@@ -825,6 +861,7 @@ class WP_Filesystem_SSH2 extends WP_Filesystem_Base {
 			}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$struc['perms']       = $this->gethchmod( $path . $entry );
 			$struc['permsn']      = $this->getnumchmodfromh( $struc['perms'] );
 			$struc['number']      = false;
@@ -841,20 +878,27 @@ class WP_Filesystem_SSH2 extends WP_Filesystem_Base {
 					$struc['files'] = $this->dirlist( $path . $struc['name'], $include_hidden, $recursive );
 =======
 			$struc['perms']       = $this->gethchmod( $path . '/' . $entry );
+=======
+			$struc['perms']       = $this->gethchmod( $path . $entry );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$struc['permsn']      = $this->getnumchmodfromh( $struc['perms'] );
 			$struc['number']      = false;
-			$struc['owner']       = $this->owner( $path . '/' . $entry );
-			$struc['group']       = $this->group( $path . '/' . $entry );
-			$struc['size']        = $this->size( $path . '/' . $entry );
-			$struc['lastmodunix'] = $this->mtime( $path . '/' . $entry );
+			$struc['owner']       = $this->owner( $path . $entry );
+			$struc['group']       = $this->group( $path . $entry );
+			$struc['size']        = $this->size( $path . $entry );
+			$struc['lastmodunix'] = $this->mtime( $path . $entry );
 			$struc['lastmod']     = gmdate( 'M j', $struc['lastmodunix'] );
 			$struc['time']        = gmdate( 'h:i:s', $struc['lastmodunix'] );
-			$struc['type']        = $this->is_dir( $path . '/' . $entry ) ? 'd' : 'f';
+			$struc['type']        = $this->is_dir( $path . $entry ) ? 'd' : 'f';
 
 			if ( 'd' === $struc['type'] ) {
 				if ( $recursive ) {
+<<<<<<< HEAD
 					$struc['files'] = $this->dirlist( $path . '/' . $struc['name'], $include_hidden, $recursive );
 >>>>>>> fb785cbb (Initial commit)
+=======
+					$struc['files'] = $this->dirlist( $path . $struc['name'], $include_hidden, $recursive );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				} else {
 					$struc['files'] = array();
 				}

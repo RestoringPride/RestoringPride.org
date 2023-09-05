@@ -12,9 +12,13 @@
  * @since 5.2.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 final class WP_Recovery_Mode_Email_Service {
 
 	const RATE_LIMIT_OPTION = 'recovery_mode_email_last_sent';
@@ -120,6 +124,7 @@ final class WP_Recovery_Mode_Email_Service {
 		$blogname = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$switched_locale = switch_to_locale( get_locale() );
 =======
 		$switched_locale = false;
@@ -129,6 +134,9 @@ final class WP_Recovery_Mode_Email_Service {
 			$switched_locale = switch_to_locale( get_locale() );
 		}
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$switched_locale = switch_to_locale( get_locale() );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		if ( $extension ) {
 			$cause   = $this->get_cause( $extension );
@@ -166,10 +174,14 @@ final class WP_Recovery_Mode_Email_Service {
 			'Howdy!
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 WordPress has a built-in feature that detects when a plugin or theme causes a fatal error on your site, and notifies you with this automated email.
 =======
 Since WordPress 5.2 there is a built-in feature that detects when a plugin or theme causes a fatal error on your site, and notifies you with this automated email.
 >>>>>>> fb785cbb (Initial commit)
+=======
+WordPress has a built-in feature that detects when a plugin or theme causes a fatal error on your site, and notifies you with this automated email.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 ###CAUSE###
 First, visit your website (###SITEURL###) and check for any visible issues. Next, visit the page where the error was caught (###PAGEURL###) and check for any visible issues.
 

@@ -316,12 +316,18 @@ class getid3_mp3 extends getid3_handler
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if (isset($thisfile_mpeg_audio['bitrate']) && $thisfile_mpeg_audio['bitrate'] === 'free') {
 			$encoder_options .= ' --freeformat';
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if (!empty($thisfile_mpeg_audio_lame['encoding_flags']['nogap_prev']) || !empty($thisfile_mpeg_audio_lame['encoding_flags']['nogap_next'])) {
 			$encoder_options .= ' --nogap';
 		}
@@ -758,11 +764,16 @@ class getid3_mp3 extends getid3_handler
 
 							// It the LAME tag was only introduced in LAME v3.90
 <<<<<<< HEAD
+<<<<<<< HEAD
 							// https://wiki.hydrogenaud.io/index.php/LAME#VBR_header_and_LAME_tag
 							// https://hydrogenaud.io/index.php?topic=9933
 =======
 							// http://www.hydrogenaudio.org/?act=ST&f=15&t=9933
 >>>>>>> fb785cbb (Initial commit)
+=======
+							// https://wiki.hydrogenaud.io/index.php/LAME#VBR_header_and_LAME_tag
+							// https://hydrogenaud.io/index.php?topic=9933
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 							// Offsets of various bytes in http://gabriel.mp3-tech.org/mp3infotag.html
 							// are assuming a 'Xing' identifier offset of 0x24, which is the case for
@@ -799,10 +810,14 @@ class getid3_mp3 extends getid3_handler
 
 							// bytes $A7-$AE  Replay Gain
 <<<<<<< HEAD
+<<<<<<< HEAD
 							// https://web.archive.org/web/20021015212753/http://privatewww.essex.ac.uk/~djmrob/replaygain/rg_data_format.html
 =======
 							// http://privatewww.essex.ac.uk/~djmrob/replaygain/rg_data_format.html
 >>>>>>> fb785cbb (Initial commit)
+=======
+							// https://web.archive.org/web/20021015212753/http://privatewww.essex.ac.uk/~djmrob/replaygain/rg_data_format.html
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							// bytes $A7-$AA : 32 bit floating point "Peak signal amplitude"
 							if ($thisfile_mpeg_audio_lame['short_version'] >= 'LAME3.94b') {
 								// LAME 3.94a16 and later - 9.23 fixed point
@@ -931,10 +946,14 @@ class getid3_mp3 extends getid3_handler
 
 							// LAME CBR
 <<<<<<< HEAD
+<<<<<<< HEAD
 							if ($thisfile_mpeg_audio_lame_raw['vbr_method'] == 1 && $thisfile_mpeg_audio['bitrate'] !== 'free') {
 =======
 							if ($thisfile_mpeg_audio_lame_raw['vbr_method'] == 1) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+							if ($thisfile_mpeg_audio_lame_raw['vbr_method'] == 1 && $thisfile_mpeg_audio['bitrate'] !== 'free') {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 								$thisfile_mpeg_audio['bitrate_mode'] = 'cbr';
 								$thisfile_mpeg_audio['bitrate'] = self::ClosestStandardMP3Bitrate($thisfile_mpeg_audio['bitrate']);
@@ -1190,9 +1209,13 @@ class getid3_mp3 extends getid3_handler
 			$nextframetestarray = array('error' => array(), 'warning' => array(), 'avdataend' => $info['avdataend'], 'avdataoffset'=>$info['avdataoffset']);
 			if ($this->decodeMPEGaudioHeader($nextframetestoffset, $nextframetestarray, false)) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				/** @phpstan-ignore-next-line */
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+				/** @phpstan-ignore-next-line */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				getid3_lib::safe_inc($info['mp3_validity_check_bitrates'][$nextframetestarray['mpeg']['audio']['bitrate']]);
 				if ($ScanAsCBR) {
 					// force CBR mode, used for trying to pick out invalid audio streams with valid(?) VBR headers, or VBR streams with no VBR header

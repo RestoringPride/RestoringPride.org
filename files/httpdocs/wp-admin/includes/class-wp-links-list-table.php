@@ -12,9 +12,12 @@
  *
  * @since 3.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_List_Table
  */
@@ -181,10 +184,14 @@ class WP_Links_List_Table extends WP_List_Table {
 		<label class="screen-reader-text" for="cb-select-<?php echo $link->link_id; ?>">
 			<?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 			/* translators: Hidden accessibility text. %s: Link name. */
 =======
 			/* translators: %s: Link name. */
 >>>>>>> fb785cbb (Initial commit)
+=======
+			/* translators: Hidden accessibility text. %s: Link name. */
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			printf( __( 'Select %s' ), $link->link_name );
 			?>
 		</label>

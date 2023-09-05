@@ -20,6 +20,9 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Plugin info.
 	 *
 	 * The Plugin_Upgrader::bulk_upgrade() method will fill this in
@@ -41,8 +44,11 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 	public $theme_info = false;
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Holds the WP_Error object.
 	 *
 	 * @since 4.6.0

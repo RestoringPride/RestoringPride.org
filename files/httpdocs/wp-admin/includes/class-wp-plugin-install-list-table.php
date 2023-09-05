@@ -12,9 +12,12 @@
  *
  * @since 3.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_List_Table
  */
@@ -71,10 +74,14 @@ class WP_Plugin_Install_List_Table extends WP_List_Table {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Returns a list of slugs of installed plugins, if known.
 =======
 	 * Return a list of slugs of installed plugins, if known.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Returns a list of slugs of installed plugins, if known.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * Uses the transient data from the updates API to determine the slugs of
 	 * known installed plugins. This might be better elsewhere, perhaps even
@@ -318,20 +325,27 @@ class WP_Plugin_Install_List_Table extends WP_List_Table {
 		$display_tabs = array();
 		foreach ( (array) $tabs as $action => $text ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$display_tabs[ 'plugin-install-' . $action ] = array(
 				'url'     => self_admin_url( 'plugin-install.php?tab=' . $action ),
 				'label'   => $text,
 				'current' => $action === $tab,
 			);
+<<<<<<< HEAD
 =======
 			$current_link_attributes                     = ( $action === $tab ) ? ' class="current" aria-current="page"' : '';
 			$href                                        = self_admin_url( 'plugin-install.php?tab=' . $action );
 			$display_tabs[ 'plugin-install-' . $action ] = "<a href='$href'$current_link_attributes>$text</a>";
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 		// No longer a real tab.
 		unset( $display_tabs['plugin-install-upload'] );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		return $this->get_views_links( $display_tabs );
 	}
@@ -345,6 +359,13 @@ class WP_Plugin_Install_List_Table extends WP_List_Table {
 	/**
 	 * Override parent views so we can use the filter bar display.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return $this->get_views_links( $display_tabs );
+	}
+
+	/**
+	 * Overrides parent views so we can use the filter bar display.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function views() {
 		$views = $this->get_views();

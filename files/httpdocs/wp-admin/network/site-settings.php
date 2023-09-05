@@ -151,10 +151,14 @@ if ( ! empty( $messages ) ) {
 				?>
 				<tr class="form-field">
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<th scope="row"><label for="<?php echo esc_attr( $option->option_name ); ?>" class="code"><?php echo esc_html( $option->option_name ); ?></label></th>
 =======
 					<th scope="row"><label for="<?php echo esc_attr( $option->option_name ); ?>"><?php echo ucwords( str_replace( '_', ' ', $option->option_name ) ); ?></label></th>
 >>>>>>> fb785cbb (Initial commit)
+=======
+					<th scope="row"><label for="<?php echo esc_attr( $option->option_name ); ?>" class="code"><?php echo esc_html( $option->option_name ); ?></label></th>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<td><textarea class="<?php echo $class; ?>" rows="5" cols="40" name="option[<?php echo esc_attr( $option->option_name ); ?>]" id="<?php echo esc_attr( $option->option_name ); ?>"<?php disabled( $disabled ); ?>><?php echo esc_textarea( $option->option_value ); ?></textarea></td>
 				</tr>
 				<?php
@@ -162,10 +166,14 @@ if ( ! empty( $messages ) ) {
 				?>
 				<tr class="form-field">
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<th scope="row"><label for="<?php echo esc_attr( $option->option_name ); ?>" class="code"><?php echo esc_html( $option->option_name ); ?></label></th>
 =======
 					<th scope="row"><label for="<?php echo esc_attr( $option->option_name ); ?>"><?php echo esc_html( ucwords( str_replace( '_', ' ', $option->option_name ) ) ); ?></label></th>
 >>>>>>> fb785cbb (Initial commit)
+=======
+					<th scope="row"><label for="<?php echo esc_attr( $option->option_name ); ?>" class="code"><?php echo esc_html( $option->option_name ); ?></label></th>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					<?php if ( $is_main_site && in_array( $option->option_name, array( 'siteurl', 'home' ), true ) ) { ?>
 					<td><code><?php echo esc_html( $option->option_value ); ?></code></td>
 					<?php } else { ?>

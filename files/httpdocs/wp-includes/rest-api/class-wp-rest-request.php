@@ -15,10 +15,14 @@
  * Note: This implements ArrayAccess, and acts as an array of parameters when
  * used in that manner. It does not use ArrayObject (as we cannot rely on SPL),
 <<<<<<< HEAD
+<<<<<<< HEAD
  * so be aware it may have non-array behavior in some cases.
 =======
  * so be aware it may have non-array behaviour in some cases.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * so be aware it may have non-array behavior in some cases.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * Note: When using features provided by ArrayAccess, be aware that WordPress deliberately
  * does not distinguish between arguments of the same name for different request methods.
@@ -31,9 +35,13 @@
  * @link https://www.php.net/manual/en/class.arrayaccess.php
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_REST_Request implements ArrayAccess {
 
 	/**
@@ -299,14 +307,19 @@ class WP_REST_Request implements ArrayAccess {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Retrieves the Content-Type of the request.
 =======
 	 * Retrieves the content-type of the request.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Retrieves the Content-Type of the request.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.4.0
 	 *
 	 * @return array|null Map containing 'value' and 'parameters' keys
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 *                    or null when no valid Content-Type header was
 	 *                    available.
@@ -320,6 +333,13 @@ class WP_REST_Request implements ArrayAccess {
 	public function get_content_type() {
 		$value = $this->get_header( 'content-type' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 *                    or null when no valid Content-Type header was
+	 *                    available.
+	 */
+	public function get_content_type() {
+		$value = $this->get_header( 'Content-Type' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( empty( $value ) ) {
 			return null;
 		}
@@ -345,6 +365,7 @@ class WP_REST_Request implements ArrayAccess {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Checks if the request has specified a JSON Content-Type.
 	 *
 	 * @since 5.6.0
@@ -357,6 +378,13 @@ class WP_REST_Request implements ArrayAccess {
 	 *
 	 * @return bool True if the content-type header is JSON.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Checks if the request has specified a JSON Content-Type.
+	 *
+	 * @since 5.6.0
+	 *
+	 * @return bool True if the Content-Type header is JSON.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function is_json_content_type() {
 		$content_type = $this->get_content_type();
@@ -747,10 +775,14 @@ class WP_REST_Request implements ArrayAccess {
 
 		/*
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 * Check that we got URL-encoded. Treat a missing Content-Type as
 =======
 		 * Check that we got URL-encoded. Treat a missing content-type as
 >>>>>>> fb785cbb (Initial commit)
+=======
+		 * Check that we got URL-encoded. Treat a missing Content-Type as
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 * URL-encoded for maximum compatibility.
 		 */
 		$content_type = $this->get_content_type();

@@ -777,14 +777,20 @@ ul#add-to-blog-users {
 .form-table p.timezone-info {
 	margin: 1em 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	display: flex;
 	flex-direction: column;
 }
 
 #local-time {
 	margin-top: 0.5em;
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .form-table td fieldset label {
@@ -895,9 +901,13 @@ table.form-table td .updated p {
 	margin-top: 20px;
 	margin-bottom: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	word-wrap: break-word;
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	word-wrap: break-word;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .application-password-display input.code {
@@ -1076,12 +1086,18 @@ table.form-table td .updated p {
 
 .settings-php .language-install-spinner,
 <<<<<<< HEAD
+<<<<<<< HEAD
 .options-general-php .language-install-spinner,
 .user-edit-php .language-install-spinner,
 .profile-php .language-install-spinner {
 =======
 .options-general-php .language-install-spinner {
 >>>>>>> fb785cbb (Initial commit)
+=======
+.options-general-php .language-install-spinner,
+.user-edit-php .language-install-spinner,
+.profile-php .language-install-spinner {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	display: inline-block;
 	float: none;
 	margin: -3px 5px 0;
@@ -1089,6 +1105,9 @@ table.form-table td .updated p {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .form-table.permalink-structure .available-structure-tags {
 	margin-top: 8px;
 }
@@ -1099,6 +1118,7 @@ table.form-table td .updated p {
 	margin: 8px 0 0;
 }
 
+<<<<<<< HEAD
 .form-table.permalink-structure .available-structure-tags li {
 	margin: 6px 5px 0 0;
 }
@@ -1128,6 +1148,32 @@ table.form-table td .updated p {
 	float: left;
 	margin-right: 5px;
 >>>>>>> fb785cbb (Initial commit)
+=======
+.form-table.permalink-structure .available-structure-tags li {
+	margin: 6px 5px 0 0;
+}
+
+.form-table.permalink-structure .available-structure-tags li:last-child {
+	margin-right: 0;
+}
+
+.form-table.permalink-structure .structure-selection .row {
+	margin-bottom: 16px;
+}
+
+.form-table.permalink-structure .structure-selection .row > div {
+	max-width: calc(100% - 24px);
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.form-table.permalink-structure .structure-selection .row label {
+	font-weight: 600;
+}
+
+.form-table.permalink-structure .structure-selection .row p {
+	margin-top: 0;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 /*------------------------------------------------------------------------------
@@ -1164,13 +1210,19 @@ table.form-table td .updated p {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .configuration-rules-label {
 	font-weight: 600;
 	margin-bottom: 4px;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 /*------------------------------------------------------------------------------
    Credentials check dialog for Install and Updates
 ------------------------------------------------------------------------------*/
@@ -1641,6 +1693,7 @@ table.form-table td .updated p {
 
 	.form-table.permalink-structure td code {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		display: inline-block;
 	}
 
@@ -1657,14 +1710,27 @@ table.form-table td .updated p {
 		margin-top: 4px;
 =======
 		margin-left: 32px;
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		display: inline-block;
 	}
 
+	.form-table.permalink-structure .structure-selection {
+		margin-top: 8px;
+	}
+
+	.form-table.permalink-structure .structure-selection .row > div {
+		max-width: calc(100% - 36px);
+		width: 100%;
+	}
+
 	.form-table.permalink-structure td input[type="text"] {
-		margin-left: 32px;
 		margin-top: 4px;
+<<<<<<< HEAD
 		width: 96%;
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	.form-table input.regular-text {
@@ -1684,6 +1750,7 @@ table.form-table td .updated p {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	#utc-time,
 	#local-time {
@@ -1693,6 +1760,8 @@ table.form-table td .updated p {
 	}
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.form-field #domain {
 		max-width: none;
 	}
@@ -1728,12 +1797,18 @@ table.form-table td .updated p {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	body.user-new-php .wp-pwd button.wp-hide-pw {
 		right: 0;
 	}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.wp-pwd button.button:hover,
 	.wp-pwd button.button:focus {
 		background: transparent;
@@ -1756,13 +1831,19 @@ table.form-table td .updated p {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	body.user-new-php .wp-pwd [type="text"],
 	body.user-new-php .wp-pwd [type="password"] {
 		padding-right: 2.5rem;
 	}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.wp-cancel-pw .dashicons-no {
 		display: inline-block;
 	}

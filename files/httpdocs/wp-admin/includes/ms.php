@@ -9,10 +9,14 @@
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Determines whether uploaded file exceeds space quota.
 =======
  * Determine if uploaded file exceeds space quota.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Determines whether uploaded file exceeds space quota.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 3.0.0
  *
@@ -58,10 +62,14 @@ function check_upload_size( $file ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Deletes a site.
 =======
  * Delete a site.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Deletes a site.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 3.0.0
  * @since 5.1.0 Use wp_delete_site() internally to delete the site row from the database.
@@ -139,10 +147,14 @@ function wpmu_delete_blog( $blog_id, $drop = false ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Deletes a user from the network and remove from all sites.
 =======
  * Delete a user from the network and remove from all sites.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Deletes a user from the network and remove from all sites.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 3.0.0
  *
@@ -152,10 +164,14 @@ function wpmu_delete_blog( $blog_id, $drop = false ) {
  *
  * @param int $id The user ID.
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @return bool True if the user was deleted, false otherwise.
 =======
  * @return bool True if the user was deleted, otherwise false.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @return bool True if the user was deleted, false otherwise.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function wpmu_delete_user( $id ) {
 	global $wpdb;
@@ -230,10 +246,14 @@ function wpmu_delete_user( $id ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Checks whether a site has used its allotted upload space.
 =======
  * Check whether a site has used its allotted upload space.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Checks whether a site has used its allotted upload space.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since MU (3.0.0)
  *
@@ -290,6 +310,7 @@ function display_space_usage() {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Gets the remaining upload space for this site.
  *
  * @since MU (3.0.0)
@@ -304,6 +325,14 @@ function display_space_usage() {
  * @param int $size Current max size in bytes
  * @return int Max size in bytes
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Gets the remaining upload space for this site.
+ *
+ * @since MU (3.0.0)
+ *
+ * @param int $size Current max size in bytes.
+ * @return int Max size in bytes.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function fix_import_form_size( $size ) {
 	if ( upload_is_user_over_quota( false ) ) {
@@ -335,15 +364,21 @@ function upload_space_setting( $id ) {
 		<td>
 			<input type="number" step="1" min="0" style="width: 100px" name="option[blog_upload_space]" id="blog-upload-space-number" aria-describedby="blog-upload-space-desc" value="<?php echo $quota; ?>" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<span id="blog-upload-space-desc"><span class="screen-reader-text">
 				<?php
 				/* translators: Hidden accessibility text. */
 				_e( 'Size in megabytes' );
 				?>
 			</span> <?php _e( 'MB (Leave blank for network default)' ); ?></span>
+<<<<<<< HEAD
 =======
 			<span id="blog-upload-space-desc"><span class="screen-reader-text"><?php _e( 'Size in megabytes' ); ?></span> <?php _e( 'MB (Leave blank for network default)' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		</td>
 	</tr>
 	<?php
@@ -583,6 +618,7 @@ function format_code_lang( $code = '' ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * Synchronizes category and post tag slugs when global terms are enabled.
  *
@@ -608,6 +644,8 @@ function sync_category_tag_slugs( $term, $taxonomy ) {
 
 /**
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * Displays an access denied message when a user tries to view a site's dashboard they
  * do not have access to.
  *
@@ -848,10 +886,14 @@ function choose_primary_blog() {
 			}
 		} else {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			_e( 'Not available' );
 =======
 			echo 'N/A';
 >>>>>>> fb785cbb (Initial commit)
+=======
+			_e( 'Not available' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 		?>
 		</td>
@@ -862,10 +904,14 @@ function choose_primary_blog() {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Determines whether or not this network from this page can be edited.
 =======
  * Whether or not we can edit this network from this page.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Determines whether or not this network from this page can be edited.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * By default editing of network is restricted to the Network Admin for that `$network_id`.
  * This function allows for this to be overridden.
@@ -874,10 +920,14 @@ function choose_primary_blog() {
  *
  * @param int $network_id The network ID to check.
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @return bool True if network can be edited, false otherwise.
 =======
  * @return bool True if network can be edited, otherwise false.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @return bool True if network can be edited, false otherwise.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function can_edit_network( $network_id ) {
 	if ( get_current_network_id() === (int) $network_id ) {
@@ -899,10 +949,14 @@ function can_edit_network( $network_id ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Prints thickbox image paths for Network Admin.
 =======
  * Thickbox image paths for Network Admin.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Prints thickbox image paths for Network Admin.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 3.1.0
  *
@@ -996,15 +1050,21 @@ function confirm_delete_users( $users ) {
 
 					if ( is_array( $blog_users ) && ! empty( $blog_users ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						$user_site     = "<a href='" . esc_url( get_home_url( $details->userblog_id ) ) . "'>{$details->blogname}</a>";
 						$user_dropdown = '<label for="reassign_user" class="screen-reader-text">' .
 								/* translators: Hidden accessibility text. */
 								__( 'Select a user' ) .
 							'</label>';
+<<<<<<< HEAD
 =======
 						$user_site      = "<a href='" . esc_url( get_home_url( $details->userblog_id ) ) . "'>{$details->blogname}</a>";
 						$user_dropdown  = '<label for="reassign_user" class="screen-reader-text">' . __( 'Select a user' ) . '</label>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						$user_dropdown .= "<select name='blog[$user_id][$key]' id='reassign_user'>";
 						$user_list      = '';
 
@@ -1070,10 +1130,14 @@ function confirm_delete_users( $users ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Prints JavaScript in the header on the Network Settings screen.
 =======
  * Print JavaScript in the header on the Network Settings screen.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Prints JavaScript in the header on the Network Settings screen.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @since 4.1.0
  */

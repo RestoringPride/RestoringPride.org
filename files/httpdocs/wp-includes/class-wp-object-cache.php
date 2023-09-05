@@ -22,9 +22,13 @@
  * @since 2.0.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Object_Cache {
 
 	/**
@@ -56,10 +60,14 @@ class WP_Object_Cache {
 	 *
 	 * @since 3.0.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @var string[]
 =======
 	 * @var array
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @var string[]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	protected $global_groups = array();
 
@@ -139,6 +147,9 @@ class WP_Object_Cache {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Serves as a utility function to determine whether a key is valid.
 	 *
 	 * @since 6.1.0
@@ -176,8 +187,11 @@ class WP_Object_Cache {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Serves as a utility function to determine whether a key exists in the cache.
 	 *
 	 * @since 3.4.0
@@ -212,12 +226,18 @@ class WP_Object_Cache {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -272,12 +292,18 @@ class WP_Object_Cache {
 	 */
 	public function replace( $key, $data, $group = 'default', $expire = 0 ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -308,14 +334,19 @@ class WP_Object_Cache {
 	 *
 	 * @since 2.0.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.1.0 Returns false if cache key is invalid.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.1.0 Returns false if cache key is invalid.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @param int|string $key    What to call the contents in the cache.
 	 * @param mixed      $data   The contents to store in the cache.
 	 * @param string     $group  Optional. Where to group the cache contents. Default 'default'.
 	 * @param int        $expire Optional. Not used.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * @return bool True if contents were set, false if key is invalid.
 	 */
@@ -329,6 +360,15 @@ class WP_Object_Cache {
 	 */
 	public function set( $key, $data, $group = 'default', $expire = 0 ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return bool True if contents were set, false if key is invalid.
+	 */
+	public function set( $key, $data, $group = 'default', $expire = 0 ) {
+		if ( ! $this->is_valid_key( $key ) ) {
+			return false;
+		}
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -387,12 +427,18 @@ class WP_Object_Cache {
 	 */
 	public function get( $key, $group = 'default', $force = false, &$found = null ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -452,12 +498,18 @@ class WP_Object_Cache {
 	 */
 	public function delete( $key, $group = 'default', $deprecated = false ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -507,12 +559,18 @@ class WP_Object_Cache {
 	 */
 	public function incr( $key, $offset = 1, $group = 'default' ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -553,12 +611,18 @@ class WP_Object_Cache {
 	 */
 	public function decr( $key, $offset = 1, $group = 'default' ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! $this->is_valid_key( $key ) ) {
 			return false;
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( empty( $group ) ) {
 			$group = 'default';
 		}
@@ -601,6 +665,9 @@ class WP_Object_Cache {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Removes all cache items in a group.
 	 *
 	 * @since 6.1.0
@@ -615,8 +682,11 @@ class WP_Object_Cache {
 	}
 
 	/**
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * Sets the list of global cache groups.
 	 *
 	 * @since 3.0.0

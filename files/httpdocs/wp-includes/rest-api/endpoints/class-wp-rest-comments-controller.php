@@ -245,10 +245,15 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 		$prepared_args['no_found_rows'] = false;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$prepared_args['update_comment_post_cache'] = true;
 
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$prepared_args['update_comment_post_cache'] = true;
+
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$prepared_args['date_query'] = array();
 
 		// Set before into date query. Date query must be specified as an array of an array.
@@ -278,10 +283,14 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 		$prepared_args = apply_filters( 'rest_comment_query', $prepared_args, $request );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$query        = new WP_Comment_Query();
 =======
 		$query        = new WP_Comment_Query;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$query        = new WP_Comment_Query();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$query_result = $query->query( $prepared_args );
 
 		$comments = array();
@@ -303,10 +312,14 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 			unset( $prepared_args['number'], $prepared_args['offset'] );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$query                  = new WP_Comment_Query();
 =======
 			$query                  = new WP_Comment_Query;
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$query                  = new WP_Comment_Query();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$prepared_args['count'] = true;
 
 			$total_comments = $query->query( $prepared_args );
@@ -1133,12 +1146,18 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 		$response = rest_ensure_response( $data );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$response->add_links( $this->prepare_links( $comment ) );
 		}
 =======
 		$response->add_links( $this->prepare_links( $comment ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
+			$response->add_links( $this->prepare_links( $comment ) );
+		}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		/**
 		 * Filters a comment returned from the REST API.
@@ -1903,6 +1922,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 			array(
 				'comment_post_ID'      => 0,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				'comment_author'       => null,
 				'comment_author_email' => null,
 				'comment_author_url'   => null,
@@ -1915,6 +1935,13 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 				'comment_author_email' => null,
 				'comment_author_url'   => null,
 >>>>>>> fb785cbb (Initial commit)
+=======
+				'comment_author'       => null,
+				'comment_author_email' => null,
+				'comment_author_url'   => null,
+				'comment_parent'       => 0,
+				'user_id'              => 0,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			)
 		);
 

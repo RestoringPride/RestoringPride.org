@@ -8,6 +8,7 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if ( ! class_exists( 'WpOrg\Requests\Autoload' ) ) {
 	require ABSPATH . WPINC . '/Requests/src/Autoload.php';
 
@@ -20,6 +21,13 @@ if ( ! class_exists( 'Requests' ) ) {
 	Requests::register_autoloader();
 	Requests::set_certificate_path( ABSPATH . WPINC . '/certificates/ca-bundle.crt' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+if ( ! class_exists( 'WpOrg\Requests\Autoload' ) ) {
+	require ABSPATH . WPINC . '/Requests/src/Autoload.php';
+
+	WpOrg\Requests\Autoload::register();
+	WpOrg\Requests\Requests::set_certificate_path( ABSPATH . WPINC . '/certificates/ca-bundle.crt' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 /**
@@ -34,9 +42,13 @@ if ( ! class_exists( 'Requests' ) ) {
  * @since 2.7.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Http {
 
 	// Aliases for HTTP response codes.
@@ -259,6 +271,7 @@ class WP_Http {
 		 *  - boolean false to avoid short-circuiting the response
 		 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 * Returning any other value may result in unexpected behavior.
 		 *
 		 * @since 2.9.0
@@ -271,6 +284,13 @@ class WP_Http {
 		 *
 		 * @param false|array|WP_Error $preempt     A preemptive return value of an HTTP request. Default false.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		 * Returning any other value may result in unexpected behavior.
+		 *
+		 * @since 2.9.0
+		 *
+		 * @param false|array|WP_Error $response    A preemptive return value of an HTTP request. Default false.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 * @param array                $parsed_args HTTP request arguments.
 		 * @param string               $url         The request URL.
 		 */
@@ -295,10 +315,14 @@ class WP_Http {
 			$response = new WP_Error( 'http_request_failed', __( 'A valid URL was not provided.' ) );
 			/** This action is documented in wp-includes/class-wp-http.php */
 <<<<<<< HEAD
+<<<<<<< HEAD
 			do_action( 'http_api_debug', $response, 'response', 'WpOrg\Requests\Requests', $parsed_args, $url );
 =======
 			do_action( 'http_api_debug', $response, 'response', 'Requests', $parsed_args, $url );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			do_action( 'http_api_debug', $response, 'response', 'WpOrg\Requests\Requests', $parsed_args, $url );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			return $response;
 		}
 
@@ -306,10 +330,14 @@ class WP_Http {
 			$response = new WP_Error( 'http_request_not_executed', __( 'User has blocked requests through HTTP.' ) );
 			/** This action is documented in wp-includes/class-wp-http.php */
 <<<<<<< HEAD
+<<<<<<< HEAD
 			do_action( 'http_api_debug', $response, 'response', 'WpOrg\Requests\Requests', $parsed_args, $url );
 =======
 			do_action( 'http_api_debug', $response, 'response', 'Requests', $parsed_args, $url );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			do_action( 'http_api_debug', $response, 'response', 'WpOrg\Requests\Requests', $parsed_args, $url );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			return $response;
 		}
 
@@ -327,10 +355,14 @@ class WP_Http {
 				$response = new WP_Error( 'http_request_failed', __( 'Destination directory for file streaming does not exist or is not writable.' ) );
 				/** This action is documented in wp-includes/class-wp-http.php */
 <<<<<<< HEAD
+<<<<<<< HEAD
 				do_action( 'http_api_debug', $response, 'response', 'WpOrg\Requests\Requests', $parsed_args, $url );
 =======
 				do_action( 'http_api_debug', $response, 'response', 'Requests', $parsed_args, $url );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				do_action( 'http_api_debug', $response, 'response', 'WpOrg\Requests\Requests', $parsed_args, $url );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				return $response;
 			}
 		}
@@ -357,10 +389,14 @@ class WP_Http {
 		);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		// Ensure redirects follow browser behavior.
 =======
 		// Ensure redirects follow browser behaviour.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		// Ensure redirects follow browser behavior.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$options['hooks']->register( 'requests.before_redirect', array( get_class(), 'browser_redirect_compatibility' ) );
 
 		// Validate redirected URLs.
@@ -383,10 +419,14 @@ class WP_Http {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		// If we've got cookies, use and convert them to WpOrg\Requests\Cookie.
 =======
 		// If we've got cookies, use and convert them to Requests_Cookie.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		// If we've got cookies, use and convert them to WpOrg\Requests\Cookie.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ! empty( $parsed_args['cookies'] ) ) {
 			$options['cookies'] = WP_Http::normalize_cookies( $parsed_args['cookies'] );
 		}
@@ -411,6 +451,7 @@ class WP_Http {
 		 * @since 5.1.0 The `$url` parameter was added.
 		 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 * @param bool|string $ssl_verify Boolean to control whether to verify the SSL connection
 		 *                                or path to an SSL certificate.
 		 * @param string      $url        The request URL.
@@ -418,6 +459,11 @@ class WP_Http {
 		 * @param bool   $ssl_verify Whether to verify the SSL connection. Default true.
 		 * @param string $url        The request URL.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		 * @param bool|string $ssl_verify Boolean to control whether to verify the SSL connection
+		 *                                or path to an SSL certificate.
+		 * @param string      $url        The request URL.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 */
 		$options['verify'] = apply_filters( 'https_ssl_verify', $options['verify'], $url );
 
@@ -425,10 +471,14 @@ class WP_Http {
 		$proxy = new WP_HTTP_Proxy();
 		if ( $proxy->is_enabled() && $proxy->send_through_proxy( $url ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$options['proxy'] = new WpOrg\Requests\Proxy\Http( $proxy->host() . ':' . $proxy->port() );
 =======
 			$options['proxy'] = new Requests_Proxy_HTTP( $proxy->host() . ':' . $proxy->port() );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$options['proxy'] = new WpOrg\Requests\Proxy\Http( $proxy->host() . ':' . $proxy->port() );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 			if ( $proxy->use_authentication() ) {
 				$options['proxy']->use_authentication = true;
@@ -442,10 +492,14 @@ class WP_Http {
 
 		try {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$requests_response = WpOrg\Requests\Requests::request( $url, $headers, $data, $type, $options );
 =======
 			$requests_response = Requests::request( $url, $headers, $data, $type, $options );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$requests_response = WpOrg\Requests\Requests::request( $url, $headers, $data, $type, $options );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 			// Convert the response into an array.
 			$http_response = new WP_HTTP_Requests_Response( $requests_response, $parsed_args['filename'] );
@@ -454,10 +508,14 @@ class WP_Http {
 			// Add the original object to the array.
 			$response['http_response'] = $http_response;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		} catch ( WpOrg\Requests\Exception $e ) {
 =======
 		} catch ( Requests_Exception $e ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		} catch ( WpOrg\Requests\Exception $e ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$response = new WP_Error( 'http_request_failed', $e->getMessage() );
 		}
 
@@ -475,10 +533,14 @@ class WP_Http {
 		 * @param string         $url         The request URL.
 		 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 		do_action( 'http_api_debug', $response, 'response', 'WpOrg\Requests\Requests', $parsed_args, $url );
 =======
 		do_action( 'http_api_debug', $response, 'response', 'Requests', $parsed_args, $url );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		do_action( 'http_api_debug', $response, 'response', 'WpOrg\Requests\Requests', $parsed_args, $url );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( is_wp_error( $response ) ) {
 			return $response;
 		}
@@ -515,6 +577,7 @@ class WP_Http {
 	 *
 	 * @param array $cookies Array of cookies to send with the request.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return WpOrg\Requests\Cookie\Jar Cookie holder object.
 	 */
 	public static function normalize_cookies( $cookies ) {
@@ -525,6 +588,12 @@ class WP_Http {
 	public static function normalize_cookies( $cookies ) {
 		$cookie_jar = new Requests_Cookie_Jar();
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return WpOrg\Requests\Cookie\Jar Cookie holder object.
+	 */
+	public static function normalize_cookies( $cookies ) {
+		$cookie_jar = new WpOrg\Requests\Cookie\Jar();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		foreach ( $cookies as $name => $value ) {
 			if ( $value instanceof WP_Http_Cookie ) {
@@ -535,6 +604,7 @@ class WP_Http {
 					}
 				);
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$cookie_jar[ $value->name ] = new WpOrg\Requests\Cookie( $value->name, $value->value, $attributes, array( 'host-only' => $value->host_only ) );
 			} elseif ( is_scalar( $value ) ) {
 				$cookie_jar[ $name ] = new WpOrg\Requests\Cookie( $name, (string) $value );
@@ -543,6 +613,11 @@ class WP_Http {
 			} elseif ( is_scalar( $value ) ) {
 				$cookie_jar[ $name ] = new Requests_Cookie( $name, $value );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$cookie_jar[ $value->name ] = new WpOrg\Requests\Cookie( $value->name, $value->value, $attributes, array( 'host-only' => $value->host_only ) );
+			} elseif ( is_scalar( $value ) ) {
+				$cookie_jar[ $name ] = new WpOrg\Requests\Cookie( $name, (string) $value );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 		}
 
@@ -551,10 +626,14 @@ class WP_Http {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Match redirect behavior to browser handling.
 =======
 	 * Match redirect behaviour to browser handling.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Match redirect behavior to browser handling.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * Changes 302 redirects from POST to GET to match browser handling. Per
 	 * RFC 7231, user agents can deviate from the strict reading of the
@@ -563,11 +642,15 @@ class WP_Http {
 	 * @since 4.6.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param string                  $location URL to redirect to.
 	 * @param array                   $headers  Headers for the redirect.
 	 * @param string|array            $data     Body to send with the request.
 	 * @param array                   $options  Redirect request options.
 	 * @param WpOrg\Requests\Response $original Response object.
+<<<<<<< HEAD
 =======
 	 * @param string            $location URL to redirect to.
 	 * @param array             $headers  Headers for the redirect.
@@ -575,15 +658,21 @@ class WP_Http {
 	 * @param array             $options  Redirect request options.
 	 * @param Requests_Response $original Response object.
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public static function browser_redirect_compatibility( $location, $headers, $data, &$options, $original ) {
 		// Browser compatibility.
 		if ( 302 === $original->status_code ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$options['type'] = WpOrg\Requests\Requests::GET;
 =======
 			$options['type'] = Requests::GET;
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$options['type'] = WpOrg\Requests\Requests::GET;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 
@@ -593,19 +682,27 @@ class WP_Http {
 	 * @since 4.7.5
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @throws WpOrg\Requests\Exception On unsuccessful URL validation.
 =======
 	 * @throws Requests_Exception On unsuccessful URL validation.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @throws WpOrg\Requests\Exception On unsuccessful URL validation.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param string $location URL to redirect to.
 	 */
 	public static function validate_redirects( $location ) {
 		if ( ! wp_http_validate_url( $location ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			throw new WpOrg\Requests\Exception( __( 'A valid URL was not provided.' ), 'wp_http.redirect_failed_validation' );
 =======
 			throw new Requests_Exception( __( 'A valid URL was not provided.' ), 'wp_http.redirect_failed_validation' );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			throw new WpOrg\Requests\Exception( __( 'A valid URL was not provided.' ), 'wp_http.redirect_failed_validation' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 
@@ -680,10 +777,14 @@ class WP_Http {
 		// Transport claims to support request, instantiate it and give it a whirl.
 		if ( empty( $transports[ $class ] ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$transports[ $class ] = new $class();
 =======
 			$transports[ $class ] = new $class;
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$transports[ $class ] = new $class();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		$response = $transports[ $class ]->request( $url, $args );
@@ -791,12 +892,17 @@ class WP_Http {
 	 *
 	 *     @type array            $response {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 *         @type int    $code    The response status code. Default 0.
 	 *         @type string $message The response message. Default empty.
 =======
 	 *          @type int    $code    The response status code. Default 0.
 	 *          @type string $message The response message. Default empty.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 *         @type int    $code    The response status code. Default 0.
+	 *         @type string $message The response message. Default empty.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *     }
 	 *     @type array            $newheaders The processed header data as a multidimensional array.
 	 *     @type WP_Http_Cookie[] $cookies    If the original headers contain the 'Set-Cookie' key,
@@ -1120,13 +1226,19 @@ class WP_Http {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		// Add the fragment.
 		if ( ! empty( $relative_url_parts['fragment'] ) ) {
 			$path .= '#' . $relative_url_parts['fragment'];
 		}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return $absolute_path . '/' . ltrim( $path, '/' );
 	}
 

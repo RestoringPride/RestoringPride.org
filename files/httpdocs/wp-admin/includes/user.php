@@ -30,10 +30,14 @@ function add_user() {
 function edit_user( $user_id = 0 ) {
 	$wp_roles = wp_roles();
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$user     = new stdClass();
 =======
 	$user     = new stdClass;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$user     = new stdClass();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$user_id  = (int) $user_id;
 	if ( $user_id ) {
 		$update           = true;
@@ -89,10 +93,14 @@ function edit_user( $user_id = 0 ) {
 			$user->user_url = '';
 		} else {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$user->user_url = sanitize_url( $_POST['url'] );
 =======
 			$user->user_url = esc_url_raw( $_POST['url'] );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$user->user_url = sanitize_url( $_POST['url'] );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$protocols      = implode( '|', array_map( 'preg_quote', wp_allowed_protocols() ) );
 			$user->user_url = preg_match( '/^(' . $protocols . '):/is', $user->user_url ) ? $user->user_url : 'http://' . $user->user_url;
 		}
@@ -128,6 +136,9 @@ function edit_user( $user_id = 0 ) {
 			$locale = 'en_US';
 		} elseif ( ! in_array( $locale, get_available_languages(), true ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( current_user_can( 'install_languages' ) && wp_can_install_language_pack() ) {
 				if ( ! wp_download_language_pack( $locale ) ) {
 					$locale = '';
@@ -135,9 +146,12 @@ function edit_user( $user_id = 0 ) {
 			} else {
 				$locale = '';
 			}
+<<<<<<< HEAD
 =======
 			$locale = '';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		$user->locale = $locale;
@@ -162,19 +176,27 @@ function edit_user( $user_id = 0 ) {
 	/* checking that username has been typed */
 	if ( '' === $user->user_login ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$errors->add( 'user_login', __( '<strong>Error:</strong> Please enter a username.' ) );
 =======
 		$errors->add( 'user_login', __( '<strong>Error</strong>: Please enter a username.' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$errors->add( 'user_login', __( '<strong>Error:</strong> Please enter a username.' ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/* checking that nickname has been typed */
 	if ( $update && empty( $user->nickname ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$errors->add( 'nickname', __( '<strong>Error:</strong> Please enter a nickname.' ) );
 =======
 		$errors->add( 'nickname', __( '<strong>Error</strong>: Please enter a nickname.' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$errors->add( 'nickname', __( '<strong>Error:</strong> Please enter a nickname.' ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -191,28 +213,40 @@ function edit_user( $user_id = 0 ) {
 	// Check for blank password when adding a user.
 	if ( ! $update && empty( $pass1 ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$errors->add( 'pass', __( '<strong>Error:</strong> Please enter a password.' ), array( 'form-field' => 'pass1' ) );
 =======
 		$errors->add( 'pass', __( '<strong>Error</strong>: Please enter a password.' ), array( 'form-field' => 'pass1' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$errors->add( 'pass', __( '<strong>Error:</strong> Please enter a password.' ), array( 'form-field' => 'pass1' ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	// Check for "\" in password.
 	if ( false !== strpos( wp_unslash( $pass1 ), '\\' ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$errors->add( 'pass', __( '<strong>Error:</strong> Passwords may not contain the character "\\".' ), array( 'form-field' => 'pass1' ) );
 =======
 		$errors->add( 'pass', __( '<strong>Error</strong>: Passwords may not contain the character "\\".' ), array( 'form-field' => 'pass1' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$errors->add( 'pass', __( '<strong>Error:</strong> Passwords may not contain the character "\\".' ), array( 'form-field' => 'pass1' ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	// Checking the password has been typed twice the same.
 	if ( ( $update || ! empty( $pass1 ) ) && $pass1 != $pass2 ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$errors->add( 'pass', __( '<strong>Error:</strong> Passwords do not match. Please enter the same password in both password fields.' ), array( 'form-field' => 'pass1' ) );
 =======
 		$errors->add( 'pass', __( '<strong>Error</strong>: Passwords do not match. Please enter the same password in both password fields.' ), array( 'form-field' => 'pass1' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$errors->add( 'pass', __( '<strong>Error:</strong> Passwords do not match. Please enter the same password in both password fields.' ), array( 'form-field' => 'pass1' ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	if ( ! empty( $pass1 ) ) {
@@ -220,6 +254,7 @@ function edit_user( $user_id = 0 ) {
 	}
 
 	if ( ! $update && isset( $_POST['user_login'] ) && ! validate_username( $_POST['user_login'] ) ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 		$errors->add( 'user_login', __( '<strong>Error:</strong> This username is invalid because it uses illegal characters. Please enter a valid username.' ) );
 	}
@@ -233,6 +268,13 @@ function edit_user( $user_id = 0 ) {
 	if ( ! $update && username_exists( $user->user_login ) ) {
 		$errors->add( 'user_login', __( '<strong>Error</strong>: This username is already registered. Please choose another one.' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$errors->add( 'user_login', __( '<strong>Error:</strong> This username is invalid because it uses illegal characters. Please enter a valid username.' ) );
+	}
+
+	if ( ! $update && username_exists( $user->user_login ) ) {
+		$errors->add( 'user_login', __( '<strong>Error:</strong> This username is already registered. Please choose another one.' ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/** This filter is documented in wp-includes/user.php */
@@ -240,14 +282,19 @@ function edit_user( $user_id = 0 ) {
 
 	if ( in_array( strtolower( $user->user_login ), array_map( 'strtolower', $illegal_logins ), true ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$errors->add( 'invalid_username', __( '<strong>Error:</strong> Sorry, that username is not allowed.' ) );
 =======
 		$errors->add( 'invalid_username', __( '<strong>Error</strong>: Sorry, that username is not allowed.' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$errors->add( 'invalid_username', __( '<strong>Error:</strong> Sorry, that username is not allowed.' ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/* checking email address */
 	if ( empty( $user->user_email ) ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 		$errors->add( 'empty_email', __( '<strong>Error:</strong> Please enter an email address.' ), array( 'form-field' => 'email' ) );
 	} elseif ( ! is_email( $user->user_email ) ) {
@@ -258,13 +305,20 @@ function edit_user( $user_id = 0 ) {
 			$errors->add( 'email_exists', __( '<strong>Error:</strong> This email is already registered. Please choose another one.' ), array( 'form-field' => 'email' ) );
 =======
 		$errors->add( 'empty_email', __( '<strong>Error</strong>: Please enter an email address.' ), array( 'form-field' => 'email' ) );
+=======
+		$errors->add( 'empty_email', __( '<strong>Error:</strong> Please enter an email address.' ), array( 'form-field' => 'email' ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	} elseif ( ! is_email( $user->user_email ) ) {
-		$errors->add( 'invalid_email', __( '<strong>Error</strong>: The email address is not correct.' ), array( 'form-field' => 'email' ) );
+		$errors->add( 'invalid_email', __( '<strong>Error:</strong> The email address is not correct.' ), array( 'form-field' => 'email' ) );
 	} else {
 		$owner_id = email_exists( $user->user_email );
 		if ( $owner_id && ( ! $update || ( $owner_id != $user->ID ) ) ) {
+<<<<<<< HEAD
 			$errors->add( 'email_exists', __( '<strong>Error</strong>: This email is already registered. Please choose another one.' ), array( 'form-field' => 'email' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$errors->add( 'email_exists', __( '<strong>Error:</strong> This email is already registered. Please choose another one.' ), array( 'form-field' => 'email' ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 	}
 
@@ -667,9 +721,13 @@ Please click the following link to activate your user account:
  *
  * @since 5.6.0
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @since 6.2.0 Allow insecure HTTP connections for the local environment.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @since 6.2.0 Allow insecure HTTP connections for the local environment.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @param array   $request {
  *     The array of request data. All arguments are optional and may be empty.
@@ -684,20 +742,29 @@ Please click the following link to activate your user account:
  */
 function wp_is_authorize_application_password_request_valid( $request, $user ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$error    = new WP_Error();
 	$is_local = 'local' === wp_get_environment_type();
 =======
 	$error = new WP_Error();
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$error    = new WP_Error();
+	$is_local = 'local' === wp_get_environment_type();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	if ( ! empty( $request['success_url'] ) ) {
 		$scheme = wp_parse_url( $request['success_url'], PHP_URL_SCHEME );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( 'http' === $scheme && ! $is_local ) {
 =======
 		if ( 'http' === $scheme ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( 'http' === $scheme && ! $is_local ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$error->add(
 				'invalid_redirect_scheme',
 				__( 'The success URL must be served over a secure connection.' )
@@ -709,10 +776,14 @@ function wp_is_authorize_application_password_request_valid( $request, $user ) {
 		$scheme = wp_parse_url( $request['reject_url'], PHP_URL_SCHEME );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if ( 'http' === $scheme && ! $is_local ) {
 =======
 		if ( 'http' === $scheme ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( 'http' === $scheme && ! $is_local ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$error->add(
 				'invalid_redirect_scheme',
 				__( 'The rejection URL must be served over a secure connection.' )

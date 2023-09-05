@@ -12,9 +12,12 @@
  *
  * @since 3.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_List_Table
  */
@@ -297,6 +300,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 
 		foreach ( $stati as $status => $label ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			$current_link_attributes = '';
 
@@ -305,6 +309,8 @@ class WP_Comments_List_Table extends WP_List_Table {
 			}
 
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			if ( 'mine' === $status ) {
 				$current_user_id    = get_current_user_id();
 				$num_comments->mine = get_comments(
@@ -336,6 +342,9 @@ class WP_Comments_List_Table extends WP_List_Table {
 			*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$status_links[ $status ] = array(
 				'url'     => esc_url( $link ),
 				'label'   => sprintf(
@@ -348,6 +357,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 				),
 				'current' => $status === $comment_status,
 			);
+<<<<<<< HEAD
 =======
 			$status_links[ $status ] = "<a href='$link'$current_link_attributes>" . sprintf(
 				translate_nooped_plural( $label, $num_comments->$status ),
@@ -358,6 +368,8 @@ class WP_Comments_List_Table extends WP_List_Table {
 				)
 			) . '</a>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		/**
@@ -370,10 +382,14 @@ class WP_Comments_List_Table extends WP_List_Table {
 		 *                              'Pending', 'Approved', 'Spam', and 'Trash'.
 		 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 		return apply_filters( 'comment_status_links', $this->get_views_links( $status_links ) );
 =======
 		return apply_filters( 'comment_status_links', $status_links );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return apply_filters( 'comment_status_links', $this->get_views_links( $status_links ) );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -535,14 +551,20 @@ class WP_Comments_List_Table extends WP_List_Table {
 
 		if ( $comment_types && is_array( $comment_types ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			printf(
 				'<label class="screen-reader-text" for="filter-by-comment-type">%s</label>',
 				/* translators: Hidden accessibility text. */
 				__( 'Filter by comment type' )
 			);
+<<<<<<< HEAD
 =======
 			printf( '<label class="screen-reader-text" for="filter-by-comment-type">%s</label>', __( 'Filter by comment type' ) );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 			echo '<select id="filter-by-comment-type" name="comment_type">';
 
@@ -581,10 +603,14 @@ class WP_Comments_List_Table extends WP_List_Table {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Gets the name of the default primary column.
 =======
 	 * Get the name of the default primary column.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Gets the name of the default primary column.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.3.0
 	 *
@@ -686,10 +712,14 @@ class WP_Comments_List_Table extends WP_List_Table {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Generates and displays row actions links.
 =======
 	 * Generate and display row actions links.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Generates and displays row actions links.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.3.0
 	 * @since 5.9.0 Renamed `$comment` to `$item` to match parent class for PHP 8 named parameter support.
@@ -719,10 +749,14 @@ class WP_Comments_List_Table extends WP_List_Table {
 		$the_comment_status = wp_get_comment_status( $comment );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$output = '';
 =======
 		$out = '';
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$output = '';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$del_nonce     = esc_html( '_wpnonce=' . wp_create_nonce( "delete-comment_$comment->comment_ID" ) );
 		$approve_nonce = esc_html( '_wpnonce=' . wp_create_nonce( "approve-comment_$comment->comment_ID" ) );
@@ -878,10 +912,14 @@ class WP_Comments_List_Table extends WP_List_Table {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$output .= '<div class="' . ( $always_visible ? 'row-actions visible' : 'row-actions' ) . '">';
 =======
 		$out .= '<div class="' . ( $always_visible ? 'row-actions visible' : 'row-actions' ) . '">';
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$output .= '<div class="' . ( $always_visible ? 'row-actions visible' : 'row-actions' ) . '">';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		$i = 0;
 
@@ -892,6 +930,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 				|| 1 === $i
 			) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$separator = '';
 			} else {
 				$separator = ' | ';
@@ -900,6 +939,11 @@ class WP_Comments_List_Table extends WP_List_Table {
 			} else {
 				$sep = ' | ';
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$separator = '';
+			} else {
+				$separator = ' | ';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 
 			// Reply and quickedit need a hide-if-no-js span when not added with Ajax.
@@ -916,6 +960,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 			}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$output .= "<span class='$action'>{$separator}{$link}</span>";
 		}
 
@@ -929,14 +974,24 @@ class WP_Comments_List_Table extends WP_List_Table {
 		return $output;
 =======
 			$out .= "<span class='$action'>$sep$link</span>";
+=======
+			$output .= "<span class='$action'>{$separator}{$link}</span>";
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
-		$out .= '</div>';
+		$output .= '</div>';
 
-		$out .= '<button type="button" class="toggle-row"><span class="screen-reader-text">' . __( 'Show more details' ) . '</span></button>';
+		$output .= '<button type="button" class="toggle-row"><span class="screen-reader-text">' .
+			/* translators: Hidden accessibility text. */
+			__( 'Show more details' ) .
+		'</span></button>';
 
+<<<<<<< HEAD
 		return $out;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		return $output;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	/**
@@ -951,15 +1006,21 @@ class WP_Comments_List_Table extends WP_List_Table {
 		if ( $this->user_can ) {
 			?>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<label class="screen-reader-text" for="cb-select-<?php echo $comment->comment_ID; ?>">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Select comment' );
 			?>
 		</label>
+<<<<<<< HEAD
 =======
 		<label class="screen-reader-text" for="cb-select-<?php echo $comment->comment_ID; ?>"><?php _e( 'Select comment' ); ?></label>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<input id="cb-select-<?php echo $comment->comment_ID; ?>" type="checkbox" name="delete_comments[]" value="<?php echo $comment->comment_ID; ?>" />
 			<?php
 		}
@@ -996,12 +1057,17 @@ class WP_Comments_List_Table extends WP_List_Table {
 		<div id="inline-<?php echo $comment->comment_ID; ?>" class="hidden">
 			<textarea class="comment" rows="1" cols="1"><?php echo esc_textarea( $comment_content ); ?></textarea>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<div class="author-email"><?php echo esc_html( $comment->comment_author_email ); ?></div>
 			<div class="author"><?php echo esc_html( $comment->comment_author ); ?></div>
 =======
 			<div class="author-email"><?php echo esc_attr( $comment->comment_author_email ); ?></div>
 			<div class="author"><?php echo esc_attr( $comment->comment_author ); ?></div>
 >>>>>>> fb785cbb (Initial commit)
+=======
+			<div class="author-email"><?php echo esc_html( $comment->comment_author_email ); ?></div>
+			<div class="author"><?php echo esc_html( $comment->comment_author ); ?></div>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			<div class="author-url"><?php echo esc_url( $comment->comment_author_url ); ?></div>
 			<div class="comment_status"><?php echo $comment->comment_approved; ?></div>
 		</div>

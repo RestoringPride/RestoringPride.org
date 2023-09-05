@@ -11,10 +11,15 @@
  * Stores files to be deleted.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Bundled theme files should not be included in this list.
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Bundled theme files should not be included in this list.
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @since 2.7.0
  *
  * @global array $_old_files
@@ -849,6 +854,9 @@ $_old_files = array(
 	'wp-includes/blocks/tag-cloud/editor-rtl.css',
 	'wp-includes/blocks/tag-cloud/editor-rtl.min.css',
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	// 6.1
 	'wp-includes/blocks/post-comments.php',
 	'wp-includes/blocks/post-comments/block.json',
@@ -957,10 +965,13 @@ $_old_requests_files = array(
 	'wp-includes/Requests/Response/',
 	'wp-includes/Requests/Transport/',
 	'wp-includes/Requests/Utility/',
+<<<<<<< HEAD
 =======
 	// 6.0
 	'wp-content/themes/twentytwentytwo/assets/fonts/LICENSE.md',
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 );
 
 /**
@@ -969,10 +980,14 @@ $_old_requests_files = array(
  * The contents of this array indicate any new bundled plugins/themes which
  * should be installed with the WordPress Upgrade. These items will not be
 <<<<<<< HEAD
+<<<<<<< HEAD
  * re-installed in future upgrades, this behavior is controlled by the
 =======
  * re-installed in future upgrades, this behaviour is controlled by the
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * re-installed in future upgrades, this behavior is controlled by the
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * introduced version present here being older than the current installed version.
  *
  * The content of this array should follow the following format:
@@ -992,6 +1007,9 @@ global $_new_bundled_files;
 
 $_new_bundled_files = array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	'plugins/akismet/'          => '2.0',
 	'themes/twentyten/'         => '3.0',
 	'themes/twentyeleven/'      => '3.2',
@@ -1006,6 +1024,7 @@ $_new_bundled_files = array(
 	'themes/twentytwentyone/'   => '5.6',
 	'themes/twentytwentytwo/'   => '5.9',
 	'themes/twentytwentythree/' => '6.1',
+<<<<<<< HEAD
 =======
 	'plugins/akismet/'        => '2.0',
 	'themes/twentyten/'       => '3.0',
@@ -1021,6 +1040,8 @@ $_new_bundled_files = array(
 	'themes/twentytwentyone/' => '5.6',
 	'themes/twentytwentytwo/' => '5.9',
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 );
 
 /**
@@ -1068,9 +1089,13 @@ $_new_bundled_files = array(
  * @global WP_Filesystem_Base $wp_filesystem          WordPress filesystem subclass.
  * @global array              $_old_files
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @global array              $_old_requests_files
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @global array              $_old_requests_files
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @global array              $_new_bundled_files
  * @global wpdb               $wpdb                   WordPress database abstraction object.
  * @global string             $wp_version
@@ -1082,6 +1107,7 @@ $_new_bundled_files = array(
  * @return string|WP_Error New WordPress version on success, WP_Error on failure.
  */
 function update_core( $from, $to ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 	global $wp_filesystem, $_old_files, $_old_requests_files, $_new_bundled_files, $wpdb;
 
@@ -1101,6 +1127,21 @@ function update_core( $from, $to ) {
 
 	set_time_limit( 300 );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	global $wp_filesystem, $_old_files, $_old_requests_files, $_new_bundled_files, $wpdb;
+
+	if ( function_exists( 'set_time_limit' ) ) {
+		set_time_limit( 300 );
+	}
+
+	/*
+	 * Merge the old Requests files and directories into the `$_old_files`.
+	 * Then preload these Requests files first, before the files are deleted
+	 * and replaced to ensure the code is in memory if needed.
+	 */
+	$_old_files = array_merge( $_old_files, array_values( $_old_requests_files ) );
+	_preload_old_requests_classes_and_interfaces( $to );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	/**
 	 * Filters feedback messages displayed during the core update process.
@@ -1172,10 +1213,14 @@ function update_core( $from, $to ) {
 	$wp_filesystem->delete( $versions_file );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$php_version       = PHP_VERSION;
 =======
 	$php_version       = phpversion();
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$php_version       = PHP_VERSION;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	$mysql_version     = $wpdb->db_version();
 	$old_wp_version    = $GLOBALS['wp_version']; // The version of WordPress we're updating from.
 	$development_build = ( false !== strpos( $old_wp_version . $wp_version, '-' ) ); // A dash in the version indicates a development release.
@@ -1330,10 +1375,14 @@ function update_core( $from, $to ) {
 				return new WP_Error(
 					'files_not_writable',
 <<<<<<< HEAD
+<<<<<<< HEAD
 					__( 'The update cannot be installed because your site is unable to copy some files. This is usually due to inconsistent file permissions.' ),
 =======
 					__( 'The update cannot be installed because we will be unable to copy some files. This is usually due to inconsistent file permissions.' ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+					__( 'The update cannot be installed because your site is unable to copy some files. This is usually due to inconsistent file permissions.' ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					implode( ', ', $error_data )
 				);
 			}
@@ -1354,10 +1403,14 @@ function update_core( $from, $to ) {
 
 	// Copy new versions of WP files into place.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$result = copy_dir( $from . $distro, $to, $skip );
 =======
 	$result = _copy_dir( $from . $distro, $to, $skip );
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$result = copy_dir( $from . $distro, $to, $skip );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	if ( is_wp_error( $result ) ) {
 		$result = new WP_Error(
@@ -1374,10 +1427,14 @@ function update_core( $from, $to ) {
 			$result = new WP_Error(
 				'copy_failed_for_version_file',
 <<<<<<< HEAD
+<<<<<<< HEAD
 				__( 'The update cannot be installed because your site is unable to copy some files. This is usually due to inconsistent file permissions.' ),
 =======
 				__( 'The update cannot be installed because we will be unable to copy some files. This is usually due to inconsistent file permissions.' ),
 >>>>>>> fb785cbb (Initial commit)
+=======
+				__( 'The update cannot be installed because your site is unable to copy some files. This is usually due to inconsistent file permissions.' ),
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'wp-includes/version.php'
 			);
 		}
@@ -1440,10 +1497,14 @@ function update_core( $from, $to ) {
 			$result = new WP_Error( 'disk_full', __( 'There is not enough free disk space to complete the update.' ) );
 		} else {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$result = copy_dir( $from . $distro, $to, $skip );
 =======
 			$result = _copy_dir( $from . $distro, $to, $skip );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$result = copy_dir( $from . $distro, $to, $skip );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 			if ( is_wp_error( $result ) ) {
 				$result = new WP_Error(
@@ -1554,10 +1615,14 @@ function update_core( $from, $to ) {
 					if ( is_wp_error( $_result ) ) {
 						if ( ! is_wp_error( $result ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 							$result = new WP_Error();
 =======
 							$result = new WP_Error;
 >>>>>>> fb785cbb (Initial commit)
+=======
+							$result = new WP_Error();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						}
 
 						$result->add(
@@ -1599,12 +1664,17 @@ function update_core( $from, $to ) {
 	_upgrade_440_force_deactivate_incompatible_plugins();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// Deactivate incompatible plugins.
 	_upgrade_core_deactivate_incompatible_plugins();
 =======
 	// Deactivate the Gutenberg plugin if its version is 11.8 or lower.
 	_upgrade_590_force_deactivate_incompatible_plugins();
 >>>>>>> fb785cbb (Initial commit)
+=======
+	// Deactivate incompatible plugins.
+	_upgrade_core_deactivate_incompatible_plugins();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	// Upgrade DB with separate request.
 	/** This filter is documented in wp-admin/includes/update-core.php */
@@ -1646,6 +1716,7 @@ function update_core( $from, $to ) {
 }
 
 /**
+<<<<<<< HEAD
 <<<<<<< HEAD
  * Preloads old Requests classes and interfaces.
  *
@@ -1703,92 +1774,67 @@ function _preload_old_requests_classes_and_interfaces( $to ) {
 	}
 =======
  * Copies a directory from one location to another via the WordPress Filesystem Abstraction.
+=======
+ * Preloads old Requests classes and interfaces.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
- * Assumes that WP_Filesystem() has already been called and setup.
+ * This function preloads the old Requests code into memory before the
+ * upgrade process deletes the files. Why? Requests code is loaded into
+ * memory via an autoloader, meaning when a class or interface is needed
+ * If a request is in process, Requests could attempt to access code. If
+ * the file is not there, a fatal error could occur. If the file was
+ * replaced, the new code is not compatible with the old, resulting in
+ * a fatal error. Preloading ensures the code is in memory before the
+ * code is updated.
  *
- * This is a standalone copy of the `copy_dir()` function that is used to
- * upgrade the core files. It is placed here so that the version of this
- * function from the *new* WordPress version will be called.
+ * @since 6.2.0
  *
- * It was initially added for the 3.1 -> 3.2 upgrade.
+ * @global array              $_old_requests_files Requests files to be preloaded.
+ * @global WP_Filesystem_Base $wp_filesystem       WordPress filesystem subclass.
+ * @global string             $wp_version          The WordPress version string.
  *
- * @ignore
- * @since 3.2.0
- * @since 3.7.0 Updated not to use a regular expression for the skip list.
- *
- * @see copy_dir()
- * @link https://core.trac.wordpress.org/ticket/17173
- *
- * @global WP_Filesystem_Base $wp_filesystem
- *
- * @param string   $from      Source directory.
- * @param string   $to        Destination directory.
- * @param string[] $skip_list Array of files/folders to skip copying.
- * @return true|WP_Error True on success, WP_Error on failure.
+ * @param string $to Path to old WordPress installation.
  */
-function _copy_dir( $from, $to, $skip_list = array() ) {
-	global $wp_filesystem;
+function _preload_old_requests_classes_and_interfaces( $to ) {
+	global $_old_requests_files, $wp_filesystem, $wp_version;
 
-	$dirlist = $wp_filesystem->dirlist( $from );
-
-	if ( false === $dirlist ) {
-		return new WP_Error( 'dirlist_failed__copy_dir', __( 'Directory listing failed.' ), basename( $to ) );
+	/*
+	 * Requests was introduced in WordPress 4.6.
+	 *
+	 * Skip preloading if the website was previously using
+	 * an earlier version of WordPress.
+	 */
+	if ( version_compare( $wp_version, '4.6', '<' ) ) {
+		return;
 	}
 
-	$from = trailingslashit( $from );
-	$to   = trailingslashit( $to );
+	if ( ! defined( 'REQUESTS_SILENCE_PSR0_DEPRECATIONS' ) ) {
+		define( 'REQUESTS_SILENCE_PSR0_DEPRECATIONS', true );
+	}
 
-	foreach ( (array) $dirlist as $filename => $fileinfo ) {
-		if ( in_array( $filename, $skip_list, true ) ) {
+	foreach ( $_old_requests_files as $name => $file ) {
+		// Skip files that aren't interfaces or classes.
+		if ( is_int( $name ) ) {
 			continue;
 		}
 
-		if ( 'f' === $fileinfo['type'] ) {
-			if ( ! $wp_filesystem->copy( $from . $filename, $to . $filename, true, FS_CHMOD_FILE ) ) {
-				// If copy failed, chmod file to 0644 and try again.
-				$wp_filesystem->chmod( $to . $filename, FS_CHMOD_FILE );
-
-				if ( ! $wp_filesystem->copy( $from . $filename, $to . $filename, true, FS_CHMOD_FILE ) ) {
-					return new WP_Error( 'copy_failed__copy_dir', __( 'Could not copy file.' ), $to . $filename );
-				}
-			}
-
-			/*
-			 * `wp_opcache_invalidate()` only exists in WordPress 5.5 or later,
-			 * so don't run it when upgrading from older versions.
-			 */
-			if ( function_exists( 'wp_opcache_invalidate' ) ) {
-				wp_opcache_invalidate( $to . $filename );
-			}
-		} elseif ( 'd' === $fileinfo['type'] ) {
-			if ( ! $wp_filesystem->is_dir( $to . $filename ) ) {
-				if ( ! $wp_filesystem->mkdir( $to . $filename, FS_CHMOD_DIR ) ) {
-					return new WP_Error( 'mkdir_failed__copy_dir', __( 'Could not create directory.' ), $to . $filename );
-				}
-			}
-
-			/*
-			 * Generate the $sub_skip_list for the subdirectory as a sub-set
-			 * of the existing $skip_list.
-			 */
-			$sub_skip_list = array();
-
-			foreach ( $skip_list as $skip_item ) {
-				if ( 0 === strpos( $skip_item, $filename . '/' ) ) {
-					$sub_skip_list[] = preg_replace( '!^' . preg_quote( $filename, '!' ) . '/!i', '', $skip_item );
-				}
-			}
-
-			$result = _copy_dir( $from . $filename, $to . $filename, $sub_skip_list );
-
-			if ( is_wp_error( $result ) ) {
-				return $result;
-			}
+		// Skip if it's already loaded.
+		if ( class_exists( $name ) || interface_exists( $name ) ) {
+			continue;
 		}
-	}
 
+<<<<<<< HEAD
 	return true;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		// Skip if the file is missing.
+		if ( ! $wp_filesystem->is_file( $to . $file ) ) {
+			continue;
+		}
+
+		require_once $to . $file;
+	}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 /**
@@ -1950,6 +1996,7 @@ function _upgrade_440_force_deactivate_incompatible_plugins() {
  * @access private
  * @ignore
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @since 5.8.0
  * @since 5.9.0 The minimum compatible version of Gutenberg is 11.9.
  * @since 6.1.1 The minimum compatible version of Gutenberg is 14.1.
@@ -1962,14 +2009,23 @@ function _upgrade_core_deactivate_incompatible_plugins() {
 			'version_compatible'  => '14.1',
 =======
  * @since 5.9.0
+=======
+ * @since 5.8.0
+ * @since 5.9.0 The minimum compatible version of Gutenberg is 11.9.
+ * @since 6.1.1 The minimum compatible version of Gutenberg is 14.1.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
-function _upgrade_590_force_deactivate_incompatible_plugins() {
-	if ( defined( 'GUTENBERG_VERSION' ) && version_compare( GUTENBERG_VERSION, '11.9', '<' ) ) {
+function _upgrade_core_deactivate_incompatible_plugins() {
+	if ( defined( 'GUTENBERG_VERSION' ) && version_compare( GUTENBERG_VERSION, '14.1', '<' ) ) {
 		$deactivated_gutenberg['gutenberg'] = array(
 			'plugin_name'         => 'Gutenberg',
 			'version_deactivated' => GUTENBERG_VERSION,
+<<<<<<< HEAD
 			'version_compatible'  => '11.9',
 >>>>>>> fb785cbb (Initial commit)
+=======
+			'version_compatible'  => '14.1',
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		);
 		if ( is_plugin_active_for_network( 'gutenberg/gutenberg.php' ) ) {
 			$deactivated_plugins = get_site_option( 'wp_force_deactivated_plugins', array() );

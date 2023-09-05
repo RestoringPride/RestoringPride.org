@@ -338,10 +338,14 @@ if ( isset( $_GET['editwidget'] ) && $_GET['editwidget'] ) {
 		<div class="alignleft">
 			<?php if ( ! isset( $_GET['addnew'] ) ) : ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<input type="submit" name="removewidget" id="removewidget" class="button-link button-link-delete widget-control-remove" value="<?php esc_attr_e( 'Delete' ); ?>" />
 =======
 				<input type="submit" name="removewidget" id="removewidget" class="button-link button-link-delete widget-control-remove" value="<?php _e( 'Delete' ); ?>" />
 >>>>>>> fb785cbb (Initial commit)
+=======
+				<input type="submit" name="removewidget" id="removewidget" class="button-link button-link-delete widget-control-remove" value="<?php esc_attr_e( 'Delete' ); ?>" />
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<span class="widget-control-close-wrapper">
 					| <a href="widgets.php" class="button-link widget-control-close"><?php _e( 'Cancel' ); ?></a>
 				</span>
@@ -433,15 +437,21 @@ do_action( 'widgets_admin_page' );
 		<div class="sidebar-name">
 			<button type="button" class="handlediv hide-if-no-js" aria-expanded="true">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<span class="screen-reader-text">
 					<?php
 					/* translators: Hidden accessibility text. */
 					_e( 'Available Widgets' );
 					?>
 				</span>
+<<<<<<< HEAD
 =======
 				<span class="screen-reader-text"><?php _e( 'Available Widgets' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				<span class="toggle-indicator" aria-hidden="true"></span>
 			</button>
 			<h2><?php _e( 'Available Widgets' ); ?> <span id="removing-widget"><?php _ex( 'Deactivate', 'removing-widget' ); ?> <span></span></span></h2>

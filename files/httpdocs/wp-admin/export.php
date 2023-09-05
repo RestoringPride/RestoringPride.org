@@ -183,15 +183,21 @@ function export_date_options( $post_type = 'post' ) {
 <form method="get" id="export-filters">
 <fieldset>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <legend class="screen-reader-text">
 	<?php
 	/* translators: Hidden accessibility text. */
 	_e( 'Content to export' );
 	?>
 </legend>
+<<<<<<< HEAD
 =======
 <legend class="screen-reader-text"><?php _e( 'Content to export' ); ?></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 <input type="hidden" name="download" value="true" />
 <p><label><input type="radio" name="content" value="all" checked="checked" aria-describedby="all-content-desc" /> <?php _e( 'All content' ); ?></label></p>
 <p class="description" id="all-content-desc"><?php _e( 'This will contain all of your posts, pages, comments, custom fields, terms, navigation menus, and custom posts.' ); ?></p>
@@ -222,15 +228,21 @@ function export_date_options( $post_type = 'post' ) {
 	<li>
 		<fieldset>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<legend class="screen-reader-text">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Date range:' )
 			?>
 		</legend>
+<<<<<<< HEAD
 =======
 		<legend class="screen-reader-text"><?php _e( 'Date range:' ); ?></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<label for="post-start-date" class="label-responsive"><?php _e( 'Start date:' ); ?></label>
 		<select name="post_start_date" id="post-start-date">
 			<option value="0"><?php _e( '&mdash; Select &mdash;' ); ?></option>
@@ -278,15 +290,21 @@ function export_date_options( $post_type = 'post' ) {
 	<li>
 		<fieldset>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<legend class="screen-reader-text">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Date range:' );
 			?>
 		</legend>
+<<<<<<< HEAD
 =======
 		<legend class="screen-reader-text"><?php _e( 'Date range:' ); ?></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<label for="page-start-date" class="label-responsive"><?php _e( 'Start date:' ); ?></label>
 		<select name="page_start_date" id="page-start-date">
 			<option value="0"><?php _e( '&mdash; Select &mdash;' ); ?></option>
@@ -327,15 +345,21 @@ foreach ( get_post_types(
 	<li>
 		<fieldset>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<legend class="screen-reader-text">
 			<?php
 			/* translators: Hidden accessibility text. */
 			_e( 'Date range:' );
 			?>
 		</legend>
+<<<<<<< HEAD
 =======
 		<legend class="screen-reader-text"><?php _e( 'Date range:' ); ?></legend>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<label for="attachment-start-date" class="label-responsive"><?php _e( 'Start date:' ); ?></label>
 		<select name="attachment_start_date" id="attachment-start-date">
 			<option value="0"><?php _e( '&mdash; Select &mdash;' ); ?></option>

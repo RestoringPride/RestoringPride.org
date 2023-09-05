@@ -14,6 +14,9 @@ if ( ! current_user_can( 'upload_files' ) ) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 $message = '';
 if ( ! empty( $_GET['posted'] ) ) {
 	$message                = __( 'Media file updated.' );
@@ -98,8 +101,11 @@ if ( ! empty( $_GET['message'] ) && isset( $messages[ $_GET['message'] ] ) ) {
 	$_SERVER['REQUEST_URI'] = remove_query_arg( array( 'message' ), $_SERVER['REQUEST_URI'] );
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 $mode  = get_user_option( 'media_library_mode', get_current_user_id() ) ? get_user_option( 'media_library_mode', get_current_user_id() ) : 'grid';
 $modes = array( 'grid', 'list' );
 
@@ -188,12 +194,18 @@ if ( 'grid' === $mode ) {
 		<hr class="wp-header-end">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<?php if ( ! empty( $message ) ) : ?>
 			<div id="message" class="updated notice is-dismissible"><p><?php echo $message; ?></p></div>
 		<?php endif; ?>
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		<div class="error hide-if-js">
 			<p>
 			<?php
@@ -231,9 +243,13 @@ if ( $doaction ) {
 		$post_ids = explode( ',', $_REQUEST['ids'] );
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$post_ids = array_map( 'intval', (array) $post_ids );
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$post_ids = array_map( 'intval', (array) $post_ids );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 	$location = 'upload.php';
 	$referer  = wp_get_referer();
@@ -257,10 +273,14 @@ if ( $doaction ) {
 				break;
 			}
 <<<<<<< HEAD
+<<<<<<< HEAD
 			foreach ( $post_ids as $post_id ) {
 =======
 			foreach ( (array) $post_ids as $post_id ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+			foreach ( $post_ids as $post_id ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				if ( ! current_user_can( 'delete_post', $post_id ) ) {
 					wp_die( __( 'Sorry, you are not allowed to move this item to the Trash.' ) );
 				}
@@ -282,10 +302,14 @@ if ( $doaction ) {
 				break;
 			}
 <<<<<<< HEAD
+<<<<<<< HEAD
 			foreach ( $post_ids as $post_id ) {
 =======
 			foreach ( (array) $post_ids as $post_id ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+			foreach ( $post_ids as $post_id ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				if ( ! current_user_can( 'delete_post', $post_id ) ) {
 					wp_die( __( 'Sorry, you are not allowed to restore this item from the Trash.' ) );
 				}
@@ -301,10 +325,14 @@ if ( $doaction ) {
 				break;
 			}
 <<<<<<< HEAD
+<<<<<<< HEAD
 			foreach ( $post_ids as $post_id_del ) {
 =======
 			foreach ( (array) $post_ids as $post_id_del ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+			foreach ( $post_ids as $post_id_del ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				if ( ! current_user_can( 'delete_post', $post_id_del ) ) {
 					wp_die( __( 'Sorry, you are not allowed to delete this item.' ) );
 				}
@@ -355,6 +383,9 @@ get_current_screen()->add_help_tab(
 		'title'   => __( 'Available Actions' ),
 		'content' =>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				'<p>' . __( 'Hovering over a row reveals action links that allow you to manage media items. You can perform the following actions:' ) . '</p>' .
 				'<ul>' .
 					'<li>' . __( '<strong>Edit</strong> takes you to a simple screen to edit that individual file&#8217;s metadata. You can also reach that screen by clicking on the media file name or thumbnail.' ) . '</li>' .
@@ -363,9 +394,12 @@ get_current_screen()->add_help_tab(
 					'<li>' . __( '<strong>Copy URL</strong> copies the URL for the media file to your clipboard.' ) . '</li>' .
 					'<li>' . __( '<strong>Download file</strong> downloads the original media file to your device.' ) . '</li>' .
 				'</ul>',
+<<<<<<< HEAD
 =======
 				'<p>' . __( 'Hovering over a row reveals action links: Edit, Delete Permanently, and View. Clicking Edit or on the media file&#8217;s name displays a simple screen to edit that individual file&#8217;s metadata. Clicking Delete Permanently will delete the file from the media library (as well as from any posts to which it is currently attached). View will take you to the display page for that file.' ) . '</p>',
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	)
 );
 get_current_screen()->add_help_tab(
@@ -422,6 +456,7 @@ if ( isset( $_REQUEST['s'] ) && strlen( $_REQUEST['s'] ) ) {
 
 <hr class="wp-header-end">
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <?php if ( ! empty( $message ) ) : ?>
 <div id="message" class="updated notice is-dismissible"><p><?php echo $message; ?></p></div>
@@ -511,6 +546,11 @@ if ( ! empty( $message ) ) {
 <div id="message" class="updated notice is-dismissible"><p><?php echo $message; ?></p></div>
 <?php } ?>
 >>>>>>> fb785cbb (Initial commit)
+=======
+<?php if ( ! empty( $message ) ) : ?>
+<div id="message" class="updated notice is-dismissible"><p><?php echo $message; ?></p></div>
+<?php endif; ?>
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 <form id="posts-filter" method="get">
 

@@ -259,10 +259,14 @@ class WP_REST_Settings_Controller extends WP_REST_Controller {
 			}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$rest_args['schema'] = rest_default_additional_properties_to_false( $rest_args['schema'] );
 =======
 			$rest_args['schema'] = $this->set_additional_properties_to_false( $rest_args['schema'] );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$rest_args['schema'] = rest_default_additional_properties_to_false( $rest_args['schema'] );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 			$rest_options[ $rest_args['name'] ] = $rest_args;
 		}
@@ -327,6 +331,7 @@ class WP_REST_Settings_Controller extends WP_REST_Controller {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Recursively add additionalProperties = false to all objects in a schema
 	 * if no additionalProperties setting is specified.
 	 *
@@ -336,19 +341,30 @@ class WP_REST_Settings_Controller extends WP_REST_Controller {
 	 *
 	 * This is need to restrict properties of objects in settings values to only
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Recursively add additionalProperties = false to all objects in a schema
+	 * if no additionalProperties setting is specified.
+	 *
+	 * This is needed to restrict properties of objects in settings values to only
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * registered items, as the REST API will allow additional properties by
 	 * default.
 	 *
 	 * @since 4.9.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @deprecated 6.1.0 Use {@see rest_default_additional_properties_to_false()} instead.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @deprecated 6.1.0 Use {@see rest_default_additional_properties_to_false()} instead.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @param array $schema The schema array.
 	 * @return array
 	 */
 	protected function set_additional_properties_to_false( $schema ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 		_deprecated_function( __METHOD__, '6.1.0', 'rest_default_additional_properties_to_false()' );
 
@@ -369,5 +385,10 @@ class WP_REST_Settings_Controller extends WP_REST_Controller {
 
 		return $schema;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		_deprecated_function( __METHOD__, '6.1.0', 'rest_default_additional_properties_to_false()' );
+
+		return rest_default_additional_properties_to_false( $schema );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 }

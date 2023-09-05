@@ -10,10 +10,14 @@
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Initializes $wp_scripts if it has not been set.
 =======
  * Initialize $wp_scripts if it has not been set.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Initializes $wp_scripts if it has not been set.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @global WP_Scripts $wp_scripts
  *
@@ -39,6 +43,7 @@ function wp_scripts() {
  * @since 5.5.0 Added the `$handle` parameter.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param string $function_name Function name.
  * @param string $handle        Optional. Name of the script or stylesheet that was
  *                              registered or enqueued too early. Default empty.
@@ -51,6 +56,13 @@ function _wp_scripts_maybe_doing_it_wrong( $function_name, $handle = '' ) {
  */
 function _wp_scripts_maybe_doing_it_wrong( $function, $handle = '' ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param string $function_name Function name.
+ * @param string $handle        Optional. Name of the script or stylesheet that was
+ *                              registered or enqueued too early. Default empty.
+ */
+function _wp_scripts_maybe_doing_it_wrong( $function_name, $handle = '' ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( did_action( 'init' ) || did_action( 'wp_enqueue_scripts' )
 		|| did_action( 'admin_enqueue_scripts' ) || did_action( 'login_enqueue_scripts' )
 	) {
@@ -75,10 +87,14 @@ function _wp_scripts_maybe_doing_it_wrong( $function, $handle = '' ) {
 
 	_doing_it_wrong(
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$function_name,
 =======
 		$function,
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$function_name,
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$message,
 		'3.3.0'
 	);
@@ -165,10 +181,14 @@ function wp_add_inline_script( $handle, $data, $position = 'after' ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Registers a new script.
 =======
  * Register a new script.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Registers a new script.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * Registers a script to be enqueued later using the wp_enqueue_script() function.
  *
@@ -180,10 +200,14 @@ function wp_add_inline_script( $handle, $data, $position = 'after' ) {
  *
  * @param string           $handle    Name of the script. Should be unique.
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param string|false     $src       Full URL of the script, or path of the script relative to the WordPress root directory.
 =======
  * @param string|bool      $src       Full URL of the script, or path of the script relative to the WordPress root directory.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @param string|false     $src       Full URL of the script, or path of the script relative to the WordPress root directory.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *                                    If source is set to false, script is an alias of other scripts it depends on.
  * @param string[]         $deps      Optional. An array of registered script handles this script depends on. Default empty array.
  * @param string|bool|null $ver       Optional. String specifying script version number, if it has one, which is added to the URL
@@ -209,10 +233,14 @@ function wp_register_script( $handle, $src, $deps = array(), $ver = false, $in_f
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Localizes a script.
 =======
  * Localize a script.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Localizes a script.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * Works only if the script has already been registered.
  *
@@ -266,10 +294,14 @@ function wp_localize_script( $handle, $object_name, $l10n ) {
  * @return bool True if the text domain was successfully localized, false otherwise.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 function wp_set_script_translations( $handle, $domain = 'default', $path = '' ) {
 =======
 function wp_set_script_translations( $handle, $domain = 'default', $path = null ) {
 >>>>>>> fb785cbb (Initial commit)
+=======
+function wp_set_script_translations( $handle, $domain = 'default', $path = '' ) {
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	global $wp_scripts;
 
 	if ( ! ( $wp_scripts instanceof WP_Scripts ) ) {
@@ -282,10 +314,14 @@ function wp_set_script_translations( $handle, $domain = 'default', $path = null 
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Removes a registered script.
 =======
  * Remove a registered script.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Removes a registered script.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * Note: there are intentional safeguards in place to prevent critical admin scripts,
  * such as jQuery core, from being unregistered.
@@ -359,10 +395,14 @@ function wp_deregister_script( $handle ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Enqueues a script.
 =======
  * Enqueue a script.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Enqueues a script.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * Registers the script if $src provided (does NOT overwrite), and enqueues it.
  *
@@ -405,10 +445,14 @@ function wp_enqueue_script( $handle, $src = '', $deps = array(), $ver = false, $
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Removes a previously enqueued script.
 =======
  * Remove a previously enqueued script.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Removes a previously enqueued script.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_Dependencies::dequeue()
  *
@@ -434,6 +478,7 @@ function wp_dequeue_script( $handle ) {
  *
  * @param string $handle Name of the script.
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @param string $status Optional. Status of the script to check. Default 'enqueued'.
  *                       Accepts 'enqueued', 'registered', 'queue', 'to_do', and 'done'.
  * @return bool Whether the script is queued.
@@ -448,18 +493,25 @@ function wp_script_is( $handle, $status = 'enqueued' ) {
  * Adds metadata to a script.
 =======
  * @param string $list   Optional. Status of the script to check. Default 'enqueued'.
+=======
+ * @param string $status Optional. Status of the script to check. Default 'enqueued'.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *                       Accepts 'enqueued', 'registered', 'queue', 'to_do', and 'done'.
  * @return bool Whether the script is queued.
  */
-function wp_script_is( $handle, $list = 'enqueued' ) {
+function wp_script_is( $handle, $status = 'enqueued' ) {
 	_wp_scripts_maybe_doing_it_wrong( __FUNCTION__, $handle );
 
-	return (bool) wp_scripts()->query( $handle, $list );
+	return (bool) wp_scripts()->query( $handle, $status );
 }
 
 /**
+<<<<<<< HEAD
  * Add metadata to a script.
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Adds metadata to a script.
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * Works only if the script has already been registered.
  *

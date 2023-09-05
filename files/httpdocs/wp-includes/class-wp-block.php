@@ -13,9 +13,13 @@
  * @property array $attributes
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Block {
 
 	/**
@@ -200,10 +204,15 @@ class WP_Block {
 	 * @since 5.5.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @global WP_Post $post Global post object.
 	 *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @global WP_Post $post Global post object.
+	 *
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param array $options {
 	 *     Optional options object.
 	 *
@@ -269,10 +278,14 @@ class WP_Block {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( ( ! empty( $this->block_type->script_handles ) ) ) {
 			foreach ( $this->block_type->script_handles as $script_handle ) {
 				wp_enqueue_script( $script_handle );
 			}
+<<<<<<< HEAD
 		}
 
 		if ( ! empty( $this->block_type->view_script_handles ) ) {
@@ -288,15 +301,26 @@ class WP_Block {
 =======
 		if ( ! empty( $this->block_type->script ) ) {
 			wp_enqueue_script( $this->block_type->script );
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
-		if ( ! empty( $this->block_type->view_script ) && empty( $this->block_type->render_callback ) ) {
-			wp_enqueue_script( $this->block_type->view_script );
+		if ( ! empty( $this->block_type->view_script_handles ) ) {
+			foreach ( $this->block_type->view_script_handles as $view_script_handle ) {
+				wp_enqueue_script( $view_script_handle );
+			}
 		}
 
+<<<<<<< HEAD
 		if ( ! empty( $this->block_type->style ) ) {
 			wp_enqueue_style( $this->block_type->style );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		if ( ( ! empty( $this->block_type->style_handles ) ) ) {
+			foreach ( $this->block_type->style_handles as $style_handle ) {
+				wp_enqueue_style( $style_handle );
+			}
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		/**
@@ -306,10 +330,14 @@ class WP_Block {
 		 * @since 5.9.0 The `$instance` parameter was added.
 		 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 * @param string   $block_content The block content.
 =======
 		 * @param string   $block_content The block content about to be appended.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		 * @param string   $block_content The block content.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 * @param array    $block         The full block, including name and attributes.
 		 * @param WP_Block $instance      The block instance.
 		 */
@@ -325,10 +353,14 @@ class WP_Block {
 		 * @since 5.9.0 The `$instance` parameter was added.
 		 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 * @param string   $block_content The block content.
 =======
 		 * @param string   $block_content The block content about to be appended.
 >>>>>>> fb785cbb (Initial commit)
+=======
+		 * @param string   $block_content The block content.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		 * @param array    $block         The full block, including name and attributes.
 		 * @param WP_Block $instance      The block instance.
 		 */

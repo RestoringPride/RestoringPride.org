@@ -12,9 +12,12 @@
  *
  * @since 5.6.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  * @access private
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  *
  * @see WP_List_Table
  */
@@ -258,13 +261,19 @@ class WP_Application_Passwords_List_Table extends WP_List_Table {
 
 			if ( $is_primary ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				echo '<button type="button" class="toggle-row"><span class="screen-reader-text">' .
 					/* translators: Hidden accessibility text. */
 					__( 'Show more details' ) .
 				'</span></button>';
+<<<<<<< HEAD
 =======
 				echo '<button type="button" class="toggle-row"><span class="screen-reader-text">' . __( 'Show more details' ) . '</span></button>';
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			}
 
 			echo '</td>';

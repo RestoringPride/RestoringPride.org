@@ -60,10 +60,14 @@ function edit_link( $link_id = 0 ) {
  */
 function get_default_link_to_edit() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$link = new stdClass();
 =======
 	$link = new stdClass;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$link = new stdClass();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	if ( isset( $_GET['linkurl'] ) ) {
 		$link->link_url = esc_url( wp_unslash( $_GET['linkurl'] ) );
 	} else {

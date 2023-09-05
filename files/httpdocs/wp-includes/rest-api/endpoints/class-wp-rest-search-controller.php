@@ -211,6 +211,9 @@ class WP_REST_Search_Controller extends WP_REST_Controller {
 		$response = rest_ensure_response( $data );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
 			$links               = $handler->prepare_item_links( $item_id );
 			$links['collection'] = array(
@@ -218,6 +221,7 @@ class WP_REST_Search_Controller extends WP_REST_Controller {
 			);
 			$response->add_links( $links );
 		}
+<<<<<<< HEAD
 =======
 		$links               = $handler->prepare_item_links( $item_id );
 		$links['collection'] = array(
@@ -225,6 +229,8 @@ class WP_REST_Search_Controller extends WP_REST_Controller {
 		);
 		$response->add_links( $links );
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
 		return $response;
 	}
@@ -340,6 +346,9 @@ class WP_REST_Search_Controller extends WP_REST_Controller {
 		);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$query_params['exclude'] = array(
 			'description' => __( 'Ensure result set excludes specific IDs.' ),
 			'type'        => 'array',
@@ -358,8 +367,11 @@ class WP_REST_Search_Controller extends WP_REST_Controller {
 			'default'     => array(),
 		);
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		return $query_params;
 	}
 
@@ -372,10 +384,14 @@ class WP_REST_Search_Controller extends WP_REST_Controller {
 	 * @param WP_REST_Request $request   Full details about the request.
 	 * @param string          $parameter Parameter name.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @return string[]|WP_Error List of valid subtypes, or WP_Error object on failure.
 =======
 	 * @return array|WP_Error List of valid subtypes, or WP_Error object on failure.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @return string[]|WP_Error List of valid subtypes, or WP_Error object on failure.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	public function sanitize_subtypes( $subtypes, $request, $parameter ) {
 		$subtypes = wp_parse_slug_list( $subtypes );

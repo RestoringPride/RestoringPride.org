@@ -94,10 +94,14 @@ function find_core_auto_update() {
 
 	$auto_update = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$upgrader    = new WP_Automatic_Updater();
 =======
 	$upgrader    = new WP_Automatic_Updater;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	$upgrader    = new WP_Automatic_Updater();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	foreach ( $updates->updates as $update ) {
 		if ( 'autoupdate' !== $update->response ) {
 			continue;
@@ -225,10 +229,15 @@ function find_core_update( $version, $locale ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Returns core update footer message.
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Returns core update footer message.
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @since 2.3.0
  *
  * @param string $msg
@@ -243,10 +252,14 @@ function core_update_footer( $msg = '' ) {
 	$cur = get_preferred_from_update_core();
 	if ( ! is_object( $cur ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$cur = new stdClass();
 =======
 		$cur = new stdClass;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$cur = new stdClass();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	}
 
 	if ( ! isset( $cur->current ) ) {
@@ -289,10 +302,15 @@ function core_update_footer( $msg = '' ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Returns core update notification message.
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Returns core update notification message.
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @since 2.3.0
  *
  * @global string $pagenow The filename of the current screen.
@@ -389,10 +407,15 @@ function update_right_now_message() {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Retrieves plugins with updates available.
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Retrieves plugins with updates available.
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @since 2.9.0
  *
  * @return array
@@ -413,10 +436,15 @@ function get_plugin_updates() {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Adds a callback to display update information for plugins with updates available.
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Adds a callback to display update information for plugins with updates available.
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @since 2.9.0
  */
 function wp_plugin_update_rows() {
@@ -614,10 +642,15 @@ function wp_plugin_update_row( $file, $plugin_data ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Retrieves themes with updates available.
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Retrieves themes with updates available.
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @since 2.9.0
  *
  * @return array
@@ -640,10 +673,15 @@ function get_theme_updates() {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Adds a callback to display update information for themes with updates available.
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Adds a callback to display update information for themes with updates available.
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @since 3.1.0
  */
 function wp_theme_update_rows() {
@@ -840,10 +878,15 @@ function wp_theme_update_row( $theme_key, $theme ) {
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Displays maintenance nag HTML message.
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * Displays maintenance nag HTML message.
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * @since 2.7.0
  *
  * @global int $upgrading
@@ -893,10 +936,15 @@ function maintenance_nag() {
  * Prints the JavaScript templates for update admin notices.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @since 4.6.0
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @since 4.6.0
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * Template takes one argument with four values:
  *
  *     param {object} data {
@@ -908,10 +956,13 @@ function maintenance_nag() {
  *         @type string type      The type of update the notice is for. Either 'plugin' or 'theme'.
  *     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  *
  * @since 4.6.0
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function wp_print_admin_notice_templates() {
 	?>
@@ -962,15 +1013,21 @@ function wp_print_admin_notice_templates() {
 							?>
 						<# } #>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						<span class="screen-reader-text">
 							<?php
 							/* translators: Hidden accessibility text. */
 							_e( 'Show more details' );
 							?>
 						</span>
+<<<<<<< HEAD
 =======
 						<span class="screen-reader-text"><?php _e( 'Show more details' ); ?></span>
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 						<span class="toggle-indicator" aria-hidden="true"></span>
 					</button>
 				<# } #>
@@ -991,10 +1048,15 @@ function wp_print_admin_notice_templates() {
  * Prints the JavaScript templates for update and deletion rows in list tables.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @since 4.6.0
  *
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+ * @since 4.6.0
+ *
+>>>>>>> c058c778 (Combining with the latest source from WP)
  * The update template takes one argument with four values:
  *
  *     param {object} data {
@@ -1017,10 +1079,13 @@ function wp_print_admin_notice_templates() {
  *         @type string colspan The number of table columns this row spans.
  *     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  *
  * @since 4.6.0
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
  */
 function wp_print_update_row_templates() {
 	?>

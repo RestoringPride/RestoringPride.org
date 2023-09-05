@@ -8,9 +8,13 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Site_Health_Auto_Updates {
 	/**
 	 * WP_Site_Health_Auto_Updates constructor.
@@ -24,10 +28,14 @@ class WP_Site_Health_Auto_Updates {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Runs tests to determine if auto-updates can run.
 =======
 	 * Run tests to determine if auto-updates can run.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Runs tests to determine if auto-updates can run.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.2.0
 	 *
@@ -66,10 +74,14 @@ class WP_Site_Health_Auto_Updates {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Tests if auto-updates related constants are set correctly.
 =======
 	 * Test if auto-updates related constants are set correctly.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Tests if auto-updates related constants are set correctly.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.2.0
 	 * @since 5.5.1 The `$value` parameter can accept an array.
@@ -86,15 +98,21 @@ class WP_Site_Health_Auto_Updates {
 			return array(
 				'description' => sprintf(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 					/* translators: 1: Name of the constant used. 2: Value of the constant used. */
 					__( 'The %1$s constant is defined as %2$s' ),
 					"<code>$constant</code>",
 					'<code>' . esc_html( var_export( constant( $constant ), true ) ) . '</code>'
+<<<<<<< HEAD
 =======
 					/* translators: %s: Name of the constant used. */
 					__( 'The %s constant is defined and enabled.' ),
 					"<code>$constant</code>"
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				),
 				'severity'    => 'fail',
 			);
@@ -103,10 +121,14 @@ class WP_Site_Health_Auto_Updates {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Checks if updates are intercepted by a filter.
 =======
 	 * Check if updates are intercepted by a filter.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Checks if updates are intercepted by a filter.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.2.0
 	 *
@@ -129,10 +151,14 @@ class WP_Site_Health_Auto_Updates {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Checks if automatic updates are disabled by a filter.
 =======
 	 * Check if automatic updates are disabled by a filter.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Checks if automatic updates are disabled by a filter.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.2.0
 	 *
@@ -154,10 +180,14 @@ class WP_Site_Health_Auto_Updates {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Checks if automatic updates are disabled.
 =======
 	 * Check if automatic updates are disabled.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Checks if automatic updates are disabled.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.3.0
 	 *
@@ -182,10 +212,14 @@ class WP_Site_Health_Auto_Updates {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Checks if automatic updates have tried to run, but failed, previously.
 =======
 	 * Check if automatic updates have tried to run, but failed, previously.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Checks if automatic updates have tried to run, but failed, previously.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.2.0
 	 *
@@ -202,10 +236,14 @@ class WP_Site_Health_Auto_Updates {
 			$description  = __( 'A previous automatic background update ended with a critical failure, so updates are now disabled.' );
 			$description .= ' ' . __( 'You would have received an email because of this.' );
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$description .= ' ' . __( "When you've been able to update using the \"Update now\" button on Dashboard > Updates, this error will be cleared for future update attempts." );
 =======
 			$description .= ' ' . __( "When you've been able to update using the \"Update now\" button on Dashboard > Updates, we'll clear this error for future update attempts." );
 >>>>>>> fb785cbb (Initial commit)
+=======
+			$description .= ' ' . __( "When you've been able to update using the \"Update now\" button on Dashboard > Updates, this error will be cleared for future update attempts." );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 			$description .= ' ' . sprintf(
 				/* translators: %s: Code of error shown. */
 				__( 'The error code was %s.' ),
@@ -223,10 +261,14 @@ class WP_Site_Health_Auto_Updates {
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$description .= ' ' . __( 'Another attempt will be made with the next release.' );
 =======
 		$description .= ' ' . __( "We'll try again with the next release." );
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$description .= ' ' . __( 'Another attempt will be made with the next release.' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$description .= ' ' . sprintf(
 			/* translators: %s: Code of error shown. */
 			__( 'The error code was %s.' ),
@@ -240,10 +282,14 @@ class WP_Site_Health_Auto_Updates {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Checks if WordPress is controlled by a VCS (Git, Subversion etc).
 =======
 	 * Check if WordPress is controlled by a VCS (Git, Subversion etc).
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Checks if WordPress is controlled by a VCS (Git, Subversion etc).
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.2.0
 	 *
@@ -314,10 +360,14 @@ class WP_Site_Health_Auto_Updates {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Checks if we can access files without providing credentials.
 =======
 	 * Check if we can access files without providing credentials.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Checks if we can access files without providing credentials.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.2.0
 	 *
@@ -326,6 +376,7 @@ class WP_Site_Health_Auto_Updates {
 	public function test_check_wp_filesystem_method() {
 		// Make sure the `request_filesystem_credentials()` function is available during our REST API call.
 		if ( ! function_exists( 'request_filesystem_credentials' ) ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 			require_once ABSPATH . 'wp-admin/includes/file.php';
 		}
@@ -337,6 +388,12 @@ class WP_Site_Health_Auto_Updates {
 
 		$skin    = new Automatic_Upgrader_Skin;
 >>>>>>> fb785cbb (Initial commit)
+=======
+			require_once ABSPATH . 'wp-admin/includes/file.php';
+		}
+
+		$skin    = new Automatic_Upgrader_Skin();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$success = $skin->request_filesystem_credentials( false, ABSPATH );
 
 		if ( ! $success ) {
@@ -357,10 +414,14 @@ class WP_Site_Health_Auto_Updates {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Checks if core files are writable by the web user/group.
 =======
 	 * Check if core files are writable by the web user/group.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Checks if core files are writable by the web user/group.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.2.0
 	 *
@@ -374,10 +435,14 @@ class WP_Site_Health_Auto_Updates {
 		require ABSPATH . WPINC . '/version.php'; // $wp_version; // x.y.z
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$skin    = new Automatic_Upgrader_Skin();
 =======
 		$skin    = new Automatic_Upgrader_Skin;
 >>>>>>> fb785cbb (Initial commit)
+=======
+		$skin    = new Automatic_Upgrader_Skin();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		$success = $skin->request_filesystem_credentials( false, ABSPATH );
 
 		if ( ! $success ) {
@@ -393,10 +458,14 @@ class WP_Site_Health_Auto_Updates {
 		// Make sure the `get_core_checksums()` function is available during our REST API call.
 		if ( ! function_exists( 'get_core_checksums' ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			require_once ABSPATH . 'wp-admin/includes/update.php';
 =======
 			require_once ABSPATH . '/wp-admin/includes/update.php';
 >>>>>>> fb785cbb (Initial commit)
+=======
+			require_once ABSPATH . 'wp-admin/includes/update.php';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		}
 
 		$checksums = get_core_checksums( $wp_version, 'en_US' );
@@ -456,10 +525,14 @@ class WP_Site_Health_Auto_Updates {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Checks if the install is using a development branch and can use nightly packages.
 =======
 	 * Check if the install is using a development branch and can use nightly packages.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Checks if the install is using a development branch and can use nightly packages.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.2.0
 	 *
@@ -498,10 +571,14 @@ class WP_Site_Health_Auto_Updates {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Checks if the site supports automatic minor updates.
 =======
 	 * Check if the site supports automatic minor updates.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Checks if the site supports automatic minor updates.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 5.2.0
 	 *

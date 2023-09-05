@@ -36,10 +36,14 @@ class SMTP
      * @var string
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     const VERSION = '6.7';
 =======
     const VERSION = '6.6.0';
 >>>>>>> fb785cbb (Initial commit)
+=======
+    const VERSION = '6.7';
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
     /**
      * SMTP line break constant.
@@ -687,9 +691,12 @@ class SMTP
     public function close()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         $this->setError('');
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
         $this->server_caps = null;
         $this->helo_rply = null;
         if (is_resource($this->smtp_conn)) {
@@ -1045,13 +1052,19 @@ class SMTP
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
         //Don't clear the error store when using keepalive
         if ($command !== 'RSET') {
             $this->setError('');
         }
+<<<<<<< HEAD
 =======
         $this->setError('');
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 
         return true;
     }

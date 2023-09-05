@@ -2065,10 +2065,14 @@ class getid3_id3v2 extends getid3_handler
 							break;
 						case 'WXXX':
 <<<<<<< HEAD
+<<<<<<< HEAD
 							@list($subframe['chapter_url_description'], $subframe['chapter_url']) = explode("\x00", $encoding_converted_text, 2);
 =======
 							list($subframe['chapter_url_description'], $subframe['chapter_url']) = explode("\x00", $encoding_converted_text, 2);
 >>>>>>> fb785cbb (Initial commit)
+=======
+							@list($subframe['chapter_url_description'], $subframe['chapter_url']) = explode("\x00", $encoding_converted_text, 2);
+>>>>>>> c058c778 (Combining with the latest source from WP)
 							$parsedFrame['chapter_url'][$subframe['chapter_url_description']] = $subframe['chapter_url'];
 							$parsedFrame['subframes'][] = $subframe;
 							break;

@@ -12,9 +12,13 @@
  * @since 3.5.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 abstract class WP_Image_Editor {
 	protected $file              = null;
 	protected $size              = null;
@@ -80,14 +84,21 @@ abstract class WP_Image_Editor {
 	 *
 	 * @since 3.5.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * @since 6.0.0 The `$filesize` value was added to the returned array.
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * @since 6.0.0 The `$filesize` value was added to the returned array.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @abstract
 	 *
 	 * @param string $destfilename Optional. Destination filename. Default null.
 	 * @param string $mime_type    Optional. The mime-type. Default null.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @return array|WP_Error {
 	 *     Array on success or WP_Error if the file failed to save.
 	 *
@@ -98,9 +109,12 @@ abstract class WP_Image_Editor {
 	 *     @type string $mime-type The mime type of the image.
 	 *     @type int    $filesize  File size of the image.
 	 * }
+<<<<<<< HEAD
 =======
 	 * @return array|WP_Error {'path'=>string, 'file'=>string, 'width'=>int, 'height'=>int, 'mime-type'=>string}
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 */
 	abstract public function save( $destfilename = null, $mime_type = null );
 
@@ -425,12 +439,17 @@ abstract class WP_Image_Editor {
 			if ( $mime_type !== $this->output_mime_type ) {
 				$this->output_mime_type = $mime_type;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			}
 			$this->set_quality();
 =======
 				$this->set_quality();
 			}
 >>>>>>> fb785cbb (Initial commit)
+=======
+			}
+			$this->set_quality();
+>>>>>>> c058c778 (Combining with the latest source from WP)
 		} elseif ( ! empty( $this->output_mime_type ) ) {
 			// Reset output_mime_type and quality.
 			$this->output_mime_type = null;
@@ -528,10 +547,14 @@ abstract class WP_Image_Editor {
 			case 2:
 				// Flip horizontally.
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$result = $this->flip( false, true );
 =======
 				$result = $this->flip( true, false );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$result = $this->flip( false, true );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				break;
 			case 3:
 				// Rotate 180 degrees or flip horizontally and vertically.
@@ -541,10 +564,14 @@ abstract class WP_Image_Editor {
 			case 4:
 				// Flip vertically.
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$result = $this->flip( true, false );
 =======
 				$result = $this->flip( false, true );
 >>>>>>> fb785cbb (Initial commit)
+=======
+				$result = $this->flip( true, false );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				break;
 			case 5:
 				// Rotate 90 degrees counter-clockwise and flip vertically.
@@ -552,10 +579,14 @@ abstract class WP_Image_Editor {
 
 				if ( ! is_wp_error( $result ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 					$result = $this->flip( true, false );
 =======
 					$result = $this->flip( false, true );
 >>>>>>> fb785cbb (Initial commit)
+=======
+					$result = $this->flip( true, false );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				}
 
 				break;
@@ -569,10 +600,14 @@ abstract class WP_Image_Editor {
 
 				if ( ! is_wp_error( $result ) ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 					$result = $this->flip( false, true );
 =======
 					$result = $this->flip( true, false );
 >>>>>>> fb785cbb (Initial commit)
+=======
+					$result = $this->flip( false, true );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 				}
 
 				break;

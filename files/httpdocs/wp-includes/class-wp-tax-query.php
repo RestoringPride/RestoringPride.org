@@ -20,9 +20,13 @@
  * @since 3.1.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #[AllowDynamicProperties]
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+#[AllowDynamicProperties]
+>>>>>>> c058c778 (Combining with the latest source from WP)
 class WP_Tax_Query {
 
 	/**
@@ -127,10 +131,14 @@ class WP_Tax_Query {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Ensures the 'tax_query' argument passed to the class constructor is well-formed.
 =======
 	 * Ensure the 'tax_query' argument passed to the class constructor is well-formed.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Ensures the 'tax_query' argument passed to the class constructor is well-formed.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * Ensures that each query-level clause has a 'relation' key, and that
 	 * each first-order clause contains all the necessary keys from `$defaults`.
@@ -205,10 +213,14 @@ class WP_Tax_Query {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Sanitizes a 'relation' operator.
 =======
 	 * Sanitize a 'relation' operator.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Sanitizes a 'relation' operator.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.1.0
 	 *
@@ -225,10 +237,14 @@ class WP_Tax_Query {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Determines whether a clause is first-order.
 =======
 	 * Determine whether a clause is first-order.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Determines whether a clause is first-order.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * A "first-order" clause is one that contains any of the first-order
 	 * clause keys ('terms', 'taxonomy', 'include_children', 'field',
@@ -268,10 +284,14 @@ class WP_Tax_Query {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Generates SQL clauses to be appended to a main query.
 =======
 	 * Generate SQL clauses to be appended to a main query.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Generates SQL clauses to be appended to a main query.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * Called by the public WP_Tax_Query::get_sql(), this method
 	 * is abstracted out to maintain parity with the other Query classes.
@@ -302,10 +322,14 @@ class WP_Tax_Query {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Generates SQL clauses for a single query array.
 =======
 	 * Generate SQL clauses for a single query array.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Generates SQL clauses for a single query array.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * If nested subqueries are found, this method recurses the tree to
 	 * produce the properly nested SQL.
@@ -390,10 +414,14 @@ class WP_Tax_Query {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Generates SQL JOIN and WHERE clauses for a "first-order" query clause.
 =======
 	 * Generate SQL JOIN and WHERE clauses for a "first-order" query clause.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Generates SQL JOIN and WHERE clauses for a "first-order" query clause.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * @since 4.1.0
 	 *
@@ -512,10 +540,14 @@ class WP_Tax_Query {
 
 	/**
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 * Identifies an existing table alias that is compatible with the current query clause.
 =======
 	 * Identify an existing table alias that is compatible with the current query clause.
 >>>>>>> fb785cbb (Initial commit)
+=======
+	 * Identifies an existing table alias that is compatible with the current query clause.
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 *
 	 * We avoid unnecessary table joins by allowing each clause to look for
 	 * an existing table alias that is compatible with the query that it
@@ -621,10 +653,13 @@ class WP_Tax_Query {
 	 * @since 3.2.0
 	 *
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	 * @global wpdb $wpdb The WordPress database abstraction object.
 	 *
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	 * @param array  $query           The single query. Passed by reference.
 	 * @param string $resulting_field The resulting field. Accepts 'slug', 'name', 'term_taxonomy_id',
 	 *                                or 'term_id'. Default 'term_id'.

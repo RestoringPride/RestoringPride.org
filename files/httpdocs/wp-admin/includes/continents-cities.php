@@ -449,9 +449,13 @@ __( 'Jersey', 'continents-cities' );
 __( 'Kaliningrad', 'continents-cities' );
 __( 'Kiev', 'continents-cities' );
 <<<<<<< HEAD
+<<<<<<< HEAD
 __( 'Kyiv', 'continents-cities' );
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+__( 'Kyiv', 'continents-cities' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 __( 'Kirov', 'continents-cities' );
 __( 'Lisbon', 'continents-cities' );
 __( 'Ljubljana', 'continents-cities' );
@@ -524,9 +528,13 @@ __( 'Guam', 'continents-cities' );
 __( 'Honolulu', 'continents-cities' );
 __( 'Johnston', 'continents-cities' );
 <<<<<<< HEAD
+<<<<<<< HEAD
 __( 'Kanton', 'continents-cities' );
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+__( 'Kanton', 'continents-cities' );
+>>>>>>> c058c778 (Combining with the latest source from WP)
 __( 'Kiritimati', 'continents-cities' );
 __( 'Kosrae', 'continents-cities' );
 __( 'Kwajalein', 'continents-cities' );

@@ -1345,10 +1345,14 @@ ul.cat-checklist {
 
 .plugins tr.paused th.check-column {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	border-left: 4px solid #b32d2e;
 =======
 	border-left: 4px solid #d63638;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	border-left: 4px solid #b32d2e;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .plugins tr.paused th,
@@ -1359,10 +1363,14 @@ ul.cat-checklist {
 .plugins tr.paused .plugin-title,
 .plugins .paused .dashicons-warning {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #b32d2e;
 =======
 	color: #d63638;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	color: #b32d2e;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .plugins .paused .error-display p,
@@ -1373,10 +1381,14 @@ ul.cat-checklist {
 
 .plugins .resume-link {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: #b32d2e;
 =======
 	color: #d63638;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	color: #b32d2e;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .plugin-card .update-now:before {
@@ -1384,6 +1396,7 @@ ul.cat-checklist {
 	content: "\f463";
 	display: inline-block;
 	font: normal 20px/1 dashicons;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	margin: -3px 5px 0 -2px;
 	speak: never;
@@ -1397,6 +1410,13 @@ ul.cat-checklist {
 	-moz-osx-font-smoothing: grayscale;
 	vertical-align: top;
 >>>>>>> fb785cbb (Initial commit)
+=======
+	margin: -3px 5px 0 -2px;
+	speak: never;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	vertical-align: middle;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 }
 
 .plugin-card .updating-message:before {
@@ -1419,6 +1439,9 @@ ul.cat-checklist {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .plugin-install-php #the-list {
 	display: flex;
 	flex-wrap: wrap;
@@ -1430,8 +1453,11 @@ ul.cat-checklist {
 	justify-content: space-between;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 .plugin-install-php h2 {
 	clear: both;
 }
@@ -1660,9 +1686,13 @@ div.action-links,
 	margin: 0;
 	padding: 100px 0 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	width: 100%;
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+	width: 100%;
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	text-align: center;
 }
 
@@ -1791,6 +1821,9 @@ div.action-links,
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.tablenav.bottom .actions select {
 		margin-bottom: 5px;
 	}
@@ -1800,8 +1833,11 @@ div.action-links,
 		margin-top: 10px;
 	}
 
+<<<<<<< HEAD
 =======
 >>>>>>> fb785cbb (Initial commit)
+=======
+>>>>>>> c058c778 (Combining with the latest source from WP)
 	.tablenav.bottom .tablenav-pages.one-page {
 		margin-top: 15px;
 		height: 0;
